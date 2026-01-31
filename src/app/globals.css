@@ -505,3 +505,16 @@ code,
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 12px 32px var(--accent-glow);
 }
+
+/* Pulse animation for availability indicator */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}

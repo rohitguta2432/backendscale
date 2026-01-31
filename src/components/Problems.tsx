@@ -1,28 +1,28 @@
 const problems = [
     {
-        icon: "🤖",
-        title: "AI Integration Confusion",
-        description: "Not sure how to integrate AI into your product? I make it seamless and practical.",
+        icon: "🤔",
+        title: "AI Confusion",
+        description: "Not sure where to start with AI? We cut through the hype and build what actually works.",
     },
     {
-        icon: "🧠",
-        title: "LLM Implementation",
-        description: "Need ChatGPT, Claude, or custom AI models? I build intelligent, reliable solutions.",
+        icon: "🔌",
+        title: "Integration Headaches",
+        description: "Struggling to integrate LLMs into your product? We make it seamless and production-ready.",
     },
     {
-        icon: "⚡",
+        icon: "🐢",
         title: "Slow Development",
-        description: "AI-assisted development speeds up delivery by 10x without sacrificing quality.",
+        description: "Traditional development taking too long? AI-assisted workflows deliver 10x faster.",
     },
     {
-        icon: "🔧",
-        title: "Legacy Modernization",
-        description: "Upgrade old systems with AI capabilities and modern cloud-native architecture.",
+        icon: "🏚️",
+        title: "Legacy Systems",
+        description: "Outdated tech holding you back? We modernize with AI capabilities built-in.",
     },
     {
         icon: "📈",
         title: "Scaling Challenges",
-        description: "Build infrastructure that scales from MVP to millions of users effortlessly.",
+        description: "Can't handle growth? We build infrastructure that scales from MVP to millions.",
     },
 ];
 
@@ -33,33 +33,22 @@ export default function Problems() {
             <div className="gradient-orb orb-2" />
 
             <div className="container" style={{ paddingTop: "5rem" }}>
-                <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-                    <span className="section-label">Challenges We Solve</span>
-                    <h2>Problems I Solve</h2>
-                    <p style={{ maxWidth: "600px", margin: "0 auto" }}>
-                        Leveraging AI and cutting-edge technology to solve complex business challenges
-                        that traditional approaches can&apos;t handle.
+                <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+                    <span className="section-label">Challenges</span>
+                    <h2 style={{ fontSize: "clamp(2rem, 4vw, 2.75rem)" }}>Problems We Solve</h2>
+                    <p style={{ maxWidth: "550px", margin: "0 auto", fontSize: "1.125rem" }}>
+                        Complex challenges require cutting-edge solutions. Here&apos;s what we tackle.
                     </p>
                 </div>
 
                 <div className="grid grid-5">
                     {problems.map((problem, index) => (
-                        <div key={index} className="card" style={{ textAlign: "center" }}>
-                            <div
-                                className="card-icon"
-                                style={{
-                                    margin: "0 auto 1rem",
-                                    fontSize: "1.5rem",
-                                    background: "transparent",
-                                    border: "none",
-                                }}
-                            >
-                                {problem.icon}
-                            </div>
-                            <h3 style={{ color: "var(--text-primary)", fontSize: "1rem" }}>
+                        <div key={index} className="card" style={{ textAlign: "center", padding: "1.5rem" }}>
+                            <span style={{ fontSize: "2rem", display: "block", marginBottom: "1rem" }}>{problem.icon}</span>
+                            <h3 style={{ color: "var(--text-primary)", fontSize: "1rem", marginBottom: "0.5rem" }}>
                                 {problem.title}
                             </h3>
-                            <p style={{ fontSize: "0.875rem", margin: 0, lineHeight: 1.5 }}>
+                            <p style={{ fontSize: "0.8125rem", margin: 0, lineHeight: 1.5, color: "var(--text-secondary)" }}>
                                 {problem.description}
                             </p>
                         </div>

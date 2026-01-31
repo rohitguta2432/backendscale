@@ -1,16 +1,14 @@
 const stats = [
-    { value: "10+", label: "Years in Tech" },
-    { value: "50+", label: "AI Projects" },
-    { value: "100M+", label: "Users Impacted" },
+    { value: "50+", label: "AI Projects Delivered" },
+    { value: "10x", label: "Avg. Efficiency Gain" },
+    { value: "98%", label: "Client Satisfaction" },
 ];
 
-const casePoints = [
-    "Built AI-powered SaaS platforms processing millions of requests daily",
-    "Integrated LLMs into production systems serving Fortune 500 companies",
-    "Developed custom ML models achieving 95%+ accuracy on complex tasks",
-    "Architected cloud-native solutions handling 10x traffic spikes",
-    "Reduced development time by 60% using AI-assisted workflows",
-    "Led AI transformation initiatives increasing revenue by 40%",
+const results = [
+    { metric: "3x", description: "Faster development with AI-assisted workflows" },
+    { metric: "95%+", description: "Accuracy on custom ML models" },
+    { metric: "$2M+", description: "Cost savings for enterprise clients" },
+    { metric: "40%", description: "Revenue increase from AI features" },
 ];
 
 export default function Credibility() {
@@ -19,16 +17,16 @@ export default function Credibility() {
             <div className="divider" />
 
             <div className="container" style={{ paddingTop: "5rem" }}>
-                <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-                    <span className="section-label">Track Record</span>
-                    <h2>Proven AI Expertise</h2>
+                <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+                    <span className="section-label">Results</span>
+                    <h2 style={{ fontSize: "clamp(2rem, 4vw, 2.75rem)" }}>Proven Track Record</h2>
+                    <p style={{ maxWidth: "550px", margin: "0 auto", fontSize: "1.125rem" }}>
+                        Real results from real AI implementations across industries.
+                    </p>
                 </div>
 
                 {/* Stats Row */}
-                <div
-                    className="grid grid-3"
-                    style={{ maxWidth: "700px", margin: "0 auto 4rem" }}
-                >
+                <div className="grid grid-3" style={{ maxWidth: "800px", margin: "0 auto 4rem" }}>
                     {stats.map((stat, index) => (
                         <div key={index} className="stat">
                             <div className="stat-value">{stat.value}</div>
@@ -37,39 +35,36 @@ export default function Credibility() {
                     ))}
                 </div>
 
-                {/* Case Points */}
-                <div
-                    id="about"
-                    style={{
-                        maxWidth: "800px",
-                        margin: "0 auto",
-                        padding: "2rem",
-                        background: "var(--surface)",
-                        border: "1px solid var(--border)",
-                        borderRadius: "16px",
-                        backdropFilter: "blur(20px)",
-                    }}
-                >
-                    <h3
-                        style={{
-                            fontSize: "1rem",
-                            color: "var(--text-muted)",
-                            marginBottom: "1.5rem",
-                            fontWeight: 600,
-                            textTransform: "uppercase",
-                            letterSpacing: "0.05em",
-                        }}
-                    >
-                        AI & Engineering Achievements
-                    </h3>
-                    <ul className="result-list">
-                        {casePoints.map((point, index) => (
-                            <li key={index}>
-                                <span className="check">✓</span>
-                                {point}
-                            </li>
-                        ))}
-                    </ul>
+                {/* Results Grid */}
+                <div id="about" className="grid grid-2" style={{ maxWidth: "900px", margin: "0 auto" }}>
+                    {results.map((result, index) => (
+                        <div
+                            key={index}
+                            className="card"
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "1.5rem",
+                                padding: "1.5rem",
+                            }}
+                        >
+                            <span
+                                style={{
+                                    fontSize: "1.75rem",
+                                    fontWeight: 800,
+                                    background: "linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    minWidth: "80px",
+                                }}
+                            >
+                                {result.metric}
+                            </span>
+                            <p style={{ fontSize: "0.9375rem", color: "var(--text-secondary)", margin: 0 }}>
+                                {result.description}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

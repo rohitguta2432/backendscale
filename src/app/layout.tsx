@@ -9,33 +9,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RohitGuta | AI & Software Consultant",
+  title: "NexusAI | AI Product Development & Consulting",
   description:
-    "Building the future with AI, Machine Learning, and cutting-edge technology. Expert AI product development, LLM integration, and full-stack engineering.",
+    "Transform your business with cutting-edge AI. We build intelligent products, integrate LLMs, and engineer scalable systems that give you an unfair advantage.",
   keywords: [
-    "AI consultant",
+    "AI consulting",
     "AI product development",
     "LLM integration",
-    "ChatGPT",
-    "GenAI",
+    "ChatGPT consulting",
+    "GenAI solutions",
     "machine learning",
-    "full stack developer",
-    "software consultant",
+    "AI strategy",
+    "software development",
   ],
-  authors: [{ name: "Rohit Gupta" }],
+  authors: [{ name: "NexusAI" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "RohitGuta | AI & Software Consultant",
-    description:
-      "Building the future with AI and cutting-edge technology.",
-    siteName: "RohitGuta",
+    title: "NexusAI | AI Product Development & Consulting",
+    description: "Transform your business with cutting-edge AI innovation.",
+    siteName: "NexusAI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "RohitGuta | AI & Software Consultant",
-    description:
-      "Building the future with AI and cutting-edge technology.",
+    title: "NexusAI | AI Product Development & Consulting",
+    description: "Transform your business with cutting-edge AI innovation.",
   },
   robots: {
     index: true,
