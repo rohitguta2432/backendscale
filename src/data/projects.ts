@@ -6,6 +6,7 @@ export interface Project {
     techStack: string[];
     status: 'active' | 'iterating' | 'paused';
     repoUrl?: string;
+    aiApproach?: string;
     details: {
         whyItMatters: string;
         approach: string[];
@@ -18,11 +19,83 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        slug: "microitinerary",
+        name: "MicroItinerary — AI Travel Planner",
+        problem: "Travel apps optimize for proximity and ratings. They don't consider human energy levels, group dynamics, or intelligent budget allocation.",
+        solves: "AI-powered PWA that generates personalized annual travel itineraries with intelligent destination suggestions, cost estimation in INR, and Splitwise-style expense splitting.",
+        techStack: ["Spring Boot 3.2.2", "Java 21", "React 18", "Vite", "PostgreSQL 16", "Redis", "OpenAI GPT-4"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/MicroItinerary",
+        aiApproach: "GPT-4 for destination recommendations based on season, budget, and group preferences. AI-generated cost breakdowns for hotels, food, transport, and activities.",
+        details: {
+            whyItMatters: "Trip planning is tedious and error-prone. Most apps just list options — they don't understand your constraints. This uses AI to actually solve the planning problem.",
+            approach: [
+                "Spring Boot 3.2.2 + Java 21 backend with Flyway migrations",
+                "React 18 + Vite PWA frontend with offline support via IndexedDB",
+                "OpenAI GPT-4 integration for intelligent destination and cost suggestions",
+                "Redis caching to reduce API costs and improve response times",
+                "Google OAuth 2.0 + JWT for secure authentication"
+            ],
+            decisions: [
+                "PWA over native app — broader reach, single codebase, works offline",
+                "OpenAI API adds latency and cost, but rule-based alternatives lack quality",
+                "Expense splitting algorithm prioritizes simplicity over Splitwise feature-parity",
+                "PostgreSQL 16 for relational data with potential for vector search later"
+            ],
+            currentStatus: "Backend API functional. Frontend PWA with offline sync working. AI suggestions integrated.",
+            roadmap: [
+                "Add calendar view for annual planning",
+                "Implement real-time expense tracking",
+                "Add collaborative trip editing"
+            ],
+            improvements: [
+                "Could add caching layer for repeated AI queries",
+                "Consider fine-tuning a smaller model for cost estimation"
+            ]
+        }
+    },
+    {
+        slug: "stellarmind",
+        name: "StellarMIND — Chat-to-SQL with RAG",
+        problem: "Business users need to query databases without knowing SQL. Existing tools lack context-aware query generation and safety guarantees.",
+        solves: "Spring Boot MCP server that converts natural language questions into read-only SQL using LLM with retrieval-augmented context from pgvector.",
+        techStack: ["Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "MCP Protocol", "OpenAI"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/spring-ai-mcp-server",
+        aiApproach: "RAG-based SQL generation — schema knowledge stored as embeddings in pgvector, retrieved as context for LLM. Strict read-only enforcement (only SELECT/WITH).",
+        details: {
+            whyItMatters: "Data democratization requires non-technical users to access insights without engineering bottlenecks. Raw LLM-to-SQL is unreliable. RAG with schema context fixes this.",
+            approach: [
+                "Spring Boot MCP server with Tool interface for executeDataQuery",
+                "pgvector for storing schema knowledge chunks and embeddings",
+                "Spring AI for LLM integration (provider-agnostic — works with OpenAI, Anthropic, etc.)",
+                "Chain-of-Thought (CoT) web interface for query debugging and transparency",
+                "Read-only SQL enforcement via query parsing (only SELECT, WITH allowed)"
+            ],
+            decisions: [
+                "Read-only restriction limits use cases but ensures database safety",
+                "pgvector requires PostgreSQL — not database-agnostic, but worth the trade-off",
+                "MCP transport (stdio) over HTTP for better AI assistant integration",
+                "Separate stellarmind-server and stellarmind-client for modularity"
+            ],
+            currentStatus: "Core query flow working. CoT UI functional. Newman test suite passing.",
+            roadmap: [
+                "Add support for streaming responses",
+                "Implement query history and favorites",
+                "Add schema auto-discovery"
+            ],
+            improvements: [
+                "Could add query result visualization",
+                "Consider supporting multiple database connections"
+            ]
+        }
+    },
+    {
         slug: "rohitraj-site",
         name: "rohitraj.tech",
         problem: "Engineering work is often invisible. Portfolios show polished results but not the thinking behind them.",
         solves: "A living project directory that documents problems, trade-offs, and architectural decisions in real-time.",
-        techStack: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel"],
+        techStack: ["Next.js 16", "React 19", "TypeScript", "Vercel"],
         status: "active",
         repoUrl: "https://github.com/rohitguta2432/backendscale",
         details: {
@@ -30,92 +103,24 @@ export const projects: Project[] = [
             approach: [
                 "Next.js 16 with App Router for optimal performance",
                 "Minimal design language inspired by documentation sites",
-                "Static generation where possible, dynamic routes for project details",
-                "Deployed on Vercel with automatic preview deployments"
+                "GitHub-backed content sourced from actual repositories",
+                "Static generation with Vercel deployment"
             ],
             decisions: [
-                "Chose documentation-first aesthetic over flashy portfolio style",
-                "Used vanilla CSS over component libraries for full control",
-                "Kept dependencies minimal for long-term maintainability",
-                "Structured content as data for easy updates"
+                "Documentation-first aesthetic over flashy portfolio style",
+                "Vanilla CSS for full control, minimal dependencies",
+                "Content structured as data for easy updates",
+                "Focus on AI projects only — no tutorials or clones"
             ],
-            currentStatus: "Live and deployed. Core pages complete.",
+            currentStatus: "Live at rohitraj.tech with AI projects, Notes, and Repos sections.",
             roadmap: [
-                "Add technical notes/blog section",
-                "Implement RSS feed for notes",
+                "Add technical blog/notes with MDX",
+                "Implement RSS feed",
                 "Add search functionality"
             ],
             improvements: [
                 "Could add dark mode toggle",
-                "Consider MDX for richer content authoring"
-            ]
-        }
-    },
-    {
-        slug: "linkedin-clone",
-        name: "LinkedIn Clone",
-        problem: "Learning modern frontend frameworks requires building real-world applications, not just toy projects.",
-        solves: "A full-featured LinkedIn clone with Feed, Profile, Jobs, Messaging, and Network pages built with React 19.",
-        techStack: ["React", "TypeScript", "Vite", "Tailwind", "CSS"],
-        status: "active",
-        repoUrl: "https://github.com/rohitguta2432/linkedin-clone",
-        details: {
-            whyItMatters: "Building clones of production apps teaches patterns that tutorials miss — real navigation flows, component composition, and state management at scale.",
-            approach: [
-                "React 19 with Vite 7 for fast development",
-                "Tailwind v4 for utility-first styling",
-                "Component-based architecture with reusable UI elements",
-                "Mobile-first responsive design"
-            ],
-            decisions: [
-                "Used Stitch for high-fidelity design mockups before coding",
-                "Organized components by feature rather than type",
-                "Implemented pixel-perfect parity with original LinkedIn UI",
-                "Used CSS modules for component-scoped styles where needed"
-            ],
-            currentStatus: "Core pages complete — Feed, Profile, Jobs, Messaging, Network, Notifications.",
-            roadmap: [
-                "Add backend API integration",
-                "Implement real-time messaging with WebSockets",
-                "Add authentication flow"
-            ],
-            improvements: [
-                "Could use React Query for better data fetching patterns",
-                "Consider adding E2E tests with Playwright"
-            ]
-        }
-    },
-    {
-        slug: "amazon-flipkart-clones",
-        name: "E-commerce Clones",
-        problem: "E-commerce UI patterns are complex — product grids, cart management, search, and responsive layouts.",
-        solves: "Amazon and Flipkart clone implementations demonstrating e-commerce frontend patterns.",
-        techStack: ["HTML", "CSS", "JavaScript", "React"],
-        status: "iterating",
-        repoUrl: "https://github.com/rohitguta2432",
-        details: {
-            whyItMatters: "E-commerce sites have unique UX challenges — handling large product catalogs, complex filtering, cart state, and checkout flows.",
-            approach: [
-                "Started with vanilla HTML/CSS for Amazon clone",
-                "React implementation for Flipkart with component reuse",
-                "Responsive grid layouts for product listings",
-                "Local storage for cart persistence"
-            ],
-            decisions: [
-                "Built Amazon clone first to understand patterns before React",
-                "Used CSS Grid for flexible product layouts",
-                "Implemented client-side search filtering",
-                "Focused on mobile responsiveness"
-            ],
-            currentStatus: "Amazon clone complete. Flipkart clone in progress.",
-            roadmap: [
-                "Add product detail pages",
-                "Implement checkout flow mockup",
-                "Add category navigation"
-            ],
-            improvements: [
-                "Could add skeleton loading states",
-                "Consider implementing with a backend API"
+                "Consider adding project demos/recordings"
             ]
         }
     }
@@ -123,42 +128,42 @@ export const projects: Project[] = [
 
 export const repos = [
     {
+        name: "MicroItinerary",
+        description: "AI Travel Planner — Spring Boot + React PWA with OpenAI integration",
+        modules: ["backend", "web", "docker-compose.yml"],
+        url: "https://github.com/rohitguta2432/MicroItinerary"
+    },
+    {
+        name: "spring-ai-mcp-server",
+        description: "StellarMIND — Chat-to-SQL with pgvector RAG and MCP protocol",
+        modules: ["stellarmind-server", "stellarmind-client", "postman"],
+        url: "https://github.com/rohitguta2432/spring-ai-mcp-server"
+    },
+    {
         name: "backendscale",
-        description: "This site — personal engineering directory and project log",
+        description: "This site (rohitraj.tech) — personal engineering directory",
         modules: ["src/app", "src/components", "src/data"],
         url: "https://github.com/rohitguta2432/backendscale"
-    },
-    {
-        name: "linkedin-clone",
-        description: "Full-featured LinkedIn UI clone with React 19 and Tailwind",
-        modules: ["components", "pages", "styles"],
-        url: "https://github.com/rohitguta2432/linkedin-clone"
-    },
-    {
-        name: "amazon-clone",
-        description: "Amazon homepage and product listing clone with vanilla HTML/CSS",
-        modules: ["index.html", "styles", "scripts"],
-        url: "https://github.com/rohitguta2432/amazon-clone"
     }
 ];
 
 export const notes = [
     {
-        slug: "react-19-features",
-        title: "React 19 Features Worth Using",
+        slug: "rag-for-sql",
+        title: "Using RAG for SQL Generation",
         date: "2026-01-28",
-        excerpt: "Exploring the new use() hook, server components patterns, and improved suspense boundaries in React 19."
+        excerpt: "How pgvector embeddings improve LLM-to-SQL accuracy by providing schema context."
     },
     {
-        slug: "tailwind-v4-migration",
-        title: "Migrating to Tailwind v4",
+        slug: "spring-boot-mcp",
+        title: "Building an MCP Server with Spring Boot",
         date: "2026-01-20",
-        excerpt: "Breaking changes, new features, and migration strategies for upgrading from Tailwind v3 to v4."
+        excerpt: "Implementing the Model Context Protocol for AI assistant tool integration."
     },
     {
-        slug: "vite-vs-nextjs",
-        title: "When to Choose Vite vs Next.js",
+        slug: "pwa-offline-sync",
+        title: "Offline-First PWA Patterns",
         date: "2026-01-15",
-        excerpt: "Decision framework for choosing between Vite and Next.js based on project requirements and team experience."
+        excerpt: "Service workers, IndexedDB, and background sync for MicroItinerary."
     }
 ];
