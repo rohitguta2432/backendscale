@@ -3,42 +3,43 @@ export default function Contact() {
         <section
             id="contact"
             style={{
-                borderTop: "1px solid var(--border)",
+                position: "relative",
                 textAlign: "center",
             }}
         >
-            <div className="container" style={{ maxWidth: "600px" }}>
+            <div className="divider" />
+
+            <div className="container" style={{ paddingTop: "5rem" }}>
                 <span className="section-label">Get Started</span>
-                <h2>Let&apos;s Talk</h2>
-                <p style={{ marginBottom: "var(--space-8)" }}>
-                    Whether you have a specific problem or want to discuss your backend
-                    architecture, I&apos;m here to help. No sales pitch—just a
-                    straightforward conversation.
+                <h2 style={{ marginBottom: "0.5rem" }}>Ready to Build Something Great?</h2>
+                <p style={{ marginBottom: "2.5rem", maxWidth: "500px", margin: "0 auto 2.5rem" }}>
+                    Whether you have a specific problem or a new idea to explore,
+                    let&apos;s have a conversation. No pressure — just honest advice.
                 </p>
 
-                {/* Contact Methods */}
+                {/* Contact Buttons */}
                 <div
                     style={{
                         display: "flex",
                         flexDirection: "column",
-                        gap: "var(--space-4)",
+                        gap: "1rem",
                         alignItems: "center",
-                        marginBottom: "var(--space-8)",
+                        marginBottom: "2rem",
                     }}
                 >
                     <a
-                        href="mailto:hello@backendscale.dev"
+                        href="mailto:hello@rohitguta.dev"
                         className="btn btn-primary"
-                        style={{ minWidth: "240px" }}
+                        style={{ minWidth: "220px" }}
                     >
-                        hello@backendscale.dev
+                        Email Me
                     </a>
                     <a
-                        href="https://calendly.com/backendscale"
+                        href="https://calendly.com/rohitguta"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-secondary"
-                        style={{ minWidth: "240px" }}
+                        style={{ minWidth: "220px" }}
                     >
                         Book a Call
                     </a>
@@ -49,20 +50,23 @@ export default function Contact() {
                     style={{
                         fontSize: "0.875rem",
                         color: "var(--text-muted)",
-                        marginBottom: "var(--space-16)",
                     }}
                 >
-                    Or reach me on{" "}
+                    Also available on{" "}
                     <a
-                        href="https://linkedin.com/in/backendscale"
+                        href="https://www.linkedin.com/in/rohitraj2/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         LinkedIn
                     </a>{" "}
                     •{" "}
-                    <a href="tel:+1234567890" style={{ color: "var(--text-muted)" }}>
-                        +1 (234) 567-890
+                    <a
+                        href="https://github.com/rohitguta2432"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
                     </a>
                 </p>
             </div>
@@ -70,14 +74,34 @@ export default function Contact() {
             {/* Footer */}
             <footer
                 style={{
+                    marginTop: "5rem",
+                    padding: "2rem 0",
                     borderTop: "1px solid var(--border)",
-                    padding: "var(--space-6) 0",
-                    fontSize: "0.875rem",
-                    color: "var(--text-muted)",
                 }}
             >
                 <div className="container">
-                    © {new Date().getFullYear()} BackendScale. All rights reserved.
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            flexWrap: "wrap",
+                            gap: "1rem",
+                        }}
+                    >
+                        <span
+                            style={{
+                                fontWeight: 700,
+                                fontSize: "1.125rem",
+                                color: "var(--text-primary)",
+                            }}
+                        >
+                            RohitGuta
+                        </span>
+                        <span style={{ fontSize: "0.875rem", color: "var(--text-muted)" }}>
+                            © {new Date().getFullYear()} RohitGuta. All rights reserved.
+                        </span>
+                    </div>
                 </div>
             </footer>
         </section>

@@ -1,34 +1,33 @@
 const stats = [
     { value: "10+", label: "Years Experience" },
-    { value: "50+", label: "Systems Architected" },
-    { value: "100M+", label: "Daily Events Processed" },
+    { value: "50+", label: "Projects Delivered" },
+    { value: "100%", label: "Client Satisfaction" },
 ];
 
 const casePoints = [
-    "Reduced API latency by 85% for a fintech processing millions of daily transactions",
-    "Redesigned Kafka architecture handling 10x traffic spike during product launch",
-    "Implemented Redis caching strategy that cut database load by 70%",
-    "Migrated monolith to event-driven microservices with zero downtime",
-    "Built RAG system for internal knowledge base serving 500+ employees",
-    "Optimized Spring Boot services reducing cloud costs by 40%",
+    "Built complete SaaS platforms from zero to production for multiple startups",
+    "Reduced system latency by 85% for a fintech handling millions of transactions",
+    "Migrated legacy monoliths to modern microservices with zero downtime",
+    "Implemented AI-powered features that increased user engagement by 3x",
+    "Optimized cloud infrastructure reducing operational costs by 40%",
+    "Led technical teams and mentored junior developers to senior level",
 ];
 
 export default function Credibility() {
     return (
-        <section id="credibility" style={{ borderTop: "1px solid var(--border)" }}>
-            <div className="container">
-                <span className="section-label">Track Record</span>
-                <h2>Proof of Work</h2>
+        <section id="work" style={{ position: "relative" }}>
+            <div className="divider" />
+
+            <div className="container" style={{ paddingTop: "5rem" }}>
+                <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+                    <span className="section-label">Track Record</span>
+                    <h2>Proven Results</h2>
+                </div>
 
                 {/* Stats Row */}
                 <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-                        gap: "var(--space-4)",
-                        marginBottom: "var(--space-12)",
-                        paddingTop: "var(--space-4)",
-                    }}
+                    className="grid grid-3"
+                    style={{ maxWidth: "700px", margin: "0 auto 4rem" }}
                 >
                     {stats.map((stat, index) => (
                         <div key={index} className="stat">
@@ -39,47 +38,34 @@ export default function Credibility() {
                 </div>
 
                 {/* Case Points */}
-                <div style={{ maxWidth: "800px" }}>
+                <div
+                    id="about"
+                    style={{
+                        maxWidth: "800px",
+                        margin: "0 auto",
+                        padding: "2rem",
+                        background: "var(--surface)",
+                        border: "1px solid var(--border)",
+                        borderRadius: "16px",
+                        backdropFilter: "blur(20px)",
+                    }}
+                >
                     <h3
                         style={{
                             fontSize: "1rem",
                             color: "var(--text-muted)",
-                            marginBottom: "var(--space-4)",
-                            fontWeight: 500,
+                            marginBottom: "1.5rem",
+                            fontWeight: 600,
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
                         }}
                     >
-                        Selected Results
+                        Selected Achievements
                     </h3>
-                    <ul
-                        style={{
-                            listStyle: "none",
-                            padding: 0,
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "var(--space-3)",
-                        }}
-                    >
+                    <ul className="result-list">
                         {casePoints.map((point, index) => (
-                            <li
-                                key={index}
-                                style={{
-                                    display: "flex",
-                                    alignItems: "flex-start",
-                                    gap: "var(--space-3)",
-                                    color: "var(--text-secondary)",
-                                    fontSize: "0.9375rem",
-                                    lineHeight: 1.6,
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        color: "var(--success)",
-                                        fontSize: "1rem",
-                                        lineHeight: 1.6,
-                                    }}
-                                >
-                                    ✓
-                                </span>
+                            <li key={index}>
+                                <span className="check">✓</span>
                                 {point}
                             </li>
                         ))}

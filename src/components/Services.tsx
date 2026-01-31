@@ -1,79 +1,89 @@
 const services = [
     {
-        title: "Backend Performance Audit",
+        title: "Full Product Development",
         description:
-            "A focused 1-week deep-dive into your backend. I analyze your APIs, database queries, caching strategy, and infrastructure. You get a prioritized action plan with specific recommendations.",
-        highlight: "Fixed-price • 1-week delivery",
+            "End-to-end development of web and mobile applications. From initial concept through architecture, development, and deployment.",
+        highlight: "Complete solution",
         featured: true,
     },
     {
-        title: "Event-Driven Architecture Consulting",
+        title: "Technical Consulting",
         description:
-            "Design or refactor your event-driven systems. Kafka topic design, consumer optimization, exactly-once semantics, and dead letter queue strategies.",
-        highlight: "Project-based",
+            "Strategic advice on architecture decisions, technology choices, and best practices. Code reviews and team mentoring.",
+        highlight: "Hourly or retainer",
         featured: false,
     },
     {
-        title: "AI Integration for Backends",
+        title: "System Optimization",
         description:
-            "Add AI capabilities to your existing systems. RAG pipelines, vector databases, embeddings, and internal AI tools that actually integrate with your stack.",
-        highlight: "Project-based",
+            "Performance audits, bottleneck identification, and optimization. Make your existing systems faster and more efficient.",
+        highlight: "Fixed-price audit",
         featured: false,
     },
     {
-        title: "On-Demand Consulting",
+        title: "AI & Automation",
         description:
-            "Flexible access to senior backend expertise. Architecture reviews, code reviews, troubleshooting sessions, or ongoing advisory for your engineering team.",
-        highlight: "Hourly or monthly retainer",
+            "Integrate AI capabilities into your products. Automation workflows, intelligent features, and data-driven solutions.",
+        highlight: "Project-based",
         featured: false,
     },
 ];
 
 export default function Services() {
     return (
-        <section id="services" style={{ borderTop: "1px solid var(--border)" }}>
-            <div className="container">
-                <span className="section-label">Services</span>
-                <h2>How I Can Help</h2>
-                <p style={{ maxWidth: "600px", marginBottom: "var(--space-8)" }}>
-                    Every engagement starts with understanding your specific challenges.
-                    No cookie-cutter solutions.
-                </p>
+        <section id="services" style={{ position: "relative" }}>
+            <div className="divider" />
+            <div className="gradient-orb orb-3" />
+
+            <div className="container" style={{ paddingTop: "5rem" }}>
+                <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+                    <span className="section-label">Services</span>
+                    <h2>What I Offer</h2>
+                    <p style={{ maxWidth: "600px", margin: "0 auto" }}>
+                        Flexible engagement models to match your needs — from one-time projects
+                        to ongoing partnerships.
+                    </p>
+                </div>
+
                 <div className="grid grid-2">
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="card"
-                            style={{
-                                borderColor: service.featured
-                                    ? "var(--accent)"
-                                    : "var(--border)",
-                                position: "relative",
-                            }}
+                            className={`card ${service.featured ? "featured" : ""}`}
                         >
                             {service.featured && (
                                 <span
                                     style={{
                                         position: "absolute",
-                                        top: "var(--space-4)",
-                                        right: "var(--space-4)",
-                                        fontSize: "0.75rem",
-                                        fontWeight: 600,
+                                        top: "1rem",
+                                        right: "1rem",
+                                        fontSize: "0.7rem",
+                                        fontWeight: 700,
                                         color: "var(--accent)",
                                         textTransform: "uppercase",
-                                        letterSpacing: "0.05em",
+                                        letterSpacing: "0.1em",
+                                        padding: "0.25rem 0.75rem",
+                                        background: "rgba(59, 130, 246, 0.15)",
+                                        borderRadius: "9999px",
                                     }}
                                 >
-                                    Popular
+                                    Most Popular
                                 </span>
                             )}
-                            <h3 style={{ color: "var(--text-primary)", paddingRight: "60px" }}>
+                            <h3
+                                style={{
+                                    color: "var(--text-primary)",
+                                    paddingRight: service.featured ? "100px" : "0",
+                                    marginBottom: "0.75rem",
+                                }}
+                            >
                                 {service.title}
                             </h3>
                             <p
                                 style={{
                                     fontSize: "0.9375rem",
-                                    marginBottom: "var(--space-4)",
+                                    marginBottom: "1rem",
+                                    lineHeight: 1.6,
                                 }}
                             >
                                 {service.description}
@@ -82,7 +92,8 @@ export default function Services() {
                                 className="mono"
                                 style={{
                                     fontSize: "0.8125rem",
-                                    color: "var(--text-muted)",
+                                    color: "var(--accent)",
+                                    fontWeight: 500,
                                 }}
                             >
                                 {service.highlight}

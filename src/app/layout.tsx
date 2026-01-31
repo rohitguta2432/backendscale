@@ -9,34 +9,33 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "BackendScale | Backend Systems Consulting",
+  title: "RohitGuta | Software Consultancy",
   description:
-    "Senior backend consultant helping startups fix slow APIs, eliminate Kafka bottlenecks, and design scalable event-driven architectures. 10+ years experience with Spring Boot, Kafka, Redis, and AI integration.",
+    "Expert software consultant helping businesses build, optimize, and scale their digital products. From greenfield projects to complex problem-solving.",
   keywords: [
-    "backend consulting",
-    "Spring Boot consultant",
-    "Kafka expert",
-    "Redis optimization",
-    "event-driven architecture",
-    "API performance",
-    "backend systems",
-    "startup CTO",
+    "software consultant",
+    "full stack developer",
+    "technical consulting",
+    "software development",
+    "system architecture",
     "AI integration",
+    "web development",
+    "mobile development",
   ],
-  authors: [{ name: "BackendScale" }],
+  authors: [{ name: "Rohit Gupta" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "BackendScale | Backend Systems Consulting",
+    title: "RohitGuta | Software Consultancy",
     description:
-      "Fix slow APIs, eliminate Kafka bottlenecks, and scale your backend with confidence.",
-    siteName: "BackendScale",
+      "Build, optimize, and scale your software with expert consulting.",
+    siteName: "RohitGuta",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BackendScale | Backend Systems Consulting",
+    title: "RohitGuta | Software Consultancy",
     description:
-      "Fix slow APIs, eliminate Kafka bottlenecks, and scale your backend with confidence.",
+      "Build, optimize, and scale your software with expert consulting.",
   },
   robots: {
     index: true,
