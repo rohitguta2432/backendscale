@@ -494,9 +494,14 @@ code,
   margin-top: 2px;
 }
 
-/* Mobile nav hidden by default */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
+}
+
+/* Contact icons hover */
+.contact-icon:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px var(--accent-glow);
 }
