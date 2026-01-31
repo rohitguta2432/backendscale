@@ -55,12 +55,12 @@ export default function ContactPage() {
                                         <circle cx="4" cy="4" r="2" />
                                     </svg>
                                     <a
-                                        href="https://linkedin.com/in/rohitguta2432"
+                                        href="https://www.linkedin.com/in/rohitraj2/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="contact-link"
                                     >
-                                        linkedin.com/in/rohitguta2432
+                                        linkedin.com/in/rohitraj2
                                     </a>
                                 </div>
 
