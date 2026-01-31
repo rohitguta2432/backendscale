@@ -1,39 +1,44 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-sans",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
-  title: "NexusAI | AI Product Development & Consulting",
+  title: "Rohit Raj — Backend & AI Systems",
   description:
-    "Transform your business with cutting-edge AI. We build intelligent products, integrate LLMs, and engineer scalable systems that give you an unfair advantage.",
+    "Building AI-enabled backend systems. Documenting real problems and solutions. Current work, architecture notes, and repositories.",
   keywords: [
-    "AI consulting",
-    "AI product development",
-    "LLM integration",
-    "ChatGPT consulting",
-    "GenAI solutions",
-    "machine learning",
-    "AI strategy",
-    "software development",
+    "backend engineering",
+    "AI systems",
+    "system design",
+    "distributed systems",
+    "software architecture",
+    "Rohit Raj",
+    "rohitraj.tech",
   ],
-  authors: [{ name: "NexusAI" }],
+  authors: [{ name: "Rohit Raj" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "NexusAI | AI Product Development & Consulting",
-    description: "Transform your business with cutting-edge AI innovation.",
-    siteName: "NexusAI",
+    title: "Rohit Raj — Backend & AI Systems",
+    description: "Building AI-enabled backend systems. Documenting real problems and solutions.",
+    siteName: "Rohit Raj",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NexusAI | AI Product Development & Consulting",
-    description: "Transform your business with cutting-edge AI innovation.",
+    title: "Rohit Raj — Backend & AI Systems",
+    description: "Building AI-enabled backend systems. Documenting real problems and solutions.",
   },
   robots: {
     index: true,
@@ -47,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
         <a href="#main" className="skip-link">
           Skip to main content

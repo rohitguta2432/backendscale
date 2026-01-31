@@ -1,10 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Problems from "@/components/Problems";
-import Services from "@/components/Services";
-import CaseStudies from "@/components/CaseStudies";
-import Credibility from "@/components/Credibility";
-import Contact from "@/components/Contact";
+import AIProjects from "@/components/AIProjects";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,12 +9,9 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
-        <Problems />
-        <Services />
-        <CaseStudies />
-        <Credibility />
-        <Contact />
+        <AIProjects />
       </main>
+      <Footer />
     </>
   );
 }
