@@ -7,6 +7,14 @@ export default function Footer() {
                 <p className="footer-brand">Rohit Raj — Backend & AI Systems</p>
                 <div className="footer-links">
                     <a
+                        href="https://wa.me/918130313297"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                    >
+                        WhatsApp
+                    </a>
+                    <a
                         href="https://github.com/rohitguta2432"
                         target="_blank"
                         rel="noopener noreferrer"
