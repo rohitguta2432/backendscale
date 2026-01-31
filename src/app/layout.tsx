@@ -9,33 +9,33 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RohitGuta | Software Consultancy",
+  title: "RohitGuta | AI & Software Consultant",
   description:
-    "Expert software consultant helping businesses build, optimize, and scale their digital products. From greenfield projects to complex problem-solving.",
+    "Building the future with AI, Machine Learning, and cutting-edge technology. Expert AI product development, LLM integration, and full-stack engineering.",
   keywords: [
-    "software consultant",
+    "AI consultant",
+    "AI product development",
+    "LLM integration",
+    "ChatGPT",
+    "GenAI",
+    "machine learning",
     "full stack developer",
-    "technical consulting",
-    "software development",
-    "system architecture",
-    "AI integration",
-    "web development",
-    "mobile development",
+    "software consultant",
   ],
   authors: [{ name: "Rohit Gupta" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "RohitGuta | Software Consultancy",
+    title: "RohitGuta | AI & Software Consultant",
     description:
-      "Build, optimize, and scale your software with expert consulting.",
+      "Building the future with AI and cutting-edge technology.",
     siteName: "RohitGuta",
   },
   twitter: {
     card: "summary_large_image",
-    title: "RohitGuta | Software Consultancy",
+    title: "RohitGuta | AI & Software Consultant",
     description:
-      "Build, optimize, and scale your software with expert consulting.",
+      "Building the future with AI and cutting-edge technology.",
   },
   robots: {
     index: true,

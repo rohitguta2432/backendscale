@@ -1,30 +1,30 @@
 const services = [
     {
-        title: "Full Product Development",
+        title: "AI Product Development",
         description:
-            "End-to-end development of web and mobile applications. From initial concept through architecture, development, and deployment.",
-        highlight: "Complete solution",
+            "End-to-end development of AI-powered products. From concept to deployment — including LLM integration, custom ML models, and intelligent automation.",
+        highlight: "Most popular",
         featured: true,
     },
     {
-        title: "Technical Consulting",
+        title: "GenAI & LLM Solutions",
         description:
-            "Strategic advice on architecture decisions, technology choices, and best practices. Code reviews and team mentoring.",
-        highlight: "Hourly or retainer",
+            "Build with ChatGPT, Claude, Gemini, and open-source models. Custom chatbots, RAG systems, AI agents, and content generation pipelines.",
+        highlight: "Cutting-edge",
         featured: false,
     },
     {
-        title: "System Optimization",
+        title: "Full-Stack Engineering",
         description:
-            "Performance audits, bottleneck identification, and optimization. Make your existing systems faster and more efficient.",
-        highlight: "Fixed-price audit",
+            "Modern web and mobile applications with AI at the core. React, Next.js, Node.js, Python, and cloud-native infrastructure.",
+        highlight: "Production-ready",
         featured: false,
     },
     {
-        title: "AI & Automation",
+        title: "AI Strategy Consulting",
         description:
-            "Integrate AI capabilities into your products. Automation workflows, intelligent features, and data-driven solutions.",
-        highlight: "Project-based",
+            "Strategic guidance on AI adoption, technology selection, and implementation roadmaps. Make informed decisions that drive real business value.",
+        highlight: "Advisory",
         featured: false,
     },
 ];
@@ -37,11 +37,11 @@ export default function Services() {
 
             <div className="container" style={{ paddingTop: "5rem" }}>
                 <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-                    <span className="section-label">Services</span>
-                    <h2>What I Offer</h2>
+                    <span className="section-label">What I Build</span>
+                    <h2>AI-Powered Services</h2>
                     <p style={{ maxWidth: "600px", margin: "0 auto" }}>
-                        Flexible engagement models to match your needs — from one-time projects
-                        to ongoing partnerships.
+                        Cutting-edge technology solutions that put AI at the center of your business
+                        — from idea to production.
                     </p>
                 </div>
 
@@ -67,7 +67,7 @@ export default function Services() {
                                         borderRadius: "9999px",
                                     }}
                                 >
-                                    Most Popular
+                                    {service.highlight}
                                 </span>
                             )}
                             <h3

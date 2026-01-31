@@ -1,16 +1,16 @@
 const stats = [
-    { value: "10+", label: "Years Experience" },
-    { value: "50+", label: "Projects Delivered" },
-    { value: "100%", label: "Client Satisfaction" },
+    { value: "10+", label: "Years in Tech" },
+    { value: "50+", label: "AI Projects" },
+    { value: "100M+", label: "Users Impacted" },
 ];
 
 const casePoints = [
-    "Built complete SaaS platforms from zero to production for multiple startups",
-    "Reduced system latency by 85% for a fintech handling millions of transactions",
-    "Migrated legacy monoliths to modern microservices with zero downtime",
-    "Implemented AI-powered features that increased user engagement by 3x",
-    "Optimized cloud infrastructure reducing operational costs by 40%",
-    "Led technical teams and mentored junior developers to senior level",
+    "Built AI-powered SaaS platforms processing millions of requests daily",
+    "Integrated LLMs into production systems serving Fortune 500 companies",
+    "Developed custom ML models achieving 95%+ accuracy on complex tasks",
+    "Architected cloud-native solutions handling 10x traffic spikes",
+    "Reduced development time by 60% using AI-assisted workflows",
+    "Led AI transformation initiatives increasing revenue by 40%",
 ];
 
 export default function Credibility() {
@@ -21,7 +21,7 @@ export default function Credibility() {
             <div className="container" style={{ paddingTop: "5rem" }}>
                 <div style={{ textAlign: "center", marginBottom: "3rem" }}>
                     <span className="section-label">Track Record</span>
-                    <h2>Proven Results</h2>
+                    <h2>Proven AI Expertise</h2>
                 </div>
 
                 {/* Stats Row */}
@@ -60,7 +60,7 @@ export default function Credibility() {
                             letterSpacing: "0.05em",
                         }}
                     >
-                        Selected Achievements
+                        AI & Engineering Achievements
                     </h3>
                     <ul className="result-list">
                         {casePoints.map((point, index) => (

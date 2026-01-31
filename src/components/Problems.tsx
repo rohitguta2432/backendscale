@@ -1,28 +1,28 @@
 const problems = [
     {
-        icon: "🚀",
-        title: "New Product Development",
-        description: "Bring your vision to life with end-to-end development from concept to launch.",
+        icon: "🤖",
+        title: "AI Integration Confusion",
+        description: "Not sure how to integrate AI into your product? I make it seamless and practical.",
+    },
+    {
+        icon: "🧠",
+        title: "LLM Implementation",
+        description: "Need ChatGPT, Claude, or custom AI models? I build intelligent, reliable solutions.",
     },
     {
         icon: "⚡",
-        title: "Performance Issues",
-        description: "Slow systems impacting your business? I identify and eliminate bottlenecks.",
+        title: "Slow Development",
+        description: "AI-assisted development speeds up delivery by 10x without sacrificing quality.",
     },
     {
         icon: "🔧",
         title: "Legacy Modernization",
-        description: "Transform outdated systems into modern, maintainable architectures.",
+        description: "Upgrade old systems with AI capabilities and modern cloud-native architecture.",
     },
     {
         icon: "📈",
         title: "Scaling Challenges",
-        description: "Prepare your infrastructure to handle growth without breaking.",
-    },
-    {
-        icon: "🤖",
-        title: "AI Integration",
-        description: "Add intelligent capabilities to your existing products and workflows.",
+        description: "Build infrastructure that scales from MVP to millions of users effortlessly.",
     },
 ];
 
@@ -34,11 +34,11 @@ export default function Problems() {
 
             <div className="container" style={{ paddingTop: "5rem" }}>
                 <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-                    <span className="section-label">How I Help</span>
+                    <span className="section-label">Challenges We Solve</span>
                     <h2>Problems I Solve</h2>
                     <p style={{ maxWidth: "600px", margin: "0 auto" }}>
-                        Whether you&apos;re starting fresh or fixing what&apos;s broken,
-                        I bring the expertise to move your project forward.
+                        Leveraging AI and cutting-edge technology to solve complex business challenges
+                        that traditional approaches can&apos;t handle.
                     </p>
                 </div>
 

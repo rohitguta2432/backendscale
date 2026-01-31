@@ -17,10 +17,10 @@ export default function Hero() {
             <div className="gradient-orb orb-1" />
 
             <div style={{ maxWidth: "900px", position: "relative", zIndex: 1 }}>
-                <span className="section-label">Software Consultancy</span>
+                <span className="section-label">AI-Powered Solutions</span>
 
                 <h1 style={{ marginBottom: "1.5rem", marginTop: "1rem" }}>
-                    Building Digital Solutions That Scale
+                    Building the Future with AI & Cutting-Edge Tech
                 </h1>
 
                 <p
@@ -33,33 +33,24 @@ export default function Hero() {
                         margin: "0 auto 2.5rem",
                     }}
                 >
-                    From greenfield projects to complex problem-solving — I help startups and
-                    enterprises build, optimize, and scale their software systems with
-                    confidence.
+                    I help businesses harness the power of Artificial Intelligence, Machine Learning,
+                    and modern software engineering to build intelligent products that transform industries.
                 </p>
 
-                {/* Value Props */}
+                {/* Tech Badges */}
                 <div
                     style={{
                         display: "flex",
-                        gap: "2rem",
+                        gap: "0.75rem",
                         justifyContent: "center",
                         flexWrap: "wrap",
                         marginBottom: "2.5rem",
                     }}
                 >
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--text-secondary)" }}>
-                        <span style={{ color: "var(--success)", fontSize: "1.25rem" }}>✓</span>
-                        Build from Scratch
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--text-secondary)" }}>
-                        <span style={{ color: "var(--success)", fontSize: "1.25rem" }}>✓</span>
-                        Fix & Optimize
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--text-secondary)" }}>
-                        <span style={{ color: "var(--success)", fontSize: "1.25rem" }}>✓</span>
-                        Scale & Grow
-                    </div>
+                    <span className="badge">🤖 AI/ML</span>
+                    <span className="badge">🧠 LLMs & GenAI</span>
+                    <span className="badge">⚡ Full-Stack</span>
+                    <span className="badge">☁️ Cloud-Native</span>
                 </div>
 
                 {/* CTAs */}
@@ -71,11 +62,11 @@ export default function Hero() {
                         flexWrap: "wrap",
                     }}
                 >
-                    <a href="mailto:hello@rohitguta.dev" className="btn btn-primary">
-                        Start a Project
+                    <a href="#contact" className="btn btn-primary">
+                        Start Building
                     </a>
                     <a href="#services" className="btn btn-secondary">
-                        View Services
+                        Explore Services
                     </a>
                 </div>
             </div>
