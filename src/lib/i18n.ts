@@ -196,7 +196,8 @@ export async function getDictionary(locale: Locale): Promise<Dictionary> {
 }
 
 export function getLocalizedPath(pathname: string, locale: Locale): string {
-    // Remove existing locale prefix if present
-    const pathWithoutLocale = pathname.replace(/^\/(en|hi|fr|de)(\/|$)/, '/');
+    // Remove existing locale prefix if present (dynamically using all locales)
+    const localePattern = new RegExp(`^/(${locales.join('|')})(\/|$)`);
+    const pathWithoutLocale = pathname.replace(localePattern, '/');
     return `/${locale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
 }
