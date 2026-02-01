@@ -19,25 +19,25 @@ const cardConfigs: CardConfig[] = [
     {
         key: "observability",
         icon: "📊",
-        route: "/notes/observability-prometheus-grafana",
+        route: "/notes",
         accentColor: "#22c55e",
     },
     {
         key: "loadTesting",
         icon: "⚡",
-        route: "/notes/load-testing-k6",
+        route: "/notes",
         accentColor: "#f97316",
     },
     {
         key: "apiTesting",
         icon: "🔗",
-        route: "/notes/api-contract-testing-postman",
+        route: "/notes",
         accentColor: "#3b82f6",
     },
     {
         key: "kafkaTesting",
         icon: "📨",
-        route: "/notes/event-driven-testing-kafka",
+        route: "/notes",
         accentColor: "#8b5cf6",
     },
 ];
