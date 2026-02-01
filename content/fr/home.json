@@ -36,5 +36,55 @@
             "aiApproach": "Approche IA",
             "techStack": "Stack Technique"
         }
+    },
+    "reliability": {
+        "sectionTitle": "Qualité Ingénierie",
+        "sectionHeading": "Fiabilité & Préparation Production",
+        "cards": {
+            "observability": {
+                "title": "Observabilité",
+                "subtitle": "Prometheus + Grafana",
+                "description": "Métriques, tableaux de bord et visibilité SLO de qualité production.",
+                "bullets": [
+                    "Métriques RED/USE avec KPIs métier personnalisés",
+                    "Tableaux de bord Grafana pour latence, débit, taux d'erreur",
+                    "Alertes et configuration de scraping adaptée à l'environnement"
+                ],
+                "linkText": "En savoir plus →"
+            },
+            "loadTesting": {
+                "title": "Tests de Charge",
+                "subtitle": "k6",
+                "description": "Validation des performances pour systèmes event-driven à haut débit.",
+                "bullets": [
+                    "Tests par scénarios (ramping, soak, constant-arrival-rate)",
+                    "Seuils sur latence p95/p99 et taux d'erreur",
+                    "Exécution et rapports compatibles CI"
+                ],
+                "linkText": "En savoir plus →"
+            },
+            "apiTesting": {
+                "title": "Tests de Contrat API",
+                "subtitle": "Postman + Newman",
+                "description": "Tests de régression et smoke reproductibles pour APIs REST.",
+                "bullets": [
+                    "Exécution de collections pilotée par environnement",
+                    "Newman CLI avec rapports HTML/JUnit",
+                    "Validation de contrat compatible pipeline"
+                ],
+                "linkText": "En savoir plus →"
+            },
+            "kafkaTesting": {
+                "title": "Tests Event-Driven",
+                "subtitle": "Simulation Kafka",
+                "description": "Tests déterministes des consommateurs Kafka et workflows.",
+                "bullets": [
+                    "Repos de simulation Kafka forkés pour replay d'événements",
+                    "Validation du partitionnement et de l'ordre",
+                    "Tests de failure, retry et backpressure"
+                ],
+                "linkText": "En savoir plus →"
+            }
+        }
     }
 }

@@ -36,5 +36,55 @@
             "techStack": "Tech Stack"
         },
         "readNotes": "Read full architecture notes →"
+    },
+    "reliability": {
+        "sectionTitle": "Engineering Quality",
+        "sectionHeading": "Reliability & Production Readiness",
+        "cards": {
+            "observability": {
+                "title": "Observability",
+                "subtitle": "Prometheus + Grafana",
+                "description": "Production-grade metrics, dashboards, and SLO visibility.",
+                "bullets": [
+                    "RED/USE metrics with custom business KPIs",
+                    "Grafana dashboards for latency, throughput, error rates",
+                    "Alerting and environment-aware scrape configuration"
+                ],
+                "linkText": "Learn more →"
+            },
+            "loadTesting": {
+                "title": "Load Testing",
+                "subtitle": "k6",
+                "description": "Performance validation for high-throughput, event-driven systems.",
+                "bullets": [
+                    "Scenario-based tests (ramping, soak, constant-arrival-rate)",
+                    "Thresholds on p95/p99 latency and error rates",
+                    "CI-compatible execution and reports"
+                ],
+                "linkText": "Learn more →"
+            },
+            "apiTesting": {
+                "title": "API Contract Testing",
+                "subtitle": "Postman + Newman",
+                "description": "Repeatable regression and smoke testing for REST APIs.",
+                "bullets": [
+                    "Environment-driven collection execution",
+                    "Newman CLI with HTML/JUnit reports",
+                    "Pipeline-friendly contract validation"
+                ],
+                "linkText": "Learn more →"
+            },
+            "kafkaTesting": {
+                "title": "Event-Driven Testing",
+                "subtitle": "Kafka Simulation",
+                "description": "Deterministic testing of Kafka consumers and workflows.",
+                "bullets": [
+                    "Forked Kafka simulation repos for event replay",
+                    "Partitioning and ordering validation",
+                    "Failure, retry, and backpressure testing"
+                ],
+                "linkText": "Learn more →"
+            }
+        }
     }
 }

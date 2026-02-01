@@ -95,6 +95,24 @@ export interface HomeDictionary {
         };
         readNotes: string;
     };
+    reliability?: {
+        sectionTitle: string;
+        sectionHeading: string;
+        cards: {
+            observability: ReliabilityCard;
+            loadTesting: ReliabilityCard;
+            apiTesting: ReliabilityCard;
+            kafkaTesting: ReliabilityCard;
+        };
+    };
+}
+
+export interface ReliabilityCard {
+    title: string;
+    subtitle: string;
+    description: string;
+    bullets: string[];
+    linkText: string;
 }
 
 export interface PagesDictionary {

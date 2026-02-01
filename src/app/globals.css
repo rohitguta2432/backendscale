@@ -1081,3 +1081,183 @@ code,
     flex-direction: column;
   }
 }
+
+/* ==============================================
+   RELIABILITY SECTION STYLES
+   ============================================== */
+
+.reliability-section {
+  padding: 80px 0;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.reliability-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.reliability-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.reliability-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.reliability-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.reliability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.reliability-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.reliability-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.reliability-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.reliability-card-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.reliability-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 2px 0;
+}
+
+.reliability-card-subtitle {
+  font-size: 13px;
+  color: var(--accent-color);
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+.reliability-card-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.reliability-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.reliability-card-bullets li {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.reliability-card-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+.reliability-card-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+
+.reliability-card-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsive: 2 columns on tablet */
+@media (max-width: 1024px) {
+  .reliability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 640px) {
+  .reliability-section {
+    padding: 48px 0;
+  }
+
+  .reliability-heading {
+    font-size: 24px;
+  }
+
+  .reliability-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .reliability-card {
+    padding: 20px;
+  }
+}
+
+/* RTL Support for Reliability Section */
+.rtl .reliability-card-bullets li {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+.rtl .reliability-card-bullets li::before {
+  left: auto;
+  right: 0;
+}
+
+.rtl .reliability-card-header {
+  flex-direction: row-reverse;
+}
+
+.rtl .reliability-card {
+  text-align: right;
+}
