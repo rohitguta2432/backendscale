@@ -102,7 +102,7 @@ export const defaultMetadata: Metadata = {
         },
     },
     verification: {
-        google: 'your-google-verification-code', // TODO: Add your Google Search Console verification
+        google: 'google46f0e975ac6f7a81',
     },
     category: 'technology',
 };
