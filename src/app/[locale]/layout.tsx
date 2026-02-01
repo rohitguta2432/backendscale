@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
+import { getDictionary, isValidLocale, locales, isRTL, type Locale } from "@/lib/i18n";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -37,11 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 hi: `${baseUrl}/hi`,
                 fr: `${baseUrl}/fr`,
                 de: `${baseUrl}/de`,
+                ar: `${baseUrl}/ar`,
             },
         },
         openGraph: {
             type: "website",
-            locale: locale === "hi" ? "hi_IN" : locale === "fr" ? "fr_FR" : locale === "de" ? "de_DE" : "en_US",
+            locale: locale === "hi" ? "hi_IN" : locale === "fr" ? "fr_FR" : locale === "de" ? "de_DE" : locale === "ar" ? "ar_SA" : "en_US",
             title: dict.meta.home.title,
             description: dict.meta.home.description,
             siteName: "Rohit Raj",
@@ -72,6 +73,8 @@ export default async function LocaleLayout({
         notFound();
     }
 
+    const direction = isRTL(locale as Locale) ? "rtl" : "ltr";
+
     return (
         <>
             <head>
@@ -79,9 +82,10 @@ export default async function LocaleLayout({
                 <link rel="alternate" hrefLang="hi" href="https://rohitraj.tech/hi" />
                 <link rel="alternate" hrefLang="fr" href="https://rohitraj.tech/fr" />
                 <link rel="alternate" hrefLang="de" href="https://rohitraj.tech/de" />
+                <link rel="alternate" hrefLang="ar" href="https://rohitraj.tech/ar" />
                 <link rel="alternate" hrefLang="x-default" href="https://rohitraj.tech/en" />
             </head>
-            <div lang={locale}>
+            <div lang={locale} dir={direction} className={direction === "rtl" ? "rtl" : ""}>
                 <a href="#main" className="skip-link">
                     Skip to main content
                 </a>
@@ -90,3 +94,4 @@ export default async function LocaleLayout({
         </>
     );
 }
+

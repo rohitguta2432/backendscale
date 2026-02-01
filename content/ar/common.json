@@ -1,0 +1,30 @@
+{
+    "nav": {
+        "home": "الرئيسية",
+        "projects": "المشاريع",
+        "repos": "المستودعات",
+        "notes": "الملاحظات",
+        "about": "نبذة عني",
+        "contact": "اتصل بي",
+        "viewCurrentWork": "عرض العمل الحالي"
+    },
+    "footer": {
+        "brand": "روهيت راج — مهندس الخلفية والذكاء الاصطناعي"
+    },
+    "buttons": {
+        "viewProjects": "عرض مشاريع الذكاء الاصطناعي",
+        "engineeringNotes": "ملاحظات هندسية",
+        "github": "GitHub",
+        "viewRepository": "← عرض المستودع"
+    },
+    "language": {
+        "switchLanguage": "اللغة"
+    },
+    "subscribe": {
+        "title": "احصل على التحديثات",
+        "placeholder": "أدخل بريدك الإلكتروني",
+        "button": "اشترك",
+        "success": "شكراً لاشتراكك!",
+        "error": "حدث خطأ. حاول مرة أخرى."
+    }
+}

@@ -1013,3 +1013,71 @@ code,
     width: 100%;
   }
 }
+
+/* RTL (Right-to-Left) Support for Arabic */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .header-inner {
+  flex-direction: row-reverse;
+}
+
+.rtl .nav-links {
+  flex-direction: row-reverse;
+}
+
+.rtl .footer-content {
+  flex-direction: row-reverse;
+}
+
+.rtl .footer-subscribe {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+.rtl .subscribe-input-group {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.rtl .hero-content {
+  text-align: right;
+}
+
+.rtl .hero-actions {
+  justify-content: flex-end;
+}
+
+.rtl .approach-grid {
+  direction: rtl;
+}
+
+.rtl .approach-item {
+  text-align: right;
+}
+
+.rtl .project-card {
+  text-align: right;
+}
+
+.rtl .language-dropdown {
+  left: 0;
+  right: auto;
+}
+
+@media (max-width: 640px) {
+  .rtl .footer-content {
+    flex-direction: column;
+  }
+
+  .rtl .footer-subscribe {
+    text-align: right;
+  }
+
+  .rtl .subscribe-input-group {
+    flex-direction: column;
+  }
+}

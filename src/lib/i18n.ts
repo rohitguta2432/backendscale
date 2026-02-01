@@ -1,4 +1,4 @@
-export const locales = ['en', 'hi', 'fr', 'de'] as const;
+export const locales = ['en', 'hi', 'fr', 'de', 'ar'] as const;
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'en';
@@ -8,6 +8,7 @@ export const localeNames: Record<Locale, string> = {
     hi: 'हिंदी',
     fr: 'Français',
     de: 'Deutsch',
+    ar: 'العربية',
 };
 
 export const localeFlags: Record<Locale, string> = {
@@ -15,7 +16,15 @@ export const localeFlags: Record<Locale, string> = {
     hi: '🇮🇳',
     fr: '🇫🇷',
     de: '🇩🇪',
+    ar: '🇸🇦',
 };
+
+// RTL locales
+export const rtlLocales: Locale[] = ['ar'];
+
+export function isRTL(locale: Locale): boolean {
+    return rtlLocales.includes(locale);
+}
 
 export function isValidLocale(locale: string): locale is Locale {
     return locales.includes(locale as Locale);
@@ -160,6 +169,7 @@ const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
     hi: () => loadDictionary('hi'),
     fr: () => loadDictionary('fr'),
     de: () => loadDictionary('de'),
+    ar: () => loadDictionary('ar'),
 };
 
 async function loadDictionary(locale: Locale): Promise<Dictionary> {
