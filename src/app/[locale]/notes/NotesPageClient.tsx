@@ -1,12 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { repositories, contributions, projectNotes, filterCategories } from "@/data/github";
-import Link from "next/link";
+import type { Locale, CommonDictionary, PagesDictionary } from "@/lib/i18n";
 
 type FilterType = 'all' | 'open-source' | 'ai-systems' | 'backend-infrastructure' | 'experiments';
+
+interface NotesPageClientProps {
+    locale: Locale;
+    commonDict: CommonDictionary;
+    pagesDict: PagesDictionary;
+}
 
 function TypeBadge({ type }: { type: string }) {
     const colors: Record<string, string> = {
@@ -181,7 +188,7 @@ function RepoSummaryCard({ repo }: { repo: typeof repositories[0] }) {
     );
 }
 
-function ProjectNoteCard({ note }: { note: typeof projectNotes[0] }) {
+function ProjectNoteCard({ note, dict }: { note: typeof projectNotes[0]; dict: PagesDictionary }) {
     return (
         <article style={{
             border: '1px solid var(--border)',
@@ -205,7 +212,7 @@ function ProjectNoteCard({ note }: { note: typeof projectNotes[0] }) {
 
             <div style={{ marginBottom: '1rem' }}>
                 <h4 style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.25rem', fontWeight: 500 }}>
-                    Why it exists
+                    {dict.notes.whyExists}
                 </h4>
                 <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     {note.whyExists}
@@ -214,7 +221,7 @@ function ProjectNoteCard({ note }: { note: typeof projectNotes[0] }) {
 
             <div style={{ marginBottom: '1rem' }}>
                 <h4 style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.25rem', fontWeight: 500 }}>
-                    Core technical challenge
+                    {dict.notes.coreChallenge}
                 </h4>
                 <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     {note.coreTechnicalChallenge}
@@ -223,7 +230,7 @@ function ProjectNoteCard({ note }: { note: typeof projectNotes[0] }) {
 
             <div style={{ marginBottom: '1rem' }}>
                 <h4 style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 500 }}>
-                    Architecture
+                    {dict.notes.architecture}
                 </h4>
                 <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-secondary)' }}>
                     {note.architectureSnapshot.map((item, i) => (
@@ -234,7 +241,7 @@ function ProjectNoteCard({ note }: { note: typeof projectNotes[0] }) {
 
             <div style={{ marginBottom: '1rem' }}>
                 <h4 style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 500 }}>
-                    Trade-offs
+                    {dict.notes.tradeoffs}
                 </h4>
                 <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-secondary)' }}>
                     {note.tradeoffs.map((item, i) => (
@@ -266,7 +273,7 @@ function ProjectNoteCard({ note }: { note: typeof projectNotes[0] }) {
     );
 }
 
-export default function NotesPage() {
+export default function NotesPageClient({ locale, commonDict, pagesDict }: NotesPageClientProps) {
     const [activeFilter, setActiveFilter] = useState<FilterType>('all');
 
     const filteredNotes = activeFilter === 'all'
@@ -285,15 +292,15 @@ export default function NotesPage() {
 
     return (
         <>
-            <Header />
+            <Header locale={locale} dict={commonDict} />
             <main id="main" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem 1.5rem' }}>
                 {/* Header */}
                 <header style={{ marginBottom: '3rem' }}>
                     <h1 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '0.5rem' }}>
-                        Engineering Notes & Open-Source Work
+                        {pagesDict.notes.title}
                     </h1>
                     <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-                        Public engineering notes derived directly from active repositories and projects.
+                        {pagesDict.notes.description}
                     </p>
                 </header>
 
@@ -334,7 +341,7 @@ export default function NotesPage() {
                         color: 'var(--text-muted)',
                         marginBottom: '1.5rem'
                     }}>
-                        Contribution Feed
+                        {pagesDict.notes.contributionFeed}
                     </h2>
 
                     {filteredContributions.length > 0 ? (
@@ -343,7 +350,7 @@ export default function NotesPage() {
                         ))
                     ) : (
                         <p style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
-                            No contributions match this filter.
+                            {pagesDict.notes.noContributions}
                         </p>
                     )}
                 </section>
@@ -357,7 +364,7 @@ export default function NotesPage() {
                         color: 'var(--text-muted)',
                         marginBottom: '1.5rem'
                     }}>
-                        Repository Summary
+                        {pagesDict.notes.repositorySummary}
                     </h2>
 
                     {repositories
@@ -380,7 +387,7 @@ export default function NotesPage() {
                             rel="noopener noreferrer"
                             style={{ color: 'var(--accent)' }}
                         >
-                            View all repositories on GitHub →
+                            {pagesDict.notes.viewAllRepos}
                         </a>
                     </p>
                 </section>
@@ -394,16 +401,16 @@ export default function NotesPage() {
                         color: 'var(--text-muted)',
                         marginBottom: '1.5rem'
                     }}>
-                        Project Notes
+                        {pagesDict.notes.projectNotes}
                     </h2>
 
                     {filteredNotes.length > 0 ? (
                         filteredNotes.map((note) => (
-                            <ProjectNoteCard key={note.slug} note={note} />
+                            <ProjectNoteCard key={note.slug} note={note} dict={pagesDict} />
                         ))
                     ) : (
                         <p style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
-                            No project notes match this filter.
+                            {pagesDict.notes.noNotes}
                         </p>
                     )}
                 </section>
@@ -416,15 +423,15 @@ export default function NotesPage() {
                     display: 'flex',
                     justifyContent: 'space-between'
                 }}>
-                    <Link href="/projects" style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
-                        ← Projects
+                    <Link href={`/${locale}/projects`} style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
+                        ← {commonDict.nav.projects}
                     </Link>
-                    <Link href="/repos" style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
-                        Repositories →
+                    <Link href={`/${locale}/repos`} style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
+                        {commonDict.nav.repos} →
                     </Link>
                 </nav>
             </main>
-            <Footer />
+            <Footer dict={commonDict} />
         </>
     );
 }

@@ -17,33 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Rohit Raj — Backend & AI Systems",
   description:
-    "Building AI-enabled backend systems. Documenting real problems and solutions. Current work, architecture notes, and repositories.",
-  keywords: [
-    "backend engineering",
-    "AI systems",
-    "system design",
-    "distributed systems",
-    "software architecture",
-    "Rohit Raj",
-    "rohitraj.tech",
-  ],
-  authors: [{ name: "Rohit Raj" }],
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    title: "Rohit Raj — Backend & AI Systems",
-    description: "Building AI-enabled backend systems. Documenting real problems and solutions.",
-    siteName: "Rohit Raj",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Rohit Raj — Backend & AI Systems",
-    description: "Building AI-enabled backend systems. Documenting real problems and solutions.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    "Building AI-enabled backend systems. Documenting real problems and solutions.",
 };
 
 export default function RootLayout({
@@ -52,11 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
-        <a href="#main" className="skip-link">
-          Skip to main content
-        </a>
         {children}
       </body>
     </html>

@@ -1,0 +1,40 @@
+{
+    "hero": {
+        "subtitle": "Rohit Raj — Ingénieur Backend & IA",
+        "titleLine1": "Je Construis des Systèmes IA",
+        "titleLine2": "Qui Résolvent de Vrais Problèmes",
+        "approach": {
+            "title": "Mon Approche",
+            "items": {
+                "problemFirst": {
+                    "title": "Le Problème d'Abord",
+                    "description": "Identifier la vraie douleur utilisateur avant d'écrire du code"
+                },
+                "aiTool": {
+                    "title": "L'IA comme Outil",
+                    "description": "Utiliser les LLMs là où ils ajoutent de la valeur, pas comme gadget"
+                },
+                "productionReady": {
+                    "title": "Prêt pour Production",
+                    "description": "Chaque projet inclut infra, tests et déploiement"
+                },
+                "openEngineering": {
+                    "title": "Ingénierie Ouverte",
+                    "description": "Documenter les décisions, compromis et échecs publiquement"
+                }
+            }
+        }
+    },
+    "aiProjects": {
+        "sectionTitle": "Projets IA",
+        "sectionHeading": "Systèmes IA Prêts pour Production",
+        "sectionDescription": "Pas des expériences — des applications full-stack avec une vraie infrastructure.",
+        "readNotes": "Lire les Notes d'Ingénierie →",
+        "labels": {
+            "problem": "Problème",
+            "solution": "Solution",
+            "aiApproach": "Approche IA",
+            "techStack": "Stack Technique"
+        }
+    }
+}

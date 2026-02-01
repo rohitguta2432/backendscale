@@ -1,0 +1,26 @@
+{
+    "home": {
+        "title": "Rohit Raj — Backend & KI-Systeme",
+        "description": "Ich baue KI-gestützte Backend-Systeme. Dokumentiere echte Probleme und Lösungen."
+    },
+    "about": {
+        "title": "Über Mich | Rohit Raj",
+        "description": "Backend-Ingenieur spezialisiert auf verteilte Systeme und KI-gesteuerte Anwendungen."
+    },
+    "contact": {
+        "title": "Kontakt | Rohit Raj",
+        "description": "Kontaktieren Sie mich für Zusammenarbeit oder Möglichkeiten."
+    },
+    "projects": {
+        "title": "Projekte | Rohit Raj",
+        "description": "KI-gestützte Systeme und Backend-Tools an denen ich arbeite."
+    },
+    "repos": {
+        "title": "Repositories | Rohit Raj",
+        "description": "Nennenswerte GitHub-Repositories und Open-Source Beiträge."
+    },
+    "notes": {
+        "title": "Engineering Notizen | Rohit Raj",
+        "description": "Dokumentierte Erkenntnisse aus dem Aufbau von KI-Systemen in der Produktion."
+    }
+}

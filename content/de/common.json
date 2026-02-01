@@ -1,0 +1,19 @@
+{
+    "nav": {
+        "home": "Startseite",
+        "projects": "Projekte",
+        "repos": "Repos",
+        "notes": "Notizen",
+        "about": "Über mich",
+        "contact": "Kontakt",
+        "viewCurrentWork": "Aktuelle Arbeit"
+    },
+    "footer": {
+        "brand": "Rohit Raj — Backend & KI-Systeme Ingenieur"
+    },
+    "buttons": {
+        "viewRepository": "Repository Ansehen ↗",
+        "learnMore": "Mehr Erfahren",
+        "viewProject": "Projekt Ansehen"
+    }
+}

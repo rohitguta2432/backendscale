@@ -4,22 +4,27 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StatusBadge from "@/components/StatusBadge";
 import { projects } from "@/data/projects";
+import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
 
 interface ProjectPageProps {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
-    return projects.map((project) => ({
-        slug: project.slug,
-    }));
+    const params = [];
+    for (const locale of locales) {
+        for (const project of projects) {
+            params.push({ locale, slug: project.slug });
+        }
+    }
+    return params;
 }
 
 export async function generateMetadata({ params }: ProjectPageProps) {
-    const { slug } = await params;
+    const { locale, slug } = await params;
     const project = projects.find((p) => p.slug === slug);
 
-    if (!project) {
+    if (!project || !isValidLocale(locale)) {
         return { title: "Project Not Found | Rohit Raj" };
     }
 
@@ -30,21 +35,23 @@ export async function generateMetadata({ params }: ProjectPageProps) {
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-    const { slug } = await params;
-    const project = projects.find((p) => p.slug === slug);
+    const { locale, slug } = await params;
 
-    if (!project) {
-        notFound();
-    }
+    if (!isValidLocale(locale)) notFound();
+
+    const project = projects.find((p) => p.slug === slug);
+    if (!project) notFound();
+
+    const dict = await getDictionary(locale as Locale);
 
     return (
         <>
-            <Header />
+            <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <section>
                     <div className="container project-detail">
-                        <Link href="/projects" className="back-link">
-                            ← Back to Projects
+                        <Link href={`/${locale}/projects`} className="back-link">
+                            ← {dict.common.nav.projects}
                         </Link>
 
                         <header className="project-detail-header">
@@ -66,7 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                     rel="noopener noreferrer"
                                     className="btn btn-secondary btn-sm"
                                 >
-                                    View Repository ↗
+                                    {dict.common.buttons.viewRepository}
                                 </a>
                             )}
                         </header>
@@ -91,7 +98,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                         </div>
 
                         <div className="project-detail-section">
-                            <h2>Key Decisions & Trade-offs</h2>
+                            <h2>Key Decisions &amp; Trade-offs</h2>
                             <ul>
                                 {project.details.decisions.map((item, i) => (
                                     <li key={i}>{item}</li>
@@ -124,7 +131,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     </div>
                 </section>
             </main>
-            <Footer />
+            <Footer dict={dict.common} />
         </>
     );
 }

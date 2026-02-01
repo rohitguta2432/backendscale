@@ -1,0 +1,39 @@
+{
+    "about": {
+        "title": "Über Mich",
+        "bio1": "Backend-Ingenieur mit über 6 Jahren Erfahrung im Aufbau verteilter Systeme für die Automobil- und Industriebranche. Aktuell fokussiert auf KI-gestützte Systeme, die echte Geschäftsprobleme lösen.",
+        "bio2": "Ich dokumentiere meine Reise: die Entscheidungen, die Kompromisse und die Misserfolge. Nicht um perfekten Code zu zeigen, sondern um zu zeigen, wie Produktionssysteme wirklich gebaut werden."
+    },
+    "contact": {
+        "title": "Kontakt",
+        "description": "Kontaktieren Sie mich gerne für Zusammenarbeit oder einfach zum Austausch."
+    },
+    "projects": {
+        "title": "Projekte",
+        "description": "Systeme an denen ich gerade arbeite oder die ich gebaut habe.",
+        "active": "Aktiv",
+        "activeDescription": "Derzeit in aktiver Entwicklung mit regelmäßigen Updates.",
+        "iterating": "In Iteration",
+        "iteratingDescription": "Wird basierend auf Nutzerfeedback verfeinert.",
+        "paused": "Pausiert",
+        "pausedDescription": "Vorübergehend pausiert, wird später fortgesetzt."
+    },
+    "repos": {
+        "title": "Repositories",
+        "description": "Nennenswerte GitHub-Repositories und Beiträge."
+    },
+    "notes": {
+        "title": "Engineering Notizen & Open-Source Arbeit",
+        "description": "Dokumentation von Engineering-Entscheidungen, Architektur und Erkenntnissen aus dem Aufbau von KI-Systemen in der Produktion.",
+        "contributionFeed": "Beitrags-Feed",
+        "repositorySummary": "Repository Übersicht",
+        "projectNotes": "Projekt Notizen",
+        "viewAllRepos": "Alle Repositories auf GitHub anzeigen →",
+        "whyExists": "Warum Es Existiert",
+        "coreChallenge": "Technische Kernherausforderung",
+        "architecture": "Architektur Überblick",
+        "tradeoffs": "Kompromisse & Entscheidungen",
+        "noContributions": "Keine Beiträge für diesen Filter gefunden.",
+        "noNotes": "Keine Notizen für diesen Filter gefunden."
+    }
+}

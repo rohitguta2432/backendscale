@@ -1,0 +1,39 @@
+{
+    "about": {
+        "title": "About",
+        "bio1": "Backend and AI systems builder. I work on event-driven architectures, distributed systems, and AI-enabled applications. Most of my work involves making systems that are reliable at scale — Kafka pipelines, caching layers, and the infrastructure that holds everything together.",
+        "bio2": "I document what I build because engineering work is often invisible. This site is a living record of problems I've solved, decisions I've made, and things I'm still figuring out."
+    },
+    "contact": {
+        "title": "Contact",
+        "description": "Interested in working together or have a question? Reach out."
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "Systems I'm actively building, iterating on, or have paused.",
+        "active": "Active",
+        "activeDescription": "Currently in development or production.",
+        "iterating": "Iterating",
+        "iteratingDescription": "Refining based on feedback or new requirements.",
+        "paused": "Paused",
+        "pausedDescription": "On hold, may revisit later."
+    },
+    "repos": {
+        "title": "Repositories",
+        "description": "Curated list of repositories — not a dump, but context for why each exists."
+    },
+    "notes": {
+        "title": "Engineering Notes & Open-Source Work",
+        "description": "Public engineering notes derived directly from active repositories and projects.",
+        "contributionFeed": "Contribution Feed",
+        "repositorySummary": "Repository Summary",
+        "projectNotes": "Project Notes",
+        "viewAllRepos": "View all repositories on GitHub →",
+        "noContributions": "No contributions match this filter.",
+        "noNotes": "No project notes match this filter.",
+        "whyExists": "Why it exists",
+        "coreChallenge": "Core technical challenge",
+        "architecture": "Architecture",
+        "tradeoffs": "Trade-offs"
+    }
+}

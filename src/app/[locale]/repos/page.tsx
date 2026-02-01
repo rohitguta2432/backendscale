@@ -1,23 +1,37 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { repos } from "@/data/projects";
+import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
-export const metadata = {
-    title: "Repositories | Rohit Raj",
-    description: "Curated list of repositories with context for why each exists.",
+type Props = {
+    params: Promise<{ locale: string }>;
 };
 
-export default function ReposPage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    if (!isValidLocale(locale)) return {};
+    const dict = await getDictionary(locale);
+    return {
+        title: dict.meta.repos.title,
+        description: dict.meta.repos.description,
+    };
+}
+
+export default async function ReposPage({ params }: Props) {
+    const { locale } = await params;
+    if (!isValidLocale(locale)) notFound();
+    const dict = await getDictionary(locale as Locale);
+
     return (
         <>
-            <Header />
+            <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <div className="page-header">
                     <div className="container">
-                        <h1 className="page-title">Repositories</h1>
-                        <p className="page-description">
-                            Curated list of repositories — not a dump, but context for why each exists.
-                        </p>
+                        <h1 className="page-title">{dict.pages.repos.title}</h1>
+                        <p className="page-description">{dict.pages.repos.description}</p>
                     </div>
                 </div>
 
@@ -51,7 +65,7 @@ export default function ReposPage() {
                     </div>
                 </section>
             </main>
-            <Footer />
+            <Footer dict={dict.common} />
         </>
     );
 }

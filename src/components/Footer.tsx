@@ -1,10 +1,14 @@
-import Link from "next/link";
+import type { CommonDictionary } from "@/lib/i18n";
 
-export default function Footer() {
+interface FooterProps {
+    dict: CommonDictionary;
+}
+
+export default function Footer({ dict }: FooterProps) {
     return (
         <footer className="footer">
             <div className="container footer-inner">
-                <p className="footer-brand">Rohit Raj — Backend & AI Systems</p>
+                <p className="footer-brand">{dict.footer.brand}</p>
                 <div className="footer-links">
                     <a
                         href="https://wa.me/918130313297"

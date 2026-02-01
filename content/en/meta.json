@@ -1,0 +1,26 @@
+{
+    "home": {
+        "title": "Rohit Raj — Backend & AI Systems",
+        "description": "Building AI-enabled backend systems. Documenting real problems and solutions. Current work, architecture notes, and repositories."
+    },
+    "about": {
+        "title": "About | Rohit Raj",
+        "description": "Rohit Raj — backend + AI systems builder."
+    },
+    "contact": {
+        "title": "Contact | Rohit Raj",
+        "description": "Get in touch — Email, LinkedIn, GitHub."
+    },
+    "projects": {
+        "title": "Projects | Rohit Raj",
+        "description": "Active projects and systems being built — CommCheck Processor, TripSmart AI, and more."
+    },
+    "repos": {
+        "title": "Repositories | Rohit Raj",
+        "description": "Curated list of repositories with context for why each exists."
+    },
+    "notes": {
+        "title": "Engineering Notes | Rohit Raj",
+        "description": "Public engineering notes from active repositories and open-source contributions."
+    }
+}

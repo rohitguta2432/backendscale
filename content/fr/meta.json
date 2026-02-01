@@ -1,0 +1,26 @@
+{
+    "home": {
+        "title": "Rohit Raj — Backend & Systèmes IA",
+        "description": "Je construis des systèmes backend alimentés par l'IA. Je documente les vrais problèmes et solutions."
+    },
+    "about": {
+        "title": "À Propos | Rohit Raj",
+        "description": "Ingénieur backend spécialisé dans les systèmes distribués et les applications pilotées par l'IA."
+    },
+    "contact": {
+        "title": "Contact | Rohit Raj",
+        "description": "Contactez-moi pour des collaborations ou des opportunités."
+    },
+    "projects": {
+        "title": "Projets | Rohit Raj",
+        "description": "Systèmes alimentés par l'IA et outils backend sur lesquels je travaille."
+    },
+    "repos": {
+        "title": "Dépôts | Rohit Raj",
+        "description": "Dépôts GitHub notables et contributions open-source."
+    },
+    "notes": {
+        "title": "Notes d'Ingénierie | Rohit Raj",
+        "description": "Apprentissages documentés de la construction de systèmes IA en production."
+    }
+}

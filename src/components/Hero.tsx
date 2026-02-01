@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { HomeDictionary, Locale } from "@/lib/i18n";
 
-export default function Hero() {
+interface HeroProps {
+    dict: HomeDictionary;
+    locale: Locale;
+}
+
+export default function Hero({ dict, locale }: HeroProps) {
     return (
         <section className="hero">
             <div className="container">
@@ -12,10 +18,10 @@ export default function Hero() {
                     flexWrap: 'wrap'
                 }}>
                     <div style={{ flex: '1', minWidth: '300px' }}>
-                        <p className="hero-subtitle">Rohit Raj — Backend & AI Engineer</p>
+                        <p className="hero-subtitle">{dict.hero.subtitle}</p>
                         <h1 className="hero-title">
-                            Building AI Systems<br />
-                            <span style={{ color: 'var(--text-muted)', fontSize: '0.7em' }}>That Solve Real Problems</span>
+                            {dict.hero.titleLine1}<br />
+                            <span style={{ color: 'var(--text-muted)', fontSize: '0.7em' }}>{dict.hero.titleLine2}</span>
                         </h1>
 
                         <div className="hero-approach" style={{
@@ -32,7 +38,7 @@ export default function Hero() {
                                 color: 'var(--text-muted)',
                                 marginBottom: '1rem'
                             }}>
-                                My Approach
+                                {dict.hero.approach.title}
                             </h3>
                             <ul style={{
                                 margin: 0,
@@ -40,18 +46,18 @@ export default function Hero() {
                                 color: 'var(--text-secondary)',
                                 lineHeight: 1.8
                             }}>
-                                <li><strong>Problem First</strong> — Identify the real user pain before writing code</li>
-                                <li><strong>AI as a Tool</strong> — Use LLMs where they add value, not as a gimmick</li>
-                                <li><strong>Production-Ready</strong> — Every project includes infra, testing, and deployment</li>
-                                <li><strong>Open Engineering</strong> — Document decisions, trade-offs, and failures publicly</li>
+                                <li><strong>{dict.hero.approach.items.problemFirst.title}</strong> — {dict.hero.approach.items.problemFirst.description}</li>
+                                <li><strong>{dict.hero.approach.items.aiTool.title}</strong> — {dict.hero.approach.items.aiTool.description}</li>
+                                <li><strong>{dict.hero.approach.items.productionReady.title}</strong> — {dict.hero.approach.items.productionReady.description}</li>
+                                <li><strong>{dict.hero.approach.items.openEngineering.title}</strong> — {dict.hero.approach.items.openEngineering.description}</li>
                             </ul>
                         </div>
 
                         <div className="hero-actions">
-                            <Link href="/projects" className="btn btn-primary">
-                                View AI Projects
+                            <Link href={`/${locale}/projects`} className="btn btn-primary">
+                                {dict.aiProjects.sectionTitle}
                             </Link>
-                            <Link href="/notes" className="btn btn-secondary">
+                            <Link href={`/${locale}/notes`} className="btn btn-secondary">
                                 Engineering Notes
                             </Link>
                             <a

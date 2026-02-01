@@ -1,22 +1,36 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
-export const metadata = {
-    title: "Contact | Rohit Raj",
-    description: "Get in touch — Email, LinkedIn, GitHub.",
+type Props = {
+    params: Promise<{ locale: string }>;
 };
 
-export default function ContactPage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    if (!isValidLocale(locale)) return {};
+    const dict = await getDictionary(locale);
+    return {
+        title: dict.meta.contact.title,
+        description: dict.meta.contact.description,
+    };
+}
+
+export default async function ContactPage({ params }: Props) {
+    const { locale } = await params;
+    if (!isValidLocale(locale)) notFound();
+    const dict = await getDictionary(locale as Locale);
+
     return (
         <>
-            <Header />
+            <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <div className="page-header">
                     <div className="container">
-                        <h1 className="page-title">Contact</h1>
-                        <p className="page-description">
-                            Interested in working together or have a question? Reach out.
-                        </p>
+                        <h1 className="page-title">{dict.pages.contact.title}</h1>
+                        <p className="page-description">{dict.pages.contact.description}</p>
                     </div>
                 </div>
 
@@ -82,7 +96,7 @@ export default function ContactPage() {
                     </div>
                 </section>
             </main>
-            <Footer />
+            <Footer dict={dict.common} />
         </>
     );
 }

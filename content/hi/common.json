@@ -1,0 +1,23 @@
+{
+    "nav": {
+        "home": "होम",
+        "projects": "प्रोजेक्ट्स",
+        "repos": "रिपॉज़",
+        "notes": "नोट्स",
+        "about": "परिचय",
+        "contact": "संपर्क",
+        "viewCurrentWork": "वर्तमान कार्य देखें"
+    },
+    "footer": {
+        "brand": "रोहित राज — बैकएंड और AI सिस्टम्स"
+    },
+    "buttons": {
+        "viewProjects": "AI प्रोजेक्ट्स देखें",
+        "engineeringNotes": "इंजीनियरिंग नोट्स",
+        "github": "GitHub",
+        "viewRepository": "रिपॉज़िटरी देखें →"
+    },
+    "language": {
+        "switchLanguage": "भाषा"
+    }
+}

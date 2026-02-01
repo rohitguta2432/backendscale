@@ -1,0 +1,19 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "projects": "Projets",
+        "repos": "Dépôts",
+        "notes": "Notes",
+        "about": "À propos",
+        "contact": "Contact",
+        "viewCurrentWork": "Voir Travail Actuel"
+    },
+    "footer": {
+        "brand": "Rohit Raj — Ingénieur Backend & Systèmes IA"
+    },
+    "buttons": {
+        "viewRepository": "Voir le Dépôt ↗",
+        "learnMore": "En Savoir Plus",
+        "viewProject": "Voir le Projet"
+    }
+}

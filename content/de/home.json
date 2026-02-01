@@ -1,0 +1,40 @@
+{
+    "hero": {
+        "subtitle": "Rohit Raj — Backend & KI Ingenieur",
+        "titleLine1": "Ich Baue KI-Systeme",
+        "titleLine2": "Die Echte Probleme Lösen",
+        "approach": {
+            "title": "Mein Ansatz",
+            "items": {
+                "problemFirst": {
+                    "title": "Problem Zuerst",
+                    "description": "Den echten Nutzerschmerz identifizieren bevor Code geschrieben wird"
+                },
+                "aiTool": {
+                    "title": "KI als Werkzeug",
+                    "description": "LLMs dort nutzen wo sie Mehrwert schaffen, nicht als Spielerei"
+                },
+                "productionReady": {
+                    "title": "Produktionsreif",
+                    "description": "Jedes Projekt beinhaltet Infrastruktur, Tests und Deployment"
+                },
+                "openEngineering": {
+                    "title": "Offene Technik",
+                    "description": "Entscheidungen, Kompromisse und Fehler öffentlich dokumentieren"
+                }
+            }
+        }
+    },
+    "aiProjects": {
+        "sectionTitle": "KI Projekte",
+        "sectionHeading": "Produktionsreife KI-Systeme",
+        "sectionDescription": "Keine Experimente — Full-Stack Anwendungen mit echter Infrastruktur.",
+        "readNotes": "Engineering Notizen Lesen →",
+        "labels": {
+            "problem": "Problem",
+            "solution": "Lösung",
+            "aiApproach": "KI-Ansatz",
+            "techStack": "Tech Stack"
+        }
+    }
+}

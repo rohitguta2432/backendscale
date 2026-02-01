@@ -1,0 +1,23 @@
+{
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "repos": "Repos",
+        "notes": "Notes",
+        "about": "About",
+        "contact": "Contact",
+        "viewCurrentWork": "View Current Work"
+    },
+    "footer": {
+        "brand": "Rohit Raj — Backend & AI Systems"
+    },
+    "buttons": {
+        "viewProjects": "View AI Projects",
+        "engineeringNotes": "Engineering Notes",
+        "github": "GitHub",
+        "viewRepository": "View Repository →"
+    },
+    "language": {
+        "switchLanguage": "Language"
+    }
+}

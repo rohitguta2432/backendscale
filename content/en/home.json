@@ -1,0 +1,40 @@
+{
+    "hero": {
+        "subtitle": "Rohit Raj — Backend & AI Engineer",
+        "titleLine1": "Building AI Systems",
+        "titleLine2": "That Solve Real Problems",
+        "approach": {
+            "title": "My Approach",
+            "items": {
+                "problemFirst": {
+                    "title": "Problem First",
+                    "description": "Identify the real user pain before writing code"
+                },
+                "aiTool": {
+                    "title": "AI as a Tool",
+                    "description": "Use LLMs where they add value, not as a gimmick"
+                },
+                "productionReady": {
+                    "title": "Production-Ready",
+                    "description": "Every project includes infra, testing, and deployment"
+                },
+                "openEngineering": {
+                    "title": "Open Engineering",
+                    "description": "Document decisions, trade-offs, and failures publicly"
+                }
+            }
+        }
+    },
+    "aiProjects": {
+        "sectionTitle": "AI Projects",
+        "sectionHeading": "Production-Ready AI Systems",
+        "sectionDescription": "Not experiments — full-stack applications with real infrastructure.",
+        "labels": {
+            "problem": "Problem",
+            "solution": "Solution",
+            "aiApproach": "AI Approach",
+            "techStack": "Tech Stack"
+        },
+        "readNotes": "Read full architecture notes →"
+    }
+}

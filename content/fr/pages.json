@@ -1,0 +1,39 @@
+{
+    "about": {
+        "title": "À Propos",
+        "bio1": "Ingénieur backend avec plus de 6 ans d'expérience dans la construction de systèmes distribués pour l'automobile et l'industrie. Actuellement, je me concentre sur les systèmes alimentés par l'IA qui résolvent de vrais problèmes métier.",
+        "bio2": "Je documente mon parcours : les décisions, les compromis et les échecs. Pas pour montrer du code parfait, mais pour montrer comment les systèmes de production sont réellement construits."
+    },
+    "contact": {
+        "title": "Contact",
+        "description": "N'hésitez pas à me contacter pour des collaborations ou juste pour discuter."
+    },
+    "projects": {
+        "title": "Projets",
+        "description": "Systèmes sur lesquels je travaille actuellement ou que j'ai construits.",
+        "active": "Actif",
+        "activeDescription": "Actuellement en développement avec des mises à jour régulières.",
+        "iterating": "En Itération",
+        "iteratingDescription": "En cours de raffinement basé sur les retours utilisateurs.",
+        "paused": "En Pause",
+        "pausedDescription": "Temporairement en pause, à reprendre ultérieurement."
+    },
+    "repos": {
+        "title": "Dépôts",
+        "description": "Dépôts GitHub notables et contributions."
+    },
+    "notes": {
+        "title": "Notes d'Ingénierie & Travail Open-Source",
+        "description": "Documenter les décisions d'ingénierie, l'architecture et les apprentissages de la construction de systèmes IA en production.",
+        "contributionFeed": "Flux de Contributions",
+        "repositorySummary": "Résumé des Dépôts",
+        "projectNotes": "Notes de Projet",
+        "viewAllRepos": "Voir tous les dépôts sur GitHub →",
+        "whyExists": "Pourquoi Ça Existe",
+        "coreChallenge": "Défi Technique Principal",
+        "architecture": "Aperçu Architecture",
+        "tradeoffs": "Compromis & Décisions",
+        "noContributions": "Aucune contribution trouvée pour ce filtre.",
+        "noNotes": "Aucune note trouvée pour ce filtre."
+    }
+}

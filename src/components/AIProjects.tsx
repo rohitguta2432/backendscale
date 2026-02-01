@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { contributions, projectNotes } from "@/data/github";
+import type { HomeDictionary } from "@/lib/i18n";
+
+interface AIProjectsProps {
+    dict: HomeDictionary;
+}
 
 function AIProjectCard({
     title,
@@ -8,7 +12,8 @@ function AIProjectCard({
     techStack,
     aiApproach,
     repoUrl,
-    status
+    status,
+    labels
 }: {
     title: string;
     problem: string;
@@ -17,6 +22,7 @@ function AIProjectCard({
     aiApproach: string;
     repoUrl: string;
     status: 'active' | 'development' | 'production';
+    labels: HomeDictionary['aiProjects']['labels'];
 }) {
     const statusColors = {
         active: 'var(--status-active)',
@@ -54,7 +60,7 @@ function AIProjectCard({
                     letterSpacing: '0.05em',
                     marginBottom: '0.25rem'
                 }}>
-                    Problem
+                    {labels.problem}
                 </h4>
                 <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     {problem}
@@ -69,7 +75,7 @@ function AIProjectCard({
                     letterSpacing: '0.05em',
                     marginBottom: '0.25rem'
                 }}>
-                    Solution
+                    {labels.solution}
                 </h4>
                 <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     {solution}
@@ -84,7 +90,7 @@ function AIProjectCard({
                     letterSpacing: '0.05em',
                     marginBottom: '0.25rem'
                 }}>
-                    AI Approach
+                    {labels.aiApproach}
                 </h4>
                 <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6, fontStyle: 'italic' }}>
                     {aiApproach}
@@ -99,7 +105,7 @@ function AIProjectCard({
                     letterSpacing: '0.05em',
                     marginBottom: '0.5rem'
                 }}>
-                    Tech Stack
+                    {labels.techStack}
                 </h4>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                     {techStack.map((tech) => (
@@ -129,7 +135,7 @@ function AIProjectCard({
     );
 }
 
-export default function AIProjects() {
+export default function AIProjects({ dict }: AIProjectsProps) {
     const aiProjects = [
         {
             title: "MicroItinerary — AI Travel Planner",
@@ -162,7 +168,7 @@ export default function AIProjects() {
                         color: 'var(--text-muted)',
                         marginBottom: '0.5rem'
                     }}>
-                        AI Projects
+                        {dict.aiProjects.sectionTitle}
                     </h2>
                     <p style={{
                         fontSize: '1.5rem',
@@ -170,22 +176,22 @@ export default function AIProjects() {
                         color: 'var(--text-primary)',
                         margin: 0
                     }}>
-                        Production-Ready AI Systems
+                        {dict.aiProjects.sectionHeading}
                     </p>
                     <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
-                        Not experiments — full-stack applications with real infrastructure.
+                        {dict.aiProjects.sectionDescription}
                     </p>
                 </div>
 
                 <div>
                     {aiProjects.map((project) => (
-                        <AIProjectCard key={project.title} {...project} />
+                        <AIProjectCard key={project.title} {...project} labels={dict.aiProjects.labels} />
                     ))}
                 </div>
 
                 <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                     <Link href="/notes" style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
-                        Read full architecture notes →
+                        {dict.aiProjects.readNotes}
                     </Link>
                 </div>
             </div>
