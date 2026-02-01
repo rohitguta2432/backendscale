@@ -42,8 +42,27 @@ export function middleware(request: NextRequest) {
     }
 
     // Check if pathname already has a valid locale
-    const pathnameLocale = pathname.split('/')[1];
+    const pathSegments = pathname.split('/').filter(Boolean);
+    const pathnameLocale = pathSegments[0];
+
     if (isValidLocale(pathnameLocale)) {
+        // Check if there's a nested locale (e.g., /en/ar -> should redirect to /ar)
+        const secondSegment = pathSegments[1];
+        if (secondSegment && isValidLocale(secondSegment)) {
+            // Nested locale detected - redirect to the second locale
+            const restOfPath = pathSegments.slice(2).join('/');
+            const newUrl = new URL(`/${secondSegment}${restOfPath ? '/' + restOfPath : ''}`, request.url);
+            newUrl.search = request.nextUrl.search;
+
+            const response = NextResponse.redirect(newUrl);
+            response.cookies.set(LOCALE_COOKIE, secondSegment, {
+                maxAge: 60 * 60 * 24 * 365,
+                path: '/',
+                sameSite: 'lax',
+            });
+            return response;
+        }
+
         // Valid locale in URL, set cookie if not already set
         const response = NextResponse.next();
         if (!request.cookies.get(LOCALE_COOKIE)) {
