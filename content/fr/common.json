@@ -15,5 +15,12 @@
         "viewRepository": "Voir le Dépôt ↗",
         "learnMore": "En Savoir Plus",
         "viewProject": "Voir le Projet"
+    },
+    "subscribe": {
+        "title": "Recevoir les Mises à Jour",
+        "placeholder": "Entrez votre email",
+        "button": "S'abonner",
+        "success": "Merci de vous être abonné!",
+        "error": "Une erreur s'est produite. Réessayez."
     }
 }

@@ -19,5 +19,12 @@
     },
     "language": {
         "switchLanguage": "Language"
+    },
+    "subscribe": {
+        "title": "Get Updates",
+        "placeholder": "Enter your email",
+        "button": "Subscribe",
+        "success": "Thanks for subscribing!",
+        "error": "Something went wrong. Try again."
     }
 }

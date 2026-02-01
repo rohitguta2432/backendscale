@@ -65,7 +65,7 @@ export default async function ReposPage({ params }: Props) {
                     </div>
                 </section>
             </main>
-            <Footer dict={dict.common} />
+            <Footer dict={dict.common} locale={locale as Locale} />
         </>
     );
 }

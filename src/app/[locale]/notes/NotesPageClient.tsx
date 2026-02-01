@@ -431,7 +431,7 @@ export default function NotesPageClient({ locale, commonDict, pagesDict }: Notes
                     </Link>
                 </nav>
             </main>
-            <Footer dict={commonDict} />
+            <Footer dict={commonDict} locale={locale} />
         </>
     );
 }

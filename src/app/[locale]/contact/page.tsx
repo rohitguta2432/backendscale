@@ -96,7 +96,7 @@ export default async function ContactPage({ params }: Props) {
                     </div>
                 </section>
             </main>
-            <Footer dict={dict.common} />
+            <Footer dict={dict.common} locale={locale as Locale} />
         </>
     );
 }

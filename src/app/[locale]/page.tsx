@@ -25,7 +25,7 @@ export default async function Home({ params }: Props) {
                 <Hero dict={dict.home} locale={locale as Locale} />
                 <AIProjects dict={dict.home} />
             </main>
-            <Footer dict={dict.common} />
+            <Footer dict={dict.common} locale={locale as Locale} />
         </>
     );
 }

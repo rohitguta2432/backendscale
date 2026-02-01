@@ -88,7 +88,7 @@ export default async function ProjectsPage({ params }: Props) {
                     </div>
                 </section>
             </main>
-            <Footer dict={dict.common} />
+            <Footer dict={dict.common} locale={locale as Locale} />
         </>
     );
 }

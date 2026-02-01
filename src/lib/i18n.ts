@@ -50,6 +50,13 @@ export interface CommonDictionary {
     language: {
         switchLanguage: string;
     };
+    subscribe?: {
+        title: string;
+        placeholder: string;
+        button: string;
+        success: string;
+        error: string;
+    };
 }
 
 export interface HomeDictionary {

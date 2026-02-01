@@ -131,7 +131,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     </div>
                 </section>
             </main>
-            <Footer dict={dict.common} />
+            <Footer dict={dict.common} locale={locale as Locale} />
         </>
     );
 }

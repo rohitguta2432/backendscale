@@ -15,5 +15,12 @@
         "viewRepository": "Repository Ansehen ↗",
         "learnMore": "Mehr Erfahren",
         "viewProject": "Projekt Ansehen"
+    },
+    "subscribe": {
+        "title": "Updates Erhalten",
+        "placeholder": "E-Mail eingeben",
+        "button": "Abonnieren",
+        "success": "Danke fürs Abonnieren!",
+        "error": "Etwas ist schief gelaufen. Erneut versuchen."
     }
 }
