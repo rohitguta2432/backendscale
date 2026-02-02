@@ -35,5 +35,16 @@
         "tradeoffs": "Compromis & Décisions",
         "noContributions": "Aucune contribution trouvée pour ce filtre.",
         "noNotes": "Aucune note trouvée pour ce filtre."
+    },
+    "reliability": {
+        "title": "Fiabilité et Préparation à la Production",
+        "description": "Métriques en temps réel et indicateurs de santé du système.",
+        "dashboard": {
+            "title": "État du Système en Direct",
+            "cpu": "Utilisation CPU",
+            "memory": "Utilisation Mémoire",
+            "requests": "Requêtes/sec",
+            "latency": "Latence Moyenne"
+        }
     }
 }

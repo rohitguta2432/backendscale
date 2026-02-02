@@ -35,5 +35,16 @@
         "coreChallenge": "Core technical challenge",
         "architecture": "Architecture",
         "tradeoffs": "Trade-offs"
+    },
+    "reliability": {
+        "title": "Reliability & Production Readiness",
+        "description": "Real-time metrics and system health indicators.",
+        "dashboard": {
+            "title": "Live System Status",
+            "cpu": "CPU Usage",
+            "memory": "Memory Usage",
+            "requests": "Requests/sec",
+            "latency": "Avg Latency"
+        }
     }
 }

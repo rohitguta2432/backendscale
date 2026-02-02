@@ -153,6 +153,17 @@ export interface PagesDictionary {
         architecture: string;
         tradeoffs: string;
     };
+    reliability: {
+        title: string;
+        description: string;
+        dashboard: {
+            title: string;
+            cpu: string;
+            memory: string;
+            requests: string;
+            latency: string;
+        };
+    };
 }
 
 export interface MetaDictionary {

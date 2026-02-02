@@ -35,5 +35,16 @@
         "tradeoffs": "Kompromisse & Entscheidungen",
         "noContributions": "Keine Beiträge für diesen Filter gefunden.",
         "noNotes": "Keine Notizen für diesen Filter gefunden."
+    },
+    "reliability": {
+        "title": "Zuverlässigkeit & Produktionsbereitschaft",
+        "description": "Echtzeit-Metriken und Systemstatus-Indikatoren.",
+        "dashboard": {
+            "title": "Live-Systemstatus",
+            "cpu": "CPU-Auslastung",
+            "memory": "Speicherauslastung",
+            "requests": "Anfragen/Sek",
+            "latency": "Durschn. Latenz"
+        }
     }
 }
