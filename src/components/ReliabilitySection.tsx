@@ -19,25 +19,25 @@ const cardConfigs: CardConfig[] = [
     {
         key: "observability",
         icon: "📊",
-        route: "/notes",
+        route: "/reliability",
         accentColor: "#22c55e",
     },
     {
         key: "loadTesting",
         icon: "⚡",
-        route: "/notes",
+        route: "/reliability",
         accentColor: "#f97316",
     },
     {
         key: "apiTesting",
         icon: "🔗",
-        route: "/notes",
+        route: "/reliability",
         accentColor: "#3b82f6",
     },
     {
         key: "kafkaTesting",
         icon: "📨",
-        route: "/notes",
+        route: "/reliability",
         accentColor: "#8b5cf6",
     },
 ];
