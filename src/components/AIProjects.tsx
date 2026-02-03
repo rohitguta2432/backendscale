@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { HomeDictionary } from "@/lib/i18n";
 
 interface AIProjectsProps {
@@ -13,7 +14,8 @@ function AIProjectCard({
     aiApproach,
     repoUrl,
     status,
-    labels
+    labels,
+    image
 }: {
     title: string;
     problem: string;
@@ -23,6 +25,7 @@ function AIProjectCard({
     repoUrl: string;
     status: 'active' | 'development' | 'production';
     labels: HomeDictionary['aiProjects']['labels'];
+    image?: string;
 }) {
     const statusColors = {
         active: 'var(--status-active)',
@@ -37,6 +40,26 @@ function AIProjectCard({
             backgroundColor: 'var(--card-bg)',
             marginBottom: '1.5rem'
         }}>
+            {/* Project Screenshot */}
+            {image && (
+                <div style={{
+                    marginBottom: '1.5rem',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    border: '1px solid var(--border)',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                }}>
+                    <img
+                        src={image}
+                        alt={`${title} screenshot`}
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            display: 'block'
+                        }}
+                    />
+                </div>
+            )}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
                 <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{title}</h3>
                 <span style={{
@@ -153,7 +176,8 @@ export default function AIProjects({ dict }: AIProjectsProps) {
             techStack: ["Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "MCP Protocol", "OpenAI"],
             aiApproach: "RAG-based SQL generation: schema knowledge stored as embeddings in pgvector, retrieved as context for LLM. Strict read-only enforcement (only SELECT/WITH).",
             repoUrl: "https://github.com/rohitguta2432/spring-ai-mcp-server",
-            status: "development" as const
+            status: "development" as const,
+            image: "/images/projects/stellarmind.png"
         }
     ];
 

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StatusBadge from "@/components/StatusBadge";
@@ -78,6 +79,25 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             )}
                         </header>
 
+                        {project.image && (
+                            <div className="project-hero-image">
+                                <div className="project-image-wrapper">
+                                    <Image
+                                        src={project.image}
+                                        alt={`${project.name} interface screenshot`}
+                                        width={1737}
+                                        height={921}
+                                        priority
+                                        className="project-screenshot"
+                                    />
+                                    <div className="project-image-caption">
+                                        <span className="caption-icon">📸</span>
+                                        <span>Live Application Interface</span>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
                         <div className="project-detail-section">
                             <h2>Problem</h2>
                             <p>{project.problem}</p>
@@ -130,7 +150,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                         </div>
                     </div>
                 </section>
-            </main>
+            </main >
             <Footer dict={dict.common} locale={locale as Locale} />
         </>
     );

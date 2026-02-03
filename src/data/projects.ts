@@ -7,6 +7,7 @@ export interface Project {
     status: 'active' | 'iterating' | 'paused';
     repoUrl?: string;
     aiApproach?: string;
+    image?: string;
     details: {
         whyItMatters: string;
         approach: string[];
@@ -63,6 +64,7 @@ export const projects: Project[] = [
         status: "active",
         repoUrl: "https://github.com/rohitguta2432/spring-ai-mcp-server",
         aiApproach: "RAG-based SQL generation — schema knowledge stored as embeddings in pgvector, retrieved as context for LLM. Strict read-only enforcement (only SELECT/WITH).",
+        image: "/images/projects/stellarmind.png",
         details: {
             whyItMatters: "Data democratization requires non-technical users to access insights without engineering bottlenecks. Raw LLM-to-SQL is unreliable. RAG with schema context fixes this.",
             approach: [
