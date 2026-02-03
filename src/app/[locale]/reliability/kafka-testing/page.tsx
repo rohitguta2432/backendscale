@@ -62,7 +62,7 @@ export default async function KafkaTestingPage({ params }: Props) {
                                 <div className="flex items-center gap-4">
                                     <div className="bg-white dark:bg-neutral-800 p-4 rounded-xl border-2 border-purple-500 flex-1">
                                         <div className="font-bold text-neutral-900 dark:text-white mb-1">1. Event Producer</div>
-                                        <div className="text-sm text-neutral-600 dark:text-neutral-400">OTA System publishes CommCheck event</div>
+                                        <div className="text-sm text-neutral-600 dark:text-neutral-400">API Gateway publishes Query Request event</div>
                                     </div>
                                     <div className="text-2xl">→</div>
                                 </div>
@@ -71,7 +71,7 @@ export default async function KafkaTestingPage({ params }: Props) {
                                 <div className="flex items-center gap-4">
                                     <div className="bg-white dark:bg-neutral-800 p-4 rounded-xl border-2 border-blue-500 flex-1">
                                         <div className="font-bold text-neutral-900 dark:text-white mb-1">2. Kafka Topic</div>
-                                        <div className="text-sm text-neutral-600 dark:text-neutral-400 font-mono">stla.AOTA.CommCheck (3 partitions)</div>
+                                        <div className="text-sm text-neutral-600 dark:text-neutral-400 font-mono">text2sql.query.requests (6 partitions)</div>
                                     </div>
                                     <div className="text-2xl">→</div>
                                 </div>
@@ -80,16 +80,16 @@ export default async function KafkaTestingPage({ params }: Props) {
                                 <div className="flex items-center gap-4">
                                     <div className="bg-white dark:bg-neutral-800 p-4 rounded-xl border-2 border-green-500 flex-1">
                                         <div className="font-bold text-neutral-900 dark:text-white mb-1">3. Consumer</div>
-                                        <div className="text-sm text-neutral-600 dark:text-neutral-400">CommCheck Processor validates & routes</div>
+                                        <div className="text-sm text-neutral-600 dark:text-neutral-400">Query Processor translates NL → SQL</div>
                                     </div>
                                     <div className="text-2xl">→</div>
                                 </div>
 
-                                {/* DRM */}
+                                {/* Result */}
                                 <div className="flex items-center gap-4">
                                     <div className="bg-white dark:bg-neutral-800 p-4 rounded-xl border-2 border-orange-500 flex-1">
                                         <div className="font-bold text-neutral-900 dark:text-white mb-1">4. Downstream</div>
-                                        <div className="text-sm text-neutral-600 dark:text-neutral-400">DRM Provisioning or Error Queue</div>
+                                        <div className="text-sm text-neutral-600 dark:text-neutral-400">Query Results or Dead Letter Queue</div>
                                     </div>
                                 </div>
                             </div>
@@ -194,44 +194,42 @@ export default async function KafkaTestingPage({ params }: Props) {
                             <div className="text-4xl">📨</div>
                             <div>
                                 <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2">
-                                    Real Use Case: CommCheck Event Ordering Bug
+                                    Real Use Case: Text2SQL Query Ordering Bug
                                 </h2>
                                 <p className="text-lg text-neutral-700 dark:text-neutral-300">
-                                    How Kafka testing caught a race condition that would've caused data corruption
+                                    How Kafka testing caught a race condition that would've caused incorrect query results
                                 </p>
                             </div>
                         </div>
                         <div className="space-y-4 text-neutral-700 dark:text-neutral-300">
                             <p>
-                                <strong>Challenge:</strong> The CommCheck Processor received multiple events for the same VIN in rapid succession. Events needed to be processed <strong>in order</strong> to
-                                maintain state consistency.
+                                <strong>Challenge:</strong> The Text2SQL Query Processor received multiple query requests for the same user session in rapid succession. Correlated queries (like "show me more details" after an initial query) needed to be processed <strong>in order</strong> to
+                                maintain context.
                             </p>
                             <p>
-                                <strong>Bug:</strong> During load testing, we discovered that events for the same VIN were occasionally processed out of order, causing stale data to overwrite fresh
-                                updates.
+                                <strong>Bug:</strong> During load testing, we discovered that follow-up queries for the same session were occasionally processed before the parent query completed, causing context mismatches and incorrect SQL generation.
                             </p>
                             <p>
-                                <strong>Root Cause:</strong> Kafka partitions were assigned by random hash, not VIN. Events for the same vehicle could land on different partitions and be consumed
+                                <strong>Root Cause:</strong> Kafka partitions were assigned by random hash, not session ID. Queries for the same user session could land on different partitions and be consumed
                                 out-of-order.
                             </p>
                             <div className="bg-white dark:bg-neutral-900 p-4 rounded-lg my-4">
                                 <div className="font-bold mb-2 text-neutral-900 dark:text-white">Test Code That Caught It:</div>
                                 <div className="bg-neutral-900 dark:bg-black p-3 rounded font-mono text-sm text-green-400 overflow-x-auto">
-                                    <div>// Send 3 events for same VIN to different partitions</div>
-                                    <div>sendEvent(vin="ABC123", partition=0, timestamp=t1);</div>
-                                    <div>sendEvent(vin="ABC123", partition=1, timestamp=t2);</div>
-                                    <div>sendEvent(vin="ABC123", partition=2, timestamp=t3);</div>
+                                    <div>// Send 3 queries for same session to different partitions</div>
+                                    <div>sendQuery(sessionId="user-123", query="Show sales by region", partition=0);</div>
+                                    <div>sendQuery(sessionId="user-123", query="Filter to Q4 only", partition=1);</div>
+                                    <div>sendQuery(sessionId="user-123", query="Add year-over-year comparison", partition=2);</div>
                                     <br />
-                                    <div className="text-red-400">// ❌ Assertion failed: events processed out of order!</div>
+                                    <div className="text-red-400">// ❌ Assertion failed: queries processed out of order!</div>
                                 </div>
                             </div>
                             <p>
-                                <strong>Fix:</strong> Changed partition key from random hash to <code className="bg-neutral-200 dark:bg-neutral-800 px-1.5 py-0.5 rounded">hash(VIN)</code>. Now all
-                                events for the same VIN go to the same partition, guaranteeing order.
+                                <strong>Fix:</strong> Changed partition key from random hash to <code className="bg-neutral-200 dark:bg-neutral-800 px-1.5 py-0.5 rounded">hash(sessionId)</code>. Now all
+                                queries for the same user session go to the same partition, guaranteeing order.
                             </p>
                             <p>
-                                <strong>Impact:</strong> Prevented a critical data corruption issue. Without Kafka testing, this would've manifested as a production bug that only occurred under high
-                                load.
+                                <strong>Impact:</strong> Prevented incorrect query results in conversational flows. Without Kafka testing, this would've manifested as sporadic "context not found" errors under high load.
                             </p>
                         </div>
                     </section>

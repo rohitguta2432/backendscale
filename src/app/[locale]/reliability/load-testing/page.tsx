@@ -98,34 +98,34 @@ export default async function LoadTestingPage({ params }: Props) {
                             <div className="text-4xl">⚡</div>
                             <div>
                                 <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2">
-                                    Real Use Case: CommCheck 5K Events/Sec Validation
+                                    Real Use Case: Text2SQL 500 Concurrent Queries/Sec Validation
                                 </h2>
                                 <p className="text-lg text-neutral-700 dark:text-neutral-300">
-                                    How load testing prevented production outages before they happened
+                                    How load testing revealed hidden bottlenecks in the AI query pipeline
                                 </p>
                             </div>
                         </div>
                         <div className="space-y-4 text-neutral-700 dark:text-neutral-300">
                             <p>
-                                <strong>Challenge:</strong> The CommCheck Processor needed to handle 5,000 Kafka events per second with p95 latency under 30ms. Production traffic was unpredictable—OTA campaigns could cause sudden spikes.
+                                <strong>Challenge:</strong> The Text2SQL Query Engine needed to handle 500 concurrent natural language queries with p95 latency under 800ms. Business dashboards refresh on a schedule, causing predictable traffic spikes.
                             </p>
                             <p>
-                                <strong>Solution:</strong> Created k6 test scripts simulating real event payloads:
+                                <strong>Solution:</strong> Created k6 test scripts simulating diverse query patterns:
                             </p>
                             <div className="bg-neutral-900 p-4 rounded-lg my-4 font-mono text-sm text-green-400 overflow-x-auto">
                                 <div>export default function() {"{"}</div>
-                                <div>  http.post(API_URL, JSON.stringify(eventPayload));</div>
+                                <div>  http.post(API_URL, JSON.stringify({`{ query: "Show sales by region last quarter" }`}));</div>
                                 <div>{"}"}</div>
-                                <div className="text-neutral-500 mt-2">// Threshold: p95 {"<"} 30ms, error rate {"<"} 0.1%</div>
+                                <div className="text-neutral-500 mt-2">// Threshold: p95 {"<"} 800ms, error rate {"<"} 0.5%</div>
                             </div>
                             <p>
-                                <strong>Discovery:</strong> At 4,500 events/sec, p95 latency jumped from 24ms to <strong>180ms</strong>. The culprit? Valkey connection pool exhaustion.
+                                <strong>Discovery:</strong> At 350 concurrent users, p95 latency jumped from 620ms to <strong>3.2 seconds</strong>. The culprit? LLM provider rate limiting combined with database connection pool saturation.
                             </p>
                             <p>
-                                <strong>Fix:</strong> Increased connection pool size from 50 to 200 and enabled connection recycling. Re-tested at 6,000 events/sec—p95 stayed at 27ms.
+                                <strong>Fix:</strong> Implemented request queuing with exponential backoff for LLM calls and increased DB pool size from 25 to 100. Re-tested at 600 concurrent users—p95 stayed at 750ms.
                             </p>
                             <p>
-                                <strong>Impact:</strong> Prevented a production outage during a major OTA campaign. Load testing caught the issue <strong>before deployment</strong>.
+                                <strong>Impact:</strong> Prevented timeouts during peak dashboard refresh periods. Load testing caught the cascading failures <strong>before going live</strong>.
                             </p>
                         </div>
                     </section>

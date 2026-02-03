@@ -96,40 +96,40 @@ export default async function ObservabilityPage({ params }: Props) {
                             <div className="text-4xl">🚀</div>
                             <div>
                                 <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2">
-                                    Real Use Case: Cosmos Vista CommCheck Processor
+                                    Real Use Case: Text2SQL Query Engine
                                 </h2>
                                 <p className="text-lg text-neutral-700 dark:text-neutral-300">
-                                    How observability helped maintain 99.9% uptime for an event-driven system processing 5,000+ events/sec
+                                    How observability helped maintain 99.5% query accuracy for an AI-powered natural language to SQL system
                                 </p>
                             </div>
                         </div>
                         <div className="space-y-4 text-neutral-700 dark:text-neutral-300">
                             <p>
-                                <strong>Challenge:</strong> The CommCheck Processor needed to maintain sub-30ms p95 latency while processing Kafka events at high throughput. Without visibility into the event pipeline, debugging performance issues would require log-diving across multiple pods.
+                                <strong>Challenge:</strong> The Text2SQL Query Engine needed to maintain sub-500ms p95 latency while translating natural language queries to SQL with high accuracy. Without visibility into the LLM pipeline, debugging query failures would require parsing logs across the API, schema resolver, and LLM layers.
                             </p>
                             <p>
                                 <strong>Solution:</strong> Implemented Prometheus metrics for:
                             </p>
                             <div className="grid md:grid-cols-2 gap-4 my-4">
                                 <div className="p-4 bg-white/80 dark:bg-neutral-900/80 rounded-lg">
-                                    <div className="font-bold mb-2">📈 Kafka Consumer Metrics</div>
+                                    <div className="font-bold mb-2">🤖 LLM Pipeline Metrics</div>
                                     <ul className="text-sm space-y-1">
-                                        <li>• Consumer lag by partition</li>
-                                        <li>• Message processing rate</li>
-                                        <li>• Rebalance frequency</li>
+                                        <li>• Token usage per request</li>
+                                        <li>• LLM response latency (p50, p95, p99)</li>
+                                        <li>• Schema context cache hit rate</li>
                                     </ul>
                                 </div>
                                 <div className="p-4 bg-white/80 dark:bg-neutral-900/80 rounded-lg">
-                                    <div className="font-bold mb-2">⚡ Application Metrics</div>
+                                    <div className="font-bold mb-2">📊 Query Accuracy Metrics</div>
                                     <ul className="text-sm space-y-1">
-                                        <li>• DRM cache hit/miss ratio</li>
-                                        <li>• Event validation latency</li>
-                                        <li>• Error rates by event type</li>
+                                        <li>• SQL syntax validation rate</li>
+                                        <li>• Query execution success rate</li>
+                                        <li>• Fallback/retry frequency</li>
                                     </ul>
                                 </div>
                             </div>
                             <p>
-                                <strong>Impact:</strong> Reduced mean time to detection (MTTD) from hours to <strong>minutes</strong>. When cache performance degraded, alerts fired before users noticed, allowing proactive intervention.
+                                <strong>Impact:</strong> Reduced mean time to detection (MTTD) from hours to <strong>minutes</strong>. When LLM latency spiked due to context overflow, alerts fired before users reported timeouts, allowing proactive token optimization.
                             </p>
                         </div>
                     </section>

@@ -64,7 +64,7 @@ export default async function APITestingPage({ params }: Props) {
                                 <div className="flex-1">
                                     <div className="text-white font-bold mb-2">Load Collection & Environment</div>
                                     <div className="bg-neutral-800 p-3 rounded-lg font-mono text-sm text-green-400">
-                                        newman run drm-api-collection.json -e production.env.json
+                                        newman run text2sql-api-collection.json -e production.env.json
                                     </div>
                                 </div>
                             </div>
@@ -75,10 +75,10 @@ export default async function APITestingPage({ params }: Props) {
                                 <div className="flex-1">
                                     <div className="text-white font-bold mb-2">Execute Test Suite</div>
                                     <div className="bg-neutral-800 p-3 rounded-lg font-mono text-sm text-neutral-300">
-                                        ✓ GET /drm/rollout/:id [200 OK, 245ms]
+                                        ✓ POST /api/query [200 OK, 645ms]
                                         <br />
-                                        ✓ POST /drm/rollout [201 Created, 187ms]
-                                        <br />✓ PUT /drm/rollout/:id [200 OK, 156ms]
+                                        ✓ GET /api/schema/:tableId [200 OK, 87ms]
+                                        <br />✓ POST /api/validate-sql [200 OK, 156ms]
                                     </div>
                                 </div>
                             </div>
@@ -139,37 +139,37 @@ export default async function APITestingPage({ params }: Props) {
                             <div className="text-4xl">🔗</div>
                             <div>
                                 <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2">
-                                    Real Use Case: DRM Rollout Manager API Validation
+                                    Real Use Case: Text2SQL Query API Validation
                                 </h2>
                                 <p className="text-lg text-neutral-700 dark:text-neutral-300">
-                                    How contract testing caught a breaking change before production deployment
+                                    How contract testing caught a breaking response format change before production deployment
                                 </p>
                             </div>
                         </div>
                         <div className="space-y-4 text-neutral-700 dark:text-neutral-300">
                             <p>
-                                <strong>Challenge:</strong> The DRM Rollout Manager API had multiple consumers (frontend dashboards, backend services, external partners). A schema change could break integrations across the board.
+                                <strong>Challenge:</strong> The Text2SQL Query API had multiple consumers (BI dashboards, Slack integrations, internal analytics tools). A response format change could break all downstream integrations.
                             </p>
                             <p>
                                 <strong>Solution:</strong> Created a comprehensive Postman collection covering all endpoints:
                             </p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                <li>CRUD operations for DRM rollout objects</li>
-                                <li>Query filters and pagination</li>
-                                <li>Error handling for invalid inputs</li>
-                                <li>Authentication and authorization checks</li>
+                                <li>Natural language query to SQL translation</li>
+                                <li>Schema discovery and table metadata</li>
+                                <li>SQL validation and execution</li>
+                                <li>Error handling for ambiguous queries</li>
                             </ul>
                             <p>
-                                <strong>Discovery:</strong> During a refactor, a developer renamed the <code className="bg-neutral-200 dark:bg-neutral-800 px-1.5 py-0.5 rounded">rolloutStatus</code> field to{" "}
-                                <code className="bg-neutral-200 dark:bg-neutral-800 px-1.5 py-0.5 rounded">status</code>. Newman tests failed in CI:
+                                <strong>Discovery:</strong> During an optimization, a developer changed the <code className="bg-neutral-200 dark:bg-neutral-800 px-1.5 py-0.5 rounded">generatedSQL</code> field to{" "}
+                                <code className="bg-neutral-200 dark:bg-neutral-800 px-1.5 py-0.5 rounded">sql</code> and renamed <code className="bg-neutral-200 dark:bg-neutral-800 px-1.5 py-0.5 rounded">queryConfidence</code> to <code className="bg-neutral-200 dark:bg-neutral-800 px-1.5 py-0.5 rounded">confidence</code>. Newman tests failed in CI:
                             </p>
                             <div className="bg-neutral-900 p-4 rounded-lg my-4 font-mono text-sm text-red-400">
-                                AssertionError: expected undefined to exist
+                                AssertionError: expected undefined to exist (generatedSQL)
                                 <br />
-                                at Object.eval (test-script.js:12)
+                                at Object.eval (test-script.js:15)
                             </div>
                             <p>
-                                <strong>Impact:</strong> Caught the breaking change <strong>before merging</strong>. The team restored the field name and added a deprecation notice for future migration.
+                                <strong>Impact:</strong> Caught the breaking change <strong>before merging</strong>. The team added backward-compatible aliases and versioned the API response format.
                             </p>
                         </div>
                     </section>
