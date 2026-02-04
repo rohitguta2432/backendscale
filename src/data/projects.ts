@@ -8,6 +8,7 @@ export interface Project {
     repoUrl?: string;
     aiApproach?: string;
     image?: string;
+    images?: { src: string; caption: string }[];
     details: {
         whyItMatters: string;
         approach: string[];
@@ -28,6 +29,15 @@ export const projects: Project[] = [
         status: "active",
         repoUrl: "https://github.com/rohitguta2432/MicroItinerary",
         aiApproach: "GPT-4 for destination recommendations based on season, budget, and group preferences. AI-generated cost breakdowns for hotels, food, transport, and activities.",
+        image: "/images/projects/microitinerary-1.png",
+        images: [
+            { src: "/images/projects/microitinerary-1.png", caption: "Dashboard - Annual Trip Calendar" },
+            { src: "/images/projects/microitinerary-2.png", caption: "AI Trip Planning - Where Next?" },
+            { src: "/images/projects/microitinerary-3.png", caption: "Expense Tracking & Splitting" },
+            { src: "/images/projects/microitinerary-4.png", caption: "AI Recommended Destinations" },
+            { src: "/images/projects/microitinerary-5.png", caption: "Finalize Trip Details" },
+            { src: "/images/projects/microitinerary-6.png", caption: "Journey Scheduled Confirmation" },
+        ],
         details: {
             whyItMatters: "Trip planning is tedious and error-prone. Most apps just list options — they don't understand your constraints. This uses AI to actually solve the planning problem.",
             approach: [

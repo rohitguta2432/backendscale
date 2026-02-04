@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StatusBadge from "@/components/StatusBadge";
+import ImageCarousel from "@/components/ImageCarousel";
 import { projects } from "@/data/projects";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
 
@@ -79,7 +80,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             )}
                         </header>
 
-                        {project.image && (
+                        {/* Image Carousel for multiple images */}
+                        {project.images && project.images.length > 0 ? (
+                            <ImageCarousel
+                                images={project.images}
+                                projectName={project.name}
+                            />
+                        ) : project.image && (
                             <div className="project-hero-image">
                                 <div className="project-image-wrapper">
                                     <Image
