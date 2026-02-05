@@ -10,7 +10,7 @@ export interface Project {
     image?: string;
     images?: { src: string; caption: string }[];
     details: {
-        whyItMatters: string;
+        businessImpact: string;
         approach: string[];
         decisions: string[];
         currentStatus: string;
@@ -39,7 +39,7 @@ export const projects: Project[] = [
             { src: "/images/projects/microitinerary-6.png", caption: "Journey Scheduled Confirmation" },
         ],
         details: {
-            whyItMatters: "Trip planning is tedious and error-prone. Most apps just list options — they don't understand your constraints. This uses AI to actually solve the planning problem.",
+            businessImpact: "Trip planning is tedious and error-prone. Most apps just list options — they don't understand your constraints. This uses AI to actually solve the planning problem.",
             approach: [
                 "Spring Boot 3.2.2 + Java 21 backend with Flyway migrations",
                 "React 18 + Vite PWA frontend with offline support via IndexedDB",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
         aiApproach: "RAG-based SQL generation — schema knowledge stored as embeddings in pgvector, retrieved as context for LLM. Strict read-only enforcement (only SELECT/WITH).",
         image: "/images/projects/stellarmind.png",
         details: {
-            whyItMatters: "Data democratization requires non-technical users to access insights without engineering bottlenecks. Raw LLM-to-SQL is unreliable. RAG with schema context fixes this.",
+            businessImpact: "Data democratization requires non-technical users to access insights without engineering bottlenecks. Raw LLM-to-SQL is unreliable. RAG with schema context fixes this.",
             approach: [
                 "Spring Boot MCP server with Tool interface for executeDataQuery",
                 "pgvector for storing schema knowledge chunks and embeddings",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
         status: "active",
         repoUrl: "https://github.com/rohitguta2432/backendscale",
         details: {
-            whyItMatters: "Hiring decisions are made based on visible artifacts. A traditional portfolio shows what you built, but not how you think. This site exposes the engineering process itself.",
+            businessImpact: "Hiring decisions are made based on visible artifacts. A traditional portfolio shows what you built, but not how you think. This site exposes the engineering process itself.",
             approach: [
                 "Next.js 16 with App Router for optimal performance",
                 "Minimal design language inspired by documentation sites",

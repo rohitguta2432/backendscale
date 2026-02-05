@@ -163,7 +163,7 @@ export const serviceSchema = {
                 '@type': 'Offer',
                 itemOffered: {
                     '@type': 'Service',
-                    name: 'Agentic AI Development',
+                    name: 'AI Agent Development',
                     description: 'Build autonomous AI agents that can reason, plan, and execute complex tasks.',
                 },
             },
@@ -171,8 +171,16 @@ export const serviceSchema = {
                 '@type': 'Offer',
                 itemOffered: {
                     '@type': 'Service',
-                    name: 'Custom Text-to-SQL Builder',
+                    name: 'Text-to-SQL Systems',
                     description: 'Natural language to SQL query systems with high accuracy and schema-awareness.',
+                },
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Enterprise Java Architecture',
+                    description: 'Scalable, distributed backend systems using Spring Boot and Java for high-performance enterprise applications.',
                 },
             },
             {

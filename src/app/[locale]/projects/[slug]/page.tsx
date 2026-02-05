@@ -111,8 +111,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                         </div>
 
                         <div className="project-detail-section">
-                            <h2>Why It Matters</h2>
-                            <p>{project.details.whyItMatters}</p>
+                            <h2>Business Impact</h2>
+                            <p>{project.details.businessImpact}</p>
                         </div>
 
                         <div className="project-detail-section">

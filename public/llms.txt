@@ -1,0 +1,17 @@
+User-agent: *
+Disallow:
+
+# AI Discovery
+Sitemap: https://rohitraj.tech/sitemap.xml
+Description: Portfolio of Rohit Raj, Freelance Founding Engineer & AI Systems Architect.
+
+# Highlights
+- Agentic AI Development
+- Custom Text-to-SQL Systems
+- Enterprise Java Architecture (Spring Boot 3.x)
+- RAG Systems with pgvector
+
+# Core Projects
+- MicroItinerary (AI Travel Planner)
+- StellarMIND (Text-to-SQL MCP Server)
+- rohitraj.tech (Personal Knowledge Graph)
