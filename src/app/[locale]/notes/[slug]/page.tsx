@@ -40,6 +40,159 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
 }
 
+// Simple Markdown Renderer
+function renderMarkdown(content: string) {
+    const segments = [];
+    let lastIndex = 0;
+    // Match code blocks: ```lang ... ```
+    const codeRegex = /```(\w+)?\n([\s\S]*?)```/g;
+    let match;
+
+    while ((match = codeRegex.exec(content)) !== null) {
+        // Add text before code
+        if (match.index > lastIndex) {
+            segments.push({ type: 'text', content: content.slice(lastIndex, match.index) });
+        }
+        // Add code block
+        segments.push({
+            type: 'code',
+            lang: match[1] || 'text',
+            content: match[2].trim() // Trim extra newlines
+        });
+        lastIndex = codeRegex.lastIndex;
+    }
+    // Add remaining text
+    if (lastIndex < content.length) {
+        segments.push({ type: 'text', content: content.slice(lastIndex) });
+    }
+
+    return segments.map((segment, i) => {
+        if (segment.type === 'code') {
+            return (
+                <div key={i} style={{
+                    margin: '1.5rem 0',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    backgroundColor: '#1e1e1e', // Dark theme for code
+                    border: '1px solid #333',
+                }}>
+                    <div style={{
+                        padding: '0.5rem 1rem',
+                        backgroundColor: '#252526',
+                        borderBottom: '1px solid #333',
+                        color: '#9cdcfe',
+                        fontSize: '0.8rem',
+                        fontFamily: 'var(--font-mono)',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
+                    }}>
+                        <span>{segment.lang}</span>
+                    </div>
+                    <pre style={{
+                        margin: 0,
+                        padding: '1rem',
+                        overflowX: 'auto',
+                        color: '#d4d4d4',
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.9rem',
+                        lineHeight: 1.5,
+                    }}>
+                        <code>{segment.content}</code>
+                    </pre>
+                </div>
+            );
+        } else {
+            // Process text formatting (bold, paragraphs, lists)
+            const textParts = segment.content.split('\n\n'); // Split paragraphs
+            return (
+                <div key={i}>
+                    {textParts.map((part, j) => {
+                        if (!part.trim()) return null;
+
+                        // Check for lists
+                        if (part.trim().startsWith('- ') || part.trim().match(/^\d+\. /)) {
+                            const listItems = part.trim().split('\n').filter(line => line.trim());
+                            const isOrdered = listItems[0].match(/^\d+\. /);
+                            const ListTag = isOrdered ? 'ol' : 'ul';
+
+                            return (
+                                <ListTag key={j} style={{
+                                    paddingLeft: '1.5rem',
+                                    marginBottom: '1.5rem',
+                                    color: 'var(--text-secondary)'
+                                }}>
+                                    {listItems.map((item, k) => {
+                                        const cleanItem = item.replace(/^(\- |\d+\. )/, '');
+                                        // Simple bold parser for list items
+                                        const parts = cleanItem.split(/(\*\*.*?\*\*)/g);
+                                        return (
+                                            <li key={k} style={{ marginBottom: '0.5rem' }}>
+                                                {parts.map((p, l) => {
+                                                    if (p.startsWith('**') && p.endsWith('**')) {
+                                                        return <strong key={l} style={{ color: 'var(--text-primary)' }}>{p.slice(2, -2)}</strong>;
+                                                    }
+                                                    // Parse code snippets inside list items
+                                                    if (p.includes('`')) {
+                                                        const codeParts = p.split(/(`.*?`)/g);
+                                                        return codeParts.map((cp, m) => {
+                                                            if (cp.startsWith('`') && cp.endsWith('`')) {
+                                                                return <code key={`${l}-${m}`} style={{
+                                                                    backgroundColor: 'var(--bg-secondary)',
+                                                                    padding: '0.1rem 0.3rem',
+                                                                    borderRadius: '4px',
+                                                                    fontSize: '0.9em',
+                                                                    fontFamily: 'var(--font-mono)'
+                                                                }}>{cp.slice(1, -1)}</code>;
+                                                            }
+                                                            return cp;
+                                                        });
+                                                    }
+                                                    return p;
+                                                })}
+                                            </li>
+                                        );
+                                    })}
+                                </ListTag>
+                            );
+                        }
+
+                        // Paragraph
+                        // Render bold and inline code in paragraph
+                        const parts = part.split(/(\*\*.*?\*\*|`.*?`)/g);
+
+                        return (
+                            <p key={j} style={{
+                                marginBottom: '1.5rem',
+                                lineHeight: 1.8,
+                                color: 'var(--text-secondary)',
+                                fontSize: '1.05rem'
+                            }}>
+                                {parts.map((p, k) => {
+                                    if (p.startsWith('**') && p.endsWith('**')) {
+                                        return <strong key={k} style={{ color: 'var(--text-primary)' }}>{p.slice(2, -2)}</strong>;
+                                    }
+                                    if (p.startsWith('`') && p.endsWith('`')) {
+                                        return <code key={k} style={{
+                                            backgroundColor: 'var(--bg-secondary)',
+                                            padding: '0.1rem 0.3rem',
+                                            borderRadius: '4px',
+                                            fontSize: '0.9em',
+                                            fontFamily: 'var(--font-mono)',
+                                            color: 'var(--text-primary)'
+                                        }}>{p.slice(1, -1)}</code>;
+                                    }
+                                    return p;
+                                })}
+                            </p>
+                        );
+                    })}
+                </div>
+            );
+        }
+    });
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { locale, slug } = await params;
 
@@ -149,9 +302,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                                 color: 'var(--text-secondary)',
                                 lineHeight: 1.8,
                                 fontSize: '1.05rem',
-                                whiteSpace: 'pre-wrap',
                             }}>
-                                {section.content}
+                                {renderMarkdown(section.content)}
                             </div>
                         </section>
                     ))}
