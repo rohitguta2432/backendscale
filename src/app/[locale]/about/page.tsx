@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { createPageMetadata } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -12,10 +13,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     if (!isValidLocale(locale)) return {};
     const dict = await getDictionary(locale);
-    return {
-        title: dict.meta.about.title,
-        description: dict.meta.about.description,
-    };
+    return createPageMetadata(
+        dict.meta.about.title,
+        dict.meta.about.description,
+        '/about',
+        locale
+    );
 }
 
 export default async function AboutPage({ params }: Props) {

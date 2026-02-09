@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getDictionary, isValidLocale, locales, isRTL, type Locale } from "@/lib/i18n";
+import { generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -84,6 +85,16 @@ export default async function LocaleLayout({
                 <link rel="alternate" hrefLang="de" href="https://rohitraj.tech/de" />
                 <link rel="alternate" hrefLang="ar" href="https://rohitraj.tech/ar" />
                 <link rel="alternate" hrefLang="x-default" href="https://rohitraj.tech/en" />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            generateBreadcrumbSchema([
+                                { name: 'Home', url: `${SITE_CONFIG.url}/${locale}` },
+                            ])
+                        ),
+                    }}
+                />
             </head>
             <div lang={locale} dir={direction} className={direction === "rtl" ? "rtl" : ""}>
                 <a href="#main" className="skip-link">

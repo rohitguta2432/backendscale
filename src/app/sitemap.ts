@@ -14,6 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/projects",
         "/repos",
         "/notes",
+        "/reliability",
+        "/reliability/api-testing",
+        "/reliability/kafka-testing",
+        "/reliability/load-testing",
+        "/reliability/observability",
     ];
 
     // Dynamic project routes from data
@@ -48,6 +53,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
             } else if (route === "/about" || route === "/contact") {
                 priority = 0.8;
                 changeFrequency = "monthly";
+            } else if (route.startsWith("/reliability")) {
+                priority = 0.8;
+                changeFrequency = "weekly";
             }
 
             sitemap.push({

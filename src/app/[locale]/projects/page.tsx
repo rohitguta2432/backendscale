@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { createPageMetadata } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -14,10 +15,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     if (!isValidLocale(locale)) return {};
     const dict = await getDictionary(locale);
-    return {
-        title: dict.meta.projects.title,
-        description: dict.meta.projects.description,
-    };
+    return createPageMetadata(
+        dict.meta.projects.title,
+        dict.meta.projects.description,
+        '/projects',
+        locale
+    );
 }
 
 export default async function ProjectsPage({ params }: Props) {

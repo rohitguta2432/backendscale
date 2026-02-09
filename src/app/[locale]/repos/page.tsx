@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { repos } from "@/data/projects";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { createPageMetadata } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -13,10 +14,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     if (!isValidLocale(locale)) return {};
     const dict = await getDictionary(locale);
-    return {
-        title: dict.meta.repos.title,
-        description: dict.meta.repos.description,
-    };
+    return createPageMetadata(
+        dict.meta.repos.title,
+        dict.meta.repos.description,
+        '/repos',
+        locale
+    );
 }
 
 export default async function ReposPage({ params }: Props) {

@@ -7,6 +7,7 @@ import StatusBadge from "@/components/StatusBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import { projects } from "@/data/projects";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
+import { createPageMetadata, generateSoftwareApplicationSchema } from "@/lib/seo-config";
 
 interface ProjectPageProps {
     params: Promise<{ locale: string; slug: string }>;
@@ -30,10 +31,12 @@ export async function generateMetadata({ params }: ProjectPageProps) {
         return { title: "Project Not Found | Rohit Raj" };
     }
 
-    return {
-        title: `${project.name} | Rohit Raj`,
-        description: project.problem,
-    };
+    return createPageMetadata(
+        `${project.name} | Rohit Raj`,
+        project.problem,
+        `/projects/${slug}`,
+        locale
+    );
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
@@ -48,6 +51,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateSoftwareApplicationSchema(project)),
+                }}
+            />
             <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <section>
@@ -153,6 +162,33 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                 {project.details.improvements.map((item, i) => (
                                     <li key={i}>{item}</li>
                                 ))}
+                            </ul>
+                        </div>
+                        <div className="project-detail-section">
+                            <h2>Explore More</h2>
+                            <ul>
+                                {projects
+                                    .filter((p) => p.slug !== project.slug)
+                                    .map((p) => (
+                                        <li key={p.slug}>
+                                            <Link href={`/${locale}/projects/${p.slug}`}>
+                                                {p.name}
+                                            </Link>{" "}
+                                            — {p.problem.split('.')[0]}.
+                                        </li>
+                                    ))}
+                                <li>
+                                    <Link href={`/${locale}/reliability`}>
+                                        Reliability & Production Readiness
+                                    </Link>{" "}
+                                    — Load testing, observability, and API contracts.
+                                </li>
+                                <li>
+                                    <Link href={`/${locale}/repos`}>
+                                        Open Source Repos
+                                    </Link>{" "}
+                                    — Browse the source code behind these projects.
+                                </li>
                             </ul>
                         </div>
                     </div>

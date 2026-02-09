@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { createPageMetadata, contactPointSchema } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -12,10 +13,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     if (!isValidLocale(locale)) return {};
     const dict = await getDictionary(locale);
-    return {
-        title: dict.meta.contact.title,
-        description: dict.meta.contact.description,
-    };
+    return createPageMetadata(
+        dict.meta.contact.title,
+        dict.meta.contact.description,
+        '/contact',
+        locale
+    );
 }
 
 export default async function ContactPage({ params }: Props) {
@@ -25,6 +28,12 @@ export default async function ContactPage({ params }: Props) {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(contactPointSchema),
+                }}
+            />
             <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <div className="page-header">

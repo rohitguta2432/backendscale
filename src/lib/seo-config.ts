@@ -237,27 +237,109 @@ export function generateAllSchemas() {
     return [personSchema, serviceSchema, professionalServiceSchema];
 }
 
-// Helper to create page-specific metadata
+// BreadcrumbList JSON-LD schema generator
+export function generateBreadcrumbSchema(
+    items: { name: string; url: string }[]
+) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: items.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            item: item.url,
+        })),
+    };
+}
+
+// ContactPoint JSON-LD schema
+export const contactPointSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Rohit Raj',
+    url: SITE_CONFIG.url,
+    contactPoint: [
+        {
+            '@type': 'ContactPoint',
+            contactType: 'customer service',
+            email: SITE_CONFIG.author.email,
+            availableLanguage: ['English', 'Hindi'],
+        },
+    ],
+    sameAs: [
+        `https://github.com/${SITE_CONFIG.author.github}`,
+        `https://linkedin.com/in/${SITE_CONFIG.author.linkedin}`,
+    ],
+};
+
+// SoftwareApplication JSON-LD schema generator for project detail pages
+export function generateSoftwareApplicationSchema(project: {
+    name: string;
+    problem: string;
+    solves: string;
+    techStack: string[];
+    slug: string;
+    repoUrl?: string;
+    status: string;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: project.name,
+        description: project.solves,
+        applicationCategory: 'DeveloperApplication',
+        operatingSystem: 'Web',
+        url: `${SITE_CONFIG.url}/en/projects/${project.slug}`,
+        ...(project.repoUrl && {
+            codeRepository: project.repoUrl,
+            isAccessibleForFree: true,
+        }),
+        author: {
+            '@type': 'Person',
+            name: SITE_CONFIG.author.name,
+            url: SITE_CONFIG.url,
+        },
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+        },
+        keywords: project.techStack.join(', '),
+    };
+}
+
+// Supported locales for alternates generation
+export const SUPPORTED_LOCALES = ['en', 'hi', 'fr', 'de', 'ar'] as const;
+
+// Helper to create page-specific metadata with canonical URLs and locale alternates
 export function createPageMetadata(
     title: string,
     description: string,
-    path: string = ''
+    path: string = '',
+    locale: string = 'en'
 ): Metadata {
-    const url = `${SITE_CONFIG.url}${path}`;
+    // path should be the route without locale prefix, e.g. '/about' or '/projects'
+    const canonical = `${SITE_CONFIG.url}/${locale}${path}`;
+    const languages: Record<string, string> = {};
+    for (const loc of SUPPORTED_LOCALES) {
+        languages[loc] = `${SITE_CONFIG.url}/${loc}${path}`;
+    }
     return {
         title,
         description,
         openGraph: {
             title,
             description,
-            url,
+            url: canonical,
         },
         twitter: {
             title,
             description,
         },
         alternates: {
-            canonical: url,
+            canonical,
+            languages,
         },
     };
 }

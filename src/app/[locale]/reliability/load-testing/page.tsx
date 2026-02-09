@@ -2,8 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import K6Results from "@/components/K6Results";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { createPageMetadata } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
     return [{ locale: "en" }, { locale: "hi" }, { locale: "fr" }, { locale: "de" }, { locale: "ar" }];
@@ -12,6 +14,17 @@ export function generateStaticParams() {
 type Props = {
     params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    if (!isValidLocale(locale)) return {};
+    return createPageMetadata(
+        'Performance Validation with k6 Load Testing | Rohit Raj',
+        'Validate system performance under high throughput. Test capacity limits, identify bottlenecks, and ensure your infrastructure can handle production load.',
+        '/reliability/load-testing',
+        locale
+    );
+}
 
 export default async function LoadTestingPage({ params }: Props) {
     const { locale } = await params;

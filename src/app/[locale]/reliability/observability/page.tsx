@@ -2,8 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PrometheusMetrics from "@/components/PrometheusMetrics";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { createPageMetadata } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
     return [{ locale: "en" }, { locale: "hi" }, { locale: "fr" }, { locale: "de" }, { locale: "ar" }];
@@ -12,6 +14,17 @@ export function generateStaticParams() {
 type Props = {
     params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    if (!isValidLocale(locale)) return {};
+    return createPageMetadata(
+        'Production-Grade Observability with Prometheus & Grafana | Rohit Raj',
+        'Real-time metrics, dashboards, and SLO visibility for distributed systems. Monitor what matters, respond faster, and maintain reliability at scale.',
+        '/reliability/observability',
+        locale
+    );
+}
 
 export default async function ObservabilityPage({ params }: Props) {
     const { locale } = await params;

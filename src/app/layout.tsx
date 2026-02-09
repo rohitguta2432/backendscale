@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${inter.variable} ${jetbrainsMono.variable} ${notoArabic.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${notoArabic.variable}`}>
       <head>
         {/* JSON-LD Structured Data for SEO */}
         <JsonLdSchema />

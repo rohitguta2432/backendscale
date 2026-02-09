@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { createPageMetadata } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
     return [{ locale: "en" }, { locale: "hi" }, { locale: "fr" }, { locale: "de" }, { locale: "ar" }];
@@ -11,6 +13,17 @@ export function generateStaticParams() {
 type Props = {
     params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    if (!isValidLocale(locale)) return {};
+    return createPageMetadata(
+        'Deterministic Kafka Consumer Testing | Rohit Raj',
+        'Test event-driven systems with confidence. Simulate message replay, validate partition ordering, and handle failure scenarios without touching production Kafka clusters.',
+        '/reliability/kafka-testing',
+        locale
+    );
+}
 
 export default async function KafkaTestingPage({ params }: Props) {
     const { locale } = await params;
