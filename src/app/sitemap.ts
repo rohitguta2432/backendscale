@@ -1,5 +1,6 @@
 import { locales } from "@/lib/i18n";
 import { projects } from "@/data/projects";
+import { blogPosts } from "@/data/blog-posts";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -24,8 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Dynamic project routes from data
     const projectRoutes = projects.map((project) => `/projects/${project.slug}`);
 
+    // Dynamic blog post routes
+    const blogRoutes = blogPosts.map((post) => `/notes/${post.slug}`);
+
     // Combine all routes
-    const allRoutes = [...staticRoutes, ...projectRoutes];
+    const allRoutes = [...staticRoutes, ...projectRoutes, ...blogRoutes];
 
     const sitemap: MetadataRoute.Sitemap = [];
 
@@ -55,6 +59,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency = "monthly";
             } else if (route.startsWith("/reliability")) {
                 priority = 0.8;
+                changeFrequency = "weekly";
+            } else if (route.startsWith("/notes/")) {
+                priority = 0.85;
                 changeFrequency = "weekly";
             }
 

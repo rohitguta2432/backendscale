@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { repositories, contributions, projectNotes, filterCategories } from "@/data/github";
+import { blogPosts } from "@/data/blog-posts";
 import type { Locale, CommonDictionary, PagesDictionary } from "@/lib/i18n";
 
 type FilterType = 'all' | 'open-source' | 'ai-systems' | 'backend-infrastructure' | 'experiments';
@@ -303,6 +304,72 @@ export default function NotesPageClient({ locale, commonDict, pagesDict }: Notes
                         {pagesDict.notes.description}
                     </p>
                 </header>
+
+                {/* Blog Articles */}
+                {blogPosts.length > 0 && (
+                    <section style={{ marginBottom: '3rem' }}>
+                        <h2 style={{
+                            fontSize: '0.85rem',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.1em',
+                            color: 'var(--text-muted)',
+                            marginBottom: '1.5rem'
+                        }}>
+                            Blog Articles
+                        </h2>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                            {blogPosts.map((post) => (
+                                <Link
+                                    key={post.slug}
+                                    href={`/${locale}/notes/${post.slug}`}
+                                    style={{
+                                        textDecoration: 'none',
+                                        display: 'block',
+                                        padding: '1.25rem',
+                                        border: '1px solid var(--border)',
+                                        backgroundColor: 'var(--card-bg)',
+                                        transition: 'border-color 0.2s',
+                                    }}
+                                >
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
+                                        <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                                            {post.title}
+                                        </h3>
+                                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', marginLeft: '1rem' }}>
+                                            {post.readingTime}
+                                        </span>
+                                    </div>
+                                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                                        {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                                    </p>
+                                    <p style={{
+                                        margin: 0,
+                                        fontSize: '0.95rem',
+                                        color: 'var(--text-secondary)',
+                                        lineHeight: 1.6,
+                                        marginBottom: '0.75rem'
+                                    }}>
+                                        {post.excerpt}
+                                    </p>
+                                    <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                                        {post.keywords.slice(0, 3).map((kw) => (
+                                            <span key={kw} style={{
+                                                fontSize: '0.7rem',
+                                                padding: '0.1rem 0.5rem',
+                                                border: '1px solid var(--border)',
+                                                borderRadius: '2px',
+                                                color: 'var(--text-muted)',
+                                                fontFamily: 'var(--font-mono)'
+                                            }}>
+                                                {kw}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 {/* Filters */}
                 <nav style={{

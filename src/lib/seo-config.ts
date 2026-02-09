@@ -343,3 +343,34 @@ export function createPageMetadata(
         },
     };
 }
+
+// BlogPosting JSON-LD schema for individual blog posts
+export function generateBlogPostingSchema(post: {
+    title: string;
+    excerpt: string;
+    date: string;
+    slug: string;
+    keywords: string[];
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.excerpt,
+        author: {
+            '@type': 'Person',
+            name: SITE_CONFIG.name,
+            url: SITE_CONFIG.url,
+        },
+        publisher: {
+            '@type': 'Person',
+            name: SITE_CONFIG.name,
+            url: SITE_CONFIG.url,
+        },
+        datePublished: post.date,
+        dateModified: post.date,
+        mainEntityOfPage: `${SITE_CONFIG.url}/en/notes/${post.slug}`,
+        keywords: post.keywords,
+        inLanguage: 'en',
+    };
+}
