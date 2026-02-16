@@ -33,13 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const sitemap: MetadataRoute.Sitemap = [];
 
-    // Add root URL (for Google)
-    sitemap.push({
-        url: baseUrl,
-        lastModified: now,
-        changeFrequency: "weekly",
-        priority: 1.0,
-    });
+
 
     // Add all localized routes
     for (const locale of locales) {
