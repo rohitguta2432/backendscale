@@ -103,6 +103,49 @@ export const projects: Project[] = [
         }
     },
     {
+        slug: "myfinancial",
+        name: "MyFinancial — Personal Financial Advisor",
+        problem: "Financial planning in India is fragmented across banks, insurance, and tax documents. Most tools require sharing sensitive data with third parties.",
+        solves: "Privacy-first PWA that consolidates financial data locally via a 6-step wizard — Profile, Income, Assets, Liabilities, Insurance, Tax — with real-time advisory metrics like Financial Runway and Savings Rate.",
+        techStack: ["React 19", "Vite 7", "Tailwind CSS 4", "Zustand", "Dexie (IndexedDB)", "Spring Boot 3.x", "Java 21", "PostgreSQL"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/myFinance",
+        aiApproach: "Rule-based advisory engine for Indian financial instruments (PPF, EPF, NPS). Old vs. New Tax regime comparison. Coverage gap analysis for insurance. No cloud dependency — all computation runs locally.",
+        image: "/images/projects/myfinancial.png",
+        images: [
+            { src: "/images/projects/myfinancial-1.png", caption: "Landing Page — Fix Your Finances Early" },
+            { src: "/images/projects/myfinancial-2.png", caption: "Step 1 — Personal Profile & Demographics" },
+            { src: "/images/projects/myfinancial-3.png", caption: "Profile Filled — Employment & Residency" },
+            { src: "/images/projects/myfinancial-4.png", caption: "Risk Profile — Asset Allocation Result" },
+        ],
+        details: {
+            businessImpact: "Indians manage finances across 5-10 different platforms. No single tool consolidates bank accounts, insurance, tax, and investments — while keeping data private. MyFinancial solves this with zero cloud dependency.",
+            approach: [
+                "React 19 + Vite 7 PWA frontend with Tailwind CSS 4 glassmorphism design",
+                "Dexie (IndexedDB) for privacy-first local data storage — no sensitive data leaves the browser",
+                "Zustand for lightweight state management across the 6-step wizard",
+                "Spring Boot 3.x + Java 21 backend with PostgreSQL for optional cloud sync",
+                "Color-coded wizard steps with contextual financial health indicators"
+            ],
+            decisions: [
+                "LocalStorage/IndexedDB over cloud storage — privacy is a core value proposition",
+                "Rule-based engine over AI/ML — deterministic financial calculations are more trustworthy",
+                "India-specific instruments (PPF, EPF, NPS, Gold) over generic global templates",
+                "PWA over native app — broader reach, works offline, single codebase"
+            ],
+            currentStatus: "6-step wizard functional. Profile, Income, Assets, Liabilities, Insurance, and Tax screens complete. Wealth Dashboard with Net Worth scorecard and Financial Runway implemented.",
+            roadmap: [
+                "Add goal-based financial planning (retirement, education, home)",
+                "Implement mutual fund portfolio analysis",
+                "Add PDF report generation for financial health summary"
+            ],
+            improvements: [
+                "Could add optional encrypted cloud backup for cross-device sync",
+                "Consider adding AI-powered investment recommendations"
+            ]
+        }
+    },
+    {
         slug: "rohitraj-site",
         name: "rohitraj.tech",
         problem: "Engineering work is often invisible. Portfolios show polished results but not the thinking behind them.",
@@ -150,6 +193,12 @@ export const repos = [
         description: "StellarMIND — Chat-to-SQL with pgvector RAG and MCP protocol",
         modules: ["stellarmind-server", "stellarmind-client", "postman"],
         url: "https://github.com/rohitguta2432/spring-ai-mcp-server"
+    },
+    {
+        name: "myFinance",
+        description: "MyFinancial — Privacy-first financial planning PWA for India",
+        modules: ["src", "backend", "specs"],
+        url: "https://github.com/rohitguta2432/myFinance"
     },
     {
         name: "backendscale",

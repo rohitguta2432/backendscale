@@ -178,6 +178,16 @@ export default function AIProjects({ dict }: AIProjectsProps) {
             repoUrl: "https://github.com/rohitguta2432/spring-ai-mcp-server",
             status: "development" as const,
             image: "/images/projects/stellarmind.png"
+        },
+        {
+            title: "MyFinancial — Personal Financial Advisor",
+            problem: "Financial planning in India is fragmented across banks, insurance, and tax documents. Most tools require sharing sensitive data with third parties.",
+            solution: "Privacy-first PWA that consolidates financial data locally via a 6-step wizard — Profile, Income, Assets, Liabilities, Insurance, Tax — with real-time advisory metrics like Financial Runway and Savings Rate.",
+            techStack: ["React 19", "Vite 7", "Tailwind CSS 4", "Zustand", "Dexie (IndexedDB)", "Spring Boot 3.x", "Java 21", "PostgreSQL"],
+            aiApproach: "Rule-based advisory engine for Indian financial instruments (PPF, EPF, NPS). Old vs. New Tax regime comparison. Coverage gap analysis for insurance. No cloud dependency — all computation runs locally.",
+            repoUrl: "https://github.com/rohitguta2432/myFinance",
+            status: "development" as const,
+            image: "/images/projects/myfinancial.png"
         }
     ];
 
