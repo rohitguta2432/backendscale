@@ -21,6 +21,50 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        slug: "clinicai",
+        name: "ClinicAI — WhatsApp AI Clinic Assistant",
+        problem: "India has 12 lakh+ small clinics running on phone calls and paper diaries. Patients call multiple times to confirm, double bookings happen daily, and revenue leaks through manual invoicing.",
+        solves: "WhatsApp-first AI assistant that handles appointment booking, reminders, and patient management for small clinics — in Hindi and English. No app downloads needed.",
+        techStack: ["Spring Boot 3.5", "Java 21", "PostgreSQL 16", "Redis 7", "Twilio WhatsApp API", "Flyway", "Docker"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/clinicai",
+        aiApproach: "Rule-based Hinglish intent classifier (Sprint 0) with planned LLM upgrade. Understands appointment booking, cancellation, and status queries in mixed Hindi-English.",
+        image: "/images/projects/clinicai.png",
+        images: [
+            { src: "/images/projects/clinicai-1.png", caption: "WhatsApp Booking Flow — Hinglish Conversation" },
+        ],
+        details: {
+            businessImpact: "500M+ Indians use WhatsApp daily. A clinic bot eliminates phone-tag, prevents double bookings, and automates follow-ups — directly on the platform patients already use. Zero training required.",
+            approach: [
+                "Spring Boot 3.5 + Java 21 backend with Flyway migrations (9 migration scripts)",
+                "Twilio WhatsApp API for bi-directional messaging with Hindi templates",
+                "Rule-based intent classifier parsing Hinglish queries (booking, cancellation, status)",
+                "PostgreSQL 16 with JSONB for flexible clinic services and working hours",
+                "Redis 7 for session management and conversation state caching",
+                "Docker Compose for local development (PostgreSQL + Redis)"
+            ],
+            decisions: [
+                "WhatsApp over custom app — zero friction adoption for Tier 2/3 clinics",
+                "Twilio over Gupshup — better developer experience, official WhatsApp Business API",
+                "Rule-based NLP first, LLM later — ship fast, iterate with real user data",
+                "Hinglish support from day one — reflects actual patient communication patterns",
+                "JSONB for services/hours — clinics have wildly different schedules and offerings"
+            ],
+            currentStatus: "Sprint 0 complete — backend scaffold, database schema, WhatsApp webhook, appointment slot engine, demo clinic seeded. All APIs verified.",
+            roadmap: [
+                "LLM-powered intent classification replacing rule-based system",
+                "Patient registration and medical history tracking",
+                "GST-compliant invoice generation",
+                "Automated appointment reminders via WhatsApp",
+                "Multi-clinic support with clinic onboarding flow"
+            ],
+            improvements: [
+                "Add voice message transcription for patients who prefer speaking",
+                "Consider regional language support beyond Hindi (Marathi, Tamil, Telugu)"
+            ]
+        }
+    },
+    {
         slug: "microitinerary",
         name: "MicroItinerary — AI Travel Planner",
         problem: "Travel apps optimize for proximity and ratings. They don't consider human energy levels, group dynamics, or intelligent budget allocation.",
@@ -205,6 +249,12 @@ export const repos = [
         description: "This site (rohitraj.tech) — personal engineering directory",
         modules: ["src/app", "src/components", "src/data"],
         url: "https://github.com/rohitguta2432/backendscale"
+    },
+    {
+        name: "clinicai",
+        description: "ClinicAI — WhatsApp AI clinic assistant with Spring Boot + Twilio",
+        modules: ["backend", "docker-compose.yml"],
+        url: "https://github.com/rohitguta2432/clinicai"
     }
 ];
 
