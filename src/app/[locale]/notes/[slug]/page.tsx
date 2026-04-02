@@ -285,6 +285,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     </div>
                 </header>
 
+                {/* Cover Image */}
+                {post.coverImage && (
+                    <div style={{
+                        marginBottom: '2.5rem',
+                        borderRadius: '8px',
+                        overflow: 'hidden',
+                        border: '1px solid var(--border)',
+                    }}>
+                        <img
+                            src={post.coverImage.src}
+                            alt={post.coverImage.alt}
+                            style={{ width: '100%', height: 'auto', display: 'block' }}
+                        />
+                    </div>
+                )}
+
                 {/* Article Body */}
                 <article>
                     {post.sections.map((section, i) => (
