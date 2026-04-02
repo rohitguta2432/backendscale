@@ -35,42 +35,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 
 
-    // Add all localized routes
-    for (const locale of locales) {
-        for (const route of allRoutes) {
-            // Determine priority based on route type
-            let priority = 0.7;
-            let changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" = "monthly";
+    // Only include English URLs to maximize crawl budget on a new domain.
+    // Non-English pages were causing "Discovered – currently not indexed" (90 pages).
+    for (const route of allRoutes) {
+        let priority = 0.7;
+        let changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" = "monthly";
 
-            if (route === "") {
-                priority = 1.0;
-                changeFrequency = "weekly";
-            } else if (route === "/projects" || route.startsWith("/projects/")) {
-                priority = 0.9; // High priority for project pages (founder keywords)
-                changeFrequency = "weekly";
-            } else if (route === "/about" || route === "/contact") {
-                priority = 0.8;
-                changeFrequency = "monthly";
-            } else if (route.startsWith("/reliability")) {
-                priority = 0.8;
-                changeFrequency = "weekly";
-            } else if (route.startsWith("/notes/")) {
-                priority = 0.85;
-                changeFrequency = "weekly";
-            }
-
-            sitemap.push({
-                url: `${baseUrl}/${locale}${route}`,
-                lastModified: now,
-                changeFrequency,
-                priority,
-                alternates: {
-                    languages: Object.fromEntries(
-                        locales.map((loc) => [loc, `${baseUrl}/${loc}${route}`])
-                    ),
-                },
-            });
+        if (route === "") {
+            priority = 1.0;
+            changeFrequency = "weekly";
+        } else if (route === "/projects" || route.startsWith("/projects/")) {
+            priority = 0.9;
+            changeFrequency = "weekly";
+        } else if (route === "/about" || route === "/contact") {
+            priority = 0.8;
+            changeFrequency = "monthly";
+        } else if (route.startsWith("/reliability")) {
+            priority = 0.8;
+            changeFrequency = "weekly";
+        } else if (route.startsWith("/notes/")) {
+            priority = 0.85;
+            changeFrequency = "weekly";
         }
+
+        sitemap.push({
+            url: `${baseUrl}/en${route}`,
+            lastModified: now,
+            changeFrequency,
+            priority,
+            alternates: {
+                languages: Object.fromEntries(
+                    locales.map((loc) => [loc, `${baseUrl}/${loc}${route}`])
+                ),
+            },
+        });
     }
 
     return sitemap;
