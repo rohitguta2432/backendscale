@@ -702,7 +702,7 @@ O Son of the Wind, remover of all afflictions — along with Rama, Lakshmana, an
 5. **Improved focus and discipline** — Daily recitation builds spiritual discipline
 6. **Connection with Lord Rama** — Hanuman is the gateway to Rama's grace
 
-Carry the Hanuman Chalisa everywhere with **SanatanApp** — the complete text in Hindi and English with a beautiful verse-by-verse reader, audio playback, and bookmarks. Free on Android, no login required, works offline.`
+Carry the Hanuman Chalisa everywhere with **SanatanApp** — the complete text in Hindi and English with a beautiful verse-by-verse reader, audio playback, and bookmarks. [Download free on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app) — no login required, works offline.`
       }
     ]
   },
@@ -792,7 +792,9 @@ Dharmayana focuses on **accurate Panchang (Hindu calendar)** data. Need the exac
 
 **Choose SanatanApp** if you want **everything in one place** — Chalisa, Gita, Aartis, Ramayan audio, sadhana tracking — in a lightweight, privacy-first, offline-capable app.
 
-Most devotees end up downloading 3-4 apps. SanatanApp was built to end that. One app. All devotion. No compromises.`
+Most devotees end up downloading 3-4 apps. SanatanApp was built to end that. One app. All devotion. No compromises.
+
+[Download SanatanApp free on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app)`
       }
     ]
   },
@@ -909,7 +911,7 @@ Close with this powerful mantra for protection:
 
 That's 25 minutes out of 1,440 — less than 2% of your waking hours for spiritual growth.
 
-**SanatanApp** includes a built-in **daily sadhana tracker** with checkboxes for Morning Meditation, Gita Reading, and Evening Aarti — plus a streak counter for consecutive days. All the texts mentioned in this guide are available in Hindi and English, with audio playback and offline access. Free on Android.
+**SanatanApp** includes a built-in **daily sadhana tracker** with checkboxes for Morning Meditation, Gita Reading, and Evening Aarti — plus a streak counter for consecutive days. All the texts mentioned in this guide are available in Hindi and English, with audio playback and offline access. [Download free on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app).
 
 *Sadhana is not about becoming someone else. It's about remembering who you already are. Start today. Start small. But start.*`
       }

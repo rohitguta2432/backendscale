@@ -196,7 +196,7 @@ export const projects: Project[] = [
         solves: "All-in-one Android app to read and listen to Ramayan, Mahabharat, Hanuman Chalisa, Bhagavad Gita, and Aartis — in Hindi, English, Sanskrit, Tamil, and Telugu. No login, no backend, no ads during prayers.",
         techStack: ["React Native", "Expo SDK 52+", "expo-av", "expo-sqlite", "react-i18next", "React Navigation", "AdMob"],
         status: "active",
-        repoUrl: "https://github.com/rohitguta2432/SanatanApp",
+        repoUrl: "https://play.google.com/store/apps/details?id=com.sanatandevotional.app",
         aiApproach: "No AI — pure content-first architecture. Bundled JSON texts for offline access, streamed audio from public domain sources (Archive.org). SQLite for bookmarks, favorites, and streak tracking.",
         image: "/images/projects/sanatanapp.png",
         details: {
