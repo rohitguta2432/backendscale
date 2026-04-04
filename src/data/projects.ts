@@ -190,6 +190,49 @@ export const projects: Project[] = [
         }
     },
     {
+        slug: "sanatanapp",
+        name: "SanatanApp — Hindu Devotional App",
+        problem: "Devotional users in India juggle 5+ separate apps for Chalisa, Gita, Aarti, Ramayan, and Mahabharat. Most are ad-heavy, poorly designed, and lack multi-language support.",
+        solves: "All-in-one Android app to read and listen to Ramayan, Mahabharat, Hanuman Chalisa, Bhagavad Gita, and Aartis — in Hindi, English, Sanskrit, Tamil, and Telugu. No login, no backend, no ads during prayers.",
+        techStack: ["React Native", "Expo SDK 52+", "expo-av", "expo-sqlite", "react-i18next", "React Navigation", "AdMob"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/SanatanApp",
+        aiApproach: "No AI — pure content-first architecture. Bundled JSON texts for offline access, streamed audio from public domain sources (Archive.org). SQLite for bookmarks, favorites, and streak tracking.",
+        image: "/images/projects/sanatanapp.png",
+        details: {
+            businessImpact: "500M+ Hindus use smartphones daily for devotion. Existing apps are fragmented and ad-heavy. SanatanApp consolidates all devotional content into one premium, private, offline-capable experience.",
+            approach: [
+                "React Native + Expo SDK 52+ for cross-platform Android build",
+                "Bundled JSON content for Hanuman Chalisa (40 verses), Bhagavad Gita (18 chapters, 700 verses), and 5+ Aartis",
+                "expo-av for streaming audio from public domain sources (Ramcharitmanas katha, Mahabharat parvas)",
+                "expo-sqlite for local bookmarks, favorites, reading progress, and daily sadhana streak tracking",
+                "react-i18next for 5-language support (Hindi, English, Sanskrit, Tamil, Telugu)",
+                "Bottom-tab navigation with Home, Library, Player, and Settings screens"
+            ],
+            decisions: [
+                "No backend — all data on-device for privacy and offline capability",
+                "JSON-bundled texts over API fetching — keeps APK small (~15MB) and works without internet",
+                "Audio streaming over bundling — keeps APK size down, leverages free public domain recordings",
+                "AdMob banners only on Home/Library — never during audio playback or verse reading",
+                "Devanagari-first typography with Noto Sans Devanagari in saffron color for authentic feel"
+            ],
+            currentStatus: "Design spec and implementation plan complete. Core screens designed: Home, Library/Collection, Verse Reader, Audio Player, Settings. Content architecture finalized.",
+            roadmap: [
+                "Complete React Native scaffold with Expo SDK 52+",
+                "Bundle Hanuman Chalisa and Bhagavad Gita Chapter 1 JSON content",
+                "Implement Verse Reader screen with Hindi/English toggle",
+                "Add audio streaming with expo-av for Ramcharitmanas",
+                "Daily sadhana tracker with streak counter",
+                "Play Store release"
+            ],
+            improvements: [
+                "Add offline audio downloads for devotees without reliable internet",
+                "Consider iOS build once Android is validated",
+                "Add push notification reminders for morning verse and evening aarti"
+            ]
+        }
+    },
+    {
         slug: "rohitraj-site",
         name: "rohitraj.tech",
         problem: "Engineering work is often invisible. Portfolios show polished results but not the thinking behind them.",
