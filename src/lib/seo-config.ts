@@ -16,6 +16,17 @@ export const SEO_KEYWORDS = [
     'Distributed Systems Consultant',
     'Backend Architecture Consulting',
 
+    // Mobile & App Development
+    'React Native Developer India',
+    'Mobile App Developer Freelance',
+    'Expo App Development',
+    'Android App Developer India',
+
+    // AI Chatbot & Business
+    'AI Chatbot Developer India',
+    'WhatsApp Bot Developer',
+    'Build AI Chatbot Business',
+
     // Technical Keywords
     'LLM Integration Expert',
     'RAG System Builder',
