@@ -514,407 +514,448 @@ For MyFinancial, this was non-negotiable. Indian users' financial data staying w
     }
   },
   {
-    slug: 'hanuman-chalisa-complete-meaning-english-hindi',
-    title: 'Hanuman Chalisa: Complete 40 Verses with Meaning in English & Hindi',
+    slug: 'building-multilanguage-react-native-app-expo',
+    title: 'Building a Multi-Language React Native App with Expo SDK 52 — SanatanApp Architecture',
     date: '2026-04-05',
-    excerpt: 'The complete Hanuman Chalisa with all 40 verses — original Devanagari text, English transliteration, and detailed meaning of each chaupai. A spiritual guide for daily devotion.',
-    readingTime: '15 min read',
-    keywords: ['hanuman chalisa meaning', 'hanuman chalisa english', 'hanuman chalisa verses', '40 verses meaning', 'hanuman chalisa translation'],
+    excerpt: 'How I architected a 5-language devotional app with bundled JSON content, offline-first storage, and expo-av audio streaming — shipping to Play Store at ~15MB.',
+    readingTime: '9 min read',
+    keywords: ['react native i18n', 'expo sdk 52', 'react native offline app', 'expo-av audio streaming', 'react native multilanguage'],
     relatedProject: 'sanatanapp',
     sections: [
       {
-        heading: 'What is the Hanuman Chalisa?',
-        content: `The **Hanuman Chalisa** is one of the most powerful and widely recited Hindu devotional hymns in the world. Composed by the great poet-saint **Goswami Tulsidas** in the 16th century, this sacred prayer consists of **40 verses (chaupais)** that praise Lord Hanuman's divine qualities.
+        heading: 'The Problem: 5 Apps Where 1 Should Exist',
+        content: `My grandmother recited Hanuman Chalisa every morning. When I wanted that same experience on my phone, I downloaded 5 different apps — one for Chalisa, one for Gita, one for Aarti, one for Ramayan audio. Each was ad-heavy, single-purpose, and 40-80MB.
 
-The word "Chalisa" comes from the Hindi word **"Chalis"** meaning **forty**. It is a set of 40 verses preceded by two introductory dohas (couplets) and followed by one concluding doha, written in the **Awadhi** language.
+The engineering challenge: build **one app** that replaces all of them — with 5 languages (Hindi, English, Sanskrit, Tamil, Telugu), offline text, streamed audio, and a ~15MB APK. No backend. No login. Privacy-first.
 
-**Why is it so popular?**
-
-- **Universally recited**: From village temples to metropolitan homes, the Chalisa transcends all social boundaries
-- **Easy to memorize**: The rhythmic, musical structure makes it accessible to everyone
-- **Spiritual protection**: Devotees believe it creates a protective shield against negativity
-- **Daily practice**: Millions recite it every morning and Tuesday (Hanuman's sacred day)`
+This post covers the architecture decisions, content strategy, and i18n approach I used to ship SanatanApp to the [Google Play Store](https://play.google.com/store/apps/details?id=com.sanatandevotional.app).`
       },
       {
-        heading: 'The Two Introductory Dohas',
-        content: `**Doha 1:**
-श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।
-बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि॥
+        heading: 'Content Architecture: JSON Over APIs',
+        content: `The first decision was how to store sacred texts. Options:
 
-*Shree Guru Charan Saroj Raj, Nij Manu Mukuru Sudhari*
+1. **Remote API** — Flexible but requires internet, adds latency, needs a backend
+2. **SQLite** — Overkill for read-only text, adds query overhead
+3. **Bundled JSON** — Zero latency, works offline, trivially simple
 
-**Meaning:** Having cleansed the mirror of my mind with the dust of my Guru's lotus feet, I narrate the pure glory of Lord Rama, the bestower of the four fruits of life — Dharma, Artha, Kama, and Moksha.
+I went with bundled JSON. The entire Hanuman Chalisa (40 verses × 5 languages) is ~12KB. Bhagavad Gita (700 verses × 5 languages) is ~180KB. All Aartis combined: ~25KB. Total text payload: **under 250KB**.
 
-**Doha 2:**
-बुद्धिहीन तनु जानिके, सुमिरौं पवन कुमार।
-बल बुद्धि बिद्या देहु मोहिं, हरहु कलेस बिकार॥
+\`\`\`text
+content/
+├── texts/
+│   ├── hanuman-chalisa.json    # { verses: [{ id, sanskrit, hindi, english }] }
+│   ├── bhagavad-gita/
+│   │   ├── chapter-01.json
+│   │   └── ...chapter-18.json
+│   └── aartis/
+│       └── om-jai-jagdish.json
+├── audio-sources.json          # Stream URLs (Archive.org, public domain)
+└── i18n/
+    ├── en.json                 # UI strings only
+    └── hi.json
+\`\`\`
 
-*Buddhiheen Tanu Jaanike, Sumirau Pavan Kumar*
-
-**Meaning:** Knowing myself to be ignorant, I remember you, O Son of the Wind! Grant me strength, wisdom, and knowledge, and remove all my sorrows and impurities.`
+The key insight: **separate content i18n from UI i18n**. Verse translations are embedded in each JSON file (one object per verse with all language fields). UI strings (buttons, labels, navigation) use \`react-i18next\`. This avoids the complexity of loading separate translation files for content.`
       },
       {
-        heading: 'Verses 1–10: Hanuman\'s Divine Identity',
-        content: `**Verse 1:** जय हनुमान ज्ञान गुन सागर। जय कपीस तिहुँ लोक उजागर॥
-Victory to Hanuman, the ocean of wisdom and virtue. Victory to the Lord of monkeys, who illuminates all three worlds.
+        heading: 'i18n Strategy: react-i18next for UI, Inline for Content',
+        content: `Most i18n tutorials assume all translated content goes through the i18n system. For SanatanApp, that would mean 700 Gita verses × 5 languages = 3,500 translation keys just for one scripture. Unmanageable.
 
-**Verse 2:** राम दूत अतुलित बल धामा। अंजनि पुत्र पवनसुत नामा॥
-You are the messenger of Lord Rama, the abode of incomparable strength. Known as Anjani's son and the Son of the Wind.
+Instead, each verse object carries its own translations:
 
-**Verse 3:** महाबीर बिक्रम बजरंगी। कुमति निवार सुमति के संगी॥
-O great hero with a body strong as a thunderbolt — you dispel evil thoughts and are the companion of good wisdom.
+\`\`\`json
+{
+  "id": 1,
+  "sanskrit": "श्रीगुरु चरन सरोज रज...",
+  "hindi": "श्री गुरु के चरण कमलों की धूल से...",
+  "english": "Having cleansed the mirror of my mind...",
+  "transliteration": "Shree Guru Charan Saroj Raj..."
+}
+\`\`\`
 
-**Verse 4:** कंचन बरन बिराज सुबेसा। कानन कुंडल कुंचित केसा॥
-Your body shines with golden complexion. You wear earrings and have curly hair.
+The VerseBlock component just reads the current language from context and renders the right field:
 
-**Verse 5:** हाथ बज्र औ ध्वजा बिराजे। काँधे मूँज जनेऊ साजे॥
-In your hands shine a mace and a flag, on your shoulder hangs the sacred thread.
+\`\`\`typescript
+const { language } = useTranslation();
+const text = verse[language] || verse.hindi; // Fallback to Hindi
+\`\`\`
 
-**Verse 6:** शंकर सुवन केसरी नंदन। तेज प्रताप महा जग बन्दन॥
-You are an incarnation of Lord Shiva and the son of Kesari. Your glory is revered throughout the world.
-
-**Verse 7:** विद्यावान गुनी अति चातुर। राम काज करिबे को आतुर॥
-You are supremely learned, virtuous, and clever — always eager to serve Lord Rama's mission.
-
-**Verse 8:** प्रभु चरित्र सुनिबे को रसिया। राम लखन सीता मन बसिया॥
-You delight in Lord Rama's stories. Rama, Lakshmana, and Sita dwell forever in your heart.
-
-**Verse 9:** सूक्ष्म रूप धरि सियहिं दिखावा। बिकट रूप धरि लंक जरावा॥
-You appeared before Sita in a tiny form, and assuming a terrifying form, you set Lanka ablaze.
-
-**Verse 10:** भीम रूप धरि असुर संहारे। रामचन्द्र के काज सँवारे॥
-Assuming a gigantic form, you destroyed the demons and accomplished Lord Rama's divine mission.`
+\`react-i18next\` handles only UI strings — about 80 keys total. This keeps the i18n system fast and the content pipeline simple. Adding a new language means adding one field to each verse JSON, not touching any code.`
       },
       {
-        heading: 'Verses 11–20: Heroic Deeds',
-        content: `**Verse 11:** लाय सजीवन लखन जियाये। श्री रघुबीर हरषि उर लाये॥
-You brought the Sanjeevani herb and revived Lakshmana, earning Lord Rama's joyful embrace.
+        heading: 'Audio Streaming with expo-av',
+        content: `Text is bundled. Audio is streamed. The Ramcharitmanas full katha is hours of audio — bundling it would make the APK 500MB+. Instead, I map content IDs to public domain streaming URLs in a single \`audio-sources.json\`:
 
-**Verse 12:** रघुपति कीन्हीं बहुत बड़ाई। तुम मम प्रिय भरतहि सम भाई॥
-Lord Rama praised you: "You are as dear to me as my brother Bharata."
+\`\`\`json
+{
+  "ramayan-bal-kand": {
+    "title": "Bal Kand",
+    "sourceUrl": "https://archive.org/download/...",
+    "duration": 3600,
+    "category": "ramayan"
+  }
+}
+\`\`\`
 
-**Verse 13:** सहस बदन तुम्हरो जस गावैं। अस कहि श्रीपति कंठ लगावैं॥
-"May the thousand-headed serpent sing your glory!" Saying this, Lord Rama embraced you.
+The AudioContext provider manages global playback state:
 
-**Verse 14–15:** सनकादिक ब्रह्मादि मुनीसा। नारद सारद सहित अहीसा॥
-Great sages like Sanaka, Brahma, Narada, Saraswati — even Yama, Kubera, and the guardians of directions cannot fully describe your glory.
+\`\`\`typescript
+// Simplified AudioContext
+const AudioContext = createContext<{
+  currentTrack: Track | null;
+  isPlaying: boolean;
+  play: (track: Track) => Promise<void>;
+  pause: () => void;
+  position: number;
+}>({...});
+\`\`\`
 
-**Verse 16:** तुम उपकार सुग्रीवहिं कीन्हा। राम मिलाय राजपद दीन्हा॥
-You did a great favor to Sugriva — introducing him to Lord Rama, who restored his kingdom.
-
-**Verse 17:** तुम्हरो मंत्र विभीषन माना। लंकेश्वर भए सब जग जाना॥
-Vibhishana heeded your counsel and became the king of Lanka.
-
-**Verse 18:** जुग सहस्र जोजन पर भानू। लील्यो ताहि मधुर फल जानू॥
-You swallowed the sun, thousands of miles away, mistaking it for a sweet fruit.
-
-**Verse 19:** प्रभु मुद्रिका मेलि मुख माहीं। जलधि लाँघि गये अचरज नाहीं॥
-Carrying Lord Rama's ring, you leaped across the ocean — no surprise for one of your power.
-
-**Verse 20:** दुर्गम काज जगत के जेते। सुगम अनुग्रह तुम्हरे तेते॥
-All the difficult tasks in the world become easy with your grace.`
+Key decisions:
+- **No download/offline audio in v1** — keeps APK small, avoids storage management complexity
+- **Background playback enabled** — users want to listen during commute or cooking
+- **MiniPlayer pinned to bottom** — persistent audio bar across all screens, similar to Spotify
+- **Archive.org as primary source** — public domain, no licensing issues, reliable CDN`
       },
       {
-        heading: 'Verses 21–30: Spiritual Powers & Protection',
-        content: `**Verse 21:** राम दुआरे तुम रखवारे। होत न आज्ञा बिनु पैसारे॥
-You are the gatekeeper of Lord Rama's abode. No one enters without your permission.
+        heading: 'Local State: expo-sqlite for Progress & Streaks',
+        content: `No backend means all user state lives on-device. I use \`expo-sqlite\` for three things:
 
-**Verse 22:** सब सुख लहै तुम्हारी सरना। तुम रक्षक काहू को डर ना॥
-All happiness is found in your refuge. With you as protector, there is nothing to fear.
+1. **Bookmarks/Favorites** — Save any verse or aarti
+2. **Reading progress** — Remember where you left off in each scripture
+3. **Daily sadhana streaks** — Track consecutive days of practice
 
-**Verse 23:** आपन तेज सम्हारो आपै। तीनों लोक हाँक तें काँपै॥
-Only you can control your own radiance. The three worlds tremble at your roar.
+\`\`\`sql
+CREATE TABLE favorites (
+  id TEXT PRIMARY KEY,
+  content_type TEXT,  -- 'verse' | 'aarti' | 'chapter'
+  content_id TEXT,
+  created_at INTEGER
+);
 
-**Verse 24:** भूत पिसाच निकट नहिं आवै। महाबीर जब नाम सुनावै॥
-Evil spirits dare not come near those who chant your name, Mahaveer.
+CREATE TABLE progress (
+  content_id TEXT PRIMARY KEY,
+  position INTEGER,     -- verse number or audio seconds
+  total INTEGER,
+  updated_at INTEGER
+);
 
-**Verse 25:** नासै रोग हरै सब पीरा। जपत निरंतर हनुमत बीरा॥
-All diseases and suffering are destroyed by constantly chanting Hanuman's name.
+CREATE TABLE sadhana (
+  date TEXT PRIMARY KEY,  -- 'YYYY-MM-DD'
+  tasks_json TEXT          -- ["morning_meditation", "gita_reading"]
+);
+\`\`\`
 
-**Verse 26:** संकट तें हनुमान छुड़ावै। मन क्रम बचन ध्यान जो लावै॥
-Hanuman liberates from all crises those who remember him in thought, word, and deed.
-
-**Verse 27:** सब पर राम तपस्वी राजा। तिन के काज सकल तुम साजा॥
-Lord Rama is the supreme ascetic king, and you accomplish all his tasks.
-
-**Verse 28:** और मनोरथ जो कोइ लावै। सोई अमित जीवन फल पावै॥
-Whoever comes to you with any desire receives the infinite fruits of life.
-
-**Verse 29:** चारों जुग परताप तुम्हारा। है परसिद्ध जगत उजियारा॥
-Your glory prevails across all four ages. Your fame illuminates the entire world.
-
-**Verse 30:** साधु संत के तुम रखवारे। असुर निकंदन राम दुलारे॥
-You are the protector of saints, the destroyer of demons, and beloved of Lord Rama.`
+The streak calculation is a simple SQL query that counts consecutive dates backward from today. No cloud sync, no accounts, no privacy concerns.`
       },
       {
-        heading: 'Verses 31–40: Devotion & Blessings',
-        content: `**Verse 31:** अष्ट सिद्धि नौ निधि के दाता। अस बर दीन जानकी माता॥
-Mother Sita blessed you with the power to grant the eight siddhis and nine nidhis.
+        heading: 'APK Size: How I Hit ~15MB',
+        content: `Most competing apps are 50-85MB. SanatanApp ships at ~15MB. Here's how:
 
-**Verse 32:** राम रसायन तुम्हरे पासा। सदा रहो रघुपति के दासा॥
-You hold the elixir of Lord Rama's name. You forever remain his devoted servant.
+| Component | Size | Strategy |
+|-----------|------|----------|
+| Text content (all scriptures) | ~250KB | Bundled JSON, no images |
+| App code (JS bundle) | ~2MB | Tree-shaking, no heavy UI libs |
+| Fonts (Noto Sans Devanagari) | ~1.5MB | Single weight, subset |
+| Expo runtime | ~10MB | Managed workflow, minimal plugins |
+| Audio | 0 | Streamed, not bundled |
+| Images | ~500KB | Minimal — icons only, no hero images |
 
-**Verse 33:** तुम्हरे भजन राम को पावै। जनम जनम के दुख बिसरावै॥
-Through devotion to you, one attains Lord Rama. The suffering of many lifetimes is erased.
-
-**Verse 34:** अन्तकाल रघुबर पुर जाई। जहाँ जन्म हरिभक्त कहाई॥
-At the time of death, one goes to Lord Rama's abode and is forever known as God's devotee.
-
-**Verse 35:** और देवता चित्त न धरई। हनुमत सेइ सर्ब सुख करई॥
-Even without worshipping other deities, serving Hanuman alone brings all happiness.
-
-**Verse 36:** संकट कटै मिटै सब पीरा। जो सुमिरै हनुमत बलबीरा॥
-All difficulties and suffering vanish for those who remember the mighty Hanuman.
-
-**Verse 37:** जय जय जय हनुमान गोसाईं। कृपा करहु गुरुदेव की नाईं॥
-Victory, Victory, Victory to Lord Hanuman! Bestow your grace upon us as our Supreme Guru.
-
-**Verse 38:** जो सत बार पाठ कर कोई। छूटहि बंदि महा सुख होई॥
-Whoever recites this Chalisa a hundred times is freed from bondage and attains great bliss.
-
-**Verse 39:** जो यह पढ़ै हनुमान चालीसा। होय सिद्धि साखी गौरीसा॥
-Whoever reads this Chalisa gains spiritual success, as Lord Shiva himself bears witness.
-
-**Verse 40:** तुलसीदास सदा हरि चेरा। कीजै नाथ हृदय महँ डेरा॥
-Tulsidas, always a servant of the Lord, prays: "O Hanuman, please reside in my heart forever."
-
-**Concluding Doha:**
-पवनतनय संकट हरन, मंगल मूरति रूप।
-राम लखन सीता सहित, हृदय बसहु सुर भूप॥
-
-O Son of the Wind, remover of all afflictions — along with Rama, Lakshmana, and Sita, please reside forever in my heart.`
+Key trade-offs:
+- **No images for scriptures** — text-only with beautiful typography is actually more readable
+- **Single font weight** — Regular only, no Bold/Italic variants of Devanagari font
+- **Minimal dependencies** — React Navigation, expo-av, expo-sqlite, react-i18next. That's it.
+- **No analytics SDK** — saves ~2MB and aligns with privacy-first positioning`
       },
       {
-        heading: 'When to Recite & Spiritual Benefits',
-        content: `**Best times to recite:**
-- Every morning as part of daily prayer
-- Tuesdays and Saturdays — most auspicious for Hanuman worship
-- During times of difficulty — for courage and protection
-- Before starting any important work
-- During Hanuman Jayanti
+        heading: 'What I Would Do Differently',
+        content: `**Ship faster.** I spent too long on the design spec before writing code. The verse reader screen alone went through 4 design iterations. In hindsight, the first version was 80% right.
 
-**Spiritual benefits of regular recitation:**
+**Start with one scripture.** Bundling everything (Chalisa + Gita + Aartis + Ramayan) for v1 was ambitious. Launching with just Hanuman Chalisa would have been a faster path to user feedback.
 
-1. **Protection from negativity** — Creates a spiritual shield around the devotee
-2. **Inner strength and courage** — Channeling Hanuman's fearless energy
-3. **Mental peace and clarity** — The rhythmic recitation calms the mind
-4. **Overcoming obstacles** — Hanuman is the remover of difficulties
-5. **Improved focus and discipline** — Daily recitation builds spiritual discipline
-6. **Connection with Lord Rama** — Hanuman is the gateway to Rama's grace
+**Consider Expo Router over React Navigation.** Expo Router (file-based routing) is more idiomatic in the Expo ecosystem now. I went with React Navigation because I knew it well, but Expo Router would have simplified the navigation setup.
 
-Carry the Hanuman Chalisa everywhere with **SanatanApp** — the complete text in Hindi and English with a beautiful verse-by-verse reader, audio playback, and bookmarks. [Download free on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app) — no login required, works offline.`
+The app is live on [Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app). If you're building a content-heavy React Native app with offline-first requirements, the JSON + streaming architecture works well. The total cost of running SanatanApp is $0/month — no servers, no databases, no CDN bills.`
       }
-    ]
+    ],
+    cta: {
+      text: 'Need a mobile app built with React Native? Let\'s talk.',
+      href: '/contact'
+    }
   },
   {
-    slug: 'best-hindu-devotional-apps-android-2026',
-    title: '7 Best Hindu Devotional Apps for Android in 2026: Complete Comparison',
+    slug: 'expo-av-audio-streaming-react-native',
+    title: 'Streaming Audio in React Native: expo-av with Public Domain Sources',
     date: '2026-04-05',
-    excerpt: 'Compare the top Hindu devotional apps — Sri Mandir, Dharmayana, Devlok, SanatanApp and more. Features, offline support, language options, and which one is right for you.',
-    readingTime: '10 min read',
-    keywords: ['best hindu devotional app', 'best prayer app android', 'sri mandir app', 'hindu app 2026', 'devotional app comparison'],
+    excerpt: 'A practical guide to building a streaming audio player in React Native with expo-av — background playback, progress tracking, and global player state with zero backend cost.',
+    readingTime: '7 min read',
+    keywords: ['expo-av audio streaming', 'react native audio player', 'expo audio background playback', 'react native music player', 'expo-av tutorial'],
     relatedProject: 'sanatanapp',
     sections: [
       {
-        heading: 'The Problem with Hindu Devotional Apps',
-        content: `Over **500 million Hindus** use smartphones daily, and the demand for quality devotional apps has never been higher. But most devotional apps are **fragmented**. You need one app for Hanuman Chalisa, another for Bhagavad Gita, a third for Aarti audio, and another for Ramayan. That's 4-5 apps cluttering your phone — each with its own ads, notifications, and storage footprint.
+        heading: 'Why expo-av Over react-native-track-player',
+        content: `When I needed audio streaming for SanatanApp, the two main options were:
 
-We tested and compared the **7 most popular Hindu devotional apps** available on Android in 2026.
+1. **react-native-track-player** — Feature-rich, supports notification controls, queue management. But it's a native module — requires custom dev client, adds build complexity, and is overkill for streaming from static URLs.
 
-| App | Texts | Audio | Languages | Offline | Ads During Prayer | Size |
-|-----|-------|-------|-----------|---------|-------------------|------|
-| Sri Mandir | Mantras, Chalisa | Bhajans, Aarti | Hindi, English | Partial | Yes | 85MB+ |
-| Dharmayana | Panchang, Mantras | Limited | Hindi, English | Partial | Yes | 60MB+ |
-| Devlok | Limited | Live Darshan | Hindi, English | No | Yes | 70MB+ |
-| Bhagavad Gita App | Gita only | Sanskrit | 7 languages | Yes | No | 45MB |
-| Hanuman Chalisa Apps | Chalisa only | Audio | Hindi, English | Yes | Heavy | 15-25MB |
-| myMandir | Bhajans, Puja | Bhajans | Hindi | Partial | Yes | 50MB+ |
-| **SanatanApp** | **All texts** | **Full streaming** | **5 languages** | **Yes** | **No** | **~15MB** |`
+2. **expo-av** — Built into Expo managed workflow. Simpler API, supports background playback, works with \`expo prebuild\`. Less features, but fewer headaches.
+
+I chose expo-av because SanatanApp uses Expo managed workflow. Adding a native module would have meant ejecting or setting up a custom dev client — complexity I didn't need for what is essentially "play audio from URL."
+
+The trade-off: no lock-screen controls or notification media controls in v1. For a devotional app where most users play audio while on the app, this was acceptable.`
       },
       {
-        heading: 'Sri Mandir — The Feature-Rich Giant',
-        content: `**Downloads:** 10M+ | **Rating:** 4.5 stars
+        heading: 'Global Audio Context',
+        content: `Audio state needs to be global — the user might start playing Ramayan on the Home screen, then navigate to Library, then to Settings. The player must persist across all screens.
 
-Sri Mandir bills itself as the "world's first digital praying app" with a virtual temple, live darshan from real temples, a vast bhajan library, and online puja booking.
+I use a React Context that wraps the entire app:
 
-**Strengths:** Massive content library, live darshan streaming, community features, professional UI.
+\`\`\`typescript
+interface AudioState {
+  sound: Audio.Sound | null;
+  currentTrack: Track | null;
+  isPlaying: boolean;
+  position: number;
+  duration: number;
+}
 
-**Weaknesses:** Heavy app (85MB+), requires internet for most features, banner ads during prayer reading, can feel overwhelming for simple devotion.
+export function AudioProvider({ children }: { children: React.ReactNode }) {
+  const [state, setState] = useState<AudioState>(initialState);
 
-**Best for:** Devotees who want a comprehensive all-in-one temple experience with live darshan.`
+  const play = async (track: Track) => {
+    // Unload previous sound
+    if (state.sound) await state.sound.unloadAsync();
+
+    // Configure audio mode for background playback
+    await Audio.setAudioModeAsync({
+      staysActiveInBackground: true,
+      playsInSilentModeIOS: true,
+    });
+
+    const { sound } = await Audio.Sound.createAsync(
+      { uri: track.sourceUrl },
+      { shouldPlay: true },
+      onPlaybackStatusUpdate
+    );
+
+    setState(prev => ({ ...prev, sound, currentTrack: track, isPlaying: true }));
+  };
+
+  const onPlaybackStatusUpdate = (status: AVPlaybackStatus) => {
+    if (!status.isLoaded) return;
+    setState(prev => ({
+      ...prev,
+      position: status.positionMillis,
+      duration: status.durationMillis ?? 0,
+      isPlaying: status.isPlaying,
+    }));
+  };
+
+  // ... pause, seek, cleanup methods
+}
+\`\`\`
+
+The key line is \`staysActiveInBackground: true\`. Without this, audio stops when the app goes to background — which is the default behavior on both iOS and Android.`
       },
       {
-        heading: 'Dharmayana — The Panchang Expert',
-        content: `**Downloads:** 1M+ | **Rating:** 4.4 stars
+        heading: 'The MiniPlayer Pattern',
+        content: `Every screen in SanatanApp has a persistent MiniPlayer bar at the bottom — showing the current track, a progress bar, and play/pause controls. This is rendered outside the navigation stack, above the bottom tab bar.
 
-Dharmayana focuses on **accurate Panchang (Hindu calendar)** data. Need the exact Muhurat for a puja or upcoming Vrat dates? This is your app.
+\`\`\`typescript
+function MiniPlayer() {
+  const { currentTrack, isPlaying, position, duration, togglePlay } = useAudio();
 
-**Strengths:** Most accurate Panchang with worldwide location support, detailed festival calendar, clean interface.
+  if (!currentTrack) return null;
 
-**Weaknesses:** Limited text content — no full Gita or Ramayan, basic audio, no offline support for most content.
+  const progress = duration > 0 ? position / duration : 0;
 
-**Best for:** Users who prioritize accurate Panchang, Muhurat, and festival tracking.`
+  return (
+    <View style={styles.miniPlayer}>
+      <View style={styles.progressBar}>
+        <View style={[styles.progressFill, { width: progress * 100 + '%' }]} />
+      </View>
+      <View style={styles.controls}>
+        <Text style={styles.title} numberOfLines={1}>{currentTrack.title}</Text>
+        <TouchableOpacity onPress={togglePlay}>
+          {isPlaying ? <PauseIcon /> : <PlayIcon />}
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+\`\`\`
+
+This pattern is identical to how Spotify, Apple Music, and YouTube Music handle persistent playback — and users already understand it instinctively.`
       },
       {
-        heading: 'Devlok, Bhagavad Gita App & Others',
-        content: `**Devlok** (500K+ downloads) takes a unique approach with a **virtual 3D temple** and AI spiritual guide. Beautiful but requires constant internet and has sparse text content.
+        heading: 'Progress Persistence with expo-sqlite',
+        content: `When a user is 45 minutes into a 2-hour Ramayan katha and closes the app, they expect to resume from that point tomorrow. I save playback position to SQLite on every status update (throttled to once per 5 seconds):
 
-**Bhagavad Gita App** (Gita Initiative, 5M+ downloads, 4.8 stars) is the **gold standard for Gita apps** — 700 verses in 7 languages with authentic commentary by Swami Mukundananda. Completely free, zero ads, full offline. But it only covers the Gita.
+\`\`\`typescript
+const saveProgress = throttle(async (contentId: string, position: number, duration: number) => {
+  await db.runAsync(
+    'INSERT OR REPLACE INTO progress (content_id, position, total, updated_at) VALUES (?, ?, ?, ?)',
+    [contentId, Math.floor(position / 1000), Math.floor(duration / 1000), Date.now()]
+  );
+}, 5000);
+\`\`\`
 
-**Hanuman Chalisa apps** (multiple publishers) are lightweight and focused, but you need separate apps for each scripture, and many are loaded with interstitial ads.
+When loading a track, I check for saved progress and seek to it:
 
-**myMandir** (1M+ downloads) offers community features and guided puja instructions, but has limited scripture content and a dated UI.`
+\`\`\`typescript
+const saved = await db.getFirstAsync('SELECT position FROM progress WHERE content_id = ?', [track.id]);
+if (saved) await sound.setPositionAsync(saved.position * 1000);
+\`\`\`
+
+This is a much better UX than most competing apps, which restart audio from the beginning every time.`
       },
       {
-        heading: 'SanatanApp — All-in-One Devotional Companion',
-        content: `SanatanApp takes a different approach. Instead of focusing on one scripture, it **bundles everything a Hindu devotee needs into a single, lightweight app**.
+        heading: 'Public Domain Audio: Zero Cost CDN',
+        content: `SanatanApp streams all audio from **Archive.org** and other public domain sources. This means:
 
-**What you get:**
-- **Complete text library**: Hanuman Chalisa (40 verses), Bhagavad Gita (18 chapters, 700 verses), 5+ Aartis, Gayatri Mantra, Mahamrityunjaya Mantra
-- **Full audio streaming**: Ramcharitmanas katha by Kand, Mahabharat parvas, Chalisa renditions
-- **5 languages**: Hindi, English, Sanskrit, Tamil, Telugu — switch on any verse
-- **Daily sadhana tracker**: Morning meditation, Gita reading, evening Aarti checklist with streak counter
-- **Privacy-first**: No backend, no login, no data collection
-- **Tiny footprint**: ~15MB with all texts bundled
-- **Zero ads during prayer**: Banners only on Home/Library, never during reading or audio
+- **$0/month hosting cost** — no S3 buckets, no CDN bills, no bandwidth charges
+- **Legal clarity** — public domain recordings have no licensing restrictions
+- **Reliable infrastructure** — Archive.org has been serving files since 1996
 
-**Weaknesses:** New app (smaller community), no live darshan, Android only, audio requires internet.
+The audio source mapping is a simple JSON file:
 
-**Best for:** Devotees who want one app to replace 5+ separate apps — with offline texts, streaming audio, multi-language support, and zero interruptions during prayer.`
-      },
-      {
-        heading: 'The Verdict',
-        content: `**Choose Sri Mandir** if you want the most features and live darshan.
+\`\`\`json
+[
+  {
+    "id": "ramayan-bal-kand",
+    "title": "Bal Kand — Ramcharitmanas",
+    "sourceUrl": "https://archive.org/download/...",
+    "duration": 3600,
+    "category": "ramayan",
+    "kand": "bal"
+  }
+]
+\`\`\`
 
-**Choose Dharmayana** if Panchang accuracy is your priority.
+Adding new audio content is a one-line JSON addition — no code changes, no redeployment needed. The app reads this file at startup and builds the Library screen from it.
 
-**Choose Bhagavad Gita App** if you are a serious Gita student.
-
-**Choose SanatanApp** if you want **everything in one place** — Chalisa, Gita, Aartis, Ramayan audio, sadhana tracking — in a lightweight, privacy-first, offline-capable app.
-
-Most devotees end up downloading 3-4 apps. SanatanApp was built to end that. One app. All devotion. No compromises.
-
-[Download SanatanApp free on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app)`
+The total infrastructure cost for SanatanApp is **$0/month**. No servers. No databases. No CDN. The only cost is the $25 one-time Google Play developer fee.`
       }
-    ]
+    ],
+    cta: {
+      text: 'Building a mobile app with audio or media features? I can help.',
+      href: '/contact'
+    }
   },
   {
-    slug: 'daily-hindu-sadhana-morning-evening-prayer-routine',
-    title: 'Daily Hindu Sadhana: The Complete Morning & Evening Prayer Routine Guide',
+    slug: 'idea-to-play-store-sanatanapp-architecture',
+    title: 'From Idea to Play Store: Shipping SanatanApp in 4 Weeks',
     date: '2026-04-05',
-    excerpt: 'Build a meaningful daily Hindu prayer routine with this step-by-step sadhana guide. From morning mantras to evening aarti — what to recite, when, and why.',
-    readingTime: '12 min read',
-    keywords: ['daily hindu sadhana', 'hindu prayer routine', 'morning prayer hindu', 'evening aarti guide', 'daily spiritual practice'],
+    excerpt: 'The full story of building and shipping a React Native app to Google Play — from problem discovery to architecture decisions to the actual Play Store submission process.',
+    readingTime: '8 min read',
+    keywords: ['react native play store', 'ship mobile app fast', 'expo eas build', 'app architecture decisions', 'indie app development'],
     relatedProject: 'sanatanapp',
     sections: [
       {
-        heading: 'Why Daily Sadhana Matters',
-        content: `In Hinduism, **sadhana** (spiritual practice) is a daily discipline meant for every person — householders, students, professionals alike. The ancient texts prescribe a structured routine called **Dinacharya** that weaves prayer and meditation into ordinary life.
+        heading: 'Week 1: Problem Discovery & Design',
+        content: `I started with a personal frustration: 5 apps on my phone for Hindu devotion — Chalisa, Gita, Aarti, Ramayan, Mahabharat. Each averaging 50MB, each with interstitial ads during prayers, each solving one slice of the problem.
 
-But in 2026, we don't live in ashrams. The question is not whether daily sadhana is important — it's **how to make it practical**.
+Before writing any code, I did three things:
 
-**Why consistency beats intensity:**
+1. **Installed every competitor** — Sri Mandir (85MB, feature-heavy), Dharmayana (Panchang-focused), various Chalisa apps (ad-heavy). Mapped their strengths and gaps.
 
-- **Neurological rewiring**: Regular meditation physically changes brain structure, increasing grey matter in areas linked to self-awareness and compassion
-- **Emotional stability**: A morning spiritual anchor buffers against daily stress
-- **Spiritual momentum**: The texts describe sadhana as a fire — a small fire maintained daily is more powerful than a bonfire lit once a year
-- **Cultural continuity**: Daily practice connects you to thousands of years of unbroken tradition
+2. **Defined the constraint** — One app, under 20MB, offline text, streamed audio, 5 languages, zero ads during reading/listening. No backend, no accounts.
 
-The Bhagavad Gita (Chapter 6, Verse 26): "Whenever the restless mind wanders, bring it back and fix it on the Self." Daily sadhana is this practice — again and again.`
+3. **Designed 5 screens** — Home, Library, Verse Reader, Audio Player, Settings. Used Figma with a dark theme and saffron accent (#E8732A) for Devanagari text — because that's how these verses feel: warm against dark.
+
+The design spec took 3 days. In hindsight, this was the most valuable time spent — every engineering decision flowed from these constraints.`
       },
       {
-        heading: 'Morning Sadhana (Pratahkal) — 15 Minutes',
-        content: `The morning routine should happen **before you check your phone**. The first input your mind receives sets the tone for the entire day.
+        heading: 'Week 2: Core Architecture',
+        content: `**Day 1-2: Expo scaffold + navigation**
 
-**Step 1: Wake-Up Prayer (1 min)**
-Before getting out of bed, look at your palms and recite:
-कराग्रे वसते लक्ष्मी, करमध्ये सरस्वती। करमूले तू गोविन्दः, प्रभाते करदर्शनम्॥
-"At the fingertips resides Lakshmi (prosperity), in the middle Saraswati (knowledge), at the base Govinda (the divine)."
+\`\`\`bash
+npx create-expo-app@latest SanatanApp --template blank-typescript
+npx expo install expo-av expo-sqlite expo-font @react-navigation/native @react-navigation/bottom-tabs
+\`\`\`
 
-**Step 2: Guru Vandana (2 min)**
-Recite the opening doha of the Hanuman Chalisa to honor the Guru tradition.
+Bottom tabs with 4 screens. React Navigation over Expo Router — I knew the API better and didn't want to learn new patterns while shipping fast.
 
-**Step 3: Gayatri Mantra (5 min)**
-The most powerful mantra in Hinduism. Recite 11, 21, or 108 times:
-ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं। भर्गो देवस्य धीमहि, धियो यो नः प्रचोदयात्॥
-Sit facing east, eyes closed, focusing between the eyebrows. Use a mala for 108 repetitions.
+**Day 3-4: Content pipeline**
 
-**Step 4: Scripture Reading (5-10 min)**
-- **Bhagavad Gita** — One shloka with meaning daily (completes entire Gita in ~2 years)
-- **Hanuman Chalisa** — Full recitation takes 5-7 minutes (perfect for Tuesdays)
-- **Ramcharitmanas** — A few chaupais from your current Kand
+Sourced Hanuman Chalisa text from public domain, structured as JSON with sanskrit/hindi/english fields per verse. Same for Bhagavad Gita Chapter 1 and Om Jai Jagdish Aarti. Total: 3 content files, ~50KB.
 
-**Step 5: Sankalpa (1 min)**
-Close with an intention: "Today, I will act with awareness, speak with kindness, and remember the divine in all beings."`
+The architecture decision that saved the most time: **content as data, not code**. Each scripture is a JSON file with a predictable schema. The Verse Reader component doesn't know or care whether it's rendering Chalisa or Gita — it just iterates over a verses array.
+
+**Day 5: i18n setup**
+
+\`react-i18next\` for UI strings (80 keys), inline translations for verse content. This split was critical — trying to run 3,500 Gita verse translations through i18next would have been a disaster.`
       },
       {
-        heading: 'Evening Sadhana (Sandhya Kaal) — 10 Minutes',
-        content: `The evening practice is about **gratitude and surrender**. The day is ending. Now you release it.
+        heading: 'Week 3: Features & Polish',
+        content: `**Audio streaming** — expo-av with global AudioContext. Background playback enabled. MiniPlayer component pinned above tab bar. Progress saved to SQLite every 5 seconds.
 
-**Step 1: Light a Diya (1 min)**
-The physical act of lighting a flame signals the transition from worldly activity to spiritual reflection.
+**Offline storage** — expo-sqlite for favorites, reading progress, and sadhana streaks. Three tables, ~30 lines of SQL. No ORM, no abstraction layer — raw SQL is fine for 3 tables.
 
-**Step 2: Evening Aarti (5 min)**
-Perform aarti with one of these traditional hymns:
-- **Om Jai Jagdish Hare** — the most universal evening aarti
-- **Ganesh Aarti** — Jai Ganesh Jai Ganesh Deva
-- **Lakshmi Aarti** — Om Jai Lakshmi Mata
-- **Shiv Aarti** — Om Jai Shiv Omkara
+**Daily sadhana tracker** — Checklist component with streak counter. Stores completed tasks as JSON in SQLite keyed by date. Streak calculation: count consecutive dates backward from today.
 
-Sing with devotion. Sincerity of heart matters more than perfection of voice.
+**AdMob integration** — Banner ads on Home and Library screens only. The hard rule: **zero ads during verse reading or audio playback**. This is a devotional app — interrupting prayer with ads is a UX crime. I'd rather make less money.
 
-**Step 3: Gratitude Reflection (3 min)**
-Sit quietly and mentally review three things you are grateful for today.
-
-**Step 4: Mahamrityunjaya Mantra (2 min)**
-Close with this powerful mantra for protection:
-ॐ त्र्यम्बकं यजामहे, सुगन्धिं पुष्टिवर्धनम्। उर्वारुकमिव बन्धनान्, मृत्योर्मुक्षीय मामृतात्॥
-"We worship the three-eyed Lord Shiva. May He liberate us from the bondage of death."`
+The polish phase was mostly typography. Getting Devanagari text to render beautifully at the right size, with the right line height, in saffron (#E8732A) against a dark background (#0D0D0D) — this took more iterations than any feature.`
       },
       {
-        heading: 'Weekly Special Practices',
-        content: `Beyond the daily routine, certain days have special significance:
+        heading: 'Week 4: Build & Play Store Submission',
+        content: `**EAS Build** simplified the entire build pipeline:
 
-| Day | Deity | Recommended Practice |
-|-----|-------|---------------------|
-| **Monday** | Lord Shiva | Shiv Aarti, Om Namah Shivaya |
-| **Tuesday** | Hanuman | Full Hanuman Chalisa recitation |
-| **Wednesday** | Ganesha | Ganesh Aarti, Vakratunda Mahakaya |
-| **Thursday** | Guru/Brihaspati | Guru Vandana, Vishnu Sahasranama |
-| **Friday** | Lakshmi | Lakshmi Aarti, Shri Suktam |
-| **Saturday** | Hanuman/Shani | Hanuman Chalisa, Shani Chalisa |
-| **Sunday** | Surya | Surya Namaskar, Aditya Hridayam |`
+\`\`\`bash
+# Generate APK for testing
+eas build --platform android --profile preview
+
+# Generate AAB for Play Store
+eas build --platform android --profile production
+\`\`\`
+
+The production build took ~8 minutes on EAS servers. Output: a signed AAB file ready for Play Store upload.
+
+**Play Store submission checklist:**
+
+1. **Developer account** — $25 one-time fee, approved in 48 hours
+2. **App listing** — Title, description, screenshots (4 required), feature graphic (1024×500)
+3. **Content rating** — IARC questionnaire, rated "Everyone"
+4. **Privacy policy** — Required even for apps with no data collection. Hosted on GitHub Pages.
+5. **AAB upload** — Upload the signed bundle, select countries, set pricing (free)
+6. **Review** — Google review took 3 days for the first submission
+
+**Gotchas I hit:**
+- Play Store requires **minimum 4 screenshots** — I initially had 2
+- The **feature graphic** (banner image) has strict dimensions — 1024×500, no transparency
+- **Privacy policy URL** must be HTTPS and publicly accessible
+- First review is slower (~3 days). Updates review in ~24 hours after that.`
       },
       {
-        heading: 'Building the Habit',
-        content: `**Start Small:** If 20 minutes feels like too much, start with 5 minutes. The Gayatri Mantra alone (11 repetitions) takes just 2-3 minutes.
+        heading: 'Architecture Decisions Summary',
+        content: `| Decision | Choice | Why |
+|----------|--------|-----|
+| Framework | React Native + Expo | Managed workflow, EAS build, no native config |
+| Content storage | Bundled JSON | Offline-first, zero latency, trivially simple |
+| Audio | expo-av streaming | No native modules needed, background playback |
+| Local DB | expo-sqlite | Bookmarks, progress, streaks — 3 tables |
+| i18n | react-i18next + inline | UI strings via i18n, content translations inline |
+| Navigation | React Navigation | Known API, bottom tabs + stack |
+| Ads | AdMob banners | Home/Library only, never during devotion |
+| Backend | None | $0/month, privacy-first, no auth needed |
+| Audio hosting | Archive.org | Free, public domain, reliable |
 
-**Same Time, Same Place:** Your brain creates strong neural pathways through spatial and temporal consistency. Pray at the same time and in the same corner every day.
+**Total monthly cost: $0.** The only expense was the $25 Google Play developer fee.
 
-**Track Your Streaks:** Seeing "Day 45" on your sadhana streak creates powerful motivation not to break the chain.
+**What this project demonstrates:**
+- Full mobile app from idea to Play Store
+- Offline-first architecture with bundled content
+- Multi-language support (5 languages) with practical i18n strategy
+- Audio streaming with background playback and progress persistence
+- SQLite for local state management
+- Play Store submission and review process
 
-**Don't Aim for Perfection:** Some days you'll feel deeply connected. Other days your mind will wander to your grocery list. Both are valid. The practice is in showing up.
-
-**A Sample Daily Schedule:**
-
-| Time | Practice | Duration |
-|------|----------|----------|
-| 6:00 AM | Wake-up prayer | 1 min |
-| 6:01 AM | Guru Vandana | 2 min |
-| 6:03 AM | Gayatri Mantra (21x) | 5 min |
-| 6:08 AM | Bhagavad Gita (1 verse) | 5 min |
-| 6:13 AM | Sankalpa | 1 min |
-| 7:00 PM | Light diya + Aarti | 6 min |
-| 7:06 PM | Gratitude reflection | 3 min |
-| 7:09 PM | Mahamrityunjaya Mantra | 2 min |
-| | **Total** | **25 min** |
-
-That's 25 minutes out of 1,440 — less than 2% of your waking hours for spiritual growth.
-
-**SanatanApp** includes a built-in **daily sadhana tracker** with checkboxes for Morning Meditation, Gita Reading, and Evening Aarti — plus a streak counter for consecutive days. All the texts mentioned in this guide are available in Hindi and English, with audio playback and offline access. [Download free on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app).
-
-*Sadhana is not about becoming someone else. It's about remembering who you already are. Start today. Start small. But start.*`
+The app is live: [SanatanApp on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app).`
       }
-    ]
+    ],
+    cta: {
+      text: 'Need a mobile app shipped fast? I build end-to-end.',
+      href: '/contact'
+    }
   }
 ];
