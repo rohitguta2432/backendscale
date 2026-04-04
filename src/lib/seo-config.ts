@@ -40,7 +40,7 @@ export const SEO_KEYWORDS = [
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
     title: 'Rohit Raj | Freelance Founding Engineer & AI Systems Architect',
-    description: 'Freelance Founding Engineer specializing in Agentic AI Development, Custom Text-to-SQL Builders, and production-ready AI systems for startups. 6+ years building distributed systems that scale.',
+    description: 'Freelance Full-Stack Engineer & AI Systems Architect. I build mobile apps, AI chatbots, WhatsApp bots, and backend systems for startups. Based in India, available worldwide. 6+ years shipping production software.',
     url: 'https://rohitraj.tech',
     locale: 'en_US',
     author: {
@@ -143,6 +143,10 @@ export const personSchema = {
         'Kafka',
         'PostgreSQL',
         'Machine Learning Integration',
+        'React Native Mobile Development',
+        'WhatsApp Business API Integration',
+        'Mobile App Development',
+        'Expo SDK',
     ],
     alumniOf: {
         '@type': 'Organization',
@@ -208,6 +212,22 @@ export const serviceSchema = {
                     '@type': 'Service',
                     name: 'Production AI Systems',
                     description: 'End-to-end AI infrastructure: RAG, embeddings, vector databases, and LLM orchestration.',
+                },
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Mobile App Development',
+                    description: 'Cross-platform mobile apps with React Native and Expo, including Play Store deployment and CI/CD pipelines.',
+                },
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'WhatsApp Bot Development',
+                    description: 'Intelligent WhatsApp bots using Twilio API with Hinglish NLP support for business automation.',
                 },
             },
         ],
@@ -317,6 +337,22 @@ export function generateSoftwareApplicationSchema(project: {
             priceCurrency: 'USD',
         },
         keywords: project.techStack.join(', '),
+    };
+}
+
+// FAQPage JSON-LD schema generator
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(faq => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
     };
 }
 

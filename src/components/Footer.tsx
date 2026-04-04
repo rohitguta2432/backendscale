@@ -44,6 +44,27 @@ export default function Footer({ dict, locale }: FooterProps) {
                         </div>
                     </div>
 
+                    <div className="footer-services" style={{ marginBottom: '1.5rem' }}>
+                        <p style={{
+                            fontSize: '0.85rem',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.1em',
+                            color: 'var(--text-muted)',
+                            marginBottom: '0.75rem'
+                        }}>Services</p>
+                        <div className="footer-links">
+                            <a href={`/${locale}/services/mobile-app-development`} className="footer-link">
+                                Mobile App Development
+                            </a>
+                            <a href={`/${locale}/services/ai-chatbot-development`} className="footer-link">
+                                AI Chatbot Development
+                            </a>
+                            <a href={`/${locale}/services/full-stack-development`} className="footer-link">
+                                Full-Stack Development
+                            </a>
+                        </div>
+                    </div>
+
                     <div className="footer-subscribe">
                         <p className="footer-subscribe-title">{dict.subscribe?.title || 'Get Updates'}</p>
                         <SubscribeForm
