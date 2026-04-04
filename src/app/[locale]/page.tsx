@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AIProjects from "@/components/AIProjects";
 import ReliabilitySection from "@/components/ReliabilitySection";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
@@ -26,6 +27,7 @@ export default async function Home({ params }: Props) {
                 <Hero dict={dict.home} locale={locale as Locale} />
                 <AIProjects dict={dict.home} />
                 <ReliabilitySection dictionary={dict.home} locale={locale as Locale} />
+                <Testimonials />
             </main>
             <Footer dict={dict.common} locale={locale as Locale} />
         </>

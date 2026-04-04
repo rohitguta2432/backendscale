@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
@@ -267,6 +268,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
                                     </div>
                                 ))}
                             </div>
+                        </div>
+
+                        {/* Testimonials */}
+                        <div style={{ marginTop: "3rem" }}>
+                            <Testimonials limit={2} />
                         </div>
 
                         {/* CTA */}
