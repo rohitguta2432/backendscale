@@ -47,10 +47,12 @@ Plans:
   2. Large hardcoded data arrays (projects, services, reliability cards) are imported from dedicated data files, not defined inline in components
   3. All extracted data structures have TypeScript interfaces/types and runtime validation prevents malformed data from rendering
   4. No component file contains more than ~50 lines of raw data
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md -- Install Zod and create centralized types directory with Zod schemas
+- [ ] 02-02-PLAN.md -- Split blog-posts.ts into 20 individual post files with validated barrel export
+- [ ] 02-03-PLAN.md -- Extract component inline data to data files and migrate existing data files to centralized types
 
 ### Phase 3: Inline Style Migration
 **Goal**: All inline style objects are replaced with Tailwind utility classes for consistent, maintainable styling
@@ -131,7 +133,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Dark Mode & Credential Security | 0/2 | Not started | - |
-| 2. Data Restructuring & Types | 0/? | Not started | - |
+| 2. Data Restructuring & Types | 0/3 | Not started | - |
 | 3. Inline Style Migration | 0/? | Not started | - |
 | 4. Visual Consistency & Images | 0/? | Not started | - |
 | 5. Security Hardening | 0/? | Not started | - |
