@@ -1,16 +1,16 @@
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 1 — Dark Mode & Credential Security
 Plan: —
-Status: Defining requirements
-Last activity: 2026-04-12 — Milestone v1.0 started
+Status: Ready to plan
+Last activity: 2026-04-12 — Roadmap created (7 phases)
 
 ## Project Reference
 
 See: .planning/PROJECT.md (updated 2026-04-12)
 
 **Core value:** Fix dark mode text invisibility and consolidate inconsistent inline styles so the landing page looks polished and readable across all devices and OS themes.
-**Current focus:** Defining requirements for v1.0 Quality & Polish
+**Current focus:** v1.0 Quality & Polish — Phase 1
 
 ## Accumulated Context
 

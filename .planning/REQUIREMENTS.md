@@ -68,28 +68,28 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VISL-01 | — | Pending |
-| VISL-02 | — | Pending |
-| VISL-03 | — | Pending |
-| VISL-04 | — | Pending |
-| VISL-05 | — | Pending |
-| SECR-01 | — | Pending |
-| SECR-02 | — | Pending |
-| SECR-03 | — | Pending |
-| SECR-04 | — | Pending |
-| QUAL-01 | — | Pending |
-| QUAL-02 | — | Pending |
-| QUAL-03 | — | Pending |
-| QUAL-04 | — | Pending |
-| PERF-01 | — | Pending |
-| PERF-02 | — | Pending |
-| TEST-01 | — | Pending |
+| VISL-01 | Phase 1 | Pending |
+| VISL-02 | Phase 3 | Pending |
+| VISL-03 | Phase 4 | Pending |
+| VISL-04 | Phase 4 | Pending |
+| VISL-05 | Phase 4 | Pending |
+| SECR-01 | Phase 1 | Pending |
+| SECR-02 | Phase 5 | Pending |
+| SECR-03 | Phase 5 | Pending |
+| SECR-04 | Phase 5 | Pending |
+| QUAL-01 | Phase 2 | Pending |
+| QUAL-02 | Phase 2 | Pending |
+| QUAL-03 | Phase 2 | Pending |
+| QUAL-04 | Phase 7 | Pending |
+| PERF-01 | Phase 6 | Pending |
+| PERF-02 | Phase 6 | Pending |
+| TEST-01 | Phase 7 | Pending |
 
 **Coverage:**
 - v1.0 requirements: 16 total
-- Mapped to phases: 0
-- Unmapped: 16
+- Mapped to phases: 16
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-12*
-*Last updated: 2026-04-12 after initial definition*
+*Last updated: 2026-04-12 after roadmap creation*
