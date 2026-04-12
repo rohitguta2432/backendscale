@@ -1,12 +1,33 @@
-# NexusAI — Quality & Polish Milestone
+# NexusAI — Portfolio & Engineering Site
 
 ## What This Is
 
-A quality improvement milestone for NexusAI, Rohit Raj's personal portfolio and engineering site built with Next.js 16, React 19, and Tailwind CSS 4. The site showcases AI projects, reliability engineering work, services, and engineering notes with i18n support (English/Hindi). This milestone addresses 15 issues found across a UI audit (15/24) and codebase mapping — covering security, dark mode visibility, spacing consistency, error handling, performance, and testing.
+Rohit Raj's personal portfolio and engineering site built with Next.js 16, React 19, and Tailwind CSS 4. Showcases AI projects, reliability engineering work, services, and engineering notes with i18n support (en/hi/fr/de/ar). Deployed at rohitraj.tech.
 
 ## Core Value
 
 Fix dark mode text invisibility and consolidate inconsistent inline styles so the landing page looks polished and readable across all devices and OS themes.
+
+## Current Milestone: v1.0 Quality & Polish
+
+**Goal:** Fix dark mode visibility, consolidate styling, and harden security/error handling so the site is production-ready.
+
+**Target features:**
+- Dark mode CSS variable overrides for all core variables
+- Migrate 272 inline styles to Tailwind utility classes
+- Move hardcoded Supabase credentials to .env.local
+- Sanitize unvalidated HTML rendering
+- Next.js Image component for all images
+- Error boundaries for route segments
+- Spacing and text alignment consistency
+- Split monolithic blog data file
+- Extract hardcoded data from components
+- TypeScript types and runtime validation
+- i18n dictionary caching optimization
+- Middleware regex optimization
+- Jest + React Testing Library setup
+- Form validation (Zod or native)
+- Basic error tracking/logging
 
 ## Requirements
 
@@ -87,4 +108,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-11 after initialization*
+*Last updated: 2026-04-12 after milestone v1.0 initialization*
