@@ -31,11 +31,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. All CSS custom properties (--bg, --text-primary, --text-secondary, --text-muted, --card-bg, --border) have dark mode overrides via prefers-color-scheme
   3. Supabase URL and anon key are loaded from environment variables, not present in any committed source file
   4. Site functions identically in light mode after dark mode changes (no regressions)
-**Plans**: TBD
+**Plans**: 2 plans
 **UI hint**: yes
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md -- Add dark mode CSS variable overrides to globals.css
+- [ ] 01-02-PLAN.md -- Move Supabase credentials from hardcoded fallbacks to environment variables
 
 ### Phase 2: Data Restructuring & Types
 **Goal**: Component files contain rendering logic only, with data and types extracted into dedicated modules
@@ -129,7 +130,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Dark Mode & Credential Security | 0/? | Not started | - |
+| 1. Dark Mode & Credential Security | 0/2 | Not started | - |
 | 2. Data Restructuring & Types | 0/? | Not started | - |
 | 3. Inline Style Migration | 0/? | Not started | - |
 | 4. Visual Consistency & Images | 0/? | Not started | - |
