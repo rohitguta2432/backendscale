@@ -89,7 +89,7 @@ src/
     github.ts          # Unchanged location, imports types from @/types
     testimonials.ts    # NEW: extracted from Testimonials component
     k6-results.ts     # NEW: extracted from K6Results component
-    ai-projects.ts    # NEW: extracted from AIProjects component (inline project summaries)
+    ai-projects.ts    # NEW: extracted from AIProjects component (standalone data, NOT using Project type)
     reliability.ts    # NEW: extracted cardConfigs from ReliabilitySection
 ```
 
@@ -213,9 +213,9 @@ import { testimonials } from '@/data/testimonials';
 
 ### Pitfall 3: AIProjects Inline Data is NOT the Same as projects.ts
 **What goes wrong:** Developer assumes AIProjects component data duplicates `src/data/projects.ts` and removes it.
-**Why it happens:** Both contain project info, but the AIProjects inline array has a different shape (title, problem, solution, techStack, aiApproach, repoUrl, status, image) vs. the Project interface in projects.ts (slug, name, problem, solves, techStack, status, repoUrl, aiApproach, image, images, details).
-**How to avoid:** Create a separate `AIProjectSummary` type for the landing page component data. Or derive the landing page data from the full `projects.ts` data using a mapper function. The mapper approach is preferred -- single source of truth.
-**Warning signs:** Landing page shows different project info than the project detail pages.
+**Why it happens:** Both contain project info, but the AIProjects inline array has a different shape (title, problem, solution, techStack, aiApproach, repoUrl, status, image) vs. the Project interface in projects.ts (slug, name, problem, solves, techStack, status, repoUrl, aiApproach, image, images, details). Critically, the component uses its own status type (`'active' | 'development' | 'production'`) which is incompatible with the Project status type (`'active' | 'iterating' | 'paused'`).
+**How to avoid:** Extract the inline data as-is into a standalone file with NO `Project` type annotation. The type is inferred from the data. Do NOT try to use the `Project` type or derive from `projects.ts` -- the shapes and status enums are intentionally different.
+**Warning signs:** Landing page shows different project info than the project detail pages. TypeScript errors about incompatible status values.
 
 ### Pitfall 4: Zod Validation Throwing at Build Time
 **What goes wrong:** If validation throws during module initialization, the entire Next.js build fails with an unclear error.
@@ -286,25 +286,28 @@ export const blogPosts: BlogPost[] = [...allPosts].sort(
 );
 ```
 
-### Deriving AIProjects data from projects.ts
+### Extracting AIProjects data as standalone file
 ```typescript
 // src/data/ai-projects.ts
-import { projects } from './projects';
+// Standalone data file -- NOT derived from projects.ts because the shapes differ:
+// - AIProjects uses `title` (projects.ts uses `name`)
+// - AIProjects uses `solution` (projects.ts uses `solves`)
+// - AIProjects uses status 'development' (projects.ts uses 'active'|'iterating'|'paused')
+// - AIProjects omits `slug`, `details`, `images` fields
+// Type is inferred from the data -- no explicit type annotation needed.
 
-// Derive landing page summaries from full project data
-// Excludes rohitraj-site (not an AI project)
-export const aiProjectSummaries = projects
-  .filter(p => p.aiApproach) // Only AI projects
-  .map(p => ({
-    title: p.name,
-    problem: p.problem,
-    solution: p.solves,
-    techStack: p.techStack,
-    aiApproach: p.aiApproach!,
-    repoUrl: p.repoUrl,
-    status: p.status === 'active' ? 'development' as const : p.status,
-    image: p.image,
-  }));
+export const aiProjectSummaries = [
+  {
+    title: "MicroItinerary — AI Travel Planner",
+    problem: "Travel apps optimize for proximity and ratings...",
+    solution: "AI-powered PWA that generates personalized annual travel itineraries...",
+    techStack: ["React 18", "Vite", "Spring Boot 3.2.2", "Java 21", "PostgreSQL 16", "Redis", "OpenAI GPT-4"],
+    aiApproach: "GPT-4 for destination recommendations...",
+    repoUrl: "https://github.com/rohitguta2432/MicroItinerary",
+    status: "development" as const,
+  },
+  // ... copy ALL items exactly from the AIProjects inline array
+];
 ```
 
 ## Validation Architecture
@@ -337,19 +340,18 @@ export const aiProjectSummaries = projects
 | # | Claim | Section | Risk if Wrong |
 |---|-------|---------|---------------|
 | A1 | Zod ^3.24 is the latest stable 3.x release | Standard Stack | Minor -- npm install will get actual latest; if 4.x is stable, API may differ slightly |
-| A2 | AIProjects inline data can be derived from projects.ts | Architecture Patterns | Medium -- if the shapes are intentionally different, we need a separate data source |
+| A2 | ~~AIProjects inline data can be derived from projects.ts~~ REVISED: AIProjects data uses intentionally different shape and status values -- standalone extraction preferred | Architecture Patterns | Low -- standalone approach avoids type incompatibility |
 | A3 | Validation should throw during build but warn during dev | Code Examples | Low -- could also always throw; user preference |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **AIProjects data: derive or duplicate?**
-   - What we know: AIProjects component has inline data that overlaps with but differs from `projects.ts`. The inline version has `title` (vs `name`), `solution` (vs `solves`), and excludes the `details` block.
-   - What's unclear: Whether these differences are intentional (different content) or accidental (copy-paste drift).
-   - Recommendation: Derive from `projects.ts` using a mapper -- single source of truth. If content differs intentionally, update `projects.ts` to be canonical.
+   - What we know: AIProjects component has inline data that overlaps with but differs from `projects.ts`. The inline version has `title` (vs `name`), `solution` (vs `solves`), and excludes the `details` block. Additionally, the component defines its own status type (`'active' | 'development' | 'production'`) which is incompatible with the Project status enum (`'active' | 'iterating' | 'paused'`).
+   - RESOLVED: Use standalone extraction approach. Copy the inline data as-is into `src/data/ai-projects.ts` with NO `Project` type annotation. The type is inferred from the data. The mapper approach from projects.ts is not viable because (a) the status enums are incompatible (`'development'` is not a valid Project status), and (b) the field names differ intentionally (`title` vs `name`, `solution` vs `solves`). The shapes serve different purposes: projects.ts is for detail pages, AIProjects data is curated landing page summaries.
 
 2. **Header navLinks: extract or leave?**
    - What we know: Header has a 7-item `navLinks` array (7 lines). Well under the 50-line threshold.
-   - Recommendation: Leave in component. It's config, not data, and it depends on the `locale` prop.
+   - RESOLVED: Leave in component. It's config, not data, and it depends on the `locale` prop. At 7 lines it is well under the 50-line extraction threshold from QUAL-02.
 
 ## Security Domain
 
