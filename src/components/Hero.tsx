@@ -11,41 +11,19 @@ export default function Hero({ dict, locale }: HeroProps) {
     return (
         <section className="hero">
             <div className="container">
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '3rem',
-                    flexWrap: 'wrap'
-                }}>
-                    <div style={{ flex: '1', minWidth: '300px' }}>
+                <div className="flex items-center gap-12 flex-wrap">
+                    <div className="flex-1 min-w-[300px]">
                         <p className="hero-subtitle">{dict.hero.subtitle}</p>
                         <h1 className="hero-title">
                             {dict.hero.titleLine1}<br />
-                            <span style={{ color: 'var(--text-muted)', fontSize: '0.7em' }}>{dict.hero.titleLine2}</span>
+                            <span className="text-[var(--text-muted)] text-[0.7em]">{dict.hero.titleLine2}</span>
                         </h1>
 
-                        <div className="hero-approach" style={{
-                            margin: '2rem 0',
-                            padding: '1.5rem',
-                            backgroundColor: 'var(--card-bg)',
-                            border: '1px solid var(--border)',
-                            textAlign: 'left'
-                        }}>
-                            <h3 style={{
-                                fontSize: '0.85rem',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.1em',
-                                color: 'var(--text-muted)',
-                                marginBottom: '1rem'
-                            }}>
+                        <div className="hero-approach my-8 p-6 bg-[var(--card-bg)] border border-[var(--border)] text-left">
+                            <h3 className="text-sm uppercase tracking-widest text-[var(--text-muted)] mb-4">
                                 {dict.hero.approach.title}
                             </h3>
-                            <ul style={{
-                                margin: 0,
-                                paddingLeft: '1.25rem',
-                                color: 'var(--text-secondary)',
-                                lineHeight: 1.8
-                            }}>
+                            <ul className="m-0 pl-5 text-[var(--text-secondary)] leading-[1.8]">
                                 <li><strong>{dict.hero.approach.items.problemFirst.title}</strong> — {dict.hero.approach.items.problemFirst.description}</li>
                                 <li><strong>{dict.hero.approach.items.aiTool.title}</strong> — {dict.hero.approach.items.aiTool.description}</li>
                                 <li><strong>{dict.hero.approach.items.productionReady.title}</strong> — {dict.hero.approach.items.productionReady.description}</li>
@@ -71,21 +49,14 @@ export default function Hero({ dict, locale }: HeroProps) {
                         </div>
                     </div>
 
-                    <div style={{
-                        flex: '0 0 320px',
-                        display: 'flex',
-                        justifyContent: 'center'
-                    }}>
+                    <div className="flex-[0_0_320px] flex justify-center">
                         <Image
                             src="/hero-graphic.png"
                             alt="AI and Backend Systems Architecture"
                             width={320}
                             height={320}
                             priority
-                            style={{
-                                borderRadius: '8px',
-                                opacity: 0.9
-                            }}
+                            className="rounded-lg opacity-90"
                         />
                     </div>
                 </div>

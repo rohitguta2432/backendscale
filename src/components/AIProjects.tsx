@@ -35,122 +35,73 @@ function AIProjectCard({
     };
 
     return (
-        <article style={{
-            border: '1px solid var(--border)',
-            padding: '1.5rem',
-            backgroundColor: 'var(--card-bg)',
-            marginBottom: '1.5rem'
-        }}>
+        <article className="border border-[var(--border)] p-6 bg-[var(--card-bg)] mb-6">
             {/* Project Screenshot */}
             {image && (
-                <div style={{
-                    marginBottom: '1.5rem',
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    border: '1px solid var(--border)',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
-                }}>
+                <div className="mb-6 rounded-lg overflow-hidden border border-[var(--border)] shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
                     <img
                         src={image}
                         alt={`${title} screenshot`}
-                        style={{
-                            width: '100%',
-                            height: 'auto',
-                            display: 'block'
-                        }}
+                        className="w-full h-auto block"
                     />
                 </div>
             )}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{title}</h3>
-                <span style={{
-                    backgroundColor: statusColors[status],
-                    color: 'white',
-                    padding: '0.125rem 0.5rem',
-                    borderRadius: '2px',
-                    fontSize: '0.7rem',
-                    fontFamily: 'var(--font-mono)',
-                    textTransform: 'uppercase'
-                }}>
+            <div className="flex justify-between items-start mb-4">
+                <h3 className="m-0 text-xl font-semibold">{title}</h3>
+                <span
+                    className="text-white py-0.5 px-2 rounded-sm text-[0.7rem] font-mono uppercase"
+                    style={{ backgroundColor: statusColors[status] }}
+                >
                     {status}
                 </span>
             </div>
 
-            <div style={{ marginBottom: '1rem' }}>
-                <h4 style={{
-                    fontSize: '0.8rem',
-                    color: 'var(--accent)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.25rem'
-                }}>
+            <div className="mb-4">
+                <h4 className="text-[0.8rem] text-[var(--accent)] uppercase tracking-[0.05em] mb-1">
                     {labels.problem}
                 </h4>
-                <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <p className="m-0 text-[var(--text-secondary)] leading-relaxed">
                     {problem}
                 </p>
             </div>
 
-            <div style={{ marginBottom: '1rem' }}>
-                <h4 style={{
-                    fontSize: '0.8rem',
-                    color: 'var(--status-active)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.25rem'
-                }}>
+            <div className="mb-4">
+                <h4 className="text-[0.8rem] text-[var(--status-active)] uppercase tracking-[0.05em] mb-1">
                     {labels.solution}
                 </h4>
-                <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <p className="m-0 text-[var(--text-secondary)] leading-relaxed">
                     {solution}
                 </p>
             </div>
 
-            <div style={{ marginBottom: '1rem' }}>
-                <h4 style={{
-                    fontSize: '0.8rem',
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.25rem'
-                }}>
+            <div className="mb-4">
+                <h4 className="text-[0.8rem] text-[var(--text-muted)] uppercase tracking-[0.05em] mb-1">
                     {labels.aiApproach}
                 </h4>
-                <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6, fontStyle: 'italic' }}>
+                <p className="m-0 text-[var(--text-secondary)] leading-relaxed italic">
                     {aiApproach}
                 </p>
             </div>
 
-            <div style={{ marginBottom: '1rem' }}>
-                <h4 style={{
-                    fontSize: '0.8rem',
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.5rem'
-                }}>
+            <div className="mb-4">
+                <h4 className="text-[0.8rem] text-[var(--text-muted)] uppercase tracking-[0.05em] mb-2">
                     {labels.techStack}
                 </h4>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <div className="flex gap-2 flex-wrap">
                     {techStack.map((tech) => (
-                        <code key={tech} style={{
-                            fontSize: '0.8rem',
-                            backgroundColor: 'var(--bg-color)',
-                            padding: '0.25rem 0.5rem',
-                            border: '1px solid var(--border)'
-                        }}>
+                        <code key={tech} className="text-[0.8rem] bg-[var(--bg-color)] py-1 px-2 border border-[var(--border)]">
                             {tech}
                         </code>
                     ))}
                 </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
+            <div className="flex gap-4 pt-4 border-t border-[var(--border)]">
                 <a
                     href={repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ fontSize: '0.85rem', color: 'var(--accent)' }}
+                    className="text-sm text-[var(--accent)]"
                 >
                     GitHub →
                 </a>
@@ -163,27 +114,16 @@ export default function AIProjects({ dict }: AIProjectsProps) {
     const aiProjects = aiProjectSummaries;
 
     return (
-        <section id="ai-projects" style={{ padding: '4rem 0' }}>
+        <section id="ai-projects" className="py-16">
             <div className="container">
-                <div className="section-header" style={{ marginBottom: '2rem' }}>
-                    <h2 style={{
-                        fontSize: '0.85rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.1em',
-                        color: 'var(--text-muted)',
-                        marginBottom: '0.5rem'
-                    }}>
+                <div className="section-header mb-8">
+                    <h2 className="text-sm uppercase tracking-widest text-[var(--text-muted)] mb-2">
                         {dict.aiProjects.sectionTitle}
                     </h2>
-                    <p style={{
-                        fontSize: '1.5rem',
-                        fontWeight: 600,
-                        color: 'var(--text-primary)',
-                        margin: 0
-                    }}>
+                    <p className="text-2xl font-semibold text-[var(--text-primary)] m-0">
                         {dict.aiProjects.sectionHeading}
                     </p>
-                    <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
+                    <p className="text-[var(--text-secondary)] mt-2">
                         {dict.aiProjects.sectionDescription}
                     </p>
                 </div>
@@ -194,8 +134,8 @@ export default function AIProjects({ dict }: AIProjectsProps) {
                     ))}
                 </div>
 
-                <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-                    <Link href="/notes" style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
+                <div className="text-center mt-8">
+                    <Link href="/notes" className="text-[var(--accent)] text-[0.9rem]">
                         {dict.aiProjects.readNotes}
                     </Link>
                 </div>

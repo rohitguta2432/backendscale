@@ -61,7 +61,7 @@ export default function ImageCarousel({ images, projectName }: ImageCarouselProp
         <>
             <div className="project-hero-image">
                 <div className="carousel-container">
-                    <div className="project-image-wrapper" onClick={openZoom} style={{ cursor: "zoom-in" }}>
+                    <div className="project-image-wrapper cursor-zoom-in" onClick={openZoom}>
                         <Image
                             src={images[currentIndex].src}
                             alt={`${projectName} - ${images[currentIndex].caption}`}
