@@ -193,13 +193,8 @@ export interface MetaDictionary {
     };
 }
 
-const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
-    en: () => loadDictionary('en'),
-    hi: () => loadDictionary('hi'),
-    fr: () => loadDictionary('fr'),
-    de: () => loadDictionary('de'),
-    ar: () => loadDictionary('ar'),
-};
+// Module-level cache: prevents re-importing the same locale dictionary
+const dictionaryCache = new Map<Locale, Dictionary>();
 
 async function loadDictionary(locale: Locale): Promise<Dictionary> {
     try {
@@ -221,12 +216,19 @@ async function loadDictionary(locale: Locale): Promise<Dictionary> {
 }
 
 export async function getDictionary(locale: Locale): Promise<Dictionary> {
-    return dictionaries[locale]();
+    const cached = dictionaryCache.get(locale);
+    if (cached) return cached;
+
+    const dictionary = await loadDictionary(locale);
+    dictionaryCache.set(locale, dictionary);
+    return dictionary;
 }
 
+// Compiled once at module load — reused across all calls to getLocalizedPath
+const localePathnamePattern = new RegExp(`^/(${locales.join('|')})(/|$)`);
+
 export function getLocalizedPath(pathname: string, locale: Locale): string {
-    // Remove existing locale prefix if present (dynamically using all locales)
-    const localePattern = new RegExp(`^/(${locales.join('|')})(\/|$)`);
-    const pathWithoutLocale = pathname.replace(localePattern, '/');
+    // Remove existing locale prefix if present
+    const pathWithoutLocale = pathname.replace(localePathnamePattern, '/');
     return `/${locale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
 }
