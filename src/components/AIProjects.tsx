@@ -38,10 +38,12 @@ function AIProjectCard({
         <article className="border border-[var(--border)] p-6 bg-[var(--card-bg)] mb-6">
             {/* Project Screenshot */}
             {image && (
-                <div className="mb-6 rounded-lg overflow-hidden border border-[var(--border)] shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
-                    <img
+                <div className="relative mb-6 rounded-lg overflow-hidden border border-[var(--border)] shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+                    <Image
                         src={image}
                         alt={`${title} screenshot`}
+                        width={800}
+                        height={450}
                         className="w-full h-auto block"
                     />
                 </div>
@@ -114,10 +116,10 @@ export default function AIProjects({ dict }: AIProjectsProps) {
     const aiProjects = aiProjectSummaries;
 
     return (
-        <section id="ai-projects" className="py-16">
+        <section id="ai-projects" className="py-20">
             <div className="container">
-                <div className="section-header mb-8">
-                    <h2 className="text-sm uppercase tracking-widest text-[var(--text-muted)] mb-2">
+                <div className="section-header text-center mb-12">
+                    <h2 className="text-sm uppercase tracking-widest text-[var(--accent)] font-semibold mb-2">
                         {dict.aiProjects.sectionTitle}
                     </h2>
                     <p className="text-2xl font-semibold text-[var(--text-primary)] m-0">

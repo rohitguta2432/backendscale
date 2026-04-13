@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'About Rohit Raj - Freelance Founding Engineer & AI Systems Architect';
+export const alt = 'About Rohit Raj - Founding Engineer & AI Systems Architect';
 export const size = {
     width: 1200,
     height: 630,
@@ -149,7 +149,7 @@ export default async function Image() {
                             fontWeight: '600',
                         }}
                     >
-                        Freelance Founding Engineer
+                        Founding Engineer
                     </div>
                 </div>
             </div>

@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VISTA — The Future of OTA Orchestration</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-hover: rgba(255, 255, 255, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .deck {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            opacity: 0;
+            transform: translateX(60px);
+            pointer-events: none;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: all;
+        }
+
+        .slide.exit-left {
+            opacity: 0;
+            transform: translateX(-60px);
+        }
+
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+            transition: all 1.5s ease;
+        }
+
+        .bg-glow.glow-1 {
+            top: -200px;
+            right: -200px;
+            background: var(--accent-blue);
+        }
+
+        .bg-glow.glow-2 {
+            bottom: -250px;
+            left: -200px;
+            background: var(--accent-purple);
+        }
+
+        .bg-glow.glow-3 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--accent-cyan);
+            opacity: 0.06;
+        }
+
+        .slide-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            padding: 6px 16px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 100px;
+        }
+
+        .slide-tag .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        h1 .gradient-text,
+        h2 .gradient-text {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            text-align: center;
+            line-height: 1.7;
+            margin-top: 16px;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: var(--glass-hover);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-grid {
+            display: grid;
+            gap: 20px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .card-grid.cols-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .card-grid.cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .question-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .question-card .icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .question-card .icon.blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
+        }
+
+        .question-card .icon.purple {
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--accent-purple);
+        }
+
+        .question-card .icon.emerald {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-emerald);
+        }
+
+        .question-card .icon.amber {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-amber);
+        }
+
+        .question-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .question-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .pipeline {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            width: 100%;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .pipeline-step {
+            flex: 1;
+            position: relative;
+            padding: 28px 24px;
+        }
+
+        .pipeline-step::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--glass-border), transparent);
+        }
+
+        .pipeline-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-number .num {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .step-number .num.blue {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent-blue);
+        }
+
+        .step-number .num.cyan {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--accent-cyan);
+        }
+
+        .step-number .num.purple {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--accent-purple);
+        }
+
+        .step-number .num.emerald {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-emerald);
+        }
+
+        .pipeline-step h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .pipeline-step .role {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .pipeline-step ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pipeline-step ul li {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .pipeline-step ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--text-dim);
+            font-size: 0.7rem;
+        }
+
+        .pillars {
+            display: flex;
+            gap: 14px;
+            margin-top: 36px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pillar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 22px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .pillar:hover {
+            background: var(--glass-hover);
+            transform: translateY(-2px);
+        }
+
+        .pillar .pillar-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+
+        .capabilities {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+            width: 100%;
+        }
+
+        .capability-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+
+        .capability-item:hover {
+            background: var(--glass-hover);
+            color: var(--text-primary);
+        }
+
+        .arch-diagram {
+            width: 100%;
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .arch-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .arch-box {
+            padding: 16px 28px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid;
+            min-width: 180px;
+        }
+
+        .arch-box.ecu {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+            color: #c4b5fd;
+        }
+
+        .arch-box.fw {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.3);
+            color: #fcd34d;
+        }
+
+        .arch-box.app {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #93c5fd;
+        }
+
+        .arch-label {
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .arch-connector {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .highlight-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .highlight-badge {
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight-badge.blue {
+            background: rgba(59, 130, 246, 0.12);
+            color: #93c5fd;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .highlight-badge.cyan {
+            background: rgba(6, 182, 212, 0.12);
+            color: #67e8f9;
+            border: 1px solid rgba(6, 182, 212, 0.25);
+        }
+
+        .highlight-badge.purple {
+            background: rgba(139, 92, 246, 0.12);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.25);
+        }
+
+        .highlight-badge.emerald {
+            background: rgba(16, 185, 129, 0.12);
+            color: #6ee7b7;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .transition-banner {
+            margin-top: 36px;
+            padding: 18px 28px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .transition-banner p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .transition-banner strong {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .title-slide .logo-mark {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+        }
+
+        .title-slide .version-tag {
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            margin-top: 24px;
+            letter-spacing: 1px;
+        }
+
+        .nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 40px;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .progress-bar {
+            flex: 1;
+            max-width: 400px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 32px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 2px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-btn {
+            padding: 10px 24px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn:hover {
+            background: var(--glass-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: default;
+        }
+
+        .slide-counter {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            font-family: 'JetBrains Mono', monospace;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        @keyframes float-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide.active .animate-in {
+            animation: float-in 0.6s ease forwards;
+        }
+
+        .slide.active .delay-1 {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .slide.active .delay-2 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .slide.active .delay-3 {
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .slide.active .delay-4 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .slide.active .delay-5 {
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+
+        .slide.active .delay-6 {
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+
+        .key-hint {
+            position: fixed;
+            bottom: 80px;
+            right: 40px;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .key-hint kbd {
+            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+        }
+
+        @media (max-width: 900px) {
+            .slide {
+                padding: 40px 24px;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .card-grid.cols-2,
+            .card-grid.cols-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .pipeline {
+                flex-direction: column;
+            }
+
+            .capabilities {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-3"></div>
+    <div class="deck" id="deck">
+        <!-- SLIDE 1: Title -->
+        <div class="slide title-slide active" data-slide="0">
+            <div class="content-wrapper" style="align-items:center;text-align:center;">
+                <div class="logo-mark animate-in delay-1">V</div>
+                <div class="slide-tag animate-in delay-2"><span class="dot"></span> Cosmos OTA Platform</div>
+                <h1 class="animate-in delay-3">Introducing <span class="gradient-text">VISTA</span></h1>
+                <p class="subtitle animate-in delay-4">The intelligent orchestration layer powering the next generation
+                    of over‑the‑air vehicle software updates.</p>
+                <div class="highlight-row animate-in delay-5">
+                    <span class="highlight-badge blue">Targeted</span>
+                    <span class="highlight-badge cyan">Ordered</span>
+                    <span class="highlight-badge purple">Consent‑Aware</span>
+                    <span class="highlight-badge emerald">Fully Traceable</span>
+                </div>
+                <p class="version-tag animate-in delay-6">Internal Tech Deep-Dive · 2026</p>
+            </div>
+        </div>
+        <!-- SLIDE 2: The Problem -->
+        <div class="slide" data-slide="1">
+            <div class="content-wrapper">
+                <div class="slide-tag animate-in delay-1"><span class="dot"></span> The Challenge</div>
+                <h2 class="animate-in delay-2" style="text-align:center;">Vehicles Are Now <span
+                        class="gradient-text">Software‑Defined</span></h2>
+                <p class="subtitle animate-in delay-3">Modern vehicles carry dozens of ECUs, each running multiple
+                    applications at different software versions. Rolling out an update is far more than sending a file
+                    over the air — it requires absolute <strong style="color:var(--accent-cyan);">control</strong>.</p>
+                <div class="card-grid cols-2 animate-in delay-4">
+                    <div class="glass-card question-card">
+                        <div class="icon blue">🔍</div>
+                        <div>
+                            <h4>Version Visibility</h4>
+                            <p>Which vehicle currently runs which software version across every single ECU?</p>
+                        </div>
+                    </div>
+                    <div class="glass-card question-card">
+                        <div class="icon purple">🎯</div>
+                        <div>
+                            <h4>Update Applicability</h4>
+                            <p>Is this specific update even applicable to a given VIN and ECU combination?</p>
+                        </div>
+                    </div>
+                    <div class="glass-card question-card">
+                        <div class="icon emerald">✅</div>
+                        <div>
+                            <h4>User Consent</h4>
+                            <p>Has the vehicle owner actually reviewed and approved this update before execution?</p>
+                        </div>
+                    </div>
+                    <div class="glass-card question-card">
+                        <div class="icon amber">📊</div>
+                        <div>
+                            <h4>Completion Tracking</h4>
+                            <p>Did the update succeed? Did it fail? Was it partially applied? What's the final state?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDE 3: Introducing VISTA -->
+        <div class="slide" data-slide="2">
+            <div class="content-wrapper">
+                <div class="slide-tag animate-in delay-1"><span class="dot"></span> The Solution</div>
+                <h2 class="animate-in delay-2" style="text-align:center;">Meet <span class="gradient-text">VISTA</span>
+                </h2>
+                <p class="subtitle animate-in delay-3">Our in-house orchestration platform designed to replace GSDP and
+                    serve as the <strong style="color:var(--accent-cyan);">future foundation</strong> of the Cosmos OTA
+                    ecosystem.</p>
+                <div class="pillars animate-in delay-4">
+                    <div class="pillar">
+                        <div class="pillar-icon" style="background:rgba(59,130,246,0.15);color:var(--accent-blue);">🎯
+                        </div>Targeted
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon" style="background:rgba(6,182,212,0.15);color:var(--accent-cyan);">📋
+                        </div>Ordered
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon" style="background:rgba(139,92,246,0.15);color:var(--accent-purple);">🤝
+                        </div>Consent‑Aware
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon" style="background:rgba(16,185,129,0.15);color:var(--accent-emerald);">
+                            📡</div>Fully Traceable
+                    </div>
+                </div>
+                <div class="transition-banner animate-in delay-5">
+                    <p>VISTA is the <strong>intelligent control layer</strong> sitting between business rollout
+                        decisions and execution within the vehicle, ensuring every single update is precisely
+                        orchestrated.</p>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDE 4: Target Types & DRM -->
+        <div class="slide" data-slide="3">
+            <div class="content-wrapper">
+                <div class="slide-tag animate-in delay-1"><span class="dot"></span> Technical Depth</div>
+                <h2 class="animate-in delay-2" style="text-align:center;">Multi-Target <span
+                        class="gradient-text">Architecture</span></h2>
+                <p class="subtitle animate-in delay-3">VISTA supports a wide spectrum of ECU types — from lightweight
+                    microcontrollers to full application stacks — with DRM provisioning at its core.</p>
+                <div class="arch-diagram animate-in delay-4">
+                    <div class="arch-label">Target Types Supported</div>
+                    <div class="arch-row">
+                        <div class="arch-box ecu">🔧 Small ECUs<br /><span
+                                style="font-size:0.72rem;font-weight:400;opacity:0.7;">Microcontrollers ·
+                                Arduino-class</span></div>
+                        <div class="arch-box fw">⚡ Large ECUs<br /><span
+                                style="font-size:0.72rem;font-weight:400;opacity:0.7;">Full Firmware + App
+                                Updates</span></div>
+                        <div class="arch-box app">📦 WL28 AOTA<br /><span
+                                style="font-size:0.72rem;font-weight:400;opacity:0.7;">Redbend · DRM Provisioning</span>
+                        </div>
+                    </div>
+                    <div class="arch-connector" style="margin:12px 0;">▼</div>
+                    <div class="glass-card" style="text-align:center;padding:24px 32px;">
+                        <h4 style="color:var(--accent-cyan);font-size:0.95rem;margin-bottom:8px;">DRM Provisioning —
+                            GSDP → VISTA Transition</h4>
+                        <p
+                            style="font-size:0.85rem;color:var(--text-secondary);line-height:1.7;max-width:700px;margin:0 auto;">
+                            DRM provisioning already exists in GSDP. The objective is to implement <strong
+                                style="color:var(--text-primary);">equivalent and enhanced</strong> DRM capability
+                            within VISTA to support WL28 on SSDP.<br />Over time, the full transition from <strong
+                                style="color:var(--accent-amber);">GSDP → SSDP</strong> will complete.
+                        </p>
+                    </div>
+                </div>
+                <div class="highlight-row animate-in delay-5">
+                    <span class="highlight-badge purple">GSDP → SSDP Migration</span>
+                    <span class="highlight-badge cyan">WL28 DRM Support</span>
+                    <span class="highlight-badge blue">Redbend AOTA Integration</span>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDE 5: The Ecosystem -->
+        <div class="slide" data-slide="4">
+            <div class="content-wrapper">
+                <div class="slide-tag animate-in delay-1"><span class="dot"></span> The Ecosystem</div>
+                <h2 class="animate-in delay-2" style="text-align:center;">The <span class="gradient-text">4‑Step
+                        Flow</span></h2>
+                <p class="subtitle animate-in delay-3">VISTA doesn't work alone. It is part of a tightly integrated
+                    ecosystem that takes a business rollout decision all the way down to execution inside the vehicle.
+                </p>
+                <div class="pipeline glass-card animate-in delay-4" style="padding:0;overflow:hidden;">
+                    <div class="pipeline-step">
+                        <div class="step-number"><span class="num blue">1</span> Cosmos RM</div>
+                        <h3>Rollout Manager</h3>
+                        <div class="role">Business Decision Layer</div>
+                        <ul>
+                            <li>Defines rollout: What, Who, When</li>
+                            <li>Selects software version</li>
+                            <li>Targets vehicle group</li>
+                            <li>Sets go-live schedule</li>
+                        </ul>
+                    </div>
+                    <div class="pipeline-step" style="background:rgba(6,182,212,0.04);">
+                        <div class="step-number"><span class="num cyan">2</span> VISTA</div>
+                        <h3>Orchestration Layer</h3>
+                        <div class="role">Intelligent Control Plane</div>
+                        <ul>
+                            <li>Converts intent → ECU logic</li>
+                            <li>Tracks VIN & ECU state</li>
+                            <li>Generates DRM</li>
+                            <li>Manages consent</li>
+                            <li>Emits status back to RM</li>
+                        </ul>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="step-number"><span class="num purple">3</span> V2C Hub</div>
+                        <h3>Vehicle ↔ Cloud</h3>
+                        <div class="role">Secure Communication Bridge</div>
+                        <ul>
+                            <li>Secure message exchange</li>
+                            <li>Routes to correct ECU</li>
+                            <li>Delivers ProvisioningPush</li>
+                            <li>Returns DiscrepancyCheck</li>
+                            <li>Reports Consent status</li>
+                        </ul>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="step-number"><span class="num emerald">4</span> AOTA</div>
+                        <h3>Vehicle Execution</h3>
+                        <div class="role">On-Vehicle Runtime</div>
+                        <ul>
+                            <li>Receives deployment descriptor</li>
+                            <li>Downloads software</li>
+                            <li>Applies update</li>
+                            <li>Reports final status upstream</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDE 6: Core Capabilities -->
+        <div class="slide" data-slide="5">
+            <div class="content-wrapper">
+                <div class="slide-tag animate-in delay-1"><span class="dot"></span> Deep Dive</div>
+                <h2 class="animate-in delay-2" style="text-align:center;">VISTA <span class="gradient-text">Core
+                        Capabilities</span></h2>
+                <p class="subtitle animate-in delay-3">What makes VISTA the central nervous system of the Cosmos OTA
+                    ecosystem.</p>
+                <div class="capabilities animate-in delay-4">
+                    <div class="capability-item"><span class="cap-icon">🔗</span> ECU-specific provisioning logic
+                        generation</div>
+                    <div class="capability-item"><span class="cap-icon">🗂️</span> VIN + ECU state tracking & lifecycle
+                    </div>
+                    <div class="capability-item"><span class="cap-icon">🔐</span> DRM generation & management</div>
+                    <div class="capability-item"><span class="cap-icon">🤝</span> Consent verification & enforcement
+                    </div>
+                    <div class="capability-item"><span class="cap-icon">📡</span> Real-time status emission to Cosmos RM
+                    </div>
+                    <div class="capability-item"><span class="cap-icon">🔄</span> Full GSDP → SSDP migration path</div>
+                    <div class="capability-item"><span class="cap-icon">🎯</span> Multi-target ECU support</div>
+                    <div class="capability-item"><span class="cap-icon">📊</span> End-to-end traceability & audit trail
+                    </div>
+                </div>
+                <div class="transition-banner animate-in delay-5">
+                    <p>Every update is <strong>Targeted</strong> · <strong>Ordered</strong> ·
+                        <strong>Consent-Aware</strong> · <strong>Fully Traceable</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDE 7: Closing -->
+        <div class="slide" data-slide="6">
+            <div class="content-wrapper" style="align-items:center;text-align:center;">
+                <div class="slide-tag animate-in delay-1"><span class="dot"></span> Closing</div>
+                <h2 class="animate-in delay-2">VISTA Is the <span class="gradient-text">Future</span> of OTA</h2>
+                <p class="subtitle animate-in delay-3">A single, intelligent orchestration platform — replacing legacy
+                    systems, enabling DRM at scale, and ensuring every vehicle update is executed with precision.</p>
+                <div class="card-grid cols-4 animate-in delay-4" style="max-width:1000px;">
+                    <div class="glass-card" style="text-align:center;padding:24px 16px;">
+                        <div style="font-size:2rem;margin-bottom:10px;">🏗️</div>
+                        <h4 style="font-size:0.85rem;margin-bottom:4px;color:var(--accent-blue);">Architecture</h4>
+                        <p style="font-size:0.75rem;color:var(--text-dim);line-height:1.5;">GSDP → VISTA on SSDP</p>
+                    </div>
+                    <div class="glass-card" style="text-align:center;padding:24px 16px;">
+                        <div style="font-size:2rem;margin-bottom:10px;">🔐</div>
+                        <h4 style="font-size:0.85rem;margin-bottom:4px;color:var(--accent-cyan);">DRM</h4>
+                        <p style="font-size:0.75rem;color:var(--text-dim);line-height:1.5;">Enhanced provisioning for
+                            WL28 + SSDP</p>
+                    </div>
+                    <div class="glass-card" style="text-align:center;padding:24px 16px;">
+                        <div style="font-size:2rem;margin-bottom:10px;">🌐</div>
+                        <h4 style="font-size:0.85rem;margin-bottom:4px;color:var(--accent-purple);">Ecosystem</h4>
+                        <p style="font-size:0.75rem;color:var(--text-dim);line-height:1.5;">RM → VISTA → V2C → AOTA</p>
+                    </div>
+                    <div class="glass-card" style="text-align:center;padding:24px 16px;">
+                        <div style="font-size:2rem;margin-bottom:10px;">✨</div>
+                        <h4 style="font-size:0.85rem;margin-bottom:4px;color:var(--accent-emerald);">Future</h4>
+                        <p style="font-size:0.75rem;color:var(--text-dim);line-height:1.5;">Full SSDP transition</p>
+                    </div>
+                </div>
+                <div class="animate-in delay-5" style="margin-top:40px;">
+                    <p style="font-size:1.4rem;font-weight:600;color:var(--text-primary);">Thank You</p>
+                    <p style="font-size:0.85rem;color:var(--text-dim);margin-top:8px;">Questions & Discussion</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav-bar">
+        <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>← Prev</button>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width:14.28%"></div>
+        </div>
+        <span class="slide-counter" id="slideCounter">1 / 7</span>
+        <button class="nav-btn" id="nextBtn" onclick="navigate(1)">Next →</button>
+    </nav>
+    <div class="key-hint"><kbd>←</kbd> <kbd>→</kbd> or click to navigate</div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const total = slides.length;
+        let current = 0;
+        function goTo(index) {
+            if (index < 0 || index >= total) return;
+            slides[current].classList.remove('active');
+            slides[current].classList.add(index > current ? 'exit-left' : '');
+            setTimeout(() => { slides.forEach(s => s.classList.remove('exit-left')); }, 600);
+            current = index;
+            slides[current].classList.add('active');
+            document.getElementById('prevBtn').disabled = current === 0;
+            document.getElementById('nextBtn').disabled = current === total - 1;
+            document.getElementById('slideCounter').textContent = `${current + 1} / ${total}`;
+            document.getElementById('progressFill').style.width = `${((current + 1) / total) * 100}%`;
+        }
+        function navigate(dir) { goTo(current + dir); }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); navigate(1); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); navigate(-1); }
+        });
+        let touchStartX = 0;
+        document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+        document.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 60) navigate(diff > 0 ? 1 : -1);
+        });
+    </script>
+</body>
+
+</html>

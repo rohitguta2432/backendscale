@@ -234,13 +234,13 @@ section {
 
 /* Hero */
 .hero {
-  padding: 5rem 0 4rem;
+  padding: 5rem 0;
   border-bottom: 1px solid var(--border);
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding: 7rem 0 5rem;
+    padding: 6rem 0 5rem;
   }
 }
 
@@ -550,7 +550,6 @@ section {
 .footer {
   padding: 3rem 0;
   border-top: 1px solid var(--border);
-  margin-top: 2rem;
 }
 
 .footer-inner {

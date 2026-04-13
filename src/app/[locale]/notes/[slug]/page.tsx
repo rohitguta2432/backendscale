@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blog-posts";
@@ -293,9 +294,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         overflow: 'hidden',
                         border: '1px solid var(--border)',
                     }}>
-                        <img
+                        <Image
                             src={post.coverImage.src}
                             alt={post.coverImage.alt}
+                            width={800}
+                            height={450}
                             style={{ width: '100%', height: 'auto', display: 'block' }}
                         />
                     </div>

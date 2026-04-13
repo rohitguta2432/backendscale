@@ -188,7 +188,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
                             fontWeight: '600',
                         }}
                     >
-                        Freelance Founding Engineer
+                        Founding Engineer
                     </div>
                 </div>
             </div>

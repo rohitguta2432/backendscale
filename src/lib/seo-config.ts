@@ -39,8 +39,8 @@ export const SEO_KEYWORDS = [
 // Base Site Configuration
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
-    title: 'Rohit Raj | Freelance Founding Engineer & AI Systems Architect',
-    description: 'Freelance Full-Stack Engineer & AI Systems Architect. I build mobile apps, AI chatbots, WhatsApp bots, and backend systems for startups. Based in India, available worldwide. 6+ years shipping production software.',
+    title: 'Rohit Raj | Founding Engineer & AI Systems Architect',
+    description: 'Founding Engineer & AI Systems Architect. I build mobile apps, AI chatbots, WhatsApp bots, and backend systems for startups. Freelance developer based in India, available worldwide. 6+ years shipping production software.',
     url: 'https://rohitraj.tech',
     locale: 'en_US',
     author: {
@@ -91,7 +91,7 @@ export const defaultMetadata: Metadata = {
                 url: SITE_CONFIG.images.og,
                 width: 1200,
                 height: 630,
-                alt: 'Rohit Raj - Freelance Founding Engineer & AI Systems Architect',
+                alt: 'Rohit Raj - Founding Engineer & AI Systems Architect',
             },
         ],
     },
@@ -126,7 +126,7 @@ export const personSchema = {
     url: SITE_CONFIG.url,
     image: `${SITE_CONFIG.url}/og-image.png`,
     email: `mailto:${SITE_CONFIG.author.email}`,
-    jobTitle: 'Freelance Founding Engineer & AI Systems Architect',
+    jobTitle: 'Founding Engineer & AI Systems Architect',
     description: 'Backend engineer with 6+ years experience building production AI systems, distributed architectures, and custom AI solutions for startups.',
     sameAs: [
         `https://github.com/${SITE_CONFIG.author.github}`,
@@ -154,7 +154,7 @@ export const personSchema = {
     },
 };
 
-// JSON-LD Schema: Service (Freelance Services)
+// JSON-LD Schema: Service (Engineering Services)
 export const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -240,7 +240,7 @@ export const professionalServiceSchema = {
     '@type': 'ProfessionalService',
     name: 'Rohit Raj - AI Systems Engineering',
     url: SITE_CONFIG.url,
-    description: 'Freelance Founding Engineer specializing in AI systems for startups',
+    description: 'Founding Engineer specializing in AI systems for startups. Available for freelance engagements.',
     priceRange: '$$$$',
     address: {
         '@type': 'PostalAddress',

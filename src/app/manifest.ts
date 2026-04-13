@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Rohit Raj — Freelance Founding Engineer',
+        name: 'Rohit Raj — Founding Engineer',
         short_name: 'Rohit Raj',
         description:
-            'Freelance Founding Engineer building production AI systems. View projects, case studies, and reliability engineering.',
+            'Founding Engineer building production AI systems. View projects, case studies, and reliability engineering.',
         start_url: '/en',
         display: 'standalone',
         background_color: '#0a0a0a',

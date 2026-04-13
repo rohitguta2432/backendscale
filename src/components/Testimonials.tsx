@@ -12,9 +12,9 @@ export default function Testimonials({ limit }: TestimonialsProps) {
     return (
         <section
             aria-labelledby="testimonials-heading"
-            className="px-4 py-16 max-w-[1100px] mx-auto"
+            className="px-4 py-20 max-w-[1100px] mx-auto"
         >
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
                 <span
                     className="text-[var(--accent)] text-sm font-semibold uppercase tracking-[0.05em]"
                 >

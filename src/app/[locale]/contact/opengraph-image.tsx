@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Contact Rohit Raj - Freelance Founding Engineer';
+export const alt = 'Contact Rohit Raj - Founding Engineer';
 export const size = {
     width: 1200,
     height: 630,
