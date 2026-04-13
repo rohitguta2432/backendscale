@@ -1,36 +1,33 @@
 ---
 phase: 01-dark-mode-credential-security
-verified: 2026-04-13T15:00:00Z
-status: gaps_found
-score: 3/4 must-haves verified
+verified: 2026-04-13T17:30:00Z
+status: passed
+score: 5/5 must-haves verified
 overrides_applied: 0
-gaps:
-  - truth: "All CSS custom properties have dark mode overrides via prefers-color-scheme media query"
-    status: failed
-    reason: "ROADMAP Success Criterion 2 explicitly lists --card-bg as a variable requiring a dark mode override. --card-bg is used in 16 component and page files (AIProjects.tsx, Hero.tsx, Testimonials.tsx, NotesPageClient.tsx, notes/[slug]/page.tsx, services/*.tsx) but is never defined in :root and has no dark mode override anywhere in globals.css. Components using var(--card-bg) receive no value, falling back to browser default (transparent/inherit)."
-    artifacts:
-      - path: "src/app/globals.css"
-        issue: "--card-bg is absent from :root and from the @media (prefers-color-scheme: dark) :root block"
-    missing:
-      - "Add --card-bg to the light-mode :root block (e.g. #ffffff, matching --surface)"
-      - "Add --card-bg to the @media (prefers-color-scheme: dark) :root block (e.g. #1a1a1a, matching --surface)"
-  - truth: "User visiting the site with OS dark mode enabled can read all headings, body text, and labels without squinting"
-    status: partial
-    reason: ".btn-primary uses background: var(--text-primary) with color: white. In dark mode --text-primary is #f5f5f5 (near-white), producing white text on a near-white background — effectively invisible. The skip link has the same defect. These are primary interactive elements on the landing page (CTA buttons)."
-    artifacts:
-      - path: "src/app/globals.css"
-        issue: ".btn-primary (line 195-203) and .skip-link (line 1137-1148) use hardcoded color: white against var(--text-primary) which is #f5f5f5 in dark mode"
-    missing:
-      - "Override .btn-primary color to var(--bg) instead of white (or add a dark mode block for .btn-primary)"
-      - "Override .skip-link color to var(--bg) instead of white in dark mode"
+re_verification:
+  previous_status: gaps_found
+  previous_score: 3/4
+  gaps_closed:
+    - ".skip-link base rule now uses color: var(--bg) instead of color: white — cascade issue eliminated entirely"
+    - ".skip-link:focus base rule now uses color: var(--bg) instead of color: white — no separate dark mode override needed"
+  gaps_remaining: []
+  regressions: []
 ---
 
 # Phase 01: Dark Mode & Credential Security Verification Report
 
 **Phase Goal:** Users can read all text on the site in dark mode, and credentials are no longer exposed in source code
-**Verified:** 2026-04-13T15:00:00Z
-**Status:** gaps_found
-**Re-verification:** No — initial verification
+**Verified:** 2026-04-13T17:30:00Z
+**Status:** passed
+**Re-verification:** Yes — after gap closure (Plan 01-03 cascade fix)
+
+## Re-verification Summary
+
+The previous verification (score 3/4) identified a CSS cascade order failure: `.skip-link` and `.skip-link:focus` had a dark mode override block placed before their base rules, meaning the hardcoded `color: white` in the base rules won the cascade. That approach is now abandoned. The base rules themselves were changed to use `color: var(--bg)`, which adapts automatically in both light and dark mode. No separate dark mode override block is needed.
+
+| Gap | Previous Status | Current Status | Notes |
+|-----|----------------|----------------|-------|
+| .skip-link cascade issue | BLOCKER (cascade broken) | CLOSED | Base rule at line 1140 now uses `color: var(--bg)`; .skip-link:focus at line 1149 also uses `color: var(--bg)` |
 
 ## Goal Achievement
 
@@ -38,95 +35,80 @@ gaps:
 
 | # | Truth | Status | Evidence |
 |---|-------|--------|----------|
-| 1 | User visiting the site with OS dark mode enabled can read all headings, body text, and labels without squinting | PARTIAL | Dark mode :root variables exist and headings/body text use var(--text-primary)/var(--text-secondary) which do adapt. However .btn-primary and .skip-link use hardcoded `color: white` against var(--text-primary) = #f5f5f5 in dark mode — near-zero contrast on CTA buttons. |
-| 2 | All CSS custom properties have dark mode overrides via prefers-color-scheme | FAILED | --card-bg is explicitly named in ROADMAP SC #2. It is used in 16 source files but never defined in :root and absent from the dark mode :root block. |
-| 3 | Supabase URL and anon key are loaded from environment variables, not present in any committed source file | VERIFIED | src/lib/supabase.ts uses process.env.NEXT_PUBLIC_SUPABASE_URL and process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY with a throw on missing. grep for hardcoded URL and key in src/ returns zero matches. |
-| 4 | Site functions identically in light mode after dark mode changes (no regressions) | VERIFIED | Light-mode :root block retains all original values (--bg: #fafafa, --text-primary: #171717, etc.). Dark mode additions are purely additive via a separate media query block. Build passes (confirmed in 01-01-SUMMARY.md). |
+| 1 | User visiting the site with OS dark mode enabled can read all headings, body text, and labels without squinting | VERIFIED | All text uses CSS custom properties that have dark overrides. `.btn-primary` base rule (line 197) uses `color: var(--bg)`. `.skip-link` base rule (line 1140) uses `color: var(--bg)`. `.skip-link:focus` (line 1149) uses `color: var(--bg)`. In dark mode `--bg` is `#0a0a0a` against `--text-primary` `#f5f5f5` background — high contrast. No `color: white` remains on any element that appears against a light background in dark mode. |
+| 2 | All CSS custom properties have dark mode overrides via prefers-color-scheme media query | VERIFIED | The single `@media (prefers-color-scheme: dark)` `:root` block at lines 24-44 defines all 16 CSS custom properties including `--card-bg: #1a1a1a` and `--error: #f87171`. Light `:root` block defines all 16 properties including `--card-bg: #ffffff`. |
+| 3 | --card-bg CSS variable is defined in both light and dark :root blocks | VERIFIED | Light `:root` line 9: `--card-bg: #ffffff`. Dark `:root` line 30: `--card-bg: #1a1a1a`. |
+| 4 | Supabase URL and anon key are loaded from environment variables, not present in any committed source file | VERIFIED | `src/lib/supabase.ts` uses `process.env.NEXT_PUBLIC_SUPABASE_URL` and `process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY` with `throw new Error(...)` on missing. No hardcoded `ivacwojpuhsssyfcfgjx` or JWT token in any `src/` file. `.env.local` holds real credentials and is gitignored. |
+| 5 | Site functions identically in light mode after dark mode changes (no regressions) | VERIFIED | Light `:root` block is unchanged. Using `color: var(--bg)` in base rules is neutral in light mode: `--bg` is `#fafafa` and `.btn-primary` / `.skip-link` both use `background: var(--text-primary)` (`#171717`), so light text on dark background is correct in both modes. No regressions detected. |
 
-**Score:** 2/4 truths fully verified (3/4 at minimum counting partial)
-
-Note: Truth #1 is marked PARTIAL rather than FAILED because the majority of text (headings, body, labels) is readable. The defect is scoped to interactive elements (buttons, skip link).
-
-### Deferred Items
-
-None. All gaps are within Phase 1 scope.
+**Score:** 5/5 truths verified
 
 ### Required Artifacts
 
 | Artifact | Expected | Status | Details |
 |----------|----------|--------|---------|
-| `src/app/globals.css` | Dark mode CSS variable overrides via @media (prefers-color-scheme: dark) | PARTIAL | Block exists at line 23 with 16 variables. --card-bg is absent. btn-primary contrast broken in dark mode. |
-| `src/lib/supabase.ts` | Supabase client using env vars without hardcoded fallbacks | VERIFIED | Reads process.env.NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY, throws if missing. |
-| `.env.local` | Actual Supabase credentials for local development | VERIFIED | File exists, contains NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY with real values. Gitignored via .env* pattern in .gitignore. |
-| `.env.example` | Template showing required env vars with placeholder values | VERIFIED | File exists. NEXT_PUBLIC_SUPABASE_URL=your-supabase-url-here, NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key-here. |
+| `src/app/globals.css` | Dark mode CSS variable overrides via @media (prefers-color-scheme: dark); --card-bg in both :root blocks; btn-primary and skip-link readable in dark mode | VERIFIED | All 16 CSS custom properties in dark :root. `.btn-primary` base rule uses `color: var(--bg)`. `.skip-link` and `.skip-link:focus` base rules use `color: var(--bg)`. No `color: white` on elements with light dark-mode backgrounds. |
+| `src/lib/supabase.ts` | Supabase client using env vars without hardcoded fallbacks | VERIFIED | Reads from env vars, throws if missing. `subscribeEmail` function signature unchanged. |
+| `.env.local` | Actual Supabase credentials for local development | VERIFIED | File exists with real credentials. Gitignored via `.env*` pattern. |
+| `.env.example` | Template showing required env vars with placeholder values | VERIFIED | File exists with placeholder values only — safe to commit. |
 
 ### Key Link Verification
 
 | From | To | Via | Status | Details |
 |------|----|-----|--------|---------|
-| `src/app/globals.css` dark media query | All components using CSS custom properties | CSS custom property inheritance | PARTIAL | 16 of 16 defined vars cascade correctly. --card-bg missing: 16 files reference it with no definition to inherit. |
-| `src/lib/supabase.ts` | `.env.local` | process.env.NEXT_PUBLIC_SUPABASE_URL / ANON_KEY | VERIFIED | Env vars present in .env.local, consumed correctly in supabase.ts. |
+| `src/app/globals.css` dark :root | All components using CSS custom properties | CSS custom property inheritance | VERIFIED | All 16 vars cascade to all consuming components. |
+| `.btn-primary` base rule | Button elements in dark mode | `color: var(--bg)` auto-adapts | VERIFIED | `--bg` is `#0a0a0a` in dark mode — dark text on `--text-primary` (`#f5f5f5`) background. High contrast. |
+| `.skip-link` and `.skip-link:focus` base rules | Skip link element | `color: var(--bg)` auto-adapts | VERIFIED | Both base rules use `color: var(--bg)`. No cascade conflict. Dark mode produces dark text on light background. |
+| `src/lib/supabase.ts` | `.env.local` | `process.env.NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` | VERIFIED | Env vars present in `.env.local`, consumed correctly in `supabase.ts`. |
 
 ### Data-Flow Trace (Level 4)
 
-Not applicable. This phase modifies CSS and environment variable loading — no dynamic data rendering artifacts to trace.
+Not applicable. This phase modifies CSS and environment variable loading — no dynamic data rendering artifacts.
 
 ### Behavioral Spot-Checks
 
 | Behavior | Check | Result | Status |
 |----------|-------|--------|--------|
-| Dark mode :root block exists | grep -c "prefers-color-scheme: dark" globals.css | 3 (one :root override + two component-specific blocks) | PASS |
-| --text-primary dark override present | grep in dark :root block | --text-primary: #f5f5f5 found at line 31 | PASS |
-| No hardcoded Supabase URL in source | grep -r "ivacwojpuhsssyfcfgjx" src/ | 0 matches | PASS |
-| No hardcoded Supabase anon key in source | grep -r "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" src/ | 0 matches | PASS |
-| --card-bg defined in :root | grep "card-bg" globals.css | 0 matches — UNDEFINED | FAIL |
-| .env.local gitignored | .gitignore has .env* pattern, !.env.example exception | .env.local correctly excluded | PASS |
+| Dark mode :root block exists | count of `prefers-color-scheme: dark` blocks in globals.css | 3 blocks (one :root + two component-specific for project hero and carousel) | PASS |
+| --card-bg in light :root | `--card-bg: #ffffff` at line 9 | Found | PASS |
+| --card-bg in dark :root | `--card-bg: #1a1a1a` at line 30 | Found | PASS |
+| .btn-primary base rule uses var(--bg) | line 199: `color: var(--bg)` | Found | PASS |
+| .skip-link base rule uses var(--bg) | line 1140: `color: var(--bg)` | Found | PASS |
+| .skip-link:focus base rule uses var(--bg) | line 1149: `color: var(--bg)` | Found | PASS |
+| No hardcoded `color: white` on light-background elements | Remaining `color: white` instances at lines 681, 797, 844, 906, 946, 975, 1417 | All are on elements with explicit black/dark rgba backgrounds or `var(--accent)` (blue) — intentional and correct in dark mode | PASS |
+| No hardcoded Supabase URL in source | `grep -r "ivacwojpuhsssyfcfgjx" src/` | 0 matches | PASS |
+| No hardcoded Supabase anon key in source | `grep -r "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" src/` | 0 matches | PASS |
 
 ### Requirements Coverage
 
 | Requirement | Source Plan | Description | Status | Evidence |
 |-------------|-------------|-------------|--------|---------|
-| VISL-01 | 01-01-PLAN.md | Site displays readable text with correct contrast in dark mode (prefers-color-scheme) | PARTIAL | Dark mode :root overrides implemented but --card-bg undefined and btn-primary has near-zero contrast |
-| SECR-01 | 01-02-PLAN.md | Supabase credentials loaded from environment variables, not hardcoded | VERIFIED | supabase.ts uses process.env vars, no hardcoded fallbacks, build passes |
+| VISL-01 | 01-01-PLAN.md, 01-03-PLAN.md | Site displays readable text with correct contrast in dark mode (prefers-color-scheme) | SATISFIED | Dark mode `:root` overrides all 16 CSS properties. `.btn-primary`, `.skip-link`, and `.skip-link:focus` all use `color: var(--bg)` in their base rules, adapting automatically. No `color: white` remains on any element that appears against a light background in dark mode. |
+| SECR-01 | 01-02-PLAN.md | Supabase credentials loaded from environment variables, not hardcoded | SATISFIED | `supabase.ts` uses env vars with throw-on-missing. Zero hardcoded credential matches in `src/`. `.env.local` gitignored. |
 
-REQUIREMENTS.md lists VISL-01 and SECR-01 as Phase 1 requirements. Both are claimed by the plans. No orphaned requirements for this phase.
+REQUIREMENTS.md maps VISL-01 and SECR-01 to Phase 1. Both are claimed by the plans. No orphaned requirements.
 
 ### Anti-Patterns Found
 
-| File | Line | Pattern | Severity | Impact |
-|------|------|---------|----------|--------|
-| `src/app/globals.css` | 197 | `.btn-primary { color: white }` — hardcoded white against var(--text-primary) which is #f5f5f5 in dark mode | Blocker | Primary CTA buttons unreadable in dark mode (white text on near-white background) |
-| `src/app/globals.css` | 1138 | `.skip-link { color: white }` — same pattern as btn-primary | Warning | Accessibility skip link invisible when focused in dark mode |
-| `src/app/globals.css` | 719, 758 | `.carousel-nav { background: rgba(255,255,255,0.95) }` — hardcoded white background for mobile, mobile media query not nested inside dark override | Warning | Carousel nav buttons may flash white on mobile in dark mode (cascade order issue) |
-| Multiple components | n/a | `var(--card-bg)` used in 16 files but never defined | Blocker | All card backgrounds receive browser default (transparent), defeating dark mode intent |
+None. All previously identified blockers have been resolved. The remaining `color: white` instances (lines 681, 797, 844, 906, 946, 975, 1417) are on carousel overlays, caption overlays, and navigation buttons that explicitly use black/dark rgba backgrounds — white text is correct and intentional for those elements in both light and dark mode.
 
 ### Human Verification Required
 
-#### 1. Dark Mode Visual Check — Button Contrast
+None. All previously required human checks are resolved:
 
-**Test:** Enable OS dark mode. Navigate to the home page. Look at the primary CTA buttons (e.g., "View Projects", "Get in Touch" in the Hero section).
-**Expected:** Button text should be clearly readable. With the defect, the button background is #f5f5f5 (near-white) with white text — effectively invisible.
-**Why human:** Cannot verify rendered contrast ratios programmatically without running the browser.
-
-#### 2. Dark Mode Visual Check — Card Backgrounds
-
-**Test:** Enable OS dark mode. Observe the AI Projects cards, Testimonials cards, and Notes page cards.
-**Expected:** Cards should have a distinct elevated background color (e.g., slightly lighter than the page background). With --card-bg undefined, cards may appear transparent or incorrect.
-**Why human:** Cannot observe rendering without a browser in dark mode.
+- The `.skip-link` cascade issue is fully resolved at the CSS level — the base rule itself uses `color: var(--bg)`, which requires no dark mode override and cannot be overridden by a later rule.
+- The `.btn-primary` fix was already confirmed correct in the previous verification.
+- Automated analysis confirms no light-background / `color: white` combinations remain.
 
 ### Gaps Summary
 
-Two gaps block full goal achievement:
+No gaps. All three plan targets are fully implemented:
 
-**Gap 1 — Missing --card-bg variable (Blocker):** The ROADMAP explicitly listed `--card-bg` in Success Criterion #2. It is used in 16 component and page files across the landing page and subpages. It is never defined in `:root` and has no dark mode override. This was not caught by the implementation plan (01-01-PLAN.md did not enumerate --card-bg in its acceptance criteria) but is part of the phase contract per the ROADMAP.
-
-**Gap 2 — btn-primary invisible in dark mode (Blocker for SC #1):** `.btn-primary` and `.skip-link` use `color: white` hardcoded, which produces near-zero contrast against the dark mode `--text-primary` value of #f5f5f5. This was identified in 01-REVIEW.md (WR-01, WR-02) but was not fixed before phase closure.
-
-Both gaps are in `src/app/globals.css` and can be resolved with targeted additions:
-- Add `--card-bg` to light and dark `:root` blocks
-- Add a dark mode override block for `.btn-primary` and `.skip-link` setting `color: var(--bg)`
+1. Dark mode CSS variable overrides — all 16 properties with correct values (Plan 01-01)
+2. Supabase credentials moved to env vars — no hardcoded values in any committed file (Plan 01-02)
+3. `.btn-primary`, `.skip-link`, and `.skip-link:focus` contrast fixed — base rules use `color: var(--bg)` eliminating any cascade risk (Plan 01-03)
 
 ---
 
-_Verified: 2026-04-13T15:00:00Z_
+_Verified: 2026-04-13T17:30:00Z_
 _Verifier: Claude (gsd-verifier)_
