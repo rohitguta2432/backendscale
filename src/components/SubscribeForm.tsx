@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { subscribeEmail } from '@/lib/supabase';
 
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 interface SubscribeFormProps {
     locale: string;
     translations: {
@@ -17,11 +19,34 @@ export default function SubscribeForm({ locale, translations }: SubscribeFormPro
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [message, setMessage] = useState('');
+    const [validationError, setValidationError] = useState('');
+    const [touched, setTouched] = useState(false);
+
+    const validateEmail = (value: string): string => {
+        if (!value.trim()) return 'Email is required';
+        if (!EMAIL_REGEX.test(value)) return 'Please enter a valid email address';
+        return '';
+    };
+
+    const handleChange = (value: string) => {
+        setEmail(value);
+        if (touched) {
+            setValidationError(validateEmail(value));
+        }
+    };
+
+    const handleBlur = () => {
+        setTouched(true);
+        setValidationError(validateEmail(email));
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!email || !email.includes('@')) return;
+        setTouched(true);
+        const error = validateEmail(email);
+        setValidationError(error);
+        if (error) return;
 
         setStatus('loading');
 
@@ -31,6 +56,8 @@ export default function SubscribeForm({ locale, translations }: SubscribeFormPro
             setStatus('success');
             setMessage(translations.success);
             setEmail('');
+            setTouched(false);
+            setValidationError('');
         } else {
             setStatus('error');
             setMessage(result.error || translations.error);
@@ -44,16 +71,18 @@ export default function SubscribeForm({ locale, translations }: SubscribeFormPro
     };
 
     return (
-        <form onSubmit={handleSubmit} className="subscribe-form">
+        <form onSubmit={handleSubmit} className="subscribe-form" noValidate>
             <div className="subscribe-input-group">
                 <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => handleChange(e.target.value)}
+                    onBlur={handleBlur}
                     placeholder={translations.placeholder}
                     className="subscribe-input"
                     disabled={status === 'loading'}
-                    required
+                    aria-invalid={touched && !!validationError}
+                    aria-describedby={validationError ? 'subscribe-error' : undefined}
                 />
                 <button
                     type="submit"
@@ -63,6 +92,19 @@ export default function SubscribeForm({ locale, translations }: SubscribeFormPro
                     {status === 'loading' ? '...' : translations.button}
                 </button>
             </div>
+            {touched && validationError && (
+                <p
+                    id="subscribe-error"
+                    role="alert"
+                    style={{
+                        color: 'var(--error, #dc2626)',
+                        fontSize: '0.8rem',
+                        marginTop: '0.375rem',
+                    }}
+                >
+                    {validationError}
+                </p>
+            )}
             {message && (
                 <p className={`subscribe-message ${status}`}>
                     {message}
