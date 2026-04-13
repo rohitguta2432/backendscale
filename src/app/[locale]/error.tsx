@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
+import { logError } from '@/lib/logger';
 
 export default function LocaleError({
   error,
@@ -11,7 +12,7 @@ export default function LocaleError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('Locale error boundary caught:', error);
+    logError(error, { boundary: 'locale', digest: error.digest });
   }, [error]);
 
   return (
