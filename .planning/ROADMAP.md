@@ -35,8 +35,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **UI hint**: yes
 
 Plans:
-- [ ] 01-01-PLAN.md -- Add dark mode CSS variable overrides to globals.css
-- [ ] 01-02-PLAN.md -- Move Supabase credentials from hardcoded fallbacks to environment variables
+- [x] 01-01-PLAN.md -- Add dark mode CSS variable overrides to globals.css
+- [x] 01-02-PLAN.md -- Move Supabase credentials from hardcoded fallbacks to environment variables
 
 ### Phase 2: Data Restructuring & Types
 **Goal**: Component files contain rendering logic only, with data and types extracted into dedicated modules
