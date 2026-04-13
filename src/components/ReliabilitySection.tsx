@@ -2,45 +2,13 @@
 
 import Link from "next/link";
 import type { HomeDictionary, Locale } from "@/lib/i18n";
+import { cardConfigs } from '@/data/reliability';
+import type { CardConfig } from '@/types/reliability';
 
 interface ReliabilitySectionProps {
     dictionary: HomeDictionary;
     locale: Locale;
 }
-
-interface CardConfig {
-    key: "observability" | "loadTesting" | "apiTesting" | "kafkaTesting";
-    icon: string;
-    route: string;
-    accentColor: string;
-}
-
-const cardConfigs: CardConfig[] = [
-    {
-        key: "observability",
-        icon: "📊",
-        route: "/reliability/observability",
-        accentColor: "#22c55e",
-    },
-    {
-        key: "loadTesting",
-        icon: "⚡",
-        route: "/reliability/load-testing",
-        accentColor: "#f97316",
-    },
-    {
-        key: "apiTesting",
-        icon: "🔗",
-        route: "/reliability/api-testing",
-        accentColor: "#3b82f6",
-    },
-    {
-        key: "kafkaTesting",
-        icon: "📨",
-        route: "/reliability/kafka-testing",
-        accentColor: "#8b5cf6",
-    },
-];
 
 export default function ReliabilitySection({ dictionary, locale }: ReliabilitySectionProps) {
     const reliability = dictionary.reliability;

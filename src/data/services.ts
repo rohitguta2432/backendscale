@@ -1,19 +1,5 @@
-export interface Service {
-    slug: string;
-    title: string;
-    metaTitle: string;
-    metaDescription: string;
-    headline: string;
-    subheadline: string;
-    problem: string;
-    whatYouGet: string[];
-    techStack: string[];
-    timeline: string;
-    costRange: string;
-    portfolioSlugs: string[];
-    faqs: { question: string; answer: string }[];
-    cta: string;
-}
+import type { Service } from '@/types/service';
+export type { Service } from '@/types/service';
 
 export const services: Service[] = [
     {

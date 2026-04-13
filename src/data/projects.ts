@@ -1,23 +1,5 @@
-export interface Project {
-    slug: string;
-    name: string;
-    problem: string;
-    solves: string;
-    techStack: string[];
-    status: 'active' | 'iterating' | 'paused';
-    repoUrl?: string;
-    aiApproach?: string;
-    image?: string;
-    images?: { src: string; caption: string }[];
-    details: {
-        businessImpact: string;
-        approach: string[];
-        decisions: string[];
-        currentStatus: string;
-        roadmap: string[];
-        improvements: string[];
-    };
-}
+import type { Project } from '@/types/project';
+export type { Project } from '@/types/project';
 
 export const projects: Project[] = [
     {

@@ -1,43 +1,8 @@
 // Real repository data sourced from GitHub API and README files
 // Last updated: 2026-01-31
 
-export interface Repository {
-    name: string;
-    fullName: string;
-    description: string | null;
-    language: string | null;
-    url: string;
-    createdAt: string;
-    updatedAt: string;
-    status: 'active' | 'maintenance' | 'archived';
-    isFork: boolean;
-    modules?: string[];
-    problemSolved?: string;
-    contributionScope?: string;
-}
-
-export interface Contribution {
-    title: string;
-    type: 'open-source' | 'experiment' | 'ai-systems';
-    repo: string;
-    repoUrl: string;
-    summary: string;
-    impact?: string;
-    modules?: string[];
-    date: string;
-}
-
-export interface ProjectNote {
-    slug: string;
-    projectName: string;
-    whyExists: string;
-    coreTechnicalChallenge: string;
-    architectureSnapshot: string[];
-    tradeoffs: string[];
-    currentState: string;
-    repoUrl: string;
-    category: 'ai-systems' | 'backend-infrastructure' | 'frontend' | 'experiments';
-}
+import type { Repository, Contribution, ProjectNote } from '@/types/github';
+export type { Repository, Contribution, ProjectNote } from '@/types/github';
 
 // Repositories sourced from https://api.github.com/users/rohitguta2432/repos
 export const repositories: Repository[] = [
