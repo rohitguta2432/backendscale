@@ -196,22 +196,12 @@ section {
 
 .btn-primary {
   background: var(--text-primary);
-  color: white;
+  color: var(--bg);
 }
 
 .btn-primary:hover {
   background: var(--text-primary);
   color: var(--bg);
-}
-
-@media (prefers-color-scheme: dark) {
-  .btn-primary {
-    color: var(--bg);
-  }
-  .skip-link,
-  .skip-link:focus {
-    color: var(--bg);
-  }
 }
 
 .btn-secondary {
@@ -1147,7 +1137,7 @@ code,
   top: -100px;
   left: 16px;
   background: var(--text-primary);
-  color: white;
+  color: var(--bg);
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   z-index: 100;
@@ -1156,7 +1146,7 @@ code,
 
 .skip-link:focus {
   top: 16px;
-  color: white;
+  color: var(--bg);
 }
 
 /* Mobile menu */
