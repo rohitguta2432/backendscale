@@ -215,6 +215,253 @@ export const projects: Project[] = [
         }
     },
     {
+        slug: "synflow",
+        name: "SynFlow — Enterprise Intelligence Platform",
+        problem: "Private deal networks rely on manual introductions and spreadsheets. Matching the right profile to the right deal is slow, subjective, and misses opportunities.",
+        solves: "Full-stack intelligence platform that matches deals to profiles using rule-based scoring across industry, expertise, and geography — with AI-powered profile extraction from LinkedIn and website text.",
+        techStack: ["Spring Boot 3.4", "Java 21", "Next.js 14", "TypeScript", "PostgreSQL 16", "Redis 7", "OpenAI GPT-4o", "Tailwind CSS", "D3.js"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/synflow",
+        aiApproach: "GPT-4o extracts structured profiles from unstructured LinkedIn/website text. Rule-based scoring algorithm matches deals to profiles by industry, expertise, and geography. AES-256 encryption for sensitive fields.",
+        image: "/images/projects/synflow.png",
+        details: {
+            businessImpact: "Deal networks lose millions in missed connections because matching is manual. SynFlow automates profile-to-deal matching with scoring algorithms, reducing time-to-introduction from days to seconds.",
+            approach: [
+                "Spring Boot 3.4 + Java 21 REST API with JWT authentication and Spring Security",
+                "Next.js 14 App Router frontend with TypeScript, React Query, and React Hook Form",
+                "PostgreSQL 16 for relational data with Flyway migrations",
+                "Redis 7 for session caching and rate limiting",
+                "OpenAI GPT-4o integration for AI-powered profile generation from raw text",
+                "D3.js and Recharts for dashboard visualizations and analytics",
+                "AES-256 encryption for sensitive profile and deal data"
+            ],
+            decisions: [
+                "Rule-based scoring over pure ML — explainable matches matter more than black-box predictions in deal networks",
+                "REAL and SHADOW profile types — supports both verified and anonymous introductions",
+                "Next.js 14 over SPA — better SEO for public-facing profile pages, server components for performance",
+                "AES-256 field-level encryption — sensitive deal data encrypted at rest, not just in transit"
+            ],
+            currentStatus: "Full-stack application functional. Profile management, deal tracking, intelligence matching, AI profile generator, dashboard, and admin panel all working.",
+            roadmap: [
+                "Add real-time notifications for new deal matches",
+                "Implement graph-based relationship mapping between profiles",
+                "Add deal pipeline analytics with conversion tracking"
+            ],
+            improvements: [
+                "Could add vector search for semantic profile matching",
+                "Consider adding email digest for weekly match summaries"
+            ]
+        }
+    },
+    {
+        slug: "finbaby",
+        name: "FinBaby (Jama) — Personal Finance Tracker",
+        problem: "Indian middle-class families track expenses across UPI apps, bank statements, and paper notebooks. No single tool auto-imports bank SMS, categorizes spending, and provides actionable savings advice — without cloud dependency.",
+        solves: "Android app that reads bank SMS messages, auto-categorizes transactions, provides 50/30/20 budgeting, smart saving tips, and beautiful reports — all stored locally on the device.",
+        techStack: ["Kotlin", "Jetpack Compose", "Material 3", "Room", "Hilt", "WorkManager", "Vico Charts", "DataStore"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/finbaby",
+        aiApproach: "Rule-based SMS parser with bank sender mapping for 50+ Indian banks. Keyword-based category auto-suggestion (e.g., 'Swiggy' → Food). Smart tips engine analyzes spending patterns to generate personalized saving suggestions.",
+        image: "/images/projects/finbaby.png",
+        details: {
+            businessImpact: "Indians transact heavily via UPI but track expenses manually if at all. FinBaby auto-imports bank SMS, removing the biggest friction — data entry. 50/30/20 budgeting makes financial planning accessible to first-time earners.",
+            approach: [
+                "Kotlin + Jetpack Compose with Material 3 for modern Android UI",
+                "Room database for local SQLite storage of all transactions",
+                "Hilt for dependency injection across the entire app",
+                "SMS reader with bank sender mapping for 50+ Indian banks (SBI, HDFC, ICICI, etc.)",
+                "WorkManager for background tasks — daily reminders, recurring transactions, budget alerts",
+                "Vico charts library for donut charts, daily bar charts, and monthly trend visualizations",
+                "DataStore Preferences for settings and user preferences"
+            ],
+            decisions: [
+                "Fully offline — no cloud, no sign-up, no bank linking. Privacy is non-negotiable",
+                "SMS auto-import over manual entry — solves the biggest adoption killer (data entry fatigue)",
+                "50/30/20 budgeting over complex categories — simplicity drives adoption for first-time budgeters",
+                "JSON backup/restore over cloud sync — users own their data completely",
+                "Biometric lock — finance data is sensitive, security without friction"
+            ],
+            currentStatus: "Core app functional — SMS auto-import, manual entry, budgeting, reports, smart tips, search, CSV export, backup/restore, biometric lock, and daily reminders all implemented.",
+            roadmap: [
+                "Add recurring transaction templates for rent, EMIs, subscriptions",
+                "Implement investment tracking (mutual funds, FDs, PPF)",
+                "Add family mode with shared budgets between partners"
+            ],
+            improvements: [
+                "Could add ML-based category prediction as SMS patterns grow",
+                "Consider adding UPI transaction parsing from notification access"
+            ]
+        }
+    },
+    {
+        slug: "retailos",
+        name: "RetailOS — Multi-Tenant Retail SaaS",
+        problem: "Indian kirana stores and small retailers use paper registers or basic billing software with no inventory tracking, no GST compliance, and no offline support. Enterprise POS systems are too expensive and complex.",
+        solves: "India-first multi-tenant retail SaaS platform with billing, inventory, GST invoicing, khata (credit ledger), offline sync, and analytics — all in one platform with complete tenant isolation.",
+        techStack: ["Spring Boot 3.4.3", "Java 21", "PostgreSQL 16", "Redis 7", "MinIO", "Flyway", "Docker"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/retailos",
+        aiApproach: "No AI — pure domain-driven architecture. 12-module Maven monorepo with tenant isolation at every layer. Offline sync with conflict resolution for unreliable internet scenarios common in Tier 2/3 India.",
+        image: "/images/projects/retailos.png",
+        details: {
+            businessImpact: "India's retail sector is 90% unorganized. Small retailers need affordable, GST-compliant software that works offline. RetailOS delivers enterprise features at SME pricing with multi-tenant architecture enabling infinite scale.",
+            approach: [
+                "Spring Boot 3.4.3 + Java 21 with Maven multi-module architecture (12 modules)",
+                "PostgreSQL 16 with row-level tenant isolation and Flyway migrations",
+                "Redis 7 for session management, caching, and rate limiting",
+                "MinIO (S3-compatible) for file storage — product images, invoices, KYC documents",
+                "Dedicated modules: auth, tenant, KYC, inventory, billing, invoicing, khata, file, sync, analytics, admin, audit",
+                "Offline sync module with queue-based conflict resolution",
+                "DPDP consent management in KYC module for regulatory compliance"
+            ],
+            decisions: [
+                "Multi-module monorepo over microservices — faster development, simpler deployment for early stage",
+                "Row-level tenant isolation over schema-per-tenant — scales to thousands of tenants without DB overhead",
+                "MinIO over AWS S3 — self-hosted for cost control, S3-compatible for future migration",
+                "Khata module as first-class citizen — credit ledger is how 70% of Indian retail actually works",
+                "Offline sync with conflict resolution — internet is unreliable in target markets"
+            ],
+            currentStatus: "Full platform scaffold with 12 modules. Auth with JWT + OTP, tenant management, inventory CRUD, billing/POS, GST invoice generation, khata ledger, file uploads, and audit trail all functional.",
+            roadmap: [
+                "Add barcode scanning for inventory management",
+                "Implement multi-warehouse stock transfers",
+                "Add WhatsApp invoice sharing for customers",
+                "Build React Native mobile POS app"
+            ],
+            improvements: [
+                "Could add AI-powered demand forecasting for inventory optimization",
+                "Consider adding payment gateway integration for digital payments"
+            ]
+        }
+    },
+    {
+        slug: "triphive",
+        name: "TripHive — Offline-First Collaborative Trip Planner",
+        problem: "Group trip planning is fragmented across WhatsApp, Google Docs, Maps, Splitwise, and email. Nothing talks to each other, and every app breaks the moment you lose WiFi — exactly when you need it most.",
+        solves: "One offline-first app that combines collaborative itineraries, interactive offline maps, expense splitting, group polls, and packing lists — anyone can join with just a link, no login required.",
+        techStack: ["React Native", "Expo", "TypeScript", "WatermelonDB", "PowerSync", "MapLibre GL", "Supabase", "Firebase"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/triphive",
+        aiApproach: "No AI — architecture-first approach. WatermelonDB for offline-first local storage with PowerSync for transparent background syncing. MapLibre GL + Protomaps for downloadable offline map tiles.",
+        image: "/images/projects/triphive.png",
+        details: {
+            businessImpact: "Group travelers currently juggle 5+ tools. TripHive replaces all of them with one offline-capable app. The 'join with a link, no login' model removes the biggest adoption barrier for group apps.",
+            approach: [
+                "React Native + Expo + TypeScript for cross-platform mobile development",
+                "WatermelonDB for offline-first local database with lazy loading",
+                "PowerSync for delta-based background sync when connectivity returns",
+                "MapLibre GL + Protomaps for interactive maps with downloadable offline tiles",
+                "Supabase for backend (Auth, Postgres, Realtime, Storage) — zero custom backend code",
+                "Firebase Cloud Messaging for push notifications",
+                "RevenueCat for freemium subscription management"
+            ],
+            decisions: [
+                "Offline-first over online-first — trips happen in airports, foreign countries, and rural areas with no WiFi",
+                "WatermelonDB over Realm — better React Native integration, true lazy loading, SQLite under the hood",
+                "Supabase over custom backend — ship faster, Realtime subscriptions built-in, generous free tier",
+                "No login to join — share a link, friends see the plan instantly. Removes the #1 group adoption killer",
+                "MapLibre over Google Maps — offline tile downloads, no per-request API costs"
+            ],
+            currentStatus: "Complete product spec with 10 specification documents, 25 UI screen designs, technical architecture, monetization strategy, and week-by-week development roadmap finalized.",
+            roadmap: [
+                "Implement core React Native scaffold with Expo",
+                "Build offline-first itinerary CRUD with WatermelonDB",
+                "Add MapLibre integration with offline tile downloads",
+                "Implement expense splitting with real-time sync",
+                "Launch beta on Google Play Store"
+            ],
+            improvements: [
+                "Could add AI-powered itinerary suggestions based on destination and group preferences",
+                "Consider adding flight/hotel price tracking integration"
+            ]
+        }
+    },
+    {
+        slug: "scamrakshak",
+        name: "ScamRakshak — On-Device AI Scam Detector",
+        problem: "Indians lose thousands of crores annually to digital scams via WhatsApp, SMS, and social media. Existing solutions require internet, collect user data, or lack Indian language support.",
+        solves: "Fully offline Android app that analyzes suspicious messages, screenshots, URLs, and UPI IDs using a 3-tier on-device AI engine — with bilingual explanations in Hindi and English. Zero data collection, zero internet required.",
+        techStack: ["Kotlin", "Jetpack Compose", "Material 3", "Hilt", "Room", "ML Kit GenAI (Gemma 4)", "LiteRT", "CameraX"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/scamrakshak",
+        aiApproach: "3-tier inference engine: Tier 1 — ML Kit GenAI with Gemma 4 on-device LLM for deep analysis. Tier 2 — LiteRT (TFLite successor) for lightweight scam classification. Tier 3 — Rule-based regex engine as universal fallback. All inference runs on-device with zero network calls.",
+        image: "/images/projects/scamrakshak.png",
+        details: {
+            businessImpact: "Digital scams cost Indians ₹1,750+ crore annually. Victims are often non-technical users who can't evaluate suspicious messages. ScamRakshak gives instant risk scores with Hindi explanations — no internet, no data sharing, no technical knowledge required.",
+            approach: [
+                "Kotlin + Jetpack Compose with Material 3 for modern Android UI",
+                "3-tier AI inference: ML Kit Gemma 4 → LiteRT → Rule-based regex (graceful degradation)",
+                "Room database for scam pattern storage and scan history",
+                "CameraX for screenshot capture and OCR-based text extraction",
+                "Hilt for dependency injection across the entire app",
+                "Bilingual output (Hindi + English) for every scam analysis",
+                "Zero network permissions — the app physically cannot send data anywhere"
+            ],
+            decisions: [
+                "3-tier fallback over single model — ensures every device gets protection regardless of hardware",
+                "On-device only over cloud AI — privacy is the core promise, not a feature",
+                "Hindi-first over English-only — target users communicate primarily in Hindi and Hinglish",
+                "UPI ID analysis included — UPI scams are the fastest-growing fraud vector in India",
+                "Zero permissions model — builds trust with privacy-conscious users"
+            ],
+            currentStatus: "Architecture finalized with 3-tier AI inference engine. Kotlin scaffold with Jetpack Compose, Room, Hilt, and CameraX integration. Rule-based regex engine (Tier 3) operational as universal fallback.",
+            roadmap: [
+                "Integrate ML Kit GenAI with Gemma 4 for on-device LLM analysis",
+                "Add screenshot OCR pipeline with CameraX",
+                "Implement URL safety checker with pattern matching",
+                "Add UPI ID verification against known scam databases",
+                "Launch on Google Play Store"
+            ],
+            improvements: [
+                "Could add community-sourced scam pattern updates via signed JSON bundles",
+                "Consider adding regional language support beyond Hindi (Tamil, Telugu, Marathi)"
+            ]
+        }
+    },
+    {
+        slug: "paisaguard",
+        name: "PaisaGuard — Family Budget Survival App",
+        problem: "Middle-class families worldwide track expenses inconsistently — UPI apps show transactions but don't enforce budgets. No tool combines expense tracking, grocery budgeting, bill calendars, debt management, and family splitting in one offline app.",
+        solves: "Privacy-first, fully offline Android app with 8 financial modules: expense tracking, grocery budget mode, bill calendar, emergency fund tracker, debt snowball, affordability calculator, family expense splitting, and auto-generated monthly reports.",
+        techStack: ["Kotlin", "Jetpack Compose", "Material 3", "Room", "Hilt", "WorkManager", "DataStore"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/paisaguard",
+        aiApproach: "No AI — rule-based financial engines. Debt snowball algorithm for optimal payoff ordering. Smart category auto-suggestion from keywords. Budget health indicators with color-coded alerts (green/orange/red).",
+        image: "/images/projects/paisaguard.png",
+        details: {
+            businessImpact: "Middle-class families need financial discipline tools, not investment advice. PaisaGuard focuses on the fundamentals — tracking, budgeting, and debt elimination — with a grocery shopping mode that no competitor offers.",
+            approach: [
+                "Kotlin + Jetpack Compose with Material 3 for modern Android UI",
+                "Room database for all financial data — expenses, bills, debts, emergency fund",
+                "8 core modules: expense tracking, grocery budget, bill calendar, emergency fund, debt snowball, affordability calculator, family splitting, monthly reports",
+                "WorkManager for bill reminders, budget alerts, and monthly report generation",
+                "Hilt for dependency injection across all modules",
+                "Numpad-style amount input for sub-5-second expense logging",
+                "DataStore Preferences for settings and family member profiles"
+            ],
+            decisions: [
+                "Fully offline — no backend, no sign-up, no bank linking. Privacy is non-negotiable",
+                "8 modules in one app over separate tools — families need one financial command center",
+                "Grocery shopping mode as differentiator — real-time budget tracker with checklist during shopping",
+                "Debt snowball over avalanche — psychologically more motivating for target users",
+                "Family splitting built-in — 'who spent' toggle on every expense, not a separate Splitwise-like flow"
+            ],
+            currentStatus: "Complete product specification with 8 user stories, acceptance scenarios, data models, UI design system, and development plan finalized. Core scaffold with Room, Hilt, and Navigation Compose in place.",
+            roadmap: [
+                "Implement dashboard with monthly balance and quick stats grid",
+                "Build expense logging with sub-5-second target",
+                "Add grocery shopping mode with live budget bar",
+                "Implement bill calendar with reminder notifications",
+                "Add debt snowball tracker with payoff timeline",
+                "Launch on Google Play Store"
+            ],
+            improvements: [
+                "Could add receipt scanning with on-device OCR for automatic expense entry",
+                "Consider adding export to Excel for users who want spreadsheet analysis"
+            ]
+        }
+    },
+    {
         slug: "rohitraj-site",
         name: "rohitraj.tech",
         problem: "Engineering work is often invisible. Portfolios show polished results but not the thinking behind them.",
@@ -280,6 +527,42 @@ export const repos = [
         description: "ClinicAI — WhatsApp AI clinic assistant with Spring Boot + Twilio",
         modules: ["backend", "docker-compose.yml"],
         url: "https://github.com/rohitguta2432/clinicai"
+    },
+    {
+        name: "synflow",
+        description: "SynFlow — Enterprise intelligence and deal matching with Spring Boot + Next.js + GPT-4o",
+        modules: ["synflow-api", "synflow-web", "docker-compose.yml"],
+        url: "https://github.com/rohitguta2432/synflow"
+    },
+    {
+        name: "finbaby",
+        description: "FinBaby (Jama) — Android finance tracker with SMS auto-import, Kotlin + Jetpack Compose",
+        modules: ["app/src/main/java/com/finbaby/app"],
+        url: "https://github.com/rohitguta2432/finbaby"
+    },
+    {
+        name: "retailos",
+        description: "RetailOS — Multi-tenant retail SaaS with 12-module Spring Boot monorepo",
+        modules: ["retailos-auth", "retailos-tenant", "retailos-inventory", "retailos-billing", "retailos-invoice", "retailos-khata"],
+        url: "https://github.com/rohitguta2432/retailos"
+    },
+    {
+        name: "triphive",
+        description: "TripHive — Offline-first collaborative trip planner with React Native + WatermelonDB",
+        modules: ["specs", "designs"],
+        url: "https://github.com/rohitguta2432/triphive"
+    },
+    {
+        name: "scamrakshak",
+        description: "ScamRakshak — On-device AI scam detector with 3-tier inference engine, Kotlin + Gemma 4",
+        modules: ["app"],
+        url: "https://github.com/rohitguta2432/scamrakshak"
+    },
+    {
+        name: "paisaguard",
+        description: "PaisaGuard — Family budget survival app with 8 financial modules, Kotlin + Jetpack Compose",
+        modules: ["app", "specs"],
+        url: "https://github.com/rohitguta2432/paisaguard"
     }
 ];
 

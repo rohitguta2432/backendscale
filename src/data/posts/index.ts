@@ -21,6 +21,15 @@ import { howToHireDeveloperInterviewQuestions } from './how-to-hire-developer-in
 import { buildAppLikeUberZomatoArchitectureCost } from './build-app-like-uber-zomato-architecture-cost';
 import { whyYourMvpShouldCostUnder10k } from './why-your-mvp-should-cost-under-10k';
 import { microservicesVsMonolithStartup } from './microservices-vs-monolith-startup';
+import { buildEnterpriseDealMatchingPlatformSpringBootNextjs } from './build-enterprise-deal-matching-platform-spring-boot-nextjs';
+import { buildAndroidFinanceTrackerKotlinJetpackCompose } from './build-android-finance-tracker-kotlin-jetpack-compose';
+import { buildMultiTenantSaasSpringBootJava21 } from './build-multi-tenant-saas-spring-boot-java-21';
+import { buildOfflineFirstTripPlannerReactNativeWatermelondb } from './build-offline-first-trip-planner-react-native-watermelondb';
+import { buildOnDeviceAiScamDetectorAndroidGemma } from './build-on-device-ai-scam-detector-android-gemma';
+import { buildFamilyBudgetAppAndroidOfflineKotlin } from './build-family-budget-app-android-offline-kotlin';
+import { cloudFirstAiIsDeadOnDeviceAndroid2026 } from './cloud-first-ai-is-dead-on-device-android-2026';
+import { upiFraud805CroreWhyIBuiltOfflineScamDetector } from './upi-fraud-805-crore-why-i-built-offline-scam-detector';
+import { iBuiltMultiTenantSaasAlone12ModuleSpringBoot } from './i-built-multi-tenant-saas-alone-12-module-spring-boot';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -43,6 +52,15 @@ const allPosts: BlogPost[] = [
   buildAppLikeUberZomatoArchitectureCost,
   whyYourMvpShouldCostUnder10k,
   microservicesVsMonolithStartup,
+  buildEnterpriseDealMatchingPlatformSpringBootNextjs,
+  buildAndroidFinanceTrackerKotlinJetpackCompose,
+  buildMultiTenantSaasSpringBootJava21,
+  buildOfflineFirstTripPlannerReactNativeWatermelondb,
+  buildOnDeviceAiScamDetectorAndroidGemma,
+  buildFamilyBudgetAppAndroidOfflineKotlin,
+  cloudFirstAiIsDeadOnDeviceAndroid2026,
+  upiFraud805CroreWhyIBuiltOfflineScamDetector,
+  iBuiltMultiTenantSaasAlone12ModuleSpringBoot,
 ];
 
 // Validate all posts at module load time
