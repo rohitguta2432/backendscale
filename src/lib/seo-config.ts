@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 // High-Intent Keywords for Founder/Startup Audience
 export const SEO_KEYWORDS = [
     // Primary High-Intent Keywords
-    'Freelance Founding Engineer',
+    'Founding Engineer for Startups',
     'AI Systems Architect for Startups',
     'Agentic AI Development',
     'Custom Text-to-SQL Builder',
@@ -18,7 +18,7 @@ export const SEO_KEYWORDS = [
 
     // Mobile & App Development
     'React Native Developer India',
-    'Mobile App Developer Freelance',
+    'Mobile App Developer India',
     'Expo App Development',
     'Android App Developer India',
 
@@ -40,7 +40,7 @@ export const SEO_KEYWORDS = [
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
     title: 'Rohit Raj | Founding Engineer & AI Systems Architect',
-    description: 'Founding Engineer & AI Systems Architect. I build mobile apps, AI chatbots, WhatsApp bots, and backend systems for startups. Freelance developer based in India, available worldwide. 6+ years shipping production software.',
+    description: 'Founding Engineer & AI Systems Architect. I build mobile apps, AI chatbots, WhatsApp bots, and backend systems for startups. Based in India, available worldwide. 6+ years shipping production software.',
     url: 'https://rohitraj.tech',
     locale: 'en_US',
     author: {
@@ -240,7 +240,7 @@ export const professionalServiceSchema = {
     '@type': 'ProfessionalService',
     name: 'Rohit Raj - AI Systems Engineering',
     url: SITE_CONFIG.url,
-    description: 'Founding Engineer specializing in AI systems for startups. Available for freelance engagements.',
+    description: 'Founding Engineer specializing in AI systems for startups. Available for engineering partnerships.',
     priceRange: '$$$$',
     address: {
         '@type': 'PostalAddress',
