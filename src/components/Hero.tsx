@@ -19,18 +19,6 @@ export default function Hero({ dict, locale }: HeroProps) {
                             <span className="text-[var(--text-muted)] text-[0.7em]">{dict.hero.titleLine2}</span>
                         </h1>
 
-                        <div className="hero-approach my-8 p-6 bg-[var(--card-bg)] border border-[var(--border)] text-left">
-                            <h3 className="text-sm uppercase tracking-widest text-[var(--text-muted)] mb-4">
-                                {dict.hero.approach.title}
-                            </h3>
-                            <ul className="m-0 pl-5 text-[var(--text-secondary)] leading-[1.8]">
-                                <li><strong>{dict.hero.approach.items.problemFirst.title}</strong> — {dict.hero.approach.items.problemFirst.description}</li>
-                                <li><strong>{dict.hero.approach.items.aiTool.title}</strong> — {dict.hero.approach.items.aiTool.description}</li>
-                                <li><strong>{dict.hero.approach.items.productionReady.title}</strong> — {dict.hero.approach.items.productionReady.description}</li>
-                                <li><strong>{dict.hero.approach.items.openEngineering.title}</strong> — {dict.hero.approach.items.openEngineering.description}</li>
-                            </ul>
-                        </div>
-
                         <div className="hero-actions">
                             <Link href={`/${locale}/projects`} className="btn btn-primary">
                                 {dict.aiProjects.sectionTitle}

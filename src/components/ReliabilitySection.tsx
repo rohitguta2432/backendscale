@@ -20,7 +20,7 @@ export default function ReliabilitySection({ dictionary, locale }: ReliabilitySe
 
     return (
         <section className="reliability-section" aria-labelledby="reliability-heading">
-            <div className="reliability-container">
+            <div className="container">
                 {/* Section Header */}
                 <div className="reliability-header">
                     <span className="reliability-label">{reliability.sectionTitle}</span>

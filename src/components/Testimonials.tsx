@@ -12,8 +12,9 @@ export default function Testimonials({ limit }: TestimonialsProps) {
     return (
         <section
             aria-labelledby="testimonials-heading"
-            className="px-4 py-20 max-w-[1100px] mx-auto"
+            className="py-20"
         >
+            <div className="container">
             <div className="text-center mb-12">
                 <span
                     className="text-[var(--accent)] text-sm font-semibold uppercase tracking-[0.05em]"
@@ -79,6 +80,7 @@ export default function Testimonials({ limit }: TestimonialsProps) {
                     }
                 }
             `}</style>
+            </div>
         </section>
     );
 }
