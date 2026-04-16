@@ -15,7 +15,9 @@ export const awsBedrockVsOpenai: BlogPost = {
   sections: [
     {
       heading: 'Why I Switched From OpenAI to AWS Bedrock',
-      content: `I was building MyFinancial — a privacy-focused financial advisory app for Indian users. The AI feature is a contextual chat advisor called Kira that answers questions like "Am I saving enough?" or "How can I optimize my taxes under 80C?"
+      content: `AWS Bedrock is the better choice for startups already running on AWS that need cost-efficient AI inference, data privacy controls, and the flexibility to switch between multiple model providers. OpenAI is the better choice for rapid prototyping, when you need the highest-quality model outputs, and when developer experience matters more than infrastructure control.
+
+I was building MyFinancial — a privacy-focused financial advisory app for Indian users. The AI feature is a contextual chat advisor called Kira that answers questions like "Am I saving enough?" or "How can I optimize my taxes under 80C?"
 
 I started with OpenAI's GPT-4. It worked great. The quality was excellent. Then I looked at the bill.
 
@@ -63,10 +65,14 @@ For MyFinancial, I chose **Amazon Nova Lite** — it handles financial Q&A with 
 
 Nova Lite is **42x cheaper than GPT-4o** and **3.6x cheaper than GPT-4o-mini** for my use case. At 10K users doing 5 chats per day, that's \\$345/month vs \\$14,625/month. That difference is survival vs bankruptcy for a bootstrapped startup.
 
-Note: These are on-demand prices. Bedrock also offers Provisioned Throughput for predictable costs at scale.`
+Note: These are on-demand prices. Bedrock also offers Provisioned Throughput for predictable costs at scale.
+
+**Common Mistakes When Managing AI Costs:**
+
+The biggest cost mistake is using your most expensive model for every request. Most applications have a distribution where eighty percent of queries are simple and ten to twenty percent require real reasoning. Route simple queries to Nova Micro or GPT-4o-mini and reserve expensive models for complex ones. Implement a complexity classifier — even a simple keyword-based router saves substantial money. The second mistake is not caching responses. If users frequently ask similar questions, cache the LLM response with a TTL. A Redis cache in front of your LLM endpoint can reduce API costs by thirty to fifty percent for many applications. The third mistake is sending too much context. Every token in your system prompt costs money on every request — audit your prompts regularly and remove instructions that do not improve output quality.`
     },
     {
-      heading: 'Quality: Is Nova Lite Good Enough?',
+      heading: 'Is Nova Lite Good Enough for Production Applications?',
       content: `Honest answer: it depends on your use case.
 
 For MyFinancial's financial advisory chat, Nova Lite handles these well:
@@ -92,7 +98,7 @@ private boolean isNovaModel() {
 This way, you get Nova Lite's cost efficiency for simple queries and Claude's reasoning power when it matters — all within Bedrock, no external API calls.`
     },
     {
-      heading: 'Latency: The Surprise Winner',
+      heading: 'Which Platform Has Lower Latency?',
       content: `I expected OpenAI to be faster since they operate dedicated inference infrastructure. In practice, from my EC2 instance in us-east-1:
 
 | Model | Time to First Token | Total Response Time (400 tokens) |
@@ -105,7 +111,7 @@ This way, you get Nova Lite's cost efficiency for simple queries and Claude's re
 Bedrock is faster because the traffic stays within AWS's network. There's no internet hop to OpenAI's servers — my EC2 instance talks to Bedrock's endpoint in the same region. For a chat interface, that 300ms vs 800ms time-to-first-token is the difference between feeling instant and feeling sluggish.`
     },
     {
-      heading: 'Integration: Developer Experience',
+      heading: 'Which Has a Better Developer Experience?',
       content: `OpenAI wins on developer experience. Their SDK is cleaner, documentation is better, and the API is more intuitive.
 
 **OpenAI integration:**
@@ -134,7 +140,11 @@ InvokeModelRequest request = InvokeModelRequest.builder()
 
 Bedrock's API is lower-level. You build JSON request bodies manually, handle different response formats per model family, and deal with AWS SDK boilerplate. It's not hard — it's just more code.
 
-The trade-off: OpenAI gives you a nicer SDK, Bedrock gives you infrastructure control. For a production app, I'll take infrastructure control every time.`
+The trade-off: OpenAI gives you a nicer SDK, Bedrock gives you infrastructure control. For a production app, I'll take infrastructure control every time.
+
+**What I Would Do Differently:**
+
+If I were starting the MyFinancial AI integration from scratch, I would build an abstraction layer over both Bedrock and OpenAI from day one. My current implementation has model-specific code paths that make switching providers harder than it should be. A clean interface with a common request and response format — regardless of whether the backend is Nova, Claude, or GPT — would let me A/B test models in production without touching business logic. I would also implement request-level cost tracking from the start. Knowing your cost per user per day lets you make pricing decisions with real data instead of estimates.`
     },
     {
       heading: 'Privacy and Data Residency',
@@ -176,6 +186,28 @@ For MyFinancial, this was non-negotiable. Indian users' financial data staying w
 4. **Data residency is a real differentiator** — especially for fintech handling sensitive financial data
 5. **OpenAI has better DX** — Bedrock requires more boilerplate but gives you more control
 6. **Model optionality is Bedrock's superpower** — you're not locked into one provider's pricing decisions`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: Can I use both OpenAI and AWS Bedrock in the same application?**
+
+Yes, and this is a common production pattern. Use OpenAI for prototyping and user-facing features where quality matters most, and Bedrock for high-volume background tasks where cost efficiency is critical. For example, you might use GPT-4o for customer support chat where response quality directly affects user satisfaction, and Nova Micro on Bedrock for batch processing tasks like summarizing thousands of documents overnight. The key is building a provider-agnostic abstraction layer so your application code does not need to know which backend is handling each request.
+
+**Q: How does AWS Bedrock handle rate limits compared to OpenAI?**
+
+Bedrock uses a different model. Instead of rate limits per API key, Bedrock provides account-level quotas measured in tokens per minute per model. You can request quota increases through the AWS console, and for predictable workloads you can purchase Provisioned Throughput for guaranteed capacity. OpenAI uses tier-based rate limits that increase as you spend more. For bursty workloads, Bedrock's quota model is more predictable. For gradual scaling, OpenAI's tier system is simpler to manage. Both platforms queue excess requests rather than dropping them outright.
+
+**Q: Is it hard to migrate from OpenAI to AWS Bedrock?**
+
+The migration is straightforward if you planned for it. The main work is adapting your request and response format — OpenAI and Bedrock use different JSON structures for chat completions. Prompt text usually transfers without changes, but you should evaluate output quality for your specific use case because different models respond differently to the same prompt. Budget one to two weeks for the migration including prompt tuning and quality validation. If you build a provider abstraction layer from the start, the migration reduces to implementing a new adapter class.
+
+**Q: Does Bedrock support streaming responses for chat interfaces?**
+
+Yes. Bedrock supports streaming via the InvokeModelWithResponseStream API. You receive tokens as they are generated, which is essential for chat interfaces where users expect to see the response appearing in real time. The implementation requires handling Server-Sent Events from the Bedrock endpoint and forwarding them to your frontend via WebSockets or SSE. OpenAI's streaming implementation is slightly simpler to set up because their SDK handles the event parsing automatically, but both achieve the same end result for the user.
+
+**Q: What happens to my data when I use Bedrock versus OpenAI?**
+
+With Bedrock, your data stays within your AWS account and is never used for model training. AWS provides this guarantee contractually. You control encryption keys via KMS, network access via VPC endpoints, and audit logging via CloudTrail. With OpenAI's API, data is not used for training by default since March 2023, but the data does travel to OpenAI's infrastructure over the public internet. For regulated industries like healthcare and finance, Bedrock's data residency guarantees are often a compliance requirement, not just a preference.`
     }
   ],
   cta: {

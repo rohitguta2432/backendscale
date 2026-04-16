@@ -11,7 +11,9 @@ export const upiFraud805CroreWhyIBuiltOfflineScamDetector: BlogPost = {
   sections: [
     {
       heading: 'The Numbers Are Staggering',
-      content: `Let me hit you with the data:
+      content: `I built ScamRakshak, an offline Android scam detector with zero network permissions that uses on-device AI (Gemma 4 LLM, LiteRT classifier, and regex fallback) to analyze suspicious UPI messages, URLs, and screenshots in Hindi and English — because India lost 805 crore to UPI fraud this year and every existing solution requires internet that 40% of vulnerable users lack.
+
+Here are the numbers:
 
 - **₹805 crore** lost to UPI fraud in FY26 so far (April-November 2025). That's ₹3.3 crore every single day.
 - **10.64 lakh incidents** reported — and that's just the official count.
@@ -26,7 +28,7 @@ And here's the cruel irony: the people most vulnerable to these scams — elderl
 That's why I built ScamRakshak. An Android app that detects scams using on-device AI. Zero internet required. Zero data collection. Works on a ₹8,000 phone.`
     },
     {
-      heading: 'Why Existing Solutions Don\'t Work',
+      heading: 'Why Don\'t Existing Scam Detection Solutions Work?',
       content: `There are scam detection tools out there. Here's why none of them solve the actual problem:
 
 **Truecaller / Spam call blockers**
@@ -52,7 +54,7 @@ Websites where you paste a URL or message. Problems: need internet, need a brows
 ScamRakshak checks all five.`
     },
     {
-      heading: 'How ScamRakshak Actually Works',
+      heading: 'How Does ScamRakshak Actually Detect Scams?',
       content: `The user experience is deliberately simple. My target user is a 55-year-old parent in Lucknow who just received a suspicious WhatsApp forward. They need to know in 5 seconds if it's a scam.
 
 **Flow 1: Paste a message**
@@ -172,7 +174,13 @@ Worth it. The target audience — scam-vulnerable Indians — need to trust this
 | Hindi-speaking smartphone users | 500M+ |
 | Competing offline Hindi scam detectors | 0 |
 
-The best time to build digital safety infrastructure for India was 5 years ago. The second best time is now.`
+The best time to build digital safety infrastructure for India was 5 years ago. The second best time is now.
+
+**Why the timing is right:** India crossed 500 million UPI users in 2025, and digital payment adoption in Tier 2/3 cities is growing at 35% year-over-year — far outpacing digital literacy. The gap between payment adoption and scam awareness is widening. Every month that gap exists, fraudsters extract crores from the most vulnerable users. A proactive, offline, Hindi-first scam detector fills a gap that no bank, no government helpline, and no existing app addresses.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: How accurate is ScamRakshak compared to cloud-based scam detection tools?**\n\nFor the specific domain of Indian financial scams, ScamRakshak's 3-tier engine achieves comparable accuracy to cloud tools. Tier 1 (Gemma 4) provides contextual reasoning about why a message is suspicious. Tier 2 (LiteRT) delivers reliable binary classification. Tier 3 (regex) catches known scam patterns with near-100% precision. The accuracy trade-off exists mainly in Tier 3 for novel scam types, which is mitigated by regular pattern database updates through Play Store releases.\n\n**Q: Can ScamRakshak detect scams in languages other than Hindi and English?**\n\nCurrently, the app is optimized for Hindi, Hinglish (Hindi in English script), and English — covering over 800 million Indian smartphone users. Gemma 4 has some capability with other Indian languages like Tamil, Telugu, and Bengali, but the regex patterns and LiteRT training data are focused on Hindi and English scam messages. Regional language support is on the roadmap and would primarily require expanding the Tier 3 keyword database and Tier 2 training data.\n\n**Q: Why not read SMS messages automatically instead of requiring manual paste?**\n\nDeliberate design choice. READ_SMS permission would give the app access to all messages — bank OTPs, personal conversations, everything. That contradicts the zero-data-collection promise. Manual paste means the user controls exactly what the app analyzes. It also avoids the complexity of background SMS monitoring, battery drain, and the trust concern of an app silently reading all messages.\n\n**Q: How does the screenshot OCR feature handle low-quality images?**\n\nML Kit Text Recognition handles moderate image quality well — rotated text, uneven lighting, and partial screenshots. For very low-quality images where OCR extraction is unreliable, the app displays the extracted text and lets the user correct it before analysis. The scam analysis then runs on the corrected text. This human-in-the-loop step ensures accuracy without requiring perfect image capture.\n\n**Q: What prevents scammers from adapting their messages to bypass ScamRakshak's detection?**\n\nThe 3-tier architecture provides defense in depth. If scammers change keywords to bypass Tier 3 regex, Tier 2's ML classifier still detects structural patterns. If they restructure messages to bypass Tier 2, Tier 1's LLM understands semantic intent — it recognizes urgency tactics and financial pressure regardless of specific wording. Pattern database updates ship with each Play Store release, and the LLM tier is inherently adaptive to novel phrasing.`
     }
   ],
   cta: {

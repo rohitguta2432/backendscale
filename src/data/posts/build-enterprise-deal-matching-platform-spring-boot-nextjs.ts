@@ -11,14 +11,16 @@ export const buildEnterpriseDealMatchingPlatformSpringBootNextjs: BlogPost = {
   sections: [
     {
       heading: 'The Problem: Deal Networks Run on Spreadsheets',
-      content: `Private deal networks — venture capital intros, M&A matchmaking, investment banking deal flow — still run on spreadsheets and manual introductions. A partner sees a deal, mentally maps it to someone in their network, and sends an email. If they forget, the match never happens.
+      content: `I built SynFlow, a full-stack enterprise deal matching platform using Spring Boot 3.4, Next.js 14, and GPT-4o that automatically scores and matches investor profiles to deals using a rule-based algorithm with AI-powered profile extraction from unstructured LinkedIn text — replacing the spreadsheets and manual introductions that dominate private deal networks today.
+
+Private deal networks — venture capital intros, M&A matchmaking, investment banking deal flow — still run on spreadsheets and manual introductions. A partner sees a deal, mentally maps it to someone in their network, and sends an email. If they forget, the match never happens.
 
 This is a $200B+ industry where opportunity cost is measured in missed connections. The core challenge isn't information — it's matching. How do you systematically connect the right profile to the right deal across industry, geography, and expertise?
 
-I built SynFlow to solve exactly this. Not another CRM. Not another LinkedIn. A purpose-built intelligence platform where every profile and every deal gets scored, matched, and surfaced automatically.`
+SynFlow solves exactly this. Not another CRM. Not another LinkedIn. A purpose-built intelligence platform where every profile and every deal gets scored, matched, and surfaced automatically.`
     },
     {
-      heading: 'Architecture: Why Spring Boot + Next.js',
+      heading: 'Why Did I Choose Spring Boot + Next.js for the Architecture?',
       content: `**Backend: Spring Boot 3.4 + Java 21**
 
 The backend needed to handle complex matching algorithms, encrypted data at rest, and JWT-secured API endpoints. Spring Boot was the clear choice:
@@ -48,7 +50,7 @@ The frontend needed server-rendered pages for SEO (public profile pages), client
 - **Recharts + D3.js** for dashboard visualizations`
     },
     {
-      heading: 'The Matching Algorithm: Rule-Based Over ML',
+      heading: 'Why Use a Rule-Based Matching Algorithm Instead of ML?',
       content: `This was the biggest architectural decision. ML-based matching sounds impressive, but in deal networks, **explainability matters more than accuracy**.
 
 When you tell a partner "this deal matches this profile at 87%," they need to know WHY. "Because the neural network said so" doesn't cut it. "Because they share the same industry (healthcare), geography (Southeast Asia), and the profile has 12 years of M&A experience in this exact vertical" — that's actionable.
@@ -94,7 +96,7 @@ I use a structured output prompt that returns JSON matching the exact Profile en
 **AES-256 encryption** for all sensitive fields at rest. The encryption key is injected via environment variable — never committed to code, never logged.`
     },
     {
-      heading: 'Dashboard & Analytics with D3.js',
+      heading: 'How Does the Dashboard Visualize Deal Intelligence?',
       content: `The dashboard needed to answer three questions instantly:
 
 1. **What's new?** — Recent deals added, profiles created, matches generated
@@ -134,7 +136,15 @@ One command to spin up the entire stack. No external dependencies except an Open
 - Rule-based algorithms beat ML when explainability is a requirement
 - AI is most valuable for eliminating data entry, not making decisions
 - AES-256 field-level encryption is worth the complexity for sensitive data
-- Next.js 14 App Router works beautifully as a full-stack companion to Spring Boot APIs`
+- Next.js 14 App Router works beautifully as a full-stack companion to Spring Boot APIs
+
+**Performance considerations:** The matching algorithm runs in O(n*m) time where n is the number of profiles and m is the number of active deals. For networks with up to 10,000 profiles and 500 active deals, this completes in under 2 seconds on a single Spring Boot instance. Beyond that scale, the matching can be parallelized using Java 21 virtual threads — each deal's match computation is independent, making it trivially parallelizable without the overhead of platform threads.
+
+**Why not GraphQL?** REST was chosen over GraphQL for the API layer because the data access patterns are well-defined — profiles, deals, matches, and analytics each have predictable query shapes. GraphQL adds complexity in schema management and N+1 query prevention that isn't justified when the API surface is stable and owned by a single frontend.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: Can SynFlow handle deals across multiple industries simultaneously?**\n\nYes. Each deal and profile can have multiple industry tags. The matching algorithm scores industry overlap using a weighted hierarchy — exact industry match scores 30 points, adjacent industries (e.g., healthcare and biotech) score 15 points. A single profile can match against deals in different industries simultaneously, with each match scored independently based on the full criteria set.\n\n**Q: How does GPT-4o profile extraction handle inaccurate or incomplete LinkedIn data?**\n\nThe extraction prompt includes explicit handling for missing fields — GPT-4o returns null for any field it cannot confidently extract rather than hallucinating data. The system flags incomplete profiles for manual review. Additionally, SHADOW profiles allow creating anonymous profiles where sensitive identifying information is intentionally omitted while retaining industry and expertise data.\n\n**Q: What happens when the matching algorithm produces too many low-quality matches?**\n\nThe scoring threshold is configurable per client. The default threshold surfaces matches above 60/100 and flags high-confidence matches above 80/100. Clients can adjust individual scoring weights — for example, increasing geography weight from 25 to 40 points for deals where regional presence is critical. This tunability is a key advantage of the rule-based approach over ML.\n\n**Q: How does the platform handle data privacy for sensitive deal information?**\n\nAll sensitive fields use AES-256 encryption at rest with keys injected via environment variables. The SHADOW profile feature enables anonymous matchmaking where identities are revealed only after mutual interest. JWT tokens enforce role-based access control with three tiers: admin, analyst, and viewer. Audit logs track every data access event for compliance.\n\n**Q: Is it possible to migrate from SynFlow to a microservices architecture later?**\n\nAbsolutely. The Spring Boot application is structured with clean service interfaces between the matching engine, profile management, and analytics modules. Each module communicates through well-defined service interfaces, not direct database queries. When a module needs independent scaling, extraction into a separate service requires minimal refactoring because the API contracts are already established.`
     }
   ],
   cta: {

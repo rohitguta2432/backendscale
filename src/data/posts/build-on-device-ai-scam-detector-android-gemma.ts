@@ -11,7 +11,9 @@ export const buildOnDeviceAiScamDetectorAndroidGemma: BlogPost = {
   sections: [
     {
       heading: 'India\'s ₹1,750 Crore Scam Problem',
-      content: `India loses over ₹1,750 crore annually to digital scams. WhatsApp forwards promising "KYC update or account blocked." SMS messages with "you've won ₹5,00,000, click here." Fake UPI payment requests from "Amazon refund department."
+      content: `I built ScamRakshak, an on-device AI scam detector for Android using a 3-tier inference engine — Gemma 4 LLM via ML Kit GenAI for contextual analysis, LiteRT binary classifier for broad device support, and a regex fallback engine for universal coverage — with zero network permissions, Hindi-first bilingual output, and four input modes (text, screenshot OCR, URL analysis, UPI ID verification) to protect India's 500 million Hindi-speaking smartphone users from digital fraud.
+
+India loses over ₹1,750 crore annually to digital scams. WhatsApp forwards promising "KYC update or account blocked." SMS messages with "you've won ₹5,00,000, click here." Fake UPI payment requests from "Amazon refund department."
 
 The victims aren't just elderly or non-technical users. Scammers are sophisticated — they use correct bank names, realistic formatting, and urgency tactics that catch even tech-savvy people off guard.
 
@@ -54,7 +56,7 @@ This tier runs on literally any Android device. No ML runtime needed. No model d
 **Fallback chain:** The app checks if Tier 1 is available (requires AICore). If not, falls to Tier 2 (requires LiteRT runtime). If not, uses Tier 3 (always available). The user sees a risk score regardless of which tier processes the message.`
     },
     {
-      heading: 'Hindi-First Bilingual Analysis',
+      heading: 'Why Is Hindi-First Bilingual Analysis Essential?',
       content: `Most scam messages in India arrive in Hindi, Hinglish (Hindi written in English script), or a mix of Hindi and English. A scam detector that only understands English misses the majority of threats.
 
 **Tier 1 (Gemma 4) handles this natively** — the model understands Hindi, Hinglish, and code-switched text. The output is bilingual:
@@ -72,7 +74,7 @@ English: "This message is a scam. No bank asks you to click a link. Call your ba
 This bilingual approach is critical for the target audience. A Hindi-speaking user from Tier 2/3 India needs the explanation in their language. An English-speaking user needs it in English. Both get both.`
     },
     {
-      heading: 'Input Modes: Messages, Screenshots, URLs, UPI IDs',
+      heading: 'What Input Modes Does ScamRakshak Support?',
       content: `Scams arrive through multiple channels. ScamRakshak handles all of them:
 
 **1. Text Messages (Primary)**
@@ -145,7 +147,15 @@ The app requests exactly one permission: CAMERA (for screenshot capture). No int
 
 4. **Hindi-first isn't a translation — it's a design philosophy.** Building for 500M Hindi speakers means the primary UX must be Hindi, not English with a translation toggle.
 
-5. **Single-purpose apps can be technically deep.** ScamRakshak does one thing — detect scams — but the engineering behind 3-tier inference, bilingual output, multi-modal input, and zero-network architecture is substantial.`
+5. **Single-purpose apps can be technically deep.** ScamRakshak does one thing — detect scams — but the engineering behind 3-tier inference, bilingual output, multi-modal input, and zero-network architecture is substantial.
+
+**Model size and APK impact:** The LiteRT binary classifier adds approximately 15MB to the APK size. The Gemma 4 model is not bundled — it downloads through Google AICore separately (approximately 2GB). The regex pattern database adds under 1MB. Total APK size is approximately 12MB, which is smaller than most social media apps. For users on limited storage, Tier 2 and Tier 3 provide full protection without the Gemma 4 model download.
+
+**Testing the 3-tier fallback chain:** Each tier is tested independently with a curated dataset of known scam messages and legitimate messages. The fallback logic is tested by mocking AICore availability — when AICore returns unavailable, the app must seamlessly fall to Tier 2 without any user-visible delay. Integration tests verify that the same message produces consistent risk scores across tiers (within a 15-point tolerance), ensuring that a scam message flagged by Tier 1 is also caught by Tier 2 and Tier 3.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: How does ScamRakshak differ from Truecaller's spam detection?**\n\nTruecaller focuses on identifying spam callers using a cloud-based phone number database — it requires internet access to check its database. ScamRakshak analyzes message content, URLs, UPI IDs, and screenshots using on-device AI with zero internet. Truecaller cannot analyze WhatsApp forwards, SMS text content, or screenshot-based scams. The two tools are complementary — Truecaller identifies who is calling, ScamRakshak analyzes what they are saying.\n\n**Q: Can the Gemma 4 model detect new scam types it was not specifically trained on?**\n\nYes, because Gemma 4 is a general-purpose LLM that understands language intent, not just pattern matching. When a novel scam type emerges — say, a fake income tax refund scheme — Gemma 4 recognizes the urgency tactics, financial bait, and suspicious link patterns even without specific training on that scam category. The regex tier cannot detect novel scams, but the LLM tier provides an adaptive layer that evolves with scam sophistication.\n\n**Q: Why does ScamRakshak only request CAMERA permission?**\n\nCAMERA is needed solely for the screenshot OCR feature — capturing images of suspicious WhatsApp forwards or social media posts. The app does not request READ_SMS (user pastes messages manually), INTERNET (zero network architecture), READ_CONTACTS, or ACCESS_LOCATION. Minimizing permissions maximizes user trust and simplifies security audits. Users can verify the app's permissions in Android Settings at any time.\n\n**Q: What is the accuracy difference between Tier 1 and Tier 3?**\n\nTier 1 (Gemma 4) provides the highest accuracy with contextual reasoning — it understands why a message is suspicious and generates bilingual explanations. Tier 3 (regex) has near-100% precision for known scam patterns but cannot detect novel scams or explain reasoning. Tier 2 (LiteRT) falls between the two — it catches structural patterns that regex misses but cannot generate explanations. For known scam types, all three tiers produce similar risk scores.\n\n**Q: How often is the scam pattern database updated?**\n\nThe Room database containing scam signatures ships with APK updates through the Google Play Store, typically on a weekly release cycle. New scam patterns are identified from public reporting databases and security research, then added to the regex pattern set and LiteRT training data. The Gemma 4 model itself is updated by Google through AICore independently of the app release cycle.`
     }
   ],
   cta: {

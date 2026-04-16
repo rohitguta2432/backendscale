@@ -11,16 +11,16 @@ export const iBuiltMultiTenantSaasAlone12ModuleSpringBoot: BlogPost = {
   sections: [
     {
       heading: 'One Engineer. Twelve Modules. Zero Shortcuts.',
-      content: `The SaaS market is projected to hit $465 billion in 2026. Over 70% of modern SaaS vendors use some form of multi-tenancy. And yet, most developers believe building a multi-tenant SaaS platform requires a team of 5-10 engineers.
+      content: `I built RetailOS — a complete multi-tenant retail SaaS platform with 12 Maven modules covering authentication, billing, inventory, GST invoicing, khata credit ledger, and offline sync — entirely as a solo engineer using Spring Boot 3.4 and Java 21, proving that the right monorepo architecture lets one developer ship what most teams need five to ten engineers to build.
+
+The SaaS market is projected to hit $465 billion in 2026. Over 70% of modern SaaS vendors use some form of multi-tenancy. And yet, most developers believe building a multi-tenant SaaS platform requires a team of 5-10 engineers.
 
 It doesn't. It requires the right architecture.
-
-I built RetailOS — a multi-tenant retail SaaS platform with 12 Maven modules — as a solo engineer. It handles authentication, tenant isolation, inventory management, point-of-sale billing, GST-compliant invoicing, credit ledger (khata), file storage, offline sync, analytics, admin panel, and full audit trail.
 
 The secret isn't working 16-hour days. It's making architectural decisions that multiply your output instead of dividing it. Here's every decision I made and why.`
     },
     {
-      heading: 'Decision #1: Monorepo Over Microservices',
+      heading: 'Why Choose a Monorepo Over Microservices?',
       content: `This is the most controversial decision. "But microservices scale better!" Sure. They also require:
 
 - Service discovery (Consul, Eureka)
@@ -62,7 +62,7 @@ retailos/
 When a module needs independent scaling (e.g., billing handles 10x more traffic than analytics), extraction is straightforward because the interfaces are already clean. You extract when you NEED to, not because the architecture demands it.`
     },
     {
-      heading: 'Decision #2: Row-Level Tenant Isolation',
+      heading: 'How Does Row-Level Tenant Isolation Work at Scale?',
       content: `Three options for multi-tenancy. The choice determines your cost structure forever.
 
 | Approach | Isolation | Cost | Complexity |
@@ -111,7 +111,7 @@ The invoice module takes a completed Bill, applies GST rules based on HSN codes 
 **Why this matters:** Zoho Inventory, Unicommerce, Square — none of them have khata. None handle Indian GST with HSN-level granularity at SME pricing. These two modules ARE the product differentiation.`
     },
     {
-      heading: 'Decision #4: Offline Sync with Conflict Resolution',
+      heading: 'How Do You Handle Offline Sync with Conflict Resolution?',
       content: `Internet in Tier 2/3 India is unreliable. A billing counter in a kirana store can't stop working because WiFi dropped for 10 minutes. The point-of-sale must function offline.
 
 **The offline sync architecture:**
@@ -157,7 +157,13 @@ This is the hardest engineering problem in the entire platform. The key insight:
 
 Every technology NOT chosen is time NOT spent on configuration, debugging, and maintenance. The best architecture for a solo engineer is the one with the fewest moving parts that still meets the requirements.
 
+**Testing strategy as a solo engineer:** Without a QA team, automated tests become your safety net. Each module has integration tests that verify tenant isolation — creating data for Tenant A and asserting Tenant B cannot access it. The billing module has the most extensive test suite because financial calculations cannot have bugs. JaCoCo reports keep coverage visible, and the build fails if critical modules drop below 80% coverage. This discipline is non-negotiable when you're the only engineer — you catch bugs at build time or your users catch them in production.
+
 **The lesson:** You don't need a team to build a multi-tenant SaaS. You need the right module boundaries, the right tenant isolation strategy, and the discipline to say "not yet" to every technology that doesn't directly serve today's users.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: Can a solo engineer realistically maintain 12 modules in production?**\n\nYes, because a Maven monorepo deploys as a single artifact. You run one CI pipeline, one Docker container, one health check, and one set of logs. The 12 modules are compile-time boundaries, not runtime boundaries. Monitoring is a single Actuator endpoint, not 12 separate dashboards. The operational overhead is equivalent to maintaining one application, not twelve.\n\n**Q: How does row-level tenant isolation prevent data leaks between tenants?**\n\nEvery request passes through a Spring Security filter that extracts the tenant ID from the JWT token and sets it in a ThreadLocal TenantContext. Every repository query automatically includes a tenant_id filter. Integration tests on every CRUD endpoint verify cross-tenant isolation by creating data for one tenant and asserting another tenant cannot access it. The enforcement is automatic and not something developers can accidentally skip.\n\n**Q: Why build a khata module when spreadsheets could handle credit tracking?**\n\nSpreadsheets lack integration with billing. When a shopkeeper creates a bill with payment type CREDIT, the khata module auto-creates a ledger entry — zero double entry. It also provides running balances, settlement flows, and an immutable audit trail. Paper khata diaries get lost, have no backup, and create disputes. The digital khata solves all three while being faster than manual entry.\n\n**Q: What is the cost of running RetailOS for 1,000 tenants?**\n\nWith row-level isolation sharing a single PostgreSQL database, the infrastructure cost for 1,000 tenants is a single VPS with PostgreSQL, Redis, and MinIO — approximately $50-100 per month depending on the provider. Database-per-tenant at the same scale would require managing 1,000 connection pools and 1,000 migration runs, which is operationally unrealistic for a solo engineer.\n\n**Q: How does the offline sync module handle conflicting edits from multiple billing counters?**\n\nEach operation type has a specific conflict strategy. Transaction operations like bill creation, payments, and khata entries use additive merge — both versions are kept because losing a financial transaction is worse than having a duplicate that gets reconciled. Product metadata like names and prices use last-write-wins because these changes are low-risk. Every operation carries a client-generated UUID for idempotency, preventing duplicate syncs from creating duplicate records.`
     }
   ],
   cta: {

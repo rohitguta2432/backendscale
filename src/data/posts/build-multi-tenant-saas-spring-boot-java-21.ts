@@ -11,14 +11,16 @@ export const buildMultiTenantSaasSpringBootJava21: BlogPost = {
   sections: [
     {
       heading: 'India\'s Retail Problem: 90% Unorganized',
-      content: `India's retail sector is massive — $950 billion — and 90% of it is unorganized. Kirana stores, small electronics shops, clothing boutiques, and general stores. They run on paper registers, basic billing software that can't generate GST-compliant invoices, and zero inventory tracking.
+      content: `I built RetailOS, a multi-tenant retail SaaS platform using Spring Boot 3.4 and Java 21 with 12 Maven modules covering billing, inventory, GST-compliant invoicing, khata credit ledger, and offline sync with conflict resolution — designed specifically for India's unorganized retail sector where 90% of shops still run on paper registers and enterprise POS systems cost more than small shop owners can afford.
+
+India's retail sector is massive — $950 billion — and 90% of it is unorganized. Kirana stores, small electronics shops, clothing boutiques, and general stores. They run on paper registers, basic billing software that can't generate GST-compliant invoices, and zero inventory tracking.
 
 Enterprise POS systems like Zoho Inventory or Unicommerce cost ₹5,000-15,000/month — too expensive for a shop that makes ₹50,000/month profit. And they're designed for large retailers — the UI is overwhelming, the features are overkill, and there's no Hindi support.
 
 RetailOS is built for these shops. Affordable, India-first, works offline, handles GST, and includes a khata (credit ledger) module — because 70% of Indian retail transactions involve extending credit to regular customers.`
     },
     {
-      heading: 'Why a 12-Module Maven Monorepo',
+      heading: 'Why Choose a 12-Module Maven Monorepo?',
       content: `RetailOS has 12 modules, each owning a specific domain:
 
 \`\`\`
@@ -51,7 +53,7 @@ For an early-stage product, microservices add deployment complexity without prop
 The modules ARE the microservice boundaries. When the time comes, extraction is straightforward because dependencies are explicit in Maven POMs.`
     },
     {
-      heading: 'Multi-Tenancy: Row-Level Isolation',
+      heading: 'How Does Row-Level Multi-Tenancy Isolation Work?',
       content: `Multi-tenancy is the core architectural challenge. Every query, every insert, every audit log must be scoped to the current tenant.
 
 **Three approaches exist:**
@@ -137,7 +139,15 @@ services:
 | Invoicing | GST-compliant PDF generation | Legal requirement, no shortcuts |
 | Credit | First-class khata module | How 70% of Indian retail actually works |
 
-**What this project proves:** You can build an enterprise-grade SaaS platform with a single engineer — if the architecture is right. 12 modules, multi-tenancy, offline sync, GST compliance — all shipping from one codebase.`
+**What this project proves:** You can build an enterprise-grade SaaS platform with a single engineer — if the architecture is right. 12 modules, multi-tenancy, offline sync, GST compliance — all shipping from one codebase.
+
+**Security and compliance considerations:** RetailOS handles sensitive financial data — transaction records, customer credit information, and GST-linked invoices. The audit module (retailos-audit) creates an immutable event log for every data modification, which is essential for GST compliance audits. The KYC module manages DPDP (Digital Personal Data Protection) consent, ensuring that customer data collection complies with India's 2023 data protection law. JWT tokens use short expiration times with refresh token rotation, and OTP-based authentication eliminates password management entirely — critical for shopkeepers who would otherwise use "123456" as their password.
+
+**Scaling path from monorepo to microservices:** The 12-module Maven structure is designed for eventual extraction. Each module communicates through service interfaces defined in retailos-common, not through direct database queries across module boundaries. When the billing module needs independent scaling — handling 10x the traffic of analytics — extraction means pulling the module into its own Spring Boot application, replacing in-process calls with REST or gRPC, and deploying independently. The module boundaries are already clean; extraction is a deployment change, not an architecture change.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: How does RetailOS handle GST rate changes when the government updates tax slabs?**\n\nGST rates are stored as configurable data in the database, not hardcoded. When the government updates a rate for specific HSN codes, an admin updates the rate table through the admin panel. All new invoices automatically use the updated rates. Historical invoices retain their original rates for compliance — the invoice module stores the GST rate at the time of generation, not a reference to the current rate.\n\n**Q: Can RetailOS work entirely offline for days at a time?**\n\nYes. The offline sync module queues all operations locally — bill creation, stock movements, khata entries, and payments. These operations execute locally and the UI reflects changes instantly. When connectivity returns, the queue syncs in chronological order with conflict resolution. The billing counter continues working indefinitely without internet. The only feature that requires connectivity is the initial tenant setup and authentication token refresh.\n\n**Q: How does the khata module prevent disputes between shopkeepers and customers?**\n\nEvery KhataEntry has a timestamp, amount, optional notes, and a linked bill reference. When a customer disputes a balance, the shopkeeper can show the complete transaction history with bill references. The immutable audit trail in retailos-audit provides an additional layer of verification — every credit extension and payment recording is logged with the exact time, amount, and operator who processed it.\n\n**Q: What is the maximum number of tenants RetailOS can support on a single database?**\n\nWith proper indexing (composite indexes on tenant_id plus domain columns), PostgreSQL efficiently handles thousands of tenants in a shared database. The practical limit depends on total data volume rather than tenant count. At 1,000 tenants with average retail volume, a single PostgreSQL instance on a moderate VPS handles the load comfortably. Connection pooling via HikariCP means all tenants share one pool.\n\n**Q: Why use MinIO instead of AWS S3 for file storage?**\n\nMinIO is S3-compatible, self-hosted, and adds zero cloud cost. For an early-stage SaaS targeting cost-sensitive Indian SMEs, every rupee of infrastructure cost affects pricing. MinIO runs alongside the application in Docker Compose. When scale demands it, migration to AWS S3 requires zero code changes because the S3 API is identical — only the endpoint URL changes.`
     }
   ],
   cta: {

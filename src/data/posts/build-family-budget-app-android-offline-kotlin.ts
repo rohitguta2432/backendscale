@@ -11,7 +11,9 @@ export const buildFamilyBudgetAppAndroidOfflineKotlin: BlogPost = {
   sections: [
     {
       heading: 'Why Families Need a Different Finance App',
-      content: `Most finance apps are built for individuals — one person, one bank account, one spending pattern. Families are fundamentally different:
+      content: `I built PaisaGuard, a fully offline Android budget app with 8 financial modules — expense tracking, grocery budget mode, bill calendar, emergency fund tracker, debt snowball, affordability calculator, family expense splitting, and monthly reports — using Kotlin and Jetpack Compose with zero backend, designed specifically for Indian middle-class families who need real-time grocery budget tracking and two-person expense visibility.
+
+Most finance apps are built for individuals — one person, one bank account, one spending pattern. Families are fundamentally different:
 
 - **Two spenders, one budget.** Both partners spend from a shared pool. "Who spent what" matters as much as "how much was spent."
 - **Groceries dominate.** For a middle-class family, groceries are the #1 controllable expense. No app helps you stay on budget WHILE shopping.
@@ -51,7 +53,7 @@ Not Splitwise. Simpler. Every expense has a "who spent" toggle. Monthly summary 
 Auto-generated end-of-month summary. Category breakdown with donut chart. Comparison vs. previous month. Budget adherence score. Top 5 spending categories. Exportable as PDF or shareable screenshot.`
     },
     {
-      heading: 'Sub-5-Second Expense Logging',
+      heading: 'How Do You Achieve Sub-5-Second Expense Logging?',
       content: `If logging an expense takes more than 5 seconds, people stop doing it. This is the single most important UX metric for a finance app.
 
 **The flow:**
@@ -75,7 +77,7 @@ Total: ~2 seconds for a basic expense. Under 5 seconds even with notes and date 
 The bottom sheet pattern (instead of a full-screen navigation) means the dashboard stays in context. You see your running total update live as you save.`
     },
     {
-      heading: 'Grocery Budget Mode: The Killer Feature',
+      heading: 'What Makes Grocery Budget Mode the Killer Feature?',
       content: `This is the feature that no competitor has. Here's how it works:
 
 **Setup:** Set a weekly grocery budget (e.g., ₹5,000).
@@ -145,7 +147,13 @@ When a debt is marked as paid, the app celebrates with a confetti animation and 
 
 5. **Family splitting built into every expense.** Not a separate module you open occasionally. The "who spent" toggle is on the primary expense entry screen. This means every transaction automatically contributes to the family balance view.
 
-**What PaisaGuard proves:** You don't need AI, cloud infrastructure, or bank APIs to build a genuinely useful finance app. Eight modules, offline-only, built by one engineer. Sometimes the most impactful products are the simplest ones.`
+**What PaisaGuard proves:** You don't need AI, cloud infrastructure, or bank APIs to build a genuinely useful finance app. Eight modules, offline-only, built by one engineer. Sometimes the most impactful products are the simplest ones.
+
+**Data integrity across 8 modules:** With all modules sharing a single Room database, data consistency is critical. Room's support for database transactions ensures that cross-module operations — like marking a bill as paid and creating an expense entry simultaneously — are atomic. If either operation fails, both roll back. Kotlin coroutines with Flow provide reactive updates across modules, so the dashboard total updates instantly when a grocery item is added or a debt payment is recorded. This reactive architecture means the user always sees current data without manual refresh.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: Can both partners use PaisaGuard on separate phones?**\n\nPaisaGuard is currently designed for single-device use — both partners log expenses on one shared family phone or tablet. The "who spent" toggle on every expense tracks which partner made the purchase. Cross-device sync would require a backend server, which contradicts the fully offline architecture. For families wanting multi-device access, the JSON backup/restore feature allows manual synchronization between devices.\n\n**Q: How does the grocery budget mode handle price changes during shopping?**\n\nItems can be edited after adding them. If you scan an item at the billing counter and the actual price differs from your estimate, tap the item, update the price, and the budget bar recalculates instantly. The running total is always based on current item prices, not original estimates. Items can also be removed if you decide to skip something.\n\n**Q: Is the debt snowball method really better than paying highest interest first?**\n\nMathematically, the avalanche method (highest interest first) saves more money. But behavioral research consistently shows that the snowball method — paying smallest debts first — leads to higher completion rates because people stay motivated by seeing debts disappear. For middle-class families with 2-5 lakh in total debt, the interest difference is typically under 2,000 rupees over the payoff period. The motivation difference is what determines whether the family actually becomes debt-free.\n\n**Q: Can PaisaGuard import transactions from bank SMS like FinBaby?**\n\nNo. PaisaGuard is designed for manual family expense logging with the sub-5-second entry flow. It does not read SMS messages. This is a deliberate choice — PaisaGuard focuses on family budgeting features like grocery mode, bill calendar, and debt snowball that require manual categorization context. For automatic SMS import, FinBaby is the companion app designed specifically for that use case.\n\n**Q: How do monthly reports compare spending across months?**\n\nThe auto-generated monthly report includes category-wise donut charts, a comparison table showing current month versus previous month for each category, a budget adherence score (percentage of categories within budget), and the top 5 spending categories. Reports can be exported as PDF or shared as screenshots. Historical data is retained in the Room database indefinitely, so year-over-year comparisons are possible through the reports screen.`
     }
   ],
   cta: {

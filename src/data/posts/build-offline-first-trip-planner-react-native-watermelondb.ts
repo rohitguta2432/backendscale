@@ -11,7 +11,9 @@ export const buildOfflineFirstTripPlannerReactNativeWatermelondb: BlogPost = {
   sections: [
     {
       heading: 'Group Trip Planning Is Broken',
-      content: `Count the tools you used for your last group trip: WhatsApp for discussions. Google Docs for the itinerary. Google Maps for places. Splitwise for expenses. Email for hotel confirmations. Maybe a shared Google Sheet for the budget.
+      content: `I built TripHive, an offline-first collaborative trip planner using React Native, WatermelonDB, PowerSync, and MapLibre with downloadable Protomaps tiles that replaces five separate tools — Google Docs for itineraries, Google Maps for navigation, Splitwise for expenses, WhatsApp for polls, and shared sheets for packing lists — with one app that works without internet by default.
+
+Count the tools you used for your last group trip: WhatsApp for discussions. Google Docs for the itinerary. Google Maps for places. Splitwise for expenses. Email for hotel confirmations. Maybe a shared Google Sheet for the budget.
 
 Five tools. None of them talk to each other. And the moment you land in a country with spotty WiFi — or walk into a subway — everything breaks. Google Docs won't load. Maps can't fetch tiles. Splitwise needs a connection to settle up.
 
@@ -20,7 +22,7 @@ Trip planning apps exist — TripIt, Wanderlog, Sygic. But they're all online-fi
 TripHive is **offline-first**. Not "works offline sometimes." The entire architecture assumes you have no internet, and treats connectivity as a bonus.`
     },
     {
-      heading: 'Why WatermelonDB Over Realm or SQLite',
+      heading: 'Why Choose WatermelonDB Over Realm or SQLite?',
       content: `For offline-first mobile apps, you need a local database that handles three things well:
 
 1. **Fast reads** — Trip data (itineraries, expenses, polls) must load instantly from local storage
@@ -59,7 +61,7 @@ TripHive is **offline-first**. Not "works offline sometimes." The entire archite
 This is a genuine differentiator. No competing trip planner offers downloadable offline maps in their app. Travelers in foreign countries with no data plan can still navigate.`
     },
     {
-      heading: 'No Login to Join: The Link-Based Architecture',
+      heading: 'How Does Link-Based Access Work Without Requiring Login?',
       content: `The #1 adoption killer for group apps is the "everyone needs to download and create an account" problem. You send a trip invite to 8 friends. 3 download the app. 2 create accounts. 1 actually adds something.
 
 TripHive removes every friction point:
@@ -136,7 +138,15 @@ TripHive removes every friction point:
 
 4. **Supabase eliminates backend engineering for collaborative apps.** Auth, Realtime, RLS, and Storage — all managed. Focus on the mobile experience.
 
-5. **Revenue model matters from the architecture phase.** The free/pro tier split influenced data model design — trip limits are enforced at the database level, not the UI level.`
+5. **Revenue model matters from the architecture phase.** The free/pro tier split influenced data model design — trip limits are enforced at the database level, not the UI level.
+
+**Cross-platform performance considerations:** React Native with Expo provides a managed workflow that simplifies iOS and Android builds from a single codebase. WatermelonDB's lazy loading is particularly important on Android where memory management is stricter — loading 200 itinerary items eagerly would cause perceptible jank on mid-range devices. The MapLibre renderer uses GPU acceleration for smooth map interactions, and downloaded PMTiles are stored on device storage rather than app storage to avoid Android's per-app storage limits.
+
+**Handling multi-currency expense splitting:** International trips involve expenses in multiple currencies. TripHive stores each expense in its original currency with the conversion rate at time of entry. Settlement calculations convert everything to a single "trip currency" chosen by the group creator. Exchange rates can be manually adjusted if the group disagrees with the automatic rate. This avoids the common problem in Splitwise where currency conversion discrepancies create small persistent imbalances that never resolve.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: How much storage do offline maps require per city?**\n\nProtomaps vector tiles are significantly smaller than raster tiles. A typical city like Tokyo requires approximately 50MB of tiles, covering all zoom levels from neighborhood to city-wide view. A small city like Kyoto might need 20-30MB. Users can delete downloaded tiles after a trip to reclaim storage. Vector tiles render beautifully at any zoom level without pixelation, unlike cached Google Maps screenshots.\n\n**Q: What happens when two people edit the same itinerary item offline?**\n\nPowerSync handles conflict resolution using a last-write-wins strategy for most fields. If Person A changes a restaurant name while offline and Person B changes the time slot while offline, both changes merge cleanly because they affect different fields. If both change the same field, the most recent write wins when sync occurs. Supabase Realtime notifies online users immediately so they can discuss if a conflict feels wrong.\n\n**Q: Can TripHive work without Supabase as the backend?**\n\nWatermelonDB is backend-agnostic — it uses SQLite locally and can sync with any PostgreSQL-compatible backend. PowerSync specifically supports Supabase but also works with self-hosted PostgreSQL. Replacing Supabase would require implementing authentication and realtime subscriptions separately, but the local database and offline functionality would remain identical.\n\n**Q: How does the free tier limitation (2 trips, 5 collaborators) work technically?**\n\nTrip limits are enforced at the database level through Supabase Row Level Security policies, not just the UI. A free user's INSERT policy on the trips table checks their current trip count. This means even direct API calls cannot bypass the limit. RevenueCat manages subscription state and communicates tier status to Supabase through a webhook that updates the user's subscription record.\n\n**Q: Is TripHive available on both iOS and Android?**\n\nYes. React Native with Expo produces native iOS and Android apps from one TypeScript codebase. MapLibre GL has native renderers for both platforms. WatermelonDB uses SQLite on both platforms. The only platform-specific code is push notification handling via Firebase Cloud Messaging for Android and APNs for iOS, which Expo abstracts through its notification module.`
     }
   ],
   cta: {

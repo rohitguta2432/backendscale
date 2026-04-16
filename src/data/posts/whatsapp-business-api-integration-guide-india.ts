@@ -11,14 +11,16 @@ export const whatsappBusinessApiIntegrationGuideIndia: BlogPost = {
   sections: [
     {
       heading: 'Why WhatsApp API Matters for Indian Businesses',
-      content: `India has 500M+ WhatsApp users. Your customers are already on WhatsApp — they check it 50+ times a day. Email open rates in India hover around 15%. WhatsApp message open rates? 95%+.
+      content: `To integrate the WhatsApp Business API for an Indian startup, choose a Business Solution Provider like Twilio or Gupshup (or connect directly via Meta Cloud API), set up a webhook-based backend to receive and process incoming messages, design pre-approved message templates for outbound communications, and follow Meta's strict 24-hour session window rules to avoid getting your number banned. Monthly costs for a small business start as low as 85 INR for Meta fees alone.
+
+India has 500M+ WhatsApp users. Your customers are already on WhatsApp — they check it 50+ times a day. Email open rates in India hover around 15%. WhatsApp message open rates? 95%+.
 
 For ClinIQ AI, I integrated WhatsApp for appointment reminders and patient communication. The results were immediate: no-show rates dropped by 35% because patients actually see and respond to WhatsApp messages. They ignore emails and SMS.
 
 But here's what most tutorials don't tell you: the WhatsApp Business API is not like building a simple chatbot. Meta has strict rules about message templates, opt-ins, and session windows. Get it wrong and you'll get your number banned.`
     },
     {
-      heading: 'Choosing Your API Provider',
+      heading: 'How Should You Choose Your WhatsApp API Provider?',
       content: `You don't connect to WhatsApp directly. You go through a Business Solution Provider (BSP). Here's the landscape in 2026:
 
 | Provider | Pricing | Best For |
@@ -36,10 +38,12 @@ But here's what most tutorials don't tell you: the WhatsApp Business API is not 
 - Business-initiated: ₹0.47 per conversation (24-hour window)
 - User-initiated: ₹0.35 per conversation
 - Utility messages (order updates, receipts): ₹0.17 per conversation
-- First 1,000 conversations/month: Free`
+- First 1,000 conversations/month: Free
+
+**One factor many tutorials overlook is BSP reliability in India.** During high-traffic events like Diwali sales or Republic Day offers, BSP infrastructure can buckle under load. Twilio has the most robust global infrastructure and rarely drops messages, but costs more. Gupshup offers competitive pricing and decent reliability for Indian traffic patterns. Meta Cloud API (direct) eliminates the BSP middleman entirely but requires your engineering team to manage webhook infrastructure, handle retries, and deal with Meta's API rate limits directly. For ClinIQ AI, I chose the direct Meta Cloud API approach because the engineering team could handle the infrastructure, and it saved roughly 40% on per-message costs compared to Twilio.`
     },
     {
-      heading: 'Building an Automated WhatsApp Bot',
+      heading: 'How Do You Build an Automated WhatsApp Bot?',
       content: `Here's the architecture I used for ClinIQ AI's WhatsApp integration:
 
 1. **Webhook receiver** — A Spring Boot endpoint that receives incoming messages from Meta's API
@@ -72,7 +76,9 @@ public ResponseEntity<?> handleIncoming(@RequestBody WhatsAppWebhook payload) {
 }
 \`\`\`
 
-The biggest mistake I see: developers building complex NLP pipelines when simple keyword matching + button menus handle 90% of use cases. For ClinIQ AI, the bot handles appointment booking, reminders, and FAQ — all with template messages and quick-reply buttons. No GPT needed.`
+The biggest mistake I see: developers building complex NLP pipelines when simple keyword matching + button menus handle 90% of use cases. For ClinIQ AI, the bot handles appointment booking, reminders, and FAQ — all with template messages and quick-reply buttons. No GPT needed.
+
+**Session state management deserves careful thought.** When a user starts an appointment booking flow and then disappears for 3 hours, what happens to their partially completed booking? ClinIQ AI stores conversation state in Redis with a 30-minute TTL. If the user returns within 30 minutes, they continue where they left off. After 30 minutes, the state expires and the bot starts fresh — asking the user to begin the booking flow again. This prevents stale or confusing state from accumulating. The TTL is configurable per flow: a simple FAQ has a 5-minute TTL while a multi-step booking has 30 minutes.`
     },
     {
       heading: 'Message Templates That Convert',
@@ -123,6 +129,28 @@ That's less than most businesses spend on SMS. And the engagement is 5x better.
 For ClinIQ AI, the WhatsApp integration was one of the highest-ROI features I built. The development cost was modest, the monthly running cost is negligible, and the impact on patient no-shows was dramatic.
 
 If you're an Indian startup and you're not on WhatsApp Business API yet, you're leaving money on the table. Start with appointment reminders or order updates — the simplest use case with the highest impact.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: How long does it take to get WhatsApp Business API access approved?**
+
+Getting API access through a BSP like Twilio or Gupshup typically takes 1-3 business days. You need a verified Meta Business account, a dedicated phone number (not your personal number), and business verification documents. Meta may request additional verification for certain business categories like healthcare or financial services. If you go through the direct Meta Cloud API route, the process can take slightly longer as you manage the application directly with Meta. Start this process early — do not wait until your bot is fully built to apply.
+
+**Q: Can I use my existing WhatsApp number for the Business API?**
+
+Technically yes, but I strongly recommend against it. Registering an existing personal number as a Business API number converts it permanently — you lose access to the regular WhatsApp app on that number and cannot revert to personal use. Use a new dedicated number for your business bot. You can port an existing business landline number if customers already know it. The number must be able to receive either an SMS or voice call for verification during setup.
+
+**Q: What is the difference between WhatsApp Business App and WhatsApp Business API?**
+
+The WhatsApp Business App is a free mobile application designed for small businesses to manually chat with customers, set up quick replies, and manage a basic product catalog. It has no API, no automation, and supports only one device at a time. The WhatsApp Business API is a programmatic interface that allows automated messaging, webhook-based integration with your backend systems, multiple concurrent conversations, and template-based outbound messaging. The API requires a BSP or direct Meta Cloud API access and is designed for businesses that need to handle high message volumes with automated responses.
+
+**Q: How do you handle users who message in Hindi versus English?**
+
+For ClinIQ AI, the bot uses simple language detection based on character analysis. If the message contains Devanagari script characters, the bot responds in Hindi. If it contains only Latin characters, it responds in English. For Hinglish messages (Roman script Hindi like "mujhe appointment chahiye"), the bot defaults to English but uses keyword matching that understands common Romanized Hindi phrases. The system maintains the detected language preference in the session state, so subsequent messages in the same conversation continue in the same language unless the user switches.
+
+**Q: Is it possible to send images, documents, and location pins through the WhatsApp Business API?**
+
+Yes, the WhatsApp Business API supports rich media messages including images, documents (PDF, DOC), videos, audio files, location pins, and contact cards. Within the 24-hour session window, you can send any of these media types as free-form messages. Outside the session window, media can only be sent as part of approved templates that include a media header. ClinIQ AI sends location pins for clinic directions and PDF documents for post-consultation summaries, both as session messages triggered by patient requests.`
     }
   ],
   cta: {

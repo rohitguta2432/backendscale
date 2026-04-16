@@ -11,7 +11,9 @@ export const buildAiChatbotWhatsappBusinessIndia: BlogPost = {
   sections: [
     {
       heading: 'The AI Chatbot Hype vs Reality',
-      content: `Every business wants an AI chatbot in 2026. Most don't need one. And of those that do, most are being sold solutions 10x more expensive than necessary.
+      content: `To build an AI chatbot for your business, you need to choose the right intelligence level (rule-based, intent classification, or full LLM), select a messaging platform your customers already use (WhatsApp dominates in India with 500M+ users), and architect a webhook-driven backend with session management and intent routing. Most businesses get the best ROI from a Level 2 intent-classification bot that costs $5,000-$10,000 to build and under $100/month to run.
+
+Every business wants an AI chatbot in 2026. Most don't need one. And of those that do, most are being sold solutions 10x more expensive than necessary.
 
 Here's the truth from someone who has built them:
 
@@ -29,7 +31,7 @@ Here's the truth from someone who has built them:
 I built ClinicAI — a WhatsApp chatbot for Indian clinics that handles appointment booking in Hindi and English. No app downloads needed, no training required. Here's how I think about chatbot architecture.`
     },
     {
-      heading: 'Three Levels of Chatbot Intelligence',
+      heading: 'What Are the Three Levels of Chatbot Intelligence?',
       content: `**Level 1: Rule-Based (Cost: $2,000–$5,000)**
 Keyword matching and decision trees. "If user says 'book', show available slots." Works for 80% of small business use cases.
 
@@ -57,7 +59,7 @@ GPT-4/Claude generates responses dynamically. Needed for complex scenarios like 
 **My recommendation for most Indian businesses: Level 2.** It handles 90% of use cases at 30% of the cost of Level 3, with zero hallucination risk.`
     },
     {
-      heading: 'WhatsApp vs Custom App vs Web Widget',
+      heading: 'Which Platform Should You Choose: WhatsApp, Custom App, or Web Widget?',
       content: `| Platform | Reach in India | User Friction | Setup Cost | Monthly Cost |
 |----------|---------------|---------------|------------|--------------|
 | WhatsApp Business API | 500M+ users | Zero (no download) | $3,000–$8,000 | $50–$500 (Twilio) |
@@ -70,7 +72,7 @@ For Indian businesses, **WhatsApp wins every time**. 500M+ Indians use it daily.
 ClinicAI uses Twilio's WhatsApp Business API — it handles message delivery, template approval, and compliance. Cost: ~$0.005 per message. For a clinic handling 100 appointments/day, that's $15/month.`
     },
     {
-      heading: 'Technical Architecture That Works',
+      heading: 'What Technical Architecture Works Best for WhatsApp Chatbots?',
       content: `Here's the architecture I use for production chatbots:
 
 \`\`\`text
@@ -400,6 +402,28 @@ Using the wrong type either costs you more money or gets your messages blocked.
 - Quality monitoring: Daily quality rating checks for the first month
 - Escalation path: Human agent available for every conversation
 - Logging: Every message logged for compliance and debugging`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: How much does it cost to build a WhatsApp chatbot for a small business in India?**
+
+A Level 2 intent-classification WhatsApp chatbot — the type that handles appointment booking, FAQs, and status queries in Hindi and English — typically costs between $5,000 and $10,000 for development over 4-6 weeks. Monthly running costs including Twilio messaging, AWS hosting, and database services come to approximately $50-$100. For simpler rule-based bots, costs can start as low as $2,000-$5,000 for development.
+
+**Q: Can a WhatsApp chatbot handle Hindi and English (Hinglish) conversations?**
+
+Yes, and this is one of the most important features for Indian businesses. The bot uses language detection heuristics to identify Hindi characters versus English text, handles transliteration for Romanized Hindi (like "kal" meaning "tomorrow"), and can fall back to an LLM like GPT-4o mini for complex Hinglish sentences. The bot responds in whichever language the user wrote in, creating a natural conversational experience that matches how Indians actually communicate.
+
+**Q: What happens if my WhatsApp Business number gets banned?**
+
+If your number is banned by Meta, you lose it permanently along with all customer conversation history. Bans are triggered by high spam report rates, sending unsolicited marketing messages, violating the 24-hour session window rules, or repeatedly submitting rejected templates. To prevent bans, always maintain opt-in compliance, monitor your quality rating daily in Meta Business Manager, include opt-out language in every marketing template, and start with low message volumes while building your quality tier.
+
+**Q: Should I use Twilio or Gupshup for WhatsApp Business API in India?**
+
+For custom-built chatbots where you want full API control and excellent documentation, choose Twilio. It offers 99.9% webhook reliability and scales globally if your client expands beyond India. For Indian-first businesses that want local payment options (UPI, bank transfer), Hindi-language support docs, and slightly cheaper per-message rates, Gupshup is the better choice. For 10,000 messages per month, Twilio costs roughly $50-$85 while Gupshup costs $36-$67.
+
+**Q: Do I need GPT-4 or an LLM for my business chatbot?**
+
+Most small and medium businesses do not need a full LLM-powered chatbot. A Level 2 intent-classification bot handles 90% of use cases — appointment booking, FAQ responses, status queries, and basic customer support — at 30% of the cost of an LLM-powered solution, with zero hallucination risk. You only need Level 3 (full LLM) if your use case involves open-ended product Q&A, complex sales conversations, or customer support that requires deep product knowledge across hundreds of items.`
     }
   ],
   cta: {

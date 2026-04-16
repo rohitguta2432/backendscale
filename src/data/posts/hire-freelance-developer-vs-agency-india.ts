@@ -10,7 +10,9 @@ export const hireFreelanceDeveloperVsAgencyIndia: BlogPost = {
   sections: [
     {
       heading: 'I\'ve Been on Both Sides',
-      content: `I've worked at companies building software in teams. Now I freelance. I've seen how agencies operate from the inside, and I've competed against them for clients as a solo developer.
+      content: `Hire a freelance developer when your project is well-defined, your budget is under thirty thousand dollars, and you want direct communication with the person writing your code. Hire an agency when you need five or more developers working simultaneously, have compliance requirements like HIPAA or SOC2, or need formal SLA guarantees for uptime and support.
+
+I've worked at companies building software in teams. Now I freelance. I've seen how agencies operate from the inside, and I've competed against them for clients as a solo developer.
 
 Neither option is universally better. But the decision is often made based on misconceptions. Let me clear those up.
 
@@ -24,7 +26,7 @@ Reality: Some do. That's why you check portfolios, GitHub history, and deployed 
 Reality: You'll still need to define requirements, review deliverables, and make decisions. The project manager is not a mind reader.`
     },
     {
-      heading: 'The Real Cost Comparison',
+      heading: 'What Does It Actually Cost to Hire a Freelancer vs an Agency?',
       content: `Let's take a concrete example: **MVP mobile app with user auth, database, and 5 screens.**
 
 | | Freelancer | Small Agency (India) | Mid Agency (India) | US Agency |
@@ -45,7 +47,11 @@ Agency overhead:
 - Profit margin: 20-40%
 - Junior developer salaries (they often assign juniors to your project)
 
-That 2-3x markup isn't paying for better code. It's paying for the agency's structure.`
+That 2-3x markup isn't paying for better code. It's paying for the agency's structure.
+
+**Common Mistakes When Budgeting for Software Development:**
+
+The most expensive mistake is not budgeting for post-launch costs. Your MVP launch is not the finish line — it is the starting line. Plan for three to six months of maintenance, bug fixes, and feature iterations after launch. Many founders spend their entire budget on building the app and have nothing left for the critical first months when user feedback drives rapid changes. Another common mistake is comparing hourly rates without considering speed. A senior freelancer charging five thousand rupees per hour who finishes in forty hours costs less than a junior at two thousand per hour who takes one hundred and fifty hours to deliver lower quality work.`
     },
     {
       heading: 'When to Hire a Freelancer',
@@ -74,7 +80,7 @@ That 2-3x markup isn't paying for better code. It's paying for the agency's stru
 **You need ongoing support and SLA guarantees.** If your app going down for 2 hours costs you $50,000, you need an agency with an SLA, not a freelancer on Slack.`
     },
     {
-      heading: 'How to Evaluate a Freelancer (Red Flags & Green Flags)',
+      heading: 'What Are the Red Flags and Green Flags When Hiring a Freelancer?',
       content: `**Green flags:**
 - **Live deployed projects** — Not mockups, not "coming soon." Actual apps on Play Store or live websites.
 - **Public GitHub with recent commits** — Shows they actually write code, not just manage teams.
@@ -275,7 +281,7 @@ Scope creep kills projects. Define how changes work:
 **Template tip:** I use a simple 4-page contract that covers all of the above. If an agency hands you a 30-page contract, hire a lawyer to review it — complexity usually favors the drafter.`
     },
     {
-      heading: 'How to Evaluate a Freelancer\'s Portfolio',
+      heading: 'How Do You Properly Evaluate a Freelancer\'s Portfolio?',
       content: `Most people look at a portfolio and think "that looks nice." Here's how to actually evaluate whether a freelancer can deliver YOUR project:
 
 **1. Check GitHub Commits (Are They Real?)**
@@ -415,6 +421,28 @@ After 30 days, we can set up a retainer (₹25,000 – ₹50,000/month) for ongo
 - **Ownership**: You have GitHub access from day one. If I get hit by a bus, another developer can pick up where I left off.
 
 This is how I've delivered SanatanApp, ClinicAI, StellarMIND, MyFinancial, and every other project in my portfolio. The process works because it removes ambiguity — the #1 killer of freelance projects.`
+    },
+    {
+      heading: 'Frequently Asked Questions',
+      content: `**Q: How do I protect myself if a freelancer disappears mid-project?**
+
+Use milestone-based payments so you never pay for work you have not seen. Insist on GitHub repository access from day one so you own every commit. Include a termination clause in your contract that gives you ownership of all completed work upon payment for those milestones. If the freelancer disappears, another developer can pick up from the last commit. The paid trial approach — hiring for one week before committing to the full project — also filters out unreliable freelancers before you invest significantly.
+
+**Q: Should I hire a freelancer from Upwork, Fiverr, or directly?**
+
+For serious projects, hire directly. Platforms like Upwork and Fiverr add ten to twenty percent fees, attract price-driven buyers, and incentivize freelancers to underbid to win proposals. Direct hiring through portfolios, GitHub profiles, and referrals gives you access to higher-quality developers who do not need to compete on price. Use platforms only for small, well-defined tasks under one thousand dollars where the platform's escrow and dispute resolution add genuine value.
+
+**Q: What if I need both a freelancer and an agency at different stages?**
+
+This is actually a smart approach. Hire a senior freelancer to build and validate your MVP quickly and cheaply. Once the product is validated and you need to scale the team, bring in an agency for the growth phase. The freelancer's clean, documented codebase gives the agency a solid foundation to build on. Some founders also keep the original freelancer on retainer as a technical advisor to ensure the agency maintains code quality and makes sound architectural decisions.
+
+**Q: How do I handle scope creep with a freelancer?**
+
+Define scope in writing before any code is written. The specification document should list what is included and what is explicitly not included. When you want to add a feature mid-project, submit a written change request. The freelancer estimates the impact on timeline and cost, you approve or decline, and work continues. Never make verbal change requests — if it is not in writing, it does not exist. Good freelancers will push back on scope creep because they understand it threatens delivery quality for both parties.
+
+**Q: Is it safe to share my app idea with freelancers before hiring?**
+
+Yes, with a simple NDA. But understand that ideas are rarely stolen — execution is what matters. Most freelancers hear dozens of app ideas every month and are focused on delivering their current projects, not starting competing businesses. A standard NDA covering business details, user data, and proprietary algorithms provides sufficient legal protection. Share enough information for the freelancer to give you an accurate estimate, but hold back trade secrets until the contract is signed.`
     }
   ],
   cta: {
