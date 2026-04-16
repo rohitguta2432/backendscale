@@ -125,12 +125,13 @@ export const personSchema = {
     name: 'Rohit Raj',
     url: SITE_CONFIG.url,
     image: `${SITE_CONFIG.url}/og-image.png`,
-    email: `mailto:${SITE_CONFIG.author.email}`,
+    email: SITE_CONFIG.author.email,
     jobTitle: 'Founding Engineer & AI Systems Architect',
     description: 'Backend engineer with 6+ years experience building production AI systems, distributed architectures, and custom AI solutions for startups.',
     sameAs: [
         `https://github.com/${SITE_CONFIG.author.github}`,
         `https://linkedin.com/in/${SITE_CONFIG.author.linkedin}`,
+        'https://x.com/rohitraj',
     ],
     knowsAbout: [
         'Agentic AI Development',
@@ -148,10 +149,6 @@ export const personSchema = {
         'Mobile App Development',
         'Expo SDK',
     ],
-    alumniOf: {
-        '@type': 'Organization',
-        name: 'Backend Engineering',
-    },
 };
 
 // JSON-LD Schema: Service (Engineering Services)
@@ -268,6 +265,19 @@ export function generateAllSchemas() {
     return [personSchema, serviceSchema, professionalServiceSchema];
 }
 
+// JSON-LD Schema: WebSite (homepage only — enables sitelinks search box)
+export const webSiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Rohit Raj',
+    url: SITE_CONFIG.url,
+    description: SITE_CONFIG.description,
+    author: {
+        '@type': 'Person',
+        name: SITE_CONFIG.author.name,
+    },
+};
+
 // BreadcrumbList JSON-LD schema generator
 export function generateBreadcrumbSchema(
     items: { name: string; url: string }[]
@@ -313,15 +323,17 @@ export function generateSoftwareApplicationSchema(project: {
     slug: string;
     repoUrl?: string;
     status: string;
-}) {
+    image?: string;
+}, locale: string = 'en') {
     return {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
         name: project.name,
         description: project.solves,
-        applicationCategory: 'DeveloperApplication',
+        ...(project.image && { image: `${SITE_CONFIG.url}${project.image}` }),
+        applicationCategory: 'WebApplication',
         operatingSystem: 'Web',
-        url: `${SITE_CONFIG.url}/en/projects/${project.slug}`,
+        url: `${SITE_CONFIG.url}/${locale}/projects/${project.slug}`,
         ...(project.repoUrl && {
             codeRepository: project.repoUrl,
             isAccessibleForFree: true,
@@ -398,12 +410,16 @@ export function generateBlogPostingSchema(post: {
     date: string;
     slug: string;
     keywords: string[];
-}) {
+    coverImage?: { src: string; alt: string };
+}, locale: string = 'en') {
     return {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
         headline: post.title,
         description: post.excerpt,
+        image: post.coverImage
+            ? `${SITE_CONFIG.url}${post.coverImage.src}`
+            : `${SITE_CONFIG.url}/og-image.png`,
         author: {
             '@type': 'Person',
             name: SITE_CONFIG.name,
@@ -416,8 +432,8 @@ export function generateBlogPostingSchema(post: {
         },
         datePublished: post.date,
         dateModified: post.date,
-        mainEntityOfPage: `${SITE_CONFIG.url}/en/notes/${post.slug}`,
+        mainEntityOfPage: `${SITE_CONFIG.url}/${locale}/notes/${post.slug}`,
         keywords: post.keywords,
-        inLanguage: 'en',
+        inLanguage: locale,
     };
 }

@@ -5,6 +5,7 @@ import ReliabilitySection from "@/components/ReliabilitySection";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { webSiteSchema } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -22,6 +23,7 @@ export default async function Home({ params }: Props) {
 
     return (
         <>
+            <script type="application/ld+json">{JSON.stringify(webSiteSchema)}</script>
             <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <Hero dict={dict.home} locale={locale as Locale} />

@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blog-posts";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
-import { createPageMetadata, generateBlogPostingSchema } from "@/lib/seo-config";
+import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
 import type { Metadata } from "next";
 
 interface BlogPostPageProps {
@@ -111,6 +111,59 @@ function renderMarkdown(content: string) {
                     {textParts.map((part, j) => {
                         if (!part.trim()) return null;
 
+                        // Check for tables
+                        if (part.trim().startsWith('|') && part.trim().endsWith('|')) {
+                            const rows = part.trim().split('\n').filter(line => line.trim());
+                            // Filter out separator row (|---|---|)
+                            const dataRows = rows.filter(row => !row.match(/^\|[\s\-:]+\|$/));
+                            if (dataRows.length >= 1) {
+                                const headerCells = dataRows[0].split('|').filter(c => c.trim()).map(c => c.trim());
+                                const bodyRows = dataRows.slice(1);
+                                return (
+                                    <div key={j} style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
+                                        <table style={{
+                                            width: '100%',
+                                            borderCollapse: 'collapse',
+                                            fontSize: '0.95rem',
+                                            lineHeight: 1.6,
+                                        }}>
+                                            <thead>
+                                                <tr>
+                                                    {headerCells.map((cell, ci) => (
+                                                        <th key={ci} style={{
+                                                            textAlign: 'left',
+                                                            padding: '0.75rem 1rem',
+                                                            borderBottom: '2px solid var(--border)',
+                                                            color: 'var(--text-primary)',
+                                                            fontWeight: 600,
+                                                            fontSize: '0.85rem',
+                                                            whiteSpace: 'nowrap',
+                                                        }}>{cell}</th>
+                                                    ))}
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {bodyRows.map((row, ri) => {
+                                                    const cells = row.split('|').filter(c => c.trim()).map(c => c.trim());
+                                                    return (
+                                                        <tr key={ri}>
+                                                            {cells.map((cell, ci) => (
+                                                                <td key={ci} style={{
+                                                                    padding: '0.625rem 1rem',
+                                                                    borderBottom: '1px solid var(--border)',
+                                                                    color: 'var(--text-secondary)',
+                                                                }}>{cell}</td>
+                                                            ))}
+                                                        </tr>
+                                                    );
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                );
+                            }
+                        }
+
                         // Check for lists
                         if (part.trim().startsWith('- ') || part.trim().match(/^\d+\. /)) {
                             const listItems = part.trim().split('\n').filter(line => line.trim());
@@ -206,12 +259,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: `${SITE_CONFIG.url}/${locale}` },
+        { name: 'Notes', url: `${SITE_CONFIG.url}/${locale}/notes` },
+        { name: post.title, url: `${SITE_CONFIG.url}/${locale}/notes/${post.slug}` },
+    ]);
+
     return (
         <>
             <script
                 type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(generateBlogPostingSchema(post)),
+                    __html: JSON.stringify(generateBlogPostingSchema(post, locale)),
                 }}
             />
             <Header locale={locale as Locale} dict={dict.common} />
@@ -245,8 +308,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         alignItems: 'center',
                         color: 'var(--text-muted)',
                         fontSize: '0.9rem',
-                        marginBottom: '0.75rem'
+                        marginBottom: '0.75rem',
+                        flexWrap: 'wrap',
                     }}>
+                        <Link href={`/${locale}/about`} style={{ color: 'var(--text-primary)', fontWeight: 500, textDecoration: 'none' }}>
+                            Rohit Raj
+                        </Link>
+                        <span>·</span>
                         <time dateTime={post.date}>
                             {new Date(post.date).toLocaleDateString('en-US', {
                                 year: 'numeric',

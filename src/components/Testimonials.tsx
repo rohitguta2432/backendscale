@@ -9,6 +9,9 @@ interface TestimonialsProps {
 export default function Testimonials({ limit }: TestimonialsProps) {
     const items = limit ? testimonials.slice(0, limit) : testimonials;
 
+    // Hide section until real testimonials are collected
+    if (items.length === 0) return null;
+
     return (
         <section
             aria-labelledby="testimonials-heading"

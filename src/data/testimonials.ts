@@ -1,6 +1,8 @@
 import type { Testimonial } from '@/types/testimonial';
 
-// TODO: Replace with real client testimonials
+// TODO: Replace with real client testimonials — these are placeholder examples
+// WARNING: Do not display fabricated testimonials on a live site. Keep this array
+// empty until real quotes are collected from actual clients.
 export const testimonials: Testimonial[] = [
     {
         name: "Arjun Kapoor",

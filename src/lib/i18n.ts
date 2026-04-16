@@ -120,6 +120,8 @@ export interface PagesDictionary {
         title: string;
         bio1: string;
         bio2: string;
+        bio3?: string;
+        bio4?: string;
     };
     contact: {
         title: string;

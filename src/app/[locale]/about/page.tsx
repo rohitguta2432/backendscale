@@ -43,6 +43,16 @@ export default async function AboutPage({ params }: Props) {
                         <p className="about-bio" style={{ marginTop: "1rem" }}>
                             {dict.pages.about.bio2}
                         </p>
+                        {dict.pages.about.bio3 && (
+                            <p className="about-bio" style={{ marginTop: "1rem" }}>
+                                {dict.pages.about.bio3}
+                            </p>
+                        )}
+                        {dict.pages.about.bio4 && (
+                            <p className="about-bio" style={{ marginTop: "1rem" }}>
+                                {dict.pages.about.bio4}
+                            </p>
+                        )}
                     </div>
                 </section>
             </main>

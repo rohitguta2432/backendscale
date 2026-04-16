@@ -1,17 +1,41 @@
-User-agent: *
-Disallow:
+# Rohit Raj — Founding Engineer & AI Systems Architect
 
-# AI Discovery
-Sitemap: https://rohitraj.tech/sitemap.xml
-Description: Portfolio of Rohit Raj, Freelance Founding Engineer & AI Systems Architect.
+> Backend engineer with 6+ years experience building production AI systems, distributed architectures, and mobile apps for startups. Based in India, available worldwide.
 
-# Highlights
+## Key Pages
+
+- [Homepage](https://rohitraj.tech/en): Portfolio overview with AI projects and reliability engineering
+- [About](https://rohitraj.tech/en/about): Background and experience
+- [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
+- [Services](https://rohitraj.tech/en/services): Engineering services offered
+- [Engineering Notes](https://rohitraj.tech/en/notes): Technical blog posts
+
+## Featured Projects
+
+- [MicroItinerary](https://rohitraj.tech/en/projects/microitinerary): AI travel planner with GPT-4 destination recommendations
+- [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
+- [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
+
+## Top Blog Posts
+
+- [How I Built an Enterprise Deal Matching Platform](https://rohitraj.tech/en/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs)
+- [Cloud-First AI Is Dead — On-Device Android 2026](https://rohitraj.tech/en/notes/cloud-first-ai-is-dead-on-device-android-2026)
+- [UPI Fraud ₹805 Crore — Why I Built an Offline Scam Detector](https://rohitraj.tech/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector)
+- [I Built a 12-Module Multi-Tenant SaaS Alone](https://rohitraj.tech/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot)
+- [Build an Android Finance Tracker with Kotlin + Jetpack Compose](https://rohitraj.tech/en/notes/build-android-finance-tracker-kotlin-jetpack-compose)
+- [Build an Offline-First Trip Planner with React Native](https://rohitraj.tech/en/notes/build-offline-first-trip-planner-react-native-watermelondb)
+
+## Expertise
+
 - Agentic AI Development
-- Custom Text-to-SQL Systems
-- Enterprise Java Architecture (Spring Boot 3.x)
-- RAG Systems with pgvector
+- Custom Text-to-SQL Systems (RAG + pgvector)
+- Enterprise Java Architecture (Spring Boot 3.x, Java 21)
+- Mobile App Development (React Native, Kotlin, Jetpack Compose)
+- Distributed Systems (Kafka, Redis, PostgreSQL)
+- WhatsApp Business API Integration
 
-# Core Projects
-- MicroItinerary (AI Travel Planner)
-- StellarMIND (Text-to-SQL MCP Server)
-- rohitraj.tech (Personal Knowledge Graph)
+## Contact
+
+- Email: rohitguta2432@gmail.com
+- GitHub: https://github.com/rohitguta2432
+- LinkedIn: https://linkedin.com/in/rohitraj2

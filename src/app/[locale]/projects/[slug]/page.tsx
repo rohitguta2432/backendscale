@@ -7,7 +7,7 @@ import StatusBadge from "@/components/StatusBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import { projects } from "@/data/projects";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
-import { createPageMetadata, generateSoftwareApplicationSchema } from "@/lib/seo-config";
+import { createPageMetadata, generateSoftwareApplicationSchema, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
 
 interface ProjectPageProps {
     params: Promise<{ locale: string; slug: string }>;
@@ -51,10 +51,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
     return (
         <>
+            <script type="application/ld+json">{JSON.stringify(generateBreadcrumbSchema([
+                { name: 'Home', url: `${SITE_CONFIG.url}/${locale}` },
+                { name: 'Projects', url: `${SITE_CONFIG.url}/${locale}/projects` },
+                { name: project.name, url: `${SITE_CONFIG.url}/${locale}/projects/${project.slug}` },
+            ]))}</script>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(generateSoftwareApplicationSchema(project)),
+                    __html: JSON.stringify(generateSoftwareApplicationSchema(project, locale)),
                 }}
             />
             <Header locale={locale as Locale} dict={dict.common} />

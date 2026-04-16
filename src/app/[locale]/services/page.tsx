@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { services } from "@/data/services";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
-import { createPageMetadata } from "@/lib/seo-config";
+import { createPageMetadata, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -27,8 +27,32 @@ export default async function ServicesPage({ params }: Props) {
     if (!isValidLocale(locale)) notFound();
     const dict = await getDictionary(locale as Locale);
 
+    const servicesListSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Engineering Services by Rohit Raj',
+        url: `${SITE_CONFIG.url}/${locale}/services`,
+        itemListElement: services.map((service, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: {
+                '@type': 'Service',
+                name: service.title,
+                description: service.subheadline,
+                url: `${SITE_CONFIG.url}/${locale}/services/${service.slug}`,
+            },
+        })),
+    };
+
+    const breadcrumb = generateBreadcrumbSchema([
+        { name: 'Home', url: `${SITE_CONFIG.url}/${locale}` },
+        { name: 'Services', url: `${SITE_CONFIG.url}/${locale}/services` },
+    ]);
+
     return (
         <>
+            <script type="application/ld+json">{JSON.stringify(servicesListSchema)}</script>
+            <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
             <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <div className="page-header">

@@ -85,16 +85,7 @@ export default async function LocaleLayout({
                 <link rel="alternate" hrefLang="de" href="https://rohitraj.tech/de" />
                 <link rel="alternate" hrefLang="ar" href="https://rohitraj.tech/ar" />
                 <link rel="alternate" hrefLang="x-default" href="https://rohitraj.tech/en" />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                            generateBreadcrumbSchema([
-                                { name: 'Home', url: `${SITE_CONFIG.url}/${locale}` },
-                            ])
-                        ),
-                    }}
-                />
+{/* BreadcrumbList moved to individual page templates for proper multi-item breadcrumbs */}
             </head>
             <div lang={locale} dir={direction} className={direction === "rtl" ? "rtl" : ""}>
                 <a href="#main" className="skip-link">
