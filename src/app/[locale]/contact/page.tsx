@@ -100,6 +100,20 @@ export default async function ContactPage({ params }: Props) {
                                         github.com/rohitguta2432
                                     </a>
                                 </div>
+
+                                <div className="contact-item">
+                                    <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M18 2h3l-7.5 8.6L22 22h-6.8l-5.3-6.9L3.8 22H1l8-9.2L1 2h6.9l4.8 6.3L18 2z" />
+                                    </svg>
+                                    <a
+                                        href="https://x.com/rohitraj2482"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="contact-link"
+                                    >
+                                        x.com/rohitraj2482
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

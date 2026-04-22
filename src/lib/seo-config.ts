@@ -46,7 +46,7 @@ export const SITE_CONFIG = {
     author: {
         name: 'Rohit Raj',
         email: 'rohitgupta2432@gmail.com',
-        twitter: '@rohitraj',
+        twitter: '@rohitraj2482',
         github: 'rohitguta2432',
         linkedin: 'rohitraj2',
     },
@@ -131,7 +131,7 @@ export const personSchema = {
     sameAs: [
         `https://github.com/${SITE_CONFIG.author.github}`,
         `https://linkedin.com/in/${SITE_CONFIG.author.linkedin}`,
-        'https://x.com/rohitraj',
+        'https://x.com/rohitraj2482',
     ],
     knowsAbout: [
         'Agentic AI Development',
@@ -257,6 +257,7 @@ export const professionalServiceSchema = {
     sameAs: [
         `https://github.com/${SITE_CONFIG.author.github}`,
         `https://linkedin.com/in/${SITE_CONFIG.author.linkedin}`,
+        'https://x.com/rohitraj2482',
     ],
 };
 
@@ -311,6 +312,7 @@ export const contactPointSchema = {
     sameAs: [
         `https://github.com/${SITE_CONFIG.author.github}`,
         `https://linkedin.com/in/${SITE_CONFIG.author.linkedin}`,
+        'https://x.com/rohitraj2482',
     ],
 };
 

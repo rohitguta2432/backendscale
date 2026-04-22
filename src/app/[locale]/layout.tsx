@@ -53,6 +53,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             card: "summary_large_image",
             title: dict.meta.home.title,
             description: dict.meta.home.description,
+            site: "@rohitraj2482",
+            creator: "@rohitraj2482",
         },
         robots: {
             index: true,
