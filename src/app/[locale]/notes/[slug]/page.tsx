@@ -42,6 +42,26 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 // Simple Markdown Renderer
+function renderInline(text: string, keyPrefix: string) {
+    const parts = text.split(/(\*\*.*?\*\*|`.*?`)/g);
+    return parts.map((p, k) => {
+        if (p.startsWith('**') && p.endsWith('**')) {
+            return <strong key={`${keyPrefix}-${k}`} style={{ color: 'var(--text-primary)' }}>{p.slice(2, -2)}</strong>;
+        }
+        if (p.startsWith('`') && p.endsWith('`')) {
+            return <code key={`${keyPrefix}-${k}`} style={{
+                backgroundColor: 'var(--bg-secondary)',
+                padding: '0.1rem 0.3rem',
+                borderRadius: '4px',
+                fontSize: '0.9em',
+                fontFamily: 'var(--font-mono)',
+                color: 'var(--text-primary)'
+            }}>{p.slice(1, -1)}</code>;
+        }
+        return p;
+    });
+}
+
 function renderMarkdown(content: string) {
     const segments = [];
     let lastIndex = 0;
@@ -138,7 +158,7 @@ function renderMarkdown(content: string) {
                                                             fontWeight: 600,
                                                             fontSize: '0.85rem',
                                                             whiteSpace: 'nowrap',
-                                                        }}>{cell}</th>
+                                                        }}>{renderInline(cell, `h-${j}-${ci}`)}</th>
                                                     ))}
                                                 </tr>
                                             </thead>
@@ -152,7 +172,7 @@ function renderMarkdown(content: string) {
                                                                     padding: '0.625rem 1rem',
                                                                     borderBottom: '1px solid var(--border)',
                                                                     color: 'var(--text-secondary)',
-                                                                }}>{cell}</td>
+                                                                }}>{renderInline(cell, `c-${j}-${ri}-${ci}`)}</td>
                                                             ))}
                                                         </tr>
                                                     );
