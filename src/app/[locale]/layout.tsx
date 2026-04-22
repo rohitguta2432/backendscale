@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const baseUrl = "https://rohitraj.tech";
 
     return {
-        title: dict.meta.home.title,
+        title: { absolute: dict.meta.home.title },
         description: dict.meta.home.description,
         keywords: [
             "backend engineering",
