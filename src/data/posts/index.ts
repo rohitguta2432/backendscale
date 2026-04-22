@@ -30,6 +30,9 @@ import { buildFamilyBudgetAppAndroidOfflineKotlin } from './build-family-budget-
 import { cloudFirstAiIsDeadOnDeviceAndroid2026 } from './cloud-first-ai-is-dead-on-device-android-2026';
 import { upiFraud805CroreWhyIBuiltOfflineScamDetector } from './upi-fraud-805-crore-why-i-built-offline-scam-detector';
 import { iBuiltMultiTenantSaasAlone12ModuleSpringBoot } from './i-built-multi-tenant-saas-alone-12-module-spring-boot';
+import { foundingEngineerVsLovableWhenToHire2026 } from './founding-engineer-vs-lovable-when-to-hire-2026';
+import { indiaVsUsMvpDeveloperCost2026 } from './india-vs-us-mvp-developer-cost-2026';
+import { vibeCodingVsHiringDeveloperWhenLovableBreaks } from './vibe-coding-vs-hiring-developer-when-lovable-breaks';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -61,6 +64,9 @@ const allPosts: BlogPost[] = [
   cloudFirstAiIsDeadOnDeviceAndroid2026,
   upiFraud805CroreWhyIBuiltOfflineScamDetector,
   iBuiltMultiTenantSaasAlone12ModuleSpringBoot,
+  foundingEngineerVsLovableWhenToHire2026,
+  indiaVsUsMvpDeveloperCost2026,
+  vibeCodingVsHiringDeveloperWhenLovableBreaks,
 ];
 
 // Validate all posts at module load time
