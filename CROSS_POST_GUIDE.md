@@ -254,7 +254,7 @@ For each post, set:
 5. Do you have a location customers can visit? Select **No** (service-based business)
 6. Service area: **India** (add "Worldwide — Remote" in description if remote)
 7. Contact phone: your phone number
-8. Contact email: **rohitguta2432@gmail.com**
+8. Contact email: **rohitgupta2432@gmail.com**
 9. Website: **https://rohitraj.tech**
 10. Click through to finish initial setup
 11. Go to **Info > Services** and add:
@@ -387,7 +387,7 @@ Create or update the file at `https://github.com/rohitguta2432/rohitguta2432/REA
 
 ## Contact
 
-- **Email**: rohitguta2432@gmail.com
+- **Email**: rohitgupta2432@gmail.com
 - **Portfolio**: [rohitraj.tech](https://rohitraj.tech)
 - **LinkedIn**: [linkedin.com/in/rohitguta2432](https://linkedin.com/in/rohitguta2432)
 ```

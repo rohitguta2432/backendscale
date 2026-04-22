@@ -38,7 +38,7 @@ export default function Footer({ dict, locale }: FooterProps) {
                             >
                                 LinkedIn
                             </a>
-                            <a href="mailto:rohitguta2432@gmail.com" className="footer-link">
+                            <a href="mailto:rohitgupta2432@gmail.com" className="footer-link">
                                 Email
                             </a>
                         </div>

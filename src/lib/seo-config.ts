@@ -45,7 +45,7 @@ export const SITE_CONFIG = {
     locale: 'en_US',
     author: {
         name: 'Rohit Raj',
-        email: 'rohitguta2432@gmail.com',
+        email: 'rohitgupta2432@gmail.com',
         twitter: '@rohitraj',
         github: 'rohitguta2432',
         linkedin: 'rohitraj2',
