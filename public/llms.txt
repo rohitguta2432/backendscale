@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): Technical blog posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 29 technical case-study posts
 
 ## Featured Projects
 
@@ -16,14 +16,51 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## Top Blog Posts
+## All Engineering Notes (29 posts)
 
-- [How I Built an Enterprise Deal Matching Platform](https://rohitraj.tech/en/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs)
-- [Cloud-First AI Is Dead — On-Device Android 2026](https://rohitraj.tech/en/notes/cloud-first-ai-is-dead-on-device-android-2026)
-- [UPI Fraud ₹805 Crore — Why I Built an Offline Scam Detector](https://rohitraj.tech/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector)
-- [I Built a 12-Module Multi-Tenant SaaS Alone](https://rohitraj.tech/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot)
-- [Build an Android Finance Tracker with Kotlin + Jetpack Compose](https://rohitraj.tech/en/notes/build-android-finance-tracker-kotlin-jetpack-compose)
-- [Build an Offline-First Trip Planner with React Native](https://rohitraj.tech/en/notes/build-offline-first-trip-planner-react-native-watermelondb)
+### AI Systems & LLM Integration
+
+- [AWS Bedrock vs OpenAI — Which One to Pick for Your Startup (With Real Costs)](https://rohitraj.tech/en/notes/aws-bedrock-vs-openai)
+- [How to Build an AI Chatbot for Your Business: Architecture, Cost & What Actually Works (2026)](https://rohitraj.tech/en/notes/build-ai-chatbot-whatsapp-business-india)
+- [How to Add AI to Your Existing Business App — Without Rebuilding Everything](https://rohitraj.tech/en/notes/how-to-integrate-ai-existing-business-app)
+- [Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing](https://rohitraj.tech/en/notes/rag-for-sql)
+- [Building an MCP Server with Spring Boot — A Practical Guide](https://rohitraj.tech/en/notes/spring-boot-mcp)
+- [Cloud-First AI Is Dead — I Built a Fully Offline AI App to Prove It](https://rohitraj.tech/en/notes/cloud-first-ai-is-dead-on-device-android-2026)
+- [Building an On-Device AI Scam Detector for Android — Gemma 4 + LiteRT + Regex Fallback](https://rohitraj.tech/en/notes/build-on-device-ai-scam-detector-android-gemma)
+- [₹805 Crore Lost to UPI Fraud This Year — I Built an Offline Scam Detector That Needs Zero Internet](https://rohitraj.tech/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector)
+
+### Backend & Architecture
+
+- [How I Built an Enterprise Deal Matching Platform with Spring Boot + Next.js + GPT-4o](https://rohitraj.tech/en/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs)
+- [Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21 — 12-Module Architecture](https://rohitraj.tech/en/notes/build-multi-tenant-saas-spring-boot-java-21)
+- [I Built a 12-Module Multi-Tenant SaaS Platform Alone — Here's What I Learned](https://rohitraj.tech/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot)
+- [Microservices vs Monolith for Startups: Stop Overengineering](https://rohitraj.tech/en/notes/microservices-vs-monolith-startup)
+- [PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)](https://rohitraj.tech/en/notes/postgresql-vs-mongodb-startup-2026)
+- [Spring Boot vs Node.js for Your Startup Backend (2026)](https://rohitraj.tech/en/notes/spring-boot-vs-nodejs-startup-backend-2026)
+
+### Mobile & React Native
+
+- [Building an Android Finance Tracker with SMS Auto-Import — Kotlin + Jetpack Compose](https://rohitraj.tech/en/notes/build-android-finance-tracker-kotlin-jetpack-compose)
+- [Building a Family Budget App with 8 Financial Modules — Kotlin + Jetpack Compose, Fully Offline](https://rohitraj.tech/en/notes/build-family-budget-app-android-offline-kotlin)
+- [Building an Offline-First Trip Planner with React Native + WatermelonDB + Offline Maps](https://rohitraj.tech/en/notes/build-offline-first-trip-planner-react-native-watermelondb)
+- [Building a Multi-Language React Native App with Expo SDK 52 — SanatanApp Architecture](https://rohitraj.tech/en/notes/building-multilanguage-react-native-app-expo)
+- [Streaming Audio in React Native: expo-av with Public Domain Sources](https://rohitraj.tech/en/notes/expo-av-audio-streaming-react-native)
+- [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](https://rohitraj.tech/en/notes/idea-to-play-store-sanatanapp-architecture)
+- [React Native vs Flutter in 2026: Which One for Your App?](https://rohitraj.tech/en/notes/react-native-vs-flutter-2026)
+
+### Web & PWA
+
+- [Offline-First PWA Patterns — Service Workers, IndexedDB, and Background Sync](https://rohitraj.tech/en/notes/pwa-offline-sync)
+
+### Founder & Business
+
+- [How to Build an App Like Uber or Zomato — Architecture & Real Costs](https://rohitraj.tech/en/notes/build-app-like-uber-zomato-architecture-cost)
+- [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Developer (2026)](https://rohitraj.tech/en/notes/how-much-does-it-cost-to-build-mobile-app-india-2026)
+- [How to Build a SaaS MVP in 2026 — Complete Tech Stack Guide](https://rohitraj.tech/en/notes/how-to-build-saas-mvp-2026)
+- [Why Your MVP Should Cost Under $10,000 — And How to Make It Happen](https://rohitraj.tech/en/notes/why-your-mvp-should-cost-under-10k)
+- [Freelance Developer vs Agency in India: An Honest Comparison from the Developer Side](https://rohitraj.tech/en/notes/hire-freelance-developer-vs-agency-india)
+- [How to Hire a Software Developer: 10 Questions to Ask Before Signing](https://rohitraj.tech/en/notes/how-to-hire-developer-interview-questions)
+- [WhatsApp Business API Integration Guide for Indian Startups](https://rohitraj.tech/en/notes/whatsapp-business-api-integration-guide-india)
 
 ## Expertise
 
@@ -33,9 +70,11 @@
 - Mobile App Development (React Native, Kotlin, Jetpack Compose)
 - Distributed Systems (Kafka, Redis, PostgreSQL)
 - WhatsApp Business API Integration
+- On-Device AI (Gemma, LiteRT, offline-first architectures)
 
 ## Contact
 
 - Email: rohitgupta2432@gmail.com
 - GitHub: https://github.com/rohitguta2432
 - LinkedIn: https://linkedin.com/in/rohitraj2
+- X / Twitter: https://x.com/rohitraj2482

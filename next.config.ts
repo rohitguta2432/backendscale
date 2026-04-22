@@ -38,6 +38,30 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/:locale(en|hi|fr|de|ar)/blog',
+        destination: '/:locale/notes',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|hi|fr|de|ar)/blog/:slug*',
+        destination: '/:locale/notes/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: '/en/notes',
+        permanent: true,
+      },
+      {
+        source: '/blog/:slug*',
+        destination: '/en/notes/:slug*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

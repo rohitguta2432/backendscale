@@ -12,8 +12,8 @@ jest.mock('next/link', () => {
 const mockDictionary: HomeDictionary = {
   hero: {
     subtitle: '',
-    titleLine1: 'AI & Full-Stack Engineer',
-    titleLine2: 'Apps, Chatbots, Backend Systems',
+    titleLine1: 'I ship AI systems for startups.',
+    titleLine2: 'Chatbots, RAG pipelines, mobile apps, production backends.',
     approach: {
       title: 'My Approach',
       items: {

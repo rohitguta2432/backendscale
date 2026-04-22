@@ -39,10 +39,12 @@ export const SEO_KEYWORDS = [
 // Base Site Configuration
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
-    title: 'Rohit Raj | Founding Engineer & AI Systems Architect',
-    description: 'Founding Engineer & AI Systems Architect. I build mobile apps, AI chatbots, WhatsApp bots, and backend systems for startups. Based in India, available worldwide. 6+ years shipping production software.',
+    title: 'AI Integration Consultant & Backend Engineer — Rohit Raj',
+    description: 'Ship production AI systems with a founding engineer from India: chatbots, RAG pipelines, Spring Boot backends, React Native apps. 29 engineering case studies. Book a free scoping call.',
     url: 'https://rohitraj.tech',
     locale: 'en_US',
+    personId: 'https://rohitraj.tech/#person',
+    organizationId: 'https://rohitraj.tech/#organization',
     author: {
         name: 'Rohit Raj',
         email: 'rohitgupta2432@gmail.com',
@@ -53,6 +55,7 @@ export const SITE_CONFIG = {
     images: {
         og: '/og-image.png',
         twitter: '/twitter-image.png',
+        logo: '/icon.png',
     },
 } as const;
 
@@ -122,9 +125,9 @@ export const defaultMetadata: Metadata = {
 export const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': SITE_CONFIG.personId,
     name: 'Rohit Raj',
     url: SITE_CONFIG.url,
-    image: `${SITE_CONFIG.url}/og-image.png`,
     email: SITE_CONFIG.author.email,
     jobTitle: 'Founding Engineer & AI Systems Architect',
     description: 'Backend engineer with 6+ years experience building production AI systems, distributed architectures, and custom AI solutions for startups.',
@@ -235,7 +238,10 @@ export const serviceSchema = {
 export const professionalServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Rohit Raj - AI Systems Engineering',
+    '@id': SITE_CONFIG.organizationId,
+    name: 'Rohit Raj',
+    alternateName: 'Rohit Raj — AI Systems Engineering',
+    logo: `${SITE_CONFIG.url}${SITE_CONFIG.images.logo}`,
     url: SITE_CONFIG.url,
     description: 'Founding Engineer specializing in AI systems for startups. Available for engineering partnerships.',
     priceRange: '$$$$',
@@ -274,8 +280,15 @@ export const webSiteSchema = {
     url: SITE_CONFIG.url,
     description: SITE_CONFIG.description,
     author: {
-        '@type': 'Person',
-        name: SITE_CONFIG.author.name,
+        '@id': SITE_CONFIG.personId,
+    },
+    potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${SITE_CONFIG.url}/en/notes?q={search_term_string}`,
+        },
+        'query-input': 'required name=search_term_string',
     },
 };
 
@@ -410,9 +423,11 @@ export function generateBlogPostingSchema(post: {
     title: string;
     excerpt: string;
     date: string;
+    updated?: string;
     slug: string;
     keywords: string[];
     coverImage?: { src: string; alt: string };
+    wordCount?: number;
 }, locale: string = 'en') {
     return {
         '@context': 'https://schema.org',
@@ -423,19 +438,76 @@ export function generateBlogPostingSchema(post: {
             ? `${SITE_CONFIG.url}${post.coverImage.src}`
             : `${SITE_CONFIG.url}/og-image.png`,
         author: {
-            '@type': 'Person',
-            name: SITE_CONFIG.name,
-            url: SITE_CONFIG.url,
+            '@id': SITE_CONFIG.personId,
         },
         publisher: {
-            '@type': 'Person',
+            '@type': 'Organization',
+            '@id': SITE_CONFIG.organizationId,
             name: SITE_CONFIG.name,
             url: SITE_CONFIG.url,
+            logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_CONFIG.url}${SITE_CONFIG.images.logo}`,
+            },
         },
         datePublished: post.date,
-        dateModified: post.date,
+        dateModified: post.updated ?? post.date,
         mainEntityOfPage: `${SITE_CONFIG.url}/${locale}/notes/${post.slug}`,
-        keywords: post.keywords,
+        keywords: post.keywords.join(', '),
+        ...(post.wordCount && { wordCount: post.wordCount }),
         inLanguage: locale,
+    };
+}
+
+// Extract FAQ question/answer pairs from blog post markdown sections.
+// Parses sections with heading containing "FAQ" or "Frequently Asked".
+export function extractFAQsFromSections(
+    sections: { heading: string; content: string }[]
+): { question: string; answer: string }[] {
+    const faqSection = sections.find((s) =>
+        /frequently asked|^faq$|^faqs$/i.test(s.heading.trim())
+    );
+    if (!faqSection) return [];
+
+    const qaPairs: { question: string; answer: string }[] = [];
+    const pattern = /\*\*Q:\s*([^*]+?)\*\*\s*([\s\S]*?)(?=\*\*Q:|$)/g;
+    let match;
+    while ((match = pattern.exec(faqSection.content)) !== null) {
+        const question = match[1].trim();
+        const answer = match[2]
+            .replace(/\*\*/g, '')
+            .replace(/\n+/g, ' ')
+            .trim();
+        if (question && answer) qaPairs.push({ question, answer });
+    }
+    return qaPairs;
+}
+
+// CollectionPage JSON-LD for index/listing pages
+export function generateCollectionPageSchema(opts: {
+    name: string;
+    description: string;
+    url: string;
+    items?: { name: string; url: string }[];
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': opts.url,
+        name: opts.name,
+        description: opts.description,
+        url: opts.url,
+        author: { '@id': SITE_CONFIG.personId },
+        ...(opts.items && opts.items.length > 0 && {
+            mainEntity: {
+                '@type': 'ItemList',
+                itemListElement: opts.items.map((item, i) => ({
+                    '@type': 'ListItem',
+                    position: i + 1,
+                    name: item.name,
+                    url: item.url,
+                })),
+            },
+        }),
     };
 }

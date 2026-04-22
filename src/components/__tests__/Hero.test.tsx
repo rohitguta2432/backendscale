@@ -19,8 +19,8 @@ jest.mock('next/image', () => {
 const mockDict: HomeDictionary = {
   hero: {
     subtitle: '',
-    titleLine1: 'AI & Full-Stack Engineer',
-    titleLine2: 'Apps, Chatbots, Backend Systems',
+    titleLine1: 'I ship AI systems for startups.',
+    titleLine2: 'Chatbots, RAG pipelines, mobile apps, production backends.',
     approach: {
       title: 'My Approach',
       items: {
@@ -53,6 +53,6 @@ const mockDict: HomeDictionary = {
 describe('Hero', () => {
   it('renders without crashing', () => {
     render(<Hero dict={mockDict} locale={'en' as Locale} />);
-    expect(screen.getByText('AI & Full-Stack Engineer')).toBeInTheDocument();
+    expect(screen.getByText('I ship AI systems for startups.')).toBeInTheDocument();
   });
 });

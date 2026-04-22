@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blog-posts";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
-import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
+import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, generateFAQSchema, extractFAQsFromSections, SITE_CONFIG } from "@/lib/seo-config";
 import type { Metadata } from "next";
 
 interface BlogPostPageProps {
@@ -265,18 +265,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         { name: post.title, url: `${SITE_CONFIG.url}/${locale}/notes/${post.slug}` },
     ]);
 
+    const faqs = extractFAQsFromSections(post.sections);
+    const faqSchemaJson = faqs.length > 0 ? JSON.stringify(generateFAQSchema(faqs)) : null;
+    const blogPostingJson = JSON.stringify(generateBlogPostingSchema(post, locale));
+    const breadcrumbJson = JSON.stringify(breadcrumbSchema);
+
     return (
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+                dangerouslySetInnerHTML={{ __html: breadcrumbJson }}
             />
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(generateBlogPostingSchema(post, locale)),
-                }}
+                dangerouslySetInnerHTML={{ __html: blogPostingJson }}
             />
+            {faqSchemaJson && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: faqSchemaJson }}
+                />
+            )}
             <Header locale={locale as Locale} dict={dict.common} />
             <main id="main" style={{ maxWidth: '780px', margin: '0 auto', padding: '3rem 1.5rem' }}>
                 {/* Article Header */}
