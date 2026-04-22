@@ -39,8 +39,8 @@ export const SEO_KEYWORDS = [
 // Base Site Configuration
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
-    title: 'AI Integration Consultant & Backend Engineer — Rohit Raj',
-    description: 'Ship production AI systems with a founding engineer from India: chatbots, RAG pipelines, Spring Boot backends, React Native apps. 29 engineering case studies. Book a free scoping call.',
+    title: 'Get Your AI MVP Live in 2 Weeks — Rohit Raj',
+    description: 'A founding engineer from India who ships end-to-end — AI, backend, mobile — without the cost of a team. 29 products shipped, every one documented.',
     url: 'https://rohitraj.tech',
     locale: 'en_US',
     personId: 'https://rohitraj.tech/#person',
