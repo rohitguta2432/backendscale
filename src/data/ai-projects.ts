@@ -1,7 +1,7 @@
 // Landing page AI project summaries.
 // Standalone data — intentionally different shape from Project type in @/types/project.
-// Uses 'title' (not 'name'), 'solution' (not 'solves'), and status 'development'
-// which is not part of the Project status enum.
+// Uses 'title' (not 'name'), 'solution' (not 'solves'). Status 'live' means
+// shipped/runnable; 'development' means work-in-progress. Not part of Project status enum.
 
 export const aiProjectSummaries = [
     {
@@ -11,7 +11,7 @@ export const aiProjectSummaries = [
         techStack: ["React 18", "Vite", "Spring Boot 3.2.2", "Java 21", "PostgreSQL 16", "Redis", "OpenAI GPT-4"],
         aiApproach: "GPT-4 for destination recommendations based on season, budget, and preferences. AI-generated cost breakdowns for hotels, food, transport, and activities.",
         repoUrl: "https://github.com/rohitguta2432/MicroItinerary",
-        status: "development" as const
+        status: "live" as const
     },
     {
         title: "StellarMIND — Chat-to-SQL with pgvector",
@@ -20,7 +20,7 @@ export const aiProjectSummaries = [
         techStack: ["Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "MCP Protocol", "OpenAI"],
         aiApproach: "RAG-based SQL generation: schema knowledge stored as embeddings in pgvector, retrieved as context for LLM. Strict read-only enforcement (only SELECT/WITH).",
         repoUrl: "https://github.com/rohitguta2432/spring-ai-mcp-server",
-        status: "development" as const,
+        status: "live" as const,
         image: "/images/projects/stellarmind.png"
     },
     {
@@ -30,7 +30,8 @@ export const aiProjectSummaries = [
         techStack: ["React 19", "Vite 7", "Tailwind CSS 4", "Zustand", "Dexie (IndexedDB)", "Spring Boot 3.x", "Java 21", "PostgreSQL"],
         aiApproach: "Rule-based advisory engine for Indian financial instruments (PPF, EPF, NPS). Old vs. New Tax regime comparison. Coverage gap analysis for insurance. No cloud dependency — all computation runs locally.",
         repoUrl: "https://github.com/rohitguta2432/myFinance",
-        status: "development" as const,
+        liveUrl: "https://www.myfinancial.in/",
+        status: "live" as const,
         image: "/images/projects/myfinancial.png"
     }
 ];
