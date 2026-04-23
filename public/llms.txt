@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 32 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 34 technical case-study posts
 
 ## Featured Projects
 
@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (32 posts)
+## All Engineering Notes (34 posts)
 
 ### AI Systems & LLM Integration
 
@@ -64,6 +64,8 @@
 - [Founding Engineer vs Lovable in 2026 — When $180K Beats $25/mo](https://rohitraj.tech/en/notes/founding-engineer-vs-lovable-when-to-hire-2026)
 - [India vs US MVP Developer Cost in 2026 — $18K or $120K for the Same App?](https://rohitraj.tech/en/notes/india-vs-us-mvp-developer-cost-2026)
 - [Vibe Coding vs Hiring a Developer — When Lovable, Bolt, and Cursor Stop Being Enough](https://rohitraj.tech/en/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks)
+- [Founding Engineer vs Fractional CTO in 2026 — Which One Does Your Startup Actually Need?](https://rohitraj.tech/en/notes/founding-engineer-vs-fractional-cto)
+- [The Best Lovable Alternative in 2026 Is Not Another AI Builder — It Is a Developer Who Can Read the Code](https://rohitraj.tech/en/notes/lovable-alternative-developer-when-ai-builder-breaks)
 
 ## Expertise
 

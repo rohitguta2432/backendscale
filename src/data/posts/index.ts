@@ -33,6 +33,8 @@ import { iBuiltMultiTenantSaasAlone12ModuleSpringBoot } from './i-built-multi-te
 import { foundingEngineerVsLovableWhenToHire2026 } from './founding-engineer-vs-lovable-when-to-hire-2026';
 import { indiaVsUsMvpDeveloperCost2026 } from './india-vs-us-mvp-developer-cost-2026';
 import { vibeCodingVsHiringDeveloperWhenLovableBreaks } from './vibe-coding-vs-hiring-developer-when-lovable-breaks';
+import { foundingEngineerVsFractionalCto } from './founding-engineer-vs-fractional-cto';
+import { lovableAlternativeDeveloperWhenAiBuilderBreaks } from './lovable-alternative-developer-when-ai-builder-breaks';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -67,6 +69,8 @@ const allPosts: BlogPost[] = [
   foundingEngineerVsLovableWhenToHire2026,
   indiaVsUsMvpDeveloperCost2026,
   vibeCodingVsHiringDeveloperWhenLovableBreaks,
+  foundingEngineerVsFractionalCto,
+  lovableAlternativeDeveloperWhenAiBuilderBreaks,
 ];
 
 // Validate all posts at module load time

@@ -316,4 +316,71 @@ export const services: Service[] = [
         ],
         cta: "Build Your MVP",
     },
+    {
+        slug: "6-week-mvp",
+        title: "6-Week MVP Sprint",
+        metaTitle: "6-Week MVP Sprint | Founding Engineer for Hire | Rohit Raj",
+        metaDescription:
+            "Ship a production-ready MVP in 6 weeks — fixed scope, fixed price, no equity. Founding engineer services for pre-seed founders. $15K-$30K flat.",
+        headline: "Ship a Production MVP in 6 Weeks — Not 6 Months",
+        subheadline:
+            "Fixed-scope, fixed-price MVP sprint for founders who need to validate an idea fast. You own the code from day one. No equity. No long-term lock-in.",
+        problem:
+            "You have a validated idea and no technical co-founder. Hiring a founding engineer means $210K+ in year-one cash, 0.5-2% equity, and 4-8 weeks of onboarding before a single feature ships. A fractional CTO at $8K-$20K/month writes zero code. AI builders like Lovable stall out at 500 users or the moment you need custom auth, payments, or compliance. You need someone who can ship a real product in 6 weeks, hand it to you, and disappear until you need the next sprint.",
+        whatYouGet: [
+            "Full-stack web app (Next.js or Spring Boot + React) — auth, billing, core features, deployed",
+            "Production deployment on Vercel or AWS with CI/CD, monitoring, and Sentry error tracking",
+            "Database design, migrations, seed data, and backup strategy",
+            "Up to 3 integrations: Stripe/Razorpay, SendGrid/Resend, and one domain API of your choice",
+            "Clean code you own on day one — GitHub access from the first commit, zero lock-in",
+            "Written 1-page scope doc before we start — fixed price, fixed deliverables, no scope creep",
+            "Post-launch: 2 weeks of bug-fix support + 1-hour knowledge transfer call included",
+            "Option to extend on a month-to-month retainer or hand off clean to your next hire",
+        ],
+        techStack: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Spring Boot",
+            "PostgreSQL",
+            "Supabase",
+            "Vercel",
+            "Stripe",
+            "Razorpay",
+        ],
+        timeline: "6 weeks",
+        costRange: "$15,000-$30,000",
+        portfolioSlugs: ["myfinancial", "microitinerary", "sanatanapp"],
+        faqs: [
+            {
+                question: "Why 6 weeks and not 3 months?",
+                answer: "Six weeks is long enough to ship a real product with auth, payments, and 3-5 core features — and short enough to stay fixed-scope without burning budget on meetings. Most 3-month MVP builds are 6 weeks of actual work plus 6 weeks of scope creep, committee decisions, and waiting on feedback. A 6-week timeline forces us to pick the core value proposition on day one and ship it. Everything else becomes v2.",
+            },
+            {
+                question: "How is this different from hiring a founding engineer?",
+                answer: "A founding engineer costs $140K-$220K base plus 0.5-2% equity and a 12+ month commitment. Year-one cash-out in the US is typically $210K-$350K. A 6-week MVP sprint costs $15K-$30K flat with zero equity. You get the same code quality — I am a senior engineer, not a template installer — but no dilution and no lock-in. When you hit product-market fit and raise a seed round, you can then hire a founding engineer onto a working product with real users, which means less equity and better candidates.",
+            },
+            {
+                question: "How is this different from a fractional CTO?",
+                answer: "A fractional CTO costs $8K-$20K per month for 10-20 hours per week of strategy, architecture, and team management — and they write zero code. If you are pre-product, there is nothing for a fractional CTO to manage. You are paying for advice when you need a builder. This sprint is the opposite: I write the code, ship it, and hand it to you. If you later need a fractional CTO to lead a team of engineers post-PMF, I can recommend good ones. Pre-PMF, you need a builder, not an advisor.",
+            },
+            {
+                question: "What if my Lovable or Bolt app already exists and is breaking?",
+                answer: "This service also covers rescue contracts for apps built on Lovable, Bolt, v0, Cursor, or similar AI builders. I audit the exported code, fix the critical bugs (auth, payments, RLS, performance), and either stabilize the stack or rebuild the broken parts — depending on your timeline and revenue. Rescue engagements typically run $2,500-$12,000 and take 2-4 weeks. If a full rebuild is the right call, it folds into the standard 6-week sprint.",
+            },
+            {
+                question: "Who owns the code and intellectual property?",
+                answer: "You own 100% of the code, design, database schema, and IP from the moment it is written. I sign NDAs before we discuss your idea. You get full GitHub access from the first commit — not at the end of the project. All infrastructure (Vercel, Supabase, AWS) is set up under your accounts, paid on your cards. When the sprint ends, you can continue with me on a retainer, hire another developer, or bring it in-house. The code is clean, documented, and portable by design.",
+            },
+            {
+                question: "What happens if we go over 6 weeks?",
+                answer: "The scope doc we agree to on day one is fixed. If the scope is correct, we finish in 6 weeks — I have done this 10+ times. If you want to add features mid-sprint, we either swap them in (drop an equivalent-effort feature) or push them to a v2 sprint at the same day rate. You never get a surprise invoice. The fixed-scope contract is what makes this predictable; without it, every MVP timeline slips.",
+            },
+            {
+                question: "Do you take equity instead of cash?",
+                answer: "No. Equity-for-code arrangements create misaligned incentives — you want speed, the equity holder wants optionality. I prefer cash so we both stay focused on shipping. If you are raising capital and want a technical reference for diligence calls, I do those for free as part of the engagement. If you want a long-term technical partner post-MVP, we can discuss a retainer or advisor equity grant after we have worked together and both sides know it is a fit.",
+            },
+        ],
+        cta: "Scope Your 6-Week MVP",
+    },
 ];
