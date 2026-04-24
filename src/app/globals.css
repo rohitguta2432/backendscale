@@ -2223,22 +2223,28 @@ code,
 }
 
 .about-avatar {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
+  overflow: hidden;
   background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.5);
+  position: relative;
+  box-shadow: 0 14px 36px -12px rgba(59, 130, 246, 0.45);
+  flex-shrink: 0;
+  border: 4px solid var(--surface);
+  outline: 1px solid var(--border);
 }
 
 @media (min-width: 768px) {
-  .about-avatar { width: 180px; height: 180px; font-size: 3.5rem; }
+  .about-avatar { width: 200px; height: 200px; }
+}
+
+.about-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
 }
 
 .about-hero-body { min-width: 0; }

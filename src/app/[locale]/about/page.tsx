@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
@@ -68,7 +69,16 @@ export default async function AboutPage({ params }: Props) {
             <main id="main">
                 <section className="about-hero">
                     <div className="container about-hero-inner">
-                        <div className="about-avatar" aria-hidden="true">RR</div>
+                        <div className="about-avatar">
+                            <Image
+                                src="/images/rohit.jpg"
+                                alt="Rohit Raj — Founding Engineer & AI Systems Architect"
+                                width={360}
+                                height={360}
+                                className="about-avatar-img"
+                                priority
+                            />
+                        </div>
                         <div className="about-hero-body">
                             <span className="about-eyebrow">{about.title}</span>
                             <h1 className="about-headline">Rohit Raj</h1>
