@@ -115,7 +115,7 @@ export default async function Image() {
                             color: 'transparent',
                         }}
                     >
-                        6+ Years Building
+                        10+ Years Building
                     </h1>
                     <p
                         style={{

@@ -78,7 +78,7 @@ export default async function OpengraphImage() {
                         color: '#d1d5db',
                     }}
                 >
-                    <span>6+ years shipping</span>
+                    <span>10+ years shipping</span>
                     <span style={{ color: '#4b5563' }}>·</span>
                     <span>Java · Next.js · Kafka · GPT-4</span>
                     <span style={{ color: '#4b5563' }}>·</span>

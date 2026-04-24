@@ -78,7 +78,7 @@ The difference isn't skill — it's overhead. Agencies pay for offices, sales te
     },
     {
       heading: 'What I Build',
-      content: `I'm a full-stack developer with 6+ years of experience. Here's my stack:
+      content: `I'm a full-stack developer with 10+ years of experience. Here's my stack:
 
 **Mobile:** React Native + Expo — Android apps shipped to Play Store (SanatanApp, MyFinancial)
 **Backend:** Spring Boot 3.x + Java 21 — REST APIs, WhatsApp bots (ClinicAI), AI integrations

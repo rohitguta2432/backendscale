@@ -1,7 +1,7 @@
 {
     "about": {
         "title": "À Propos",
-        "bio1": "Ingénieur backend avec plus de 6 ans d'expérience dans la construction de systèmes distribués pour l'automobile et l'industrie. Actuellement, je me concentre sur les systèmes alimentés par l'IA qui résolvent de vrais problèmes métier.",
+        "bio1": "Ingénieur backend avec plus de 10 ans d'expérience dans la construction de systèmes distribués pour l'automobile et l'industrie. Actuellement, je me concentre sur les systèmes alimentés par l'IA qui résolvent de vrais problèmes métier.",
         "bio2": "Je documente mon parcours : les décisions, les compromis et les échecs. Pas pour montrer du code parfait, mais pour montrer comment les systèmes de production sont réellement construits."
     },
     "contact": {

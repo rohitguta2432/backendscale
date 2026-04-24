@@ -79,7 +79,7 @@ export default async function ReliabilityPage({ params }: Props) {
                                 <Link href={`/${locale}/about`} className="text-blue-600 dark:text-blue-400 hover:underline">
                                     About Rohit Raj
                                 </Link>{" "}
-                                — 6+ years building production AI systems.
+                                — 10+ years building production AI systems.
                             </li>
                         </ul>
                     </div>

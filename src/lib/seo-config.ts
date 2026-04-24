@@ -130,7 +130,7 @@ export const personSchema = {
     url: SITE_CONFIG.url,
     email: SITE_CONFIG.author.email,
     jobTitle: 'Founding Engineer & AI Systems Architect',
-    description: 'Backend engineer with 6+ years experience building production AI systems, distributed architectures, and custom AI solutions for startups.',
+    description: 'Backend engineer with 10+ years experience building production AI systems, distributed architectures, and custom AI solutions for startups.',
     sameAs: [
         `https://github.com/${SITE_CONFIG.author.github}`,
         `https://linkedin.com/in/${SITE_CONFIG.author.linkedin}`,
@@ -455,6 +455,43 @@ export function generateBlogPostingSchema(post: {
         mainEntityOfPage: `${SITE_CONFIG.url}/${locale}/notes/${post.slug}`,
         keywords: post.keywords.join(', '),
         ...(post.wordCount && { wordCount: post.wordCount }),
+        inLanguage: locale,
+    };
+}
+
+// TechArticle JSON-LD schema for reliability / deep-dive technical pages.
+// Signals Google that this is an authored, dated technical article — required
+// for E-E-A-T lift and AI Overview citation on long-tail engineering queries.
+export function generateTechArticleSchema(article: {
+    headline: string;
+    description: string;
+    path: string;
+    datePublished: string;
+    dateModified?: string;
+    keywords: string[];
+    proficiencyLevel?: 'Beginner' | 'Intermediate' | 'Expert';
+}, locale: string = 'en') {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: article.headline,
+        description: article.description,
+        author: { '@id': SITE_CONFIG.personId },
+        publisher: {
+            '@type': 'Organization',
+            '@id': SITE_CONFIG.organizationId,
+            name: SITE_CONFIG.name,
+            url: SITE_CONFIG.url,
+            logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_CONFIG.url}${SITE_CONFIG.images.logo}`,
+            },
+        },
+        datePublished: article.datePublished,
+        dateModified: article.dateModified ?? article.datePublished,
+        mainEntityOfPage: `${SITE_CONFIG.url}/${locale}${article.path}`,
+        keywords: article.keywords.join(', '),
+        proficiencyLevel: article.proficiencyLevel ?? 'Expert',
         inLanguage: locale,
     };
 }
