@@ -35,6 +35,7 @@ import { indiaVsUsMvpDeveloperCost2026 } from './india-vs-us-mvp-developer-cost-
 import { vibeCodingVsHiringDeveloperWhenLovableBreaks } from './vibe-coding-vs-hiring-developer-when-lovable-breaks';
 import { foundingEngineerVsFractionalCto } from './founding-engineer-vs-fractional-cto';
 import { lovableAlternativeDeveloperWhenAiBuilderBreaks } from './lovable-alternative-developer-when-ai-builder-breaks';
+import { aiNewsApril2026WhatFoundersShouldBuild } from './ai-news-april-2026-what-founders-should-build';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -71,6 +72,7 @@ const allPosts: BlogPost[] = [
   vibeCodingVsHiringDeveloperWhenLovableBreaks,
   foundingEngineerVsFractionalCto,
   lovableAlternativeDeveloperWhenAiBuilderBreaks,
+  aiNewsApril2026WhatFoundersShouldBuild,
 ];
 
 // Validate all posts at module load time
