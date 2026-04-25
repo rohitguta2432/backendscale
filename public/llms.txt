@@ -66,6 +66,24 @@
 - [Vibe Coding vs Hiring a Developer — When Lovable, Bolt, and Cursor Stop Being Enough](https://rohitraj.tech/en/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks)
 - [Founding Engineer vs Fractional CTO in 2026 — Which One Does Your Startup Actually Need?](https://rohitraj.tech/en/notes/founding-engineer-vs-fractional-cto)
 - [The Best Lovable Alternative in 2026 Is Not Another AI Builder — It Is a Developer Who Can Read the Code](https://rohitraj.tech/en/notes/lovable-alternative-developer-when-ai-builder-breaks)
+- [6-Week MVP Sprint — Week-by-Week Breakdown of What Actually Ships](https://rohitraj.tech/en/notes/6-week-mvp-sprint-week-by-week-breakdown)
+- [6-Week MVP Tech Stack in 2026 — The Boring Choices That Actually Ship](https://rohitraj.tech/en/notes/6-week-mvp-tech-stack-2026)
+- [What a $15K MVP Actually Includes — vs. the $50K Agency Quote You Just Got](https://rohitraj.tech/en/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote)
+- [6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?](https://rohitraj.tech/en/notes/6-week-mvp-vs-3-month-agency-which-ships-first)
+- [Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026](https://rohitraj.tech/en/notes/founding-engineer-india-vs-toptal-arc-uplers-2026)
+- [When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026](https://rohitraj.tech/en/notes/lovable-app-production-bugs-need-real-engineer-2026)
+
+## Services
+
+- [6-Week MVP Sprint](https://rohitraj.tech/en/services/6-week-mvp): Fixed-scope, fixed-price MVP sprint for pre-seed founders, $15K-$30K, 6 weeks to production
+- [Hire a Founding Engineer in India](https://rohitraj.tech/en/services/hire-founding-engineer-india): Senior India-based founding engineer for hire — sprint or retainer, no equity, full GitHub
+- [Hire a Fractional CTO in India](https://rohitraj.tech/en/services/hire-fractional-cto-india): Honest scoping for whether you actually need a fractional CTO or a builder
+- [Startup MVP Development](https://rohitraj.tech/en/services/startup-mvp-development): Idea-to-production MVP development for under $10K
+- [Full-Stack Development & AI Integration](https://rohitraj.tech/en/services/full-stack-development): Spring Boot + React/Next.js + AI integration for startups
+- [Mobile App Development](https://rohitraj.tech/en/services/mobile-app-development): React Native + Expo, Play Store + App Store
+- [AI Chatbot Development](https://rohitraj.tech/en/services/ai-chatbot-development): WhatsApp + LLM-powered chatbots for Indian businesses
+- [Fintech App Development](https://rohitraj.tech/en/services/fintech-app-development): Secure financial apps with payments, dashboards, offline support
+- [Healthcare Clinic App](https://rohitraj.tech/en/services/healthcare-clinic-app): WhatsApp booking bots and clinic management
 
 ## Expertise
 

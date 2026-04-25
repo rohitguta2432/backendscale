@@ -383,4 +383,133 @@ export const services: Service[] = [
         ],
         cta: "Scope Your 6-Week MVP",
     },
+    {
+        slug: "hire-founding-engineer-india",
+        title: "Hire a Founding Engineer in India (2026)",
+        metaTitle: "Hire Founding Engineer India 2026 | Pre-Seed MVP Builder | Rohit Raj",
+        metaDescription:
+            "Hire a senior founding engineer in India without burning $210K + 0.5-2% equity. Production MVP in 6 weeks, fixed-price $15K-$30K, full GitHub access. No agency overhead.",
+        headline: "Hire a Founding Engineer in India — Without the Equity, the 12-Month Lock-In, or the $210K",
+        subheadline:
+            "Pre-seed founders skip the founding-engineer hire and ship with a senior contractor instead. Same code quality. Zero equity. 6 weeks to production. You own the GitHub from day one.",
+        problem:
+            "You searched 'hire founding engineer India' because you read every YC essay that says the first technical hire is the most important one. Then you priced it: $140K-$220K base, 0.5-2% equity, 4-8 weeks of recruiting, another 4 weeks of onboarding before they ship a feature. Year-one cash out is $210K-$350K. If they leave at month 9, your equity table is broken and your codebase is half-built. Most pre-seed founders do not need a founding engineer in 2026 — they need a senior contractor who has shipped 10 MVPs and will not ask for stock options.",
+        whatYouGet: [
+            "Senior India-based engineer (6+ years, 29+ shipped products) — same calibre as a US founding-engineer hire",
+            "Production MVP in 6 weeks: auth, billing, core features, deployed, monitored",
+            "Fixed-price contract ($15K-$30K) — no hourly billing, no surprise invoices, no equity ask",
+            "Full GitHub access from commit one — you own 100% of code, IP, and infrastructure",
+            "Direct Slack / WhatsApp communication with the engineer, not a project manager",
+            "Written 1-page scope doc before code is written — fixed deliverables, no scope creep",
+            "Stack you can hire onto later: Next.js, React, TypeScript, Spring Boot, Postgres — not niche frameworks",
+            "Optional month-to-month retainer after launch, or clean handoff to your first full-time hire",
+        ],
+        techStack: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Spring Boot",
+            "Java",
+            "PostgreSQL",
+            "Supabase",
+            "Vercel",
+            "AWS",
+            "Stripe",
+        ],
+        timeline: "6 weeks (sprint) or 3-12 month retainer",
+        costRange: "$15,000-$30,000 sprint / $8,000-$12,000 monthly retainer",
+        portfolioSlugs: ["myfinancial", "microitinerary", "sanatanapp", "stellarmind", "clinicai"],
+        faqs: [
+            {
+                question: "Why hire a founding engineer in India instead of the US?",
+                answer: "Year-one cash out for a US founding engineer is $210K-$350K plus 0.5-2% equity. An India founding engineer is $55K-$110K plus 0.2-1% equity. A senior India contractor on a 6-week sprint is $15K-$30K with zero equity. For a pre-seed startup with 12-18 months of runway, the math is brutal: a US founding engineer costs the same as your entire seed round. India delivers the same code quality at one-quarter the cash, and a contractor delivers it without the equity dilution that hurts your next round.",
+            },
+            {
+                question: "Is a senior contractor really the same as a founding engineer?",
+                answer: "Code-quality wise, yes. Commitment wise, no — and that is the trade-off. A founding engineer is on the cap table for 4 years, owns the codebase as theirs, and will fight for it at 11pm on a Sunday. A senior contractor ships your MVP, hands it over, and disappears until you call them back. For pre-PMF, the contractor model is better because you do not yet know what you are building. You do not want to dilute equity on a thesis you have not validated. Once you raise a seed round and have a working product with users, you can then hire a founding engineer onto a real codebase — which means less equity (the company is worth more) and better candidates (the role is less risky).",
+            },
+            {
+                question: "What does 'founding engineer in India' actually look like in 2026?",
+                answer: "Most India-based founding-engineer roles in 2026 are remote, async, and pay in USD. They run on Slack, ship via GitHub, and meet weekly on Zoom. The senior contractor model strips this further: no Slack channels you have to manage, no 1:1s, no performance reviews. You hire for a 6-week sprint, you get a working product, you decide if you want a retainer afterwards. This is how 36% of solo-founded startups in 2026 are operating — they do not have employees, they have contracted senior engineers on rotation.",
+            },
+            {
+                question: "How is this different from hiring on Toptal, Arc, or Uplers?",
+                answer: "Marketplaces like Toptal, Arc, and Uplers are recruiter-first. You post a brief, they match you with 3-5 candidates, you interview each one, you onboard the chosen one for 2-4 weeks before they ship. Markup is 30-50% on top of the engineer's rate. With me, you talk to the engineer directly on call one. The portfolio is public (29 shipped products on GitHub), the price is fixed, and the start is immediate. No middleman, no markup, no recruiter telling you what the engineer's strengths are.",
+            },
+            {
+                question: "What if I do need a full-time founding engineer eventually?",
+                answer: "After the 6-week sprint, you have three options: (1) extend on a monthly retainer with me as your interim engineering lead while you raise a seed round, (2) hire a full-time founding engineer onto the existing codebase (better terms because the product is real), or (3) bring engineering in-house. I have helped founders do all three. The codebase is documented, conventional, and clean enough that any senior engineer can take over in two weeks. That is a deliberate design choice — your team should never depend on me staying.",
+            },
+            {
+                question: "What if my startup is in a regulated industry (fintech, healthcare)?",
+                answer: "I have shipped fintech (MyFinancial — tax engine, offline-first portfolio dashboard), healthcare (clinicAI — patient management with HIPAA-aware data handling), and AI products in production. For regulated industries, the 6-week sprint covers a compliant MVP — encryption at rest, audit logs, role-based access, secure secret management. For full compliance certification (HIPAA, SOC 2, RBI), you will need a compliance officer to audit the final implementation, but the technical architecture supports it out of the box.",
+            },
+            {
+                question: "Do you take equity instead of cash?",
+                answer: "No. Equity-for-code arrangements create misaligned incentives. You want speed; the equity holder wants optionality. Cash keeps both sides focused on shipping. If you want a long-term technical partner with skin in the game, we discuss an advisor-equity grant after the first sprint, when both sides know the fit is real. Until then, cash is the cleanest contract.",
+            },
+        ],
+        cta: "Hire a Founding Engineer",
+    },
+    {
+        slug: "hire-fractional-cto-india",
+        title: "Hire a Fractional CTO in India — Or Skip Straight to a Builder",
+        metaTitle: "Hire Fractional CTO India 2026 | When You Actually Need One | Rohit Raj",
+        metaDescription:
+            "Most founders Googling 'hire fractional CTO India' do not need one. They need a senior engineer who ships code. Honest take + cheaper alternative for pre-seed startups.",
+        headline: "Hire a Fractional CTO in India — Only If You Already Have a Team to Lead",
+        subheadline:
+            "Fractional CTOs cost ₹1.5-4L per month for advice. Pre-PMF, you do not need advice — you need shipped code. Here is when a fractional CTO is the right call, and when a senior contractor wins.",
+        problem:
+            "Searches for 'hire fractional CTO India' have tripled since 2024 because every agency rebranded their consulting arm with the title. The vast majority of pre-seed founders who hire a fractional CTO end up paying ₹1.5-4L per month (₹18-48L per year) for strategy meetings, architecture reviews, and hiring help — none of which writes a line of code. If you have no product, no team, and no users, a fractional CTO has nothing to lead. You are paying senior-executive rates for advice you cannot act on. The fractional CTO is the right hire post-seed when you have engineers and need direction. Pre-seed, you need a builder.",
+        whatYouGet: [
+            "Honest 30-minute scoping call: do you actually need a fractional CTO, a builder, or both?",
+            "If you need a builder: 6-week MVP sprint, fixed-price ($15K-$30K), full GitHub from day one",
+            "If you need a fractional CTO: I refer you to one of three vetted CTOs I trust (no commission)",
+            "If you need both: I ship the MVP and a fractional CTO joins post-launch to lead your next hires",
+            "Architecture review before you commit to any vendor — saves you from $50K mistakes",
+            "Written tech-spend audit if you already have a team — what is overbuilt, what is missing",
+            "No equity ask, no annual retainer trap, no hourly billing surprises",
+        ],
+        techStack: [
+            "Next.js",
+            "Spring Boot",
+            "PostgreSQL",
+            "AWS",
+            "Vercel",
+            "Stripe",
+            "Razorpay",
+            "Supabase",
+        ],
+        timeline: "30-min scoping call same week / 6-week sprint if you need a builder",
+        costRange: "Free scoping call / $15K-$30K MVP sprint / referral to fractional CTO if needed",
+        portfolioSlugs: ["myfinancial", "microitinerary", "sanatanapp", "stellarmind"],
+        faqs: [
+            {
+                question: "When does a startup actually need a fractional CTO in 2026?",
+                answer: "Three scenarios: (1) you have raised a seed round, hired 2-5 engineers, and need senior architecture guidance you cannot afford full-time; (2) you are non-technical and your existing engineering team is making decisions you cannot evaluate; (3) you are pre-acquisition or fund-raising and need a senior technical voice for due diligence. In all three cases, you have a team or a product. Pre-product, pre-team, you do not need a fractional CTO — you need a builder.",
+            },
+            {
+                question: "How much does a fractional CTO cost in India in 2026?",
+                answer: "Retainer pricing is ₹1.5-4L per month (~$1,800-$4,800) for one to two days per week — typical for seed to Series A startups. Hourly is ₹8K-₹40K (~$100-$500). Equity grants for fractional CTOs run 0.25-0.75%. Compare that to a senior contractor at $15K-$30K flat for a 6-week MVP sprint, and you can see why the fractional CTO model only makes sense after you have something to advise on.",
+            },
+            {
+                question: "Why would you talk founders out of hiring a fractional CTO?",
+                answer: "Because most of the founders who book a 'fractional CTO scoping call' walk away realizing they wanted someone to write code, not strategize. I am cheaper, faster, and more useful for that need. If you genuinely need a strategic CTO, I refer you to one — I do not pretend to be one. Honest scoping costs me a few minutes. Mismatched engagements cost both of us months.",
+            },
+            {
+                question: "What is the difference between a fractional CTO and a senior contractor?",
+                answer: "Fractional CTO writes zero code, attends 4-6 hours of meetings per week, and reviews architecture decisions. Senior contractor writes 100% of the code on a sprint, attends one weekly check-in, and ships features. A fractional CTO is leverage on top of a team. A senior contractor is the team, until you can afford a permanent one. Pre-PMF you need leverage on yourself — meaning, a builder. Post-PMF, you might need leverage on a team — meaning, a fractional CTO.",
+            },
+            {
+                question: "Can you do both — ship the MVP and act as fractional CTO afterwards?",
+                answer: "For 1-2 month transitions, yes. After the 6-week sprint, I can stay on a part-time retainer for 1-2 months while you hire a permanent CTO or founding engineer. This is the most common path my clients take. After that handoff window, I refer you to a dedicated fractional CTO so you get someone whose full job is leadership, not building.",
+            },
+            {
+                question: "Will you sign an NDA before the scoping call?",
+                answer: "Yes. NDAs are signed before the first scoping call. I treat every founder conversation as confidential. The scoping call is free, 30 minutes, and ends with a written summary of what you actually need — even if that recommendation is 'hire someone else'.",
+            },
+        ],
+        cta: "Book a Free Scoping Call",
+    },
 ];

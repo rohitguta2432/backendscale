@@ -36,6 +36,12 @@ import { vibeCodingVsHiringDeveloperWhenLovableBreaks } from './vibe-coding-vs-h
 import { foundingEngineerVsFractionalCto } from './founding-engineer-vs-fractional-cto';
 import { lovableAlternativeDeveloperWhenAiBuilderBreaks } from './lovable-alternative-developer-when-ai-builder-breaks';
 import { aiNewsApril2026WhatFoundersShouldBuild } from './ai-news-april-2026-what-founders-should-build';
+import { sixWeekMvpSprintWeekByWeekBreakdown } from './6-week-mvp-sprint-week-by-week-breakdown';
+import { sixWeekMvpTechStack2026 } from './6-week-mvp-tech-stack-2026';
+import { what15kMvpActuallyIncludesVs50kAgencyQuote } from './what-15k-mvp-actually-includes-vs-50k-agency-quote';
+import { sixWeekMvpVs3MonthAgencyWhichShipsFirst } from './6-week-mvp-vs-3-month-agency-which-ships-first';
+import { foundingEngineerIndiaVsToptalArcUplers2026 } from './founding-engineer-india-vs-toptal-arc-uplers-2026';
+import { lovableAppProductionBugsNeedRealEngineer2026 } from './lovable-app-production-bugs-need-real-engineer-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -73,6 +79,12 @@ const allPosts: BlogPost[] = [
   foundingEngineerVsFractionalCto,
   lovableAlternativeDeveloperWhenAiBuilderBreaks,
   aiNewsApril2026WhatFoundersShouldBuild,
+  sixWeekMvpSprintWeekByWeekBreakdown,
+  sixWeekMvpTechStack2026,
+  what15kMvpActuallyIncludesVs50kAgencyQuote,
+  sixWeekMvpVs3MonthAgencyWhichShipsFirst,
+  foundingEngineerIndiaVsToptalArcUplers2026,
+  lovableAppProductionBugsNeedRealEngineer2026,
 ];
 
 // Validate all posts at module load time
