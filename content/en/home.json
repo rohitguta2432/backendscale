@@ -3,6 +3,14 @@
         "subtitle": "A founding engineer from India who ships end-to-end — AI, backend, mobile — without the cost of a team.",
         "titleLine1": "Get your AI MVP live in 2 weeks.",
         "titleLine2": "29 products shipped, every one documented.",
+        "priceAnchor": "From $15K · Fixed price · 6-week sprint",
+        "bookCallCta": "Book free 30-min call",
+        "trustPills": [
+            "Fixed price · No hourly surprises",
+            "You own the code · MIT or commercial",
+            "Daily Slack / WhatsApp access",
+            "First production commit in 5 days"
+        ],
         "approach": {
             "title": "My Approach",
             "items": {

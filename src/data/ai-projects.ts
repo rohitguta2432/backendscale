@@ -3,7 +3,20 @@
 // Uses 'title' (not 'name'), 'solution' (not 'solves'). Status 'live' means
 // shipped/runnable; 'development' means work-in-progress. Not part of Project status enum.
 
-export const aiProjectSummaries = [
+export interface AIProjectSummary {
+    title: string;
+    problem: string;
+    solution: string;
+    techStack: string[];
+    aiApproach: string;
+    repoUrl: string;
+    liveUrl?: string;
+    status: 'live' | 'development' | 'production' | 'active';
+    image?: string;
+    metrics?: { label: string; value: string }[];
+}
+
+export const aiProjectSummaries: AIProjectSummary[] = [
     {
         title: "MicroItinerary — AI Travel Planner",
         problem: "Travel apps optimize for proximity and ratings. They don't consider human energy levels, group dynamics, or budget constraints intelligently.",
@@ -11,7 +24,12 @@ export const aiProjectSummaries = [
         techStack: ["React 18", "Vite", "Spring Boot 3.2.2", "Java 21", "PostgreSQL 16", "Redis", "OpenAI GPT-4"],
         aiApproach: "GPT-4 for destination recommendations based on season, budget, and preferences. AI-generated cost breakdowns for hotels, food, transport, and activities.",
         repoUrl: "https://github.com/rohitguta2432/MicroItinerary",
-        status: "live" as const
+        status: "live",
+        metrics: [
+            { label: "Build time", value: "6 weeks" },
+            { label: "GPT-4 cost / itinerary", value: "<$0.08" },
+            { label: "PWA Lighthouse", value: "94/100" },
+        ],
     },
     {
         title: "StellarMIND — Chat-to-SQL with pgvector",
@@ -20,8 +38,13 @@ export const aiProjectSummaries = [
         techStack: ["Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "MCP Protocol", "OpenAI"],
         aiApproach: "RAG-based SQL generation: schema knowledge stored as embeddings in pgvector, retrieved as context for LLM. Strict read-only enforcement (only SELECT/WITH).",
         repoUrl: "https://github.com/rohitguta2432/spring-ai-mcp-server",
-        status: "live" as const,
-        image: "/images/projects/stellarmind.png"
+        status: "live",
+        image: "/images/projects/stellarmind.png",
+        metrics: [
+            { label: "Query latency p95", value: "<1.2s" },
+            { label: "SQL safety", value: "100% read-only" },
+            { label: "Schema embeddings", value: "pgvector" },
+        ],
     },
     {
         title: "MyFinancial — Personal Financial Advisor",
@@ -31,7 +54,12 @@ export const aiProjectSummaries = [
         aiApproach: "Rule-based advisory engine for Indian financial instruments (PPF, EPF, NPS). Old vs. New Tax regime comparison. Coverage gap analysis for insurance. No cloud dependency — all computation runs locally.",
         repoUrl: "https://github.com/rohitguta2432/myFinance",
         liveUrl: "https://www.myfinancial.in/",
-        status: "live" as const,
-        image: "/images/projects/myfinancial.png"
-    }
+        status: "live",
+        image: "/images/projects/myfinancial.png",
+        metrics: [
+            { label: "Data privacy", value: "100% on-device" },
+            { label: "Wizard completion", value: "6 steps · ~4 min" },
+            { label: "Tax regimes covered", value: "Old + New" },
+        ],
+    },
 ];

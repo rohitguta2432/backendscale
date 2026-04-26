@@ -73,6 +73,9 @@ export interface HomeDictionary {
         subtitle: string;
         titleLine1: string;
         titleLine2: string;
+        priceAnchor?: string;
+        bookCallCta?: string;
+        trustPills?: string[];
         approach: {
             title: string;
             items: {

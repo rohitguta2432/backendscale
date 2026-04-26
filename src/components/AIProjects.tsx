@@ -18,6 +18,7 @@ function AIProjectCard({
     status,
     labels,
     image,
+    metrics,
     index
 }: {
     title: string;
@@ -30,6 +31,7 @@ function AIProjectCard({
     status: 'active' | 'development' | 'production' | 'live';
     labels: HomeDictionary['aiProjects']['labels'];
     image?: string;
+    metrics?: { label: string; value: string }[];
     index: number;
 }) {
     const isEven = index % 2 === 0;
@@ -106,6 +108,17 @@ function AIProjectCard({
                     <h4 className="ai-project-label ai-project-label--ai">{labels.aiApproach}</h4>
                     <p>{aiApproach}</p>
                 </div>
+
+                {metrics && metrics.length > 0 && (
+                    <dl className="ai-project-metrics" aria-label="Project metrics">
+                        {metrics.map((m) => (
+                            <div key={m.label} className="ai-project-metric">
+                                <dt className="ai-project-metric-label">{m.label}</dt>
+                                <dd className="ai-project-metric-value">{m.value}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                )}
 
                 {/* Tech stack */}
                 <div className="ai-project-tech">

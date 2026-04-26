@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { getDictionary, isValidLocale, locales, isRTL, type Locale } from "@/lib/i18n";
-import { generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -39,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 fr: `${baseUrl}/fr`,
                 de: `${baseUrl}/de`,
                 ar: `${baseUrl}/ar`,
+                "x-default": `${baseUrl}/en`,
             },
         },
         openGraph: {
@@ -79,23 +79,12 @@ export default async function LocaleLayout({
     const direction = isRTL(locale as Locale) ? "rtl" : "ltr";
 
     return (
-        <>
-            <head>
-                <link rel="alternate" hrefLang="en" href="https://rohitraj.tech/en" />
-                <link rel="alternate" hrefLang="hi" href="https://rohitraj.tech/hi" />
-                <link rel="alternate" hrefLang="fr" href="https://rohitraj.tech/fr" />
-                <link rel="alternate" hrefLang="de" href="https://rohitraj.tech/de" />
-                <link rel="alternate" hrefLang="ar" href="https://rohitraj.tech/ar" />
-                <link rel="alternate" hrefLang="x-default" href="https://rohitraj.tech/en" />
-{/* BreadcrumbList moved to individual page templates for proper multi-item breadcrumbs */}
-            </head>
-            <div lang={locale} dir={direction} className={direction === "rtl" ? "rtl" : ""}>
-                <a href="#main" className="skip-link">
-                    Skip to main content
-                </a>
-                {children}
-            </div>
-        </>
+        <div lang={locale} dir={direction} className={direction === "rtl" ? "rtl" : ""}>
+            <a href="#main" className="skip-link">
+                Skip to main content
+            </a>
+            {children}
+        </div>
     );
 }
 

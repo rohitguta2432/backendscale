@@ -8,6 +8,15 @@ interface HeroProps {
 }
 
 export default function Hero({ dict, locale }: HeroProps) {
+    const priceAnchor = dict.hero.priceAnchor ?? "From $15K · Fixed price · 6-week sprint";
+    const bookCallCta = dict.hero.bookCallCta ?? "Book free 30-min call";
+    const trustPills = dict.hero.trustPills ?? [
+        "Fixed price · No hourly surprises",
+        "You own the code",
+        "Daily Slack / WhatsApp access",
+        "First production commit in 5 days",
+    ];
+
     return (
         <section className="hero">
             <div className="container">
@@ -19,22 +28,31 @@ export default function Hero({ dict, locale }: HeroProps) {
                             <span className="text-[var(--text-muted)] text-[0.7em]">{dict.hero.titleLine2}</span>
                         </h1>
 
+                        <div className="hero-price-anchor" aria-label="Pricing summary">
+                            <span className="hero-price-dot" aria-hidden="true" />
+                            {priceAnchor}
+                        </div>
+
                         <div className="hero-actions">
-                            <Link href={`/${locale}/projects`} className="btn btn-primary">
+                            <Link href={`/${locale}/contact`} className="btn btn-primary">
+                                {bookCallCta}
+                            </Link>
+                            <Link href={`/${locale}/projects`} className="btn btn-secondary">
                                 {dict.aiProjects.sectionTitle}
                             </Link>
                             <Link href={`/${locale}/notes`} className="btn btn-secondary">
                                 Engineering Notes
                             </Link>
-                            <a
-                                href="https://github.com/rohitguta2432"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-secondary"
-                            >
-                                GitHub
-                            </a>
                         </div>
+
+                        <ul className="hero-trust-pills" aria-label="Trust signals">
+                            {trustPills.map((pill) => (
+                                <li key={pill} className="hero-trust-pill">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+                                    <span>{pill}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
                     <div className="flex-[0_0_320px] flex justify-center">
