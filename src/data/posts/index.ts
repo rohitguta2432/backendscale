@@ -42,6 +42,7 @@ import { what15kMvpActuallyIncludesVs50kAgencyQuote } from './what-15k-mvp-actua
 import { sixWeekMvpVs3MonthAgencyWhichShipsFirst } from './6-week-mvp-vs-3-month-agency-which-ships-first';
 import { foundingEngineerIndiaVsToptalArcUplers2026 } from './founding-engineer-india-vs-toptal-arc-uplers-2026';
 import { lovableAppProductionBugsNeedRealEngineer2026 } from './lovable-app-production-bugs-need-real-engineer-2026';
+import { supabaseRlsProductionBugsNeedRealEngineer2026 } from './supabase-rls-production-bugs-need-real-engineer-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -85,6 +86,7 @@ const allPosts: BlogPost[] = [
   sixWeekMvpVs3MonthAgencyWhichShipsFirst,
   foundingEngineerIndiaVsToptalArcUplers2026,
   lovableAppProductionBugsNeedRealEngineer2026,
+  supabaseRlsProductionBugsNeedRealEngineer2026,
 ];
 
 // Validate all posts at module load time

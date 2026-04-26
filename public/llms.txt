@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 34 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 42 technical case-study posts
 
 ## Featured Projects
 
@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (34 posts)
+## All Engineering Notes (42 posts)
 
 ### AI Systems & LLM Integration
 
@@ -72,6 +72,7 @@
 - [6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?](https://rohitraj.tech/en/notes/6-week-mvp-vs-3-month-agency-which-ships-first)
 - [Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026](https://rohitraj.tech/en/notes/founding-engineer-india-vs-toptal-arc-uplers-2026)
 - [When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026](https://rohitraj.tech/en/notes/lovable-app-production-bugs-need-real-engineer-2026)
+- [Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026](https://rohitraj.tech/en/notes/supabase-rls-production-bugs-need-real-engineer-2026)
 
 ## Services
 
