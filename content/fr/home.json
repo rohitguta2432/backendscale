@@ -3,6 +3,14 @@
         "subtitle": "Rohit Raj — Ingénieur Backend & IA",
         "titleLine1": "Je Construis des Systèmes IA",
         "titleLine2": "Qui Résolvent de Vrais Problèmes",
+        "priceAnchor": "À partir de 15 000 $ · Prix fixe · Sprint de 6 semaines",
+        "bookCallCta": "Réserver un appel gratuit de 30 min",
+        "trustPills": [
+            "Prix fixe · Aucune surprise horaire",
+            "Vous possédez le code · MIT ou commercial",
+            "Accès quotidien Slack / WhatsApp",
+            "Premier commit en production en 5 jours"
+        ],
         "approach": {
             "title": "Mon Approche",
             "items": {

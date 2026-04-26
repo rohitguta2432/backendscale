@@ -94,5 +94,104 @@
                 "linkText": "Learn more →"
             }
         }
+    },
+    "process": {
+        "eyebrow": "Process",
+        "heading": "How a 6-week MVP sprint works",
+        "subtitle": "Fixed scope. Daily Slack. First production commit by day 5.",
+        "weeks": [
+            {
+                "label": "Week 1",
+                "title": "Discovery & architecture",
+                "items": [
+                    "Problem framing call (90 min)",
+                    "Architecture doc + tech stack lock-in",
+                    "Milestone schedule signed"
+                ]
+            },
+            {
+                "label": "Week 2",
+                "title": "Core backend & auth",
+                "items": [
+                    "Database schema + migrations",
+                    "Auth flow (email / OAuth)",
+                    "First production deploy on day 5"
+                ]
+            },
+            {
+                "label": "Week 3",
+                "title": "AI / data layer",
+                "items": [
+                    "LLM integration (RAG / agents)",
+                    "Vector store + retrieval pipeline",
+                    "Cost guardrails + token budgeting"
+                ]
+            },
+            {
+                "label": "Week 4",
+                "title": "Frontend & UX",
+                "items": [
+                    "UI flows + mobile responsive",
+                    "Onboarding + empty states",
+                    "Analytics events wired"
+                ]
+            },
+            {
+                "label": "Week 5",
+                "title": "Hardening",
+                "items": [
+                    "Load tests + p95 latency budget",
+                    "Observability + alerting (Prometheus + Grafana)",
+                    "Security pass + dependency audit"
+                ]
+            },
+            {
+                "label": "Week 6",
+                "title": "Launch",
+                "items": [
+                    "Bug bash + UAT",
+                    "Public deploy + DNS cutover",
+                    "Code handover + runbook + docs"
+                ]
+            }
+        ]
+    },
+    "faq": {
+        "eyebrow": "FAQ",
+        "heading": "Common questions before we start",
+        "items": [
+            {
+                "q": "What if 6 weeks slips?",
+                "a": "Fixed scope means we descope features, not extend timeline. You ship on week 6, even if a few stretch features move to v2. You keep what's working."
+            },
+            {
+                "q": "Who owns the code?",
+                "a": "You. Full repo handover on week 6. MIT license by default; commercial-only if you prefer. All IP transfers on final payment."
+            },
+            {
+                "q": "Am I locked into your tech stack?",
+                "a": "No. I default to Next.js / Spring Boot / Postgres because they're boring and hireable. If your team uses Python / Go / Rails, we ship in your stack."
+            },
+            {
+                "q": "What about post-launch maintenance?",
+                "a": "Two options: (1) clean handoff to your team with full docs and a runbook, or (2) ongoing retainer at a fixed monthly rate. No surprise bills either way."
+            },
+            {
+                "q": "Refund policy?",
+                "a": "If we don't reach a working production deploy by week 3 (50% milestone), you get 50% back. No questions, no contract gymnastics."
+            },
+            {
+                "q": "Are you the only engineer?",
+                "a": "Yes. No outsourcing, no rotating contractors. You talk to me on Slack / WhatsApp daily. If I get overcommitted I tell you upfront."
+            },
+            {
+                "q": "Do you take equity instead of cash?",
+                "a": "No. Cash only. Keeps incentives clean for both of us — I'm an engineer, not a co-founder shopping for cap table slots."
+            },
+            {
+                "q": "NDAs and IP?",
+                "a": "Standard mutual NDA before kickoff if you want one. All code IP transfers to you on final payment, signed in the master services agreement."
+            }
+        ]
     }
 }

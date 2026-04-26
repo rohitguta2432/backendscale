@@ -3,6 +3,14 @@
         "subtitle": "Rohit Raj — Backend & KI Ingenieur",
         "titleLine1": "Ich Baue KI-Systeme",
         "titleLine2": "Die Echte Probleme Lösen",
+        "priceAnchor": "Ab 15.000 $ · Festpreis · 6-Wochen-Sprint",
+        "bookCallCta": "Kostenloses 30-Min-Gespräch buchen",
+        "trustPills": [
+            "Festpreis · Keine Stundenüberraschungen",
+            "Sie besitzen den Code · MIT oder kommerziell",
+            "Täglicher Slack-/WhatsApp-Zugriff",
+            "Erster Produktions-Commit in 5 Tagen"
+        ],
         "approach": {
             "title": "Mein Ansatz",
             "items": {

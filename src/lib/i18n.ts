@@ -108,6 +108,17 @@ export interface HomeDictionary {
             kafkaTesting: ReliabilityCard;
         };
     };
+    process?: {
+        eyebrow: string;
+        heading: string;
+        subtitle: string;
+        weeks: { label: string; title: string; items: string[] }[];
+    };
+    faq?: {
+        eyebrow: string;
+        heading: string;
+        items: { q: string; a: string }[];
+    };
 }
 
 export interface ReliabilityCard {
