@@ -437,7 +437,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             RELATED PROJECT
                         </p>
                         <Link
-                            href={`/${locale}/projects/${post.relatedProject}`}
+                            href={`/${locale}/projects/${post.relatedProject.toLowerCase()}`}
                             style={{
                                 color: 'var(--accent)',
                                 fontSize: '1.05rem',
