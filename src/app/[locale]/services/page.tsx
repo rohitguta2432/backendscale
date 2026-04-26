@@ -7,6 +7,15 @@ import { createPageMetadata, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
+function startingFrom(costRange: string): string {
+    if (/^free/i.test(costRange.trim())) return "Free scoping call";
+    const match = costRange.match(/\$([0-9,]+)/);
+    if (!match) return costRange;
+    const num = parseInt(match[1].replace(/,/g, ""), 10);
+    if (Number.isNaN(num)) return costRange;
+    return num >= 1000 ? `Starts at $${Math.round(num / 1000)}K` : `Starts at $${num}`;
+}
+
 type Props = {
     params: Promise<{ locale: string }>;
 };
@@ -95,12 +104,24 @@ export default async function ServicesPage({ params }: Props) {
                                     <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: 1.6, margin: 0, flex: 1 }}>
                                         {service.subheadline}
                                     </p>
-                                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                        <span style={{ color: "var(--text-secondary)", fontSize: "0.85rem" }}>
-                                            {service.costRange} &middot; {service.timeline}
-                                        </span>
-                                        <span style={{ color: "var(--accent)", fontSize: "0.9rem", fontWeight: 500 }}>
-                                            Learn more &rarr;
+                                    <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+                                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                            <span style={{ color: "var(--text-secondary)", fontSize: "0.85rem" }}>
+                                                {startingFrom(service.costRange)} &middot; {service.timeline}
+                                            </span>
+                                            <span style={{ color: "var(--accent)", fontSize: "0.9rem", fontWeight: 500 }}>
+                                                Learn more &rarr;
+                                            </span>
+                                        </div>
+                                        <span
+                                            style={{
+                                                color: "var(--text-tertiary, var(--text-secondary))",
+                                                fontSize: "0.72rem",
+                                                opacity: 0.75,
+                                                letterSpacing: "0.02em",
+                                            }}
+                                        >
+                                            ~30% under Toptal &middot; Fixed price &middot; No equity
                                         </span>
                                     </div>
                                 </Link>
