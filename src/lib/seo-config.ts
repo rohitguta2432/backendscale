@@ -39,8 +39,8 @@ export const SEO_KEYWORDS = [
 // Base Site Configuration
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
-    title: 'Get Your AI MVP Live in 2 Weeks — Rohit Raj',
-    description: 'A founding engineer from India who ships end-to-end — AI, backend, mobile — without the cost of a team. 29 products shipped, every one documented.',
+    title: 'Get Your AI MVP Live in 6 Weeks — Rohit Raj',
+    description: 'A founding engineer from India who ships end-to-end on any stack — AI, backend, mobile, blockchain, iOS, web3 — without the cost of a team. 29 products shipped, every one documented.',
     url: 'https://rohitraj.tech',
     locale: 'en_US',
     personId: 'https://rohitraj.tech/#person',

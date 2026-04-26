@@ -8,7 +8,7 @@ interface HeroProps {
 }
 
 export default function Hero({ dict, locale }: HeroProps) {
-    const priceAnchor = dict.hero.priceAnchor ?? "From $15K · Fixed price · 6-week sprint";
+    const priceAnchor = dict.hero.priceAnchor ?? "6-week MVP sprint · 50% back if we miss week-3 milestone";
     const bookCallCta = dict.hero.bookCallCta ?? "Book free 30-min call";
     const trustPills = dict.hero.trustPills ?? [
         "Fixed price · No hourly surprises",

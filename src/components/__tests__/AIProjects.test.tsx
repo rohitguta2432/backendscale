@@ -19,7 +19,7 @@ jest.mock('next/image', () => {
 const mockDict: HomeDictionary = {
   hero: {
     subtitle: '',
-    titleLine1: 'Get your AI MVP live in 2 weeks.',
+    titleLine1: 'Get your AI MVP live in 6 weeks.',
     titleLine2: '29 products shipped, every one documented.',
     approach: {
       title: 'My Approach',
