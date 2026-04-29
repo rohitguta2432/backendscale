@@ -135,7 +135,7 @@ function renderMarkdown(content: string) {
                         if (part.trim().startsWith('|') && part.trim().endsWith('|')) {
                             const rows = part.trim().split('\n').filter(line => line.trim());
                             // Filter out separator row (|---|---|)
-                            const dataRows = rows.filter(row => !row.match(/^\|[\s\-:]+\|$/));
+                            const dataRows = rows.filter(row => !/^\|?[\s\-:|]+\|?$/.test(row.trim()) || !/[\-:]/.test(row));
                             if (dataRows.length >= 1) {
                                 const headerCells = dataRows[0].split('|').filter(c => c.trim()).map(c => c.trim());
                                 const bodyRows = dataRows.slice(1);
