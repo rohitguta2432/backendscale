@@ -153,10 +153,13 @@ function renderMarkdown(content: string) {
                                                         <th key={ci} style={{
                                                             textAlign: 'left',
                                                             padding: '0.75rem 1rem',
+                                                            backgroundColor: 'var(--bg-secondary)',
                                                             borderBottom: '2px solid var(--border)',
                                                             color: 'var(--text-primary)',
                                                             fontWeight: 600,
-                                                            fontSize: '0.85rem',
+                                                            fontSize: '0.8rem',
+                                                            textTransform: 'uppercase',
+                                                            letterSpacing: '0.05em',
                                                             whiteSpace: 'nowrap',
                                                         }}>{renderInline(cell, `h-${j}-${ci}`)}</th>
                                                     ))}
@@ -166,12 +169,15 @@ function renderMarkdown(content: string) {
                                                 {bodyRows.map((row, ri) => {
                                                     const cells = row.split('|').filter(c => c.trim()).map(c => c.trim());
                                                     return (
-                                                        <tr key={ri}>
+                                                        <tr key={ri} style={{
+                                                            backgroundColor: ri % 2 === 1 ? 'var(--bg-secondary)' : 'transparent',
+                                                        }}>
                                                             {cells.map((cell, ci) => (
                                                                 <td key={ci} style={{
-                                                                    padding: '0.625rem 1rem',
+                                                                    padding: '0.7rem 1rem',
                                                                     borderBottom: '1px solid var(--border)',
-                                                                    color: 'var(--text-secondary)',
+                                                                    color: 'var(--text-primary)',
+                                                                    fontSize: '0.95rem',
                                                                 }}>{renderInline(cell, `c-${j}-${ri}-${ci}`)}</td>
                                                             ))}
                                                         </tr>
@@ -194,14 +200,15 @@ function renderMarkdown(content: string) {
                                 <ListTag key={j} style={{
                                     paddingLeft: '1.5rem',
                                     marginBottom: '1.5rem',
-                                    color: 'var(--text-secondary)'
+                                    color: 'var(--text-secondary)',
+                                    lineHeight: 1.65,
                                 }}>
                                     {listItems.map((item, k) => {
                                         const cleanItem = item.replace(/^(\- |\d+\. )/, '');
                                         // Simple bold parser for list items
                                         const parts = cleanItem.split(/(\*\*.*?\*\*)/g);
                                         return (
-                                            <li key={k} style={{ marginBottom: '0.5rem' }}>
+                                            <li key={k} style={{ marginBottom: '0.3rem' }}>
                                                 {parts.map((p, l) => {
                                                     if (p.startsWith('**') && p.endsWith('**')) {
                                                         return <strong key={l} style={{ color: 'var(--text-primary)' }}>{p.slice(2, -2)}</strong>;
@@ -307,7 +314,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 />
             )}
             <Header locale={locale as Locale} dict={dict.common} />
-            <main id="main" style={{ maxWidth: '780px', margin: '0 auto', padding: '3rem 1.5rem' }}>
+            <main id="main" style={{ maxWidth: '920px', margin: '0 auto', padding: '3rem 1.5rem' }}>
                 {/* Article Header */}
                 <header style={{ marginBottom: '3rem' }}>
                     <Link
