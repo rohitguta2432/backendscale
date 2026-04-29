@@ -5,8 +5,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blog-posts";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
-import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, generateFAQSchema, extractFAQsFromSections, SITE_CONFIG } from "@/lib/seo-config";
+import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, generateFAQSchema, generateTechArticleSchema, extractFAQsFromSections, SITE_CONFIG } from "@/lib/seo-config";
 import type { Metadata } from "next";
+
+const LOCALE_PREFIX_RE = /^\/(en|hi|fr|de|ar)\//;
+const stripLocalePrefix = (path: string) => path.replace(LOCALE_PREFIX_RE, '/');
 
 interface BlogPostPageProps {
     params: Promise<{ locale: string; slug: string }>;
@@ -41,9 +44,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
 }
 
-// Simple Markdown Renderer
+// Simple Markdown Renderer — handles **bold**, `code`, and [text](url) links
 function renderInline(text: string, keyPrefix: string) {
-    const parts = text.split(/(\*\*.*?\*\*|`.*?`)/g);
+    const parts = text.split(/(\*\*.*?\*\*|`.*?`|\[[^\]]+\]\([^)]+\))/g);
     return parts.map((p, k) => {
         if (p.startsWith('**') && p.endsWith('**')) {
             return <strong key={`${keyPrefix}-${k}`} style={{ color: 'var(--text-primary)' }}>{p.slice(2, -2)}</strong>;
@@ -57,6 +60,25 @@ function renderInline(text: string, keyPrefix: string) {
                 fontFamily: 'var(--font-mono)',
                 color: 'var(--text-primary)'
             }}>{p.slice(1, -1)}</code>;
+        }
+        const linkMatch = p.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (linkMatch) {
+            const [, label, href] = linkMatch;
+            const isExternal = /^https?:\/\//.test(href);
+            return (
+                <a
+                    key={`${keyPrefix}-${k}`}
+                    href={href}
+                    {...(isExternal ? { target: '_blank', rel: 'noopener nofollow' } : {})}
+                    style={{
+                        color: 'var(--accent)',
+                        textDecoration: 'underline',
+                        textUnderlineOffset: '2px',
+                    }}
+                >
+                    {label}
+                </a>
+            );
         }
         return p;
     });
@@ -205,42 +227,15 @@ function renderMarkdown(content: string) {
                                 }}>
                                     {listItems.map((item, k) => {
                                         const cleanItem = item.replace(/^(\- |\d+\. )/, '');
-                                        // Simple bold parser for list items
-                                        const parts = cleanItem.split(/(\*\*.*?\*\*)/g);
                                         return (
                                             <li key={k} style={{ marginBottom: '0.3rem' }}>
-                                                {parts.map((p, l) => {
-                                                    if (p.startsWith('**') && p.endsWith('**')) {
-                                                        return <strong key={l} style={{ color: 'var(--text-primary)' }}>{p.slice(2, -2)}</strong>;
-                                                    }
-                                                    // Parse code snippets inside list items
-                                                    if (p.includes('`')) {
-                                                        const codeParts = p.split(/(`.*?`)/g);
-                                                        return codeParts.map((cp, m) => {
-                                                            if (cp.startsWith('`') && cp.endsWith('`')) {
-                                                                return <code key={`${l}-${m}`} style={{
-                                                                    backgroundColor: 'var(--bg-secondary)',
-                                                                    padding: '0.1rem 0.3rem',
-                                                                    borderRadius: '4px',
-                                                                    fontSize: '0.9em',
-                                                                    fontFamily: 'var(--font-mono)'
-                                                                }}>{cp.slice(1, -1)}</code>;
-                                                            }
-                                                            return cp;
-                                                        });
-                                                    }
-                                                    return p;
-                                                })}
+                                                {renderInline(cleanItem, `li-${j}-${k}`)}
                                             </li>
                                         );
                                     })}
                                 </ListTag>
                             );
                         }
-
-                        // Paragraph
-                        // Render bold and inline code in paragraph
-                        const parts = part.split(/(\*\*.*?\*\*|`.*?`)/g);
 
                         return (
                             <p key={j} style={{
@@ -249,22 +244,7 @@ function renderMarkdown(content: string) {
                                 color: 'var(--text-secondary)',
                                 fontSize: '1.05rem'
                             }}>
-                                {parts.map((p, k) => {
-                                    if (p.startsWith('**') && p.endsWith('**')) {
-                                        return <strong key={k} style={{ color: 'var(--text-primary)' }}>{p.slice(2, -2)}</strong>;
-                                    }
-                                    if (p.startsWith('`') && p.endsWith('`')) {
-                                        return <code key={k} style={{
-                                            backgroundColor: 'var(--bg-secondary)',
-                                            padding: '0.1rem 0.3rem',
-                                            borderRadius: '4px',
-                                            fontSize: '0.9em',
-                                            fontFamily: 'var(--font-mono)',
-                                            color: 'var(--text-primary)'
-                                        }}>{p.slice(1, -1)}</code>;
-                                    }
-                                    return p;
-                                })}
+                                {renderInline(part, `p-${j}`)}
                             </p>
                         );
                     })}
@@ -296,6 +276,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const faqSchemaJson = faqs.length > 0 ? JSON.stringify(generateFAQSchema(faqs)) : null;
     const blogPostingJson = JSON.stringify(generateBlogPostingSchema(post, locale));
     const breadcrumbJson = JSON.stringify(breadcrumbSchema);
+    const techArticleJson = JSON.stringify(generateTechArticleSchema({
+        headline: post.title,
+        description: post.excerpt,
+        path: `/notes/${post.slug}`,
+        datePublished: post.date,
+        dateModified: post.updated,
+        keywords: post.keywords,
+        proficiencyLevel: 'Expert',
+    }, locale));
 
     return (
         <>
@@ -306,6 +295,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: blogPostingJson }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: techArticleJson }}
             />
             {faqSchemaJson && (
                 <script
@@ -475,7 +468,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             {post.cta.text}
                         </p>
                         <Link
-                            href={`/${locale}${post.cta.href}`}
+                            href={`/${locale}${stripLocalePrefix(post.cta.href)}`}
                             style={{
                                 display: 'inline-block',
                                 padding: '0.75rem 2rem',

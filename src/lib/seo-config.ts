@@ -399,6 +399,7 @@ export function createPageMetadata(
     for (const loc of SUPPORTED_LOCALES) {
         languages[loc] = `${SITE_CONFIG.url}/${loc}${path}`;
     }
+    languages['x-default'] = `${SITE_CONFIG.url}/en${path}`;
     return {
         title,
         description,
