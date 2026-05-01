@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 44 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 45 technical case-study posts
 
 ## Featured Projects
 
@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (44 posts)
+## All Engineering Notes (45 posts)
 
 ### AI Systems & LLM Integration
 
@@ -75,6 +75,7 @@
 - [Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026](https://rohitraj.tech/en/notes/supabase-rls-production-bugs-need-real-engineer-2026)
 - [Retool vs Custom Internal Tool in 2026 — When to Buy, When to Build, When to Hire](https://rohitraj.tech/en/notes/retool-vs-custom-build-internal-tool-2026)
 - [How Much Equity Should a Founding Engineer Get in 2026? Real Numbers, Cap-Table Math, and a Cheaper Alternative](https://rohitraj.tech/en/notes/founding-engineer-equity-percentage-2026)
+- [Hire a Technical Co-Founder in India in 2026 — What It Actually Costs, When You Need One, and the Cheaper Alternative](https://rohitraj.tech/en/notes/hire-technical-cofounder-india-2026)
 
 ## Services
 

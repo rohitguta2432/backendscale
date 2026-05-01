@@ -45,6 +45,7 @@ import { lovableAppProductionBugsNeedRealEngineer2026 } from './lovable-app-prod
 import { supabaseRlsProductionBugsNeedRealEngineer2026 } from './supabase-rls-production-bugs-need-real-engineer-2026';
 import { retoolVsCustomBuildInternalTool2026 } from './retool-vs-custom-build-internal-tool-2026';
 import { foundingEngineerEquityPercentage2026 } from './founding-engineer-equity-percentage-2026';
+import { hireTechnicalCofounderIndia2026 } from './hire-technical-cofounder-india-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -91,6 +92,7 @@ const allPosts: BlogPost[] = [
   supabaseRlsProductionBugsNeedRealEngineer2026,
   retoolVsCustomBuildInternalTool2026,
   foundingEngineerEquityPercentage2026,
+  hireTechnicalCofounderIndia2026,
 ];
 
 // Validate all posts at module load time
