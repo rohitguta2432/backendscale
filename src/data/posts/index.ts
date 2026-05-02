@@ -46,6 +46,7 @@ import { supabaseRlsProductionBugsNeedRealEngineer2026 } from './supabase-rls-pr
 import { retoolVsCustomBuildInternalTool2026 } from './retool-vs-custom-build-internal-tool-2026';
 import { foundingEngineerEquityPercentage2026 } from './founding-engineer-equity-percentage-2026';
 import { hireTechnicalCofounderIndia2026 } from './hire-technical-cofounder-india-2026';
+import { hireAiEngineerIndia2026 } from './hire-ai-engineer-india-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -93,6 +94,7 @@ const allPosts: BlogPost[] = [
   retoolVsCustomBuildInternalTool2026,
   foundingEngineerEquityPercentage2026,
   hireTechnicalCofounderIndia2026,
+  hireAiEngineerIndia2026,
 ];
 
 // Validate all posts at module load time
