@@ -47,6 +47,7 @@ import { retoolVsCustomBuildInternalTool2026 } from './retool-vs-custom-build-in
 import { foundingEngineerEquityPercentage2026 } from './founding-engineer-equity-percentage-2026';
 import { hireTechnicalCofounderIndia2026 } from './hire-technical-cofounder-india-2026';
 import { hireAiEngineerIndia2026 } from './hire-ai-engineer-india-2026';
+import { boltNewVsHireDeveloper2026 } from './bolt-new-vs-hire-developer-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -95,6 +96,7 @@ const allPosts: BlogPost[] = [
   foundingEngineerEquityPercentage2026,
   hireTechnicalCofounderIndia2026,
   hireAiEngineerIndia2026,
+  boltNewVsHireDeveloper2026,
 ];
 
 // Validate all posts at module load time

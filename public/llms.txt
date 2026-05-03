@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 46 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 47 technical case-study posts
 
 ## Featured Projects
 
@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (46 posts)
+## All Engineering Notes (47 posts)
 
 ### AI Systems & LLM Integration
 
@@ -77,6 +77,7 @@
 - [How Much Equity Should a Founding Engineer Get in 2026? Real Numbers, Cap-Table Math, and a Cheaper Alternative](https://rohitraj.tech/en/notes/founding-engineer-equity-percentage-2026)
 - [Hire a Technical Co-Founder in India in 2026 — What It Actually Costs, When You Need One, and the Cheaper Alternative](https://rohitraj.tech/en/notes/hire-technical-cofounder-india-2026)
 - [Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both](https://rohitraj.tech/en/notes/hire-ai-engineer-india-2026)
+- [Bolt.new vs Hiring a Developer in 2026 — When the AI Builder Hits Its Limit and the Token Bill Beats the Salary](https://rohitraj.tech/en/notes/bolt-new-vs-hire-developer-2026)
 
 ## Services
 
