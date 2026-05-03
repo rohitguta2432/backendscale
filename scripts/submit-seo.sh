@@ -20,13 +20,29 @@ SITEMAP_URL="https://${HOST}/sitemap.xml"
 GOOGLE_INDEXING_KEY_FILE="${GOOGLE_INDEXING_KEY_FILE:-$HOME/.config/gsc/indexing-sa.json}"
 
 DEFAULT_URLS=(
-  "https://${HOST}/en/about"
+  "https://${HOST}/en"
   "https://${HOST}/en/notes"
+  "https://${HOST}/en/services"
   "https://${HOST}/sitemap.xml"
+)
+
+# Always append homepage + notes index when explicit URLs are passed —
+# refreshes the link graph + freshens listing page on every ship.
+ALWAYS_INCLUDE=(
+  "https://${HOST}/en"
+  "https://${HOST}/en/notes"
 )
 
 if [ $# -gt 0 ]; then
   URLS=("$@")
+  # De-dupe: only append ALWAYS_INCLUDE entries not already in $@
+  for inc in "${ALWAYS_INCLUDE[@]}"; do
+    skip=0
+    for u in "${URLS[@]}"; do
+      [ "$u" = "$inc" ] && skip=1 && break
+    done
+    [ $skip -eq 0 ] && URLS+=("$inc")
+  done
 else
   URLS=("${DEFAULT_URLS[@]}")
 fi
