@@ -109,11 +109,21 @@ Skip ONLY if `--no-image` arg passed. Otherwise every post MUST have a cover ima
 | # | Provider | Cost | Key needed | Why |
 |---|----------|------|------------|-----|
 | 1 | **Gemini 3 Pro Image (Nano Banana Pro)** | Paid | `GEMINI_API_KEY` from `~/.claude/settings.json` | Best quality, on-brand prompts |
-| 2 | **Pollinations.ai (Flux)** | Free | None | No-auth public API, decent FLUX-based quality, never rate-limits hard |
-| 3 | **Hugging Face Inference (FLUX.1-schnell)** | Free tier | `HF_TOKEN` (optional) | Fast schnell variant; works without token at lower priority |
-| 4 | **Deterministic SVG/PIL fallback** | Free | None | Title-on-gradient image. Always succeeds. Last-resort guarantee. |
+| 2 | **Pollinations.ai (rotated model)** | Free | None | No-auth public API. Script rotates between `flux`, `flux-realism`, `flux-3d`, `turbo` so daily output looks different |
+| 3 | **Stable Horde (community SD)** | Free | None | Crowd-hosted Stable Diffusion / SDXL, anonymous queue. Different visual style than Flux — adds variety when Pollinations style gets stale |
+| 4 | **Hugging Face Inference (FLUX.1-schnell)** | Free tier | `HF_TOKEN` (optional) | Fast schnell variant; works without token at lower priority |
+| 5 | **Deterministic SVG/PIL fallback** | Free | None | Title-on-gradient image. Always succeeds. Last-resort guarantee. |
 
-Try in order. First success wins. The script below handles all four in one file.
+Try in order. First success wins. The script below handles all five in one file.
+
+### Daily variety guarantee
+
+Same blog cover style every day = "AI slop" pattern recognition for readers. Script enforces variety via four randomized axes per run:
+
+1. **Visual metaphor** — picked at random from a pool of ~15 metaphors (cracked circuit, neural lattice, topographic contours, particle swarm, holographic blocks, glowing fractured monolith, code-rain, glitched stream, prism shatter, etc.). NOT always "two pillars".
+2. **Accent palette** — random pick from 6 palettes (teal+violet, cyan+magenta, lime+electric-blue, orange+indigo, pink+emerald, amber+crimson).
+3. **Pollinations model** — round-robin between `flux`, `flux-realism`, `flux-3d`, `turbo`. Each renders the same prompt with a different aesthetic.
+4. **Random seed** — time-based, NOT slug-deterministic. Re-running on same slug yields a fresh image.
 
 ### SEO image rules
 
@@ -128,26 +138,18 @@ Try in order. First success wins. The script below handles all four in one file.
 | Style | Tech editorial, dark gradient, abstract | Matches site's dark/minimal vibe. NO clipart, NO stock-photo people |
 | Alt text | 8-15 words, includes primary keyword + describes scene | Google + screen readers; ≤125 chars hard cap |
 
-### Prompt template (used by providers 1-3)
+### Prompt construction (script handles randomization internally)
 
-Build the prompt from primary keyword + concrete metaphor:
+Caller passes the slug + topic phrase + title. The script picks a random metaphor + palette + model + seed and constructs the final prompt — caller does NOT pre-build the prompt anymore.
 
-| Topic angle | Concrete visual metaphor |
-|-------------|--------------------------|
-| Cost comparison (X vs Y) | Two abstract glowing pillars on a dark grid, one taller, no labels |
-| Hire X engineer in India | Stylized neural map with India geography in subtle glow, terminal cursor motif |
-| MVP build / 6-week timeline | Six abstract pillars or sprint blocks rising in arc, dark background |
-| AI tool failure (vibe coding) | Cracked circuit board with red glow, broken trace lines, dark studio lighting |
-| Stack choice (Next.js + Postgres) | Stacked geometric layers with subtle code rain, monochrome with one accent color |
-| Founding engineer equity | Abstract pie/wedge in glowing line-art on dark, no text |
+The metaphor pool, palette pool, and model rotation live inside `gen_cover.py` (see Generation script below). To bias toward a specific metaphor for one post, pass `--style "<metaphor phrase>"` as a 4th arg; otherwise random.
 
-Final prompt (fill `{concrete_metaphor}`):
+Final prompt template the script fills internally:
 
 ```
-Editorial blog cover, 16:9, dark theme. {concrete_metaphor}.
-Minimalist tech aesthetic — single accent color (electric teal #00d4d4 or violet #7c3aed),
-deep navy or near-black background, soft volumetric lighting,
-subtle grid or grain texture. Photorealistic 3D render, shallow depth of field.
+Editorial blog cover, 16:9, dark theme. {random_metaphor} suggesting {topic_phrase}.
+{random_palette_clause}, deep navy or near-black background, soft volumetric lighting,
+subtle grid or grain texture. {random_render_style}, shallow depth of field.
 NO text, NO letters, NO logos, NO human faces, NO stock-photo cliches.
 Composition: rule of thirds, hero element off-center, clean negative space for OG card crop.
 ```
@@ -162,19 +164,83 @@ pip install --user google-genai pillow requests 2>/dev/null
 Write this to `/tmp/gen_cover.py` (overwrite each run, never commit):
 
 ```python
-import os, sys, pathlib, urllib.parse, time, hashlib, traceback
+import os, sys, pathlib, urllib.parse, time, hashlib, random
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-import io, requests
+import io, json, requests
 
 slug = sys.argv[1]
-prompt = sys.argv[2]
+topic = sys.argv[2]                                  # short topic phrase, NOT full prompt
 title = sys.argv[3] if len(sys.argv) > 3 else slug.replace("-", " ").title()
+forced_metaphor = sys.argv[4] if len(sys.argv) > 4 else None
 
 out_dir = pathlib.Path("public/images/notes")
 out_dir.mkdir(parents=True, exist_ok=True)
 out_path = out_dir / f"{slug}-cover.jpg"
 
-W, H = 1920, 1080  # 16:9 2K-ish, ~big enough for retina
+W, H = 1920, 1080
+
+# Random seed = current epoch second + microseconds → fresh image every run.
+random.seed(time.time_ns())
+
+# ---------- Variety pools ----------
+METAPHORS = [
+    "abstract cracked monolith with glowing fissures running through it",
+    "floating cluster of geometric crystals catching neon light",
+    "cascading vertical streams of code-rain in a stylized matrix",
+    "single neon spline curve arcing through deep dark space",
+    "topographic contour lines glowing on a black surface",
+    "holographic isometric building blocks stacked off-axis",
+    "swirling particle swarm coalescing into an arrow shape",
+    "wireframe brain or neural lattice rendered in line-art",
+    "liquid metal surface with mercury-like ripples and tension",
+    "constellation of luminous nodes connected by glowing edges",
+    "macro shot of a stylized hourglass with glowing sand",
+    "abstract tunnel of concentric light rings receding to vanishing point",
+    "shattered prism scattering colored beams across darkness",
+    "glitched terminal output stream frozen mid-scroll",
+    "single cracked circuit board trace with one bright fault line",
+    "translucent layered glass plates with embedded glowing lines",
+    "minimalist origami crane folded from circuit-board paper",
+    "dark canyon of stacked server-rack silhouettes lit from within",
+    "twin orbs in tense gravitational orbit on dark backdrop",
+    "abstract bar chart morphing into mountain range silhouette",
+]
+PALETTES = [
+    "single accent color electric teal #00d4d4 with violet #7c3aed highlights",
+    "single accent color cyan #00e5ff with magenta #ff2d92 highlights",
+    "single accent color lime #adff2f with electric blue #1e90ff highlights",
+    "single accent color burnt orange #ff6b35 with indigo #4f46e5 highlights",
+    "single accent color hot pink #f72585 with emerald #10b981 highlights",
+    "single accent color amber #fbbf24 with crimson #dc2626 highlights",
+    "monochrome ice-blue palette with one warm copper highlight",
+    "duotone forest green and pale gold on near-black",
+]
+RENDER_STYLES = [
+    "photorealistic 3D render",
+    "cinematic studio macro photograph",
+    "low-poly stylized 3D render",
+    "soft cel-shaded 3D illustration",
+    "high-contrast film-noir lit render",
+    "isometric 3D render with soft rim lighting",
+]
+
+metaphor = forced_metaphor or random.choice(METAPHORS)
+palette = random.choice(PALETTES)
+render = random.choice(RENDER_STYLES)
+seed = random.randint(1, 999_999)
+
+prompt = (
+    f"Editorial blog cover, 16:9, dark theme. {metaphor} suggesting {topic}. "
+    f"{palette}, deep navy or near-black background, soft volumetric lighting, "
+    f"subtle grid or grain texture. {render}, shallow depth of field. "
+    f"NO text, NO letters, NO logos, NO human faces, NO stock-photo cliches. "
+    f"Composition: rule of thirds, hero element off-center, clean negative space for OG card crop."
+)
+
+print(f"[meta] metaphor={metaphor[:60]}...")
+print(f"[meta] palette={palette[:50]}")
+print(f"[meta] render={render}")
+print(f"[meta] seed={seed}")
 
 def save_jpeg(img: Image.Image):
     img = img.convert("RGB")
@@ -209,36 +275,82 @@ def try_gemini():
     except Exception as e:
         return False, f"gemini err: {e!s}"
 
-# ---------- Provider 2: Pollinations.ai (free, no key) ----------
+# ---------- Provider 2: Pollinations.ai with rotated model ----------
+POLLINATIONS_MODELS = ["flux", "flux-realism", "flux-3d", "turbo"]
 def try_pollinations():
     try:
-        # seed = stable per slug so re-runs reproduce
-        seed = int(hashlib.md5(slug.encode()).hexdigest()[:8], 16) % 1_000_000
+        model = random.choice(POLLINATIONS_MODELS)
         url = (
             "https://image.pollinations.ai/prompt/"
             + urllib.parse.quote(prompt[:1800])
-            + f"?width={W}&height={H}&model=flux&nologo=true&seed={seed}&enhance=true"
+            + f"?width={W}&height={H}&model={model}&nologo=true&seed={seed}&enhance=true"
         )
         r = requests.get(url, timeout=120)
         if r.status_code != 200 or len(r.content) < 5000:
-            return False, f"pollinations http {r.status_code} size={len(r.content)}"
+            return False, f"pollinations({model}) http {r.status_code} size={len(r.content)}"
         img = Image.open(io.BytesIO(r.content))
         kb = save_jpeg(img)
-        return True, f"pollinations ok {kb:.0f}KB"
+        return True, f"pollinations({model}) ok {kb:.0f}KB"
     except Exception as e:
         return False, f"pollinations err: {e!s}"
 
-# ---------- Provider 3: HuggingFace FLUX.1-schnell ----------
+# ---------- Provider 3: Stable Horde (community SD, anonymous) ----------
+def try_stablehorde():
+    try:
+        api_key = os.environ.get("STABLEHORDE_API_KEY", "0000000000")  # 0000... = anonymous
+        headers = {"apikey": api_key, "Content-Type": "application/json", "Client-Agent": "rohitraj-seo:1.0:rohitraj.tech"}
+        body = {
+            "prompt": prompt,
+            "params": {
+                "sampler_name": "k_euler_a",
+                "cfg_scale": 7.5,
+                "width": 1024,
+                "height": 576,
+                "steps": 25,
+                "seed": str(seed),
+            },
+            "models": ["Deliberate", "stable_diffusion", "SDXL 1.0"],
+            "nsfw": False,
+            "censor_nsfw": True,
+            "r2": True,
+        }
+        r = requests.post("https://aihorde.net/api/v2/generate/async", headers=headers, json=body, timeout=30)
+        if r.status_code not in (200, 202):
+            return False, f"stablehorde queue http {r.status_code}: {r.text[:120]}"
+        job_id = r.json().get("id")
+        if not job_id:
+            return False, "stablehorde no job id"
+        # Poll up to 90s
+        for _ in range(45):
+            time.sleep(2)
+            sr = requests.get(f"https://aihorde.net/api/v2/generate/status/{job_id}", timeout=15)
+            if sr.status_code != 200:
+                continue
+            data = sr.json()
+            if data.get("done") and data.get("generations"):
+                img_url = data["generations"][0].get("img")
+                if img_url and img_url.startswith("http"):
+                    ir = requests.get(img_url, timeout=60)
+                    if ir.status_code == 200 and len(ir.content) > 5000:
+                        img = Image.open(io.BytesIO(ir.content))
+                        kb = save_jpeg(img)
+                        return True, f"stablehorde ok {kb:.0f}KB"
+                return False, "stablehorde img fetch failed"
+        return False, "stablehorde queue timeout"
+    except Exception as e:
+        return False, f"stablehorde err: {e!s}"
+
+# ---------- Provider 4: HuggingFace FLUX.1-schnell ----------
 def try_hf():
     try:
-        token = os.environ.get("HF_TOKEN", "")  # optional, works (slower) without
+        token = os.environ.get("HF_TOKEN", "")
         headers = {"Accept": "image/jpeg"}
         if token:
             headers["Authorization"] = f"Bearer {token}"
         url = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell"
         for attempt in range(3):
-            r = requests.post(url, headers=headers, json={"inputs": prompt}, timeout=120)
-            if r.status_code == 503:  # model warming
+            r = requests.post(url, headers=headers, json={"inputs": prompt, "parameters": {"seed": seed}}, timeout=120)
+            if r.status_code == 503:
                 time.sleep(8); continue
             break
         if r.status_code != 200 or len(r.content) < 5000:
@@ -249,27 +361,25 @@ def try_hf():
     except Exception as e:
         return False, f"hf err: {e!s}"
 
-# ---------- Provider 4: Deterministic SVG/PIL fallback ----------
+# ---------- Provider 5: Deterministic SVG/PIL fallback ----------
 def try_fallback():
-    # gradient + title overlay. NEVER fails.
     img = Image.new("RGB", (W, H))
     px = img.load()
-    # Diagonal navy → violet gradient
+    # Random gradient direction so fallback also varies day to day
+    flip = random.random() > 0.5
     for y in range(H):
         for x in range(W):
-            t = (x + y) / (W + H)
+            t = (x + y) / (W + H) if flip else (W - x + y) / (W + H)
             r = int(10 + t * 60)
             g = int(15 + t * 20)
             b = int(40 + t * 90)
             px[x, y] = (r, g, b)
-    # Vignette + grid
     img = img.filter(ImageFilter.GaussianBlur(radius=1))
     draw = ImageDraw.Draw(img)
     for gx in range(0, W, 80):
         draw.line([(gx, 0), (gx, H)], fill=(255, 255, 255, 8), width=1)
     for gy in range(0, H, 80):
         draw.line([(0, gy), (W, gy)], fill=(255, 255, 255, 8), width=1)
-    # Title — use a real font if available
     title_text = title.upper()
     font = None
     for path in [
@@ -281,7 +391,6 @@ def try_fallback():
             font = ImageFont.truetype(path, 96); break
     if font is None:
         font = ImageFont.load_default()
-    # Wrap to ~24 chars
     words = title_text.split()
     lines, cur = [], ""
     for w in words:
@@ -292,12 +401,12 @@ def try_fallback():
     if cur: lines.append(cur)
     lines = lines[:3]
     y = H // 2 - (len(lines) * 110) // 2
+    accent = random.choice([(0, 212, 212), (124, 58, 237), (255, 45, 146), (0, 229, 255), (251, 191, 36)])
     for line in lines:
         bbox = draw.textbbox((0, 0), line, font=font)
         tw = bbox[2] - bbox[0]
-        draw.text(((W - tw) // 2, y), line, font=font, fill=(0, 212, 212))
+        draw.text(((W - tw) // 2, y), line, font=font, fill=accent)
         y += 110
-    # Accent bar
     draw.rectangle([(W // 2 - 200, y + 30), (W // 2 + 200, y + 38)], fill=(124, 58, 237))
     kb = save_jpeg(img)
     return True, f"fallback ok {kb:.0f}KB"
@@ -305,6 +414,7 @@ def try_fallback():
 providers = [
     ("gemini", try_gemini),
     ("pollinations", try_pollinations),
+    ("stablehorde", try_stablehorde),
     ("huggingface", try_hf),
     ("fallback", try_fallback),
 ]
@@ -313,7 +423,6 @@ for name, fn in providers:
     print(f"[{name}] {msg}")
     if ok and out_path.exists() and out_path.stat().st_size > 5000:
         print(f"WINNER: {name}")
-        # Final compress if oversize
         if out_path.stat().st_size > 400 * 1024:
             im = Image.open(out_path)
             im.save(out_path, "JPEG", quality=78, optimize=True, progressive=True)
@@ -327,8 +436,13 @@ Run:
 
 ```bash
 cd /home/t0266li/Documents/nexusai
-python3 /tmp/gen_cover.py "<slug>" "<full-prompt-from-template>" "<post title>"
+# Args: slug, topic-phrase (short), title, [optional forced-metaphor]
+python3 /tmp/gen_cover.py "<slug>" "<topic phrase>" "<post title>"
+# Force a specific metaphor (skips random pick):
+python3 /tmp/gen_cover.py "<slug>" "<topic phrase>" "<post title>" "cracked monolith with glowing fissures"
 ```
+
+Each run prints the metaphor / palette / render style / seed it picked, then the provider that won. Re-running on the same slug yields a different image because seed and metaphor are random per run, not derived from the slug.
 
 ### Verify
 
