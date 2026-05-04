@@ -492,7 +492,31 @@ If Google Indexing API is skipped: copy the printed GSC deep-link, open in brows
 
 Failures here are non-fatal — post is already live, this is just acceleration. Log results but do not retry on individual failures (IndexNow rate-limits at 10K URLs/day; we use < 5).
 
-## Step 13: Report
+## Step 13: Cross-post to dev.to (dofollow backlink)
+
+Cross-posts the new article to dev.to with `canonical_url` pointing back to rohitraj.tech.
+dev.to honors `canonical_url` → no SEO duplicate-content penalty + dofollow attribution backlink from DR ~88 site.
+
+```bash
+cd /home/t0266li/Documents/nexusai
+python3 scripts/devto-publish.py --slug "<slug>"
+```
+
+Requires `DEV_TO_API_KEY` env var. Get key at https://dev.to/settings/extensions.
+Persist via `~/.config/fish/config.fish`: `set -gx DEV_TO_API_KEY "..."`
+
+Script reads title/excerpt/keywords directly from `src/data/posts/<slug>.ts` — no manual config per post.
+Tags auto-derived from `keywords` (sanitized, max 4, stop-words filtered). Override with `--tags a,b,c,d` if needed.
+
+Rate limit: dev.to allows 9 articles per 30s. Script auto-retries once on 429 with 90s backoff.
+
+Failures here are non-fatal — main post is already live + indexed. Log result and continue.
+
+Skip this step if:
+- `DEV_TO_API_KEY` not set (print one-time setup instructions, do not block)
+- `--no-deploy` arg was passed (post not live yet, can't backlink)
+
+## Step 14: Report
 
 Report to user:
 
@@ -504,6 +528,7 @@ Report to user:
 - HTTP status from curl check
 - IndexNow status (Bing + Yandex)
 - Google Indexing API status (200 / skipped / GSC link printed)
+- dev.to crosspost URL (or "skipped — DEV_TO_API_KEY not set")
 - Total time (start to deploy)
 
 ## Guardrails
@@ -542,6 +567,9 @@ Report to user:
 | Google Indexing API 403 | Service account not Owner in GSC — see `docs/google-indexing-setup.md` step 5 |
 | Google Indexing API 401 | JWT signature invalid — check system clock with `timedatectl status` |
 | `cryptography` module missing | `pip install --user cryptography` (needed for SA JWT signing) |
+| dev.to 429 rate-limited | Script auto-retries once after 90s; if still fails, run manually later: `python3 scripts/devto-publish.py --slug <slug>` |
+| dev.to 401 unauthorized | `DEV_TO_API_KEY` invalid — regenerate at https://dev.to/settings/extensions |
+| dev.to 422 invalid tags | dev.to rejected auto-derived tags — rerun with `--tags java,ai,backend,api` |
 
 ## Daily cadence
 
@@ -566,5 +594,6 @@ Internal links: <count> → /services/6-week-mvp + /services/hire-founding-engin
 HTTP check:   200 OK
 IndexNow:     api 200, Bing 200, Yandex 202
 Google Index: 200 OK (or: SKIPPED — manual GSC link printed)
+dev.to:       https://dev.to/<user>/<title-slug> (or: SKIPPED — DEV_TO_API_KEY not set)
 Total time:   <Nm Ns>
 ```
