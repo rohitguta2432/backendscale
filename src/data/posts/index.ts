@@ -48,6 +48,7 @@ import { foundingEngineerEquityPercentage2026 } from './founding-engineer-equity
 import { hireTechnicalCofounderIndia2026 } from './hire-technical-cofounder-india-2026';
 import { hireAiEngineerIndia2026 } from './hire-ai-engineer-india-2026';
 import { boltNewVsHireDeveloper2026 } from './bolt-new-vs-hire-developer-2026';
+import { cursorAiVsHireDeveloper2026 } from './cursor-ai-vs-hire-developer-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -97,6 +98,7 @@ const allPosts: BlogPost[] = [
   hireTechnicalCofounderIndia2026,
   hireAiEngineerIndia2026,
   boltNewVsHireDeveloper2026,
+  cursorAiVsHireDeveloper2026,
 ];
 
 // Validate all posts at module load time
