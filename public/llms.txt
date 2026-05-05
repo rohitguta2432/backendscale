@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 48 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 49 technical case-study posts
 
 ## Featured Projects
 
@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (48 posts)
+## All Engineering Notes (49 posts)
 
 ### AI Systems & LLM Integration
 
@@ -79,6 +79,7 @@
 - [Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both](https://rohitraj.tech/en/notes/hire-ai-engineer-india-2026)
 - [Bolt.new vs Hiring a Developer in 2026 — When the AI Builder Hits Its Limit and the Token Bill Beats the Salary](https://rohitraj.tech/en/notes/bolt-new-vs-hire-developer-2026)
 - [Cursor AI vs Hiring a Developer in 2026 — When the $200 Ultra Plan Costs More Than a Real Engineer Sprint](https://rohitraj.tech/en/notes/cursor-ai-vs-hire-developer-2026)
+- [Devin AI vs Hiring a Developer in 2026 — $20/Month Agent or Founding Engineer? Real Pricing, SWE-bench, and Failure Modes](https://rohitraj.tech/en/notes/devin-ai-vs-hire-developer-2026)
 
 ## Services
 
