@@ -1,17 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error(
-    'Missing Supabase environment variables. ' +
-    'Copy .env.example to .env.local and fill in your Supabase credentials.'
-  );
-}
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
 export type Subscriber = {
     id: string;
     email: string;
@@ -21,17 +7,24 @@ export type Subscriber = {
     unsubscribed_at: string | null;
 };
 
-export async function subscribeEmail(email: string, locale: string = 'en'): Promise<{ success: boolean; error?: string }> {
+export async function subscribeEmail(
+    email: string,
+    locale: string = 'en',
+): Promise<{ success: boolean; error?: string }> {
     try {
-        const { error } = await supabase
-            .from('subscribers')
-            .insert([{ email, locale }]);
+        const res = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, locale }),
+        });
 
-        if (error) {
-            if (error.code === '23505') {
-                return { success: false, error: 'Email already subscribed!' };
-            }
-            return { success: false, error: error.message };
+        const data = (await res.json().catch(() => ({}))) as {
+            success?: boolean;
+            error?: string;
+        };
+
+        if (!res.ok || !data.success) {
+            return { success: false, error: data.error || 'Failed to subscribe. Please try again.' };
         }
 
         return { success: true };
