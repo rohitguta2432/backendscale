@@ -50,6 +50,7 @@ import { hireAiEngineerIndia2026 } from './hire-ai-engineer-india-2026';
 import { boltNewVsHireDeveloper2026 } from './bolt-new-vs-hire-developer-2026';
 import { cursorAiVsHireDeveloper2026 } from './cursor-ai-vs-hire-developer-2026';
 import { devinAiVsHireDeveloper2026 } from './devin-ai-vs-hire-developer-2026';
+import { replitAgentVsHireDeveloper2026 } from './replit-agent-vs-hire-developer-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -101,6 +102,7 @@ const allPosts: BlogPost[] = [
   boltNewVsHireDeveloper2026,
   cursorAiVsHireDeveloper2026,
   devinAiVsHireDeveloper2026,
+  replitAgentVsHireDeveloper2026,
 ];
 
 // Validate all posts at module load time
