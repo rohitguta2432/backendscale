@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (50 posts)
+## All Engineering Notes (51 posts)
 
 ### AI Systems & LLM Integration
 
@@ -81,6 +81,7 @@
 - [Cursor AI vs Hiring a Developer in 2026 — When the $200 Ultra Plan Costs More Than a Real Engineer Sprint](https://rohitraj.tech/en/notes/cursor-ai-vs-hire-developer-2026)
 - [Devin AI vs Hiring a Developer in 2026 — $20/Month Agent or Founding Engineer? Real Pricing, SWE-bench, and Failure Modes](https://rohitraj.tech/en/notes/devin-ai-vs-hire-developer-2026)
 - [Replit Agent vs Hiring a Developer in 2026 — Browser IDE Autonomy or Founding Engineer? Effort Pricing, Failure Modes, and the $400 Monthly Trap](https://rohitraj.tech/en/notes/replit-agent-vs-hire-developer-2026)
+- [v0 by Vercel vs Hiring a Developer in 2026 — When Generative UI Hits the Day-30 Wall](https://rohitraj.tech/en/notes/v0-by-vercel-vs-hire-developer-2026)
 
 ## Services
 
