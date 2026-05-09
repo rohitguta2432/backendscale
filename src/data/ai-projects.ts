@@ -53,7 +53,7 @@ export const aiProjectSummaries: AIProjectSummary[] = [
         techStack: ["React 19", "Vite 7", "Tailwind CSS 4", "Zustand", "Dexie (IndexedDB)", "Spring Boot 3.x", "Java 21", "PostgreSQL"],
         aiApproach: "Rule-based advisory engine for Indian financial instruments (PPF, EPF, NPS). Old vs. New Tax regime comparison. Coverage gap analysis for insurance. No cloud dependency — all computation runs locally.",
         repoUrl: "https://github.com/rohitguta2432/myFinance",
-        liveUrl: "https://www.myfinancial.in/",
+        liveUrl: "https://myfinancial.in/",
         status: "live",
         image: "/images/projects/myfinancial.png",
         metrics: [

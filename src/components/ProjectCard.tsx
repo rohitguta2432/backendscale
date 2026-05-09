@@ -27,6 +27,16 @@ export default function ProjectCard({ project, locale = "en" }: ProjectCardProps
                 <Link href={`/${locale}/projects/${project.slug}`} className="project-link">
                     Details →
                 </Link>
+                {project.liveUrl && (
+                    <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                    >
+                        Live ↗
+                    </a>
+                )}
                 {project.repoUrl && (
                     <a
                         href={project.repoUrl}

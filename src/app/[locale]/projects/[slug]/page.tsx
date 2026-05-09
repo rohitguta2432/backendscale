@@ -82,16 +82,28 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                     ))}
                                 </div>
                             </div>
-                            {project.repoUrl && (
-                                <a
-                                    href={project.repoUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn btn-secondary btn-sm"
-                                >
-                                    {dict.common.buttons.viewRepository}
-                                </a>
-                            )}
+                            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                                {project.liveUrl && (
+                                    <a
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-primary btn-sm"
+                                    >
+                                        Live ↗
+                                    </a>
+                                )}
+                                {project.repoUrl && (
+                                    <a
+                                        href={project.repoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-secondary btn-sm"
+                                    >
+                                        {dict.common.buttons.viewRepository}
+                                    </a>
+                                )}
+                            </div>
                         </header>
 
                         {/* Image Carousel for multiple images */}

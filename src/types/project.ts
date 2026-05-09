@@ -8,6 +8,7 @@ export const projectSchema = z.object({
   techStack: z.array(z.string()),
   status: z.enum(['active', 'iterating', 'paused']),
   repoUrl: z.string().optional(),
+  liveUrl: z.string().optional(),
   aiApproach: z.string().optional(),
   image: z.string().optional(),
   images: z.array(z.object({

@@ -136,6 +136,7 @@ export const projects: Project[] = [
         techStack: ["React 19", "Vite 7", "Tailwind CSS 4", "Zustand", "Dexie (IndexedDB)", "Spring Boot 3.x", "Java 21", "PostgreSQL"],
         status: "active",
         repoUrl: "https://github.com/rohitguta2432/myFinance",
+        liveUrl: "https://myfinancial.in/",
         aiApproach: "Rule-based advisory engine for Indian financial instruments (PPF, EPF, NPS). Old vs. New Tax regime comparison. Coverage gap analysis for insurance. No cloud dependency — all computation runs locally.",
         image: "/images/projects/myfinancial.png",
         images: [
@@ -159,7 +160,7 @@ export const projects: Project[] = [
                 "India-specific instruments (PPF, EPF, NPS, Gold) over generic global templates",
                 "PWA over native app — broader reach, works offline, single codebase"
             ],
-            currentStatus: "6-step wizard functional. Profile, Income, Assets, Liabilities, Insurance, and Tax screens complete. Wealth Dashboard with Net Worth scorecard and Financial Runway implemented.",
+            currentStatus: "Live in production at https://myfinancial.in/. Full 6-step wizard shipped: Profile, Income, Assets, Liabilities, Insurance, and Tax. Wealth Dashboard with Net Worth scorecard and Financial Runway live.",
             roadmap: [
                 "Add goal-based financial planning (retirement, education, home)",
                 "Implement mutual fund portfolio analysis",
