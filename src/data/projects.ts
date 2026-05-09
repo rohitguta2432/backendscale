@@ -47,6 +47,55 @@ export const projects: Project[] = [
         }
     },
     {
+        slug: "propcheck",
+        name: "PropCheck — AI Property Trust Score for India",
+        problem: "Indian property buyers lose lakhs to fraudulent listings on Magicbricks, 99acres, Housing.com, and NoBroker. Fake RERA numbers, recycled stock photos, and inflated pricing slip past buyers because no neutral tool exists to verify a listing in seconds.",
+        solves: "Paste any listing URL — the AI engine extracts the page (with an LLM parsing fallback when scrapers hit SPAs or rate-limit walls), cross-checks 8 trust signals against Karnataka RERA, a locality price index, and a perceptual-image database, and returns a 0–100 Trust Score with explainable red flags in 30 seconds. Free for buyers. API tier for lenders.",
+        techStack: ["Next.js 14", "React 18", "Tailwind CSS", "FastAPI 0.115", "Python 3.12", "Pydantic 2.9", "PostgreSQL 16", "SQLAlchemy 2", "Alembic", "httpx", "BeautifulSoup4", "imagehash", "Pillow", "OpenRouter (Gemma 4 31B)", "slowapi", "Chrome MV3"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/propTech",
+        liveUrl: "https://propcheck.rohitraj.tech/",
+        aiApproach: "8-signal trust engine — listing age, price-vs-locality delta, duplicate count, RERA registration check, image reverse-search via perceptual hashing, builder complaints, owner-name match, suspicious patterns. LLM parsing fallback (Gemma 4 31B via OpenRouter free tier) kicks in when scrapers fail on SPAs or rate-limit walls. Read-only — no listing data is sold, no broker commissions are taken.",
+        image: "/images/projects/propcheck.png",
+        images: [
+            { src: "/images/projects/propcheck-1.png", caption: "Landing — Don't get scammed on your next property" },
+            { src: "/images/projects/propcheck-2.png", caption: "How it works — 8 signals, 30-second Trust Score" },
+            { src: "/images/projects/propcheck-3.png", caption: "For lenders — AI home-loan diligence in one API call" },
+        ],
+        details: {
+            businessImpact: "Housing.com's own survey says 65% of buyers can't trust listings. Banks and NBFCs spend ₹2,000–5,000 and 3–7 days on property due-diligence per home loan file. PropCheck closes both gaps with one neutral AI engine — free for buyers, API-priced for lenders.",
+            approach: [
+                "Next.js 14 App Router frontend with Tailwind for the consumer landing, /how-it-works, and /for-lenders pages",
+                "FastAPI 0.115 + Pydantic 2.9 backend exposing /v1/check, /v1/feedback, /healthz endpoints — OpenAPI auto-generated at /docs",
+                "PostgreSQL 16 + SQLAlchemy 2 + Alembic migrations for listing checks, feedback, and the locality price index",
+                "httpx + BeautifulSoup4 + lxml scrape pipeline with Gemma 4 31B (OpenRouter free) as LLM parsing fallback when sites are SPA or rate-limited",
+                "imagehash + Pillow for perceptual-hash reverse-search against a known stock-photo and recycled-listing dataset",
+                "slowapi for IP-level rate limiting; structlog for structured request logs",
+                "Chrome MV3 extension surfaces the Trust Score directly on Magicbricks/99acres/Housing/NoBroker product pages",
+                "Vercel hosts both the Next.js frontend (propcheck.rohitraj.tech) and the FastAPI backend (api.rohitraj.tech) as serverless"
+            ],
+            decisions: [
+                "Free forever for buyers, paid API for lenders — neutrality is the moat; if we monetized buyers we'd be just another portal",
+                "LLM parsing fallback over heavier headless scrapers — Gemma 4 31B on OpenRouter free tier kept the bundle and the bill at zero",
+                "8 explicit signals over a black-box ML score — Indian buyers and lenders both want explainable red flags they can act on",
+                "Karnataka RERA first (Bangalore launch May 2026), expand state-by-state — RERA APIs and formats differ per state",
+                "Chrome extension as a wedge — buyers already browse listings on the portals; meet them on the page they're already on"
+            ],
+            currentStatus: "Live in production at https://propcheck.rohitraj.tech/. FastAPI backend live at https://api.rohitraj.tech/ with /v1/check + /v1/feedback shipping. LLM parsing fallback verified live (Gemma 4 31B). Chrome MV3 extension built (phase 8). Day 14 calibration on real Magicbricks/99acres URLs revealed SPA + rate-limit walls — calibration deltas in active tuning.",
+            roadmap: [
+                "Tune calibration deltas on real-world URLs from day-14 report",
+                "Harden scraper for SPA + rate-limit walls (Browserbase / residential proxy fallback)",
+                "Expand RERA coverage from Karnataka to Maharashtra, Telangana, and Tamil Nadu",
+                "Ship Chrome extension to the Web Store after MV3 review",
+                "Onboard first lender to the /v1/check API for home-loan diligence"
+            ],
+            improvements: [
+                "Could add a community-sourced scam-listing reporting flow with signed feedback",
+                "Consider WhatsApp delivery of Trust Scores for users who paste links there (currently parked per commit 553c334)"
+            ]
+        }
+    },
+    {
         slug: "stellarmind",
         name: "StellarMIND — Chat-to-SQL with RAG",
         problem: "Business users need to query databases without knowing SQL. Existing tools lack context-aware query generation and safety guarantees.",
@@ -504,6 +553,12 @@ export const repos = [
         description: "AI Travel Planner — Spring Boot + React PWA with OpenAI integration",
         modules: ["backend", "web", "docker-compose.yml"],
         url: "https://github.com/rohitguta2432/MicroItinerary"
+    },
+    {
+        name: "propTech",
+        description: "PropCheck — AI property trust score for India. FastAPI + Next.js 14 + Gemma 4 31B (OpenRouter) + Chrome MV3",
+        modules: ["backend", "web", "extension", "specs"],
+        url: "https://github.com/rohitguta2432/propTech"
     },
     {
         name: "spring-ai-mcp-server",
