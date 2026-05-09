@@ -34,6 +34,22 @@ export const aiProjectSummaries: AIProjectSummary[] = [
         ],
     },
     {
+        title: "PropCheck — AI Property Trust Score for India",
+        problem: "Indian property buyers lose lakhs to fraudulent listings on Magicbricks, 99acres, Housing.com, and NoBroker. Fake RERA numbers, recycled stock photos, and inflated pricing slip past buyers because no neutral tool exists to verify a listing in seconds.",
+        solution: "Paste any listing URL — the AI engine scrapes the page (with an LLM parsing fallback when sites are SPA or rate-limited), cross-checks 8 trust signals against Karnataka RERA, a locality price index, and a perceptual-image database, and returns a 0–100 Trust Score with explainable red flags in 30 seconds.",
+        techStack: ["Next.js 14", "Tailwind CSS", "FastAPI 0.115", "Python 3.12", "PostgreSQL 16", "SQLAlchemy 2", "httpx", "BeautifulSoup4", "imagehash", "OpenRouter (Gemma 4 31B)", "Chrome MV3"],
+        aiApproach: "8-signal trust engine — listing age, price-vs-locality delta, duplicate count, RERA registration check, image reverse-search via perceptual hashing, builder complaints, owner-name match, suspicious patterns. Gemma 4 31B via OpenRouter free tier kicks in as LLM parsing fallback when scrapers fail.",
+        repoUrl: "https://github.com/rohitguta2432/propTech",
+        liveUrl: "https://propcheck.rohitraj.tech/",
+        status: "live",
+        image: "/images/projects/propcheck.png",
+        metrics: [
+            { label: "Trust score", value: "0–100 in 30s" },
+            { label: "Signals checked", value: "8 per listing" },
+            { label: "API endpoint", value: "api.rohitraj.tech" },
+        ],
+    },
+    {
         title: "StellarMIND — Chat-to-SQL with pgvector",
         problem: "Business users need to query databases without knowing SQL. Existing tools lack context-aware query generation and safety guarantees.",
         solution: "Spring Boot MCP server that converts natural language questions into read-only SQL using LLM with retrieval-augmented context from pgvector.",
