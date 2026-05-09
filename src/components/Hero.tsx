@@ -11,7 +11,7 @@ export default function Hero({ dict, locale }: HeroProps) {
     const priceAnchor = dict.hero.priceAnchor ?? "6-week MVP sprint · 50% back if we miss week-3 milestone";
     const bookCallCta = dict.hero.bookCallCta ?? "Book free 30-min call";
     const trustPills = dict.hero.trustPills ?? [
-        "Fixed price · No hourly surprises",
+        "Senior engineer · GitHub from day one",
         "You own the code",
         "Daily Slack / WhatsApp access",
         "First production commit in 5 days",
