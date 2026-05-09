@@ -7,15 +7,6 @@ import { createPageMetadata, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-function startingFrom(costRange: string): string {
-    if (/^free/i.test(costRange.trim())) return "Free scoping call";
-    const match = costRange.match(/\$([0-9,]+)/);
-    if (!match) return costRange;
-    const num = parseInt(match[1].replace(/,/g, ""), 10);
-    if (Number.isNaN(num)) return costRange;
-    return num >= 1000 ? `Starts at $${Math.round(num / 1000)}K` : `Starts at $${num}`;
-}
-
 type Props = {
     params: Promise<{ locale: string }>;
 };
@@ -107,7 +98,7 @@ export default async function ServicesPage({ params }: Props) {
                                     <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
                                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                             <span style={{ color: "var(--text-secondary)", fontSize: "0.85rem" }}>
-                                                {startingFrom(service.costRange)} &middot; {service.timeline}
+                                                {service.timeline}
                                             </span>
                                             <span style={{ color: "var(--accent)", fontSize: "0.9rem", fontWeight: 500 }}>
                                                 Learn more &rarr;
@@ -121,7 +112,7 @@ export default async function ServicesPage({ params }: Props) {
                                                 letterSpacing: "0.02em",
                                             }}
                                         >
-                                            ~30% under Toptal &middot; Fixed price &middot; No equity
+                                            Senior engineer &middot; No equity &middot; Full GitHub
                                         </span>
                                     </div>
                                 </Link>

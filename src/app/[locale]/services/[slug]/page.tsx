@@ -184,8 +184,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
                             </div>
                         </div>
 
-                        {/* Timeline & Cost */}
-                        <div style={{ marginTop: "3rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                        {/* Timeline */}
+                        <div style={{ marginTop: "3rem" }}>
                             <div
                                 style={{
                                     background: "var(--card-bg)",
@@ -199,21 +199,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
                                 </div>
                                 <div style={{ color: "var(--text-primary)", fontSize: "1.25rem", fontWeight: 600 }}>
                                     {service.timeline}
-                                </div>
-                            </div>
-                            <div
-                                style={{
-                                    background: "var(--card-bg)",
-                                    border: "1px solid var(--border)",
-                                    borderRadius: "12px",
-                                    padding: "1.5rem",
-                                }}
-                            >
-                                <div style={{ color: "var(--text-secondary)", fontSize: "0.85rem", marginBottom: "0.5rem" }}>
-                                    Investment
-                                </div>
-                                <div style={{ color: "var(--text-primary)", fontSize: "1.25rem", fontWeight: 600 }}>
-                                    {service.costRange}
                                 </div>
                             </div>
                         </div>
