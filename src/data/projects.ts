@@ -3,6 +3,87 @@ export type { Project } from '@/types/project';
 
 export const projects: Project[] = [
     {
+        slug: "myfinancial",
+        name: "MyFinancial — Personal Financial Advisor",
+        problem: "Financial planning in India is fragmented across banks, insurance, and tax documents. Most tools require sharing sensitive data with third parties.",
+        solves: "Privacy-first PWA that consolidates financial data locally via a 6-step wizard — Profile, Income, Assets, Liabilities, Insurance, Tax — with real-time advisory metrics like Financial Runway and Savings Rate.",
+        techStack: ["React 19", "Vite 7", "Tailwind CSS 4", "Zustand", "Dexie (IndexedDB)", "Spring Boot 3.x", "Java 21", "PostgreSQL"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/myFinance",
+        liveUrl: "https://myfinancial.in/",
+        aiApproach: "Rule-based advisory engine for Indian financial instruments (PPF, EPF, NPS). Old vs. New Tax regime comparison. Coverage gap analysis for insurance. No cloud dependency — all computation runs locally.",
+        image: "/images/projects/myfinancial.png",
+        images: [
+            { src: "/images/projects/myfinancial-1.png", caption: "Landing Page — Fix Your Finances Early" },
+            { src: "/images/projects/myfinancial-2.png", caption: "Step 1 — Personal Profile & Demographics" },
+            { src: "/images/projects/myfinancial-3.png", caption: "Profile Filled — Employment & Residency" },
+            { src: "/images/projects/myfinancial-4.png", caption: "Risk Profile — Asset Allocation Result" },
+        ],
+        details: {
+            businessImpact: "Indians manage finances across 5-10 different platforms. No single tool consolidates bank accounts, insurance, tax, and investments — while keeping data private. MyFinancial solves this with zero cloud dependency.",
+            approach: [
+                "React 19 + Vite 7 PWA frontend with Tailwind CSS 4 glassmorphism design",
+                "Dexie (IndexedDB) for privacy-first local data storage — no sensitive data leaves the browser",
+                "Zustand for lightweight state management across the 6-step wizard",
+                "Spring Boot 3.x + Java 21 backend with PostgreSQL for optional cloud sync",
+                "Color-coded wizard steps with contextual financial health indicators"
+            ],
+            decisions: [
+                "LocalStorage/IndexedDB over cloud storage — privacy is a core value proposition",
+                "Rule-based engine over AI/ML — deterministic financial calculations are more trustworthy",
+                "India-specific instruments (PPF, EPF, NPS, Gold) over generic global templates",
+                "PWA over native app — broader reach, works offline, single codebase"
+            ],
+            currentStatus: "Live in production at https://myfinancial.in/. Full 6-step wizard shipped: Profile, Income, Assets, Liabilities, Insurance, and Tax. Wealth Dashboard with Net Worth scorecard and Financial Runway live.",
+            roadmap: [
+                "Add goal-based financial planning (retirement, education, home)",
+                "Implement mutual fund portfolio analysis",
+                "Add PDF report generation for financial health summary"
+            ],
+            improvements: [
+                "Could add optional encrypted cloud backup for cross-device sync",
+                "Consider adding AI-powered investment recommendations"
+            ]
+        }
+    },
+    {
+        slug: "stellarmind",
+        name: "StellarMIND — Chat-to-SQL with RAG",
+        problem: "Business users need to query databases without knowing SQL. Existing tools lack context-aware query generation and safety guarantees.",
+        solves: "Spring Boot MCP server that converts natural language questions into read-only SQL using LLM with retrieval-augmented context from pgvector.",
+        techStack: ["Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "MCP Protocol", "OpenAI"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/spring-ai-mcp-server",
+        aiApproach: "RAG-based SQL generation — schema knowledge stored as embeddings in pgvector, retrieved as context for LLM. Strict read-only enforcement (only SELECT/WITH).",
+        image: "/images/projects/stellarmind.png",
+        details: {
+            businessImpact: "Data democratization requires non-technical users to access insights without engineering bottlenecks. Raw LLM-to-SQL is unreliable. RAG with schema context fixes this.",
+            approach: [
+                "Spring Boot MCP server with Tool interface for executeDataQuery",
+                "pgvector for storing schema knowledge chunks and embeddings",
+                "Spring AI for LLM integration (provider-agnostic — works with OpenAI, Anthropic, etc.)",
+                "Chain-of-Thought (CoT) web interface for query debugging and transparency",
+                "Read-only SQL enforcement via query parsing (only SELECT, WITH allowed)"
+            ],
+            decisions: [
+                "Read-only restriction limits use cases but ensures database safety",
+                "pgvector requires PostgreSQL — not database-agnostic, but worth the trade-off",
+                "MCP transport (stdio) over HTTP for better AI assistant integration",
+                "Separate stellarmind-server and stellarmind-client for modularity"
+            ],
+            currentStatus: "Core query flow working. CoT UI functional. Newman test suite passing.",
+            roadmap: [
+                "Add support for streaming responses",
+                "Implement query history and favorites",
+                "Add schema auto-discovery"
+            ],
+            improvements: [
+                "Could add query result visualization",
+                "Consider supporting multiple database connections"
+            ]
+        }
+    },
+    {
         slug: "clinicai",
         name: "ClinicAI — WhatsApp AI Clinic Assistant",
         problem: "India has 12 lakh+ small clinics running on phone calls and paper diaries. Patients call multiple times to confirm, double bookings happen daily, and revenue leaks through manual invoicing.",
@@ -88,87 +169,6 @@ export const projects: Project[] = [
             improvements: [
                 "Could add caching layer for repeated AI queries",
                 "Consider fine-tuning a smaller model for cost estimation"
-            ]
-        }
-    },
-    {
-        slug: "stellarmind",
-        name: "StellarMIND — Chat-to-SQL with RAG",
-        problem: "Business users need to query databases without knowing SQL. Existing tools lack context-aware query generation and safety guarantees.",
-        solves: "Spring Boot MCP server that converts natural language questions into read-only SQL using LLM with retrieval-augmented context from pgvector.",
-        techStack: ["Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "MCP Protocol", "OpenAI"],
-        status: "active",
-        repoUrl: "https://github.com/rohitguta2432/spring-ai-mcp-server",
-        aiApproach: "RAG-based SQL generation — schema knowledge stored as embeddings in pgvector, retrieved as context for LLM. Strict read-only enforcement (only SELECT/WITH).",
-        image: "/images/projects/stellarmind.png",
-        details: {
-            businessImpact: "Data democratization requires non-technical users to access insights without engineering bottlenecks. Raw LLM-to-SQL is unreliable. RAG with schema context fixes this.",
-            approach: [
-                "Spring Boot MCP server with Tool interface for executeDataQuery",
-                "pgvector for storing schema knowledge chunks and embeddings",
-                "Spring AI for LLM integration (provider-agnostic — works with OpenAI, Anthropic, etc.)",
-                "Chain-of-Thought (CoT) web interface for query debugging and transparency",
-                "Read-only SQL enforcement via query parsing (only SELECT, WITH allowed)"
-            ],
-            decisions: [
-                "Read-only restriction limits use cases but ensures database safety",
-                "pgvector requires PostgreSQL — not database-agnostic, but worth the trade-off",
-                "MCP transport (stdio) over HTTP for better AI assistant integration",
-                "Separate stellarmind-server and stellarmind-client for modularity"
-            ],
-            currentStatus: "Core query flow working. CoT UI functional. Newman test suite passing.",
-            roadmap: [
-                "Add support for streaming responses",
-                "Implement query history and favorites",
-                "Add schema auto-discovery"
-            ],
-            improvements: [
-                "Could add query result visualization",
-                "Consider supporting multiple database connections"
-            ]
-        }
-    },
-    {
-        slug: "myfinancial",
-        name: "MyFinancial — Personal Financial Advisor",
-        problem: "Financial planning in India is fragmented across banks, insurance, and tax documents. Most tools require sharing sensitive data with third parties.",
-        solves: "Privacy-first PWA that consolidates financial data locally via a 6-step wizard — Profile, Income, Assets, Liabilities, Insurance, Tax — with real-time advisory metrics like Financial Runway and Savings Rate.",
-        techStack: ["React 19", "Vite 7", "Tailwind CSS 4", "Zustand", "Dexie (IndexedDB)", "Spring Boot 3.x", "Java 21", "PostgreSQL"],
-        status: "active",
-        repoUrl: "https://github.com/rohitguta2432/myFinance",
-        liveUrl: "https://myfinancial.in/",
-        aiApproach: "Rule-based advisory engine for Indian financial instruments (PPF, EPF, NPS). Old vs. New Tax regime comparison. Coverage gap analysis for insurance. No cloud dependency — all computation runs locally.",
-        image: "/images/projects/myfinancial.png",
-        images: [
-            { src: "/images/projects/myfinancial-1.png", caption: "Landing Page — Fix Your Finances Early" },
-            { src: "/images/projects/myfinancial-2.png", caption: "Step 1 — Personal Profile & Demographics" },
-            { src: "/images/projects/myfinancial-3.png", caption: "Profile Filled — Employment & Residency" },
-            { src: "/images/projects/myfinancial-4.png", caption: "Risk Profile — Asset Allocation Result" },
-        ],
-        details: {
-            businessImpact: "Indians manage finances across 5-10 different platforms. No single tool consolidates bank accounts, insurance, tax, and investments — while keeping data private. MyFinancial solves this with zero cloud dependency.",
-            approach: [
-                "React 19 + Vite 7 PWA frontend with Tailwind CSS 4 glassmorphism design",
-                "Dexie (IndexedDB) for privacy-first local data storage — no sensitive data leaves the browser",
-                "Zustand for lightweight state management across the 6-step wizard",
-                "Spring Boot 3.x + Java 21 backend with PostgreSQL for optional cloud sync",
-                "Color-coded wizard steps with contextual financial health indicators"
-            ],
-            decisions: [
-                "LocalStorage/IndexedDB over cloud storage — privacy is a core value proposition",
-                "Rule-based engine over AI/ML — deterministic financial calculations are more trustworthy",
-                "India-specific instruments (PPF, EPF, NPS, Gold) over generic global templates",
-                "PWA over native app — broader reach, works offline, single codebase"
-            ],
-            currentStatus: "Live in production at https://myfinancial.in/. Full 6-step wizard shipped: Profile, Income, Assets, Liabilities, Insurance, and Tax. Wealth Dashboard with Net Worth scorecard and Financial Runway live.",
-            roadmap: [
-                "Add goal-based financial planning (retirement, education, home)",
-                "Implement mutual fund portfolio analysis",
-                "Add PDF report generation for financial health summary"
-            ],
-            improvements: [
-                "Could add optional encrypted cloud backup for cross-device sync",
-                "Consider adding AI-powered investment recommendations"
             ]
         }
     },
@@ -495,7 +495,7 @@ export const projects: Project[] = [
                 "Consider adding project demos/recordings"
             ]
         }
-    }
+    },
 ];
 
 export const repos = [
