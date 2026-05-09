@@ -28,7 +28,7 @@ REPO = Path(__file__).resolve().parent.parent
 POSTS_DIR = REPO / "src" / "data" / "posts"
 BASE_URL = "https://rohitraj.tech/en/notes"
 API = "https://dev.to/api/articles"
-COVER_BASE = "https://rohitraj.tech/blog-covers"
+COVER_BASE = "https://rohitraj.tech/images/notes"
 
 
 def read_post_meta(slug: str) -> dict:
@@ -84,7 +84,8 @@ def sanitize_tags(keywords: list, max_tags: int = 4) -> list:
 
 def build_payload(slug: str, meta: dict, tags: list) -> dict:
     canonical = f"{BASE_URL}/{slug}"
-    cover_url = f"{COVER_BASE}/{slug}-cover.jpg"
+    cover_file = REPO / "public" / "images" / "notes" / f"{slug}-cover.jpg"
+    cover_url = f"{COVER_BASE}/{slug}-cover.jpg" if cover_file.exists() else None
     body = (
         f"> Originally published on [rohitraj.tech]({canonical})\n\n"
         f"{meta['excerpt']}\n\n"
@@ -93,17 +94,17 @@ def build_payload(slug: str, meta: dict, tags: list) -> dict:
         f"[{meta['title']}]({canonical})\n\n"
         f"More engineering notes: [rohitraj.tech/en/notes](https://rohitraj.tech/en/notes)\n"
     )
-    return {
-        "article": {
-            "title": meta["title"],
-            "published": True,
-            "body_markdown": body,
-            "tags": tags,
-            "canonical_url": canonical,
-            "description": meta["excerpt"][:200],
-            "main_image": cover_url,
-        }
+    article = {
+        "title": meta["title"],
+        "published": True,
+        "body_markdown": body,
+        "tags": tags,
+        "canonical_url": canonical,
+        "description": meta["excerpt"][:200],
     }
+    if cover_url:
+        article["main_image"] = cover_url
+    return {"article": article}
 
 
 def publish(payload: dict, api_key: str, retry_on_rate_limit: bool = True) -> tuple:

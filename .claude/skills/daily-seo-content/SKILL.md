@@ -630,7 +630,82 @@ Skip this step if:
 - `DEV_TO_API_KEY` not set (print one-time setup instructions, do not block)
 - `--no-deploy` arg was passed (post not live yet, can't backlink)
 
-## Step 14: Report
+## Step 14: Cross-post to Hashnode (dofollow backlink)
+
+Hashnode honors `originalArticleURL` (canonical) → no dup-content penalty + dofollow attribution from DR ~73.
+
+```bash
+cd /home/t0266li/Documents/nexusai
+python3 scripts/hashnode-publish.py --slug "<slug>"
+```
+
+Requires:
+- `HASHNODE_API_KEY` — https://hashnode.com/settings/developer
+- `HASHNODE_PUBLICATION_ID` — GraphQL: `{ me { publications(first:1){ edges{ node{ id } } } } }`
+
+Persist via `~/.config/fish/config.fish`:
+```fish
+set -gx HASHNODE_API_KEY "..."
+set -gx HASHNODE_PUBLICATION_ID "..."
+```
+
+Tags auto-derived (max 5) from `keywords`. Override with `--tags a,b,c`.
+
+Failures non-fatal. Skip if env not set or `--no-deploy` passed.
+
+## Step 15: Wayback Machine snapshot (DR 93 backlink + permanent archive)
+
+Submits live URL to archive.org for permanent snapshot. No auth required. Adds DR ~93 backlink + preserves canonical version against future drift.
+
+```bash
+cd /home/t0266li/Documents/nexusai
+python3 scripts/wayback-save.py --slug "<slug>"
+```
+
+Optional `WAYBACK_S3_KEY` + `WAYBACK_S3_SECRET` for higher rate limit (https://archive.org/account/s3.php).
+
+Failures non-fatal. Skip if `--no-deploy`. Rate limit ~15/min unsigned.
+
+## Step 16: Bluesky announcement (atproto, indexed)
+
+Posts blog announcement to Bluesky. Open protocol, indexed by Google, dofollow on most viewers.
+
+```bash
+cd /home/t0266li/Documents/nexusai
+python3 scripts/bluesky-post.py --slug "<slug>"
+```
+
+Requires:
+- `BLUESKY_HANDLE` (e.g., `rohitraj.bsky.social`)
+- `BLUESKY_APP_PASSWORD` — https://bsky.app/settings/app-passwords (NOT main password)
+
+Persist via `~/.config/fish/config.fish`:
+```fish
+set -gx BLUESKY_HANDLE "rohitraj.bsky.social"
+set -gx BLUESKY_APP_PASSWORD "xxxx-xxxx-xxxx-xxxx"
+```
+
+Auto-truncates to 300 chars + adds rich-text link facet. Failures non-fatal.
+
+## Step 17: GitHub blog index (DR 100 dofollow)
+
+Appends entry to a public GitHub README repo. GitHub READMEs render with dofollow links → DR ~100 backlink per post.
+
+One-time setup:
+1. Create public repo: `github.com/rohitguta2432/blog-index`
+2. Init `README.md` containing the marker line: `<!-- BLOG_INDEX_START -->`
+3. Default repo hardcoded as `rohitguta2432/blog-index` — override only via `GITHUB_BLOG_INDEX_REPO` env if needed
+
+```bash
+cd /home/t0266li/Documents/nexusai
+python3 scripts/github-blog-index.py --slug "<slug>"
+```
+
+Requires `gh` CLI authenticated (`gh auth status`). Idempotent — skips if URL already in README.
+
+Failures non-fatal. Skip if env not set or `--no-deploy`.
+
+## Step 18: Report
 
 Report to user:
 
@@ -643,6 +718,10 @@ Report to user:
 - IndexNow status (Bing + Yandex)
 - Google Indexing API status (200 / skipped / GSC link printed)
 - dev.to crosspost URL (or "skipped — DEV_TO_API_KEY not set")
+- Hashnode crosspost URL (or "skipped — HASHNODE_API_KEY not set")
+- Wayback snapshot URL (or "skipped/rate-limited")
+- Bluesky post URL (or "skipped — BLUESKY_APP_PASSWORD not set")
+- GitHub index commit (or "skipped — GITHUB_BLOG_INDEX_REPO not set")
 - Total time (start to deploy)
 
 ## Guardrails
@@ -684,6 +763,13 @@ Report to user:
 | dev.to 429 rate-limited | Script auto-retries once after 90s; if still fails, run manually later: `python3 scripts/devto-publish.py --slug <slug>` |
 | dev.to 401 unauthorized | `DEV_TO_API_KEY` invalid — regenerate at https://dev.to/settings/extensions |
 | dev.to 422 invalid tags | dev.to rejected auto-derived tags — rerun with `--tags java,ai,backend,api` |
+| Hashnode missing publicationId | Run GraphQL `{ me { publications(first:1){ edges{ node{ id } } } } }` at https://gql.hashnode.com/, set `HASHNODE_PUBLICATION_ID` |
+| Hashnode 401 | API key invalid — regenerate at https://hashnode.com/settings/developer |
+| Wayback 429 | Rate-limited — retry later or set `WAYBACK_S3_KEY`/`WAYBACK_S3_SECRET` for higher limits |
+| Bluesky 401 | App password invalid — regenerate at https://bsky.app/settings/app-passwords (do NOT use main pw) |
+| Bluesky text > 300 chars | Script auto-truncates excerpt; if title alone exceeds, shorten title |
+| GitHub blog-index marker missing | Add `<!-- BLOG_INDEX_START -->` line to README.md in the index repo, retry |
+| GitHub blog-index push fails | Run `gh auth status` — re-auth if needed |
 
 ## Daily cadence
 
@@ -709,5 +795,9 @@ HTTP check:   200 OK
 IndexNow:     api 200, Bing 200, Yandex 202
 Google Index: 200 OK (or: SKIPPED — manual GSC link printed)
 dev.to:       https://dev.to/<user>/<title-slug> (or: SKIPPED — DEV_TO_API_KEY not set)
+Hashnode:     https://<pub>.hashnode.dev/<title-slug> (or: SKIPPED)
+Wayback:      https://web.archive.org/web/<ts>/https://rohitraj.tech/... (or: SKIPPED)
+Bluesky:      https://bsky.app/profile/<handle>/post/<rkey> (or: SKIPPED)
+GitHub idx:   https://github.com/<user>/blog-index (or: SKIPPED)
 Total time:   <Nm Ns>
 ```
