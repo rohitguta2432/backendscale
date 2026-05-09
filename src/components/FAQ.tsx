@@ -11,7 +11,6 @@ const DEFAULT_FAQ: NonNullable<HomeDictionary["faq"]> = {
         { q: "What if 6 weeks slips?", a: "Fixed scope means we descope features, not extend timeline." },
         { q: "Who owns the code?", a: "You. Full repo handover on week 6." },
         { q: "Am I locked into your tech stack?", a: "No. I'll ship in your stack if your team has one." },
-        { q: "Refund policy?", a: "50% back if we miss the week-3 production deploy milestone." },
     ],
 };
 

@@ -3,7 +3,6 @@
         "subtitle": "A founding engineer from India who ships end-to-end on any stack — AI, backend, mobile, blockchain, iOS, web3 — without the cost of a team.",
         "titleLine1": "Get your AI MVP live in 6 weeks.",
         "titleLine2": "29 products shipped, every one documented.",
-        "priceAnchor": "6-week MVP sprint · 50% back if we miss week-3 milestone",
         "bookCallCta": "Book free 30-min call",
         "trustPills": [
             "Senior engineer · GitHub from day one",
@@ -175,10 +174,6 @@
             {
                 "q": "What about post-launch maintenance?",
                 "a": "Two options: (1) clean handoff to your team with full docs and a runbook, or (2) ongoing retainer at a fixed monthly rate. No surprise bills either way."
-            },
-            {
-                "q": "Refund policy?",
-                "a": "If we don't reach a working production deploy by week 3 (50% milestone), you get 50% back. No questions, no contract gymnastics."
             },
             {
                 "q": "Are you the only engineer?",

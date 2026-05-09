@@ -8,7 +8,6 @@ interface HeroProps {
 }
 
 export default function Hero({ dict, locale }: HeroProps) {
-    const priceAnchor = dict.hero.priceAnchor ?? "6-week MVP sprint · 50% back if we miss week-3 milestone";
     const bookCallCta = dict.hero.bookCallCta ?? "Book free 30-min call";
     const trustPills = dict.hero.trustPills ?? [
         "Senior engineer · GitHub from day one",
@@ -27,11 +26,6 @@ export default function Hero({ dict, locale }: HeroProps) {
                             {dict.hero.titleLine1}<br />
                             <span className="text-[var(--text-muted)] text-[0.7em]">{dict.hero.titleLine2}</span>
                         </h1>
-
-                        <div className="hero-price-anchor" aria-label="Pricing summary">
-                            <span className="hero-price-dot" aria-hidden="true" />
-                            {priceAnchor}
-                        </div>
 
                         <div className="hero-actions">
                             <Link href={`/${locale}/contact`} className="btn btn-primary">
