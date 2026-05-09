@@ -52,6 +52,7 @@ import { cursorAiVsHireDeveloper2026 } from './cursor-ai-vs-hire-developer-2026'
 import { devinAiVsHireDeveloper2026 } from './devin-ai-vs-hire-developer-2026';
 import { replitAgentVsHireDeveloper2026 } from './replit-agent-vs-hire-developer-2026';
 import { v0ByVercelVsHireDeveloper2026 } from './v0-by-vercel-vs-hire-developer-2026';
+import { claudeCodeVsHireDeveloper2026 } from './claude-code-vs-hire-developer-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -105,6 +106,7 @@ const allPosts: BlogPost[] = [
   devinAiVsHireDeveloper2026,
   replitAgentVsHireDeveloper2026,
   v0ByVercelVsHireDeveloper2026,
+  claudeCodeVsHireDeveloper2026,
 ];
 
 // Validate all posts at module load time

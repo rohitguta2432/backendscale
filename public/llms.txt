@@ -82,6 +82,7 @@
 - [Devin AI vs Hiring a Developer in 2026 — $20/Month Agent or Founding Engineer? Real Pricing, SWE-bench, and Failure Modes](https://rohitraj.tech/en/notes/devin-ai-vs-hire-developer-2026)
 - [Replit Agent vs Hiring a Developer in 2026 — Browser IDE Autonomy or Founding Engineer? Effort Pricing, Failure Modes, and the $400 Monthly Trap](https://rohitraj.tech/en/notes/replit-agent-vs-hire-developer-2026)
 - [v0 by Vercel vs Hiring a Developer in 2026 — When Generative UI Hits the Day-30 Wall](https://rohitraj.tech/en/notes/v0-by-vercel-vs-hire-developer-2026)
+- [Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?](https://rohitraj.tech/en/notes/claude-code-vs-hire-developer-2026)
 
 ## Services
 
