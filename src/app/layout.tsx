@@ -13,12 +13,14 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono",
+  preload: false,
 });
 
 const notoArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
   display: "swap",
   variable: "--font-arabic",
+  preload: false,
 });
 
 // Export centralized SEO metadata
