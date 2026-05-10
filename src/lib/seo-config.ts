@@ -129,8 +129,12 @@ export const personSchema = {
     name: 'Rohit Raj',
     url: SITE_CONFIG.url,
     email: SITE_CONFIG.author.email,
+    image: `${SITE_CONFIG.url}/og-image.png`,
     jobTitle: 'Founding Engineer & AI Systems Architect',
     description: 'Backend engineer with 10+ years experience building production AI systems, distributed architectures, and custom AI solutions for startups.',
+    worksFor: {
+        '@id': SITE_CONFIG.organizationId,
+    },
     sameAs: [
         `https://github.com/${SITE_CONFIG.author.github}`,
         `https://linkedin.com/in/${SITE_CONFIG.author.linkedin}`,

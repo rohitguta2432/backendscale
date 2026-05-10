@@ -54,7 +54,7 @@ export function middleware(request: NextRequest) {
             const newUrl = new URL(`/${secondSegment}${restOfPath ? '/' + restOfPath : ''}`, request.url);
             newUrl.search = request.nextUrl.search;
 
-            const response = NextResponse.redirect(newUrl);
+            const response = NextResponse.redirect(newUrl, { status: 301 });
             response.cookies.set(LOCALE_COOKIE, secondSegment, {
                 maxAge: 60 * 60 * 24 * 365,
                 path: '/',
@@ -90,7 +90,7 @@ export function middleware(request: NextRequest) {
     const newUrl = new URL(`/${locale}${pathname}`, request.url);
     newUrl.search = request.nextUrl.search;
 
-    const response = NextResponse.redirect(newUrl);
+    const response = NextResponse.redirect(newUrl, { status: 301 });
 
     // Set cookie for persistence
     response.cookies.set(LOCALE_COOKIE, locale, {

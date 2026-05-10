@@ -16,6 +16,74 @@ End-to-end one-command blog ship. Scans gap, writes post, deploys.
 - `--no-image` — skip AI cover image generation (post ships without coverImage)
 - `--image-style "X"` — override cover style prompt (default: tech editorial dark gradient)
 
+## Skill Orchestration (auto-pipeline, 2026-05-10 update)
+
+Daily skill is the **conductor**. It orchestrates 8 sub-skills + 4 cron-driven sister skills. Findings from 2026-05-10 SEO research drove this redesign — Google March 2026 core update penalizes "scaled content abuse" 60-90%, and 44.2% of AI Overview citations come from the first 30% of text.
+
+### One-time setup (run BEFORE next daily ship)
+
+| Step | Skill | Purpose | Block daily until done? |
+|------|-------|---------|--------------------------|
+| 0.1 | `/seo-audit` | Full-site baseline health score (parallel agents) | No |
+| 0.2 | `/seo-google` | Diagnose 0/83 indexation (memory 13613) — fix sitemap/robots/CWV | YES — current daily run is wasted while indexation broken |
+| 0.3 | `/seo-schema` | Add credentialed `Person` schema with `jobTitle`, `knowsAbout[]`, `sameAs[]`, `alumniOf` to `src/lib/seo-config.ts` | YES — without credentialed author, AI engines deprioritize entirely |
+| 0.4 | `/seo-plan` | Roll audit findings into 30-day roadmap, write to `~/wiki/wiki/seo-performance-tracker.md` | No |
+
+### Per-post sub-skills (called inline by daily pipeline)
+
+| Daily Step | Sub-skill | Mode | Failure = block? |
+|------------|-----------|------|------------------|
+| 2 | `/seo-dataforseo` | REPLACES WebSearch — live SERP volume + competition + AI visibility for keyword pick | No (fall through to WebSearch if MCP not configured) |
+| 2.5 | `/seo-firecrawl` | Scrape top-5 ranking pages for chosen keyword. Extract H2 list + word count + schema. Outline matches | No (degrade to manual outline) |
+| 4a | TL;DR injection | Section 0 = 60-100 word inverted-pyramid summary. Direct answer line 1 / cost or comparison line 2 / when-to-skip line 3. Captures 44.2% AI-citation window | YES |
+| 4a | Author byline | Under H1: "By Rohit Raj — Founding Engineer, 6 yrs MVP shipping" + link to `/about` + LinkedIn. Renders into BlogPosting.author Person schema | YES |
+| 6.5 | `/seo-sitemap` | Validate XML sitemap includes new URL, no orphan, hreflang correct | YES (dies if sitemap broken — 0/83 won't improve) |
+| 7.5a | `/seo-schema` | Validate JSON-LD on built page. BlogPosting must have `author`, `datePublished`, `image`, `headline`, `mainEntityOfPage`, `publisher` | YES |
+| 7.5b | `/seo-content` | E-E-A-T scan + thin-content + scaled-AI-pattern detection. **Hard gates:** ≥1 concrete number per claim section, ≥1 named example, intro variance check vs last 5 posts | YES |
+| 7.5c | `/seo-geo` | Passage-level citability for AI Overviews / ChatGPT / Perplexity. TL;DR must be extractable as standalone answer | YES |
+
+**All three Step 7.5 gates fire in PARALLEL** (single message, 3 Agent tool calls). All must pass before commit.
+| 11.5a | `/seo-google` | URL Inspection + Indexing API ping for the new URL | No |
+| 11.5b | `/seo-page` | Post-deploy single-URL deep audit. Score logged to wiki tracker | No |
+| 11.5c | `/seo-backlinks` | **MANDATORY** — verify 5 crosspost referrers register, track new/lost domains, anchor drift, toxic flags | YES — surface if 0/5 crossposts register after 7d |
+
+**All three fire in PARALLEL** (single message, 3 Agent tool calls).
+
+### Weekly cron — sister skills (separate `/loop 7d` or `/schedule weekly`)
+
+| Skill | Why | Output |
+|-------|-----|--------|
+| `/seo-technical` | Crawl + index + CWV + JS render check | Append findings to wiki tracker |
+| `/seo-backlinks` | **Also runs per-post (Step 11.5c).** Weekly = full referring-domain sweep + competitor link gap | Append to wiki tracker |
+| `/seo-competitor-pages` | Track competitors targeting same keywords | Append to wiki tracker |
+
+### Monthly cron
+
+| Skill | Why |
+|-------|-----|
+| `/seo-audit` | Fresh baseline. Compare to prior month |
+| `/seo-plan` | Re-prioritize 30-day roadmap |
+
+### Living performance tracker
+
+`~/wiki/wiki/seo-performance-tracker.md` — append-only learnings from Google + AI search engines + algorithm updates. Read at start of each daily run to honor latest known constraints. Update with new findings, ranking shifts, AI-Overview citation trends, algo update reactions.
+
+### Anti-scaled-content guards (March 2026 core update reaction)
+
+Hard gates enforced by `/seo-content` in Step 7.5b:
+
+1. Each "claim" section (sections 2-4 of outline) MUST contain ≥1 concrete number from your real projects (PropCheck scrape stats, MyFinancial usage, real client cost). No generic stats.
+2. Each post MUST contain ≥1 named example (real client, real project, real bug you hit).
+3. Intro variance: cosine similarity of first 200 chars vs last 5 posts MUST be < 0.85. Block if too templated.
+4. Schema authority: BlogPosting.author MUST resolve to credentialed Person (not just name string).
+5. Cadence soft cap: do not ship more than 4 posts per 7 days. (Daily ship was the pre-March-2026 strategy. Now: depth > velocity.)
+
+### Crosspost reconsider (canonical flip)
+
+Google flipped canonical-for-syndication recommendation in 2026 — now prefers `noindex` on syndicate. Steps 13-17 keep firing for **discoverability traffic**, NOT counted as SEO backlink. Wayback + GitHub-index = vanity DR (high-DR + zero-traffic = neutralized 2026). Investigate `noindex` toggle on dev.to + Hashnode where supported.
+
+---
+
 ## Environment
 
 Project: `/home/t0266li/Documents/nexusai`
@@ -45,9 +113,11 @@ Also read:
 
 Build set of existing slugs. New post slug MUST NOT collide.
 
-## Step 2: Competitor SERP scan
+## Step 2: Competitor SERP scan (PREFER `/seo-dataforseo`, fall through to WebSearch)
 
-Run 3-5 WebSearch queries from this rotation (pick 3 not used in last 7 days; track in `.claude/skills/daily-seo-content/.history.json` if needed):
+**FIRST try sub-skill** `/seo-dataforseo` for live SERP volume + competition + AI-visibility on each candidate keyword. $0.0006/call, real Google data. If MCP not configured, fall through to WebSearch.
+
+Run 3-5 queries from this rotation (pick 3 not used in last 7 days; track in `.claude/skills/daily-seo-content/.history.json` if needed):
 
 - `hire founding engineer India 2026`
 - `fractional CTO startup MVP India`
@@ -79,9 +149,25 @@ Score candidates by:
 
 Pick highest-scoring candidate. Print scoring rationale (3 sentences) before writing.
 
+## Step 3.5: Scrape top-5 SERP via `/seo-firecrawl` (NEW)
+
+Call sub-skill `/seo-firecrawl` to scrape top-5 ranking URLs for the chosen keyword. Extract:
+
+- Their H2/H3 list
+- Total word count (target ±20% of their average)
+- Schema blocks present (BlogPosting, FAQPage, HowTo, etc.)
+- Author byline + credential pattern
+- TL;DR / summary block presence
+
+Use this to inform outline matching in Step 4. Failure here = degrade to manual outline, do not block.
+
 ## Step 4: Draft outline
 
-6-8 sections following this structure:
+6-8 sections following this structure. **Section 0 (NEW, MANDATORY)** = explicit `## TL;DR` block, 60-100 words, before H1-restated intro. Captures the 44.2% AI-citation window per Position Digital 2026 data.
+
+0. **`## TL;DR`** (NEW) — 60-100 words, inverted pyramid: direct answer in line 1, cost/comparison in line 2, when-to-skip-this-approach in line 3. MUST be standalone-extractable as an AI Overview snippet.
+
+   **Author byline (NEW, MANDATORY)** — under H1, before TL;DR: `By [Rohit Raj](/about) — Founding Engineer · 6 yrs MVP shipping · [LinkedIn](https://linkedin.com/in/rohit-raj-...)`. Renders into `BlogPosting.author` Person schema with credentials.
 
 1. **H2 = title restated** — 3-paragraph intro with the answer in line 1, the cost/comparison in line 2, the structural reason in line 3
 2. **H2 = first concrete claim** — 200-300 words, table or bulleted list
@@ -523,6 +609,10 @@ Edit `public/llms.txt`:
 1. Add line under "All Engineering Notes" section: `- [Title](https://rohitraj.tech/en/notes/<slug>)`
 2. Increment post count in heading if present (e.g. "34 posts" → "35 posts")
 
+## Step 6.5: Validate sitemap via `/seo-sitemap` (NEW)
+
+Call sub-skill `/seo-sitemap`. Confirms new URL is in XML sitemap, no orphan, hreflang tags correct, no broken entries. **Hard gate** — if sitemap is broken, fixing 0/83 indexation is impossible. Block ship until pass.
+
 ## Step 7: Typecheck + build
 
 ```bash
@@ -534,7 +624,52 @@ npm run build
 
 If typecheck fails: STOP. Read error, fix the post file, retry. Do NOT commit broken code.
 If build fails: STOP. Read error, fix, retry.
-If both pass: proceed to commit.
+If both pass: proceed to gates.
+
+## Step 7.5: Pre-commit quality gates (NEW — block on fail, RUN IN PARALLEL)
+
+Three sub-skills MUST run in **parallel** (single message, multiple Agent tool calls). ALL must pass before commit. Sequential = wasted minutes per post.
+
+```
+Agent[seo-schema]   ← validates JSON-LD     ┐
+Agent[seo-content]  ← E-E-A-T + scaled-AI   ├─ all 3 fire simultaneously
+Agent[seo-geo]      ← AI Overview citability ┘
+```
+
+Wait for ALL 3 results. Block commit if any fails.
+
+### 7.5a — `/seo-schema` validate JSON-LD
+
+Required on built page:
+- `BlogPosting` with `headline`, `datePublished`, `dateModified`, `image`, `mainEntityOfPage`, `publisher`
+- `BlogPosting.author` resolves to credentialed `Person` (not just name) — `jobTitle`, `description`, `sameAs[]`
+- `BreadcrumbList` for `/en/notes/<slug>`
+- No JSON-LD parse errors
+
+Block commit if any required field missing.
+
+### 7.5b — `/seo-content` E-E-A-T + anti-scaled-content
+
+Hard gates:
+1. ≥1 concrete number per claim section (real PropCheck/MyFinancial/client number, NOT generic stat)
+2. ≥1 named example (real client / project / bug)
+3. Intro variance: cosine similarity of first 200 chars vs last 5 posts < 0.85
+4. Word count 1500-2200 (±20% of top-5 SERP from Step 3.5)
+5. Reading level: Grade 8-12 (Flesch-Kincaid)
+6. ≥2 internal `/en/services/*` links
+
+Block commit if any hard gate fails.
+
+### 7.5c — `/seo-geo` AI Overview citability
+
+Pass criteria:
+- TL;DR block (Section 0) is standalone-extractable as direct answer (60-100 words, no orphan references)
+- ≥3 H2 headings phrased as natural-language questions (matches user query patterns)
+- Comparison table present (Section 5) — AI engines cite tables 2.3x more than prose
+
+Block commit if TL;DR is not extractable.
+
+If all 3 gates pass: proceed to Step 8 commit.
 
 ## Step 8: Commit
 
@@ -585,7 +720,54 @@ sleep 30
 curl -sI https://rohitraj.tech/en/notes/<slug> | head -5
 ```
 
-If HTTP 200, proceed to Step 12. If 404, wait another 60s and retry.
+If HTTP 200, proceed to Step 11.5. If 404, wait another 60s and retry.
+
+## Step 11.5: Post-deploy audit (NEW — RUN IN PARALLEL, 3 sub-skills)
+
+**RUN IN PARALLEL** — single message, three Agent tool calls. Waste no minutes serially.
+
+```
+Agent[seo-google]    ← URL Inspection + Indexing API  ┐
+Agent[seo-page]      ← deep single-URL audit          ├─ all 3 fire simultaneously
+Agent[seo-backlinks] ← MANDATORY backlink ping check  ┘
+```
+
+### 11.5a — `/seo-google` URL Inspection + Indexing API
+
+Calls Google URL Inspection API on the new URL. Confirms:
+- URL is crawlable
+- Mobile-friendly
+- Schema valid in Google's eyes
+- No coverage issues
+
+Then fires Indexing API ping (`/seo-google` handles auth via service account at `~/.config/gsc/indexing-sa.json`). Replaces manual Step 12 GSC link click for the Google leg (IndexNow still fires for Bing/Yandex in Step 12).
+
+### 11.5b — `/seo-page` deep audit
+
+Run sub-skill on the live URL. Captures:
+- On-page score
+- Schema validity
+- Image optimization
+- Internal-link count
+- Word count vs SERP top-5
+- TTFB, LCP, INP from real fetch
+
+Append result to `~/wiki/wiki/seo-performance-tracker.md` under "Per-post audit log" section.
+
+### 11.5c — `/seo-backlinks` MANDATORY (NEW — fires every post-publish)
+
+**Why mandatory:** every published page is a potential backlink anchor. Crosspost steps 13-17 produce 5 backlinks per post; we need to verify they actually register and that their referring-domain quality didn't degrade since last week.
+
+Sub-skill checks:
+- New referring domains since last run (delta count)
+- The 5 expected crosspost referrers (dev.to, Hashnode, Wayback, Bluesky, GitHub blog-index) — confirm at least 3 register within 7 days
+- Anchor text distribution drift
+- Toxic link flagged this week
+- Lost links since last run
+
+Append result to `~/wiki/wiki/seo-performance-tracker.md` under "Backlink Health (weekly)" + "Per-post audit log" sections.
+
+**Failure mode:** if 0 of 5 crosspost referrers register after 7 days, surface to user — likely the crosspost script broke or canonical-flip 2026 rule is dropping them. Do not auto-disable crossposting — investigate first.
 
 ## Step 12: Submit for indexing (IndexNow + Google Indexing API)
 
@@ -771,11 +953,36 @@ Report to user:
 | GitHub blog-index marker missing | Add `<!-- BLOG_INDEX_START -->` line to README.md in the index repo, retry |
 | GitHub blog-index push fails | Run `gh auth status` — re-auth if needed |
 
-## Daily cadence
+## Daily cadence (REVISED 2026-05-10)
 
-Run via `/loop 24h /daily-seo-content` for daily auto-ship, or via `/schedule` cron entry.
+**Old:** `/loop 24h /daily-seo-content` for daily ship.
+**New:** Soft cap 4 posts / 7 days (March 2026 anti-scaled-content rule). Use `/loop 42h /daily-seo-content` (= 4/week) or `/schedule` 3 days/week.
 
 For manual run: just invoke `/daily-seo-content`.
+
+## Sister-skill cron (separate scheduling)
+
+Weekly (`/loop 7d` each):
+- `/seo-technical` — crawl/index/CWV/JS render
+- `/seo-backlinks` — referring domains drift, toxic link detection
+- `/seo-competitor-pages` — competitor SERP movement
+
+Monthly:
+- `/seo-audit` — fresh baseline
+- `/seo-plan` — re-prioritize roadmap
+
+All weekly + monthly results append to `~/wiki/wiki/seo-performance-tracker.md`.
+
+## Living performance wiki
+
+`~/wiki/wiki/seo-performance-tracker.md` is the single source of truth for SEO learnings. Updated by:
+
+- **Daily skill** (Step 11.5b post-deploy audit appends per-post score row)
+- **Weekly cron skills** (technical/backlinks/competitor results)
+- **Monthly audit** (full health snapshot)
+- **Manual entries** when Google announces algo update or new AI Overview behavior surfaces
+
+Daily skill MUST read this file at Step 1 (state load) to honor latest constraints. Findings drive the gates in Step 7.5.
 
 ## Output format on success
 
