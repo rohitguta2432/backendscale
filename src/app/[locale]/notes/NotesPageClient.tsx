@@ -5,7 +5,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { repositories, contributions, projectNotes, filterCategories } from "@/data/github";
-import { blogPosts } from "@/data/blog-posts";
+import { blogSummaries } from "@/data/blog-summaries.generated";
 import type { Locale, CommonDictionary, PagesDictionary } from "@/lib/i18n";
 
 type FilterType = 'all' | 'open-source' | 'ai-systems' | 'backend-infrastructure' | 'experiments';
@@ -306,7 +306,7 @@ export default function NotesPageClient({ locale, commonDict, pagesDict }: Notes
                 </header>
 
                 {/* Blog Articles */}
-                {blogPosts.length > 0 && (
+                {blogSummaries.length > 0 && (
                     <section style={{ marginBottom: '3rem' }}>
                         <h2 style={{
                             fontSize: '0.85rem',
@@ -318,7 +318,7 @@ export default function NotesPageClient({ locale, commonDict, pagesDict }: Notes
                             Blog Articles
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                            {blogPosts.map((post) => (
+                            {blogSummaries.map((post) => (
                                 <Link
                                     key={post.slug}
                                     href={`/${locale}/notes/${post.slug}`}

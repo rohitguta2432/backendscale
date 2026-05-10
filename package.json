@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "tsx scripts/generate-blog-summaries.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "jest"
+    "test": "jest",
+    "gen:blog-summaries": "tsx scripts/generate-blog-summaries.ts"
   },
   "dependencies": {
+    "@struktoai/mirage-node": "^0.0.1",
     "@supabase/supabase-js": "^2.93.3",
     "next": "16.1.6",
     "react": "19.2.3",
@@ -30,6 +33,7 @@
     "jest-environment-jsdom": "^30.3.0",
     "tailwindcss": "^4",
     "ts-jest": "^29.4.9",
+    "tsx": "^4.20.4",
     "typescript": "^5"
   }
 }
