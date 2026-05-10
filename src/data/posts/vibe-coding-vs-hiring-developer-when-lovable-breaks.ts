@@ -17,6 +17,14 @@ export const vibeCodingVsHiringDeveloperWhenLovableBreaks: BlogPost = {
   relatedProject: 'myFinancial',
   sections: [
     {
+      heading: 'TL;DR',
+      content: `Keep vibe coding while your app has under 500 active users, no custom auth, standard Stripe payments, and you can ship a feature per day. Hire a senior contractor on a fixed sprint when any two of those break.
+
+Vibe coding ships MVPs in 2.4 days on average — 40% of YC's W25 batch used AI builders. But Lovable, Bolt, and Cursor predictably break on enterprise SSO, Stripe proration, and the fifth feature on top of the same module.
+
+This doesn't apply to internal tools, prototypes, or apps that intentionally stay simple — there, the AI builder is fine indefinitely and a human handoff is overkill.`,
+    },
+    {
       heading: 'Should You Keep Vibe Coding or Hire a Developer in 2026?',
       content: `Keep vibe coding when your app has under 500 active users, no custom auth, standard Stripe payments, and your iteration loop is fast enough to ship daily. Hire a developer — ideally a senior contractor on a fixed sprint — when any two of these are true: Lovable or Bolt breaks the same feature every time you try to extend it, your auth or payments need customization the tool cannot express, you are entering a regulated domain, or your AI coding loop has slowed to less than one working feature per day.
 

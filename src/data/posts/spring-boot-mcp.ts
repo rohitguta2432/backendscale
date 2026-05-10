@@ -10,6 +10,14 @@ export const springBootMcp: BlogPost = {
   relatedProject: 'stellarmind',
   sections: [
     {
+      heading: 'TL;DR',
+      content: `To build an MCP server with Spring Boot, add the spring-ai-mcp-server-spring-boot-starter dependency, annotate service methods with @Tool, and configure stdio or HTTP/SSE transport in application.yml. Spring AI auto-discovers tools and exposes them via the Model Context Protocol.
+
+Once your service is an MCP server, every MCP-compatible client — Claude Desktop, Cursor, Windsurf, custom agents — can call it without bespoke per-client integration code. One protocol replaces N adapters.
+
+This doesn't apply if your AI integration is single-client and unlikely to grow — a direct API call is simpler than adopting the full MCP server contract for one consumer.`,
+    },
+    {
       heading: 'What Is MCP and Why Should You Care?',
       content: `To build an MCP server with Spring Boot, add the spring-ai-mcp-server-spring-boot-starter dependency, annotate your service methods with @Tool, and configure stdio or HTTP/SSE transport in application.yml. Spring AI auto-discovers your tools and exposes them via the Model Context Protocol, letting any compatible AI assistant — Claude, GPT-4, or custom agents — call your backend functions without bespoke integration code.
 

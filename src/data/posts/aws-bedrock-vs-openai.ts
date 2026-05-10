@@ -14,6 +14,14 @@ export const awsBedrockVsOpenai: BlogPost = {
   },
   sections: [
     {
+      heading: 'TL;DR',
+      content: `Pick AWS Bedrock if you're already on AWS, need data residency, and want model choice across Nova, Claude, and Llama. Pick OpenAI for fastest prototyping and best out-of-the-box quality.
+
+Cost gap is dramatic at scale: at 10K users doing 5 chats/day, Nova Lite on Bedrock runs ~$345/month vs ~$14,625/month on GPT-4o — Bedrock is 42x cheaper for that use case, 3.6x cheaper than GPT-4o-mini.
+
+This trade-off doesn't apply if you need GPT-4-class reasoning quality on every request — the cheaper Nova/Claude tiers won't match it for hard tasks.`,
+    },
+    {
       heading: 'Why I Switched From OpenAI to AWS Bedrock',
       content: `AWS Bedrock is the better choice for startups already running on AWS that need cost-efficient AI inference, data privacy controls, and the flexibility to switch between multiple model providers. OpenAI is the better choice for rapid prototyping, when you need the highest-quality model outputs, and when developer experience matters more than infrastructure control.
 

@@ -9,6 +9,14 @@ export const howMuchDoesItCostToBuildMobileAppIndia2026: BlogPost = {
   keywords: ['mobile app development cost India', 'cost to build app India 2026', 'hire app developer India', 'React Native app cost', 'freelance mobile developer India'],
   sections: [
     {
+      heading: 'TL;DR',
+      content: `Building a mobile app in India costs $3,000–$30,000 when you hire a senior freelance developer directly — far below the $50,000–$500,000 agencies typically quote. The gap is overhead, not skill.
+
+Concrete tiers: simple utility app $3K–$6K (3–4 weeks), MVP with auth and database $7K–$12K (6–8 weeks), AI-features app $12K–$20K (8–12 weeks), complex app with payments and admin $18K–$30K (12–16 weeks). Indian agencies charge $15K–$80K for the same scope.
+
+These numbers don't apply if you need a 5+ person team, formal SLAs, or HIPAA/SOC2 compliance — that's where agency overhead actually buys you something.`,
+    },
+    {
       heading: 'How Much Does It Really Cost to Build a Mobile App in India?',
       content: `Building a mobile app in India costs between $3,000 and $30,000 when you hire a senior freelance developer directly — far less than the $50,000-$500,000 agencies quote. A simple utility app runs $3,000-$6,000, an MVP with auth and database costs $7,000-$12,000, and a complex app with AI, payments, and real-time features ranges from $12,000-$30,000. The key is cutting out agency overhead.
 

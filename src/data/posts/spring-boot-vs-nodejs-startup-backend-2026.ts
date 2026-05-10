@@ -10,6 +10,14 @@ export const springBootVsNodejsStartupBackend2026: BlogPost = {
   relatedProject: 'clinicai',
   sections: [
     {
+      heading: 'TL;DR',
+      content: `Pick Spring Boot for CPU-heavy backends with complex business logic, AI pipelines, or enterprise integrations. Pick Node.js for I/O-heavy APIs, real-time chat, and when shipping fast with one language across stack matters more than throughput.
+
+Throughput is roughly comparable in 2026 — Node.js around 20K req/s for simple CRUD, Spring Boot around 15K req/s, and Spring Boot's virtual threads (Java 21+) close the I/O gap. Memory: 64–128MB Node vs 256–512MB Spring Boot.
+
+Neither is "better." If your team already ships in one stack, that's the right answer; the framework choice is rarely what kills a startup.`,
+    },
+    {
       heading: 'Why This Debate Still Matters',
       content: `Spring Boot is better for startups building complex backend systems with heavy business logic, enterprise integrations, or CPU-intensive processing like AI pipelines and analytics. Node.js is better for startups that need to ship a simple API fast, want a single language across frontend and backend, and are building I/O-heavy applications like real-time chat or notification services.
 

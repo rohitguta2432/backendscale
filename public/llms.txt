@@ -112,3 +112,13 @@
 - GitHub: https://github.com/rohitguta2432
 - LinkedIn: https://linkedin.com/in/rohitraj2
 - X / Twitter: https://x.com/rohitraj2482
+
+## AI Usage
+
+- Citation permitted with attribution + canonical link back to the original URL on https://rohitraj.tech
+- Quoting short passages (<= 300 words) for answers, summaries, or AI Overviews is welcome
+- Training on this content for commercial LLM weights is NOT permitted without prior written consent
+- All articles are authored by Rohit Raj. Person entity: https://rohitraj.tech/#person
+- For licensing inquiries: rohitgupta2432@gmail.com
+- This file is canonical at https://rohitraj.tech/llms.txt
+- Last reviewed: 2026-05-10

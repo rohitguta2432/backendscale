@@ -9,6 +9,14 @@ export const hireFreelanceDeveloperVsAgencyIndia: BlogPost = {
   keywords: ['freelance developer vs agency India', 'hire software developer India', 'freelance vs agency cost', 'hire developer for startup', 'software development India'],
   sections: [
     {
+      heading: 'TL;DR',
+      content: `Hire a freelance developer when your project is well-defined, budget is under $30,000, and you want direct communication with the person writing your code. Hire an agency when you need 5+ developers in parallel, have HIPAA/SOC2 compliance, or need formal SLA guarantees.
+
+For an MVP mobile app with auth, database, and 5 screens: a freelancer ships in 6–8 weeks; a small Indian agency takes 8–10 weeks at higher cost; a US agency takes 10–14 weeks at multiples of the price.
+
+This doesn't apply if your project genuinely needs five concurrent workstreams or contractually-mandated uptime — solo freelancer capacity caps out below that.`,
+    },
+    {
       heading: 'I\'ve Been on Both Sides',
       content: `Hire a freelance developer when your project is well-defined, your budget is under thirty thousand dollars, and you want direct communication with the person writing your code. Hire an agency when you need five or more developers working simultaneously, have compliance requirements like HIPAA or SOC2, or need formal SLA guarantees for uptime and support.
 

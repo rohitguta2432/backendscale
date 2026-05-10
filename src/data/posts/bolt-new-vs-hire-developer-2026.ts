@@ -23,6 +23,14 @@ export const boltNewVsHireDeveloper2026: BlogPost = {
   },
   sections: [
     {
+      heading: 'TL;DR',
+      content: `Use Bolt.new while your project stays under 10K lines, has no payment edge cases, and you're still proving the idea — at $25/month it beats hiring. Hire a developer the moment you onboard real users.
+
+Bolt's complex-app success rate drops to 31% past a complexity threshold. Founders have publicly burned 5–8 million tokens (80% of monthly quota) fixing one Supabase auth bug. A senior developer at $40/hr fixes the same bug in 90 minutes for $60.
+
+This crossover doesn't apply if your app stays simple, internal-only, or never sees production users — Bolt is genuinely cheaper there.`,
+    },
+    {
       heading: 'Bolt.new vs Hiring a Developer in 2026 — The Honest Answer Up Front',
       content: `If your project will stay under 10K lines of code, has no payment edge cases, and you are still proving the idea, Bolt.new at $25 per month beats hiring a developer every time. The crossover happens the moment you onboard real users — Bolt's complex-app success rate drops to 31% above a certain complexity threshold, and a single Supabase auth bug routinely burns 5 to 8 million tokens before it is fixed. At that point a senior developer at $40 per hour for two weeks is cheaper than the token refill plus your lost weekend.
 

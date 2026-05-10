@@ -8,9 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://rohitraj.tech";
     const now = new Date();
 
-    // Static routes
+    // Static routes — use site-launch date as a stable lastModified anchor
+    const staticAnchor = new Date("2026-04-22");
     const staticRoutes = [
-        "", // home
+        "",
         "/about",
         "/contact",
         "/projects",
@@ -23,57 +24,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/reliability/observability",
     ];
 
-    // Dynamic project routes from data
     const projectRoutes = projects.map((project) => `/projects/${project.slug}`);
-
-    // Dynamic service routes from data
     const serviceRoutes = ["/services", ...services.map((service) => `/services/${service.slug}`)];
 
-    // Dynamic blog post routes
+    // Build a slug → real-date map for posts so each post has its own lastModified
+    const postDateBySlug = new Map<string, Date>();
+    for (const post of blogPosts) {
+        const real = post.updated ?? post.date;
+        if (real) postDateBySlug.set(post.slug, new Date(real));
+    }
     const blogRoutes = blogPosts.map((post) => `/notes/${post.slug}`);
 
-    // Combine all routes
     const allRoutes = [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...blogRoutes];
 
     const sitemap: MetadataRoute.Sitemap = [];
 
-
-
     // Only include English URLs to maximize crawl budget on a new domain.
     // Non-English pages were causing "Discovered – currently not indexed" (90 pages).
     for (const route of allRoutes) {
-        let priority = 0.7;
-        let changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" = "monthly";
-
-        if (route === "") {
-            priority = 1.0;
-            changeFrequency = "weekly";
-        } else if (route === "/projects" || route.startsWith("/projects/")) {
-            priority = 0.9;
-            changeFrequency = "weekly";
-        } else if (route === "/about" || route === "/contact") {
-            priority = 0.8;
-            changeFrequency = "monthly";
-        } else if (route.startsWith("/reliability")) {
-            priority = 0.8;
-            changeFrequency = "weekly";
-        } else if (route === "/services" || route.startsWith("/services/")) {
-            priority = 0.9;
-            changeFrequency = "weekly";
-        } else if (route.startsWith("/notes/")) {
-            priority = 0.85;
-            changeFrequency = "weekly";
+        let lastModified: Date = staticAnchor;
+        if (route.startsWith("/notes/")) {
+            const slug = route.replace("/notes/", "");
+            lastModified = postDateBySlug.get(slug) ?? now;
+        } else if (route.startsWith("/projects/") || route.startsWith("/services/")) {
+            lastModified = staticAnchor;
         }
+
+        // Build alternates.languages with x-default = English
+        const languageAlternates: Record<string, string> = Object.fromEntries(
+            locales.map((loc) => [loc, `${baseUrl}/${loc}${route}`])
+        );
+        languageAlternates["x-default"] = `${baseUrl}/en${route}`;
 
         sitemap.push({
             url: `${baseUrl}/en${route}`,
-            lastModified: now,
-            changeFrequency,
-            priority,
+            lastModified,
+            // priority + changeFrequency removed — Google has ignored them since 2023
             alternates: {
-                languages: Object.fromEntries(
-                    locales.map((loc) => [loc, `${baseUrl}/${loc}${route}`])
-                ),
+                languages: languageAlternates,
             },
         });
     }

@@ -10,6 +10,14 @@ export const ragForSql: BlogPost = {
   relatedProject: 'stellarmind',
   sections: [
     {
+      heading: 'TL;DR',
+      content: `For LLM-to-SQL on production databases, use RAG with pgvector to retrieve only relevant table schemas — don't dump the full schema into the prompt. Embed each table (columns, types, constraints, sample rows), then retrieve top-k by the user's natural-language question.
+
+Stuffing the full schema crashed accuracy to under 40% on complex queries on a 50+ table database. Schema-RAG more than doubles SQL accuracy and cuts token usage by ~75%, since only ~5% of the schema is relevant per query.
+
+This doesn't apply to small schemas (under ~10 tables) — there, prompt stuffing is simpler and the retrieval overhead isn't worth it.`,
+    },
+    {
       heading: 'The Problem With Prompt Stuffing',
       content: `To improve LLM-to-SQL accuracy on production databases, use RAG with pgvector to retrieve only relevant table schemas instead of stuffing the entire schema into the prompt. Embed each table's metadata — column names, types, constraints, and sample data — as vectors, then retrieve the top-5 most relevant chunks based on the user's natural language question. This approach more than doubles SQL generation accuracy while cutting token usage by 75%.
 
