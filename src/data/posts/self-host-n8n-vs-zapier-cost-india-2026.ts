@@ -23,7 +23,7 @@ export const selfHostN8nVsZapierCostIndia2026: BlogPost = {
   sections: [
     {
       heading: 'Self-Host n8n vs Zapier for Indian MVPs in 2026',
-      content: `By [Rohit Raj](/about) — Founding Engineer, 6 years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohit-raj-916b15173/)
+      content: `By [Rohit Raj](/about) — Founding Engineer, 6 years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 **The short answer:** if your MVP automates more than ~2,000 operations a month and you can run one Docker container, self-host n8n. For an Indian MVP doing 5K-50K operations/month, self-hosted n8n on a $7 Hetzner VPS costs ₹600/month all-in; Zapier Professional at the same volume costs ₹6,100/month — a 10x premium for the same JSON-pushing. Below 2,000 ops/month Zapier wins on time saved; above it, n8n's ₹5,500/month delta funds half a junior contractor.
 
