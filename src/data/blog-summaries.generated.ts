@@ -3,6 +3,40 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "self-host-n8n-vs-zapier-cost-india-2026",
+    "title": "Self-Host n8n vs Zapier for Indian MVPs in 2026 — Real Cost on 50K Operations/Month",
+    "date": "2026-05-11",
+    "excerpt": "Self-hosted n8n costs ₹600/month on a $7 Hetzner VPS for 50K operations; Zapier Professional charges $73/month (~₹6,100) for the same volume. Here is the real Docker setup, ops cost, and break-even math from my multi-platform social automation rig.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "self host n8n",
+      "n8n vs zapier",
+      "n8n cost india",
+      "automation tool india 2026",
+      "self hosted workflow automation",
+      "zapier alternative india",
+      "n8n docker setup"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "razorpay-vs-stripe-india-mvp-2026",
+    "title": "Razorpay vs Stripe for Indian MVPs in 2026 — Real Cost on a 100-User Month",
+    "date": "2026-05-10",
+    "excerpt": "Razorpay charges 2% on cards and 0% on UPI for Indian MVPs; Stripe charges 4.3% plus GST plus cross-border 3% on the same volume. Here is the actual rupee math from MyFinancial production.",
+    "readingTime": "9 min read",
+    "keywords": [
+      "razorpay vs stripe",
+      "payment gateway india mvp",
+      "razorpay pricing 2026",
+      "stripe india fees",
+      "upi payment gateway zero fee",
+      "mvp payment integration cost",
+      "indian startup payment"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "claude-code-vs-hire-developer-2026",
     "title": "Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?",
     "date": "2026-05-09",

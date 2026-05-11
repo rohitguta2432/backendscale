@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (53 posts)
+## All Engineering Notes (54 posts)
 
 ### AI Systems & LLM Integration
 
@@ -84,6 +84,7 @@
 - [v0 by Vercel vs Hiring a Developer in 2026 — When Generative UI Hits the Day-30 Wall](https://rohitraj.tech/en/notes/v0-by-vercel-vs-hire-developer-2026)
 - [Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?](https://rohitraj.tech/en/notes/claude-code-vs-hire-developer-2026)
 - [Razorpay vs Stripe for Indian MVPs in 2026 — Real Cost on a 100-User Month](https://rohitraj.tech/en/notes/razorpay-vs-stripe-india-mvp-2026)
+- [Self-Host n8n vs Zapier for Indian MVPs in 2026 — Real Cost on 50K Operations/Month](https://rohitraj.tech/en/notes/self-host-n8n-vs-zapier-cost-india-2026)
 
 ## Services
 
