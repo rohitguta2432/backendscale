@@ -22,18 +22,10 @@ export const selfHostN8nVsZapierCostIndia2026: BlogPost = {
   },
   sections: [
     {
-      heading: 'TL;DR',
-      content: `For an Indian MVP doing 5K-50K automation operations a month, self-hosted n8n on a $7 Hetzner VPS costs ₹600/month all-in (compute + bandwidth + Postgres). Zapier Professional at the same volume costs $73/month, roughly ₹6,100 after currency conversion — a 10x premium for the same JSON-pushing.
-
-The break-even is around 2,000 operations/month. Below that, Zapier wins on time saved. Above it, n8n's ₹5,500/month delta funds half a junior contractor or three months of an OpenAI Tier-1 budget.
-
-Self-host loses when you need SOC 2, audit logs for compliance, or your team will not maintain a Docker container. Stay on Zapier in those cases.`,
-    },
-    {
       heading: 'Self-Host n8n vs Zapier for Indian MVPs in 2026',
-      content: `**By [Rohit Raj](/about) — Founding Engineer, 6 years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohit-raj-916b15173/)**
+      content: `By [Rohit Raj](/about) — Founding Engineer, 6 years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohit-raj-916b15173/)
 
-**The short answer:** if your MVP automates more than ~2,000 operations a month and you can run one Docker container, self-host n8n. The 10x cost gap compounds fast at startup volume.
+**The short answer:** if your MVP automates more than ~2,000 operations a month and you can run one Docker container, self-host n8n. For an Indian MVP doing 5K-50K operations/month, self-hosted n8n on a $7 Hetzner VPS costs ₹600/month all-in; Zapier Professional at the same volume costs ₹6,100/month — a 10x premium for the same JSON-pushing. Below 2,000 ops/month Zapier wins on time saved; above it, n8n's ₹5,500/month delta funds half a junior contractor.
 
 **The cost gap is structural, not promotional.** Zapier charges by task count because its margin is engineering operating a managed SaaS — observability, multi-region failover, vendor SOC 2, integration certs. n8n is open-source MIT-licensed software you run on a single VPS. The marginal cost per workflow run on your own box is electricity and bandwidth, both negligible at MVP scale.
 
