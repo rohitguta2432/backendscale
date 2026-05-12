@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (54 posts)
+## All Engineering Notes (55 posts)
 
 ### AI Systems & LLM Integration
 
@@ -85,6 +85,7 @@
 - [Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?](https://rohitraj.tech/en/notes/claude-code-vs-hire-developer-2026)
 - [Razorpay vs Stripe for Indian MVPs in 2026 — Real Cost on a 100-User Month](https://rohitraj.tech/en/notes/razorpay-vs-stripe-india-mvp-2026)
 - [Self-Host n8n vs Zapier for Indian MVPs in 2026 — Real Cost on 50K Operations/Month](https://rohitraj.tech/en/notes/self-host-n8n-vs-zapier-cost-india-2026)
+- [Supabase vs Firebase for Indian MVPs in 2026 — Real Cost on 10K MAU](https://rohitraj.tech/en/notes/supabase-vs-firebase-india-mvp-2026)
 
 ## Services
 
@@ -123,4 +124,4 @@
 - All articles are authored by Rohit Raj. Person entity: https://rohitraj.tech/#person
 - For licensing inquiries: rohitgupta2432@gmail.com
 - This file is canonical at https://rohitraj.tech/llms.txt
-- Last reviewed: 2026-05-10
+- Last reviewed: 2026-05-12
