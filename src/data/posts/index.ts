@@ -56,6 +56,7 @@ import { claudeCodeVsHireDeveloper2026 } from './claude-code-vs-hire-developer-2
 import { razorpayVsStripeIndiaMvp2026 } from './razorpay-vs-stripe-india-mvp-2026';
 import { selfHostN8nVsZapierCostIndia2026 } from './self-host-n8n-vs-zapier-cost-india-2026';
 import { supabaseVsFirebaseIndiaMvp2026 } from './supabase-vs-firebase-india-mvp-2026';
+import { clerkVsSupabaseAuthVsBetterAuthIndia2026 } from './clerk-vs-supabase-auth-vs-better-auth-india-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -113,6 +114,7 @@ const allPosts: BlogPost[] = [
   razorpayVsStripeIndiaMvp2026,
   selfHostN8nVsZapierCostIndia2026,
   supabaseVsFirebaseIndiaMvp2026,
+  clerkVsSupabaseAuthVsBetterAuthIndia2026,
 ];
 
 // Validate all posts at module load time
