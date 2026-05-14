@@ -24,7 +24,7 @@ export const supabaseVsFirebaseIndiaMvp2026: BlogPost = {
   sections: [
     {
       heading: 'Supabase vs Firebase for Indian MVPs in 2026',
-      content: `By [Rohit Raj](/about) — Founding Engineer, 6 years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — Founding Engineer, 10+ years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 **The short answer:** if your MVP is web-first or web+mobile, pick Supabase Pro at $25/month. At 10K monthly active users on an Indian MVP, Supabase Pro costs about ₹2,600/month all-in versus Firebase Blaze at ₹4,800-₹12,000/month depending on SMS auth volume and media egress. The delta is 2-4x in Supabase's favour and the gap widens as you cross 25K MAU. If your MVP is mobile-only, push-notification-heavy, and you need Crashlytics + Remote Config out of the box, Firebase still wins — but you pay for that convenience.
 

@@ -24,7 +24,7 @@ export const clerkVsSupabaseAuthVsBetterAuthIndia2026: BlogPost = {
   sections: [
     {
       heading: 'Clerk vs Supabase Auth vs Better-Auth — Which to Pick for India MVP (2026)',
-      content: `By [Rohit Raj](/about) — Founding Engineer, 6 years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — Founding Engineer, 10+ years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 ## TL;DR
 

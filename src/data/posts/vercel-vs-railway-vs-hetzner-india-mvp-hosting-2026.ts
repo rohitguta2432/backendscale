@@ -24,7 +24,7 @@ export const vercelVsRailwayVsHetznerIndiaMvpHosting2026: BlogPost = {
   sections: [
     {
       heading: 'Vercel vs Railway vs Hetzner — India MVP Hosting Cost & Latency (2026)',
-      content: `By [Rohit Raj](/about) — Founding Engineer · 6 yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 ## TL;DR
 

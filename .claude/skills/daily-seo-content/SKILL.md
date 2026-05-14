@@ -36,7 +36,7 @@ Daily skill is the **conductor**. It orchestrates 8 sub-skills + 4 cron-driven s
 | 2 | `/seo-dataforseo` | REPLACES WebSearch — live SERP volume + competition + AI visibility for keyword pick | No (fall through to WebSearch if MCP not configured) |
 | 2.5 | `/seo-firecrawl` | Scrape top-5 ranking pages for chosen keyword. Extract H2 list + word count + schema. Outline matches | No (degrade to manual outline) |
 | 4a | TL;DR injection | Section 0 = 60-100 word inverted-pyramid summary. Direct answer line 1 / cost or comparison line 2 / when-to-skip line 3. Captures 44.2% AI-citation window | YES |
-| 4a | Author byline | Under H1: "By Rohit Raj — Founding Engineer, 6 yrs MVP shipping" + link to `/about` + LinkedIn. Renders into BlogPosting.author Person schema | YES |
+| 4a | Author byline | Under H1: "By Rohit Raj — Founding Engineer, 10+ yrs MVP shipping" + link to `/about` + LinkedIn. Renders into BlogPosting.author Person schema | YES |
 | 6.5 | `/seo-sitemap` | Validate XML sitemap includes new URL, no orphan, hreflang correct | YES (dies if sitemap broken — 0/83 won't improve) |
 | 7.5a | `/seo-schema` | Validate JSON-LD on built page. BlogPosting must have `author`, `datePublished`, `image`, `headline`, `mainEntityOfPage`, `publisher` | YES |
 | 7.5b | `/seo-content` | E-E-A-T scan + thin-content + scaled-AI-pattern detection. **Hard gates:** ≥1 concrete number per claim section, ≥1 named example, intro variance check vs last 5 posts | YES |
@@ -167,7 +167,7 @@ Use this to inform outline matching in Step 4. Failure here = degrade to manual 
 
 0. **`## TL;DR`** (NEW) — 60-100 words, inverted pyramid: direct answer in line 1, cost/comparison in line 2, when-to-skip-this-approach in line 3. MUST be standalone-extractable as an AI Overview snippet.
 
-   **Author byline (NEW, MANDATORY)** — under H1, before TL;DR: `By [Rohit Raj](/about) — Founding Engineer · 6 yrs MVP shipping · [LinkedIn](https://linkedin.com/in/rohit-raj-...)`. Renders into `BlogPosting.author` Person schema with credentials.
+   **Author byline (NEW, MANDATORY)** — under H1, before TL;DR: `By [Rohit Raj](/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)`. NO `**bold**` wrap around byline — renderer's non-greedy `\*\*.*?\*\*` regex swallows nested links inside bold. Renders into `BlogPosting.author` Person schema with credentials.
 
 1. **H2 = title restated** — 3-paragraph intro with the answer in line 1, the cost/comparison in line 2, the structural reason in line 3
 2. **H2 = first concrete claim** — 200-300 words, table or bulleted list
