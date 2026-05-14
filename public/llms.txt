@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (56 posts)
+## All Engineering Notes (57 posts)
 
 ### AI Systems & LLM Integration
 
@@ -37,6 +37,7 @@
 - [Microservices vs Monolith for Startups: Stop Overengineering](https://rohitraj.tech/en/notes/microservices-vs-monolith-startup)
 - [PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)](https://rohitraj.tech/en/notes/postgresql-vs-mongodb-startup-2026)
 - [Spring Boot vs Node.js for Your Startup Backend (2026)](https://rohitraj.tech/en/notes/spring-boot-vs-nodejs-startup-backend-2026)
+- [Vercel vs Railway vs Hetzner — India MVP Hosting Cost & Latency (2026)](https://rohitraj.tech/en/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026)
 
 ### Mobile & React Native
 
@@ -125,4 +126,4 @@
 - All articles are authored by Rohit Raj. Person entity: https://rohitraj.tech/#person
 - For licensing inquiries: rohitgupta2432@gmail.com
 - This file is canonical at https://rohitraj.tech/llms.txt
-- Last reviewed: 2026-05-12
+- Last reviewed: 2026-05-14

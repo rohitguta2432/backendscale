@@ -3,6 +3,60 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026",
+    "title": "Vercel vs Railway vs Hetzner — India MVP Hosting Cost & Latency (2026)",
+    "date": "2026-05-14",
+    "excerpt": "At 100K monthly requests for an Indian MVP, Vercel Pro lands at roughly ₹2,800/month, Railway hovers around ₹1,800/month, and a Hetzner CX22 + Cloudflare combo is ₹420/month. Here is the real cost math, the Mumbai latency truth, and the migration story when one of them stops fitting your scale.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "vercel vs railway vs hetzner",
+      "india mvp hosting cost 2026",
+      "vercel pricing india",
+      "railway alternative india",
+      "hetzner mumbai latency",
+      "cheap mvp hosting india",
+      "startup hosting cost comparison",
+      "self host nextjs india"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "clerk-vs-supabase-auth-vs-better-auth-india-2026",
+    "title": "Clerk vs Supabase Auth vs Better-Auth — Which to Pick for India MVP (2026)",
+    "date": "2026-05-13",
+    "excerpt": "At 10K monthly active users for an Indian MVP, Clerk Pro lands around ₹17,000/month, Supabase Auth is included in the same ₹2,100 Pro plan, and Better-Auth on your own Postgres costs ₹0 plus a weekend of engineering. Here is the real cost math, lock-in tradeoff, and the migration story when you outgrow the hosted option.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "clerk vs supabase auth",
+      "better-auth india 2026",
+      "clerk pricing india mvp",
+      "supabase auth india",
+      "auth provider mvp 2026",
+      "clerk alternative india",
+      "better-auth vs clerk",
+      "open source auth nextjs"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "supabase-vs-firebase-india-mvp-2026",
+    "title": "Supabase vs Firebase for Indian MVPs in 2026 — Real Cost on 10K MAU",
+    "date": "2026-05-12",
+    "excerpt": "Firebase tightened Spark-tier limits in Q1 2026 and Supabase opened the Mumbai ap-south-1 region in late 2025. At 10K MAU for an Indian MVP, Supabase Pro at $25/month now beats Firebase Blaze by 2-4x — here is the real cost math, RLS migration story, and when Firebase still wins.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "supabase vs firebase india",
+      "supabase pricing india 2026",
+      "firebase alternative india",
+      "supabase vs firebase mvp cost",
+      "supabase auth india",
+      "firebase india startup",
+      "supabase pgvector india",
+      "postgres rls vs firestore rules"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "self-host-n8n-vs-zapier-cost-india-2026",
     "title": "Self-Host n8n vs Zapier for Indian MVPs in 2026 — Real Cost on 50K Operations/Month",
     "date": "2026-05-11",
