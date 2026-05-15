@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (57 posts)
+## All Engineering Notes (58 posts)
 
 ### AI Systems & LLM Integration
 
@@ -28,6 +28,7 @@
 - [Cloud-First AI Is Dead — I Built a Fully Offline AI App to Prove It](https://rohitraj.tech/en/notes/cloud-first-ai-is-dead-on-device-android-2026)
 - [Building an On-Device AI Scam Detector for Android — Gemma 4 + LiteRT + Regex Fallback](https://rohitraj.tech/en/notes/build-on-device-ai-scam-detector-android-gemma)
 - [₹805 Crore Lost to UPI Fraud This Year — I Built an Offline Scam Detector That Needs Zero Internet](https://rohitraj.tech/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector)
+- [Pinecone vs Qdrant vs pgvector — Which Vector DB for India RAG MVP (2026)](https://rohitraj.tech/en/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026)
 
 ### Backend & Architecture
 
