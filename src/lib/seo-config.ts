@@ -453,7 +453,15 @@ export function generateBlogPostingSchema(post: {
     keywords: string[];
     coverImage?: { src: string; alt: string };
     wordCount?: number;
+    articleSection?: string;
+    sections?: { heading: string; content: string }[];
 }, locale: string = 'en') {
+    // Auto-derive wordCount from sections if not passed
+    const computedWordCount = post.wordCount ?? (post.sections
+        ? post.sections.reduce((sum, s) => sum + s.content.split(/\s+/).filter(Boolean).length, 0)
+        : undefined);
+    // Auto-derive articleSection from first keyword if not passed
+    const computedSection = post.articleSection ?? post.keywords[0];
     return {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
@@ -479,7 +487,8 @@ export function generateBlogPostingSchema(post: {
         dateModified: post.updated ?? post.date,
         mainEntityOfPage: `${SITE_CONFIG.url}/${locale}/notes/${post.slug}`,
         keywords: post.keywords.join(', '),
-        ...(post.wordCount && { wordCount: post.wordCount }),
+        ...(computedWordCount && { wordCount: computedWordCount }),
+        ...(computedSection && { articleSection: computedSection }),
         inLanguage: locale,
     };
 }
@@ -495,12 +504,16 @@ export function generateTechArticleSchema(article: {
     dateModified?: string;
     keywords: string[];
     proficiencyLevel?: 'Beginner' | 'Intermediate' | 'Expert';
+    image?: { src: string; alt: string };
 }, locale: string = 'en') {
     return {
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
         headline: article.headline,
         description: article.description,
+        image: article.image
+            ? `${SITE_CONFIG.url}${article.image.src}`
+            : `${SITE_CONFIG.url}/og-image.png`,
         author: { '@id': SITE_CONFIG.personId },
         publisher: {
             '@type': 'Organization',

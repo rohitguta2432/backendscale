@@ -284,6 +284,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         dateModified: post.updated,
         keywords: post.keywords,
         proficiencyLevel: 'Expert',
+        image: post.coverImage,
     }, locale));
 
     return (
