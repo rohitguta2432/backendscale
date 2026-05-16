@@ -4,6 +4,7 @@ export const hireTechnicalCofounderIndia2026: BlogPost = {
   slug: 'hire-technical-cofounder-india-2026',
   title: 'Hire Technical Co-Founder India 2026 — Cost, Equity, Alternative',
   date: '2026-05-01',
+  updated: '2026-05-16',
   excerpt:
     'Technical co-founders in India cost 25-50% equity and 6-12 months to find. Here are the 2026 numbers, the 4-year dilution math, and the contrarian case that most pre-seed founders should hire a senior contractor first and a co-founder never.',
   readingTime: '11 min read',
@@ -19,6 +20,11 @@ export const hireTechnicalCofounderIndia2026: BlogPost = {
   ],
   relatedProject: 'myFinancial',
   sections: [
+    {
+      heading: 'TL;DR',
+      content:
+        "Technical co-founders in India cost **25-50% equity** + ₹0 cash + **6-12 months search time** in 2026. A 30% co-founder grant dilutes to ~12-15% by Series B — at a ₹500cr exit that is ₹60cr you paid for at pre-seed valuation. The contrarian move: hire a senior India contractor on a 6-week MVP sprint (**₹12-25 lakh, zero equity**) — same technical output for the first 6-12 months at 1/30th the equity cost. Most pre-seed founders Googling this should not be hiring a co-founder at all.",
+    },
     {
       heading: 'How Much Does It Cost to Hire a Technical Co-Founder in India in 2026?',
       content:

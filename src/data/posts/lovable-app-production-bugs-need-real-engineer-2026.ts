@@ -2,8 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const lovableAppProductionBugsNeedRealEngineer2026: BlogPost = {
   slug: 'lovable-app-production-bugs-need-real-engineer-2026',
-  title: 'When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026',
+  title: 'Lovable App Production Bugs — 5 Fixes Need a Real Engineer (2026)',
   date: '2026-04-25',
+  updated: '2026-05-16',
   excerpt: 'Lovable, Bolt, and v0 ship 70% of an MVP in a weekend. The remaining 30% — auth edge cases, RLS, payment webhooks, performance, schema migrations — is where every vibe-coded app breaks. Here are the 5 production bugs that always need a real engineer to fix, and what the rescue work actually costs.',
   readingTime: '11 min read',
   keywords: [
@@ -17,6 +18,10 @@ export const lovableAppProductionBugsNeedRealEngineer2026: BlogPost = {
   ],
   relatedProject: 'myFinancial',
   sections: [
+    {
+      heading: 'TL;DR',
+      content: `Every vibe-coded Lovable / Bolt / v0 app that survives past 500 users hits the same 5 bug categories: **auth edge cases, RLS holes, payment webhooks, performance regressions, schema migrations**. Average rescue cost in India 2026 = **$4,500** for a 2-3 week engagement. None of these are fixable with another vibe-coding prompt — they need a senior engineer who can read the generated code and write the fix. Skip the rescue cost entirely if you have <100 users + can afford a 6-week MVP rebuild instead.`,
+    },
     {
       heading: 'When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026',
       content: `Vibe-coding platforms (Lovable, Bolt, v0, Cursor + Claude, Replit Agent) ship 70% of a working MVP in a weekend. The first 100 users do not surface the bugs. By user 500, the same five categories of bugs always appear — auth edge cases, row-level security holes, payment webhooks, performance regressions, schema migration disasters. None of these can be fixed with another vibe-coding prompt. Each one requires a senior engineer who can read the generated code, find the gap, and write the fix.
