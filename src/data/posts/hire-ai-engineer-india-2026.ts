@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const hireAiEngineerIndia2026: BlogPost = {
   slug: 'hire-ai-engineer-india-2026',
-  title: 'Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both',
+  title: 'Hire AI Engineer India 2026 — Real Cost, Stack, Sprint Alternative',
   date: '2026-05-02',
   excerpt: 'AI engineers in the US cost $180K-$280K all-in. India full-time: $45K-$95K. A 6-week senior contract with a builder who has shipped RAG, MCP, and on-device AI in production: $15K-$25K flat. Here is the honest breakdown.',
   readingTime: '13 min read',

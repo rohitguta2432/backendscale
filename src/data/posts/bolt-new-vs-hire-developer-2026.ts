@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const boltNewVsHireDeveloper2026: BlogPost = {
   slug: 'bolt-new-vs-hire-developer-2026',
-  title: 'Bolt.new vs Hiring a Developer in 2026 — When the AI Builder Hits Its Limit and the Token Bill Beats the Salary',
+  title: 'Bolt.new vs Hire Developer 2026 — When AI Builder Hits Limits',
   date: '2026-05-03',
   excerpt: 'Bolt.new ships a working prototype in 30 minutes for $25/month. Then complexity arrives — a 31% success rate on real SaaS apps, 5–8 million tokens burned on one Supabase auth bug, and a $5K–$40K hardening bill. Here is exactly when Bolt is the right call, when a developer is, and the cost crossover most founders find too late.',
   readingTime: '12 min read',

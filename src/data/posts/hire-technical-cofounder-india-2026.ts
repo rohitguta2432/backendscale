@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const hireTechnicalCofounderIndia2026: BlogPost = {
   slug: 'hire-technical-cofounder-india-2026',
-  title: 'Hire a Technical Co-Founder in India in 2026 — What It Actually Costs, When You Need One, and the Cheaper Alternative',
+  title: 'Hire Technical Co-Founder India 2026 — Cost, Equity, Alternative',
   date: '2026-05-01',
   excerpt:
     'Technical co-founders in India cost 25-50% equity and 6-12 months to find. Here are the 2026 numbers, the 4-year dilution math, and the contrarian case that most pre-seed founders should hire a senior contractor first and a co-founder never.',

@@ -2,8 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const foundingEngineerEquityPercentage2026: BlogPost = {
   slug: 'founding-engineer-equity-percentage-2026',
-  title: 'How Much Equity Should a Founding Engineer Get in 2026? Real Numbers, Cap-Table Math, and a Cheaper Alternative',
+  title: 'Founding Engineer Equity 2026 — How Much to Negotiate (India)',
   date: '2026-04-29',
+  updated: '2026-05-16',
   excerpt:
     'Carta says 1.5% for hire #1, dropping to 0.33% by hire #5. Pave median is 1%. AI talent pressure pushed the floor up since March 2026. Honest 2026 numbers — plus the $0-equity alternative most pre-seed founders should default to.',
   readingTime: '11 min read',

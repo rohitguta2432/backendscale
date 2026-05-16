@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const cursorAiVsHireDeveloper2026: BlogPost = {
   slug: 'cursor-ai-vs-hire-developer-2026',
-  title: 'Cursor AI vs Hiring a Developer in 2026 — When the $200 Ultra Plan Costs More Than a Real Engineer Sprint',
+  title: 'Cursor AI vs Hire Developer 2026 — When $200 Plan Hurts More',
   date: '2026-05-04',
   excerpt: 'Cursor Pro is $20/month, Pro+ is $60, Ultra is $200. One Agent task burns 5–10 premium requests, and a single multi-step refactor on a real codebase eats your monthly credit pool by week two. Here is exactly when Cursor is the right call, when a developer is, and the cost crossover most founders only see after they have shipped a security bug to prod.',
   readingTime: '13 min read',

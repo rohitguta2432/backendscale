@@ -156,6 +156,26 @@ export const personSchema = {
         'Mobile App Development',
         'Expo SDK',
     ],
+    alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: 'Bharati Vidyapeeth University, Pune',
+    },
+    hasCredential: [
+        {
+            '@type': 'EducationalOccupationalCredential',
+            credentialCategory: 'Professional Experience',
+            name: '10+ years shipping production AI systems, distributed backends, and mobile MVPs',
+        },
+        {
+            '@type': 'EducationalOccupationalCredential',
+            credentialCategory: 'Specialization',
+            name: 'Founding Engineer for early-stage startups (pre-seed to Series A)',
+        },
+    ],
+    award: [
+        'Shipped 9 production projects: MyFinancial PWA, StellarMIND Text-to-SQL, MicroItinerary AI Travel Planner, ClinicAI, SanatanApp, and others',
+        '59 in-depth technical case studies published on rohitraj.tech engineering notes',
+    ],
 };
 
 // JSON-LD Schema: Service (Engineering Services)
