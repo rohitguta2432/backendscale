@@ -216,10 +216,22 @@ Yes. Bedrock supports streaming via the InvokeModelWithResponseStream API. You r
 **Q: What happens to my data when I use Bedrock versus OpenAI?**
 
 With Bedrock, your data stays within your AWS account and is never used for model training. AWS provides this guarantee contractually. You control encryption keys via KMS, network access via VPC endpoints, and audit logging via CloudTrail. With OpenAI's API, data is not used for training by default since March 2023, but the data does travel to OpenAI's infrastructure over the public internet. For regulated industries like healthcare and finance, Bedrock's data residency guarantees are often a compliance requirement, not just a preference.`
+    },
+    {
+      heading: 'Ship Your AI Product on the Right Infrastructure — Without the 6-Month Decision Loop',
+      content: `If you are picking between AWS Bedrock and OpenAI for an MVP shipping in the next 6 weeks, the infrastructure debate is not the bottleneck — the integration speed is. I ship founder MVPs end-to-end in 6 weeks: AI integration (any provider above + the routing layer), backend, frontend, India-billing-friendly deployment.
+
+If you want the cost-and-latency math redone for your specific workload — drop a note with expected RPS and prompt size and I will run the numbers against your real prompt before you commit to a vendor.
+
+→ [Hire me to ship your 6-week MVP](/en/services/6-week-mvp) (fixed price, fixed scope, full GitHub from commit one)
+→ [Or have me build the AI chatbot piece directly](/en/services/ai-chatbot-development) (WhatsApp + LLM + Hinglish)
+→ [Or hire me as a founding engineer for the long haul](/en/services/hire-founding-engineer-india) (sprint or retainer, no equity ask)
+
+Related notes: [OpenAI vs Claude vs Gemini API cost for India MVP 2026](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) for the direct API comparison, [How to add AI to your existing business app](/en/notes/how-to-integrate-ai-existing-business-app) for retrofit patterns, and [Build an AI chatbot for WhatsApp Business](/en/notes/build-ai-chatbot-whatsapp-business-india) for the production deployment playbook.`,
     }
   ],
   cta: {
-    text: 'Need help choosing the right AI infrastructure for your product?',
-    href: '/contact'
+    text: 'Ship Your AI MVP in 6 Weeks',
+    href: '/en/services/6-week-mvp'
   }
 };

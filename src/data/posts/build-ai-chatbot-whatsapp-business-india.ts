@@ -424,10 +424,20 @@ For custom-built chatbots where you want full API control and excellent document
 **Q: Do I need GPT-4 or an LLM for my business chatbot?**
 
 Most small and medium businesses do not need a full LLM-powered chatbot. A Level 2 intent-classification bot handles 90% of use cases — appointment booking, FAQ responses, status queries, and basic customer support — at 30% of the cost of an LLM-powered solution, with zero hallucination risk. You only need Level 3 (full LLM) if your use case involves open-ended product Q&A, complex sales conversations, or customer support that requires deep product knowledge across hundreds of items.`
+    },
+    {
+      heading: 'Ship Your WhatsApp Chatbot in Weeks, Not Months',
+      content: `If you are picking between a rule-based bot, an intent-classifier, and a full LLM-powered assistant, the architecture debate is not the bottleneck — picking the right Level for your use case is. I ship WhatsApp Business chatbots end-to-end: WABA approval, intent classification, LLM routing (when needed), CRM integration, Hinglish-tuned prompts, India-billing-friendly deployment.
+
+→ [Build my AI chatbot in 6 weeks](/en/services/ai-chatbot-development) (Levels 1-3, your choice, fixed price)
+→ [Or hire me for a 6-week MVP that includes the chatbot](/en/services/6-week-mvp) (full app + chatbot)
+→ [Or hire me as a founding engineer for the long haul](/en/services/hire-founding-engineer-india) (sprint or retainer, no equity ask)
+
+Related notes: [WhatsApp Business API integration guide](/en/notes/whatsapp-business-api-integration-guide-india), [OpenAI vs Claude vs Gemini API cost India 2026](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026), and [How to add AI to your existing business app](/en/notes/how-to-integrate-ai-existing-business-app).`,
     }
   ],
   cta: {
-    text: 'Want an AI chatbot for your business? Let\'s figure out the right level.',
-    href: '/contact'
+    text: 'Build Your AI Chatbot in 6 Weeks',
+    href: '/en/services/ai-chatbot-development'
   }
 };
