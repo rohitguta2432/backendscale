@@ -124,7 +124,7 @@ Most businesses see measurable improvement within 30-60 days of deploying AI fea
     }
   ],
   cta: {
-    text: 'Want AI in your existing app? I can integrate it.',
-    href: '/contact'
+    text: 'Add AI to Your Existing App — 6-Week Sprint',
+    href: '/en/services/ai-chatbot-development'
   }
 };

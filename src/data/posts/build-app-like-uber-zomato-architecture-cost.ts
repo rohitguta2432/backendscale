@@ -155,7 +155,7 @@ Not for your MVP. Simple algorithms work perfectly for early-stage on-demand app
     }
   ],
   cta: {
-    text: 'Building an on-demand app? I can help with architecture.',
-    href: '/contact'
+    text: 'Ship Your On-Demand App MVP in 6 Weeks',
+    href: '/en/services/6-week-mvp'
   }
 };

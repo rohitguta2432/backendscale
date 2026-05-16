@@ -131,7 +131,7 @@ Payment integration. If your MVP cannot accept money from day one, you are build
     }
   ],
   cta: {
-    text: 'Ready to build your MVP? Let\'s plan the architecture.',
-    href: '/contact'
+    text: 'Ship Your MVP in 6 Weeks',
+    href: '/en/services/6-week-mvp'
   }
 };
