@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 60 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 61 technical case-study posts
 
 ## Featured Projects
 
@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (60 posts)
+## All Engineering Notes (61 posts)
 
 ### AI Systems & LLM Integration
 
@@ -30,6 +30,7 @@
 - [₹805 Crore Lost to UPI Fraud This Year — I Built an Offline Scam Detector That Needs Zero Internet](https://rohitraj.tech/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector)
 - [Pinecone vs Qdrant vs pgvector — Which Vector DB for India RAG MVP (2026)](https://rohitraj.tech/en/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026)
 - [OpenAI vs Claude vs Gemini API — Real Cost for India MVP 2026](https://rohitraj.tech/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026)
+- [LangGraph vs CrewAI vs AutoGen — Which Multi-Agent Framework Wins for India MVPs in 2026](https://rohitraj.tech/en/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026)
 
 ### Backend & Architecture
 

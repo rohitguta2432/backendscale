@@ -3,6 +3,60 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "langgraph-vs-crewai-vs-autogen-india-mvp-2026",
+    "title": "LangGraph vs CrewAI vs AutoGen: Which Multi-Agent Framework Wins for India MVPs in 2026",
+    "date": "2026-05-18",
+    "excerpt": "LangGraph, CrewAI, and AutoGen all promise the same thing — orchestrate three or four LLM calls into something that feels like an agent. Real cost, real latency, and real failure modes split them sharply once you ship. Here is which one survives a 200-user India MVP, which one bankrupts you, and which one I have spent ₹40K of OpenAI credits learning to avoid.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "langgraph vs crewai vs autogen",
+      "multi-agent framework india 2026",
+      "langgraph india mvp",
+      "crewai production bugs",
+      "autogen vs langgraph cost",
+      "best ai agent framework 2026",
+      "multi-agent rag india",
+      "hire ai engineer multi-agent india"
+    ],
+    "relatedProject": "rag-for-sql"
+  },
+  {
+    "slug": "drizzle-vs-prisma-vs-typeorm-india-mvp-2026",
+    "title": "Drizzle vs Prisma vs TypeORM — Real ORM Pick for India MVP 2026",
+    "date": "2026-05-17",
+    "excerpt": "A Postgres-backed Next.js MVP shipping in 6 weeks: Drizzle cold-starts in ~40ms on Vercel Mumbai, Prisma at ~280ms (after the engine binary downloads), TypeORM at ~520ms with decorators bloating bundle size. Here is the real ORM math for an India MVP — cold start, type safety, migration story, edge runtime support, and which one to actually pick.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "drizzle vs prisma vs typeorm",
+      "best orm india mvp 2026",
+      "typescript orm comparison",
+      "drizzle orm india",
+      "prisma cold start vercel",
+      "typeorm vs prisma 2026",
+      "postgres orm next.js mvp",
+      "edge runtime orm postgres"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "openai-vs-claude-vs-gemini-api-cost-india-mvp-2026",
+    "title": "OpenAI vs Claude vs Gemini API — Real Cost for India MVP 2026",
+    "date": "2026-05-16",
+    "excerpt": "A WhatsApp support bot doing 10K conversations a month costs roughly ₹1,250 on Gemini 2.5 Flash, ₹3,800 on GPT-5-mini, and ₹7,200 on Claude Sonnet 4 — before GST, FX margin, and the 2% TDS your CA will flag on foreign invoices. Here is the line-item cost math, the latency truth from a Mumbai-based MVP, and which API actually wins for which India use case.",
+    "readingTime": "15 min read",
+    "keywords": [
+      "openai vs claude vs gemini",
+      "llm api cost india",
+      "gpt-5 vs claude vs gemini pricing",
+      "india mvp llm choice 2026",
+      "cheapest llm api india",
+      "whatsapp chatbot llm cost",
+      "rag llm api comparison",
+      "gemini flash vs gpt-5-mini india"
+    ],
+    "relatedProject": "clinicai"
+  },
+  {
     "slug": "pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026",
     "title": "Pinecone vs Qdrant vs pgvector — Which Vector DB for India RAG MVP (2026)",
     "date": "2026-05-15",
@@ -181,7 +235,7 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "cursor-ai-vs-hire-developer-2026",
-    "title": "Cursor AI vs Hiring a Developer in 2026 — When the $200 Ultra Plan Costs More Than a Real Engineer Sprint",
+    "title": "Cursor AI vs Hire Developer 2026 — When $200 Plan Hurts More",
     "date": "2026-05-04",
     "excerpt": "Cursor Pro is $20/month, Pro+ is $60, Ultra is $200. One Agent task burns 5–10 premium requests, and a single multi-step refactor on a real codebase eats your monthly credit pool by week two. Here is exactly when Cursor is the right call, when a developer is, and the cost crossover most founders only see after they have shipped a security bug to prod.",
     "readingTime": "13 min read",
@@ -199,7 +253,7 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "bolt-new-vs-hire-developer-2026",
-    "title": "Bolt.new vs Hiring a Developer in 2026 — When the AI Builder Hits Its Limit and the Token Bill Beats the Salary",
+    "title": "Bolt.new vs Hire Developer 2026 — When AI Builder Hits Limits",
     "date": "2026-05-03",
     "excerpt": "Bolt.new ships a working prototype in 30 minutes for $25/month. Then complexity arrives — a 31% success rate on real SaaS apps, 5–8 million tokens burned on one Supabase auth bug, and a $5K–$40K hardening bill. Here is exactly when Bolt is the right call, when a developer is, and the cost crossover most founders find too late.",
     "readingTime": "12 min read",
@@ -217,8 +271,9 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "hire-ai-engineer-india-2026",
-    "title": "Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both",
+    "title": "Hire AI Engineer India 2026 — Real Cost, Stack, Sprint Alternative",
     "date": "2026-05-02",
+    "updated": "2026-05-16",
     "excerpt": "AI engineers in the US cost $180K-$280K all-in. India full-time: $45K-$95K. A 6-week senior contract with a builder who has shipped RAG, MCP, and on-device AI in production: $15K-$25K flat. Here is the honest breakdown.",
     "readingTime": "13 min read",
     "keywords": [
@@ -235,8 +290,9 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "hire-technical-cofounder-india-2026",
-    "title": "Hire a Technical Co-Founder in India in 2026 — What It Actually Costs, When You Need One, and the Cheaper Alternative",
+    "title": "Hire Technical Co-Founder India 2026 — Cost, Equity, Alternative",
     "date": "2026-05-01",
+    "updated": "2026-05-16",
     "excerpt": "Technical co-founders in India cost 25-50% equity and 6-12 months to find. Here are the 2026 numbers, the 4-year dilution math, and the contrarian case that most pre-seed founders should hire a senior contractor first and a co-founder never.",
     "readingTime": "11 min read",
     "keywords": [
@@ -253,8 +309,9 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "founding-engineer-equity-percentage-2026",
-    "title": "How Much Equity Should a Founding Engineer Get in 2026? Real Numbers, Cap-Table Math, and a Cheaper Alternative",
+    "title": "Founding Engineer Equity 2026 — How Much to Negotiate (India)",
     "date": "2026-04-29",
+    "updated": "2026-05-16",
     "excerpt": "Carta says 1.5% for hire #1, dropping to 0.33% by hire #5. Pave median is 1%. AI talent pressure pushed the floor up since March 2026. Honest 2026 numbers — plus the $0-equity alternative most pre-seed founders should default to.",
     "readingTime": "11 min read",
     "keywords": [
@@ -391,8 +448,9 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "lovable-app-production-bugs-need-real-engineer-2026",
-    "title": "When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026",
+    "title": "Lovable App Production Bugs — 5 Fixes Need a Real Engineer (2026)",
     "date": "2026-04-25",
+    "updated": "2026-05-16",
     "excerpt": "Lovable, Bolt, and v0 ship 70% of an MVP in a weekend. The remaining 30% — auth edge cases, RLS, payment webhooks, performance, schema migrations — is where every vibe-coded app breaks. Here are the 5 production bugs that always need a real engineer to fix, and what the rescue work actually costs.",
     "readingTime": "11 min read",
     "keywords": [
