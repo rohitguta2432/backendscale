@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 50 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 60 technical case-study posts
 
 ## Featured Projects
 
@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (59 posts)
+## All Engineering Notes (60 posts)
 
 ### AI Systems & LLM Integration
 
@@ -32,6 +32,8 @@
 - [OpenAI vs Claude vs Gemini API — Real Cost for India MVP 2026](https://rohitraj.tech/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026)
 
 ### Backend & Architecture
+
+- [Drizzle vs Prisma vs TypeORM — Real ORM Pick for India MVP 2026](https://rohitraj.tech/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026)
 
 - [How I Built an Enterprise Deal Matching Platform with Spring Boot + Next.js + GPT-4o](https://rohitraj.tech/en/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs)
 - [Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21 — 12-Module Architecture](https://rohitraj.tech/en/notes/build-multi-tenant-saas-spring-boot-java-21)

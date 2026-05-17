@@ -60,6 +60,7 @@ import { clerkVsSupabaseAuthVsBetterAuthIndia2026 } from './clerk-vs-supabase-au
 import { vercelVsRailwayVsHetznerIndiaMvpHosting2026 } from './vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026';
 import { pineconeVsQdrantVsPgvectorIndiaRagMvp2026 } from './pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026';
 import { openaiVsClaudeVsGeminiApiCostIndiaMvp2026 } from './openai-vs-claude-vs-gemini-api-cost-india-mvp-2026';
+import { drizzleVsPrismaVsTypeormIndiaMvp2026 } from './drizzle-vs-prisma-vs-typeorm-india-mvp-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -121,6 +122,7 @@ const allPosts: BlogPost[] = [
   vercelVsRailwayVsHetznerIndiaMvpHosting2026,
   pineconeVsQdrantVsPgvectorIndiaRagMvp2026,
   openaiVsClaudeVsGeminiApiCostIndiaMvp2026,
+  drizzleVsPrismaVsTypeormIndiaMvp2026,
 ];
 
 // Validate all posts at module load time
