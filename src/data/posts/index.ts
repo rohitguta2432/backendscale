@@ -62,6 +62,7 @@ import { pineconeVsQdrantVsPgvectorIndiaRagMvp2026 } from './pinecone-vs-qdrant-
 import { openaiVsClaudeVsGeminiApiCostIndiaMvp2026 } from './openai-vs-claude-vs-gemini-api-cost-india-mvp-2026';
 import { drizzleVsPrismaVsTypeormIndiaMvp2026 } from './drizzle-vs-prisma-vs-typeorm-india-mvp-2026';
 import { langgraphVsCrewaiVsAutogenIndiaMvp2026 } from './langgraph-vs-crewai-vs-autogen-india-mvp-2026';
+import { hireReactNativeDeveloperIndia2026 } from './hire-react-native-developer-india-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -125,6 +126,7 @@ const allPosts: BlogPost[] = [
   openaiVsClaudeVsGeminiApiCostIndiaMvp2026,
   drizzleVsPrismaVsTypeormIndiaMvp2026,
   langgraphVsCrewaiVsAutogenIndiaMvp2026,
+  hireReactNativeDeveloperIndia2026,
 ];
 
 // Validate all posts at module load time

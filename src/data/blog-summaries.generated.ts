@@ -21,6 +21,24 @@ export const blogSummaries: BlogPostSummary[] = [
     "relatedProject": "rag-for-sql"
   },
   {
+    "slug": "hire-react-native-developer-india-2026",
+    "title": "Hire React Native Developer India 2026: Founding Engineer vs Agency vs Freelance (Real Cost)",
+    "date": "2026-05-18",
+    "excerpt": "A founding engineer in India ships your React Native MVP for ₹6–9L in 6 weeks. The same scope from a Bangalore agency quotes ₹22–35L and lands in 16. A Toptal freelancer is ₹4,500/hr and a 3-week hiring loop. Here is the real cost math for 2026, which model fails on which kind of app, and the decision tree I wish my last three clients had read.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "hire react native developer india 2026",
+      "react native developer india cost",
+      "react native mvp india",
+      "react native founding engineer india",
+      "react native agency vs freelance india",
+      "hire react native developer cost",
+      "react native expo india mvp",
+      "react native developer salary india 2026"
+    ],
+    "relatedProject": "sanatanapp"
+  },
+  {
     "slug": "drizzle-vs-prisma-vs-typeorm-india-mvp-2026",
     "title": "Drizzle vs Prisma vs TypeORM — Real ORM Pick for India MVP 2026",
     "date": "2026-05-17",
