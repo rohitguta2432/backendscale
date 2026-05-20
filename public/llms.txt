@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 62 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 63 technical case-study posts
 
 ## Featured Projects
 
@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (62 posts)
+## All Engineering Notes (63 posts)
 
 ### AI Systems & LLM Integration
 
@@ -54,6 +54,7 @@
 - [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](https://rohitraj.tech/en/notes/idea-to-play-store-sanatanapp-architecture)
 - [React Native vs Flutter in 2026: Which One for Your App?](https://rohitraj.tech/en/notes/react-native-vs-flutter-2026)
 - [Hire React Native Developer India 2026 — Founding Engineer vs Agency vs Freelance (Real Cost)](https://rohitraj.tech/en/notes/hire-react-native-developer-india-2026)
+- [Hire Flutter Developer India 2026 — Founding Engineer vs Agency vs FlutterFlow (Real Cost)](https://rohitraj.tech/en/notes/hire-flutter-developer-india-2026)
 
 ### Web & PWA
 

@@ -3,6 +3,24 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "hire-flutter-developer-india-2026",
+    "title": "Hire Flutter Developer India 2026: Founding Engineer vs Agency vs FlutterFlow (Real Cost)",
+    "date": "2026-05-20",
+    "excerpt": "A founding engineer in India ships a Flutter MVP in 5–8 weeks for ₹6.5–9.5L fixed. A Bangalore agency quotes ₹24–38L for the same scope and lands in 16. FlutterFlow saves 3 weeks of UI work and then traps you in a no-code stack you cannot extend. Here is the real cost math for May 2026, which Flutter packages survive production, and the decision tree I wish my last two FinTech clients had read.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "hire flutter developer india 2026",
+      "flutter developer india cost",
+      "flutter mvp india",
+      "flutter founding engineer india",
+      "flutter vs flutterflow india",
+      "hire flutter developer cost",
+      "flutter riverpod bloc india mvp",
+      "flutter developer salary india 2026"
+    ],
+    "relatedProject": "sanatanapp"
+  },
+  {
     "slug": "langgraph-vs-crewai-vs-autogen-india-mvp-2026",
     "title": "LangGraph vs CrewAI vs AutoGen: Which Multi-Agent Framework Wins for India MVPs in 2026",
     "date": "2026-05-18",
