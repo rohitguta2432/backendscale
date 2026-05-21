@@ -3,6 +3,24 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "resend-vs-sendgrid-vs-aws-ses-india-mvp-2026",
+    "title": "Resend vs SendGrid vs AWS SES for India MVPs in 2026 — Real Cost on 10K Transactional Emails",
+    "date": "2026-05-21",
+    "excerpt": "Resend looks the friendliest, SendGrid looks the safest, and AWS SES looks the cheapest. Run a real 10K-email/month India MVP through each and the math, the deliverability to Indian Gmail inboxes, and the DLT-style compliance burden separate them by an order of magnitude. Here is which one survives a 50-user-to-5K-user growth curve, which one bankrupts you at scale, and the exact ₹ numbers I have logged across four client launches.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "resend vs sendgrid vs ses",
+      "transactional email india 2026",
+      "resend india mvp",
+      "aws ses india pricing",
+      "sendgrid india cost",
+      "best transactional email api india",
+      "email deliverability india gmail",
+      "hire backend developer india mvp"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "hire-flutter-developer-india-2026",
     "title": "Hire Flutter Developer India 2026: Founding Engineer vs Agency vs FlutterFlow (Real Cost)",
     "date": "2026-05-20",
