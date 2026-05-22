@@ -3,6 +3,24 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "hire-ios-developer-india-mvp-2026",
+    "title": "Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift Freelancer (Real Cost)",
+    "date": "2026-05-22",
+    "excerpt": "A founding engineer in India ships a native iOS MVP in 6–8 weeks for ₹7.5–10.5L fixed — Swift, SwiftUI, TestFlight, both review submissions, all in. A Bangalore agency quotes ₹28–42L for the same scope, lands in 17 weeks, and hands you a codebase mixing UIKit and SwiftUI across screens. Here is the May 2026 rate card, the App Store review traps that bite native iOS specifically, and the decision tree I wish my last three FinTech and consumer-app founders had read.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "hire ios developer india 2026",
+      "ios developer india cost",
+      "swift mvp india",
+      "native ios founding engineer india",
+      "hire swiftui developer india",
+      "ios developer salary india 2026",
+      "ios mvp app store review india",
+      "native ios vs flutter vs react native india"
+    ],
+    "relatedProject": "sanatanapp"
+  },
+  {
     "slug": "resend-vs-sendgrid-vs-aws-ses-india-mvp-2026",
     "title": "Resend vs SendGrid vs AWS SES for India MVPs in 2026 — Real Cost on 10K Transactional Emails",
     "date": "2026-05-21",

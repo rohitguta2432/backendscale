@@ -16,7 +16,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (64 posts)
+## All Engineering Notes (65 posts)
 
 ### AI Systems & LLM Integration
 
@@ -44,6 +44,7 @@
 - [Spring Boot vs Node.js for Your Startup Backend (2026)](https://rohitraj.tech/en/notes/spring-boot-vs-nodejs-startup-backend-2026)
 - [Vercel vs Railway vs Hetzner — India MVP Hosting Cost & Latency (2026)](https://rohitraj.tech/en/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026)
 - [Resend vs SendGrid vs AWS SES for India MVPs in 2026 — Real Cost on 10K Transactional Emails](https://rohitraj.tech/en/notes/resend-vs-sendgrid-vs-aws-ses-india-mvp-2026)
+- [Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift Freelancer (Real Cost)](https://rohitraj.tech/en/notes/hire-ios-developer-india-mvp-2026)
 
 ### Mobile & React Native
 
