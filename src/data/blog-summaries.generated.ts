@@ -3,6 +3,24 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "posthog-vs-mixpanel-vs-amplitude-india-mvp-2026",
+    "title": "PostHog vs Mixpanel vs Amplitude — Best Product Analytics for India MVP (2026)",
+    "date": "2026-05-23",
+    "excerpt": "PostHog wins for engineering-led India MVPs because it self-hosts on AWS Mumbai for DPDP compliance and bundles session replay + feature flags into one tier. Mixpanel wins for PM-heavy teams that want the lowest learning curve. Amplitude wins for funded teams with a dedicated analyst. The real cost gap at 10M events/month is 8×. Here is the math, the data-residency reality, and the exact stack I run on myFinancial.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "posthog vs mixpanel vs amplitude",
+      "product analytics india mvp 2026",
+      "posthog india self host aws mumbai",
+      "mixpanel india pricing",
+      "amplitude india startup cost",
+      "dpdp compliant analytics india",
+      "best analytics tool indian startup",
+      "hire founding engineer india"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "hire-ios-developer-india-mvp-2026",
     "title": "Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift Freelancer (Real Cost)",
     "date": "2026-05-22",

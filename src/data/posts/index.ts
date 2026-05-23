@@ -66,6 +66,7 @@ import { hireReactNativeDeveloperIndia2026 } from './hire-react-native-developer
 import { hireFlutterDeveloperIndia2026 } from './hire-flutter-developer-india-2026';
 import { resendVsSendgridVsAwsSesIndiaMvp2026 } from './resend-vs-sendgrid-vs-aws-ses-india-mvp-2026';
 import { hireIosDeveloperIndiaMvp2026 } from './hire-ios-developer-india-mvp-2026';
+import { posthogVsMixpanelVsAmplitudeIndiaMvp2026 } from './posthog-vs-mixpanel-vs-amplitude-india-mvp-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -133,6 +134,7 @@ const allPosts: BlogPost[] = [
   hireFlutterDeveloperIndia2026,
   resendVsSendgridVsAwsSesIndiaMvp2026,
   hireIosDeveloperIndiaMvp2026,
+  posthogVsMixpanelVsAmplitudeIndiaMvp2026,
 ];
 
 // Validate all posts at module load time
