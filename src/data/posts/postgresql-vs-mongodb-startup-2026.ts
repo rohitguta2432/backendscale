@@ -7,11 +7,21 @@ export const postgresqlVsMongodbStartup2026: BlogPost = {
   excerpt: 'A practical comparison of PostgreSQL and MongoDB for startups — when to use each, real performance numbers, and why most startups should just pick Postgres.',
   readingTime: '7 min read',
   keywords: ['postgresql vs mongodb', 'database for startup', 'sql vs nosql 2026', 'choose database'],
+  coverImage: {
+    src: '/images/notes/postgresql-vs-mongodb-startup-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)',
+  },
   relatedProject: 'stellarmind',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `A practical comparison of PostgreSQL and MongoDB for startups — when to use each, real performance numbers, and why most startups should just pick Postgres. PostgreSQL is the better database for most startups because it handles relational data, JSON documents, full-text search, and vector embeddings in a single system with full ACID transactions. MongoDB is the better choice when your data is genuinely document-shaped, your schema changes constantly during rapid prototyping, or you need horizontal sharding across regions from day one.`,
+    },
+{
       heading: 'The Debate That Won\'t Die',
-      content: `PostgreSQL is the better database for most startups because it handles relational data, JSON documents, full-text search, and vector embeddings in a single system with full ACID transactions. MongoDB is the better choice when your data is genuinely document-shaped, your schema changes constantly during rapid prototyping, or you need horizontal sharding across regions from day one.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+PostgreSQL is the better database for most startups because it handles relational data, JSON documents, full-text search, and vector embeddings in a single system with full ACID transactions. MongoDB is the better choice when your data is genuinely document-shaped, your schema changes constantly during rapid prototyping, or you need horizontal sharding across regions from day one.
 
 Every few years, someone declares SQL dead. Then someone declares NoSQL dead. Neither has died. Both are thriving in 2026.
 

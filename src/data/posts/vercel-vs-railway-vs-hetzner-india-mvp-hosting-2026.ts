@@ -22,7 +22,11 @@ export const vercelVsRailwayVsHetznerIndiaMvpHosting2026: BlogPost = {
     alt: 'Constellation of luminous nodes on dark backdrop illustrating Vercel vs Railway vs Hetzner India MVP hosting cost comparison 2026',
   },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `At 100K monthly requests for an Indian MVP, Vercel Pro lands at roughly ₹2,800/month, Railway hovers around ₹1,800/month, and a Hetzner CX22 + Cloudflare combo is ₹420/month. Here is the real cost math, the Mumbai latency truth, and the migration story when one of them stops fitting your scale. By Rohit Raj — Founding Engineer · 10+ yrs MVP shipping · LinkedIn`,
+    },
+{
       heading: 'Vercel vs Railway vs Hetzner — India MVP Hosting Cost & Latency (2026)',
       content: `By [Rohit Raj](/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 

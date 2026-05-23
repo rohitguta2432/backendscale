@@ -7,6 +7,10 @@ export const howMuchDoesItCostToBuildMobileAppIndia2026: BlogPost = {
   excerpt: 'Honest cost breakdown for building Android and iOS apps in India — from a freelance developer who has shipped apps to Play Store. No agency markup, no inflated estimates.',
   readingTime: '15 min read',
   keywords: ['mobile app development cost India', 'cost to build app India 2026', 'hire app developer India', 'React Native app cost', 'freelance mobile developer India'],
+  coverImage: {
+    src: '/images/notes/how-much-does-it-cost-to-build-mobile-app-india-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Develo',
+  },
   sections: [
     {
       heading: 'TL;DR',
@@ -18,7 +22,9 @@ These numbers don't apply if you need a 5+ person team, formal SLAs, or HIPAA/SO
     },
     {
       heading: 'How Much Does It Really Cost to Build a Mobile App in India?',
-      content: `Building a mobile app in India costs between $3,000 and $30,000 when you hire a senior freelance developer directly — far less than the $50,000-$500,000 agencies quote. A simple utility app runs $3,000-$6,000, an MVP with auth and database costs $7,000-$12,000, and a complex app with AI, payments, and real-time features ranges from $12,000-$30,000. The key is cutting out agency overhead.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Building a mobile app in India costs between $3,000 and $30,000 when you hire a senior freelance developer directly — far less than the $50,000-$500,000 agencies quote. A simple utility app runs $3,000-$6,000, an MVP with auth and database costs $7,000-$12,000, and a complex app with AI, payments, and real-time features ranges from $12,000-$30,000. The key is cutting out agency overhead.
 
 Google "cost to build a mobile app" and you'll find articles from agencies quoting $50,000–$500,000. These numbers are real — for agencies. They include project managers, QA teams, designers, and 40% margins.
 

@@ -7,11 +7,21 @@ export const buildFamilyBudgetAppAndroidOfflineKotlin: BlogPost = {
   excerpt: 'Architecture deep-dive into PaisaGuard — a privacy-first Android app for middle-class families with expense tracking, grocery budget mode, bill calendar, debt snowball, and 4 more modules. Zero backend.',
   readingTime: '10 min read',
   keywords: ['family budget app android', 'kotlin jetpack compose finance app', 'offline budget tracker', 'debt snowball app android', 'grocery budget tracker app'],
+  coverImage: {
+    src: '/images/notes/build-family-budget-app-android-offline-kotlin-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Building a Family Budget App with 8 Financial Modules',
+  },
   relatedProject: 'paisaguard',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Architecture deep-dive into PaisaGuard — a privacy-first Android app for middle-class families with expense tracking, grocery budget mode, bill calendar, debt snowball, and 4 more modules. Zero backend. I built PaisaGuard, a fully offline Android budget app with 8 financial modules — expense tracking, grocery budget mode, bill calendar, emergency fund tracker, debt snowball, affordability calculator, family expense splitting, and monthly reports — using Kotlin and Jetpack Compose with zero backend, designed specifically for Indian middle-class families who need real-time grocery budget tracking and two-person expense visibility.`,
+    },
+{
       heading: 'Why Families Need a Different Finance App',
-      content: `I built PaisaGuard, a fully offline Android budget app with 8 financial modules — expense tracking, grocery budget mode, bill calendar, emergency fund tracker, debt snowball, affordability calculator, family expense splitting, and monthly reports — using Kotlin and Jetpack Compose with zero backend, designed specifically for Indian middle-class families who need real-time grocery budget tracking and two-person expense visibility.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+I built PaisaGuard, a fully offline Android budget app with 8 financial modules — expense tracking, grocery budget mode, bill calendar, emergency fund tracker, debt snowball, affordability calculator, family expense splitting, and monthly reports — using Kotlin and Jetpack Compose with zero backend, designed specifically for Indian middle-class families who need real-time grocery budget tracking and two-person expense visibility.
 
 Most finance apps are built for individuals — one person, one bank account, one spending pattern. Families are fundamentally different:
 

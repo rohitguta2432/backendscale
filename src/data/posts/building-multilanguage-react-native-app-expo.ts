@@ -7,11 +7,21 @@ export const buildingMultilanguageReactNativeAppExpo: BlogPost = {
   excerpt: 'How I architected a 5-language devotional app with bundled JSON content, offline-first storage, and expo-av audio streaming — shipping to Play Store at ~15MB.',
   readingTime: '9 min read',
   keywords: ['react native i18n', 'expo sdk 52', 'react native offline app', 'expo-av audio streaming', 'react native multilanguage'],
+  coverImage: {
+    src: '/images/notes/building-multilanguage-react-native-app-expo-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Building a Multi-Language React Native App with Expo SDK 52',
+  },
   relatedProject: 'sanatanapp',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `How I architected a 5-language devotional app with bundled JSON content, offline-first storage, and expo-av audio streaming — shipping to Play Store at ~15MB. Building a multi-language React Native app with Expo SDK 52 requires separating UI i18n (using react-i18next for ~80 string keys) from content i18n (inline translations embedded directly in JSON data files). This approach, combined with bundled JSON for offline text and expo-av for streamed audio, lets you ship a 5-language app under 15MB with zero backend costs and full offline support on day one.`,
+    },
+{
       heading: 'The Problem: 5 Apps Where 1 Should Exist',
-      content: `Building a multi-language React Native app with Expo SDK 52 requires separating UI i18n (using react-i18next for ~80 string keys) from content i18n (inline translations embedded directly in JSON data files). This approach, combined with bundled JSON for offline text and expo-av for streamed audio, lets you ship a 5-language app under 15MB with zero backend costs and full offline support on day one.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Building a multi-language React Native app with Expo SDK 52 requires separating UI i18n (using react-i18next for ~80 string keys) from content i18n (inline translations embedded directly in JSON data files). This approach, combined with bundled JSON for offline text and expo-av for streamed audio, lets you ship a 5-language app under 15MB with zero backend costs and full offline support on day one.
 
 My grandmother recited Hanuman Chalisa every morning. When I wanted that same experience on my phone, I downloaded 5 different apps — one for Chalisa, one for Gita, one for Aarti, one for Ramayan audio. Each was ad-heavy, single-purpose, and 40-80MB.
 

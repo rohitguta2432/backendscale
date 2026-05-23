@@ -23,7 +23,9 @@ This trade-off doesn't apply if you need GPT-4-class reasoning quality on every 
     },
     {
       heading: 'Why I Switched From OpenAI to AWS Bedrock',
-      content: `AWS Bedrock is the better choice for startups already running on AWS that need cost-efficient AI inference, data privacy controls, and the flexibility to switch between multiple model providers. OpenAI is the better choice for rapid prototyping, when you need the highest-quality model outputs, and when developer experience matters more than infrastructure control.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+AWS Bedrock is the better choice for startups already running on AWS that need cost-efficient AI inference, data privacy controls, and the flexibility to switch between multiple model providers. OpenAI is the better choice for rapid prototyping, when you need the highest-quality model outputs, and when developer experience matters more than infrastructure control.
 
 I was building MyFinancial — a privacy-focused financial advisory app for Indian users. The AI feature is a contextual chat advisor called Kira that answers questions like "Am I saving enough?" or "How can I optimize my taxes under 80C?"
 

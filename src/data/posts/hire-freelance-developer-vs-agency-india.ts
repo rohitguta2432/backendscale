@@ -7,6 +7,10 @@ export const hireFreelanceDeveloperVsAgencyIndia: BlogPost = {
   excerpt: 'When should you hire a freelancer? When does an agency make sense? A working developer breaks down the real trade-offs — cost, quality, communication, and delivery.',
   readingTime: '15 min read',
   keywords: ['freelance developer vs agency India', 'hire software developer India', 'freelance vs agency cost', 'hire developer for startup', 'software development India'],
+  coverImage: {
+    src: '/images/notes/hire-freelance-developer-vs-agency-india-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Freelance Developer vs Agency in India: An Honest Comparison from the Developer ',
+  },
   sections: [
     {
       heading: 'TL;DR',
@@ -18,7 +22,9 @@ This doesn't apply if your project genuinely needs five concurrent workstreams o
     },
     {
       heading: 'I\'ve Been on Both Sides',
-      content: `Hire a freelance developer when your project is well-defined, your budget is under thirty thousand dollars, and you want direct communication with the person writing your code. Hire an agency when you need five or more developers working simultaneously, have compliance requirements like HIPAA or SOC2, or need formal SLA guarantees for uptime and support.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Hire a freelance developer when your project is well-defined, your budget is under thirty thousand dollars, and you want direct communication with the person writing your code. Hire an agency when you need five or more developers working simultaneously, have compliance requirements like HIPAA or SOC2, or need formal SLA guarantees for uptime and support.
 
 I've worked at companies building software in teams. Now I freelance. I've seen how agencies operate from the inside, and I've competed against them for clients as a solo developer.
 

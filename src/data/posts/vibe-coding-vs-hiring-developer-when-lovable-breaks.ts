@@ -14,6 +14,10 @@ export const vibeCodingVsHiringDeveloperWhenLovableBreaks: BlogPost = {
     'bolt vs hiring engineer',
     'ai coding tools 2026',
   ],
+  coverImage: {
+    src: '/images/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Vibe Coding vs Hiring a Developer',
+  },
   relatedProject: 'myFinancial',
   sections: [
     {
@@ -26,7 +30,9 @@ This doesn't apply to internal tools, prototypes, or apps that intentionally sta
     },
     {
       heading: 'Should You Keep Vibe Coding or Hire a Developer in 2026?',
-      content: `Keep vibe coding when your app has under 500 active users, no custom auth, standard Stripe payments, and your iteration loop is fast enough to ship daily. Hire a developer — ideally a senior contractor on a fixed sprint — when any two of these are true: Lovable or Bolt breaks the same feature every time you try to extend it, your auth or payments need customization the tool cannot express, you are entering a regulated domain, or your AI coding loop has slowed to less than one working feature per day.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Keep vibe coding when your app has under 500 active users, no custom auth, standard Stripe payments, and your iteration loop is fast enough to ship daily. Hire a developer — ideally a senior contractor on a fixed sprint — when any two of these are true: Lovable or Bolt breaks the same feature every time you try to extend it, your auth or payments need customization the tool cannot express, you are entering a regulated domain, or your AI coding loop has slowed to less than one working feature per day.
 
 "Vibe coding" was coined by Andrej Karpathy in February 2025 and named Collins Dictionary's 2025 Word of the Year. In 2026, it is not a novelty — the ecosystem has attracted $4.7 billion in investment, 40% of YC's W25 batch used AI builders for their MVPs, and founders report shipping prototypes in 2.4 days on average. This is a structural change in how software gets built, not a hype cycle.
 

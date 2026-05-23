@@ -22,7 +22,11 @@ export const clerkVsSupabaseAuthVsBetterAuthIndia2026: BlogPost = {
     alt: 'Three abstract auth stack pillars on dark backdrop illustrating Clerk vs Supabase Auth vs Better-Auth comparison for India MVP 2026',
   },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `At 10K monthly active users for an Indian MVP, Clerk Pro lands around ₹17,000/month, Supabase Auth is included in the same ₹2,100 Pro plan, and Better-Auth on your own Postgres costs ₹0 plus a weekend of engineering. Here is the real cost math, lock-in tradeoff, and the migration story when you outgrow the hosted option. By Rohit Raj — Founding Engineer, 10+ years shipping production MVPs · LinkedIn`,
+    },
+{
       heading: 'Clerk vs Supabase Auth vs Better-Auth — Which to Pick for India MVP (2026)',
       content: `By [Rohit Raj](/about) — Founding Engineer, 10+ years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 

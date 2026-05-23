@@ -15,11 +15,21 @@ export const sixWeekMvpVs3MonthAgencyWhichShipsFirst: BlogPost = {
     'mvp contract structure',
     'agency mvp delays',
   ],
+  coverImage: {
+    src: '/images/notes/6-week-mvp-vs-3-month-agency-which-ships-first-cover.jpg',
+    alt: 'Abstract editorial cover illustrating 6-Week MVP Sprint vs 3-Month Agency Build',
+  },
   relatedProject: 'myFinancial',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Most "3-month MVP" agency builds take 5-6 months. Most "6-week sprints" take 6 weeks. The difference is not engineer talent — it is the contract structure and the scope discipline. Honest comparison from someone who has seen both fail and succeed. When a founder gets two MVP quotes — a $20K 6-week sprint from a senior contractor and an $80K 3-month build from an agency — the assumption is the agency build is "more serious" and the sprint is "scrappy". The reality from 30+ MVPs I have observed: the 6-week sprint ships in 6 weeks`,
+    },
+{
       heading: '6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?',
-      content: `When a founder gets two MVP quotes — a $20K 6-week sprint from a senior contractor and an $80K 3-month build from an agency — the assumption is the agency build is "more serious" and the sprint is "scrappy". The reality from 30+ MVPs I have observed: the 6-week sprint ships in 6 weeks 90% of the time, and the 3-month agency build ships in 18-24 weeks 70% of the time.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+When a founder gets two MVP quotes — a $20K 6-week sprint from a senior contractor and an $80K 3-month build from an agency — the assumption is the agency build is "more serious" and the sprint is "scrappy". The reality from 30+ MVPs I have observed: the 6-week sprint ships in 6 weeks 90% of the time, and the 3-month agency build ships in 18-24 weeks 70% of the time.
 
 Engineer talent is not the difference. The senior at the agency is good. The contractor is good. Both write production code. The difference is contract structure: the sprint is fixed-scope and the agency build is hourly-or-monthly with a soft scope. That single structural difference produces a 3x time difference in shipping speed.
 

@@ -7,11 +7,21 @@ export const iBuiltMultiTenantSaasAlone12ModuleSpringBoot: BlogPost = {
   excerpt: 'The SaaS market hits $465B in 2026 and 70% of vendors use multi-tenancy. I built RetailOS — a 12-module Spring Boot monorepo with billing, inventory, GST invoicing, khata ledger, and offline sync — as a solo engineer. Here\'s every architecture decision.',
   readingTime: '11 min read',
   keywords: ['build multi-tenant SaaS solo developer', 'spring boot multi-module monorepo', 'solo SaaS architecture 2026', 'founding engineer SaaS platform', 'java 21 multi-tenant architecture'],
+  coverImage: {
+    src: '/images/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot-cover.jpg',
+    alt: 'Abstract editorial cover illustrating a 12-module Spring Boot multi-tenant SaaS architecture',
+  },
   relatedProject: 'retailos',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `The SaaS market hits $465B in 2026 and 70% of vendors use multi-tenancy. I built RetailOS — a 12-module Spring Boot monorepo with billing, inventory, GST invoicing, khata ledger, and offline sync — as a solo engineer. Here's every architecture decision. I built RetailOS — a complete multi-tenant retail SaaS platform with 12 Maven modules covering authentication, billing, inventory, GST invoicing, khata credit ledger, and offline sync — entirely as a solo engineer using Spring Boot 3.4 and Java 21, proving that the right monorepo architecture lets one developer ship what most teams need five`,
+    },
+{
       heading: 'One Engineer. Twelve Modules. Zero Shortcuts.',
-      content: `I built RetailOS — a complete multi-tenant retail SaaS platform with 12 Maven modules covering authentication, billing, inventory, GST invoicing, khata credit ledger, and offline sync — entirely as a solo engineer using Spring Boot 3.4 and Java 21, proving that the right monorepo architecture lets one developer ship what most teams need five to ten engineers to build.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+I built RetailOS — a complete multi-tenant retail SaaS platform with 12 Maven modules covering authentication, billing, inventory, GST invoicing, khata credit ledger, and offline sync — entirely as a solo engineer using Spring Boot 3.4 and Java 21, proving that the right monorepo architecture lets one developer ship what most teams need five to ten engineers to build.
 
 The SaaS market is projected to hit $465 billion in 2026. Over 70% of modern SaaS vendors use some form of multi-tenancy. And yet, most developers believe building a multi-tenant SaaS platform requires a team of 5-10 engineers.
 

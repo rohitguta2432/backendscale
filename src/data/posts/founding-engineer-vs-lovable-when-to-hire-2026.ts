@@ -14,11 +14,21 @@ export const foundingEngineerVsLovableWhenToHire2026: BlogPost = {
     'when to hire first engineer startup',
     'lovable production',
   ],
+  coverImage: {
+    src: '/images/notes/founding-engineer-vs-lovable-when-to-hire-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Founding Engineer vs Lovable in 2026',
+  },
   relatedProject: 'myFinancial',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Lovable ships your first prototype in a weekend. A founding engineer costs $180K + equity. Here is the honest trade-off, where Lovable breaks, and the in-between option nobody talks about. Pick Lovable (or Bolt, v0, Cursor) if you are a pre-PMF founder who needs to validate a single idea for under $100. Hire a founding engineer if you have product-market fit, raised capital, and need someone on the cap table to build the company with you. If you are in the middle — validated idea, no funding yet, MVP is live but breaking — hire`,
+    },
+{
       heading: 'Founding Engineer or Lovable — Which One Should You Pick in 2026?',
-      content: `Pick Lovable (or Bolt, v0, Cursor) if you are a pre-PMF founder who needs to validate a single idea for under $100. Hire a founding engineer if you have product-market fit, raised capital, and need someone on the cap table to build the company with you. If you are in the middle — validated idea, no funding yet, MVP is live but breaking — hire a senior contractor on a 6-week sprint instead.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Pick Lovable (or Bolt, v0, Cursor) if you are a pre-PMF founder who needs to validate a single idea for under $100. Hire a founding engineer if you have product-market fit, raised capital, and need someone on the cap table to build the company with you. If you are in the middle — validated idea, no funding yet, MVP is live but breaking — hire a senior contractor on a 6-week sprint instead.
 
 That is the short answer. Most founders think those are their only two options, so they either waste six months learning React while their market moves on, or they hand 0.5–2% equity to a stranger they met at a YC pre-batch event.
 

@@ -32,7 +32,9 @@ This crossover doesn't apply if your app stays simple, internal-only, or never s
     },
     {
       heading: 'Bolt.new vs Hiring a Developer in 2026 — The Honest Answer Up Front',
-      content: `If your project will stay under 10K lines of code, has no payment edge cases, and you are still proving the idea, Bolt.new at $25 per month beats hiring a developer every time. The crossover happens the moment you onboard real users — Bolt's complex-app success rate drops to 31% above a certain complexity threshold, and a single Supabase auth bug routinely burns 5 to 8 million tokens before it is fixed. At that point a senior developer at $40 per hour for two weeks is cheaper than the token refill plus your lost weekend.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+If your project will stay under 10K lines of code, has no payment edge cases, and you are still proving the idea, Bolt.new at $25 per month beats hiring a developer every time. The crossover happens the moment you onboard real users — Bolt's complex-app success rate drops to 31% above a certain complexity threshold, and a single Supabase auth bug routinely burns 5 to 8 million tokens before it is fixed. At that point a senior developer at $40 per hour for two weeks is cheaper than the token refill plus your lost weekend.
 
 The cost math nobody runs is this: Bolt's $25 per month gets you 10 million tokens, which sounds infinite until you watch one stuck bug eat a third of it. Founders on Reddit have publicly logged 8 million tokens burned in three hours fighting one auth bug — that is 80% of a monthly quota gone in an afternoon. A developer who has shipped 20 production apps fixes that same bug in 90 minutes for $60. The price of "AI is cheaper" is paying for failed attempts.
 

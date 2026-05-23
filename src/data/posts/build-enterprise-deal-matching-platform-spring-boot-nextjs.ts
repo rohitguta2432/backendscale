@@ -7,11 +7,21 @@ export const buildEnterpriseDealMatchingPlatformSpringBootNextjs: BlogPost = {
   excerpt: 'Architecture deep-dive into SynFlow — a full-stack intelligence platform that matches deals to profiles using rule-based scoring and AI-powered profile extraction from LinkedIn text.',
   readingTime: '10 min read',
   keywords: ['enterprise deal matching platform', 'spring boot nextjs full stack', 'gpt-4o profile extraction', 'deal intelligence software', 'java 21 spring boot 3.4'],
+  coverImage: {
+    src: '/images/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs-cover.jpg',
+    alt: 'Abstract editorial cover illustrating How I Built an Enterprise Deal Matching Platform with Spring Boot + Next.js + GP',
+  },
   relatedProject: 'synflow',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Architecture deep-dive into SynFlow — a full-stack intelligence platform that matches deals to profiles using rule-based scoring and AI-powered profile extraction from LinkedIn text. I built SynFlow, a full-stack enterprise deal matching platform using Spring Boot 3.4, Next.js 14, and GPT-4o that automatically scores and matches investor profiles to deals using a rule-based algorithm with AI-powered profile extraction from unstructured LinkedIn text — replacing the spreadsheets and manual introductions that dominate private deal networks today.`,
+    },
+{
       heading: 'The Problem: Deal Networks Run on Spreadsheets',
-      content: `I built SynFlow, a full-stack enterprise deal matching platform using Spring Boot 3.4, Next.js 14, and GPT-4o that automatically scores and matches investor profiles to deals using a rule-based algorithm with AI-powered profile extraction from unstructured LinkedIn text — replacing the spreadsheets and manual introductions that dominate private deal networks today.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+I built SynFlow, a full-stack enterprise deal matching platform using Spring Boot 3.4, Next.js 14, and GPT-4o that automatically scores and matches investor profiles to deals using a rule-based algorithm with AI-powered profile extraction from unstructured LinkedIn text — replacing the spreadsheets and manual introductions that dominate private deal networks today.
 
 Private deal networks — venture capital intros, M&A matchmaking, investment banking deal flow — still run on spreadsheets and manual introductions. A partner sees a deal, mentally maps it to someone in their network, and sends an email. If they forget, the match never happens.
 

@@ -7,11 +7,21 @@ export const buildOfflineFirstTripPlannerReactNativeWatermelondb: BlogPost = {
   excerpt: 'Architecture decisions behind TripHive — a collaborative trip planner that works without internet using WatermelonDB, PowerSync, and MapLibre with downloadable offline tiles.',
   readingTime: '10 min read',
   keywords: ['offline first react native app', 'watermelondb react native', 'offline maps react native', 'collaborative trip planner app', 'powersync react native sync'],
+  coverImage: {
+    src: '/images/notes/build-offline-first-trip-planner-react-native-watermelondb-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Building an Offline-First Trip Planner with React Native + WatermelonDB + Offlin',
+  },
   relatedProject: 'triphive',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Architecture decisions behind TripHive — a collaborative trip planner that works without internet using WatermelonDB, PowerSync, and MapLibre with downloadable offline tiles. I built TripHive, an offline-first collaborative trip planner using React Native, WatermelonDB, PowerSync, and MapLibre with downloadable Protomaps tiles that replaces five separate tools — Google Docs for itineraries, Google Maps for navigation, Splitwise for expenses, WhatsApp for polls, and shared sheets for packing lists — with one app that works without internet by default.`,
+    },
+{
       heading: 'Group Trip Planning Is Broken',
-      content: `I built TripHive, an offline-first collaborative trip planner using React Native, WatermelonDB, PowerSync, and MapLibre with downloadable Protomaps tiles that replaces five separate tools — Google Docs for itineraries, Google Maps for navigation, Splitwise for expenses, WhatsApp for polls, and shared sheets for packing lists — with one app that works without internet by default.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+I built TripHive, an offline-first collaborative trip planner using React Native, WatermelonDB, PowerSync, and MapLibre with downloadable Protomaps tiles that replaces five separate tools — Google Docs for itineraries, Google Maps for navigation, Splitwise for expenses, WhatsApp for polls, and shared sheets for packing lists — with one app that works without internet by default.
 
 Count the tools you used for your last group trip: WhatsApp for discussions. Google Docs for the itinerary. Google Maps for places. Splitwise for expenses. Email for hotel confirmations. Maybe a shared Google Sheet for the budget.
 

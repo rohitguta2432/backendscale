@@ -15,11 +15,21 @@ export const what15kMvpActuallyIncludesVs50kAgencyQuote: BlogPost = {
     'fixed price mvp india',
     'mvp 50k agency quote',
   ],
+  coverImage: {
+    src: '/images/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote-cover.jpg',
+    alt: 'Abstract editorial cover illustrating What a $15K MVP Actually Includes',
+  },
   relatedProject: 'myFinancial',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `A $15K-$30K fixed-price MVP and a $50K-$100K agency quote ship the same thing 80% of the time. The difference is who absorbs the markup. Here is the line-item breakdown — what is in scope, what is overhead, and where the agency margin actually comes from. If you have just received a $50K-$120K agency quote for an MVP, this post is the line-item breakdown of where that money goes — and how the same scope ships at $15K-$30K with a senior contractor in 6 weeks. The gap is not magic. It is overhead, markup, and project-management`,
+    },
+{
       heading: 'What a $15K MVP Actually Includes — vs. the $50K Agency Quote You Just Got',
-      content: `If you have just received a $50K-$120K agency quote for an MVP, this post is the line-item breakdown of where that money goes — and how the same scope ships at $15K-$30K with a senior contractor in 6 weeks. The gap is not magic. It is overhead, markup, and project-management theater that does not touch your codebase.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+If you have just received a $50K-$120K agency quote for an MVP, this post is the line-item breakdown of where that money goes — and how the same scope ships at $15K-$30K with a senior contractor in 6 weeks. The gap is not magic. It is overhead, markup, and project-management theater that does not touch your codebase.
 
 Agencies are not scams. A few are excellent. The vast majority bill your project as billable hours times a senior multiplier, then add a 30-50% markup for project managers, account managers, designers, and overhead. For a fully-staffed enterprise project, that overhead earns its keep. For a 6-week MVP that needs one engineer with strong opinions and a scope doc, the overhead is wasted spend.
 

@@ -7,10 +7,20 @@ export const howToBuildSaasMvp2026: BlogPost = {
   excerpt: 'A practical guide to building your SaaS MVP — tech stack choices, cost breakdown, timeline, and the mistakes that kill most first-time founders.',
   readingTime: '9 min read',
   keywords: ['build saas mvp', 'saas tech stack 2026', 'mvp development cost', 'startup mvp guide'],
+  coverImage: {
+    src: '/images/notes/how-to-build-saas-mvp-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating How to Build a SaaS MVP in 2026',
+  },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `A practical guide to building your SaaS MVP — tech stack choices, cost breakdown, timeline, and the mistakes that kill most first-time founders. To build a SaaS MVP in 2026, focus on 1-3 core features, use a free-tier stack (Next.js, Supabase, Vercel, Stripe), and launch in 6 weeks for $5,000-$8,500. The key approach is ruthless scope discipline — build only what proves people will pay, skip everything else, and iterate based on real user feedback after launch.`,
+    },
+{
       heading: 'What Is a SaaS MVP and How Do You Build One?',
-      content: `To build a SaaS MVP in 2026, focus on 1-3 core features, use a free-tier stack (Next.js, Supabase, Vercel, Stripe), and launch in 6 weeks for $5,000-$8,500. The key approach is ruthless scope discipline — build only what proves people will pay, skip everything else, and iterate based on real user feedback after launch.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+To build a SaaS MVP in 2026, focus on 1-3 core features, use a free-tier stack (Next.js, Supabase, Vercel, Stripe), and launch in 6 weeks for $5,000-$8,500. The key approach is ruthless scope discipline — build only what proves people will pay, skip everything else, and iterate based on real user feedback after launch.
 
 An MVP is the smallest thing you can build that proves people will pay for your solution. It's not a prototype, not a landing page, and definitely not your "full vision" with 30 features.
 

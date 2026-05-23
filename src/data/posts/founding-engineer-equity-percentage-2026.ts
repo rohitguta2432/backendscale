@@ -18,6 +18,10 @@ export const foundingEngineerEquityPercentage2026: BlogPost = {
     'pre-seed engineer equity',
     'hire founding engineer cost',
   ],
+  coverImage: {
+    src: '/images/notes/founding-engineer-equity-percentage-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Founding Engineer Equity 2026',
+  },
   relatedProject: 'myFinancial',
   sections: [
     {
@@ -31,7 +35,7 @@ This advice doesn't apply if you've already raised a seed, hit PMF, or operate i
     {
       heading: 'How Much Equity Should a Founding Engineer Get in 2026?',
       content:
-        "How much equity should a founding engineer get in 2026? The honest answer is 0.5-2% for most pre-seed startups, with a 1% median that has been rising since March 2026 due to AI talent pressure. Carta's 2026 State of Seed report puts the first technical hire at 1.5% on average, dropping to 0.85% for hire #2, 0.5% for hire #3, and 0.33% by hire #5. Pave's mid-2026 benchmark sits at 1% for the first non-founder engineer at a seed-stage US startup.\n\nThe cash side of the equation is what most online calculators miss. A US founding engineer in 2026 takes $140,000-$220,000 base plus 1-2% equity, which works out to $210,000-$350,000 in year-one cash-out for a typical pre-seed startup. An India-based founding engineer is $55,000-$110,000 plus 0.2-1% equity. A senior India contractor on a fixed-scope sprint is $15,000-$30,000 with zero equity. The structural reason every YC essay tells you to hire a founding engineer first is that pre-2024 there was no third option — you either had a co-founder or you outsourced to an agency that did not understand product. AI-assisted coding plus a senior contractor model changed that math in 2025, and 2026 is the first year where most pre-seed founders are better off skipping the founding-engineer hire entirely.\n\nThis post breaks down the actual 2026 numbers — Carta, Pave, Wellfound — explains the cap-table math at Series B for a 1% grant, and gives you a 5-step decision tree for picking between the founding-engineer hire, the senior contractor sprint, and the rare cases where giving 1% is still the right call.",
+        "By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)\n\nHow much equity should a founding engineer get in 2026? The honest answer is 0.5-2% for most pre-seed startups, with a 1% median that has been rising since March 2026 due to AI talent pressure. Carta's 2026 State of Seed report puts the first technical hire at 1.5% on average, dropping to 0.85% for hire #2, 0.5% for hire #3, and 0.33% by hire #5. Pave's mid-2026 benchmark sits at 1% for the first non-founder engineer at a seed-stage US startup.\n\nThe cash side of the equation is what most online calculators miss. A US founding engineer in 2026 takes $140,000-$220,000 base plus 1-2% equity, which works out to $210,000-$350,000 in year-one cash-out for a typical pre-seed startup. An India-based founding engineer is $55,000-$110,000 plus 0.2-1% equity. A senior India contractor on a fixed-scope sprint is $15,000-$30,000 with zero equity. The structural reason every YC essay tells you to hire a founding engineer first is that pre-2024 there was no third option — you either had a co-founder or you outsourced to an agency that did not understand product. AI-assisted coding plus a senior contractor model changed that math in 2025, and 2026 is the first year where most pre-seed founders are better off skipping the founding-engineer hire entirely.\n\nThis post breaks down the actual 2026 numbers — Carta, Pave, Wellfound — explains the cap-table math at Series B for a 1% grant, and gives you a 5-step decision tree for picking between the founding-engineer hire, the senior contractor sprint, and the rare cases where giving 1% is still the right call.",
     },
     {
       heading: 'The 2026 Numbers — Carta + Pave + Pre-Seed Reality',

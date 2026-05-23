@@ -15,11 +15,21 @@ export const supabaseRlsProductionBugsNeedRealEngineer2026: BlogPost = {
     'supabase rls audit',
     'vibe coding security 2026',
   ],
+  coverImage: {
+    src: '/images/notes/supabase-rls-production-bugs-need-real-engineer-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Your Supabase RLS Just Leaked Production Data',
+  },
   relatedProject: 'myFinancial',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Supabase row-level security is opt-in, silent when wrong, and tested with a superuser token that bypasses everything. In January 2025, 170+ Lovable apps leaked their production databases because nobody enabled RLS. Here are the 5 RLS bugs every vibe-coded app ships, and the audit pattern a senior engineer runs to catch them before user 500. If your Supabase project was scaffolded by Lovable, Bolt, or Cursor, your row-level security is almost certainly broken in at least one of five predictable ways. The fix is not another prompt. The fix is a senior engineer who reads`,
+    },
+{
       heading: 'Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026',
-      content: `If your Supabase project was scaffolded by [Lovable](/en/notes/lovable-app-production-bugs-need-real-engineer-2026), Bolt, or Cursor, your row-level security is almost certainly broken in at least one of five predictable ways. The fix is not another prompt. The fix is a senior engineer who reads the SQL and tests the policies against a real anon-key client.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+If your Supabase project was scaffolded by [Lovable](/en/notes/lovable-app-production-bugs-need-real-engineer-2026), Bolt, or Cursor, your row-level security is almost certainly broken in at least one of five predictable ways. The fix is not another prompt. The fix is a senior engineer who reads the SQL and tests the policies against a real anon-key client.
 
 The cost of getting RLS wrong is not theoretical. In January 2025, security researchers found **170+ Lovable-generated apps with fully exposed production databases** — names, emails, phone numbers, payment data — because RLS was either disabled or scoped to a permissive default policy. The apps shipped to real users. The leak was silent. Nobody noticed until the dump appeared in a Telegram channel.
 

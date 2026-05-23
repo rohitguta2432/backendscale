@@ -15,11 +15,21 @@ export const foundingEngineerIndiaVsToptalArcUplers2026: BlogPost = {
     'direct hire vs marketplace',
     'mvp engineer markup',
   ],
+  coverImage: {
+    src: '/images/notes/founding-engineer-india-vs-toptal-arc-uplers-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Hire a Founding Engineer in India',
+  },
   relatedProject: 'myFinancial',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Marketplaces like Toptal, Arc, and Uplers add 30-50% markup, 2-4 weeks of recruiter delay, and zero portfolio transparency. Here is how going direct compares — pricing, speed, quality, and what each model actually optimizes for. If you have searched "hire founding engineer India" recently, the top 5 SERP results are all marketplaces: Toptal, Arc, Uplers, Second Talent, HighCircl. Each promises a vetted senior in 24-72 hours. Each takes a 30-50% markup on top of the engineer's rate. Each adds 2-4 weeks of recruiter screening before you see a candidate. None publishes the engineer's portfolio publicly.`,
+    },
+{
       heading: 'Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026',
-      content: `If you have searched "hire founding engineer India" recently, the top 5 SERP results are all marketplaces: Toptal, Arc, Uplers, Second Talent, HighCircl. Each promises a vetted senior in 24-72 hours. Each takes a 30-50% markup on top of the engineer's rate. Each adds 2-4 weeks of recruiter screening before you see a candidate. None publishes the engineer's portfolio publicly.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+If you have searched "hire founding engineer India" recently, the top 5 SERP results are all marketplaces: Toptal, Arc, Uplers, Second Talent, HighCircl. Each promises a vetted senior in 24-72 hours. Each takes a 30-50% markup on top of the engineer's rate. Each adds 2-4 weeks of recruiter screening before you see a candidate. None publishes the engineer's portfolio publicly.
 
 The marketplace model works in some cases. It is not the right answer for most pre-seed founders shipping a 6-week MVP. This post breaks down what each marketplace actually delivers, what going direct delivers, and how to pick.
 

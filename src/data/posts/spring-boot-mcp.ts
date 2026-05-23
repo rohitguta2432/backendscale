@@ -7,6 +7,10 @@ export const springBootMcp: BlogPost = {
   excerpt: 'Implementing the Model Context Protocol for AI assistant tool integration using Spring Boot and Spring AI.',
   readingTime: '10 min read',
   keywords: ['mcp server spring boot', 'model context protocol tutorial', 'spring ai mcp', 'ai tool integration'],
+  coverImage: {
+    src: '/images/notes/spring-boot-mcp-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Building an MCP Server with Spring Boot',
+  },
   relatedProject: 'stellarmind',
   sections: [
     {
@@ -19,7 +23,9 @@ This doesn't apply if your AI integration is single-client and unlikely to grow 
     },
     {
       heading: 'What Is MCP and Why Should You Care?',
-      content: `To build an MCP server with Spring Boot, add the spring-ai-mcp-server-spring-boot-starter dependency, annotate your service methods with @Tool, and configure stdio or HTTP/SSE transport in application.yml. Spring AI auto-discovers your tools and exposes them via the Model Context Protocol, letting any compatible AI assistant — Claude, GPT-4, or custom agents — call your backend functions without bespoke integration code.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+To build an MCP server with Spring Boot, add the spring-ai-mcp-server-spring-boot-starter dependency, annotate your service methods with @Tool, and configure stdio or HTTP/SSE transport in application.yml. Spring AI auto-discovers your tools and exposes them via the Model Context Protocol, letting any compatible AI assistant — Claude, GPT-4, or custom agents — call your backend functions without bespoke integration code.
 
 The Model Context Protocol (MCP) is a standard for connecting AI assistants to external tools and data sources. Think of it as a USB-C for AI — a single protocol that lets any AI assistant call any tool, regardless of who built either side.
 

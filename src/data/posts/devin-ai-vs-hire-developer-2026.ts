@@ -23,9 +23,15 @@ export const devinAiVsHireDeveloper2026: BlogPost = {
     alt: 'Cracked monolith with glowing teal fissures illustrating Devin AI vs hire developer 2026 comparison',
   },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Devin AI dropped from $500/mo to $20/mo and now scores 51.5% on SWE-bench. Should you fire your developer and let Cognition's autonomous agent ship your MVP? The honest math, real failure modes, and when Devin actually saves money in 2026. For production MVPs in 2026, Devin alone will not ship your product. The math that actually works is to pair Devin Core ($20/month) or Team ($500/month) with a founding engineer (₹2L–3L/month in India, roughly $2,400–$3,600). Devin reliably delivers about 70% of a feature; an experienced engineer closes the remaining 30% — edge cases, integrations, product`,
+    },
+{
       heading: 'Devin AI vs Hiring a Developer in 2026: The Honest Answer',
-      content: `For production MVPs in 2026, **Devin alone will not ship your product**. The math that actually works is to pair Devin Core ($20/month) or Team ($500/month) with a founding engineer (₹2L–3L/month in India, roughly $2,400–$3,600). Devin reliably delivers about 70% of a feature; an experienced engineer closes the remaining 30% — edge cases, integrations, product judgment, customer-feedback rewrites.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+For production MVPs in 2026, **Devin alone will not ship your product**. The math that actually works is to pair Devin Core ($20/month) or Team ($500/month) with a founding engineer (₹2L–3L/month in India, roughly $2,400–$3,600). Devin reliably delivers about 70% of a feature; an experienced engineer closes the remaining 30% — edge cases, integrations, product judgment, customer-feedback rewrites.
 
 The numbers explain why. Devin scores **51.5% on SWE-bench Verified** as of April 2026, which means it resolves roughly half of real-world GitHub issues end-to-end. In the same evaluation harness, Claude Opus 4.5 hits 80.9% and Gemini 3.1 Pro 80.6%. So a frontier model wired into Cursor or Claude Code, driven by a human, currently outperforms Cognition's autonomous agent on the very benchmark Devin was built around.
 

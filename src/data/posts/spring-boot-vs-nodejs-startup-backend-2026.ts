@@ -7,6 +7,10 @@ export const springBootVsNodejsStartupBackend2026: BlogPost = {
   excerpt: 'An honest comparison of Spring Boot and Node.js for startup backends — performance, hiring, ecosystem, and when each one actually makes sense.',
   readingTime: '7 min read',
   keywords: ['spring boot vs nodejs', 'backend framework comparison', 'startup tech stack 2026'],
+  coverImage: {
+    src: '/images/notes/spring-boot-vs-nodejs-startup-backend-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Spring Boot vs Node.js for Your Startup Backend (2026)',
+  },
   relatedProject: 'clinicai',
   sections: [
     {
@@ -19,7 +23,9 @@ Neither is "better." If your team already ships in one stack, that's the right a
     },
     {
       heading: 'Why This Debate Still Matters',
-      content: `Spring Boot is better for startups building complex backend systems with heavy business logic, enterprise integrations, or CPU-intensive processing like AI pipelines and analytics. Node.js is better for startups that need to ship a simple API fast, want a single language across frontend and backend, and are building I/O-heavy applications like real-time chat or notification services.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Spring Boot is better for startups building complex backend systems with heavy business logic, enterprise integrations, or CPU-intensive processing like AI pipelines and analytics. Node.js is better for startups that need to ship a simple API fast, want a single language across frontend and backend, and are building I/O-heavy applications like real-time chat or notification services.
 
 Every founder I talk to asks the same question: "Should we go with Node.js or Spring Boot?" In 2026, both are mature, battle-tested, and used by companies at massive scale. The answer isn't about which is "better" — it's about which fits your specific situation.
 

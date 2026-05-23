@@ -7,6 +7,10 @@ export const ragForSql: BlogPost = {
   excerpt: 'How pgvector embeddings improve LLM-to-SQL accuracy by providing schema context instead of dumping entire schemas into prompts.',
   readingTime: '8 min read',
   keywords: ['rag sql generation', 'pgvector embeddings sql', 'text to sql pgvector', 'llm sql accuracy', 'chat to sql'],
+  coverImage: {
+    src: '/images/notes/rag-for-sql-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Using RAG for SQL Generation',
+  },
   relatedProject: 'stellarmind',
   sections: [
     {
@@ -19,7 +23,9 @@ This doesn't apply to small schemas (under ~10 tables) — there, prompt stuffin
     },
     {
       heading: 'The Problem With Prompt Stuffing',
-      content: `To improve LLM-to-SQL accuracy on production databases, use RAG with pgvector to retrieve only relevant table schemas instead of stuffing the entire schema into the prompt. Embed each table's metadata — column names, types, constraints, and sample data — as vectors, then retrieve the top-5 most relevant chunks based on the user's natural language question. This approach more than doubles SQL generation accuracy while cutting token usage by 75%.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+To improve LLM-to-SQL accuracy on production databases, use RAG with pgvector to retrieve only relevant table schemas instead of stuffing the entire schema into the prompt. Embed each table's metadata — column names, types, constraints, and sample data — as vectors, then retrieve the top-5 most relevant chunks based on the user's natural language question. This approach more than doubles SQL generation accuracy while cutting token usage by 75%.
 
 Most text-to-SQL tutorials start with a simple idea: dump your database schema into the LLM prompt. For a toy database with 3 tables, this works fine. For a production database with 50+ tables, 200+ columns, and foreign key relationships — you're burning tokens and confusing the model.
 

@@ -7,11 +7,21 @@ export const cloudFirstAiIsDeadOnDeviceAndroid2026: BlogPost = {
   excerpt: 'Google just shipped an offline AI dictation app. Android 16 runs notification summaries on-device. The "cloud-first" mentality for AI apps is dying — here\'s how I built a production Android app with zero network permissions using Gemma 4, LiteRT, and regex fallback.',
   readingTime: '8 min read',
   keywords: ['on device AI android 2026', 'offline AI app development', 'gemma 4 on device LLM', 'cloud first AI dead', 'edge AI mobile app architecture'],
+  coverImage: {
+    src: '/images/notes/cloud-first-ai-is-dead-on-device-android-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It.',
+  },
   relatedProject: 'scamrakshak',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Google just shipped an offline AI dictation app. Android 16 runs notification summaries on-device. The "cloud-first" mentality for AI apps is dying — here's how I built a production Android app with zero network permissions using Gemma 4, LiteRT, and regex fallback. I built ScamRakshak, a fully offline Android scam detection app using a 3-tier AI inference engine — Gemma 4 on-device LLM, LiteRT binary classifier, and regex fallback — with zero network permissions, proving that production-grade AI apps no longer need cloud APIs for natural language processing tasks on mobile devices.`,
+    },
+{
       heading: 'The Cloud-First Era Is Over',
-      content: `I built ScamRakshak, a fully offline Android scam detection app using a 3-tier AI inference engine — Gemma 4 on-device LLM, LiteRT binary classifier, and regex fallback — with zero network permissions, proving that production-grade AI apps no longer need cloud APIs for natural language processing tasks on mobile devices.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+I built ScamRakshak, a fully offline Android scam detection app using a 3-tier AI inference engine — Gemma 4 on-device LLM, LiteRT binary classifier, and regex fallback — with zero network permissions, proving that production-grade AI apps no longer need cloud APIs for natural language processing tasks on mobile devices.
 
 Last week, Google quietly released an offline-first AI dictation app on iOS — "Eloquent." No cloud. No API calls. Full AI inference running on the device itself.
 

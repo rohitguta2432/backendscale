@@ -22,7 +22,11 @@ export const supabaseVsFirebaseIndiaMvp2026: BlogPost = {
     alt: 'Dark editorial render illustrating Supabase versus Firebase backend cost comparison for Indian MVP 2026',
   },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Firebase tightened Spark-tier limits in Q1 2026 and Supabase opened the Mumbai ap-south-1 region in late 2025. At 10K MAU for an Indian MVP, Supabase Pro at $25/month now beats Firebase Blaze by 2-4x — here is the real cost math, RLS migration story, and when Firebase still wins. By Rohit Raj — Founding Engineer, 10+ years shipping production MVPs · LinkedIn`,
+    },
+{
       heading: 'Supabase vs Firebase for Indian MVPs in 2026',
       content: `By [Rohit Raj](/about) — Founding Engineer, 10+ years shipping production MVPs · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 

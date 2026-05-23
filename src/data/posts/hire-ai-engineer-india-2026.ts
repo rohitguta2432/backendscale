@@ -17,6 +17,10 @@ export const hireAiEngineerIndia2026: BlogPost = {
     'hire llm engineer freelance',
     'on-device ai developer india',
   ],
+  coverImage: {
+    src: '/images/notes/hire-ai-engineer-india-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Hire AI Engineer India 2026',
+  },
   relatedProject: 'stellarmind',
   sections: [
     {
@@ -25,7 +29,9 @@ export const hireAiEngineerIndia2026: BlogPost = {
     },
     {
       heading: 'Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both',
-      content: `If you searched "hire AI engineer India" in May 2026, the top 5 SERP results are all marketplaces — Turing, Toptal, Arc, Uplers, and Talent500 — pitching a vetted senior AI engineer in 72 hours for $80-$160 per hour. None of them tell you the real number: an experienced AI engineer in India costs $45K-$95K per year full-time, $8K-$14K per month on a retainer, or $15K-$25K flat for a 6-week production sprint. Compare that to the US, where the same role pays $180K-$280K base plus equity plus stock refresh — roughly 4x the cash and 10x the equity dilution.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+If you searched "hire AI engineer India" in May 2026, the top 5 SERP results are all marketplaces — Turing, Toptal, Arc, Uplers, and Talent500 — pitching a vetted senior AI engineer in 72 hours for $80-$160 per hour. None of them tell you the real number: an experienced AI engineer in India costs $45K-$95K per year full-time, $8K-$14K per month on a retainer, or $15K-$25K flat for a 6-week production sprint. Compare that to the US, where the same role pays $180K-$280K base plus equity plus stock refresh — roughly 4x the cash and 10x the equity dilution.
 
 The structural reason is that India produced the largest pool of working LLM and applied-ML engineers between 2023 and 2026. Every Tier-1 engineering school added an AI track. Every senior backend engineer who survived the 2023 vibe-coding wave learned RAG, fine-tuning, and MCP because the alternative was getting replaced by Cursor. The supply expanded faster than the rupee weakened, which means the dollar cost dropped while the talent quality climbed.
 

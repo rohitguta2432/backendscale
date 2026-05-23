@@ -15,11 +15,21 @@ export const sixWeekMvpSprintWeekByWeekBreakdown: BlogPost = {
     'mvp production ready 6 weeks',
     'mvp sprint plan',
   ],
+  coverImage: {
+    src: '/images/notes/6-week-mvp-sprint-week-by-week-breakdown-cover.jpg',
+    alt: 'Abstract editorial cover illustrating 6-Week MVP Sprint',
+  },
   relatedProject: 'myFinancial',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Most "6-week MVP" promises are 12-week projects with marketing copy. This is what a real 6-week sprint looks like — week one through week six, what gets built, what gets cut, and what production-ready means at day 42. A 6-week MVP sprint is not a 6-week project with marketing copy on top. It is a fixed-scope, fixed-price contract where the scope doc is locked on day one, the deploy happens on day 42, and the founder gets a production app with auth, billing, and a working core feature set. Every week has a single output.`,
+    },
+{
       heading: '6-Week MVP Sprint — Week-by-Week Breakdown of What Actually Ships',
-      content: `A 6-week MVP sprint is not a 6-week project with marketing copy on top. It is a fixed-scope, fixed-price contract where the scope doc is locked on day one, the deploy happens on day 42, and the founder gets a production app with auth, billing, and a working core feature set. Every week has a single output. If the output is wrong, we cut scope — never extend the timeline.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+A 6-week MVP sprint is not a 6-week project with marketing copy on top. It is a fixed-scope, fixed-price contract where the scope doc is locked on day one, the deploy happens on day 42, and the founder gets a production app with auth, billing, and a working core feature set. Every week has a single output. If the output is wrong, we cut scope — never extend the timeline.
 
 Most agencies sell "6-week MVPs" that take 12-16 weeks because they let scope creep in week 3 and the founder is too deep to push back. The 6-week sprint model only works if you treat the scope doc like a contract, not a wish list. This post is the actual week-by-week breakdown of how a sprint runs — what gets done, what gets cut, and what production-ready looks like on day 42.
 

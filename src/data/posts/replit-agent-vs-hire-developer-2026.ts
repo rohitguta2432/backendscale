@@ -23,9 +23,15 @@ export const replitAgentVsHireDeveloper2026: BlogPost = {
     alt: 'Liquid metal mercury surface with amber ripples illustrating Replit Agent vs hire developer 2026 comparison',
   },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Replit Agent v3 ships full-stack apps from a browser, runs its own tests, and deploys in one click. So why are founders still ending up with $400 monthly bills, broken auth, and rebuilds at month three? Honest pricing math, real failure modes, and when Replit Agent actually beats hiring a developer in 2026. For a real production MVP in 2026, Replit Agent alone will not get you across the finish line. The combination that actually ships is Replit Agent on the $25/month Core plan for prototyping and one-off scripts, paired with a senior engineer (₹2L–3L/month`,
+    },
+{
       heading: 'Replit Agent vs Hiring a Developer in 2026: The Honest Answer',
-      content: `For a real production MVP in 2026, **Replit Agent alone will not get you across the finish line**. The combination that actually ships is Replit Agent on the $25/month Core plan for prototyping and one-off scripts, paired with a senior engineer (₹2L–3L/month in India, roughly $2,400–$3,600) for the production rebuild. Replit Agent reliably ships a demo. A senior engineer turns that demo into a product your customers can pay for.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+For a real production MVP in 2026, **Replit Agent alone will not get you across the finish line**. The combination that actually ships is Replit Agent on the $25/month Core plan for prototyping and one-off scripts, paired with a senior engineer (₹2L–3L/month in India, roughly $2,400–$3,600) for the production rebuild. Replit Agent reliably ships a demo. A senior engineer turns that demo into a product your customers can pay for.
 
 The numbers force this conclusion. Real founders running Replit Agent v3 daily report effective monthly bills of **$200 to $500** once they cross out of the included Core credits. That is no longer a $25/month tool — that is a fractional-developer line item with none of the architectural judgment, no GitHub Issues triage, and no one to call at 11 PM when Stripe webhooks are dropping events. At that price, you are inside [founding engineer territory in India](/en/services/hire-founding-engineer-india) with the wrong shape of leverage.
 

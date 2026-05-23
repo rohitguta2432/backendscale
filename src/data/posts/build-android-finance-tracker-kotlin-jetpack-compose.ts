@@ -7,11 +7,21 @@ export const buildAndroidFinanceTrackerKotlinJetpackCompose: BlogPost = {
   excerpt: 'How I built FinBaby — an offline Android app that reads bank SMS messages, auto-categorizes transactions, and provides 50/30/20 budgeting for Indian middle-class families.',
   readingTime: '9 min read',
   keywords: ['android finance tracker app', 'kotlin jetpack compose tutorial', 'bank sms auto import android', 'personal finance app india', 'room database android 2026'],
+  coverImage: {
+    src: '/images/notes/build-android-finance-tracker-kotlin-jetpack-compose-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Building an Android Finance Tracker with SMS Auto-Import',
+  },
   relatedProject: 'finbaby',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `How I built FinBaby — an offline Android app that reads bank SMS messages, auto-categorizes transactions, and provides 50/30/20 budgeting for Indian middle-class families. I built FinBaby, an offline-first Android finance tracker using Kotlin and Jetpack Compose that automatically imports bank SMS messages from 50+ Indian banks, parses transaction amounts and merchants using regex, auto-categorizes spending, and provides 50/30/20 budgeting with smart saving tips — all without a backend server, cloud account, or bank API linking.`,
+    },
+{
       heading: 'Why Another Finance App?',
-      content: `I built FinBaby, an offline-first Android finance tracker using Kotlin and Jetpack Compose that automatically imports bank SMS messages from 50+ Indian banks, parses transaction amounts and merchants using regex, auto-categorizes spending, and provides 50/30/20 budgeting with smart saving tips — all without a backend server, cloud account, or bank API linking.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+I built FinBaby, an offline-first Android finance tracker using Kotlin and Jetpack Compose that automatically imports bank SMS messages from 50+ Indian banks, parses transaction amounts and merchants using regex, auto-categorizes spending, and provides 50/30/20 budgeting with smart saving tips — all without a backend server, cloud account, or bank API linking.
 
 India processes 13 billion+ UPI transactions per month. Every transaction generates a bank SMS. And yet, most Indians either don't track expenses at all, or they manually type numbers into a spreadsheet every weekend (and give up by February).
 

@@ -18,11 +18,21 @@ export const aiNewsApril2026WhatFoundersShouldBuild: BlogPost = {
     'founder AI strategy April 2026',
     'AI Overviews SEO 2026'
   ],
+  coverImage: {
+    src: '/images/notes/ai-news-april-2026-what-founders-should-build-cover.jpg',
+    alt: 'Abstract editorial cover illustrating April 2026 AI News Decoded: 7 Stories That Actually Change What Founders Should ',
+  },
   relatedProject: 'scamrakshak',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Claude Mythos 5, GPT-5.4 Thinking, Gemini 3.1 Ultra, DeepSeek V4, Snap cutting 16% headcount — April 2026 reshaped the frontier. Most roundups list the news. This post tells founders, freelance devs, and founding engineers what to actually build, drop, or route next. Because every other one is a list. Crescendo, devFlokers, HumAI, TechCrunch, BuildEZ, MeanCEO — all good sources, all ordered the same way: date, company, model name, one-line summary. Useful for a morning scroll. Useless if you are deciding what to ship next quarter.`,
+    },
+{
       heading: 'Why Another April 2026 AI Roundup?',
-      content: `Because every other one is a list. Crescendo, devFlokers, HumAI, TechCrunch, BuildEZ, MeanCEO — all good sources, all ordered the same way: date, company, model name, one-line summary. Useful for a morning scroll. Useless if you are deciding what to ship next quarter.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Because every other one is a list. Crescendo, devFlokers, HumAI, TechCrunch, BuildEZ, MeanCEO — all good sources, all ordered the same way: date, company, model name, one-line summary. Useful for a morning scroll. Useless if you are deciding what to ship next quarter.
 
 I build production apps for founders — scam detection on Android, multi-tenant SaaS on Spring Boot, deal-matching platforms, offline-first React Native. Every week a client forwards me an AI news link and asks the same question: **does this change what we're building?**
 

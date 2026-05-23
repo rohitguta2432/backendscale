@@ -7,11 +7,21 @@ export const microservicesVsMonolithStartup: BlogPost = {
   excerpt: 'Why your startup should start with a monolith, when microservices actually make sense, and how to avoid the architecture astronaut trap.',
   readingTime: '7 min read',
   keywords: ['microservices vs monolith startup', 'startup architecture', 'when to use microservices', 'monolith first'],
+  coverImage: {
+    src: '/images/notes/microservices-vs-monolith-startup-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Microservices vs Monolith for Startups: Stop Overengineering',
+  },
   relatedProject: 'clinicai',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Why your startup should start with a monolith, when microservices actually make sense, and how to avoid the architecture astronaut trap. Most startups should start with a monolith. A well-structured monolith deployed as a single application is faster to develop, easier to debug, cheaper to run, and simpler to deploy than microservices. Microservices only make sense when you have twenty or more engineers, need independent scaling for specific components, or require different technology stacks for different parts of your system.`,
+    },
+{
       heading: 'The Microservices Trap',
-      content: `Most startups should start with a monolith. A well-structured monolith deployed as a single application is faster to develop, easier to debug, cheaper to run, and simpler to deploy than microservices. Microservices only make sense when you have twenty or more engineers, need independent scaling for specific components, or require different technology stacks for different parts of your system.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Most startups should start with a monolith. A well-structured monolith deployed as a single application is faster to develop, easier to debug, cheaper to run, and simpler to deploy than microservices. Microservices only make sense when you have twenty or more engineers, need independent scaling for specific components, or require different technology stacks for different parts of your system.
 
 Every few months, a founder tells me they need microservices for their brand-new app. Zero users. Zero revenue. But they want Kubernetes, service mesh, event-driven architecture, and 15 Docker containers.
 

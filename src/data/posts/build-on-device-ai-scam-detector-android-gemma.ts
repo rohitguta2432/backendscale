@@ -7,11 +7,21 @@ export const buildOnDeviceAiScamDetectorAndroidGemma: BlogPost = {
   excerpt: 'How I built ScamRakshak — a fully offline Android app that detects scams using a 3-tier AI inference engine with Gemma 4 on-device LLM, LiteRT classification, and regex fallback. Zero internet, zero data collection.',
   readingTime: '11 min read',
   keywords: ['on device ai android', 'gemma on device llm', 'scam detection app india', 'litert android ml', 'offline ai android app 2026'],
+  coverImage: {
+    src: '/images/notes/build-on-device-ai-scam-detector-android-gemma-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Building an On-Device AI Scam Detector for Android',
+  },
   relatedProject: 'scamrakshak',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `How I built ScamRakshak — a fully offline Android app that detects scams using a 3-tier AI inference engine with Gemma 4 on-device LLM, LiteRT classification, and regex fallback. Zero internet, zero data collection. I built ScamRakshak, an on-device AI scam detector for Android using a 3-tier inference engine — Gemma 4 LLM via ML Kit GenAI for contextual analysis, LiteRT binary classifier for broad device support, and a regex fallback engine for universal coverage — with zero network permissions, Hindi-first bilingual output, and four input modes (text, screenshot OCR, URL analysis, UPI ID verification)`,
+    },
+{
       heading: 'India\'s ₹1,750 Crore Scam Problem',
-      content: `I built ScamRakshak, an on-device AI scam detector for Android using a 3-tier inference engine — Gemma 4 LLM via ML Kit GenAI for contextual analysis, LiteRT binary classifier for broad device support, and a regex fallback engine for universal coverage — with zero network permissions, Hindi-first bilingual output, and four input modes (text, screenshot OCR, URL analysis, UPI ID verification) to protect India's 500 million Hindi-speaking smartphone users from digital fraud.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+I built ScamRakshak, an on-device AI scam detector for Android using a 3-tier inference engine — Gemma 4 LLM via ML Kit GenAI for contextual analysis, LiteRT binary classifier for broad device support, and a regex fallback engine for universal coverage — with zero network permissions, Hindi-first bilingual output, and four input modes (text, screenshot OCR, URL analysis, UPI ID verification) to protect India's 500 million Hindi-speaking smartphone users from digital fraud.
 
 India loses over ₹1,750 crore annually to digital scams. WhatsApp forwards promising "KYC update or account blocked." SMS messages with "you've won ₹5,00,000, click here." Fake UPI payment requests from "Amazon refund department."
 

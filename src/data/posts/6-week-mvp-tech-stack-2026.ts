@@ -15,11 +15,21 @@ export const sixWeekMvpTechStack2026: BlogPost = {
     'mvp postgres supabase',
     'mvp boring stack',
   ],
+  coverImage: {
+    src: '/images/notes/6-week-mvp-tech-stack-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating 6-Week MVP Tech Stack in 2026',
+  },
   relatedProject: 'myFinancial',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Every "should I use X or Y" debate costs you a week of the sprint. Here is the boring, opinionated, time-tested stack that ships a production MVP in 6 weeks — Next.js, Postgres, Vercel, Stripe, and a handful of opinionated picks. If you spend a week debating Next.js vs Remix, Postgres vs Mongo, or Vercel vs Fly, you have already lost 16% of your 6-week sprint. The right MVP stack in 2026 is opinionated, conservative, and boring on purpose. Every decision below is one I have shipped 5+ MVPs on. The reasoning is in the`,
+    },
+{
       heading: '6-Week MVP Tech Stack in 2026 — The Boring Choices That Actually Ship',
-      content: `If you spend a week debating Next.js vs Remix, Postgres vs Mongo, or Vercel vs Fly, you have already lost 16% of your 6-week sprint. The right MVP stack in 2026 is opinionated, conservative, and boring on purpose. Every decision below is one I have shipped 5+ MVPs on. The reasoning is in the post — but the executive answer is: pick the boring choice every time.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+If you spend a week debating Next.js vs Remix, Postgres vs Mongo, or Vercel vs Fly, you have already lost 16% of your 6-week sprint. The right MVP stack in 2026 is opinionated, conservative, and boring on purpose. Every decision below is one I have shipped 5+ MVPs on. The reasoning is in the post — but the executive answer is: pick the boring choice every time.
 
 The wrong question to ask before an MVP is "what is the best stack?". The right question is "what is the stack with the most documentation, the largest hiring pool, and the fewest gotchas at the 1,000-user mark?". That stack in 2026 is unambiguous. It has been unambiguous for 18 months.
 

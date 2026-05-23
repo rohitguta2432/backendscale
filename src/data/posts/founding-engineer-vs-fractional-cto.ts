@@ -15,11 +15,21 @@ export const foundingEngineerVsFractionalCto: BlogPost = {
     'founding engineer cost 2026',
     'fractional cto cost 2026',
   ],
+  coverImage: {
+    src: '/images/notes/founding-engineer-vs-fractional-cto-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Founding Engineer vs Fractional CTO in 2026',
+  },
   relatedProject: 'myFinancial',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Fractional CTOs advise. Founding engineers ship. If you have an idea and no product, you need someone writing code — not slide decks. Here is the honest trade-off, with real costs, real timelines, and the signal that tells you which one to hire. Hire a founding engineer if you have an idea and no product. Hire a fractional CTO if you have a product, a team, and a technical decision that will cost you $100K+ to unwind. Most pre-seed founders think they need a fractional CTO because the word "CTO" sounds like the missing piece.`,
+    },
+{
       heading: 'Founding Engineer or Fractional CTO — What Does Your Startup Actually Need?',
-      content: `Hire a founding engineer if you have an idea and no product. Hire a fractional CTO if you have a product, a team, and a technical decision that will cost you $100K+ to unwind. Most pre-seed founders think they need a fractional CTO because the word "CTO" sounds like the missing piece. They do not. They need someone who writes code.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Hire a founding engineer if you have an idea and no product. Hire a fractional CTO if you have a product, a team, and a technical decision that will cost you $100K+ to unwind. Most pre-seed founders think they need a fractional CTO because the word "CTO" sounds like the missing piece. They do not. They need someone who writes code.
 
 That is the whole post in two lines. But the reason founders get this wrong — and end up paying $8K–$20K a month for advice they cannot act on — is because every agency selling fractional CTO services has an incentive to convince you that strategy is your bottleneck. Strategy is never the bottleneck pre-PMF. Shipping is.
 

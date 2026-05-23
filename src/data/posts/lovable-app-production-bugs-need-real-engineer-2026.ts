@@ -16,6 +16,10 @@ export const lovableAppProductionBugsNeedRealEngineer2026: BlogPost = {
     'lovable rls supabase',
     'rescue lovable app',
   ],
+  coverImage: {
+    src: '/images/notes/lovable-app-production-bugs-need-real-engineer-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Lovable App Production Bugs',
+  },
   relatedProject: 'myFinancial',
   sections: [
     {
@@ -24,7 +28,9 @@ export const lovableAppProductionBugsNeedRealEngineer2026: BlogPost = {
     },
     {
       heading: 'When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026',
-      content: `Vibe-coding platforms (Lovable, Bolt, v0, Cursor + Claude, Replit Agent) ship 70% of a working MVP in a weekend. The first 100 users do not surface the bugs. By user 500, the same five categories of bugs always appear — auth edge cases, row-level security holes, payment webhooks, performance regressions, schema migration disasters. None of these can be fixed with another vibe-coding prompt. Each one requires a senior engineer who can read the generated code, find the gap, and write the fix.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Vibe-coding platforms (Lovable, Bolt, v0, Cursor + Claude, Replit Agent) ship 70% of a working MVP in a weekend. The first 100 users do not surface the bugs. By user 500, the same five categories of bugs always appear — auth edge cases, row-level security holes, payment webhooks, performance regressions, schema migration disasters. None of these can be fixed with another vibe-coding prompt. Each one requires a senior engineer who can read the generated code, find the gap, and write the fix.
 
 This post is not "AI builders are bad." They are extraordinary. They have shifted what one founder can ship in a weekend. The point is more subtle: the production gap is real, predictable, and roughly the same across every vibe-coded MVP I have rescued. If you are running a Lovable or Bolt app in production right now, you are living near these five bugs. Better to fix them deliberately than wait for them to fire on a Saturday night.
 

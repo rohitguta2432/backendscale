@@ -31,7 +31,9 @@ Stripe wins only when ≥60% of revenue is foreign cards or your stack already u
     },
     {
       heading: 'Razorpay vs Stripe for Indian MVPs in 2026',
-      content: `**The short answer:** if your customers pay in INR, Razorpay wins on cost by a factor of 4-5x. Stripe wins only when foreign cards dominate.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+**The short answer:** if your customers pay in INR, Razorpay wins on cost by a factor of 4-5x. Stripe wins only when foreign cards dominate.
 
 **The cost gap is structural, not seasonal.** Razorpay was built for India's payment rails (UPI, net banking, wallets, EMI) and rides NPCI's 0% MDR mandate on UPI under ₹2,000. Stripe is a global gateway that processes Indian rupees through an international payout pipeline. The same rupee through Stripe attracts a 4.3% card MDR + 18% GST on the MDR + a 3% currency conversion fee on payout. Through Razorpay it attracts 2% on cards or 0% on UPI.
 

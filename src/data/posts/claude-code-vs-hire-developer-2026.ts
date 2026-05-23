@@ -22,9 +22,15 @@ export const claudeCodeVsHireDeveloper2026: BlogPost = {
     alt: 'Glitched terminal stream in teal and violet illustrating Claude Code CLI vs hiring a developer in 2026',
   },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Claude Code is the strongest agentic coding CLI of 2026. But $20–200/month buys assistance, not a finished product. This is the line between Claude Code as a developer multiplier and Claude Code as a developer replacement, with the cost math that actually matters when you ship to real users. The short answer: Claude Code is the most capable agentic coding CLI shipped in 2026. For a solo founder writing prototypes, internal tools, scripts, and exploratory features, $20/month of Claude Code Pro is the best price-to-output ratio that has ever existed for software. For shipping a`,
+    },
+{
       heading: 'Claude Code vs Hiring a Developer in 2026',
-      content: `**The short answer:** Claude Code is the most capable agentic coding CLI shipped in 2026. For a solo founder writing prototypes, internal tools, scripts, and exploratory features, $20/month of Claude Code Pro is the best price-to-output ratio that has ever existed for software. For shipping a real product that customers pay for, in production, with users complaining at 2 AM, you still need a human engineer. The CLI is a developer **multiplier**, not a developer **replacement**. The math gets interesting at the intersection of those two truths.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+**The short answer:** Claude Code is the most capable agentic coding CLI shipped in 2026. For a solo founder writing prototypes, internal tools, scripts, and exploratory features, $20/month of Claude Code Pro is the best price-to-output ratio that has ever existed for software. For shipping a real product that customers pay for, in production, with users complaining at 2 AM, you still need a human engineer. The CLI is a developer **multiplier**, not a developer **replacement**. The math gets interesting at the intersection of those two truths.
 
 **The cost spread is enormous.** Claude Code Pro is $20/month. Claude Code Max is $100/month or $200/month. Team plans are around $25/seat/month. A founding engineer in India costs $80K–$120K/year ($6,600–$10,000/month all-in). A US founding engineer is $150K–$220K/year. The CLI is between **30x and 500x cheaper** depending on plan and salary tier. That ratio is why every founder in 2026 is asking the same question: do I still need to hire?
 

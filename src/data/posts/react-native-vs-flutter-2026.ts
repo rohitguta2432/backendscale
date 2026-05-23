@@ -7,11 +7,21 @@ export const reactNativeVsFlutter2026: BlogPost = {
   excerpt: 'A practical comparison of React Native and Flutter in 2026 — performance, ecosystem, hiring, and which one I recommend based on your specific situation.',
   readingTime: '7 min read',
   keywords: ['react native vs flutter 2026', 'cross platform app framework', 'mobile app framework comparison'],
+  coverImage: {
+    src: '/images/notes/react-native-vs-flutter-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating React Native vs Flutter in 2026: Which One for Your App?',
+  },
   relatedProject: 'sanatanapp',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `A practical comparison of React Native and Flutter in 2026 — performance, ecosystem, hiring, and which one I recommend based on your specific situation. React Native is the better choice for startups that need to ship fast across iOS and Android with a single JavaScript codebase, especially if you already have web developers who know React. Flutter is the better choice for apps that demand pixel-perfect custom UI, complex animations, and consistent rendering across every platform including desktop and embedded devices.`,
+    },
+{
       heading: 'The State of Cross-Platform in 2026',
-      content: `React Native is the better choice for startups that need to ship fast across iOS and Android with a single JavaScript codebase, especially if you already have web developers who know React. Flutter is the better choice for apps that demand pixel-perfect custom UI, complex animations, and consistent rendering across every platform including desktop and embedded devices.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+React Native is the better choice for startups that need to ship fast across iOS and Android with a single JavaScript codebase, especially if you already have web developers who know React. Flutter is the better choice for apps that demand pixel-perfect custom UI, complex animations, and consistent rendering across every platform including desktop and embedded devices.
 
 Both React Native and Flutter are mature, production-ready frameworks. Instagram, Shopify, and Discord use React Native. Google Pay, BMW, and Alibaba use Flutter. Neither is going anywhere.
 

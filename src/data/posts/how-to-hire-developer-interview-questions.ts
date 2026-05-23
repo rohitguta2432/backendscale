@@ -7,10 +7,20 @@ export const howToHireDeveloperInterviewQuestions: BlogPost = {
   excerpt: 'The 10 questions you should ask before hiring a freelance developer — how to evaluate technical skills, communication, and reliability without being technical yourself.',
   readingTime: '7 min read',
   keywords: ['hire software developer questions', 'evaluate developer', 'technical interview freelancer', 'hire developer india'],
+  coverImage: {
+    src: '/images/notes/how-to-hire-developer-interview-questions-cover.jpg',
+    alt: 'Abstract editorial cover illustrating How to Hire a Software Developer: 10 Questions to Ask Before Signing',
+  },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `The 10 questions you should ask before hiring a freelance developer — how to evaluate technical skills, communication, and reliability without being technical yourself. To hire a good software developer, ask for live project demos, question their tech stack reasoning, verify their deployment and security approach, and insist on milestone-based payments. The 10 questions below filter out unreliable developers before you sign a contract — whether you are technical or not. Focus on evidence of shipped products, clear communication, and a structured work process.`,
+    },
+{
       heading: 'Why Does Hiring a Developer Go Wrong So Often?',
-      content: `To hire a good software developer, ask for live project demos, question their tech stack reasoning, verify their deployment and security approach, and insist on milestone-based payments. The 10 questions below filter out unreliable developers before you sign a contract — whether you are technical or not. Focus on evidence of shipped products, clear communication, and a structured work process.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+To hire a good software developer, ask for live project demos, question their tech stack reasoning, verify their deployment and security approach, and insist on milestone-based payments. The 10 questions below filter out unreliable developers before you sign a contract — whether you are technical or not. Focus on evidence of shipped products, clear communication, and a structured work process.
 
 Non-technical founders get burned by developers all the time. The pattern is always the same: you find someone on Upwork or through a referral, they seem competent, you agree on a price, and then three months later you have a half-built app, an empty bank account, and no source code.
 

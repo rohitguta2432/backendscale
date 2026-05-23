@@ -7,11 +7,21 @@ export const buildMultiTenantSaasSpringBootJava21: BlogPost = {
   excerpt: 'How I architected RetailOS — an India-first multi-tenant retail platform with billing, inventory, GST invoicing, khata ledger, and offline sync in a 12-module Maven monorepo.',
   readingTime: '11 min read',
   keywords: ['multi-tenant saas spring boot', 'java 21 spring boot 3.4', 'retail saas india', 'maven multi-module architecture', 'gst invoice generation java'],
+  coverImage: {
+    src: '/images/notes/build-multi-tenant-saas-spring-boot-java-21-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21',
+  },
   relatedProject: 'retailos',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `How I architected RetailOS — an India-first multi-tenant retail platform with billing, inventory, GST invoicing, khata ledger, and offline sync in a 12-module Maven monorepo. I built RetailOS, a multi-tenant retail SaaS platform using Spring Boot 3.4 and Java 21 with 12 Maven modules covering billing, inventory, GST-compliant invoicing, khata credit ledger, and offline sync with conflict resolution — designed specifically for India's unorganized retail sector where 90% of shops still run on paper registers and enterprise POS systems cost more than small shop owners can afford.`,
+    },
+{
       heading: 'India\'s Retail Problem: 90% Unorganized',
-      content: `I built RetailOS, a multi-tenant retail SaaS platform using Spring Boot 3.4 and Java 21 with 12 Maven modules covering billing, inventory, GST-compliant invoicing, khata credit ledger, and offline sync with conflict resolution — designed specifically for India's unorganized retail sector where 90% of shops still run on paper registers and enterprise POS systems cost more than small shop owners can afford.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+I built RetailOS, a multi-tenant retail SaaS platform using Spring Boot 3.4 and Java 21 with 12 Maven modules covering billing, inventory, GST-compliant invoicing, khata credit ledger, and offline sync with conflict resolution — designed specifically for India's unorganized retail sector where 90% of shops still run on paper registers and enterprise POS systems cost more than small shop owners can afford.
 
 India's retail sector is massive — $950 billion — and 90% of it is unorganized. Kirana stores, small electronics shops, clothing boutiques, and general stores. They run on paper registers, basic billing software that can't generate GST-compliant invoices, and zero inventory tracking.
 

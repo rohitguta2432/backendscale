@@ -7,11 +7,21 @@ export const ideaToPlayStoreSanatanappArchitecture: BlogPost = {
   excerpt: 'The full story of building and shipping a React Native app to Google Play — from problem discovery to architecture decisions to the actual Play Store submission process.',
   readingTime: '8 min read',
   keywords: ['react native play store', 'ship mobile app fast', 'expo eas build', 'app architecture decisions', 'indie app development'],
+  coverImage: {
+    src: '/images/notes/idea-to-play-store-sanatanapp-architecture-cover.jpg',
+    alt: 'Abstract editorial cover illustrating From Idea to Play Store: Shipping SanatanApp in 4 Weeks',
+  },
   relatedProject: 'sanatanapp',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `The full story of building and shipping a React Native app to Google Play — from problem discovery to architecture decisions to the actual Play Store submission process. To ship a React Native app from idea to Google Play Store in 4 weeks, use Expo managed workflow with EAS Build for zero native configuration, bundle text content as JSON files for offline-first delivery, stream audio from public domain sources via expo-av, and store local state in expo-sqlite. This approach produces a production app under 15MB with $0/month running costs and a $25 one-time Play Store`,
+    },
+{
       heading: 'Week 1: Problem Discovery & Design',
-      content: `To ship a React Native app from idea to Google Play Store in 4 weeks, use Expo managed workflow with EAS Build for zero native configuration, bundle text content as JSON files for offline-first delivery, stream audio from public domain sources via expo-av, and store local state in expo-sqlite. This approach produces a production app under 15MB with $0/month running costs and a $25 one-time Play Store developer fee.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+To ship a React Native app from idea to Google Play Store in 4 weeks, use Expo managed workflow with EAS Build for zero native configuration, bundle text content as JSON files for offline-first delivery, stream audio from public domain sources via expo-av, and store local state in expo-sqlite. This approach produces a production app under 15MB with $0/month running costs and a $25 one-time Play Store developer fee.
 
 I started with a personal frustration: 5 apps on my phone for Hindu devotion — Chalisa, Gita, Aarti, Ramayan, Mahabharat. Each averaging 50MB, each with interstitial ads during prayers, each solving one slice of the problem.
 

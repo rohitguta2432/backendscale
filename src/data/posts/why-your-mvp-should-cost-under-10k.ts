@@ -7,10 +7,20 @@ export const whyYourMvpShouldCostUnder10k: BlogPost = {
   excerpt: 'Most MVPs are overbuilt and overpriced. Here is how to scope, build, and launch a real product for under $10K — with examples from projects I have shipped.',
   readingTime: '7 min read',
   keywords: ['mvp cost', 'cheap mvp development', 'build mvp budget', 'startup mvp under 10k'],
+  coverImage: {
+    src: '/images/notes/why-your-mvp-should-cost-under-10k-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Why Your MVP Should Cost Under $10,000',
+  },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Most MVPs are overbuilt and overpriced. Here is how to scope, build, and launch a real product for under $10K — with examples from projects I have shipped. Your MVP should cost under $10,000 because the entire purpose of an MVP is to test your riskiest business assumption with minimal investment. A realistic budget is $5,000-$8,500 for a 4-6 week build using a free-tier stack (Supabase, Vercel, Stripe). Anything above $10K means you are overbuilding before validation — spending money on features that users may never want. Ship fast, learn, then invest more based on`,
+    },
+{
       heading: 'Why Should Your MVP Cost Under $10,000?',
-      content: `Your MVP should cost under $10,000 because the entire purpose of an MVP is to test your riskiest business assumption with minimal investment. A realistic budget is $5,000-$8,500 for a 4-6 week build using a free-tier stack (Supabase, Vercel, Stripe). Anything above $10K means you are overbuilding before validation — spending money on features that users may never want. Ship fast, learn, then invest more based on real data.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Your MVP should cost under $10,000 because the entire purpose of an MVP is to test your riskiest business assumption with minimal investment. A realistic budget is $5,000-$8,500 for a 4-6 week build using a free-tier stack (Supabase, Vercel, Stripe). Anything above $10K means you are overbuilding before validation — spending money on features that users may never want. Ship fast, learn, then invest more based on real data.
 
 I've had founders come to me after spending $40K-60K on an MVP that doesn't work. The pattern is always the same: an agency sold them a "comprehensive solution" with admin panels, analytics dashboards, mobile apps, CRM integrations, and multi-language support — for a product that hadn't been validated with a single customer.
 

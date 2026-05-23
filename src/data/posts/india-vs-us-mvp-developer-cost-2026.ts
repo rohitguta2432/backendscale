@@ -14,6 +14,10 @@ export const indiaVsUsMvpDeveloperCost2026: BlogPost = {
     'us vs india developer hourly rate',
     'mvp cost breakdown',
   ],
+  coverImage: {
+    src: '/images/notes/india-vs-us-mvp-developer-cost-2026-cover.jpg',
+    alt: 'Abstract editorial cover illustrating India vs US MVP Developer Cost in 2026',
+  },
   relatedProject: 'myFinancial',
   sections: [
     {
@@ -26,7 +30,9 @@ This doesn't apply if you need US time-zone overlap with enterprise customers, o
     },
     {
       heading: 'India vs US MVP Cost — What Does the Same App Actually Cost in 2026?',
-      content: `Building the same MVP costs $15,000–$30,000 with an India-based team and $60,000–$150,000 with a US-based team in 2026 — a 3–5× difference for comparable feature scope. The gap has compressed from 6–8× in 2020 because AI coding tools like Cursor and Claude have made individual senior engineers in both regions roughly equally productive on routine code. Where the real cost-to-value trade-off now lives is in agency overhead, communication tax, and continuity of ownership, not the hourly rate itself.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+Building the same MVP costs $15,000–$30,000 with an India-based team and $60,000–$150,000 with a US-based team in 2026 — a 3–5× difference for comparable feature scope. The gap has compressed from 6–8× in 2020 because AI coding tools like Cursor and Claude have made individual senior engineers in both regions roughly equally productive on routine code. Where the real cost-to-value trade-off now lives is in agency overhead, communication tax, and continuity of ownership, not the hourly rate itself.
 
 The market has four distinct pricing tiers, and most founders only know two of them:
 

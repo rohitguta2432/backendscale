@@ -22,9 +22,15 @@ export const v0ByVercelVsHireDeveloper2026: BlogPost = {
     alt: 'Floating geometric crystals in cyan and magenta neon illustrating v0 by Vercel vs hiring a developer 2026',
   },
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `v0 ships a clickable Next.js + shadcn prototype in 20 minutes for $20 a month. Then on day 30 you need auth, a real database, RLS, Stripe webhooks that survive retries, and a deploy that does not break preview. Here is exactly when v0 is the right call, when a real engineer is, and the cost crossover most founders only see after the prototype is already in customer hands.`,
+    },
+{
       heading: 'v0 by Vercel vs Hiring a Developer in 2026 — The Honest Answer Up Front',
-      content: `If you need a clickable Next.js + shadcn prototype to show three customers tomorrow, v0 at $20 per month is the fastest dollar a non-technical founder can spend in 2026. The crossover happens on roughly day 30, when the prototype gets a paying user — and now you need real auth, row-level security, Stripe webhook idempotency, a database that survives a redeploy, and an environment-variable strategy that does not leak your service-role key into the client bundle. v0 ships none of those by default.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+If you need a clickable Next.js + shadcn prototype to show three customers tomorrow, v0 at $20 per month is the fastest dollar a non-technical founder can spend in 2026. The crossover happens on roughly day 30, when the prototype gets a paying user — and now you need real auth, row-level security, Stripe webhook idempotency, a database that survives a redeploy, and an environment-variable strategy that does not leak your service-role key into the client bundle. v0 ships none of those by default.
 
 The math nobody runs is this: $20 a month for v0 Premium is $240 a year. The hidden cost is the rebuild — the moment your v0 app crosses 50 paying users, you typically pay an engineer $4,000 to $12,000 to undo the patterns v0 generated for speed (inline state, no migrations, hardcoded UI text, no tests, no error boundaries). A flat-fee [6-week MVP sprint](/en/services/6-week-mvp) at $15K to $30K ships the production app once, with auth, billing, monitoring, and tests, and you keep your weekends.
 

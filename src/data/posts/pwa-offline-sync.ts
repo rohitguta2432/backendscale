@@ -7,11 +7,21 @@ export const pwaOfflineSync: BlogPost = {
   excerpt: 'Service workers, IndexedDB, and background sync patterns used in MicroItinerary for reliable offline-first travel planning.',
   readingTime: '7 min read',
   keywords: ['pwa offline sync indexeddb', 'service worker background sync', 'offline first web app', 'progressive web app patterns'],
+  coverImage: {
+    src: '/images/notes/pwa-offline-sync-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Offline-First PWA Patterns',
+  },
   relatedProject: 'microitinerary',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `Service workers, IndexedDB, and background sync patterns used in MicroItinerary for reliable offline-first travel planning. To build an offline-first PWA, you need three layers working together: a service worker with cache-first strategy for static assets and network-first for API data, IndexedDB (via Dexie.js) as the local source of truth for structured data, and the Background Sync API to queue write operations while offline and replay them automatically when connectivity returns. This pattern ensures your app works fully offline without degraded functionality.`,
+    },
+{
       heading: 'Why Offline-First Matters for Travel Apps',
-      content: `To build an offline-first PWA, you need three layers working together: a service worker with cache-first strategy for static assets and network-first for API data, IndexedDB (via Dexie.js) as the local source of truth for structured data, and the Background Sync API to queue write operations while offline and replay them automatically when connectivity returns. This pattern ensures your app works fully offline without degraded functionality.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+To build an offline-first PWA, you need three layers working together: a service worker with cache-first strategy for static assets and network-first for API data, IndexedDB (via Dexie.js) as the local source of truth for structured data, and the Background Sync API to queue write operations while offline and replay them automatically when connectivity returns. This pattern ensures your app works fully offline without degraded functionality.
 
 Travel apps have a unique problem: users need them most when they have the worst connectivity. Airports, trains, remote destinations — these are exactly where mobile data is slow, expensive, or nonexistent.
 

@@ -7,11 +7,21 @@ export const expoAvAudioStreamingReactNative: BlogPost = {
   excerpt: 'A practical guide to building a streaming audio player in React Native with expo-av — background playback, progress tracking, and global player state with zero backend cost.',
   readingTime: '7 min read',
   keywords: ['expo-av audio streaming', 'react native audio player', 'expo audio background playback', 'react native music player', 'expo-av tutorial'],
+  coverImage: {
+    src: '/images/notes/expo-av-audio-streaming-react-native-cover.jpg',
+    alt: 'Abstract editorial cover illustrating Streaming Audio in React Native: expo-av with Public Domain Sources',
+  },
   relatedProject: 'sanatanapp',
   sections: [
-    {
+        {
+      heading: 'TL;DR',
+      content: `A practical guide to building a streaming audio player in React Native with expo-av — background playback, progress tracking, and global player state with zero backend cost. To stream audio in React Native with Expo, use expo-av with a global AudioContext provider, enable background playback via \`staysActiveInBackground: true\`, persist playback progress to SQLite, and source audio from public domain URLs like Archive.org for zero hosting costs. This approach keeps you in the Expo managed workflow without ejecting, while delivering a Spotify-like persistent MiniPlayer experience across all screens.`,
+    },
+{
       heading: 'Why expo-av Over react-native-track-player',
-      content: `To stream audio in React Native with Expo, use expo-av with a global AudioContext provider, enable background playback via \`staysActiveInBackground: true\`, persist playback progress to SQLite, and source audio from public domain URLs like Archive.org for zero hosting costs. This approach keeps you in the Expo managed workflow without ejecting, while delivering a Spotify-like persistent MiniPlayer experience across all screens.
+      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+
+To stream audio in React Native with Expo, use expo-av with a global AudioContext provider, enable background playback via \`staysActiveInBackground: true\`, persist playback progress to SQLite, and source audio from public domain URLs like Archive.org for zero hosting costs. This approach keeps you in the Expo managed workflow without ejecting, while delivering a Spotify-like persistent MiniPlayer experience across all screens.
 
 When I needed audio streaming for SanatanApp, the two main options were:
 
