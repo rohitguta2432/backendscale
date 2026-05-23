@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 64 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 67 technical case-study posts
 
 ## Featured Projects
 
@@ -16,10 +16,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (66 posts)
+## All Engineering Notes (67 posts)
 
 ### AI Systems & LLM Integration
 
+- [Claude Code Plugins in 2026: The Context-Engineering Stack Indie Devs Are Actually Installing](https://rohitraj.tech/en/notes/claude-code-plugins-context-engineering-2026)
 - [AWS Bedrock vs OpenAI — Which One to Pick for Your Startup (With Real Costs)](https://rohitraj.tech/en/notes/aws-bedrock-vs-openai)
 - [How to Build an AI Chatbot for Your Business: Architecture, Cost & What Actually Works (2026)](https://rohitraj.tech/en/notes/build-ai-chatbot-whatsapp-business-india)
 - [How to Add AI to Your Existing Business App — Without Rebuilding Everything](https://rohitraj.tech/en/notes/how-to-integrate-ai-existing-business-app)

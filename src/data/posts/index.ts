@@ -67,6 +67,7 @@ import { hireFlutterDeveloperIndia2026 } from './hire-flutter-developer-india-20
 import { resendVsSendgridVsAwsSesIndiaMvp2026 } from './resend-vs-sendgrid-vs-aws-ses-india-mvp-2026';
 import { hireIosDeveloperIndiaMvp2026 } from './hire-ios-developer-india-mvp-2026';
 import { posthogVsMixpanelVsAmplitudeIndiaMvp2026 } from './posthog-vs-mixpanel-vs-amplitude-india-mvp-2026';
+import { claudeCodePluginsContextEngineering2026 } from './claude-code-plugins-context-engineering-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -135,6 +136,7 @@ const allPosts: BlogPost[] = [
   resendVsSendgridVsAwsSesIndiaMvp2026,
   hireIosDeveloperIndiaMvp2026,
   posthogVsMixpanelVsAmplitudeIndiaMvp2026,
+  claudeCodePluginsContextEngineering2026,
 ];
 
 // Validate all posts at module load time

@@ -21,6 +21,23 @@ export const blogSummaries: BlogPostSummary[] = [
     "relatedProject": "myFinancial"
   },
   {
+    "slug": "claude-code-plugins-context-engineering-2026",
+    "title": "Claude Code Plugins in 2026: The Context-Engineering Stack Indie Devs Are Actually Installing",
+    "date": "2026-05-23",
+    "excerpt": "Four of today's top 15 trending GitHub repos are Claude Code plugins. CodeGraph hit 2,434 stars in 24 hours. Karpathy's skills file: 3,372. This isn't noise — it's the moment context engineering became the differentiator. Here's what to install, what to skip, and why every listicle you've read this month is already wrong.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "claude code plugins",
+      "claude code skills",
+      "claude code knowledge graph",
+      "codegraph claude code",
+      "claude code plugin ecosystem 2026",
+      "context engineering claude code",
+      "best claude code plugins 2026"
+    ],
+    "relatedProject": "propcheck"
+  },
+  {
     "slug": "hire-ios-developer-india-mvp-2026",
     "title": "Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift Freelancer (Real Cost)",
     "date": "2026-05-22",
