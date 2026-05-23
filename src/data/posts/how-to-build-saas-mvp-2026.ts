@@ -105,7 +105,9 @@ I typically build MVPs for $5K-$10K depending on complexity. That includes archi
 4. **Milestone payments** — You pay in 3 installments tied to deliverables
 5. **30 days free support** — After launch, I fix bugs and handle deployment issues at no extra cost
 
-The goal isn't to build you the perfect product. It's to build you the smallest thing that can start making money, so you can fund the next iteration with revenue instead of savings.`
+The goal isn't to build you the perfect product. It's to build you the smallest thing that can start making money, so you can fund the next iteration with revenue instead of savings.
+
+Two posts that pick up where this one ends: [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/en/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) and [How to Hire a Software Developer: 10 Questions to Ask Before Signing](/en/notes/how-to-hire-developer-interview-questions).`
     },
     {
       heading: 'Frequently Asked Questions',

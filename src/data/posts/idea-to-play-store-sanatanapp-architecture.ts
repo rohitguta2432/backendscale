@@ -115,7 +115,11 @@ The production build took ~8 minutes on EAS servers. Output: a signed AAB file r
 - SQLite for local state management
 - Play Store submission and review process
 
-The app is live: [SanatanApp on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app).`
+The app is live: [SanatanApp on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app).
+
+For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/en/services/mobile-app-development) and a [6-week MVP sprint](/en/services/6-week-mvp).
+
+Two posts that pick up where this one ends: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) and [Lovable App Production Bugs](/en/notes/lovable-app-production-bugs-need-real-engineer-2026).`
     },
     {
       heading: 'Frequently Asked Questions',

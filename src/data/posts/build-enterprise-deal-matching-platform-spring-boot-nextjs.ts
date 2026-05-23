@@ -140,7 +140,11 @@ One command to spin up the entire stack. No external dependencies except an Open
 
 **Performance considerations:** The matching algorithm runs in O(n*m) time where n is the number of profiles and m is the number of active deals. For networks with up to 10,000 profiles and 500 active deals, this completes in under 2 seconds on a single Spring Boot instance. Beyond that scale, the matching can be parallelized using Java 21 virtual threads — each deal's match computation is independent, making it trivially parallelizable without the overhead of platform threads.
 
-**Why not GraphQL?** REST was chosen over GraphQL for the API layer because the data access patterns are well-defined — profiles, deals, matches, and analytics each have predictable query shapes. GraphQL adds complexity in schema management and N+1 query prevention that isn't justified when the API surface is stable and owned by a single frontend.`
+**Why not GraphQL?** REST was chosen over GraphQL for the API layer because the data access patterns are well-defined — profiles, deals, matches, and analytics each have predictable query shapes. GraphQL adds complexity in schema management and N+1 query prevention that isn't justified when the API surface is stable and owned by a single frontend.
+
+The pattern I run for founders in this situation is either a [full-stack development](/en/services/full-stack-development) or a [6-week MVP sprint](/en/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
+
+Two posts that pick up where this one ends: [Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21](/en/notes/build-multi-tenant-saas-spring-boot-java-21) and [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/en/notes/build-ai-chatbot-whatsapp-business-india).`
     },
     {
       heading: 'Frequently Asked Questions',

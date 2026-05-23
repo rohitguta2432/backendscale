@@ -117,7 +117,11 @@ That's your entire backend for $0/month until you have real users. When you grow
 
 MongoDB Atlas free tier gives you 512MB — just the database. Auth, storage, real-time? You're stitching together separate services.
 
-Pick PostgreSQL. Learn SQL. Ship your product. If you genuinely hit a scale problem that needs MongoDB's sharding (you probably won't — Instagram runs on PostgreSQL), migrate then.`
+Pick PostgreSQL. Learn SQL. Ship your product. If you genuinely hit a scale problem that needs MongoDB's sharding (you probably won't — Instagram runs on PostgreSQL), migrate then.
+
+The pattern I run for founders in this situation is either a [startup MVP build](/en/services/startup-mvp-development) or a [6-week MVP sprint](/en/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
+
+If this thread is useful, [Spring Boot vs Node.js for Your Startup Backend (2026)](/en/notes/spring-boot-vs-nodejs-startup-backend-2026) and [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026) are the next two posts to read.`
     },
     {
       heading: 'Frequently Asked Questions',

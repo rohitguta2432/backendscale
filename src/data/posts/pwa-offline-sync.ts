@@ -123,7 +123,11 @@ The service worker's \`sync\` event fires automatically when connectivity is res
 2. **IndexedDB is your source of truth** — the server is just a backup
 3. **Queue all writes** — never fire-and-forget network mutations
 4. **Use timestamps for conflict resolution** — last-write-wins is simple and usually sufficient
-5. **Test offline regularly** — Chrome DevTools' Network panel has an "Offline" checkbox. Use it.`
+5. **Test offline regularly** — Chrome DevTools' Network panel has an "Offline" checkbox. Use it.
+
+For founders reading this and wondering about delivery, the two ways I work are a [6-week MVP sprint](/en/services/6-week-mvp) and a [founding engineer in India](/en/services/hire-founding-engineer-india).
+
+Related reading: [₹805 Crore Lost to UPI Fraud This Year. I Built an Offline Scam Detector…](/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Frequently Asked Questions',

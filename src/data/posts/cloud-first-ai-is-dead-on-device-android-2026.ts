@@ -112,7 +112,11 @@ ScamRakshak is Hindi-first:
 
 This matters because every competing scam detection tool is English-only. The 500M Hindi-speaking smartphone users — the most vulnerable to WhatsApp and SMS scams — have zero protection in their language.
 
-Building Hindi-first isn't a localization decision. It's a market insight. The largest unserved market for digital safety tools speaks Hindi.`
+Building Hindi-first isn't a localization decision. It's a market insight. The largest unserved market for digital safety tools speaks Hindi.
+
+If you'd rather hand the build off and review weekly, the [mobile app development](/en/services/mobile-app-development) is the fastest path; for a longer-term engineering relationship, look at [fractional CTO engagement](/en/services/hire-fractional-cto-india).
+
+I've written the deeper version of this argument in [April 2026 AI News Decoded: 7 Stories That Actually Change What Founders…](/en/notes/ai-news-april-2026-what-founders-should-build) and the contrarian counter-take in [Building an On-Device AI Scam Detector for Android](/en/notes/build-on-device-ai-scam-detector-android-gemma).`
     },
     {
       heading: 'The Builder\'s Playbook for On-Device AI in 2026',

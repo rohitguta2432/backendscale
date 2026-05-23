@@ -428,7 +428,11 @@ After 30 days, we can set up a retainer (₹25,000 – ₹50,000/month) for ongo
 - **Flexibility**: Change requests are handled via the spec document amendment process. No scope creep, but no rigidity either.
 - **Ownership**: You have GitHub access from day one. If I get hit by a bus, another developer can pick up where I left off.
 
-This is how I've delivered SanatanApp, ClinicAI, StellarMIND, MyFinancial, and every other project in my portfolio. The process works because it removes ambiguity — the #1 killer of freelance projects.`
+This is how I've delivered SanatanApp, ClinicAI, StellarMIND, MyFinancial, and every other project in my portfolio. The process works because it removes ambiguity — the #1 killer of freelance projects.
+
+The pattern I run for founders in this situation is either a [founding engineer in India](/en/services/hire-founding-engineer-india) or a [startup MVP build](/en/services/startup-mvp-development) — pick based on whether you need shipped code or shipped *and* maintained code.
+
+Related reading: [Hire Flutter Developer India 2026: Founding Engineer vs Agency vs…](/en/notes/hire-flutter-developer-india-2026) and [Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift…](/en/notes/hire-ios-developer-india-mvp-2026) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Frequently Asked Questions',

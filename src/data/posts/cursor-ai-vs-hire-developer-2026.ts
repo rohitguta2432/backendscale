@@ -126,7 +126,9 @@ The pattern: Cursor wins when there is already a backstop. The backstop is your 
 
 5. **Do you need a working MVP in under 8 weeks for a fundraise or a launch?** Yes → flat-fee [6-week MVP sprint](/en/services/6-week-mvp). The fixed scope and fixed deadline are the entire reason this exists. No → fractional founding engineer, scoped to your actual budget.
 
-The mistake almost every non-technical founder makes is answering "1. yes" because Cursor's UI is friendly. Cursor's UI is not the question. The question is whether you can read the code it produces and recognize when it is wrong. If you cannot, you are not its target customer — you are its debt source.`,
+The mistake almost every non-technical founder makes is answering "1. yes" because Cursor's UI is friendly. Cursor's UI is not the question. The question is whether you can read the code it produces and recognize when it is wrong. If you cannot, you are not its target customer — you are its debt source.
+
+Related reading: [Devin AI vs Hiring a Developer in 2026: $20/Month Agent or Founding…](/en/notes/devin-ai-vs-hire-developer-2026) and [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026) cover the adjacent tradeoffs in more depth.`,
     },
     {
       heading: 'Ship Real Code in 2026 — Without the Credit Bill or the Hallucinated APIs',

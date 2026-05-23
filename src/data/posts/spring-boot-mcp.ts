@@ -113,7 +113,11 @@ The stdio transport means Claude spawns your Java process locally. For productio
 2. **Tool descriptions matter enormously** — the AI uses the description to decide when to call your tool. Be specific.
 3. **Return structured data, not strings** — the AI formats it better when it understands the structure.
 4. **Spring AI's @Tool annotation is magical** — it handles JSON schema generation, parameter validation, and MCP compliance automatically.
-5. **MCP is early but growing fast** — building MCP servers now gives you first-mover advantage in the AI tooling ecosystem.`
+5. **MCP is early but growing fast** — building MCP servers now gives you first-mover advantage in the AI tooling ecosystem.
+
+If you'd rather hand the build off and review weekly, the [6-week MVP sprint](/en/services/6-week-mvp) is the fastest path; for a longer-term engineering relationship, look at [founding engineer in India](/en/services/hire-founding-engineer-india).
+
+Adjacent reads: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) for the stack-level decision, [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](/en/notes/idea-to-play-store-sanatanapp-architecture) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

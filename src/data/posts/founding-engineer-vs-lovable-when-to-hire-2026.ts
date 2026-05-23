@@ -159,7 +159,11 @@ The honest answer for most founders I talk to in 2026: start with Lovable to val
 5. **30 days post-launch bug-fix warranty.** After we ship, you still have me for 30 days on any bug or deployment issue. Free.
 6. **Clean handoff.** At the end of the engagement, you get a codebase your next engineer can extend. I document the decisions, not just the code.
 
-If that sounds like where your startup is — you have a Lovable MVP that is cracking under usage, or you have validated an idea and want a production-grade first version — that is exactly the shape of work I take on. One founder at a time, 2–3 engagements per quarter.`
+If that sounds like where your startup is — you have a Lovable MVP that is cracking under usage, or you have validated an idea and want a production-grade first version — that is exactly the shape of work I take on. One founder at a time, 2–3 engagements per quarter.
+
+If you want this shipped end-to-end without the team-of-five overhead, the [founding engineer in India](/en/services/hire-founding-engineer-india) and [startup MVP build](/en/services/startup-mvp-development) options are the routes I take on.
+
+If this thread is useful, [Founding Engineer vs Fractional CTO in 2026](/en/notes/founding-engineer-vs-fractional-cto) and [Hire a Founding Engineer in India](/en/notes/founding-engineer-india-vs-toptal-arc-uplers-2026) are the next two posts to read.`
     },
     {
       heading: 'Frequently Asked Questions',

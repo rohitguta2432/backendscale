@@ -97,7 +97,11 @@ If someone quotes dramatically below market rate, they're either desperate or ly
 9. **Architecture:** Happy to walk through any project — ask me about ClinIQ AI's RAG pipeline or SanatanApp's offline-first architecture.
 10. **Payment:** 30-30-40 milestone structure. Contract signed before work begins.
 
-The goal isn't to find a perfect developer. It's to find one who communicates clearly, ships working software, and doesn't disappear. These 10 questions will filter out 80% of the bad ones.`
+The goal isn't to find a perfect developer. It's to find one who communicates clearly, ships working software, and doesn't disappear. These 10 questions will filter out 80% of the bad ones.
+
+If you'd rather hand the build off and review weekly, the [founding engineer in India](/en/services/hire-founding-engineer-india) is the fastest path; for a longer-term engineering relationship, look at [6-week MVP sprint](/en/services/6-week-mvp).
+
+I've written the deeper version of this argument in [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/en/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) and the contrarian counter-take in [How to Build a SaaS MVP in 2026](/en/notes/how-to-build-saas-mvp-2026).`
     },
     {
       heading: 'Frequently Asked Questions',

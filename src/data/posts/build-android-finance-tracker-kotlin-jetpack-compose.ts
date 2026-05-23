@@ -137,7 +137,11 @@ All charts are Jetpack Compose-native. No WebView, no JavaScript bridge. They an
 
 **Handling edge cases in SMS parsing:** Bank SMS formats change without warning — a bank might update their SMS template, breaking the regex. FinBaby addresses this with a fallback strategy: if the primary bank-specific regex fails, a generic amount-extraction regex runs that catches most transaction amounts regardless of format. Users can also manually correct any mis-parsed transaction in two taps. The app tracks correction frequency per bank, which helps prioritize regex updates in future releases. This resilience layer ensures the app degrades gracefully rather than silently missing transactions.
 
-**Why rule-based tips over AI-generated financial advice:** The Smart Tips engine uses deterministic calculations — percentage changes month-over-month, subscription counts, emergency fund gaps. These are more trustworthy than LLM-generated financial advice because the calculations are verifiable. When the app says "you spent 40% more on food this month," that number is exact. Users making real financial decisions need precision, not probabilistic suggestions.`
+**Why rule-based tips over AI-generated financial advice:** The Smart Tips engine uses deterministic calculations — percentage changes month-over-month, subscription counts, emergency fund gaps. These are more trustworthy than LLM-generated financial advice because the calculations are verifiable. When the app says "you spent 40% more on food this month," that number is exact. Users making real financial decisions need precision, not probabilistic suggestions.
+
+The pattern I run for founders in this situation is either a [mobile app development](/en/services/mobile-app-development) or a [founding engineer in India](/en/services/hire-founding-engineer-india) — pick based on whether you need shipped code or shipped *and* maintained code.
+
+Adjacent reads: [Building a Family Budget App with 8 Financial Modules](/en/notes/build-family-budget-app-android-offline-kotlin) for the stack-level decision, [Building an On-Device AI Scam Detector for Android](/en/notes/build-on-device-ai-scam-detector-android-gemma) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

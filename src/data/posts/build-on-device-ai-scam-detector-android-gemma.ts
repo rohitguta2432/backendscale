@@ -151,7 +151,11 @@ The app requests exactly one permission: CAMERA (for screenshot capture). No int
 
 **Model size and APK impact:** The LiteRT binary classifier adds approximately 15MB to the APK size. The Gemma 4 model is not bundled — it downloads through Google AICore separately (approximately 2GB). The regex pattern database adds under 1MB. Total APK size is approximately 12MB, which is smaller than most social media apps. For users on limited storage, Tier 2 and Tier 3 provide full protection without the Gemma 4 model download.
 
-**Testing the 3-tier fallback chain:** Each tier is tested independently with a curated dataset of known scam messages and legitimate messages. The fallback logic is tested by mocking AICore availability — when AICore returns unavailable, the app must seamlessly fall to Tier 2 without any user-visible delay. Integration tests verify that the same message produces consistent risk scores across tiers (within a 15-point tolerance), ensuring that a scam message flagged by Tier 1 is also caught by Tier 2 and Tier 3.`
+**Testing the 3-tier fallback chain:** Each tier is tested independently with a curated dataset of known scam messages and legitimate messages. The fallback logic is tested by mocking AICore availability — when AICore returns unavailable, the app must seamlessly fall to Tier 2 without any user-visible delay. Integration tests verify that the same message produces consistent risk scores across tiers (within a 15-point tolerance), ensuring that a scam message flagged by Tier 1 is also caught by Tier 2 and Tier 3.
+
+The pattern I run for founders in this situation is either a [mobile app development](/en/services/mobile-app-development) or a [fractional CTO engagement](/en/services/hire-fractional-cto-india) — pick based on whether you need shipped code or shipped *and* maintained code.
+
+Two posts that pick up where this one ends: [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/en/notes/build-ai-chatbot-whatsapp-business-india) and [Building an Android Finance Tracker with SMS Auto-Import](/en/notes/build-android-finance-tracker-kotlin-jetpack-compose).`
     },
     {
       heading: 'Frequently Asked Questions',

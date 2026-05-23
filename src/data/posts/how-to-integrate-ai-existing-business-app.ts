@@ -98,7 +98,9 @@ For ClinIQ AI, I built exactly this: daily summaries of appointment no-shows, re
 
 Start with Level 1 (semantic search) or Level 2 (automated summaries). Get real user feedback. Then decide if Level 3 is worth the investment. Most businesses get massive value from just Level 1 + 2.
 
-**How to measure AI ROI:** Before integrating any AI feature, define one measurable metric that should improve. For semantic search, track search-to-action conversion rate. For automated summaries, measure time saved per manager per week. For chat interfaces, track the percentage of questions answered without human intervention. Run the feature for 30 days and compare against your baseline. If the metric has not improved meaningfully, either adjust the implementation or reconsider whether AI is the right solution for that particular problem. Not every feature needs AI — sometimes a better-designed dashboard solves the same problem at lower cost and complexity.`
+**How to measure AI ROI:** Before integrating any AI feature, define one measurable metric that should improve. For semantic search, track search-to-action conversion rate. For automated summaries, measure time saved per manager per week. For chat interfaces, track the percentage of questions answered without human intervention. Run the feature for 30 days and compare against your baseline. If the metric has not improved meaningfully, either adjust the implementation or reconsider whether AI is the right solution for that particular problem. Not every feature needs AI — sometimes a better-designed dashboard solves the same problem at lower cost and complexity.
+
+Adjacent reads: [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/en/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) for the stack-level decision, [How to Build a SaaS MVP in 2026](/en/notes/how-to-build-saas-mvp-2026) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

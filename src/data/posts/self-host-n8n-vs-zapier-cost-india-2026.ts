@@ -141,7 +141,9 @@ volumes:
 
 **3. You will not maintain a Docker container.** Even 10 minutes/month is a commitment. If your team is non-technical or you are a solo founder spending all your time on customer development, the box will rot. Zapier never rots.
 
-**4. Your integration count exceeds n8n's coverage.** If you genuinely need FreshBooks Classic + Manychat legacy + an obscure Indian CRM with no public API, Zapier may be the only platform that has all three pre-built. Audit the connectors honestly before committing.`,
+**4. Your integration count exceeds n8n's coverage.** If you genuinely need FreshBooks Classic + Manychat legacy + an obscure Indian CRM with no public API, Zapier may be the only platform that has all three pre-built. Audit the connectors honestly before committing.
+
+Two posts that pick up where this one ends: [India vs US MVP Developer Cost in 2026](/en/notes/india-vs-us-mvp-developer-cost-2026) and [OpenAI vs Claude vs Gemini API](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026).`,
     },
     {
       heading: 'The 5-step decision tree',

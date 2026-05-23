@@ -135,7 +135,9 @@ The honest position is: **price-optimize too early and you ship slower; speed-op
 4. Move env vars + secrets + connect domain via Cloudflare (15 min)
 5. Run side-by-side for 48 hours; flip DNS, monitor Sentry for regressions, kill Vercel project after 7 days quiet (1 hour active work)
 
-Total migration time for a Next.js app under 50 routes: half a day to one full day. If it takes longer, you have more Vercel-specific code than you realized — pause the migration, audit, and decide if the rewrite cost is still worth the monthly savings.`,
+Total migration time for a Next.js app under 50 routes: half a day to one full day. If it takes longer, you have more Vercel-specific code than you realized — pause the migration, audit, and decide if the rewrite cost is still worth the monthly savings.
+
+I've written the deeper version of this argument in [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) and the contrarian counter-take in [India vs US MVP Developer Cost in 2026](/en/notes/india-vs-us-mvp-developer-cost-2026).`,
     },
     {
       heading: 'Where this fits in the 6-week MVP playbook',

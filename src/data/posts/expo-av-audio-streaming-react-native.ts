@@ -159,7 +159,11 @@ Adding new audio content is a one-line JSON addition — no code changes, no red
 
 The total infrastructure cost for SanatanApp is **$0/month**. No servers. No databases. No CDN. The only cost is the $25 one-time Google Play developer fee.
 
-**A note on reliability:** Archive.org has occasional downtime and slower response times compared to commercial CDNs like CloudFront or Cloudflare R2. For a devotional app with patient users, this is acceptable. For a commercial music streaming app, you would want to host audio on a proper CDN with edge caching. The trade-off is cost: even a modest S3 + CloudFront setup for audio streaming would add $20-$100/month depending on volume, which eliminates the zero-cost advantage of this architecture.`
+**A note on reliability:** Archive.org has occasional downtime and slower response times compared to commercial CDNs like CloudFront or Cloudflare R2. For a devotional app with patient users, this is acceptable. For a commercial music streaming app, you would want to host audio on a proper CDN with edge caching. The trade-off is cost: even a modest S3 + CloudFront setup for audio streaming would add $20-$100/month depending on volume, which eliminates the zero-cost advantage of this architecture.
+
+The pattern I run for founders in this situation is either a [mobile app development](/en/services/mobile-app-development) or a [6-week MVP sprint](/en/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
+
+Two posts that pick up where this one ends: [Building a Multi-Language React Native App with Expo SDK 52](/en/notes/building-multilanguage-react-native-app-expo) and [Building an Offline-First Trip Planner with React Native + WatermelonDB +…](/en/notes/build-offline-first-trip-planner-react-native-watermelondb).`
     },
     {
       heading: 'Frequently Asked Questions',

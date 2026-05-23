@@ -125,7 +125,9 @@ For everyone else — and "everyone else" is most Indian seed-stage MVPs — Raz
 
 If you score 1-2 above, pick **Razorpay** and move on. If 3-5, pick **Stripe**. If you're hybrid, run both — Razorpay for India traffic + Stripe for international. Don't waste a week comparing — the choice is determined by your customer geography, not your developer preference.
 
-This decision shows up on the cost line every month. On a ₹50,000 GMV month with 50/50 UPI/card split, the difference is ₹2,035 saved per month with Razorpay. Over 12 months, that's almost a month of a freelance developer's contracted time. Pick the gateway, not the pricing page.`,
+This decision shows up on the cost line every month. On a ₹50,000 GMV month with 50/50 UPI/card split, the difference is ₹2,035 saved per month with Razorpay. Over 12 months, that's almost a month of a freelance developer's contracted time. Pick the gateway, not the pricing page.
+
+Adjacent reads: [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) for the stack-level decision, [India vs US MVP Developer Cost in 2026](/en/notes/india-vs-us-mvp-developer-cost-2026) for the hiring-level one.`,
     },
     {
       heading: 'Ship payments correctly the first time',

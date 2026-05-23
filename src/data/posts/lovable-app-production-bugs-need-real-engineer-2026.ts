@@ -100,7 +100,9 @@ Common migration disasters in vibe-coded apps:
 
 The fix pattern: senior engineer establishes a migration framework (Supabase migrations, Flyway, or Prisma migrate), writes safe migrations that preserve data, runs them on a staging clone of prod first, and writes rollback scripts. Total work: 1-2 days for the framework + ongoing care per migration. Cost: $1,500-$3,000 to set up the framework + $200-$500 per non-trivial migration thereafter.
 
-The structural fix is that schema changes should never be vibe-coded after the app has real users. Once you have data you do not want to lose, every schema change goes through a senior engineer.`
+The structural fix is that schema changes should never be vibe-coded after the app has real users. Once you have data you do not want to lose, every schema change goes through a senior engineer.
+
+Adjacent reads: [Your Supabase RLS Just Leaked Production Data](/en/notes/supabase-rls-production-bugs-need-real-engineer-2026) for the stack-level decision, [Founding Engineer vs Lovable in 2026](/en/notes/founding-engineer-vs-lovable-when-to-hire-2026) for the hiring-level one.`
     },
     {
       heading: 'The Real Cost of Vibe-Coding to Production',

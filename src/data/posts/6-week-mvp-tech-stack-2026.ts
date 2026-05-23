@@ -112,7 +112,9 @@ The decision tree:
 - Native is required for the core mechanic (e.g., a fitness tracker, scanner, or app-only product) → React Native + Expo from day one
 - iOS-only or Android-only is fine for v1 → still React Native + Expo, ship to one store first
 
-This stack ships native apps in 4-6 weeks once the web MVP exists. Standalone native sprint at $20K-$40K depending on complexity.`
+This stack ships native apps in 4-6 weeks once the web MVP exists. Standalone native sprint at $20K-$40K depending on complexity.
+
+Two posts that pick up where this one ends: [6-Week MVP Sprint](/en/notes/6-week-mvp-sprint-week-by-week-breakdown) and [Spring Boot vs Node.js for Your Startup Backend (2026)](/en/notes/spring-boot-vs-nodejs-startup-backend-2026).`
     },
     {
       heading: 'The 2026 Boring-Stack Cheat Sheet',

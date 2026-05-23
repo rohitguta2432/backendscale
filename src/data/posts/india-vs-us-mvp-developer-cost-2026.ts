@@ -203,7 +203,11 @@ This is why the "India agency vs US agency" framing in most MVP-cost articles is
 - Mobile native app builds (I build mobile separately — React Native or Kotlin)
 - Compliance audits beyond standard security hygiene (SOC 2 or HIPAA audits require a specialized partner)
 
-The shape of the engagement is deliberately boring. No agency overhead, no PM layer, no billing surprises. Just one senior engineer, six weeks, a clean production codebase you own outright.`
+The shape of the engagement is deliberately boring. No agency overhead, no PM layer, no billing surprises. Just one senior engineer, six weeks, a clean production codebase you own outright.
+
+On most of my client engagements this comes up as either a [founding engineer in India](/en/services/hire-founding-engineer-india) or a [6-week MVP sprint](/en/services/6-week-mvp) — either path leads to a working production build inside a quarter.
+
+Adjacent reads: [OpenAI vs Claude vs Gemini API](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) for the stack-level decision, [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

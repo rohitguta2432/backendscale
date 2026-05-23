@@ -176,7 +176,11 @@ Worth it. The target audience — scam-vulnerable Indians — need to trust this
 
 The best time to build digital safety infrastructure for India was 5 years ago. The second best time is now.
 
-**Why the timing is right:** India crossed 500 million UPI users in 2025, and digital payment adoption in Tier 2/3 cities is growing at 35% year-over-year — far outpacing digital literacy. The gap between payment adoption and scam awareness is widening. Every month that gap exists, fraudsters extract crores from the most vulnerable users. A proactive, offline, Hindi-first scam detector fills a gap that no bank, no government helpline, and no existing app addresses.`
+**Why the timing is right:** India crossed 500 million UPI users in 2025, and digital payment adoption in Tier 2/3 cities is growing at 35% year-over-year — far outpacing digital literacy. The gap between payment adoption and scam awareness is widening. Every month that gap exists, fraudsters extract crores from the most vulnerable users. A proactive, offline, Hindi-first scam detector fills a gap that no bank, no government helpline, and no existing app addresses.
+
+For founders reading this and wondering about delivery, the two ways I work are a [fintech app build](/en/services/fintech-app-development) and a [mobile app development](/en/services/mobile-app-development).
+
+Two posts that pick up where this one ends: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) and [Offline-First PWA Patterns](/en/notes/pwa-offline-sync).`
     },
     {
       heading: 'Frequently Asked Questions',

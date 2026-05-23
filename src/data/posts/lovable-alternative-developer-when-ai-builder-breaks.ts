@@ -85,7 +85,11 @@ Red flags:
 
 The rescue market is small because most senior devs do not want this work — it is messy, the code is often bad, and the founder is stressed. The ones who do this work intentionally do it well, and they do not advertise on Upwork because they do not need to.
 
-If you want to see what a rescue timeline and deliverable actually looks like, I have one linked at the bottom of this page. It is not a sales page. It is a written scope document, with real cost, real timelines, and a list of the failure modes I fix most often.`
+If you want to see what a rescue timeline and deliverable actually looks like, I have one linked at the bottom of this page. It is not a sales page. It is a written scope document, with real cost, real timelines, and a list of the failure modes I fix most often.
+
+The pattern I run for founders in this situation is either a [founding engineer in India](/en/services/hire-founding-engineer-india) or a [6-week MVP sprint](/en/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
+
+Adjacent reads: [April 2026 AI News Decoded: 7 Stories That Actually Change What Founders…](/en/notes/ai-news-april-2026-what-founders-should-build) for the stack-level decision, [Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It.](/en/notes/cloud-first-ai-is-dead-on-device-android-2026) for the hiring-level one.`
     },
     {
       heading: 'When You Should Just Keep Using Lovable',

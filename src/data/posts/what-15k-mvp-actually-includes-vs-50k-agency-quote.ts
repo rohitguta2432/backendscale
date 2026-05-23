@@ -96,7 +96,9 @@ The trade-off: contractors do not scale to 5+ engineers on one project. If your 
 
 **3. You need ongoing post-launch ownership for 12+ months.** If you do not have plans to hire engineering in-house and you need an external team to own the product for 1-2 years, an agency on a monthly retainer makes sense. Senior contractors typically max out at 6-12 month engagements and get expensive at that duration.
 
-For everything else — pre-seed startups, fixed-budget MVPs, founder-led product validation — the agency markup is overhead you do not need.`
+For everything else — pre-seed startups, fixed-budget MVPs, founder-led product validation — the agency markup is overhead you do not need.
+
+Two posts that pick up where this one ends: [6-Week MVP Sprint vs 3-Month Agency Build](/en/notes/6-week-mvp-vs-3-month-agency-which-ships-first) and [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026).`
     },
     {
       heading: 'Negotiating the Agency Quote Down (If You Are Already Committed)',

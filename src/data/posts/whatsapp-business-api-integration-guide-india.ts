@@ -128,7 +128,11 @@ That's less than most businesses spend on SMS. And the engagement is 5x better.
 
 For ClinIQ AI, the WhatsApp integration was one of the highest-ROI features I built. The development cost was modest, the monthly running cost is negligible, and the impact on patient no-shows was dramatic.
 
-If you're an Indian startup and you're not on WhatsApp Business API yet, you're leaving money on the table. Start with appointment reminders or order updates — the simplest use case with the highest impact.`
+If you're an Indian startup and you're not on WhatsApp Business API yet, you're leaving money on the table. Start with appointment reminders or order updates — the simplest use case with the highest impact.
+
+If you'd rather hand the build off and review weekly, the [founding engineer in India](/en/services/hire-founding-engineer-india) is the fastest path; for a longer-term engineering relationship, look at [AI chatbot build](/en/services/ai-chatbot-development).
+
+Two posts that pick up where this one ends: [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/en/notes/build-ai-chatbot-whatsapp-business-india) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
     },
     {
       heading: 'Frequently Asked Questions',

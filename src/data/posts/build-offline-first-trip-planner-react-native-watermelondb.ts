@@ -142,7 +142,11 @@ TripHive removes every friction point:
 
 **Cross-platform performance considerations:** React Native with Expo provides a managed workflow that simplifies iOS and Android builds from a single codebase. WatermelonDB's lazy loading is particularly important on Android where memory management is stricter — loading 200 itinerary items eagerly would cause perceptible jank on mid-range devices. The MapLibre renderer uses GPU acceleration for smooth map interactions, and downloaded PMTiles are stored on device storage rather than app storage to avoid Android's per-app storage limits.
 
-**Handling multi-currency expense splitting:** International trips involve expenses in multiple currencies. TripHive stores each expense in its original currency with the conversion rate at time of entry. Settlement calculations convert everything to a single "trip currency" chosen by the group creator. Exchange rates can be manually adjusted if the group disagrees with the automatic rate. This avoids the common problem in Splitwise where currency conversion discrepancies create small persistent imbalances that never resolve.`
+**Handling multi-currency expense splitting:** International trips involve expenses in multiple currencies. TripHive stores each expense in its original currency with the conversion rate at time of entry. Settlement calculations convert everything to a single "trip currency" chosen by the group creator. Exchange rates can be manually adjusted if the group disagrees with the automatic rate. This avoids the common problem in Splitwise where currency conversion discrepancies create small persistent imbalances that never resolve.
+
+If you want this shipped end-to-end without the team-of-five overhead, the [mobile app development](/en/services/mobile-app-development) and [6-week MVP sprint](/en/services/6-week-mvp) options are the routes I take on.
+
+Related reading: [Building a Family Budget App with 8 Financial Modules](/en/notes/build-family-budget-app-android-offline-kotlin) and [Building a Multi-Language React Native App with Expo SDK 52](/en/notes/building-multilanguage-react-native-app-expo) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Frequently Asked Questions',

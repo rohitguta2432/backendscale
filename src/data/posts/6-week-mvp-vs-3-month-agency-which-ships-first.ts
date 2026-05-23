@@ -75,7 +75,9 @@ This is why 36% of solo-founded startups in 2026 use the sprint model. They do n
 
 **3. You need post-launch SLAs and 24/7 support.** If your product is mission-critical (B2B SaaS for healthcare, fintech, or compliance) and needs round-the-clock incident response from day 1, an agency with a support team is the right fit. Contractors typically work in business hours.
 
-For everything else — pre-seed B2B SaaS, consumer products, founder-led validation builds, internal tools — the sprint model wins on time, cost, and learning velocity.`
+For everything else — pre-seed B2B SaaS, consumer products, founder-led validation builds, internal tools — the sprint model wins on time, cost, and learning velocity.
+
+I've written the deeper version of this argument in [What a $15K MVP Actually Includes](/en/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote) and the contrarian counter-take in [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026).`
     },
     {
       heading: 'How to Pick: The 5-Minute Decision Tree',

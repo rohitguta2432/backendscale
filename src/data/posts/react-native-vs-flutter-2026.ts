@@ -82,7 +82,11 @@ If I were starting SanatanApp over today, I would still choose React Native, but
 
 **For most startups building business apps, I recommend React Native.** The ecosystem is larger, hiring is easier, and code sharing with web is a real advantage. Flutter is the better choice for apps where custom UI and animation are the core product.
 
-When I built SanatanApp, the Expo ecosystem saved me weeks — over-the-air updates, easy audio streaming with expo-av, and a ~15MB APK without fighting native build tools. That's the kind of practical advantage that matters when you're shipping on a deadline.`
+When I built SanatanApp, the Expo ecosystem saved me weeks — over-the-air updates, easy audio streaming with expo-av, and a ~15MB APK without fighting native build tools. That's the kind of practical advantage that matters when you're shipping on a deadline.
+
+If you want this shipped end-to-end without the team-of-five overhead, the [mobile app development](/en/services/mobile-app-development) and [6-week MVP sprint](/en/services/6-week-mvp) options are the routes I take on.
+
+Adjacent reads: [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026) for the stack-level decision, [Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?](/en/notes/claude-code-vs-hire-developer-2026) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

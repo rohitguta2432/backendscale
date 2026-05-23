@@ -123,7 +123,9 @@ If any of those describe your situation, do not hire an engineer in 2026. Spend 
 
 The mistake is treating this as binary. **It is not "Claude Code OR hire."** It is "Claude Code at every stage, plus the right human at the right stage." Founders who get that combination right ship faster and cheaper than founders on either extreme.
 
-Most engineers worth hiring in 2026 already use Claude Code daily. The question is not whether you use the tool. The question is whether the person reading the diff has shipped to production before. If the answer is no, that is the gap to close. The CLI does not close it.`,
+Most engineers worth hiring in 2026 already use Claude Code daily. The question is not whether you use the tool. The question is whether the person reading the diff has shipped to production before. If the answer is no, that is the gap to close. The CLI does not close it.
+
+If this thread is useful, [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026) and [Cursor AI vs Hire Developer 2026](/en/notes/cursor-ai-vs-hire-developer-2026) are the next two posts to read.`,
     },
     {
       heading: 'Bottom line: pair the CLI with the right human',

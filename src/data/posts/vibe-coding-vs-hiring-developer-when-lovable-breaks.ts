@@ -170,7 +170,11 @@ The moment engineering is the bottleneck, you will know. You will wake up frustr
 - MicroItinerary — travel planning MVP with offline-first sync
 - Several Lovable and Bolt rescue projects I cannot name publicly (under NDA) that went from "breaking weekly" to "shipping daily"
 
-If your vibe-coded MVP is past the diagnostic threshold — 2 or more symptoms from the checklist above — that is exactly the shape of engagement I take on. If you are below the threshold, I will tell you so and point you back to your prompts. Either way, the 30-minute call is free.`
+If your vibe-coded MVP is past the diagnostic threshold — 2 or more symptoms from the checklist above — that is exactly the shape of engagement I take on. If you are below the threshold, I will tell you so and point you back to your prompts. Either way, the 30-minute call is free.
+
+For founders reading this and wondering about delivery, the two ways I work are a [founding engineer in India](/en/services/hire-founding-engineer-india) and a [6-week MVP sprint](/en/services/6-week-mvp).
+
+Two posts that pick up where this one ends: [Founding Engineer vs Lovable in 2026](/en/notes/founding-engineer-vs-lovable-when-to-hire-2026) and [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026).`
     },
     {
       heading: 'Frequently Asked Questions',

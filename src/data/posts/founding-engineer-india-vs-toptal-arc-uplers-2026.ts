@@ -133,7 +133,9 @@ The choice depends on what you optimize for:
 - **Optimizing for speed**: Uplers (24-hour match) — but accept variable quality
 - **Optimizing for cost + quality + transparency**: direct hire — but you do the vetting
 
-For pre-seed founders shipping a 6-week MVP, direct hire wins on every metric except risk reduction. The risk-reduction value comes from your own vetting: read the engineer's blog, browse their GitHub, talk to 2-3 past clients. 90 minutes of due diligence saves you $5K-$10K of marketplace markup.`
+For pre-seed founders shipping a 6-week MVP, direct hire wins on every metric except risk reduction. The risk-reduction value comes from your own vetting: read the engineer's blog, browse their GitHub, talk to 2-3 past clients. 90 minutes of due diligence saves you $5K-$10K of marketplace markup.
+
+Related reading: [PostHog vs Mixpanel vs Amplitude](/en/notes/posthog-vs-mixpanel-vs-amplitude-india-mvp-2026) and [Founding Engineer vs Lovable in 2026](/en/notes/founding-engineer-vs-lovable-when-to-hire-2026) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Three Vetting Steps Before Hiring Direct',

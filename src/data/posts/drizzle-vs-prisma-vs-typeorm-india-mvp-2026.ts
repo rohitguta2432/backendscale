@@ -127,7 +127,9 @@ I do not think Prisma is wrong. I think it is no longer the **default** for new 
 4. **Is your co-founder or PM going to inspect rows weekly via a GUI?** Pick Prisma. Studio is worth the cold-start tax for that team shape.
 5. **None of the above — generic Next.js + Postgres MVP, technical solo founder?** Pick Drizzle. Migrate to Prisma later if you ever need Studio for a non-technical hire. The schema is small enough that the rewrite cost is a half-day, not a sprint.
 
-There is no rule that ends in "pick TypeORM" for a new 2026 build. If you find yourself there, ask why — usually it is because a Stack Overflow answer from 2021 is still the top result for "best Node ORM."`,
+There is no rule that ends in "pick TypeORM" for a new 2026 build. If you find yourself there, ask why — usually it is because a Stack Overflow answer from 2021 is still the top result for "best Node ORM."
+
+Two posts that pick up where this one ends: [India vs US MVP Developer Cost in 2026](/en/notes/india-vs-us-mvp-developer-cost-2026) and [LangGraph vs CrewAI vs AutoGen: Which Multi-Agent Framework Wins for India…](/en/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026).`,
     },
     {
       heading: 'CTA — ship with the right ORM the first time',

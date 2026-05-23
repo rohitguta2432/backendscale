@@ -165,7 +165,11 @@ Key trade-offs:
 
 **Consider Expo Router over React Navigation.** Expo Router (file-based routing) is more idiomatic in the Expo ecosystem now. I went with React Navigation because I knew it well, but Expo Router would have simplified the navigation setup.
 
-The app is live on [Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app). If you're building a content-heavy React Native app with offline-first requirements, the JSON + streaming architecture works well. The total cost of running SanatanApp is $0/month — no servers, no databases, no CDN bills.`
+The app is live on [Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app). If you're building a content-heavy React Native app with offline-first requirements, the JSON + streaming architecture works well. The total cost of running SanatanApp is $0/month — no servers, no databases, no CDN bills.
+
+For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/en/services/mobile-app-development) and a [6-week MVP sprint](/en/services/6-week-mvp).
+
+I've written the deeper version of this argument in [Streaming Audio in React Native: expo-av with Public Domain Sources](/en/notes/expo-av-audio-streaming-react-native) and the contrarian counter-take in [Building an Offline-First Trip Planner with React Native + WatermelonDB +…](/en/notes/build-offline-first-trip-planner-react-native-watermelondb).`
     },
     {
       heading: 'Frequently Asked Questions',

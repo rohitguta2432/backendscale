@@ -131,7 +131,11 @@ The invoice module takes a completed Bill, applies GST rules based on HSN codes 
 
 **Idempotency:** Every operation gets a client-generated UUID. If the same operation syncs twice (network retry), the server detects the duplicate and ignores it.
 
-This is the hardest engineering problem in the entire platform. The key insight: for retail, **you never lose a transaction.** It's better to have a duplicate that gets reconciled than a missing sale that's gone forever.`
+This is the hardest engineering problem in the entire platform. The key insight: for retail, **you never lose a transaction.** It's better to have a duplicate that gets reconciled than a missing sale that's gone forever.
+
+For founders reading this and wondering about delivery, the two ways I work are a [founding engineer in India](/en/services/hire-founding-engineer-india) and a [fractional CTO engagement](/en/services/hire-fractional-cto-india).
+
+If this thread is useful, [Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21](/en/notes/build-multi-tenant-saas-spring-boot-java-21) and [Building an MCP Server with Spring Boot](/en/notes/spring-boot-mcp) are the next two posts to read.`
     },
     {
       heading: 'The Solo Engineer\'s Multiplier Stack',

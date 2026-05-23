@@ -149,7 +149,11 @@ When a debt is marked as paid, the app celebrates with a confetti animation and 
 
 **What PaisaGuard proves:** You don't need AI, cloud infrastructure, or bank APIs to build a genuinely useful finance app. Eight modules, offline-only, built by one engineer. Sometimes the most impactful products are the simplest ones.
 
-**Data integrity across 8 modules:** With all modules sharing a single Room database, data consistency is critical. Room's support for database transactions ensures that cross-module operations — like marking a bill as paid and creating an expense entry simultaneously — are atomic. If either operation fails, both roll back. Kotlin coroutines with Flow provide reactive updates across modules, so the dashboard total updates instantly when a grocery item is added or a debt payment is recorded. This reactive architecture means the user always sees current data without manual refresh.`
+**Data integrity across 8 modules:** With all modules sharing a single Room database, data consistency is critical. Room's support for database transactions ensures that cross-module operations — like marking a bill as paid and creating an expense entry simultaneously — are atomic. If either operation fails, both roll back. Kotlin coroutines with Flow provide reactive updates across modules, so the dashboard total updates instantly when a grocery item is added or a debt payment is recorded. This reactive architecture means the user always sees current data without manual refresh.
+
+For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/en/services/mobile-app-development) and a [fintech app build](/en/services/fintech-app-development).
+
+If this thread is useful, [Building an Android Finance Tracker with SMS Auto-Import](/en/notes/build-android-finance-tracker-kotlin-jetpack-compose) and [How to Build an App Like Uber or Zomato](/en/notes/build-app-like-uber-zomato-architecture-cost) are the next two posts to read.`
     },
     {
       heading: 'Frequently Asked Questions',

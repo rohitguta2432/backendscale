@@ -117,7 +117,9 @@ By the end of week 6, the founder has a production product, a payment-ready cust
 
 Cutting these is not a compromise. It is the discipline that makes the sprint ship in 6 weeks. Every founder I have shipped with has come back for a v2 sprint within 8 weeks of v1 launch. By that point, they have real users telling them what to build — and the v2 scope is sharper, faster, and cheaper because the foundation is already there.
 
-If your idea cannot fit in this scope, you have two options: split it into v1 + v2 sprints (12 weeks total, $30K-$50K), or hire a founding engineer for a 4-month build at $80K-$140K. Both are valid. The 6-week sprint is the right call when you need to validate before you invest.`
+If your idea cannot fit in this scope, you have two options: split it into v1 + v2 sprints (12 weeks total, $30K-$50K), or hire a founding engineer for a 4-month build at $80K-$140K. Both are valid. The 6-week sprint is the right call when you need to validate before you invest.
+
+Adjacent reads: [6-Week MVP Tech Stack in 2026](/en/notes/6-week-mvp-tech-stack-2026) for the stack-level decision, [6-Week MVP Sprint vs 3-Month Agency Build](/en/notes/6-week-mvp-vs-3-month-agency-which-ships-first) for the hiring-level one.`
     },
     {
       heading: 'Ready to Run Your Own 6-Week Sprint?',

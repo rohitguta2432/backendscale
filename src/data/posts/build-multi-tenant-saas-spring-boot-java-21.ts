@@ -143,7 +143,11 @@ services:
 
 **Security and compliance considerations:** RetailOS handles sensitive financial data — transaction records, customer credit information, and GST-linked invoices. The audit module (retailos-audit) creates an immutable event log for every data modification, which is essential for GST compliance audits. The KYC module manages DPDP (Digital Personal Data Protection) consent, ensuring that customer data collection complies with India's 2023 data protection law. JWT tokens use short expiration times with refresh token rotation, and OTP-based authentication eliminates password management entirely — critical for shopkeepers who would otherwise use "123456" as their password.
 
-**Scaling path from monorepo to microservices:** The 12-module Maven structure is designed for eventual extraction. Each module communicates through service interfaces defined in retailos-common, not through direct database queries across module boundaries. When the billing module needs independent scaling — handling 10x the traffic of analytics — extraction means pulling the module into its own Spring Boot application, replacing in-process calls with REST or gRPC, and deploying independently. The module boundaries are already clean; extraction is a deployment change, not an architecture change.`
+**Scaling path from monorepo to microservices:** The 12-module Maven structure is designed for eventual extraction. Each module communicates through service interfaces defined in retailos-common, not through direct database queries across module boundaries. When the billing module needs independent scaling — handling 10x the traffic of analytics — extraction means pulling the module into its own Spring Boot application, replacing in-process calls with REST or gRPC, and deploying independently. The module boundaries are already clean; extraction is a deployment change, not an architecture change.
+
+If you want this shipped end-to-end without the team-of-five overhead, the [fractional CTO engagement](/en/services/hire-fractional-cto-india) and [founding engineer in India](/en/services/hire-founding-engineer-india) options are the routes I take on.
+
+Two posts that pick up where this one ends: [How I Built an Enterprise Deal Matching Platform with Spring Boot +…](/en/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
     },
     {
       heading: 'Frequently Asked Questions',
