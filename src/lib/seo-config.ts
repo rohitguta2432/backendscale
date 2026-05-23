@@ -411,11 +411,42 @@ export function generateFAQSchema(faqs: { question: string; answer: string }[]) 
 export const SUPPORTED_LOCALES = ['en', 'hi', 'fr', 'de', 'ar'] as const;
 
 // Helper to create page-specific metadata with canonical URLs and locale alternates
+/**
+ * Truncate a description to Google's SERP-display limit while preserving sentence boundaries.
+ * Google truncates meta descriptions at ~155-160 chars on mobile, ~160-170 on desktop.
+ * Returns the original string if already short enough; otherwise cuts at the last word
+ * boundary inside the limit and appends an ellipsis only if there's room.
+ */
+export function truncateDescription(text: string, max: number = 158): string {
+    if (!text) return text;
+    if (text.length <= max) return text;
+    const slice = text.slice(0, max);
+    const lastSpace = slice.lastIndexOf(' ');
+    const cut = lastSpace > max * 0.6 ? slice.slice(0, lastSpace) : slice;
+    return cut.replace(/[.,;:\s]+$/, '') + '…';
+}
+
+/**
+ * Resolve a possibly-relative image path to an absolute URL.
+ * If the input is already absolute (starts with http), returns as-is.
+ */
+function resolveImageUrl(src?: string): string {
+    if (!src) return `${SITE_CONFIG.url}${SITE_CONFIG.images.og}`;
+    if (/^https?:\/\//.test(src)) return src;
+    return `${SITE_CONFIG.url}${src.startsWith('/') ? src : `/${src}`}`;
+}
+
 export function createPageMetadata(
     title: string,
     description: string,
     path: string = '',
-    locale: string = 'en'
+    locale: string = 'en',
+    options: {
+        /** Page-specific image (e.g. blog cover). Falls back to site default. */
+        image?: { src: string; alt: string };
+        /** Override the meta description (e.g. trimmed-to-160 version of post excerpt). */
+        metaDescription?: string;
+    } = {}
 ): Metadata {
     // path should be the route without locale prefix, e.g. '/about' or '/projects'
     const canonical = `${SITE_CONFIG.url}/${locale}${path}`;
@@ -424,17 +455,40 @@ export function createPageMetadata(
         languages[loc] = `${SITE_CONFIG.url}/${loc}${path}`;
     }
     languages['x-default'] = `${SITE_CONFIG.url}/en${path}`;
+
+    // Truncate description for meta tags (Google SERP truncates at ~158 chars).
+    // The full description still ships in body text; only the head meta is shortened.
+    const metaDesc = truncateDescription(options.metaDescription ?? description);
+
+    // Resolve page image. Fall back to site OG image so social cards never render naked.
+    const ogImageUrl = resolveImageUrl(options.image?.src);
+    const ogImageAlt = options.image?.alt ?? 'Rohit Raj — Founding Engineer & AI Systems Architect';
+
     return {
         title,
-        description,
+        description: metaDesc,
         openGraph: {
             title,
-            description,
+            description: metaDesc,
             url: canonical,
+            type: path.startsWith('/notes/') ? 'article' : 'website',
+            siteName: SITE_CONFIG.name,
+            locale: SITE_CONFIG.locale,
+            images: [
+                {
+                    url: ogImageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: ogImageAlt,
+                },
+            ],
         },
         twitter: {
+            card: 'summary_large_image',
             title,
-            description,
+            description: metaDesc,
+            images: [ogImageUrl],
+            creator: SITE_CONFIG.author.twitter,
         },
         alternates: {
             canonical,

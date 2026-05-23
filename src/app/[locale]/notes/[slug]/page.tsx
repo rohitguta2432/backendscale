@@ -38,7 +38,15 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
             `${post.title} | Rohit Raj`,
             post.excerpt,
             `/notes/${slug}`,
-            locale
+            locale,
+            {
+                // Pass per-post cover image so social cards (Twitter/LinkedIn/FB) render the
+                // post-specific visual instead of the generic site OG image.
+                image: post.coverImage,
+                // The body still shows the full excerpt; meta description is the trimmed
+                // SERP-display version (≤158 chars) so Google doesn't truncate mid-sentence.
+                // createPageMetadata handles the truncation internally.
+            }
         ),
         keywords: post.keywords,
     };
