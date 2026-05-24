@@ -305,12 +305,12 @@ export const services: Service[] = [
  title: "6-Week MVP Sprint",
  metaTitle: "6-Week MVP Sprint | Founding Engineer for Hire | Rohit Raj",
  metaDescription:
- "Ship a production-ready MVP in 6 weeks — fixed scope, no equity. Founding engineer services for pre-seed founders.",
+ "Ship a production-ready MVP in 6 weeks — fixed scope, clean handoff, and senior engineering from day one.",
  headline: "Ship a Production MVP in 6 Weeks — Not 6 Months",
  subheadline:
- "Fixed-scope MVP sprint for founders who need to validate an idea fast. You own the code from day one. No equity. No long-term lock-in.",
+ "Fixed-scope MVP sprint for founders who need to validate an idea fast. You own the code from day one, with clean handoff and room to keep collaborating after launch.",
  problem:
- "You have a validated idea and no technical co-founder. Hiring a founding engineer means a long ramp, equity dilution, and weeks of onboarding before a single feature ships. A fractional CTO writes zero code. AI builders like Lovable stall out at 500 users or the moment you need custom auth, payments, or compliance. You need someone who can ship a real product in 6 weeks, hand it to you, and disappear until you need the next sprint.",
+ "You have a validated idea and no technical co-founder. Hiring a founding engineer means a long ramp, a major long-term commitment, and weeks of onboarding before a single feature ships. A fractional CTO writes zero code. AI builders like Lovable stall out at 500 users or the moment you need custom auth, payments, or compliance. You need someone who can ship a real product in 6 weeks, hand it to you cleanly, and keep supporting you if the sprint turns into something bigger.",
  whatYouGet: [
  "Full-stack web app (Next.js or Spring Boot + React) — auth, billing, core features, deployed",
  "Production deployment on Vercel or AWS with CI/CD, monitoring, and Sentry error tracking",
@@ -342,7 +342,7 @@ export const services: Service[] = [
  },
  {
  question: "How is this different from hiring a founding engineer?",
- answer: "A founding engineer comes with equity dilution and a 12+ month commitment. A 6-week MVP sprint is fixed-scope with zero equity. You get the same code quality — I am a senior engineer, not a template installer — but no dilution and no lock-in. When you hit product-market fit and raise a seed round, you can then hire a founding engineer onto a working product with real users, which means less equity and better candidates.",
+ answer: "A full-time founding engineer is a 12+ month commitment before you know exactly what the product needs. A 6-week MVP sprint is fixed-scope, fast to start, and built around a concrete launch. You get senior code quality — I am a senior engineer, not a template installer — plus clean docs and handoff. When you hit product-market fit and raise a seed round, you can hire onto a working product with real users, which means better candidates and a clearer role.",
  },
  {
  question: "How is this different from a fractional CTO?",
@@ -361,8 +361,8 @@ export const services: Service[] = [
  answer: "The scope doc we agree to on day one is fixed. If the scope is correct, we finish in 6 weeks — I have done this 10+ times. If you want to add features mid-sprint, we either swap them in (drop an equivalent-effort feature) or push them to a v2 sprint at the same day rate. You never get a surprise invoice. The fixed-scope contract is what makes this predictable; without it, every MVP timeline slips.",
  },
  {
- question: "Do you take equity instead of cash?",
- answer: "No. Equity-for-code arrangements create misaligned incentives — you want speed, the equity holder wants optionality. I prefer cash so we both stay focused on shipping. If you are raising capital and want a technical reference for diligence calls, I do those for free as part of the engagement. If you want a long-term technical partner post-MVP, we can discuss a retainer or advisor equity grant after we have worked together and both sides know it is a fit.",
+ question: "Can this become a longer-term role after the sprint?",
+ answer: "Yes. The first sprint is designed to prove working style, product judgment, and shipping speed. After launch, we can continue as a monthly retainer, interim engineering lead, advisor, or deeper technical partner if both sides know the fit is real.",
  },
  ],
  cta: "Scope Your 6-Week MVP",
@@ -372,16 +372,16 @@ export const services: Service[] = [
  title: "Hire a Founding Engineer in India (2026)",
  metaTitle: "Hire Founding Engineer India 2026 | Pre-Seed MVP Builder | Rohit Raj",
  metaDescription:
- "Hire a senior founding engineer in India without burning equity or year-long commitments. Production MVP in 6 weeks, full GitHub access. No agency overhead.",
- headline: "Hire a Founding Engineer in India — Without the Equity or the 12-Month Lock-In",
+ "Hire a senior founding engineer in India without a long recruiting cycle or agency overhead. Production MVP in 6 weeks, full GitHub access, clean handoff.",
+ headline: "Hire a Founding Engineer in India — Without the 12-Month Lock-In",
  subheadline:
- "Pre-seed founders skip the founding-engineer hire and ship with a senior contractor instead. Same code quality. Zero equity. 6 weeks to production. You own the GitHub from day one.",
+ "Pre-seed founders can skip the slow recruiting cycle and ship with a senior builder instead. Same code quality. 6 weeks to production. You own the GitHub from day one.",
  problem:
- "You searched 'hire founding engineer India' because you read every YC essay that says the first technical hire is the most important one. Then you priced it: a senior base salary, 0.5-2% equity, 4-8 weeks of recruiting, another 4 weeks of onboarding before they ship a feature. If they leave at month 9, your equity table is broken and your codebase is half-built. Most pre-seed founders do not need a founding engineer in 2026 — they need a senior contractor who has shipped 10 MVPs and will not ask for stock options.",
+ "You searched 'hire founding engineer India' because you read every YC essay that says the first technical hire is the most important one. Then you priced it: a senior base salary, 4-8 weeks of recruiting, another 4 weeks of onboarding before they ship a feature, and a major long-term commitment before the product is even proven. Most pre-seed founders do not need that much hiring process in 2026 — they need a senior builder who has shipped 10 MVPs and can turn a clear scope into production software.",
  whatYouGet: [
  "Senior India-based engineer (6+ years, 29+ shipped products) — same calibre as a US founding-engineer hire",
  "Production MVP in 6 weeks: auth, billing, core features, deployed, monitored",
- "Fixed-scope contract — no hourly billing, no surprise invoices, no equity ask",
+ "Fixed-scope contract — no hourly billing, no surprise invoices, clear launch milestones",
  "Full GitHub access from commit one — you own 100% of code, IP, and infrastructure",
  "Direct Slack / WhatsApp communication with the engineer, not a project manager",
  "Written 1-page scope doc before code is written — fixed deliverables, no scope creep",
@@ -406,7 +406,7 @@ export const services: Service[] = [
  faqs: [
  {
  question: "Why hire a founding engineer in India instead of the US?",
- answer: "US founding engineers come with significant equity dilution and the highest year-one burn line on your cap table. India founding engineers come with smaller equity asks and lower burn. A senior India contractor on a 6-week sprint comes with zero equity at all. For a pre-seed startup with 12-18 months of runway, the contractor model is the cleanest path: same code quality, no dilution, no long-term lock-in that hurts your next round.",
+ answer: "US founding engineers usually come with the highest year-one burn line and the slowest recruiting cycle. India founding engineers can lower burn, but a full-time hire is still a major commitment before the product is proven. A senior India contractor on a 6-week sprint gives a pre-seed startup the cleaner path: same code quality, faster start, focused scope, and no long-term lock-in that hurts your next round.",
  },
  {
  question: "Is a senior contractor really the same as a founding engineer?",
@@ -429,8 +429,8 @@ export const services: Service[] = [
  answer: "I have shipped fintech (MyFinancial — tax engine, offline-first portfolio dashboard), healthcare (clinicAI — patient management with HIPAA-aware data handling), and AI products in production. For regulated industries, the 6-week sprint covers a compliant MVP — encryption at rest, audit logs, role-based access, secure secret management. For full compliance certification (HIPAA, SOC 2, RBI), you will need a compliance officer to audit the final implementation, but the technical architecture supports it out of the box.",
  },
  {
- question: "Do you take equity instead of cash?",
- answer: "No. Equity-for-code arrangements create misaligned incentives. You want speed; the equity holder wants optionality. Cash keeps both sides focused on shipping. If you want a long-term technical partner with skin in the game, we discuss an advisor-equity grant after the first sprint, when both sides know the fit is real. Until then, cash is the cleanest contract.",
+ question: "Can this become a longer-term technical partnership?",
+ answer: "Yes, if the first sprint proves the fit. I prefer starting with a clear scoped engagement so both sides see how we work together. After that, we can discuss a retainer, advisor role, or longer-term technical partnership.",
  },
  ],
  cta: "Hire a Founding Engineer",
@@ -453,7 +453,7 @@ export const services: Service[] = [
  "If you need both: I ship the MVP and a fractional CTO joins post-launch to lead your next hires",
  "Architecture review before you commit to any vendor — saves you from mistakes",
  "Written tech-spend audit if you already have a team — what is overbuilt, what is missing",
- "No equity ask, no annual retainer trap, no hourly billing surprises",
+ "Clear scope, no annual retainer trap, no hourly billing surprises",
  ],
  techStack: [
  "Next.js",

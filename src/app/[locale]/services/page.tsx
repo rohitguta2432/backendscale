@@ -112,7 +112,7 @@ export default async function ServicesPage({ params }: Props) {
                                                 letterSpacing: "0.02em",
                                             }}
                                         >
-                                            Senior engineer &middot; No equity &middot; Full GitHub
+                                            Senior engineer &middot; Fast launch &middot; Full GitHub
                                         </span>
                                     </div>
                                 </Link>
