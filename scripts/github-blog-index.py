@@ -19,7 +19,7 @@ import sys
 import argparse
 import subprocess
 import tempfile
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -52,9 +52,17 @@ def run(cmd, cwd=None, check=True) -> tuple:
     return True, p.stdout.strip()
 
 
+def _pat_for_repo(repo: str) -> str | None:
+    # repo == "owner/name" → env var GH_PAT_<UPPERCASE_OWNER>
+    # Lets us push when `gh auth` active account differs from repo owner
+    # (e.g. when myfinancial-jira left gh active = myfinancialria).
+    owner = repo.split("/", 1)[0]
+    return os.environ.get(f"GH_PAT_{owner.upper()}")
+
+
 def append_entry(slug: str, meta: dict, repo: str, dry_run: bool) -> bool:
     url = f"{BASE_URL}/{slug}"
-    date = datetime.utcnow().strftime("%Y-%m-%d")
+    date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     excerpt = meta["excerpt"][:140].rstrip(".") if meta["excerpt"] else ""
     entry = f"- **{date}** — [{meta['title']}]({url})"
     if excerpt:
@@ -64,12 +72,24 @@ def append_entry(slug: str, meta: dict, repo: str, dry_run: bool) -> bool:
         print(f"--- Dry-run entry ---\n{entry}\n---")
         return True
 
+    pat = _pat_for_repo(repo)
+    owner = repo.split("/", 1)[0]
+    authed_url = f"https://{owner}:{pat}@github.com/{repo}.git" if pat else None
+
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp) / "blog-index"
-        ok, out = run(["gh", "repo", "clone", repo, str(tmp_path), "--", "--depth=1"])
-        if not ok:
-            print(f"  ✗ clone: {out}")
-            return False
+        # Prefer PAT-embedded clone — survives gh-active != repo-owner mismatches.
+        # Fall back to `gh repo clone` only when no PAT is available.
+        if authed_url:
+            ok, out = run(["git", "clone", "--depth=1", authed_url, str(tmp_path)])
+            if not ok:
+                print(f"  ✗ clone (PAT): {out}")
+                return False
+        else:
+            ok, out = run(["gh", "repo", "clone", repo, str(tmp_path), "--", "--depth=1"])
+            if not ok:
+                print(f"  ✗ clone (gh): {out}  (hint: set GH_PAT_{owner.upper()} in ~/.config/seo-secrets.env)")
+                return False
 
         readme = tmp_path / "README.md"
         if not readme.exists():
@@ -88,15 +108,29 @@ def append_entry(slug: str, meta: dict, repo: str, dry_run: bool) -> bool:
         new_content = content.replace(MARKER, f"{MARKER}\n{entry}", 1)
         readme.write_text(new_content, encoding="utf-8")
 
-        for cmd in (
+        # Configure commit identity locally so we don't depend on global git config.
+        commit_cmds = [
+            ["git", "config", "user.email", "rohit@rohitraj.tech"],
+            ["git", "config", "user.name", "Rohit Raj"],
             ["git", "add", "README.md"],
             ["git", "commit", "-m", f"add: {meta['title']}"],
-            ["git", "push"],
-        ):
+        ]
+        for cmd in commit_cmds:
             ok, out = run(cmd, cwd=tmp_path)
             if not ok:
                 print(f"  ✗ {' '.join(cmd)}: {out}")
                 return False
+
+        # Push: prefer PAT URL (works regardless of gh-active account).
+        push_cmd = ["git", "push", authed_url, "HEAD:main"] if authed_url else ["git", "push"]
+        ok, out = run(push_cmd, cwd=tmp_path)
+        if not ok:
+            # If PAT push failed, surface a useful hint
+            if authed_url:
+                print(f"  ✗ git push (PAT): {out}  (hint: PAT may lack `repo` scope or `Contents: write`)")
+            else:
+                print(f"  ✗ git push: {out}  (hint: set GH_PAT_{owner.upper()} in ~/.config/seo-secrets.env)")
+            return False
         print(f"  ✓ https://github.com/{repo} (entry added)")
         return True
 
