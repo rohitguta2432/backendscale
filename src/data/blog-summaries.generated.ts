@@ -3,6 +3,24 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "deepseek-vs-claude-vs-gpt-india-mvp-cost-2026",
+    "title": "DeepSeek V4 Pro vs Claude Sonnet 4.6 vs GPT-5.5: The Real MVP Cost in 2026",
+    "date": "2026-05-24",
+    "excerpt": "DeepSeek made its 75% V4 Pro discount permanent on 2026-05-22 — output tokens now sit at $0.87/M, roughly 34× below GPT-5.5 and 28× below Claude Sonnet 4.6. Here is the line-item math for a real India MVP, the benchmarks the pricing page hides, and the four production failure modes that decide whether the cheaper model actually saves you anything.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "deepseek v4 pro vs claude vs gpt",
+      "deepseek v4 pro pricing 2026",
+      "cheapest llm api for mvp",
+      "deepseek vs claude sonnet india",
+      "llm api cost comparison 2026",
+      "gpt 5.5 vs deepseek vs claude",
+      "best llm for production mvp india",
+      "deepseek v4 pro production guide"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "posthog-vs-mixpanel-vs-amplitude-india-mvp-2026",
     "title": "PostHog vs Mixpanel vs Amplitude — Best Product Analytics for India MVP (2026)",
     "date": "2026-05-23",

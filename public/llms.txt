@@ -16,10 +16,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (67 posts)
+## All Engineering Notes (68 posts)
 
 ### AI Systems & LLM Integration
 
+- [DeepSeek V4 Pro vs Claude Sonnet 4.6 vs GPT-5.5: The Real MVP Cost in 2026](https://rohitraj.tech/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026)
 - [Claude Code Plugins in 2026: The Context-Engineering Stack Indie Devs Are Actually Installing](https://rohitraj.tech/en/notes/claude-code-plugins-context-engineering-2026)
 - [AWS Bedrock vs OpenAI — Which One to Pick for Your Startup (With Real Costs)](https://rohitraj.tech/en/notes/aws-bedrock-vs-openai)
 - [How to Build an AI Chatbot for Your Business: Architecture, Cost & What Actually Works (2026)](https://rohitraj.tech/en/notes/build-ai-chatbot-whatsapp-business-india)
