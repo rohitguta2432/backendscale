@@ -69,6 +69,7 @@ import { hireIosDeveloperIndiaMvp2026 } from './hire-ios-developer-india-mvp-202
 import { posthogVsMixpanelVsAmplitudeIndiaMvp2026 } from './posthog-vs-mixpanel-vs-amplitude-india-mvp-2026';
 import { claudeCodePluginsContextEngineering2026 } from './claude-code-plugins-context-engineering-2026';
 import { deepseekVsClaudeVsGptIndiaMvpCost2026 } from './deepseek-vs-claude-vs-gpt-india-mvp-cost-2026';
+import { geminiCliToAntigravityMigrationAlternatives2026 } from './gemini-cli-to-antigravity-migration-alternatives-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -139,6 +140,7 @@ const allPosts: BlogPost[] = [
   posthogVsMixpanelVsAmplitudeIndiaMvp2026,
   claudeCodePluginsContextEngineering2026,
   deepseekVsClaudeVsGptIndiaMvpCost2026,
+  geminiCliToAntigravityMigrationAlternatives2026,
 ];
 
 // Validate all posts at module load time

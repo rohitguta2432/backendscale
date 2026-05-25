@@ -3,6 +3,24 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "gemini-cli-to-antigravity-migration-alternatives-2026",
+    "title": "Gemini CLI Shuts Down June 18, 2026: Antigravity CLI Migration + 4 Alternatives Worth Switching To",
+    "date": "2026-05-25",
+    "excerpt": "Google is killing Gemini CLI for free, Pro, and Ultra users on June 18, 2026 — 24 days from today. The replacement, Antigravity CLI (agy), is closed-source, Go-based, and ships with weekly quotas instead of daily ones. Here is the 10-minute migration if you stay, the 4 alternatives worth switching to instead (Claude Code, Codex CLI, Aider, OpenCode), and the decision tree I would actually use for an India MVP client this month.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "gemini cli to antigravity migration",
+      "gemini cli shutdown june 18 2026",
+      "antigravity cli alternatives",
+      "gemini cli replacement claude code aider",
+      "agy command migration",
+      "antigravity cli vs claude code",
+      "gemini cli deprecation guide 2026",
+      "best gemini cli alternatives"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "deepseek-vs-claude-vs-gpt-india-mvp-cost-2026",
     "title": "DeepSeek V4 Pro vs Claude Sonnet 4.6 vs GPT-5.5: The Real MVP Cost in 2026",
     "date": "2026-05-24",
