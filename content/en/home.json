@@ -1,4 +1,16 @@
 {
+    "hire": {
+        "eyebrow": "Founding Engineer for Hire",
+        "heading": "A founding engineer for hire in India — without the cost of a team.",
+        "intro": "Most early-stage founders need one senior engineer who can ship the whole stack: AI, backend, mobile, infra, and the awkward integrations in between. That is exactly the gap a founding engineer for hire in India closes — at 30–40% of the cost of a US contractor and with daily timezone overlap on Slack or WhatsApp.",
+        "points": [
+            "Senior full-stack + AI engineer, based in Pune, India — shipping to startups worldwide.",
+            "End-to-end ownership: backend, frontend, mobile, infra, observability, deployment.",
+            "Production AI MVP live in 6 weeks; first commit pushed to your GitHub on day 5.",
+            "You own the code, the IP, and the repo from week 1 — MIT or commercial license."
+        ],
+        "cta": "Book a free 30-min call"
+    },
     "hero": {
         "subtitle": "Founding engineer for hire in India — ships end-to-end on any stack (AI, backend, mobile, blockchain, iOS, web3) without the cost of a team.",
         "titleLine1": "Founding Engineer for Hire in India.",

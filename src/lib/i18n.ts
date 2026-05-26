@@ -118,6 +118,13 @@ export interface HomeDictionary {
         heading: string;
         items: { q: string; a: string }[];
     };
+    hire?: {
+        eyebrow: string;
+        heading: string;
+        intro: string;
+        points: string[];
+        cta: string;
+    };
 }
 
 export interface ReliabilityCard {

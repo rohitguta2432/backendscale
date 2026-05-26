@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import HireBlock from "@/components/HireBlock";
 import AIProjects from "@/components/AIProjects";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import ReliabilitySection from "@/components/ReliabilitySection";
@@ -41,6 +42,7 @@ export default async function Home({ params }: Props) {
             <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <Hero dict={dict.home} locale={locale as Locale} />
+                <HireBlock dict={dict.home} locale={locale as Locale} />
                 <AIProjects dict={dict.home} />
                 <ProcessTimeline dict={dict.home} />
                 <ReliabilitySection dictionary={dict.home} locale={locale as Locale} />
