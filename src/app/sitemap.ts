@@ -8,8 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://rohitraj.tech";
     const now = new Date();
 
-    // Static routes — use site-launch date as a stable lastModified anchor
-    const staticAnchor = new Date("2026-04-22");
+    // Static routes — anchor bumps when the homepage/static sections get a meaningful update
+    const staticAnchor = new Date("2026-05-27");
     const staticRoutes = [
         "",
         "/about",

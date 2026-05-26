@@ -7,7 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
-import { webSiteSchema } from "@/lib/seo-config";
+import { webSiteSchema, generateFAQSchema } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -23,9 +23,21 @@ export default async function Home({ params }: Props) {
 
     const dict = await getDictionary(locale as Locale);
 
+    const faqSchema = dict.home.faq
+        ? generateFAQSchema(
+              dict.home.faq.items.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+              }))
+          )
+        : null;
+
     return (
         <>
             <script type="application/ld+json">{JSON.stringify(webSiteSchema)}</script>
+            {faqSchema && (
+                <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+            )}
             <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <Hero dict={dict.home} locale={locale as Locale} />

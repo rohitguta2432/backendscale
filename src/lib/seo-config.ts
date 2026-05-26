@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 // High-Intent Keywords for Founder/Startup Audience
 export const SEO_KEYWORDS = [
     // Primary High-Intent Keywords
+    'Founding Engineer for Hire in India',
+    'Founding Engineer for Hire India',
+    'Hire a Founding Engineer India',
+    'Founding Engineer India',
     'Founding Engineer for Startups',
     'AI Systems Architect for Startups',
     'Agentic AI Development',
@@ -12,6 +16,7 @@ export const SEO_KEYWORDS = [
     'Founding Engineer for Hire',
     'Startup Backend Engineer',
     'AI MVP Development',
+    'AI MVP in 6 Weeks',
     'Production AI Systems',
     'Distributed Systems Consultant',
     'Backend Architecture Consulting',
@@ -39,8 +44,8 @@ export const SEO_KEYWORDS = [
 // Base Site Configuration
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
-    title: 'Get Your AI MVP Live in 6 Weeks — Rohit Raj',
-    description: 'A founding engineer from India who ships end-to-end on any stack — AI, backend, mobile, blockchain, iOS, web3 — without the cost of a team. 29 products shipped, every one documented.',
+    title: 'Founding Engineer for Hire in India — AI MVP in 6 Weeks | Rohit Raj',
+    description: 'Founding engineer for hire in India. Senior full-stack + AI engineer who ships your production MVP live in 6 weeks. 29 products shipped, every one documented.',
     url: 'https://rohitraj.tech',
     locale: 'en_US',
     personId: 'https://rohitraj.tech/#person',
@@ -130,8 +135,18 @@ export const personSchema = {
     url: SITE_CONFIG.url,
     email: SITE_CONFIG.author.email,
     image: `${SITE_CONFIG.url}/og-image.png`,
-    jobTitle: 'Founding Engineer & AI Systems Architect',
-    description: 'Backend engineer with 10+ years experience building production AI systems, distributed architectures, and custom AI solutions for startups.',
+    jobTitle: 'Founding Engineer for Hire in India — AI Systems Architect',
+    description: 'Founding engineer for hire in India. Backend + AI engineer with 10+ years shipping production AI MVPs, distributed architectures, and custom AI systems for early-stage startups worldwide.',
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Pune',
+        addressRegion: 'Maharashtra',
+        addressCountry: 'IN',
+    },
+    nationality: {
+        '@type': 'Country',
+        name: 'India',
+    },
     worksFor: {
         '@id': SITE_CONFIG.organizationId,
     },
@@ -188,12 +203,12 @@ export const serviceSchema = {
         name: 'Rohit Raj',
         url: SITE_CONFIG.url,
     },
-    name: 'AI Systems Architecture & Development',
-    description: 'End-to-end AI system development for startups: from MVP to production. Specializing in Agentic AI, Custom Text-to-SQL builders, RAG systems, and distributed backend architecture.',
-    areaServed: {
-        '@type': 'Place',
-        name: 'Worldwide',
-    },
+    name: 'Founding Engineer for Hire in India — AI MVP in 6 Weeks',
+    description: 'End-to-end founding engineer service from India: ship a production AI MVP in 6 weeks. Backend, mobile, AI, infra — one senior engineer, full code ownership.',
+    areaServed: [
+        { '@type': 'Country', name: 'India' },
+        { '@type': 'Place', name: 'Worldwide' },
+    ],
     hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'AI Engineering Services',

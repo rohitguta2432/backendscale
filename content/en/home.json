@@ -1,8 +1,8 @@
 {
     "hero": {
-        "subtitle": "A founding engineer from India who ships end-to-end on any stack — AI, backend, mobile, blockchain, iOS, web3 — without the cost of a team.",
-        "titleLine1": "Get your AI MVP live in 6 weeks.",
-        "titleLine2": "29 products shipped, every one documented.",
+        "subtitle": "Founding engineer for hire in India — ships end-to-end on any stack (AI, backend, mobile, blockchain, iOS, web3) without the cost of a team.",
+        "titleLine1": "Founding Engineer for Hire in India.",
+        "titleLine2": "AI MVP live in 6 weeks — 29 products shipped, every one documented.",
         "bookCallCta": "Book free 30-min call",
         "trustPills": [
             "Senior engineer · GitHub from day one",
@@ -159,6 +159,14 @@
         "eyebrow": "FAQ",
         "heading": "Common questions before we start",
         "items": [
+            {
+                "q": "Why hire a founding engineer for hire in India over a US contractor?",
+                "a": "A senior founding engineer for hire in India ships the same production AI MVP at 30–40% of US contractor cost, with full code ownership and daily timezone overlap on Slack/WhatsApp. You get end-to-end execution — backend, frontend, mobile, infra, AI — from one person who has shipped 29 products."
+            },
+            {
+                "q": "How fast can a founding engineer in India ship my AI MVP?",
+                "a": "First production commit on day 5, fully-live MVP at week 6 — fixed scope, fixed timeline, no \"agency surprise\". Every project on rohitraj.tech follows this 6-week shipping cadence."
+            },
             {
                 "q": "What if 6 weeks slips?",
                 "a": "Fixed scope means we descope features, not extend timeline. You ship on week 6, even if a few stretch features move to v2. You keep what's working."
