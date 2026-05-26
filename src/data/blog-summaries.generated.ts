@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-22",
+    "title": "This Week in AI Dev: DeepSeek's Permanent 75% Cut, GitHub Auto-Routing, Gemini Managed Agents (Week 22 of 2026)",
+    "date": "2026-05-26",
+    "excerpt": "Six ships from Week 22 of 2026 that change how you build with AI: DeepSeek V4 Pro locks in a 75% price cut, Copilot auto-routes models, Google ships Managed Agents, NuExtract3 opens up structured extraction, Cursor 3 goes multi-agent, and DeepSeek Reasonix lands as an open coding agent.",
+    "readingTime": "6 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "deepseek v4 pro price cut",
+      "github copilot auto model selection",
+      "gemini managed agents",
+      "cursor 3 parallel agents",
+      "nuextract3",
+      "ai coding agents 2026"
+    ],
+    "relatedProject": "clinicai"
+  },
+  {
     "slug": "gemini-cli-to-antigravity-migration-alternatives-2026",
     "title": "Gemini CLI Shuts Down June 18, 2026: Antigravity CLI Migration + 4 Alternatives Worth Switching To",
     "date": "2026-05-25",
