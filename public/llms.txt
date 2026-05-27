@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 70 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 71 technical case-study posts
 
 ## Featured Projects
 
@@ -16,10 +16,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (70 posts)
+## All Engineering Notes (71 posts)
 
 ### AI Systems & LLM Integration
 
+- [Build a Secure MCP Server in TypeScript: The Post-Copilot Defense Playbook (2026)](https://rohitraj.tech/en/notes/secure-mcp-server-typescript-2026)
 - [This Week in AI Dev: DeepSeek's Permanent 75% Cut, GitHub Auto-Routing, Gemini Managed Agents (Week 22 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-22)
 - [Gemini CLI Shuts Down June 18, 2026: Antigravity CLI Migration + 4 Alternatives Worth Switching To](https://rohitraj.tech/en/notes/gemini-cli-to-antigravity-migration-alternatives-2026)
 - [DeepSeek V4 Pro vs Claude Sonnet 4.6 vs GPT-5.5: The Real MVP Cost in 2026](https://rohitraj.tech/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026)

@@ -71,6 +71,7 @@ import { claudeCodePluginsContextEngineering2026 } from './claude-code-plugins-c
 import { deepseekVsClaudeVsGptIndiaMvpCost2026 } from './deepseek-vs-claude-vs-gpt-india-mvp-cost-2026';
 import { geminiCliToAntigravityMigrationAlternatives2026 } from './gemini-cli-to-antigravity-migration-alternatives-2026';
 import { aiDevWeek2026W22 } from './ai-dev-week-2026-22';
+import { secureMcpServerTypescript2026 } from './secure-mcp-server-typescript-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -143,6 +144,7 @@ const allPosts: BlogPost[] = [
   deepseekVsClaudeVsGptIndiaMvpCost2026,
   geminiCliToAntigravityMigrationAlternatives2026,
   aiDevWeek2026W22,
+  secureMcpServerTypescript2026,
 ];
 
 // Validate all posts at module load time
