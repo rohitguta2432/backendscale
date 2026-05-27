@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "secure-mcp-server-typescript-2026",
+    "title": "Build a Secure MCP Server in TypeScript: The Post-Copilot Defense Playbook (2026)",
+    "date": "2026-05-27",
+    "excerpt": "Microsoft Copilot Cowork was exfiltrating SharePoint and OneDrive files via a 5-line prompt injection hidden inside an 81-line skill file — and it worked on 5 of 5 trials against Claude Opus 4.7, model-agnostic. Most \"build an MCP server\" tutorials ship code that has the same hole. This is the secure TypeScript build, end to end, with the defense layer none of the top tutorials include.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "secure mcp server typescript",
+      "mcp server typescript 2026",
+      "mcp server prompt injection defense",
+      "indirect prompt injection mcp",
+      "mcp typescript sdk tutorial",
+      "mcp server production checklist",
+      "claude skill security"
+    ],
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "ai-dev-week-2026-22",
     "title": "This Week in AI Dev: DeepSeek's Permanent 75% Cut, GitHub Auto-Routing, Gemini Managed Agents (Week 22 of 2026)",
     "date": "2026-05-26",
