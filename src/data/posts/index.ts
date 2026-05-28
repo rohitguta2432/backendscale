@@ -72,6 +72,7 @@ import { deepseekVsClaudeVsGptIndiaMvpCost2026 } from './deepseek-vs-claude-vs-g
 import { geminiCliToAntigravityMigrationAlternatives2026 } from './gemini-cli-to-antigravity-migration-alternatives-2026';
 import { aiDevWeek2026W22 } from './ai-dev-week-2026-22';
 import { secureMcpServerTypescript2026 } from './secure-mcp-server-typescript-2026';
+import { claudeOpus48Vs47Developers2026 } from './claude-opus-4-8-vs-4-7-developers-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -145,6 +146,7 @@ const allPosts: BlogPost[] = [
   geminiCliToAntigravityMigrationAlternatives2026,
   aiDevWeek2026W22,
   secureMcpServerTypescript2026,
+  claudeOpus48Vs47Developers2026,
 ];
 
 // Validate all posts at module load time
