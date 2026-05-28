@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "claude-opus-4-8-vs-4-7-developers-2026",
+    "title": "Claude Opus 4.8 vs 4.7 for Developers: What Changed and Should You Upgrade (2026)",
+    "date": "2026-05-28",
+    "excerpt": "Anthropic shipped Claude Opus 4.8 on May 28, 2026 — agentic coding jumps 64.3% to 69.2%, it is around 4x less likely to let a code flaw pass unremarked, and pricing is unchanged at $5/$25 per million tokens. Here is the developer-only breakdown: the confirmed benchmark deltas, the code changes to make, where it actually beats 4.7, and the one reason you might wait.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "claude opus 4.8 vs 4.7",
+      "claude opus 4.8 for developers",
+      "should i upgrade to claude opus 4.8",
+      "claude opus 4.8 coding benchmarks",
+      "claude opus 4.8 pricing",
+      "claude opus 4.8 migration",
+      "claude opus 4.8 release"
+    ],
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "secure-mcp-server-typescript-2026",
     "title": "Build a Secure MCP Server in TypeScript: The Post-Copilot Defense Playbook (2026)",
     "date": "2026-05-27",
