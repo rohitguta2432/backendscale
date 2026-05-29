@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-generated-code-anti-patterns-fixes-2026",
+    "title": "AI-Generated Code Anti-Patterns: 9 Production Bugs Hiding in Vibe-Coded Apps (2026)",
+    "date": "2026-05-29",
+    "excerpt": "AI coding agents produce roughly 1.7x more issues than human-written code (CodeRabbit, Dec 2025), and AI-generated code drove 35 new CVEs in March 2026 alone. Here are the 9 anti-patterns I catch reviewing vibe-coded MVPs — phantom validation, optimistic auth, IDOR, race conditions, retry storms, God components — with the before/after fix for each and a checklist to catch them before they ship.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "ai generated code anti-patterns",
+      "common bugs in ai generated code",
+      "vibe coding tech debt",
+      "how to review ai generated code",
+      "ai code review checklist 2026",
+      "ai coding agent bugs",
+      "vibe coded app production bugs"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "claude-opus-4-8-vs-4-7-developers-2026",
     "title": "Claude Opus 4.8 vs 4.7 for Developers: What Changed and Should You Upgrade (2026)",
     "date": "2026-05-28",

@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 72 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 73 technical case-study posts
 
 ## Featured Projects
 
@@ -16,10 +16,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (72 posts)
+## All Engineering Notes (73 posts)
 
 ### AI Systems & LLM Integration
 
+- [AI-Generated Code Anti-Patterns: 9 Production Bugs Hiding in Vibe-Coded Apps (2026)](https://rohitraj.tech/en/notes/ai-generated-code-anti-patterns-fixes-2026)
 - [Claude Opus 4.8 vs 4.7 for Developers: What Changed and Should You Upgrade (2026)](https://rohitraj.tech/en/notes/claude-opus-4-8-vs-4-7-developers-2026)
 - [Build a Secure MCP Server in TypeScript: The Post-Copilot Defense Playbook (2026)](https://rohitraj.tech/en/notes/secure-mcp-server-typescript-2026)
 - [This Week in AI Dev: DeepSeek's Permanent 75% Cut, GitHub Auto-Routing, Gemini Managed Agents (Week 22 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-22)

@@ -73,6 +73,7 @@ import { geminiCliToAntigravityMigrationAlternatives2026 } from './gemini-cli-to
 import { aiDevWeek2026W22 } from './ai-dev-week-2026-22';
 import { secureMcpServerTypescript2026 } from './secure-mcp-server-typescript-2026';
 import { claudeOpus48Vs47Developers2026 } from './claude-opus-4-8-vs-4-7-developers-2026';
+import { aiGeneratedCodeAntiPatternsFixes2026 } from './ai-generated-code-anti-patterns-fixes-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -147,6 +148,7 @@ const allPosts: BlogPost[] = [
   aiDevWeek2026W22,
   secureMcpServerTypescript2026,
   claudeOpus48Vs47Developers2026,
+  aiGeneratedCodeAntiPatternsFixes2026,
 ];
 
 // Validate all posts at module load time
