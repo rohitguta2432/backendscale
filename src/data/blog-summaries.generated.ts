@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "claude-code-dynamic-workflows-guide-2026",
+    "title": "Claude Code Dynamic Workflows: A Hands-On Guide for Developers (2026)",
+    "date": "2026-06-01",
+    "excerpt": "Anthropic shipped dynamic workflows in Claude Code on May 28, 2026 — a JavaScript script Claude writes to orchestrate up to 1,000 subagents on one task, in the background, while your session stays free. Here's what they actually are, how they differ from subagents and skills, the three ways to trigger one, where they earn their (heavy) token cost, when to skip them, and how I wire them into real client builds.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "claude code dynamic workflows",
+      "claude code dynamic workflows guide",
+      "claude code ultracode",
+      "claude code multi-agent orchestration",
+      "claude code dynamic workflows vs subagents",
+      "how to use claude code workflows",
+      "claude code 1000 subagents"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "openrouter-vs-litellm-vs-portkey-india-mvp-2026",
     "title": "OpenRouter vs LiteLLM vs Portkey: Which LLM Gateway for Your AI MVP? (2026)",
     "date": "2026-05-31",

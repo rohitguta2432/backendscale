@@ -75,6 +75,7 @@ import { secureMcpServerTypescript2026 } from './secure-mcp-server-typescript-20
 import { claudeOpus48Vs47Developers2026 } from './claude-opus-4-8-vs-4-7-developers-2026';
 import { aiGeneratedCodeAntiPatternsFixes2026 } from './ai-generated-code-anti-patterns-fixes-2026';
 import { openrouterVsLitellmVsPortkeyIndiaMvp2026 } from './openrouter-vs-litellm-vs-portkey-india-mvp-2026';
+import { claudeCodeDynamicWorkflowsGuide2026 } from './claude-code-dynamic-workflows-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -151,6 +152,7 @@ const allPosts: BlogPost[] = [
   claudeOpus48Vs47Developers2026,
   aiGeneratedCodeAntiPatternsFixes2026,
   openrouterVsLitellmVsPortkeyIndiaMvp2026,
+  claudeCodeDynamicWorkflowsGuide2026,
 ];
 
 // Validate all posts at module load time
