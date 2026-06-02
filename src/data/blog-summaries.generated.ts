@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-23",
+    "title": "This Week in AI Dev: Claude Opus 4.8, Copilot Goes Token-Metered, MCP's Stateless Next Spec (Week 23 of 2026)",
+    "date": "2026-06-02",
+    "excerpt": "Six ships from Week 23 of 2026 that change how you build with AI: Claude Opus 4.8 lands, GitHub Copilot moves to token-metered AI Credits on June 1, the MCP next-spec RC locks a stateless protocol core, OpenAI Codex becomes an autonomous Goal-Mode runtime, Windsurf bundles Devin and raises prices, and the open-weight coding race tightens with Kimi K2.6 and GLM-5.1.",
+    "readingTime": "6 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "github copilot ai credits billing",
+      "claude opus 4.8",
+      "mcp stateless spec 2026",
+      "openai codex goal mode",
+      "windsurf devin bundle",
+      "ai coding agents 2026"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "claude-code-dynamic-workflows-guide-2026",
     "title": "Claude Code Dynamic Workflows: A Hands-On Guide for Developers (2026)",
     "date": "2026-06-01",

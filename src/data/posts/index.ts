@@ -71,6 +71,7 @@ import { claudeCodePluginsContextEngineering2026 } from './claude-code-plugins-c
 import { deepseekVsClaudeVsGptIndiaMvpCost2026 } from './deepseek-vs-claude-vs-gpt-india-mvp-cost-2026';
 import { geminiCliToAntigravityMigrationAlternatives2026 } from './gemini-cli-to-antigravity-migration-alternatives-2026';
 import { aiDevWeek2026W22 } from './ai-dev-week-2026-22';
+import { aiDevWeek2026W23 } from './ai-dev-week-2026-23';
 import { secureMcpServerTypescript2026 } from './secure-mcp-server-typescript-2026';
 import { claudeOpus48Vs47Developers2026 } from './claude-opus-4-8-vs-4-7-developers-2026';
 import { aiGeneratedCodeAntiPatternsFixes2026 } from './ai-generated-code-anti-patterns-fixes-2026';
@@ -153,6 +154,7 @@ const allPosts: BlogPost[] = [
   aiGeneratedCodeAntiPatternsFixes2026,
   openrouterVsLitellmVsPortkeyIndiaMvp2026,
   claudeCodeDynamicWorkflowsGuide2026,
+  aiDevWeek2026W23,
 ];
 
 // Validate all posts at module load time
