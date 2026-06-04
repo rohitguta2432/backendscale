@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "llm-context-compression-cut-token-costs-2026",
+    "title": "Cut LLM Token Costs Up to 90% with Context Compression (2026)",
+    "date": "2026-06-04",
+    "excerpt": "Headroom hit #1 on GitHub Trending on June 4, 2026 with a tool that compresses tool outputs, logs, and RAG chunks before they reach the model — cutting input tokens up to 92%. Here's how LLM context compression actually works, how Headroom stacks up against LLMLingua, prompt caching, and RAG reranking, when it quietly breaks, and how I'd wire it into a production MVP without losing accuracy.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "llm context compression",
+      "cut llm token costs",
+      "reduce llm api costs",
+      "headroom llm",
+      "llmlingua vs prompt caching",
+      "context compression for rag",
+      "llm token optimization 2026"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "ai-dev-week-2026-23",
     "title": "This Week in AI Dev: Claude Opus 4.8, Copilot Goes Token-Metered, MCP's Stateless Next Spec (Week 23 of 2026)",
     "date": "2026-06-02",

@@ -77,6 +77,7 @@ import { claudeOpus48Vs47Developers2026 } from './claude-opus-4-8-vs-4-7-develop
 import { aiGeneratedCodeAntiPatternsFixes2026 } from './ai-generated-code-anti-patterns-fixes-2026';
 import { openrouterVsLitellmVsPortkeyIndiaMvp2026 } from './openrouter-vs-litellm-vs-portkey-india-mvp-2026';
 import { claudeCodeDynamicWorkflowsGuide2026 } from './claude-code-dynamic-workflows-guide-2026';
+import { llmContextCompressionCutTokenCosts2026 } from './llm-context-compression-cut-token-costs-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -155,6 +156,7 @@ const allPosts: BlogPost[] = [
   openrouterVsLitellmVsPortkeyIndiaMvp2026,
   claudeCodeDynamicWorkflowsGuide2026,
   aiDevWeek2026W23,
+  llmContextCompressionCutTokenCosts2026,
 ];
 
 // Validate all posts at module load time
