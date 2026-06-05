@@ -16,9 +16,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (77 posts)
+## All Engineering Notes (78 posts)
 
 ### AI Systems & LLM Integration
+
+- [Claude AI Vulnerability Scanner: Anthropic's Open-Source Code-Security Harness (2026)](https://rohitraj.tech/en/notes/claude-ai-vulnerability-scanner-2026)
 
 - [Cut LLM Token Costs Up to 90% with Context Compression (2026)](https://rohitraj.tech/en/notes/llm-context-compression-cut-token-costs-2026)
 - [This Week in AI Dev: Claude Opus 4.8, Copilot Goes Token-Metered, MCP's Stateless Next Spec (Week 23 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-23)

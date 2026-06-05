@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "claude-ai-vulnerability-scanner-2026",
+    "title": "Claude AI Vulnerability Scanner: Anthropic's Open-Source Code-Security Harness (2026)",
+    "date": "2026-06-05",
+    "excerpt": "Anthropic open-sourced defending-code-reference-harness — a Claude-powered pipeline that finds and patches security bugs in your code — and it hit the GitHub Trending front page this week. Here's what actually shipped, how to run /vuln-scan on your own repo, how it compares to the claude-code-security-review Action, managed Claude Security, and Snyk/Semgrep/CodeQL, where it quietly breaks, and how I'd wire it into a production CI without burning your token budget.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "claude ai vulnerability scanner",
+      "ai code vulnerability scanner",
+      "anthropic defending code reference harness",
+      "ai security scanning for developers",
+      "claude security vs snyk",
+      "ai vulnerability discovery 2026",
+      "llm security scanner"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "llm-context-compression-cut-token-costs-2026",
     "title": "Cut LLM Token Costs Up to 90% with Context Compression (2026)",
     "date": "2026-06-04",
