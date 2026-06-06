@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "open-source-ai-agent-memory-mem0-vs-zep-letta-2026",
+    "title": "AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)",
+    "date": "2026-06-06",
+    "excerpt": "Agent memory — not the model — is the 2026 bottleneck. MemPalace just hit 54.1k GitHub stars and shipped v3.4.0 with a 96.6% LongMemEval score and zero API calls. Here's how the four open-source AI agent memory layers (Mem0, Zep, Letta, MemPalace) actually compare on architecture, real benchmarks, and honest licensing — plus a code snippet to add memory in minutes and how I'd wire it into a production agent.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "open source ai agent memory",
+      "ai agent memory",
+      "mem0 vs zep vs letta",
+      "self-hosted ai agent memory",
+      "mempalace",
+      "ai agent memory comparison 2026",
+      "best ai agent memory framework"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "claude-ai-vulnerability-scanner-2026",
     "title": "Claude AI Vulnerability Scanner: Anthropic's Open-Source Code-Security Harness (2026)",
     "date": "2026-06-05",
