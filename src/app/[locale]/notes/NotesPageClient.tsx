@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { repositories, contributions, projectNotes, filterCategories } from "@/data/github";
@@ -325,45 +326,57 @@ export default function NotesPageClient({ locale, commonDict, pagesDict }: Notes
                                     style={{
                                         textDecoration: 'none',
                                         display: 'block',
-                                        padding: '1.25rem',
                                         border: '1px solid var(--border)',
                                         backgroundColor: 'var(--card-bg)',
                                         transition: 'border-color 0.2s',
+                                        overflow: 'hidden',
                                     }}
                                 >
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
-                                        <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)' }}>
-                                            {post.title}
-                                        </h3>
-                                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', marginLeft: '1rem' }}>
-                                            {post.readingTime}
-                                        </span>
-                                    </div>
-                                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-                                        {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-                                    </p>
-                                    <p style={{
-                                        margin: 0,
-                                        fontSize: '0.95rem',
-                                        color: 'var(--text-secondary)',
-                                        lineHeight: 1.6,
-                                        marginBottom: '0.75rem'
-                                    }}>
-                                        {post.excerpt}
-                                    </p>
-                                    <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-                                        {post.keywords.slice(0, 3).map((kw) => (
-                                            <span key={kw} style={{
-                                                fontSize: '0.7rem',
-                                                padding: '0.1rem 0.5rem',
-                                                border: '1px solid var(--border)',
-                                                borderRadius: '2px',
-                                                color: 'var(--text-muted)',
-                                                fontFamily: 'var(--font-mono)'
-                                            }}>
-                                                {kw}
+                                    {post.coverImage && (
+                                        <Image
+                                            src={post.coverImage.src}
+                                            alt={post.coverImage.alt}
+                                            width={800}
+                                            height={450}
+                                            sizes="(max-width: 900px) 100vw, 900px"
+                                            style={{ width: '100%', height: 'auto', display: 'block', borderBottom: '1px solid var(--border)' }}
+                                        />
+                                    )}
+                                    <div style={{ padding: '1.25rem' }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
+                                            <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                                                {post.title}
+                                            </h3>
+                                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', marginLeft: '1rem' }}>
+                                                {post.readingTime}
                                             </span>
-                                        ))}
+                                        </div>
+                                        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                                            {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                                        </p>
+                                        <p style={{
+                                            margin: 0,
+                                            fontSize: '0.95rem',
+                                            color: 'var(--text-secondary)',
+                                            lineHeight: 1.6,
+                                            marginBottom: '0.75rem'
+                                        }}>
+                                            {post.excerpt}
+                                        </p>
+                                        <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                                            {post.keywords.slice(0, 3).map((kw) => (
+                                                <span key={kw} style={{
+                                                    fontSize: '0.7rem',
+                                                    padding: '0.1rem 0.5rem',
+                                                    border: '1px solid var(--border)',
+                                                    borderRadius: '2px',
+                                                    color: 'var(--text-muted)',
+                                                    fontFamily: 'var(--font-mono)'
+                                                }}>
+                                                    {kw}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 </Link>
                             ))}

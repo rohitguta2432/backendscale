@@ -6,5 +6,6 @@ export interface BlogPostSummary {
   excerpt: string;
   readingTime: string;
   keywords: string[];
+  coverImage?: { src: string; alt: string };
   relatedProject?: string;
 }

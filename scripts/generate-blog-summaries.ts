@@ -11,6 +11,7 @@ const summaries: BlogPostSummary[] = blogPosts.map((p) => ({
   excerpt: p.excerpt,
   readingTime: p.readingTime,
   keywords: p.keywords,
+  ...(p.coverImage && { coverImage: p.coverImage }),
   ...(p.relatedProject && { relatedProject: p.relatedProject }),
 }));
 

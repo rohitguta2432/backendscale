@@ -17,6 +17,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "self-hosted ai document research",
       "open notebook self-host"
     ],
+    "coverImage": {
+      "src": "/images/notes/open-notebook-vs-khoj-vs-surfsense-notebooklm-2026-cover.jpg",
+      "alt": "Dark editorial cover illustrating self-hosted open-source NotebookLM alternatives Open Notebook, Khoj and SurfSense in 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -35,6 +39,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "run local llm rtx spark",
       "rtx spark price"
     ],
+    "coverImage": {
+      "src": "/images/notes/nvidia-rtx-spark-windows-ai-agents-2026-cover.jpg",
+      "alt": "Dark editorial cover with a glowing fractured chip illustrating NVIDIA RTX Spark local AI for Windows PCs"
+    },
     "relatedProject": "rohitrajTech"
   },
   {
@@ -52,6 +60,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "ai agent memory comparison 2026",
       "best ai agent memory framework"
     ],
+    "coverImage": {
+      "src": "/images/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026-cover.jpg",
+      "alt": "Glowing knowledge-graph nodes on a dark grid illustrating open-source AI agent memory layers compared in 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -69,6 +81,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "ai vulnerability discovery 2026",
       "llm security scanner"
     ],
+    "coverImage": {
+      "src": "/images/notes/claude-ai-vulnerability-scanner-2026-cover.jpg",
+      "alt": "Dark editorial cover with a cracked circuit trace illustrating an AI vulnerability scanner finding code security bugs with Claude in 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -86,6 +102,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "context compression for rag",
       "llm token optimization 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/llm-context-compression-cut-token-costs-2026-cover.jpg",
+      "alt": "Dark editorial cover illustrating LLM context compression to cut token costs for AI agents in 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -103,6 +123,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "windsurf devin bundle",
       "ai coding agents 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-23-cover.jpg",
+      "alt": "Abstract editorial cover illustrating AI dev tools weekly roundup week 23 of 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -120,6 +144,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "how to use claude code workflows",
       "claude code 1000 subagents"
     ],
+    "coverImage": {
+      "src": "/images/notes/claude-code-dynamic-workflows-guide-2026-cover.jpg",
+      "alt": "Constellation of glowing cyan nodes illustrating Claude Code dynamic workflows orchestrating parallel AI subagents"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -137,6 +165,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "portkey ai gateway",
       "llm router comparison india"
     ],
+    "coverImage": {
+      "src": "/images/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026-cover.jpg",
+      "alt": "Glowing hourglass in teal and violet illustrating OpenRouter vs LiteLLM vs Portkey LLM gateway choice"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -154,6 +186,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "ai coding agent bugs",
       "vibe coded app production bugs"
     ],
+    "coverImage": {
+      "src": "/images/notes/ai-generated-code-anti-patterns-fixes-2026-cover.jpg",
+      "alt": "Cracked circuit board trace with one glowing fault line illustrating AI-generated code anti-patterns"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -171,6 +207,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "claude opus 4.8 migration",
       "claude opus 4.8 release"
     ],
+    "coverImage": {
+      "src": "/images/notes/claude-opus-4-8-vs-4-7-developers-2026-cover.jpg",
+      "alt": "Editorial dark cover with glowing hourglass illustrating Claude Opus 4.8 vs 4.7 upgrade decision for developers"
+    },
     "relatedProject": "rohitrajTech"
   },
   {
@@ -188,6 +228,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "mcp server production checklist",
       "claude skill security"
     ],
+    "coverImage": {
+      "src": "/images/notes/secure-mcp-server-typescript-2026-cover.jpg",
+      "alt": "Editorial dark cover illustrating a secure MCP server build in TypeScript with prompt-injection defense layer"
+    },
     "relatedProject": "rohitrajTech"
   },
   {
@@ -205,6 +249,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "nuextract3",
       "ai coding agents 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-22-cover.jpg",
+      "alt": "Abstract editorial cover illustrating AI dev tools weekly roundup week 22 of 2026"
+    },
     "relatedProject": "clinicai"
   },
   {
@@ -223,6 +271,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "gemini cli deprecation guide 2026",
       "best gemini cli alternatives"
     ],
+    "coverImage": {
+      "src": "/images/notes/gemini-cli-to-antigravity-migration-alternatives-2026-cover.jpg",
+      "alt": "Dark editorial cover illustrating Gemini CLI to Antigravity CLI migration and alternatives for 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -241,6 +293,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "best llm for production mvp india",
       "deepseek v4 pro production guide"
     ],
+    "coverImage": {
+      "src": "/images/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026-cover.jpg",
+      "alt": "Dark editorial cover illustrating DeepSeek V4 Pro vs Claude Sonnet vs GPT-5.5 MVP API cost comparison 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -259,6 +315,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "best analytics tool indian startup",
       "hire founding engineer india"
     ],
+    "coverImage": {
+      "src": "/images/notes/posthog-vs-mixpanel-vs-amplitude-india-mvp-2026-cover.jpg",
+      "alt": "Translucent layered glass plates with embedded glowing lines illustrating PostHog vs Mixpanel vs Amplitude analytics comparison"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -276,6 +336,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "context engineering claude code",
       "best claude code plugins 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/claude-code-plugins-context-engineering-2026-cover.jpg",
+      "alt": "Dark editorial cover illustrating Claude Code plugins ecosystem and context engineering megatrend in 2026"
+    },
     "relatedProject": "propcheck"
   },
   {
@@ -294,6 +358,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "ios mvp app store review india",
       "native ios vs flutter vs react native india"
     ],
+    "coverImage": {
+      "src": "/images/notes/hire-ios-developer-india-mvp-2026-cover.jpg",
+      "alt": "Glowing prism shattering into blue and violet light shards illustrating hire iOS developer India 2026 cost and tradeoffs"
+    },
     "relatedProject": "sanatanapp"
   },
   {
@@ -312,6 +380,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "email deliverability india gmail",
       "hire backend developer india mvp"
     ],
+    "coverImage": {
+      "src": "/images/notes/resend-vs-sendgrid-vs-aws-ses-india-mvp-2026-cover.jpg",
+      "alt": "Single neon cyan spline arcing through dark space illustrating Resend vs SendGrid vs AWS SES transactional email comparison"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -330,6 +402,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "flutter riverpod bloc india mvp",
       "flutter developer salary india 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/hire-flutter-developer-india-2026-cover.jpg",
+      "alt": "Cracked monolith with glowing amber fissures illustrating hire Flutter developer India 2026 cost and tradeoffs"
+    },
     "relatedProject": "sanatanapp"
   },
   {
@@ -348,6 +424,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "multi-agent rag india",
       "hire ai engineer multi-agent india"
     ],
+    "coverImage": {
+      "src": "/images/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026-cover.jpg",
+      "alt": "Topographic contour lines glowing on a dark surface illustrating LangGraph vs CrewAI vs AutoGen multi-agent framework comparison"
+    },
     "relatedProject": "rag-for-sql"
   },
   {
@@ -366,6 +446,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "react native expo india mvp",
       "react native developer salary india 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/hire-react-native-developer-india-2026-cover.jpg",
+      "alt": "Stylized glowing hourglass on dark teal background illustrating hire React Native developer India 2026 timeline and cost"
+    },
     "relatedProject": "sanatanapp"
   },
   {
@@ -384,6 +468,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "postgres orm next.js mvp",
       "edge runtime orm postgres"
     ],
+    "coverImage": {
+      "src": "/images/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026-cover.jpg",
+      "alt": "Three glowing geometric nodes layered on dark grid illustrating Drizzle vs Prisma vs TypeORM comparison for India MVPs"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -402,6 +490,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "rag llm api comparison",
       "gemini flash vs gpt-5-mini india"
     ],
+    "coverImage": {
+      "src": "/images/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026-cover.jpg",
+      "alt": "Three glowing nodes in tense orbit on dark grid illustrating OpenAI vs Claude vs Gemini API cost comparison for India MVPs"
+    },
     "relatedProject": "clinicai"
   },
   {
@@ -420,6 +512,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "rag vector store comparison",
       "hire ai engineer india rag"
     ],
+    "coverImage": {
+      "src": "/images/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026-cover.jpg",
+      "alt": "Three abstract vector field pillars on dark backdrop illustrating Pinecone vs Qdrant vs pgvector comparison for India RAG MVP 2026"
+    },
     "relatedProject": "stellarmind"
   },
   {
@@ -438,6 +534,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "startup hosting cost comparison",
       "self host nextjs india"
     ],
+    "coverImage": {
+      "src": "/images/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026-cover.jpg",
+      "alt": "Constellation of luminous nodes on dark backdrop illustrating Vercel vs Railway vs Hetzner India MVP hosting cost comparison 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -456,6 +556,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "better-auth vs clerk",
       "open source auth nextjs"
     ],
+    "coverImage": {
+      "src": "/images/notes/clerk-vs-supabase-auth-vs-better-auth-india-2026-cover.jpg",
+      "alt": "Three abstract auth stack pillars on dark backdrop illustrating Clerk vs Supabase Auth vs Better-Auth comparison for India MVP 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -474,6 +578,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "supabase pgvector india",
       "postgres rls vs firestore rules"
     ],
+    "coverImage": {
+      "src": "/images/notes/supabase-vs-firebase-india-mvp-2026-cover.jpg",
+      "alt": "Dark editorial render illustrating Supabase versus Firebase backend cost comparison for Indian MVP 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -491,6 +599,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "zapier alternative india",
       "n8n docker setup"
     ],
+    "coverImage": {
+      "src": "/images/notes/self-host-n8n-vs-zapier-cost-india-2026-cover.jpg",
+      "alt": "Dark editorial render illustrating self-hosted n8n versus Zapier cloud automation cost comparison India 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -508,6 +620,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "mvp payment integration cost",
       "indian startup payment"
     ],
+    "coverImage": {
+      "src": "/images/notes/razorpay-vs-stripe-india-mvp-2026-cover.jpg",
+      "alt": "Glowing topographic contours in teal and violet illustrating Razorpay vs Stripe India MVP cost comparison"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -525,6 +641,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "claude code production limits",
       "when ai cli breaks production"
     ],
+    "coverImage": {
+      "src": "/images/notes/claude-code-vs-hire-developer-2026-cover.jpg",
+      "alt": "Glitched terminal stream in teal and violet illustrating Claude Code CLI vs hiring a developer in 2026"
+    },
     "relatedProject": "rohitrajTech"
   },
   {
@@ -543,6 +663,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "v0 vs founding engineer india",
       "ai ui builder vs real engineer 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/v0-by-vercel-vs-hire-developer-2026-cover.jpg",
+      "alt": "Floating geometric crystals in cyan and magenta neon illustrating v0 by Vercel vs hiring a developer 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -561,6 +685,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "browser ide ai coding",
       "replit agent cost india"
     ],
+    "coverImage": {
+      "src": "/images/notes/replit-agent-vs-hire-developer-2026-cover.jpg",
+      "alt": "Liquid metal mercury surface with amber ripples illustrating Replit Agent vs hire developer 2026 comparison"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -579,6 +707,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "mvp development 2026",
       "devin ai cost india"
     ],
+    "coverImage": {
+      "src": "/images/notes/devin-ai-vs-hire-developer-2026-cover.jpg",
+      "alt": "Cracked monolith with glowing teal fissures illustrating Devin AI vs hire developer 2026 comparison"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -597,6 +729,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "cursor vs founding engineer",
       "ai ide alternative 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/cursor-ai-vs-hire-developer-2026-cover.jpg",
+      "alt": "Two glowing pillars on dark grid, one cracked, illustrating Cursor AI vs hiring a developer cost comparison 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -615,6 +751,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "bolt new mvp cost 2026",
       "ai app builder vs engineer"
     ],
+    "coverImage": {
+      "src": "/images/notes/bolt-new-vs-hire-developer-2026-cover.jpg",
+      "alt": "Two abstract glowing pillars on a dark grid illustrating Bolt.new vs hiring a developer cost comparison 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -634,6 +774,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "hire llm engineer freelance",
       "on-device ai developer india"
     ],
+    "coverImage": {
+      "src": "/images/notes/hire-ai-engineer-india-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Hire AI Engineer India 2026"
+    },
     "relatedProject": "stellarmind"
   },
   {
@@ -653,6 +797,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "pre-seed cofounder india",
       "startup cofounder alternative"
     ],
+    "coverImage": {
+      "src": "/images/notes/hire-technical-cofounder-india-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Hire Technical Co-Founder India 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -672,6 +820,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "pre-seed engineer equity",
       "hire founding engineer cost"
     ],
+    "coverImage": {
+      "src": "/images/notes/founding-engineer-equity-percentage-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Founding Engineer Equity 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -690,6 +842,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "hire developer internal tool",
       "mvp internal tool"
     ],
+    "coverImage": {
+      "src": "/images/notes/retool-vs-custom-build-internal-tool-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Retool vs Custom Internal Tool in 2026"
+    },
     "relatedProject": "stellarmind"
   },
   {
@@ -707,6 +863,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "supabase rls audit",
       "vibe coding security 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/supabase-rls-production-bugs-need-real-engineer-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Your Supabase RLS Just Leaked Production Data"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -724,6 +884,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "mvp production ready 6 weeks",
       "mvp sprint plan"
     ],
+    "coverImage": {
+      "src": "/images/notes/6-week-mvp-sprint-week-by-week-breakdown-cover.jpg",
+      "alt": "Abstract editorial cover illustrating 6-Week MVP Sprint"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -741,6 +905,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "mvp postgres supabase",
       "mvp boring stack"
     ],
+    "coverImage": {
+      "src": "/images/notes/6-week-mvp-tech-stack-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating 6-Week MVP Tech Stack in 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -758,6 +926,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "fixed price mvp india",
       "mvp 50k agency quote"
     ],
+    "coverImage": {
+      "src": "/images/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote-cover.jpg",
+      "alt": "Abstract editorial cover illustrating What a $15K MVP Actually Includes"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -775,6 +947,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "mvp contract structure",
       "agency mvp delays"
     ],
+    "coverImage": {
+      "src": "/images/notes/6-week-mvp-vs-3-month-agency-which-ships-first-cover.jpg",
+      "alt": "Abstract editorial cover illustrating 6-Week MVP Sprint vs 3-Month Agency Build"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -792,6 +968,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "direct hire vs marketplace",
       "mvp engineer markup"
     ],
+    "coverImage": {
+      "src": "/images/notes/founding-engineer-india-vs-toptal-arc-uplers-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Hire a Founding Engineer in India"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -810,6 +990,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "lovable rls supabase",
       "rescue lovable app"
     ],
+    "coverImage": {
+      "src": "/images/notes/lovable-app-production-bugs-need-real-engineer-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Lovable App Production Bugs"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -830,6 +1014,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "founder AI strategy April 2026",
       "AI Overviews SEO 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/ai-news-april-2026-what-founders-should-build-cover.jpg",
+      "alt": "Abstract editorial cover illustrating April 2026 AI News Decoded: 7 Stories That Actually Change What Founders Should "
+    },
     "relatedProject": "scamrakshak"
   },
   {
@@ -847,6 +1035,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "founding engineer cost 2026",
       "fractional cto cost 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/founding-engineer-vs-fractional-cto-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Founding Engineer vs Fractional CTO in 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -864,6 +1056,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "alternative to lovable 2026",
       "lovable handoff developer"
     ],
+    "coverImage": {
+      "src": "/images/notes/lovable-alternative-developer-when-ai-builder-breaks-cover.jpg",
+      "alt": "Abstract editorial cover illustrating The Best Lovable Alternative in 2026 Is Not Another AI Builder"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -880,6 +1076,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "when to hire first engineer startup",
       "lovable production"
     ],
+    "coverImage": {
+      "src": "/images/notes/founding-engineer-vs-lovable-when-to-hire-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Founding Engineer vs Lovable in 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -896,6 +1096,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "us vs india developer hourly rate",
       "mvp cost breakdown"
     ],
+    "coverImage": {
+      "src": "/images/notes/india-vs-us-mvp-developer-cost-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating India vs US MVP Developer Cost in 2026"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -912,6 +1116,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "bolt vs hiring engineer",
       "ai coding tools 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Vibe Coding vs Hiring a Developer"
+    },
     "relatedProject": "myFinancial"
   },
   {
@@ -927,6 +1135,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "deal intelligence software",
       "java 21 spring boot 3.4"
     ],
+    "coverImage": {
+      "src": "/images/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs-cover.jpg",
+      "alt": "Abstract editorial cover illustrating How I Built an Enterprise Deal Matching Platform with Spring Boot + Next.js + GP"
+    },
     "relatedProject": "synflow"
   },
   {
@@ -942,6 +1154,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "cloud first AI dead",
       "edge AI mobile app architecture"
     ],
+    "coverImage": {
+      "src": "/images/notes/cloud-first-ai-is-dead-on-device-android-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It."
+    },
     "relatedProject": "scamrakshak"
   },
   {
@@ -957,6 +1173,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "offline scam checker android",
       "WhatsApp scam detection app"
     ],
+    "coverImage": {
+      "src": "/images/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector-cover.jpg",
+      "alt": "Abstract editorial cover illustrating ₹805 Crore Lost to UPI Fraud This Year. I Built an Offline Scam Detector That Ne"
+    },
     "relatedProject": "scamrakshak"
   },
   {
@@ -972,6 +1192,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "personal finance app india",
       "room database android 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/build-android-finance-tracker-kotlin-jetpack-compose-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Building an Android Finance Tracker with SMS Auto-Import"
+    },
     "relatedProject": "finbaby"
   },
   {
@@ -987,6 +1211,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "maven multi-module architecture",
       "gst invoice generation java"
     ],
+    "coverImage": {
+      "src": "/images/notes/build-multi-tenant-saas-spring-boot-java-21-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21"
+    },
     "relatedProject": "retailos"
   },
   {
@@ -1002,6 +1230,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "founding engineer SaaS platform",
       "java 21 multi-tenant architecture"
     ],
+    "coverImage": {
+      "src": "/images/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot-cover.jpg",
+      "alt": "Abstract editorial cover illustrating a 12-module Spring Boot multi-tenant SaaS architecture"
+    },
     "relatedProject": "retailos"
   },
   {
@@ -1017,6 +1249,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "collaborative trip planner app",
       "powersync react native sync"
     ],
+    "coverImage": {
+      "src": "/images/notes/build-offline-first-trip-planner-react-native-watermelondb-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Building an Offline-First Trip Planner with React Native + WatermelonDB + Offlin"
+    },
     "relatedProject": "triphive"
   },
   {
@@ -1032,6 +1268,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "litert android ml",
       "offline ai android app 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/build-on-device-ai-scam-detector-android-gemma-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Building an On-Device AI Scam Detector for Android"
+    },
     "relatedProject": "scamrakshak"
   },
   {
@@ -1047,6 +1287,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "debt snowball app android",
       "grocery budget tracker app"
     ],
+    "coverImage": {
+      "src": "/images/notes/build-family-budget-app-android-offline-kotlin-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Building a Family Budget App with 8 Financial Modules"
+    },
     "relatedProject": "paisaguard"
   },
   {
@@ -1062,6 +1306,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "expo-av audio streaming",
       "react native multilanguage"
     ],
+    "coverImage": {
+      "src": "/images/notes/building-multilanguage-react-native-app-expo-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Building a Multi-Language React Native App with Expo SDK 52"
+    },
     "relatedProject": "sanatanapp"
   },
   {
@@ -1077,6 +1325,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "react native music player",
       "expo-av tutorial"
     ],
+    "coverImage": {
+      "src": "/images/notes/expo-av-audio-streaming-react-native-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Streaming Audio in React Native: expo-av with Public Domain Sources"
+    },
     "relatedProject": "sanatanapp"
   },
   {
@@ -1092,6 +1344,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "app architecture decisions",
       "indie app development"
     ],
+    "coverImage": {
+      "src": "/images/notes/idea-to-play-store-sanatanapp-architecture-cover.jpg",
+      "alt": "Abstract editorial cover illustrating From Idea to Play Store: Shipping SanatanApp in 4 Weeks"
+    },
     "relatedProject": "sanatanapp"
   },
   {
@@ -1106,7 +1362,11 @@ export const blogSummaries: BlogPostSummary[] = [
       "hire app developer India",
       "React Native app cost",
       "freelance mobile developer India"
-    ]
+    ],
+    "coverImage": {
+      "src": "/images/notes/how-much-does-it-cost-to-build-mobile-app-india-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Develo"
+    }
   },
   {
     "slug": "build-ai-chatbot-whatsapp-business-india",
@@ -1121,6 +1381,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "LLM chatbot architecture",
       "hire chatbot developer"
     ],
+    "coverImage": {
+      "src": "/images/notes/build-ai-chatbot-whatsapp-business-india-cover.jpg",
+      "alt": "Abstract editorial cover illustrating How to Build an AI Chatbot for Your Business: Architecture, Cost & What Actually"
+    },
     "relatedProject": "clinicai"
   },
   {
@@ -1135,7 +1399,11 @@ export const blogSummaries: BlogPostSummary[] = [
       "freelance vs agency cost",
       "hire developer for startup",
       "software development India"
-    ]
+    ],
+    "coverImage": {
+      "src": "/images/notes/hire-freelance-developer-vs-agency-india-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Freelance Developer vs Agency in India: An Honest Comparison from the Developer "
+    }
   },
   {
     "slug": "spring-boot-vs-nodejs-startup-backend-2026",
@@ -1148,6 +1416,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "backend framework comparison",
       "startup tech stack 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/spring-boot-vs-nodejs-startup-backend-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Spring Boot vs Node.js for Your Startup Backend (2026)"
+    },
     "relatedProject": "clinicai"
   },
   {
@@ -1161,7 +1433,11 @@ export const blogSummaries: BlogPostSummary[] = [
       "saas tech stack 2026",
       "mvp development cost",
       "startup mvp guide"
-    ]
+    ],
+    "coverImage": {
+      "src": "/images/notes/how-to-build-saas-mvp-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating How to Build a SaaS MVP in 2026"
+    }
   },
   {
     "slug": "react-native-vs-flutter-2026",
@@ -1174,6 +1450,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "cross platform app framework",
       "mobile app framework comparison"
     ],
+    "coverImage": {
+      "src": "/images/notes/react-native-vs-flutter-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating React Native vs Flutter in 2026: Which One for Your App?"
+    },
     "relatedProject": "sanatanapp"
   },
   {
@@ -1188,6 +1468,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "twilio whatsapp api",
       "whatsapp automation business"
     ],
+    "coverImage": {
+      "src": "/images/notes/whatsapp-business-api-integration-guide-india-cover.jpg",
+      "alt": "Abstract editorial cover illustrating WhatsApp Business API Integration Guide for Indian Startups"
+    },
     "relatedProject": "clinicai"
   },
   {
@@ -1202,6 +1486,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "sql vs nosql 2026",
       "choose database"
     ],
+    "coverImage": {
+      "src": "/images/notes/postgresql-vs-mongodb-startup-2026-cover.jpg",
+      "alt": "Abstract editorial cover illustrating PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)"
+    },
     "relatedProject": "stellarmind"
   },
   {
@@ -1216,6 +1504,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "llm integration existing system",
       "ai for small business"
     ],
+    "coverImage": {
+      "src": "/images/notes/how-to-integrate-ai-existing-business-app-cover.jpg",
+      "alt": "Abstract editorial cover illustrating How to Add AI to Your Existing Business App"
+    },
     "relatedProject": "stellarmind"
   },
   {
@@ -1229,7 +1521,11 @@ export const blogSummaries: BlogPostSummary[] = [
       "evaluate developer",
       "technical interview freelancer",
       "hire developer india"
-    ]
+    ],
+    "coverImage": {
+      "src": "/images/notes/how-to-hire-developer-interview-questions-cover.jpg",
+      "alt": "Abstract editorial cover illustrating How to Hire a Software Developer: 10 Questions to Ask Before Signing"
+    }
   },
   {
     "slug": "build-app-like-uber-zomato-architecture-cost",
@@ -1242,7 +1538,11 @@ export const blogSummaries: BlogPostSummary[] = [
       "build app like zomato",
       "on demand app development",
       "app architecture uber clone"
-    ]
+    ],
+    "coverImage": {
+      "src": "/images/notes/build-app-like-uber-zomato-architecture-cost-cover.jpg",
+      "alt": "Abstract editorial cover illustrating How to Build an App Like Uber or Zomato"
+    }
   },
   {
     "slug": "why-your-mvp-should-cost-under-10k",
@@ -1255,7 +1555,11 @@ export const blogSummaries: BlogPostSummary[] = [
       "cheap mvp development",
       "build mvp budget",
       "startup mvp under 10k"
-    ]
+    ],
+    "coverImage": {
+      "src": "/images/notes/why-your-mvp-should-cost-under-10k-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Why Your MVP Should Cost Under $10,000"
+    }
   },
   {
     "slug": "microservices-vs-monolith-startup",
@@ -1269,6 +1573,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "when to use microservices",
       "monolith first"
     ],
+    "coverImage": {
+      "src": "/images/notes/microservices-vs-monolith-startup-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Microservices vs Monolith for Startups: Stop Overengineering"
+    },
     "relatedProject": "clinicai"
   },
   {
@@ -1285,6 +1593,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "bedrock for startups",
       "llm api comparison 2026"
     ],
+    "coverImage": {
+      "src": "/images/notes/bedrock-vs-openai-flow.png",
+      "alt": "Architecture diagram comparing OpenAI and AWS Bedrock data flow for financial applications"
+    },
     "relatedProject": "myfinancial"
   },
   {
@@ -1300,6 +1612,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "llm sql accuracy",
       "chat to sql"
     ],
+    "coverImage": {
+      "src": "/images/notes/rag-for-sql-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Using RAG for SQL Generation"
+    },
     "relatedProject": "stellarmind"
   },
   {
@@ -1314,6 +1630,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "spring ai mcp",
       "ai tool integration"
     ],
+    "coverImage": {
+      "src": "/images/notes/spring-boot-mcp-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Building an MCP Server with Spring Boot"
+    },
     "relatedProject": "stellarmind"
   },
   {
@@ -1328,6 +1648,10 @@ export const blogSummaries: BlogPostSummary[] = [
       "offline first web app",
       "progressive web app patterns"
     ],
+    "coverImage": {
+      "src": "/images/notes/pwa-offline-sync-cover.jpg",
+      "alt": "Abstract editorial cover illustrating Offline-First PWA Patterns"
+    },
     "relatedProject": "microitinerary"
   }
 ];
