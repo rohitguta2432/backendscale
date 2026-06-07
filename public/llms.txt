@@ -16,10 +16,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (80 posts)
+## All Engineering Notes (81 posts)
 
 ### AI Systems & LLM Integration
 
+- [NVIDIA RTX Spark + Windows: What Microsoft's Local-AI Superchip Means for Developers (2026)](https://rohitraj.tech/en/notes/nvidia-rtx-spark-windows-ai-agents-2026)
 - [Open Notebook vs Khoj vs SurfSense: Best Self-Hosted NotebookLM Alternative (2026)](https://rohitraj.tech/en/notes/open-notebook-vs-khoj-vs-surfsense-notebooklm-2026)
 - [AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)](https://rohitraj.tech/en/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026)
 - [Claude AI Vulnerability Scanner: Anthropic's Open-Source Code-Security Harness (2026)](https://rohitraj.tech/en/notes/claude-ai-vulnerability-scanner-2026)

@@ -20,6 +20,24 @@ export const blogSummaries: BlogPostSummary[] = [
     "relatedProject": "myFinancial"
   },
   {
+    "slug": "nvidia-rtx-spark-windows-ai-agents-2026",
+    "title": "NVIDIA RTX Spark + Windows: What Microsoft’s Local-AI Superchip Means for Developers (2026)",
+    "date": "2026-06-07",
+    "excerpt": "NVIDIA and Microsoft unveiled the RTX Spark superchip at Computex 2026 — a 20-core Grace Arm CPU plus a 6,144-core Blackwell RTX GPU and up to 128GB unified memory that runs 120B-parameter LLMs locally with up to 1M tokens of context. Here is the developer-only read: the confirmed specs, RTX Spark vs DGX Spark, how it ties into Satya Nadella’s agentic-AI push at Build 2026, what you can actually build on it this fall, and when to wait.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "nvidia rtx spark",
+      "nvidia rtx spark for developers",
+      "rtx spark vs dgx spark",
+      "rtx spark specs",
+      "surface rtx spark dev box",
+      "windows agentic ai os",
+      "run local llm rtx spark",
+      "rtx spark price"
+    ],
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "open-source-ai-agent-memory-mem0-vs-zep-letta-2026",
     "title": "AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)",
     "date": "2026-06-06",

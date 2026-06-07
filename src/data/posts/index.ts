@@ -81,6 +81,7 @@ import { llmContextCompressionCutTokenCosts2026 } from './llm-context-compressio
 import { claudeAiVulnerabilityScanner2026 } from './claude-ai-vulnerability-scanner-2026';
 import { openSourceAiAgentMemoryMem0VsZepLetta2026 } from './open-source-ai-agent-memory-mem0-vs-zep-letta-2026';
 import { openNotebookVsKhojVsSurfsenseNotebooklm2026 } from './open-notebook-vs-khoj-vs-surfsense-notebooklm-2026';
+import { nvidiaRtxSparkWindowsAiAgents2026 } from './nvidia-rtx-spark-windows-ai-agents-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -163,6 +164,7 @@ const allPosts: BlogPost[] = [
   claudeAiVulnerabilityScanner2026,
   openSourceAiAgentMemoryMem0VsZepLetta2026,
   openNotebookVsKhojVsSurfsenseNotebooklm2026,
+  nvidiaRtxSparkWindowsAiAgents2026,
 ];
 
 // Validate all posts at module load time
