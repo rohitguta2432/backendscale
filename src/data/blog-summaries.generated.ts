@@ -3,6 +3,23 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "open-notebook-vs-khoj-vs-surfsense-notebooklm-2026",
+    "title": "Open Notebook vs Khoj vs SurfSense: Best Self-Hosted NotebookLM Alternative (2026)",
+    "date": "2026-06-07",
+    "excerpt": "Open Notebook just hit #1 on GitHub Trending — but is it the best self-hosted NotebookLM alternative? Here's how Open Notebook (MIT), Khoj (AGPL-3.0), and SurfSense (Apache-2.0) actually compare on Docker setup, RAG architecture, integrations, and the open-source license trap that can bite a commercial build.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "open source notebooklm alternative",
+      "self-hosted notebooklm",
+      "open notebook vs khoj",
+      "khoj vs surfsense",
+      "notebooklm alternative 2026",
+      "self-hosted ai document research",
+      "open notebook self-host"
+    ],
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "open-source-ai-agent-memory-mem0-vs-zep-letta-2026",
     "title": "AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)",
     "date": "2026-06-06",

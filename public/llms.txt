@@ -8,7 +8,7 @@
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 77 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 78 technical case-study posts
 
 ## Featured Projects
 
@@ -16,10 +16,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (79 posts)
+## All Engineering Notes (80 posts)
 
 ### AI Systems & LLM Integration
 
+- [Open Notebook vs Khoj vs SurfSense: Best Self-Hosted NotebookLM Alternative (2026)](https://rohitraj.tech/en/notes/open-notebook-vs-khoj-vs-surfsense-notebooklm-2026)
 - [AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)](https://rohitraj.tech/en/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026)
 - [Claude AI Vulnerability Scanner: Anthropic's Open-Source Code-Security Harness (2026)](https://rohitraj.tech/en/notes/claude-ai-vulnerability-scanner-2026)
 
