@@ -391,7 +391,6 @@ export const projects: Project[] = [
         solves: "One offline-first app that combines collaborative itineraries, interactive offline maps, expense splitting, group polls, and packing lists — anyone can join with just a link, no login required.",
         techStack: ["React Native", "Expo", "TypeScript", "WatermelonDB", "PowerSync", "MapLibre GL", "Supabase", "Firebase"],
         status: "active",
-        repoUrl: "https://github.com/rohitguta2432/triphive",
         aiApproach: "No AI — architecture-first approach. WatermelonDB for offline-first local storage with PowerSync for transparent background syncing. MapLibre GL + Protomaps for downloadable offline map tiles.",
         image: "/images/projects/triphive.png",
         details: {
@@ -433,7 +432,6 @@ export const projects: Project[] = [
         solves: "Fully offline Android app that analyzes suspicious messages, screenshots, URLs, and UPI IDs using a 3-tier on-device AI engine — with bilingual explanations in Hindi and English. Zero data collection, zero internet required.",
         techStack: ["Kotlin", "Jetpack Compose", "Material 3", "Hilt", "Room", "ML Kit GenAI (Gemma 4)", "LiteRT", "CameraX"],
         status: "active",
-        repoUrl: "https://github.com/rohitguta2432/scamrakshak",
         aiApproach: "3-tier inference engine: Tier 1 — ML Kit GenAI with Gemma 4 on-device LLM for deep analysis. Tier 2 — LiteRT (TFLite successor) for lightweight scam classification. Tier 3 — Rule-based regex engine as universal fallback. All inference runs on-device with zero network calls.",
         image: "/images/projects/scamrakshak.png",
         details: {
@@ -475,7 +473,6 @@ export const projects: Project[] = [
         solves: "Privacy-first, fully offline Android app with 8 financial modules: expense tracking, grocery budget mode, bill calendar, emergency fund tracker, debt snowball, affordability calculator, family expense splitting, and auto-generated monthly reports.",
         techStack: ["Kotlin", "Jetpack Compose", "Material 3", "Room", "Hilt", "WorkManager", "DataStore"],
         status: "active",
-        repoUrl: "https://github.com/rohitguta2432/paisaguard",
         aiApproach: "No AI — rule-based financial engines. Debt snowball algorithm for optimal payoff ordering. Smart category auto-suggestion from keywords. Budget health indicators with color-coded alerts (green/orange/red).",
         image: "/images/projects/paisaguard.png",
         details: {
@@ -601,24 +598,6 @@ export const repos = [
         description: "RetailOS — Multi-tenant retail SaaS with 12-module Spring Boot monorepo",
         modules: ["retailos-auth", "retailos-tenant", "retailos-inventory", "retailos-billing", "retailos-invoice", "retailos-khata"],
         url: "https://github.com/rohitguta2432/retailos"
-    },
-    {
-        name: "triphive",
-        description: "TripHive — Offline-first collaborative trip planner with React Native + WatermelonDB",
-        modules: ["specs", "designs"],
-        url: "https://github.com/rohitguta2432/triphive"
-    },
-    {
-        name: "scamrakshak",
-        description: "ScamRakshak — On-device AI scam detector with 3-tier inference engine, Kotlin + Gemma 4",
-        modules: ["app"],
-        url: "https://github.com/rohitguta2432/scamrakshak"
-    },
-    {
-        name: "paisaguard",
-        description: "PaisaGuard — Family budget survival app with 8 financial modules, Kotlin + Jetpack Compose",
-        modules: ["app", "specs"],
-        url: "https://github.com/rohitguta2432/paisaguard"
     }
 ];
 
