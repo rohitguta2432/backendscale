@@ -37,7 +37,7 @@ export default async function AgentsPage({ params }: Props) {
                         <p className="page-description">
                             I don&apos;t just talk about AI agents — I build and run them. These are autonomous systems that
                             decide, call tools, and complete real work on their own, each aimed at a billion-dollar market.
-                            Four of them are live below: try them.
+                            Six of them are live below: try them.
                         </p>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ export interface AgentShowcase {
     status: "live" | "development" | "production" | "active";
     repoUrl?: string;
     liveUrl?: string;
-    demo?: "dispatchr" | "mcpguard" | "clauseguard" | "finscope";
+    demo?: "dispatchr" | "mcpguard" | "clauseguard" | "finscope" | "cadence" | "prospectr";
     metrics?: { label: string; value: string }[];
 }
 
@@ -78,6 +78,7 @@ export const agents: AgentShowcase[] = [
             "Deterministic analysers crunch the numbers while a hard compliance gate guarantees the output never says buy, sell, or switch. It flags and explains — every flag ends with a question for a SEBI-registered RIA, never a recommendation.",
         techStack: ["TypeScript", "Next.js API route", "Deterministic analysers", "Compliance gate", "Eval-gated"],
         status: "live",
+        repoUrl: "https://github.com/rohitguta2432/finscope",
         demo: "finscope",
         metrics: [
             { label: "Health checks", value: "6 dims" },
@@ -98,11 +99,54 @@ export const agents: AgentShowcase[] = [
             "Six deterministic check families run with zero network and no LLM, grade the manifest A–F, and return the exact evidence that tripped each rule. A faithful port of a Python core that scores 100% recall on its eval suite.",
         techStack: ["TypeScript", "Next.js API route", "Static analysis", "Zero-network", "Eval-gated"],
         status: "live",
+        repoUrl: "https://github.com/rohitguta2432/mcpguard",
         demo: "mcpguard",
         metrics: [
             { label: "Threat classes", value: "6" },
             { label: "Eval recall", value: "100%" },
             { label: "Runs", value: "no API key" },
+        ],
+    },
+    {
+        slug: "cadence",
+        name: "Cadence — Autonomous SEO Content Agent",
+        market: "Programmatic content marketing",
+        marketSize: "$400B+ content marketing · AI is rewriting how brands win organic traffic",
+        problem:
+            "Content marketing stalls on the boring middle: drafting publish-ready posts, hitting SEO structure, and keeping quality consistent at volume. Hand-written posts don't scale; AI drafts are inconsistent and often skip the on-page SEO that actually ranks.",
+        solution:
+            "An agent that takes a topic to a publish-ready SEO post on its own — title, meta, slug, body, FAQ, and JSON-LD schema — then runs a structural linter that grades it pass/fail before it ever ships. The same topic always produces the same audited draft.",
+        autonomy:
+            "A four-tool pipeline: pick_topic → draft_post → validate_seo → save_post. The linter runs a 10-point structural check and the agent auto-revises once on failure. Fully deterministic, no API key — gated by a quality suite covering SEO validity, keyword placement, and schema.",
+        techStack: ["TypeScript", "Next.js API route", "Content pipeline", "Structural linter", "Eval-gated"],
+        status: "live",
+        repoUrl: "https://github.com/rohitguta2432/cadence",
+        demo: "cadence",
+        metrics: [
+            { label: "SEO validity", value: "100%" },
+            { label: "Schema validity", value: "100%" },
+            { label: "Runs", value: "no API key" },
+        ],
+    },
+    {
+        slug: "prospectr",
+        name: "Prospectr — Autonomous Outbound BD Agent",
+        market: "Outbound sales & lead generation",
+        marketSize: "$30B+ sales engagement · outbound is mostly manual, spammy, and low-conversion",
+        problem:
+            "Outbound BD is a grind: verifying emails, scoring whether a lead even fits, and writing a pitch that doesn't read like a template. Done by hand it's slow; done by naive automation it's spam that torches sender reputation.",
+        solution:
+            "An agent that takes a raw lead to a personalized, queue-ready pitch — it verifies the email, scores fit 0–100 against a fixed ICP, and only for keepers drafts a ≤140-word pitch with no placeholder leaks. A blocklist gate suppresses bad domains before anything is queued.",
+        autonomy:
+            "A four-tool pipeline: enrich_lead → score_fit → draft_pitch → queue_send. Sending is dry-run by design — it physically cannot transmit — and a safety gate suppresses blocklisted domains. Deterministic and eval-gated on fit accuracy, personalization, and blocklist suppression.",
+        techStack: ["TypeScript", "Next.js API route", "ICP scorer", "Safety gate", "Dry-run only"],
+        status: "live",
+        repoUrl: "https://github.com/rohitguta2432/prospectr",
+        demo: "prospectr",
+        metrics: [
+            { label: "Fit accuracy", value: "100%" },
+            { label: "Blocklist suppression", value: "100%" },
+            { label: "Placeholder leaks", value: "0" },
         ],
     },
     {
@@ -118,7 +162,6 @@ export const agents: AgentShowcase[] = [
             "A DECIDE → EXECUTE → COMMIT loop with forced-JSON decisions, an append-only journal, and persistent state memory. Runs 100% locally on Ollama — no API key, no cloud, no per-token cost — so it can grind indefinitely.",
         techStack: ["Python", "Ollama", "qwen2.5 / hermes3", "Forced-JSON tool use", "Local-first"],
         status: "active",
-        repoUrl: "https://github.com/rohitguta2432/founder-agent",
         metrics: [
             { label: "Runs", value: "100% local" },
             { label: "Artifacts shipped", value: "5+" },

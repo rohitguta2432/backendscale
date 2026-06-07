@@ -5,6 +5,8 @@ import DispatchrDemo from "@/components/DispatchrDemo";
 import ClauseGuardDemo from "@/components/ClauseGuardDemo";
 import FinScopeDemo from "@/components/FinScopeDemo";
 import MCPGuardDemo from "@/components/MCPGuardDemo";
+import CadenceDemo from "@/components/CadenceDemo";
+import ProspectrDemo from "@/components/ProspectrDemo";
 
 interface Bullet {
     name: string;
@@ -115,6 +117,52 @@ const AGENTS: LabAgent[] = [
         ],
         hint: "Load the malicious manifest sample and scan it — note the critical findings and the A–F grade.",
     },
+    {
+        id: "cadence",
+        label: "Cadence",
+        title: "Cadence — autonomous SEO content agent",
+        description:
+            "Pick a topic and Cadence drafts a full, publish-ready SEO post — title, meta, slug, body, FAQ, and JSON-LD — then runs a structural linter that grades it pass/fail. Deterministic and no API key: the same topic always produces the same audited draft.",
+        Component: CadenceDemo,
+        panelTitle: "What the pipeline does",
+        bullets: [
+            { name: "pick_topic", desc: "novelty-checked topic from the queue", mono: true },
+            { name: "draft_post", desc: "title, meta, slug, body, 3-Q&A FAQ + schema", mono: true },
+            { name: "validate_seo", desc: "10-point structural lint, auto-revise once", mono: true },
+            { name: "save_post", desc: "writes a publish-ready MDX file", mono: true },
+        ],
+        evalTitle: "Quality gate",
+        evals: [
+            { label: "SEO validity", value: "100%" },
+            { label: "Keyword placement", value: "100%" },
+            { label: "Schema validity", value: "100%" },
+            { label: "Filler-free", value: "100%" },
+        ],
+        hint: "Run the “keyword trap” sample — the keyword isn’t in the topic, yet the agent still places it in the H1 and passes the lint.",
+    },
+    {
+        id: "prospectr",
+        label: "Prospectr",
+        title: "Prospectr — outbound BD agent",
+        description:
+            "Pick a lead and Prospectr verifies the email, scores it 0–100 against a fixed ICP, and — only for keepers — drafts a personalized pitch. A blocklist gate suppresses bad domains before anything is queued, and sending is dry-run by design — it physically cannot transmit.",
+        Component: ProspectrDemo,
+        panelTitle: "What the agent does",
+        bullets: [
+            { name: "enrich_lead", desc: "permute + mock-MX verify the email", mono: true },
+            { name: "score_fit", desc: "0–100 ICP score → keep or skip", mono: true },
+            { name: "draft_pitch", desc: "personalized, ≤140 words, no placeholders", mono: true },
+            { name: "queue_send", desc: "blocklist + dedupe, dry-run only", mono: true },
+        ],
+        evalTitle: "Quality gate",
+        evals: [
+            { label: "Fit-classification accuracy", value: "100%" },
+            { label: "Personalization pass rate", value: "100%" },
+            { label: "Blocklist suppression", value: "100%" },
+            { label: "Placeholder leaks", value: "0" },
+        ],
+        hint: "Score BadActorCorp — it’s blocklisted, so the safety gate suppresses it before any pitch can be queued.",
+    },
 ];
 
 export default function AgentLab() {
@@ -128,7 +176,7 @@ export default function AgentLab() {
                 <div className="section-header">
                     <h2 className="section-title">Agent Lab — try them live</h2>
                     <p className="section-description">
-                        Four working agents, running right here on this site. Each one is deterministic and runs with no
+                        Six working agents, running right here on this site. Each one is deterministic and runs with no
                         API key or cloud LLM, so the demos are reproducible — and each is gated by its own eval suite.
                         Pick one and put it to work.
                     </p>

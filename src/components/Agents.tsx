@@ -98,7 +98,7 @@ export default function Agents({ locale, variant = "teaser" }: AgentsProps) {
                     <span className="ai-projects-eyebrow">AI Agent Host</span>
                     <h2 className="ai-projects-heading">Autonomous agents, aimed at billion-dollar markets</h2>
                     <p className="ai-projects-subheading">
-                        Not chatbots — agents that decide, call tools, and finish a job on their own. Four of them run live in the Agent Host.
+                        Not chatbots — agents that decide, call tools, and finish a job on their own. Six of them run live in the Agent Host.
                     </p>
                 </div>
 
