@@ -2,8 +2,8 @@
 // (English, in code) like @/data/ai-projects, kept separate so the landing-page
 // teaser and the /agents host page render the same source of truth.
 //
-// `demo` mounts an interactive, on-site agent (currently only "dispatchr", which
-// runs deterministically via /api/agents/dispatchr — no API key, no cloud).
+// `demo` mounts an interactive, on-site agent in the AgentLab. Each runs
+// deterministically via /api/agents/<slug> — no API key, no cloud.
 
 export interface AgentShowcase {
     slug: string;
@@ -19,7 +19,7 @@ export interface AgentShowcase {
     status: "live" | "development" | "production" | "active";
     repoUrl?: string;
     liveUrl?: string;
-    demo?: "dispatchr";
+    demo?: "dispatchr" | "mcpguard" | "clauseguard" | "finscope";
     metrics?: { label: string; value: string }[];
 }
 
@@ -43,6 +43,66 @@ export const agents: AgentShowcase[] = [
             { label: "Eval pass rate", value: "26 / 26" },
             { label: "Emergency recall", value: "100%" },
             { label: "Over-escalation", value: "0%" },
+        ],
+    },
+    {
+        slug: "clauseguard",
+        name: "ClauseGuard — AI Contract Risk Review",
+        market: "Contract review for freelancers & SMBs",
+        marketSize: "$10B+ legaltech · every freelancer and small business signs contracts they never fully read",
+        problem:
+            "Freelancers and small businesses sign NDAs, MSAs, and SaaS terms they never fully read — then get caught by uncapped liability, IP over-assignment, non-competes, auto-renewals, and Net-90 payment traps.",
+        solution:
+            "A first-pass reviewer that reads a contract, flags each risky clause with the exact offending quote, explains in plain English why it matters, and proposes a concrete redline — and it also flags protective clauses that are missing entirely.",
+        autonomy:
+            "A deterministic 16-rule playbook plus absence checks runs offline with no API key, ranks every finding high / medium / low, and produces a stable risk grade. The same playbook anchors the eval suite.",
+        techStack: ["TypeScript", "Next.js API route", "Rule playbook", "Offline-first", "Eval-gated"],
+        status: "live",
+        demo: "clauseguard",
+        metrics: [
+            { label: "Clause rules", value: "16 +" },
+            { label: "Categories", value: "9" },
+            { label: "Runs", value: "offline" },
+        ],
+    },
+    {
+        slug: "finscope",
+        name: "FinScope — Portfolio X-Ray (educational)",
+        market: "Personal-finance diagnostics for India",
+        marketSize: "Crores of Indian mutual-fund investors · almost none audit overlap, cost, or tax drag",
+        problem:
+            "Retail investors hold overlapping funds, pay above-median expense ratios, trip short-term capital-gains taxes, and run concentrated or under-cushioned portfolios — with no easy way to see any of it.",
+        solution:
+            "An X-ray that scores a portfolio across six dimensions — allocation drift, fund overlap, expense drag, tax efficiency, concentration, and emergency fund — and turns every issue into a specific question to take to a SEBI-registered advisor.",
+        autonomy:
+            "Deterministic analysers crunch the numbers while a hard compliance gate guarantees the output never says buy, sell, or switch. It flags and explains — every flag ends with a question for a SEBI-registered RIA, never a recommendation.",
+        techStack: ["TypeScript", "Next.js API route", "Deterministic analysers", "Compliance gate", "Eval-gated"],
+        status: "live",
+        demo: "finscope",
+        metrics: [
+            { label: "Health checks", value: "6 dims" },
+            { label: "Compliance", value: "0 violations" },
+            { label: "Advice given", value: "never" },
+        ],
+    },
+    {
+        slug: "mcpguard",
+        name: "MCPGuard — MCP Manifest Security Scanner",
+        market: "Security for the agentic / MCP supply chain",
+        marketSize: "AI-agent security a breakout 2026 category · every third-party MCP tool is new attack surface",
+        problem:
+            "AI agents now load third-party MCP tools whose manifests can carry hidden prompt injections, exfiltration directives, embedded secrets, or shell access — and almost nobody scans them before wiring them into an agent.",
+        solution:
+            "A scanner that statically inspects an MCP manifest and flags the dangerous patterns — prompt injection in descriptions, tool poisoning / cross-tool hijacks, over-permissioned shell commands, leaked credentials, wildcard scopes, and unauthenticated dangerous tools — each with a concrete fix.",
+        autonomy:
+            "Six deterministic check families run with zero network and no LLM, grade the manifest A–F, and return the exact evidence that tripped each rule. A faithful port of a Python core that scores 100% recall on its eval suite.",
+        techStack: ["TypeScript", "Next.js API route", "Static analysis", "Zero-network", "Eval-gated"],
+        status: "live",
+        demo: "mcpguard",
+        metrics: [
+            { label: "Threat classes", value: "6" },
+            { label: "Eval recall", value: "100%" },
+            { label: "Runs", value: "no API key" },
         ],
     },
     {

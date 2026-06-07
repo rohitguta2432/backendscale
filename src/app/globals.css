@@ -155,12 +155,18 @@ section {
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+}
+
+.nav-links .btn {
+  flex-shrink: 0;
 }
 
 .nav-link {
@@ -192,6 +198,7 @@ section {
   cursor: pointer;
   transition: all 150ms ease;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -1260,7 +1267,7 @@ code,
 }
 
 /* Mobile menu */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .header {
     position: relative;
   }
@@ -1315,14 +1322,16 @@ code,
   .mobile-menu-btn {
     display: flex;
   }
+}
 
-  /* Hide hero image on mobile */
+/* Hide hero image on mobile */
+@media (max-width: 768px) {
   .hero img {
     display: none;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .mobile-menu-btn {
     display: none;
   }
@@ -1449,7 +1458,7 @@ code,
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .header-actions-mobile {
     display: flex;
     align-items: center;
@@ -2115,7 +2124,6 @@ code,
 /* .reliability-container removed — now uses .container for consistent alignment */
 
 .reliability-header {
-  text-align: center;
   margin-bottom: 48px;
 }
 
@@ -3106,8 +3114,7 @@ code,
 
 .process-header {
   max-width: 720px;
-  margin: 0 auto 2.5rem;
-  text-align: center;
+  margin: 0 0 2.5rem;
 }
 
 .process-eyebrow {
@@ -3241,8 +3248,7 @@ code,
 
 .faq-header {
   max-width: 720px;
-  margin: 0 auto 2rem;
-  text-align: center;
+  margin: 0 0 2rem;
 }
 
 .faq-eyebrow {
@@ -3700,5 +3706,663 @@ code,
   .agent-live-side {
     position: static;
     flex-direction: column;
+  }
+  .fs-dim {
+    grid-template-columns: 7rem 1fr 1.8rem;
+  }
+  .fs-controls .agentlab-actions {
+    margin-left: 0;
+  }
+}
+
+/* ==================== AgentLab — shared demo lab ==================== */
+
+/* --- Tabs --- */
+.agentlab-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.agentlab-tab {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.agentlab-tab:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.agentlab-tab--active {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--bg);
+}
+
+/* --- Active demo header (left column of agent-live-grid) --- */
+.agentlab-active {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-width: 0;
+}
+
+.agentlab-active-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.4rem;
+}
+
+.agentlab-active-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --- Demo shell (clauseguard / finscope / mcpguard) --- */
+.agentlab-demo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-alt);
+  padding: 0 1rem 1rem;
+}
+
+.agentlab-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 -1rem 1rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 14px 14px 0 0;
+}
+
+.agentlab-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--success) 60%, transparent);
+  animation: ai-project-live-pulse 2.2s ease-out infinite;
+  flex-shrink: 0;
+}
+
+.agentlab-bar-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.agentlab-bar-note {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  text-align: right;
+}
+
+.agentlab-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.agentlab-chip {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.agentlab-chip:hover:not(:disabled) {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.agentlab-chip--active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+.agentlab-chip:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.agentlab-field-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.agentlab-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  font-family: inherit;
+}
+
+.agentlab-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.agentlab-textarea--code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.agentlab-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.agentlab-error {
+  margin: 0.9rem 0 0;
+  font-size: 0.82rem;
+  color: var(--error);
+}
+
+.agentlab-disclaimer {
+  margin: 1rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* --- Scan results (clauseguard / mcpguard) --- */
+.scan-result {
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+
+.scan-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.scan-grade {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.scan-grade--ok {
+  background: color-mix(in srgb, var(--success) 16%, transparent);
+  color: var(--success);
+}
+
+.scan-grade--warn {
+  background: color-mix(in srgb, var(--warning) 18%, transparent);
+  color: var(--warning);
+}
+
+.scan-grade--bad {
+  background: color-mix(in srgb, var(--error) 16%, transparent);
+  color: var(--error);
+}
+
+.scan-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.sev-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 1.3;
+  border: 1px solid transparent;
+}
+
+.sev-pill--critical {
+  background: color-mix(in srgb, var(--error) 16%, transparent);
+  color: var(--error);
+  border-color: color-mix(in srgb, var(--error) 35%, transparent);
+}
+
+.sev-pill--high {
+  background: color-mix(in srgb, var(--error) 12%, transparent);
+  color: var(--error);
+}
+
+.sev-pill--medium {
+  background: color-mix(in srgb, var(--warning) 16%, transparent);
+  color: var(--warning);
+}
+
+.sev-pill--low {
+  background: color-mix(in srgb, var(--neutral) 20%, transparent);
+  color: var(--text-secondary);
+}
+
+.sev-pill--ok {
+  background: color-mix(in srgb, var(--success) 16%, transparent);
+  color: var(--success);
+}
+
+.sev-pill--warn {
+  background: color-mix(in srgb, var(--warning) 16%, transparent);
+  color: var(--warning);
+}
+
+.scan-findings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.scan-finding {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  padding: 0.85rem 1rem;
+}
+
+.scan-finding-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.scan-finding-id {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.scan-finding-tool {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-left: auto;
+}
+
+.scan-finding-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.scan-finding-evidence {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.scan-finding-fix {
+  margin: 0.45rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.scan-finding-fix strong {
+  color: var(--text-primary);
+}
+
+.clause-quote {
+  margin: 0.1rem 0 0.5rem;
+  padding: 0.4rem 0.75rem;
+  border-left: 3px solid var(--border-hover);
+  background: var(--bg-alt);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  font-style: italic;
+  border-radius: 0 6px 6px 0;
+}
+
+/* --- FinScope portfolio X-ray --- */
+.fs-blurb {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0 0 0.8rem;
+}
+
+.fs-holdings {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+}
+
+.fs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.fs-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.fs-table td {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.fs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.fs-table .fs-num {
+  text-align: right;
+}
+
+.fs-table td.fs-num {
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.fs-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.fs-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.fs-control input,
+.fs-control select {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.fs-control input {
+  width: 5rem;
+}
+
+.fs-control input:focus,
+.fs-control select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.fs-controls .agentlab-actions {
+  margin-top: 0;
+  margin-left: auto;
+}
+
+.fs-scorehead {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.fs-overall {
+  display: flex;
+  align-items: baseline;
+  gap: 0.1rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 12px;
+  font-family: var(--font-mono);
+}
+
+.fs-overall--ok {
+  background: color-mix(in srgb, var(--success) 14%, transparent);
+  color: var(--success);
+}
+
+.fs-overall--warn {
+  background: color-mix(in srgb, var(--warning) 16%, transparent);
+  color: var(--warning);
+}
+
+.fs-overall--bad {
+  background: color-mix(in srgb, var(--error) 14%, transparent);
+  color: var(--error);
+}
+
+.fs-overall-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.fs-overall-max {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.fs-overall-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.fs-overall-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.fs-overall-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.fs-dims {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.fs-dim {
+  display: grid;
+  grid-template-columns: 9rem 1fr 2rem;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.fs-dim-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.fs-dim-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.fs-dim-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.fs-dim-fill--ok {
+  background: var(--success);
+}
+
+.fs-dim-fill--warn {
+  background: var(--warning);
+}
+
+.fs-dim-fill--bad {
+  background: var(--error);
+}
+
+.fs-dim-score {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.fs-alloc {
+  margin-bottom: 1.1rem;
+}
+
+.fs-alloc-title {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.fs-alloc-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+
+.fs-alloc-seg {
+  display: block;
+  height: 100%;
+}
+
+.fs-alloc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.fs-alloc-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.fs-alloc-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.fs-alloc-seg--equity {
+  background: var(--accent);
+}
+
+.fs-alloc-seg--debt {
+  background: #8b5cf6;
+}
+
+.fs-alloc-seg--gold {
+  background: var(--warning);
+}
+
+.fs-alloc-seg--cash {
+  background: var(--success);
+}
+
+.fs-alloc-seg--other {
+  background: var(--neutral);
+}
+
+.fs-flag-dim {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .agentlab-tab {
+    flex: 1 1 auto;
+    text-align: center;
   }
 }

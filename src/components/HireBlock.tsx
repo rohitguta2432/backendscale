@@ -37,11 +37,11 @@ export default function HireBlock({ dict, locale }: HireBlockProps) {
                     </h2>
                 </div>
 
-                <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+                <div style={{ maxWidth: 720, textAlign: "left" }}>
                     <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--text-secondary)", marginBottom: 24 }}>
                         {hire.intro}
                     </p>
-                    <ul style={{ textAlign: "left", display: "inline-block", padding: 0, listStyle: "none", margin: "0 0 32px" }}>
+                    <ul style={{ textAlign: "left", display: "block", padding: 0, listStyle: "none", margin: "0 0 32px" }}>
                         {hire.points.map((point) => (
                             <li
                                 key={point}
