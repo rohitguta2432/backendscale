@@ -37,6 +37,7 @@ export const agents: AgentShowcase[] = [
             "A transparent tool-calling loop: classify → get_price_estimate → find_available_slots → book_job. A hard safety rule overrides everything — any hint of gas, fire, smoke, sparks, shock, or flooding triggers an immediate hand-off to a human. Decisions are deterministic and gated by a 26-case eval suite.",
         techStack: ["TypeScript", "Next.js API route", "Tool-calling loop", "Eval gate", "OpenAI-compatible (swappable)"],
         status: "live",
+        repoUrl: "https://github.com/rohitguta2432/dispatchr",
         demo: "dispatchr",
         metrics: [
             { label: "Eval pass rate", value: "26 / 26" },
@@ -77,6 +78,7 @@ export const agents: AgentShowcase[] = [
             "Built on the same zero-CAC content engine that already ranks my own sites organically — the pipeline researches a topic, drafts citation-optimized content, publishes, and tracks whether AI engines start citing it.",
         techStack: ["Next.js", "TypeScript", "Content pipeline", "Structured data / schema", "Citation tracking"],
         status: "development",
+        repoUrl: "https://github.com/rohitguta2432/geo-engine",
         metrics: [
             { label: "Market CAGR", value: "45.5%" },
             { label: "TAM by 2030", value: "$17B" },
