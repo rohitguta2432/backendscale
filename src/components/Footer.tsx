@@ -96,6 +96,9 @@ export default function Footer({ dict, locale }: FooterProps) {
                     <div className="footer-services mb-6">
                         <p className="text-sm uppercase tracking-widest text-[var(--text-muted)] mb-3">Services</p>
                         <div className="footer-links">
+                            <a href={`/${locale}/agents`} className="footer-link">
+                                AI Agent Host
+                            </a>
                             <a href={`/${locale}`} className="footer-link">
                                 Founding Engineer for Hire in India
                             </a>
