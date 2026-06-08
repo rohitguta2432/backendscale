@@ -3,6 +3,28 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "what-is-harness-engineering-codex-2026",
+    "title": "What Is Harness Engineering? OpenAI’s Agent-First Codex Playbook (2026)",
+    "date": "2026-06-08",
+    "excerpt": "Harness engineering is the discipline of building the scaffolding — docs, golden rules, custom linters, and agent-to-agent review loops — that lets AI coding agents ship reliable software at scale. OpenAI coined the term after building a ~1M-line beta product in 5 months with zero hand-written code using Codex. Here is what a harness actually contains, the architecture that makes it work, when it pays off, when to skip it, and how I run a smaller version of it today.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "harness engineering",
+      "what is harness engineering",
+      "harness engineering codex",
+      "agent-first development",
+      "building a harness for ai agents",
+      "golden principles ai coding",
+      "openai codex harness",
+      "ai coding agents 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/what-is-harness-engineering-codex-2026-cover.jpg",
+      "alt": "Dark editorial cover with a glowing geometric scaffold cradling a core orb illustrating harness engineering for AI coding agents"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "open-notebook-vs-khoj-vs-surfsense-notebooklm-2026",
     "title": "Open Notebook vs Khoj vs SurfSense: Best Self-Hosted NotebookLM Alternative (2026)",
     "date": "2026-06-07",

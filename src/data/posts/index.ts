@@ -82,6 +82,7 @@ import { claudeAiVulnerabilityScanner2026 } from './claude-ai-vulnerability-scan
 import { openSourceAiAgentMemoryMem0VsZepLetta2026 } from './open-source-ai-agent-memory-mem0-vs-zep-letta-2026';
 import { openNotebookVsKhojVsSurfsenseNotebooklm2026 } from './open-notebook-vs-khoj-vs-surfsense-notebooklm-2026';
 import { nvidiaRtxSparkWindowsAiAgents2026 } from './nvidia-rtx-spark-windows-ai-agents-2026';
+import { whatIsHarnessEngineeringCodex2026 } from './what-is-harness-engineering-codex-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -165,6 +166,7 @@ const allPosts: BlogPost[] = [
   openSourceAiAgentMemoryMem0VsZepLetta2026,
   openNotebookVsKhojVsSurfsenseNotebooklm2026,
   nvidiaRtxSparkWindowsAiAgents2026,
+  whatIsHarnessEngineeringCodex2026,
 ];
 
 // Validate all posts at module load time
