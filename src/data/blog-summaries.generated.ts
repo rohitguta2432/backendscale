@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-24",
+    "title": "This Week in AI Dev: Codex Builds Apps, the Open-Weight Frontier Explodes, and Anthropic Meters the Agent SDK (Week 24 of 2026)",
+    "date": "2026-06-09",
+    "excerpt": "Week 24 of 2026 in AI dev tools: OpenAI's Codex graduates from coding agent to app builder with Sites and role plugins, three open-weight models drop in 72 hours (MiniMax M3, Gemma 4 12B, NVIDIA Nemotron 3 Ultra), Anthropic moves the Agent SDK to metered billing on June 15, Microsoft Build hardens agent security, and the Gemini CLI consumer sunset hits June 18.",
+    "readingTime": "6 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "openai codex sites",
+      "minimax m3 open weight model",
+      "gemma 4 12b",
+      "anthropic agent sdk billing june 2026",
+      "gemini cli sunset 2026",
+      "ai coding agents 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-24-cover.jpg",
+      "alt": "Constellation of glowing connected nodes illustrating AI dev tools weekly roundup week 24 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "what-is-harness-engineering-codex-2026",
     "title": "What Is Harness Engineering? OpenAI’s Agent-First Codex Playbook (2026)",
     "date": "2026-06-08",

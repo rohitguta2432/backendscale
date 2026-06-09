@@ -83,6 +83,7 @@ import { openSourceAiAgentMemoryMem0VsZepLetta2026 } from './open-source-ai-agen
 import { openNotebookVsKhojVsSurfsenseNotebooklm2026 } from './open-notebook-vs-khoj-vs-surfsense-notebooklm-2026';
 import { nvidiaRtxSparkWindowsAiAgents2026 } from './nvidia-rtx-spark-windows-ai-agents-2026';
 import { whatIsHarnessEngineeringCodex2026 } from './what-is-harness-engineering-codex-2026';
+import { aiDevWeek2026W24 } from './ai-dev-week-2026-24';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -167,6 +168,7 @@ const allPosts: BlogPost[] = [
   openNotebookVsKhojVsSurfsenseNotebooklm2026,
   nvidiaRtxSparkWindowsAiAgents2026,
   whatIsHarnessEngineeringCodex2026,
+  aiDevWeek2026W24,
 ];
 
 // Validate all posts at module load time
