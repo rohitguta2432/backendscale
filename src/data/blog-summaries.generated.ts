@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "claude-fable-5-developer-guide-2026",
+    "title": "Claude Fable 5: Pricing, the API, and When to Use It vs Opus 4.8 (2026)",
+    "date": "2026-06-10",
+    "excerpt": "Anthropic shipped Claude Fable 5 on June 9, 2026 — a Mythos-class model at $10/$50 per million tokens, double the Opus 4.8 rate. Here is the developer read: the claude-fable-5 API, the Opus-4.8 safeguard fallback you must design around, the new 30-day retention rule, Fable vs Mythos, and when to wait.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "claude fable 5",
+      "claude fable 5 pricing",
+      "claude fable 5 vs opus 4.8",
+      "claude fable 5 api",
+      "anthropic claude fable 5",
+      "claude mythos 5",
+      "how to use claude fable 5"
+    ],
+    "coverImage": {
+      "src": "/images/notes/claude-fable-5-developer-guide-2026-cover.jpg",
+      "alt": "Glowing teal-violet crystalline monolith with a molten core on black illustrating the Claude Fable 5 model release"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "ai-dev-week-2026-24",
     "title": "This Week in AI Dev: Codex Builds Apps, the Open-Weight Frontier Explodes, and Anthropic Meters the Agent SDK (Week 24 of 2026)",
     "date": "2026-06-09",
