@@ -4,7 +4,7 @@ export const foundingEngineerEquityPercentage2026: BlogPost = {
   slug: 'founding-engineer-equity-percentage-2026',
   title: 'Founding Engineer Equity 2026 — How Much to Negotiate (India)',
   date: '2026-04-29',
-  updated: '2026-05-16',
+  updated: '2026-06-09',
   excerpt:
     'Carta says 1.5% for hire #1, dropping to 0.33% by hire #5. Pave median is 1%. AI talent pressure pushed the floor up since March 2026. Honest 2026 numbers — plus the $0-equity alternative most pre-seed founders should default to.',
   readingTime: '11 min read',
@@ -71,6 +71,26 @@ This advice doesn't apply if you've already raised a seed, hit PMF, or operate i
       heading: 'Skip the Equity Math — Hire a Senior Engineer for the Sprint Instead',
       content:
         "Most founders Googling 'founding engineer equity percentage 2026' are 30 minutes away from a wrong decision. They will end up offering 1% equity, $150K base, and a 4-year vest to a senior engineer who, three months later, will quit because the thesis was wrong and the founder pivoted twice. The cap table will be diluted, the codebase will be half-built, and the founder will be back to square one — except now with 1% less equity to give the next person.\n\nThe asymmetric move in 2026 is to skip the founding engineer hire pre-PMF, ship the MVP with a senior contractor on a fixed-price sprint, validate the thesis with paying users, and then make the founding-engineer hire post-PMF onto a real codebase. This gives you:\n\n- Zero equity dilution before PMF — you keep the cap table clean for your seed round\n- 4-6× lower year-one cash burn — $15K-$30K vs $210K-$350K all-in\n- Faster time to first ship — day 1 vs 4-8 weeks of recruiting and onboarding\n- Optionality on the founding-engineer hire — you make it post-PMF when the role is less risky and the equity is backing real revenue\n\nTwo ways I help pre-seed and seed founders here:\n\n- [6-Week MVP Sprint](https://rohitraj.tech/en/services/6-week-mvp) — fixed-scope, fixed-price ($15K-$30K) for the customer-facing product. Auth, billing, core features, deployed, monitored. You own the GitHub from day one. Zero equity.\n- [Hire a Founding Engineer in India](https://rohitraj.tech/en/services/hire-founding-engineer-india) — senior India-based engineer for hire on sprint or retainer, no equity ask, full GitHub from commit one. Direct alternative to the $210K-$350K + 1% US founding-engineer route.\n\nThe free 30-minute scoping call covers: cap-table modeling for the next 18 months, honest answer on whether you need a founding engineer or a contractor, written scope doc if we move forward. If a founding engineer with 1% equity is genuinely the right call for your situation, I will tell you that and recommend two engineers I trust. The honest scoping costs me a few minutes. Mismatched engagements cost both of us months.\n\nEmail rohitgupta2432@gmail.com or book a free 30-minute scoping call.",
+    },
+    {
+      heading: 'Founding Engineer Equity — Frequently Asked Questions',
+      content: `**Q: What is the typical equity percentage for a founding engineer in 2026?**
+Most pre-seed startups give 0.5–2%, with 1% as the 2026 median. Carta's State of Seed puts the first technical hire at 1.5% on average, dropping to 0.85% for hire #2 and 0.33% by hire #5. AI talent pressure has lifted the median up from 0.75% since March 2026.
+
+**Q: How much equity should the first engineer at a startup get?**
+Hire #1 gets a 1.5% median per Carta, inside a wide 0.5%–4% range. A former CTO with two exits commands 2–4%; a strong senior engineer with no startup history is closer to 0.5%. Cap-table room and how late in your runway you hire move the number more than the title does.
+
+**Q: How much equity does a founding engineer get in India?**
+India founding-engineer offers in 2026 cluster at 0.2–1% equity plus ₹40–90 lakh base ($48K–$108K). A senior India contractor on a fixed-scope sprint takes 0% equity at $15K–$30K — the default most pre-seed founders should use before hitting product-market fit.
+
+**Q: Is 1% equity good for a founding engineer?**
+1% is fair for an engineer who stays 4+ years at a company that reaches Series B — worth roughly $520K on paper after dilution, for taking $80K–$140K below market over 3–4 years. But only about 6–8% of pre-seed founding-engineer grants pay off as designed, so expected value is far below the headline percentage.
+
+**Q: Should a pre-seed startup hire a founding engineer in 2026?**
+Usually no. If you are pre-PMF, under 12 months of runway, and not in an AI-frontier or compliance-heavy stack, a senior contractor on a 6-week sprint ($15K–$30K, zero equity) ships faster and keeps your cap table clean. Make the founding-engineer hire post-PMF onto a real codebase instead.
+
+**Q: Founding engineer equity vs salary — what is the trade-off?**
+A US founding engineer costs $210K–$350K all-in in year one (cash plus 1% dilution); an India senior contractor sprint is $15K–$30K with zero equity and no 4-year lock-in. The equity route only wins after you have validated PMF and genuinely need a 4-year architect rather than a 6-week builder.`,
     },
   ],
   cta: {
