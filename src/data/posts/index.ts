@@ -85,6 +85,7 @@ import { nvidiaRtxSparkWindowsAiAgents2026 } from './nvidia-rtx-spark-windows-ai
 import { whatIsHarnessEngineeringCodex2026 } from './what-is-harness-engineering-codex-2026';
 import { aiDevWeek2026W24 } from './ai-dev-week-2026-24';
 import { claudeFable5DeveloperGuide2026 } from './claude-fable-5-developer-guide-2026';
+import { diffusionGemmaTextDiffusionLlmGuide2026 } from './diffusiongemma-text-diffusion-llm-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -171,6 +172,7 @@ const allPosts: BlogPost[] = [
   whatIsHarnessEngineeringCodex2026,
   aiDevWeek2026W24,
   claudeFable5DeveloperGuide2026,
+  diffusionGemmaTextDiffusionLlmGuide2026,
 ];
 
 // Validate all posts at module load time

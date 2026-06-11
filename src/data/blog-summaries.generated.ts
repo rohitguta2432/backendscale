@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "diffusiongemma-text-diffusion-llm-guide-2026",
+    "title": "DiffusionGemma: Text Diffusion LLMs Explained, and When to Actually Use One (2026)",
+    "date": "2026-06-11",
+    "excerpt": "Google open-sourced DiffusionGemma on June 10, 2026 — a 26B MoE that writes a 256-token block in parallel instead of one token at a time, hitting 700+ tokens/sec on an RTX 5090 and up to 4x faster than Gemma 4. The catch: quality sits below standard Gemma 4. Here is the developer read — how text diffusion works, how to run it locally, the speed-vs-quality decision, and when to skip it.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "diffusiongemma",
+      "diffusiongemma vs gemma 4",
+      "text diffusion model",
+      "diffusion llm",
+      "run diffusiongemma locally",
+      "google diffusiongemma 2026",
+      "text diffusion language model"
+    ],
+    "coverImage": {
+      "src": "/images/notes/diffusiongemma-text-diffusion-llm-guide-2026-cover.jpg",
+      "alt": "Luminous particle swarm coalescing from dark noise into an ordered crystalline lattice illustrating DiffusionGemma text diffusion"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "claude-fable-5-developer-guide-2026",
     "title": "Claude Fable 5: Pricing, the API, and When to Use It vs Opus 4.8 (2026)",
     "date": "2026-06-10",
@@ -871,7 +892,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "founding-engineer-equity-percentage-2026",
     "title": "Founding Engineer Equity 2026 — How Much to Negotiate (India)",
     "date": "2026-04-29",
-    "updated": "2026-05-16",
+    "updated": "2026-06-09",
     "excerpt": "Carta says 1.5% for hire #1, dropping to 0.33% by hire #5. Pave median is 1%. AI talent pressure pushed the floor up since March 2026. Honest 2026 numbers — plus the $0-equity alternative most pre-seed founders should default to.",
     "readingTime": "11 min read",
     "keywords": [
