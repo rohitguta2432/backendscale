@@ -16,11 +16,12 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (85 posts)
+## All Engineering Notes (86 posts)
 
 ### AI Systems & LLM Integration
 
 - [DiffusionGemma: Text Diffusion LLMs Explained, and When to Actually Use One (2026)](https://rohitraj.tech/en/notes/diffusiongemma-text-diffusion-llm-guide-2026)
+- [How to Run DiffusionGemma Locally: A vLLM Serving Guide for RTX 5090 and H100 (2026)](https://rohitraj.tech/en/notes/run-diffusiongemma-locally-vllm-rtx5090-2026)
 - [Claude Fable 5: Pricing, the API, and When to Use It vs Opus 4.8 (2026)](https://rohitraj.tech/en/notes/claude-fable-5-developer-guide-2026)
 - [This Week in AI Dev: Codex Builds Apps, the Open-Weight Frontier Explodes, and Anthropic Meters the Agent SDK (Week 24 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-24)
 - [What Is Harness Engineering? OpenAI's Agent-First Codex Playbook (2026)](https://rohitraj.tech/en/notes/what-is-harness-engineering-codex-2026)
