@@ -87,6 +87,7 @@ import { aiDevWeek2026W24 } from './ai-dev-week-2026-24';
 import { claudeFable5DeveloperGuide2026 } from './claude-fable-5-developer-guide-2026';
 import { diffusionGemmaTextDiffusionLlmGuide2026 } from './diffusiongemma-text-diffusion-llm-guide-2026';
 import { runDiffusionGemmaLocallyVllm2026 } from './run-diffusiongemma-locally-vllm-rtx5090-2026';
+import { opencodeVsClaudeCodeCursor2026 } from './opencode-vs-claude-code-cursor-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -175,6 +176,7 @@ const allPosts: BlogPost[] = [
   claudeFable5DeveloperGuide2026,
   diffusionGemmaTextDiffusionLlmGuide2026,
   runDiffusionGemmaLocallyVllm2026,
+  opencodeVsClaudeCodeCursor2026,
 ];
 
 // Validate all posts at module load time

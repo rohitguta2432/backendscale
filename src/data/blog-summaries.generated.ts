@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "opencode-vs-claude-code-cursor-2026",
+    "title": "OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?",
+    "date": "2026-06-12",
+    "excerpt": "OpenCode just became the most-starred AI coding agent on GitHub — 172,198 stars under MIT, with v1.17.4 shipping June 12, 2026. Here is the developer read: how the free, model-agnostic OpenCode compares to Claude Code and Cursor, the Terminal-Bench numbers, the BYOK cost math, and when each one is the right call.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "opencode vs claude code",
+      "opencode ai coding agent",
+      "opencode vs cursor",
+      "opencode vs claude code vs cursor",
+      "open source claude code alternative",
+      "best ai coding agent 2026",
+      "is opencode free"
+    ],
+    "coverImage": {
+      "src": "/images/notes/opencode-vs-claude-code-cursor-2026-cover.jpg",
+      "alt": "Glowing pink core orbited by translucent geometric shards illustrating the OpenCode open-source AI coding agent"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "diffusiongemma-text-diffusion-llm-guide-2026",
     "title": "DiffusionGemma: Text Diffusion LLMs Explained, and When to Actually Use One (2026)",
     "date": "2026-06-11",
@@ -20,6 +41,27 @@ export const blogSummaries: BlogPostSummary[] = [
     "coverImage": {
       "src": "/images/notes/diffusiongemma-text-diffusion-llm-guide-2026-cover.jpg",
       "alt": "Luminous particle swarm coalescing from dark noise into an ordered crystalline lattice illustrating DiffusionGemma text diffusion"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
+    "slug": "run-diffusiongemma-locally-vllm-rtx5090-2026",
+    "title": "How to Run DiffusionGemma Locally: A vLLM Serving Guide for RTX 5090 and H100 (2026)",
+    "date": "2026-06-11",
+    "excerpt": "A build-focused guide to self-hosting Google's DiffusionGemma: the exact vLLM serve command, what each diffusion flag does, how to call it like an OpenAI endpoint, and how to tune the speed-vs-quality trade-off on an RTX 5090 or H100.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "run diffusiongemma locally",
+      "diffusiongemma vllm",
+      "serve diffusiongemma rtx 5090",
+      "diffusiongemma deployment guide",
+      "diffusiongemma nvfp4 quantization",
+      "self-host text diffusion llm",
+      "diffusiongemma h100 throughput"
+    ],
+    "coverImage": {
+      "src": "/images/notes/run-diffusiongemma-locally-vllm-rtx5090-2026-cover.jpg",
+      "alt": "Glowing GPU emitting parallel streams of light into an ordered grid illustrating running DiffusionGemma locally on RTX 5090"
     },
     "relatedProject": "rohitrajTech"
   },
