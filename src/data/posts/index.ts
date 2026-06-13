@@ -88,6 +88,7 @@ import { claudeFable5DeveloperGuide2026 } from './claude-fable-5-developer-guide
 import { diffusionGemmaTextDiffusionLlmGuide2026 } from './diffusiongemma-text-diffusion-llm-guide-2026';
 import { runDiffusionGemmaLocallyVllm2026 } from './run-diffusiongemma-locally-vllm-rtx5090-2026';
 import { opencodeVsClaudeCodeCursor2026 } from './opencode-vs-claude-code-cursor-2026';
+import { aiAgentPaymentsX402VsAp22026 } from './ai-agent-payments-x402-vs-ap2-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -177,6 +178,7 @@ const allPosts: BlogPost[] = [
   diffusionGemmaTextDiffusionLlmGuide2026,
   runDiffusionGemmaLocallyVllm2026,
   opencodeVsClaudeCodeCursor2026,
+  aiAgentPaymentsX402VsAp22026,
 ];
 
 // Validate all posts at module load time

@@ -16,10 +16,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (87 posts)
+## All Engineering Notes (88 posts)
 
 ### AI Systems & LLM Integration
 
+- [AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay](https://rohitraj.tech/en/notes/ai-agent-payments-x402-vs-ap2-2026)
 - [OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?](https://rohitraj.tech/en/notes/opencode-vs-claude-code-cursor-2026)
 - [DiffusionGemma: Text Diffusion LLMs Explained, and When to Actually Use One (2026)](https://rohitraj.tech/en/notes/diffusiongemma-text-diffusion-llm-guide-2026)
 - [How to Run DiffusionGemma Locally: A vLLM Serving Guide for RTX 5090 and H100 (2026)](https://rohitraj.tech/en/notes/run-diffusiongemma-locally-vllm-rtx5090-2026)

@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-agent-payments-x402-vs-ap2-2026",
+    "title": "AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay",
+    "date": "2026-06-13",
+    "excerpt": "x402 crossed 161M cumulative payments and got picked up by AWS Bedrock AgentCore in May 2026, while Google’s AP2 defines the trust layer above it. Here is the developer read: how x402 and AP2 actually work, working code to monetize an MCP server or API per request, the per-request settlement trap, and when to skip crypto rails entirely.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "ai agent payments",
+      "x402 vs ap2",
+      "x402 protocol",
+      "agentic payments protocol",
+      "how ai agents pay",
+      "agent payment protocol 2026",
+      "x402 mcp server"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-agent-payments-x402-vs-ap2-2026-cover.jpg",
+      "alt": "Glowing coin of light passing between two abstract nodes over a dark grid illustrating AI agent payments with x402 and AP2"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "opencode-vs-claude-code-cursor-2026",
     "title": "OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?",
     "date": "2026-06-12",
