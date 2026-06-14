@@ -4797,3 +4797,46 @@ code,
   font-size: 0.74rem;
   color: var(--text-muted);
 }
+
+/* --- Resolvr comparison table --- */
+.resolvr-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.resolvr-compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  min-width: 760px;
+}
+.resolvr-compare th,
+.resolvr-compare td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.resolvr-compare thead th {
+  background: var(--bg-alt);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.resolvr-compare td:first-child,
+.resolvr-compare th:first-child {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.resolvr-compare tbody tr:last-child td {
+  border-bottom: none;
+}
+.resolvr-compare-self td {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  color: var(--text-primary);
+}
+.resolvr-compare-self td:first-child {
+  color: var(--accent);
+}

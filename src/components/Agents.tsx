@@ -38,6 +38,11 @@ function AgentCard({ agent, index, locale, variant }: { agent: AgentShowcase; in
                                 <GithubIcon /> Source
                             </a>
                         )}
+                        {agent.detailPath && (
+                            <Link href={`/${locale}${agent.detailPath}`} className="ai-project-repo">
+                                {agent.detailLabel ?? "Read the guide"} →
+                            </Link>
+                        )}
                     </div>
                 </div>
 

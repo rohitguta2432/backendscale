@@ -22,6 +22,10 @@ export interface AgentShowcase {
     demo?: "resolvr" | "dispatchr" | "mcpguard" | "clauseguard" | "finscope" | "cadence" | "prospectr";
     /** Optional screenshot of the standalone product, served from /public. */
     screenshot?: string;
+    /** Optional dedicated landing page (without locale prefix), e.g. /agents/resolvr. */
+    detailPath?: string;
+    /** Keyword-rich anchor text for the internal link to the detail page. */
+    detailLabel?: string;
     metrics?: { label: string; value: string }[];
 }
 
@@ -42,6 +46,8 @@ export const agents: AgentShowcase[] = [
         repoUrl: "https://github.com/rohitguta2432/resolvr",
         demo: "resolvr",
         screenshot: "/agents/resolvr.png",
+        detailPath: "/agents/resolvr",
+        detailLabel: "Self-hosted AI support agent — full guide",
         metrics: [
             { label: "Must-escalate recall", value: "100%" },
             { label: "LLM backend", value: "Ollama + API" },

@@ -7,11 +7,13 @@
 - [Homepage](https://rohitraj.tech/en): Portfolio overview with AI projects and reliability engineering
 - [About](https://rohitraj.tech/en/about): Background and experience
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
+- [AI Agents](https://rohitraj.tech/en/agents): Live, autonomous AI agents you can try in the browser
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
 - [Engineering Notes](https://rohitraj.tech/en/notes): 78 technical case-study posts
 
 ## Featured Projects
 
+- [Resolvr — Self-Hosted AI Customer Support Agent](https://rohitraj.tech/en/agents/resolvr): Open-source, self-hosted AI customer support agent that runs on local Ollama. Classifies a ticket, retrieves KB articles via RAG, decides resolve-vs-escalate behind a safety gate, and drafts a reply — customer data never leaves your server, zero per-token cost. Stack: FastAPI + React. Code: https://github.com/rohitguta2432/resolvr
 - [MicroItinerary](https://rohitraj.tech/en/projects/microitinerary): AI travel planner with GPT-4 destination recommendations
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
