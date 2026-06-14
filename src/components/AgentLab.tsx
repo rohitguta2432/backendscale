@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ComponentType } from "react";
+import ResolvrDemo from "@/components/ResolvrDemo";
 import DispatchrDemo from "@/components/DispatchrDemo";
 import ClauseGuardDemo from "@/components/ClauseGuardDemo";
 import FinScopeDemo from "@/components/FinScopeDemo";
@@ -28,6 +29,29 @@ interface LabAgent {
 }
 
 const AGENTS: LabAgent[] = [
+    {
+        id: "resolvr",
+        label: "Resolvr",
+        title: "Resolvr — autonomous support resolution",
+        description:
+            "Paste a customer support ticket and Resolvr classifies it, retrieves the right knowledge-base articles, decides resolve-vs-escalate, and drafts the reply. It's the one live LLM agent here: the reply is written by a local Ollama model, falling back to a cloud API key, then to a deterministic template — so it runs offline yet never breaks. Classification, retrieval, and the escalation decision stay deterministic and eval-gated.",
+        Component: ResolvrDemo,
+        panelTitle: "What the agent does",
+        bullets: [
+            { name: "classify_ticket", desc: "category, sentiment & priority — deterministic", mono: true },
+            { name: "search_kb", desc: "token-overlap retrieval over a fixed KB", mono: true },
+            { name: "decide_action", desc: "resolve, or hard-gate escalate", mono: true },
+            { name: "draft_resolution", desc: "Ollama → cloud API → offline template", mono: true },
+        ],
+        evalTitle: "Quality gate",
+        evals: [
+            { label: "Must-escalate recall", value: "100%" },
+            { label: "Category accuracy", value: "≥ 92%" },
+            { label: "Reply grounding", value: "KB-only" },
+            { label: "LLM backend", value: "Ollama + API" },
+        ],
+        hint: "Run “Hacked account” or “Legal threat” — Resolvr refuses to auto-answer and escalates. Run “Password reset” and the reply is written live by Ollama.",
+    },
     {
         id: "dispatchr",
         label: "Dispatchr",
@@ -176,9 +200,9 @@ export default function AgentLab() {
                 <div className="section-header">
                     <h2 className="section-title">Agent Lab — try them live</h2>
                     <p className="section-description">
-                        Six working agents, running right here on this site. Each one is deterministic and runs with no
-                        API key or cloud LLM, so the demos are reproducible — and each is gated by its own eval suite.
-                        Pick one and put it to work.
+                        Seven working agents, running right here on this site. Resolvr drafts real replies on a local
+                        Ollama model, with a cloud-API and offline fallback; the other six are deterministic and run with
+                        no API key. Every one is gated by its own eval suite. Pick one and put it to work.
                     </p>
                 </div>
 

@@ -19,11 +19,35 @@ export interface AgentShowcase {
     status: "live" | "development" | "production" | "active";
     repoUrl?: string;
     liveUrl?: string;
-    demo?: "dispatchr" | "mcpguard" | "clauseguard" | "finscope" | "cadence" | "prospectr";
+    demo?: "resolvr" | "dispatchr" | "mcpguard" | "clauseguard" | "finscope" | "cadence" | "prospectr";
+    /** Optional screenshot of the standalone product, served from /public. */
+    screenshot?: string;
     metrics?: { label: string; value: string }[];
 }
 
 export const agents: AgentShowcase[] = [
+    {
+        slug: "resolvr",
+        name: "Resolvr — Autonomous Support Resolution Agent",
+        market: "Autonomous customer-support resolution",
+        marketSize: "$15.1B (2026) → $117.9B (2034), 25.8% CAGR · Gartner: 80% of routine support AI-handled in 2026",
+        problem:
+            "Support teams drown in repetitive tier-1 tickets — password resets, invoices, how-tos. Hiring to keep up is expensive, queues blow out, and naive auto-replies hallucinate policy or promise refunds no one approved.",
+        solution:
+            "A standalone full-stack product (FastAPI + React) that takes a raw support ticket to a finished outcome on its own: it classifies the request, retrieves the right knowledge-base articles by semantic search, decides whether it can safely resolve or must escalate, and drafts the reply grounded strictly in the KB — never inventing policy and never promising a refund.",
+        autonomy:
+            "A four-tool loop — classify_ticket → search_kb → decide_action → draft_resolution. Retrieval is real RAG (Ollama embeddings + cosine); the reply is written by a local Ollama model (qwen2.5:14b), falling back to a cloud API key, then to a template, so it self-hosts at zero per-token cost. A hard safety gate forces escalation on security, legal, abuse, and refund tickets — proven at 100% must-escalate recall by the pytest eval suite. Try the lite in-browser demo below; the full product runs separately.",
+        techStack: ["FastAPI (Python)", "React + Vite", "Ollama + cloud-API fallback", "Semantic RAG (embeddings)", "SQLite", "pytest eval-gated"],
+        status: "live",
+        repoUrl: "https://github.com/rohitguta2432/resolvr",
+        demo: "resolvr",
+        screenshot: "/agents/resolvr.png",
+        metrics: [
+            { label: "Must-escalate recall", value: "100%" },
+            { label: "LLM backend", value: "Ollama + API" },
+            { label: "Stack", value: "FastAPI + React" },
+        ],
+    },
     {
         slug: "dispatchr",
         name: "Dispatchr — Autonomous Home-Services Dispatcher",

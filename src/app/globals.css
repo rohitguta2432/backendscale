@@ -4616,3 +4616,184 @@ code,
     gap: 0.2rem;
   }
 }
+
+/* --- Resolvr support-resolution demo --- */
+.rslv-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  margin-bottom: 0.6rem;
+}
+.rslv-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+.rslv-controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.7rem;
+  flex-wrap: wrap;
+}
+.rslv-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.rslv-control select {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.rslv-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+.rslv-decision {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 0.9rem;
+}
+.rslv-decision--resolve {
+  background: color-mix(in srgb, var(--success) 10%, transparent);
+  border-color: color-mix(in srgb, var(--success) 35%, var(--border));
+}
+.rslv-decision--escalate {
+  background: color-mix(in srgb, var(--warning) 12%, transparent);
+  border-color: color-mix(in srgb, var(--warning) 38%, var(--border));
+}
+.rslv-decision-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  color: #fff;
+}
+.rslv-decision--resolve .rslv-decision-badge { background: var(--success); }
+.rslv-decision--escalate .rslv-decision-badge { background: var(--warning); }
+.rslv-decision-reason {
+  flex: 1 1 200px;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+.rslv-decision-conf {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.rslv-reply {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+.rslv-reply-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+.rslv-reply-title {
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+.rslv-backend {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.rslv-reply-body {
+  padding: 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  margin: 0;
+}
+.rslv-routing {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: var(--bg-alt);
+  border-left: 3px solid var(--warning);
+  padding: 0.55rem 0.8rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 0.8rem;
+}
+.rslv-sources { margin-bottom: 0.6rem; }
+.rslv-sources-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.rslv-sources ul { list-style: none; padding: 0; margin: 0.4rem 0 0; }
+.rslv-sources li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+.rslv-sources li code { font-size: 0.72rem; color: var(--accent); }
+.rslv-source-score { margin-left: auto; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.rslv-trace { font-size: 0.78rem; color: var(--text-secondary); }
+.rslv-trace summary { cursor: pointer; color: var(--text-muted); }
+.rslv-trace ol { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+.rslv-trace li { margin: 0.25rem 0; }
+.rslv-trace li code { font-size: 0.74rem; color: var(--text-secondary); }
+
+/* --- Agent showcase screenshot --- */
+.agent-screenshot {
+  margin: 1.1rem 0 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.agent-screenshot img {
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+.agent-screenshot figcaption {
+  padding: 0.5rem 0.8rem;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}

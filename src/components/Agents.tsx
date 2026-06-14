@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { agents, type AgentShowcase } from "@/data/agents";
 import type { Locale } from "@/lib/i18n";
 
@@ -64,6 +65,20 @@ function AgentCard({ agent, index, locale, variant }: { agent: AgentShowcase; in
                     <p>{agent.autonomy}</p>
                 </div>
 
+                {agent.screenshot && (
+                    <figure className="agent-screenshot">
+                        <Image
+                            src={agent.screenshot}
+                            alt={`${agent.name} — running screenshot`}
+                            width={1440}
+                            height={980}
+                            sizes="(max-width: 768px) 100vw, 760px"
+                            style={{ width: "100%", height: "auto" }}
+                        />
+                        <figcaption>Running standalone — React UI, FastAPI backend, reply drafted live by local Ollama.</figcaption>
+                    </figure>
+                )}
+
                 {agent.metrics && agent.metrics.length > 0 && (
                     <dl className="ai-project-metrics" aria-label="Agent metrics">
                         {agent.metrics.map((m) => (
@@ -98,7 +113,7 @@ export default function Agents({ locale, variant = "teaser" }: AgentsProps) {
                     <span className="ai-projects-eyebrow">AI Agent Host</span>
                     <h2 className="ai-projects-heading">Autonomous agents, aimed at billion-dollar markets</h2>
                     <p className="ai-projects-subheading">
-                        Not chatbots — agents that decide, call tools, and finish a job on their own. Six of them run live in the Agent Host.
+                        Not chatbots — agents that decide, call tools, and finish a job on their own. Seven of them run live in the Agent Host.
                     </p>
                 </div>
 
