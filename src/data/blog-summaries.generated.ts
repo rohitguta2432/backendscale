@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "kimi-k2-7-code-vs-claude-opus-gpt-2026",
+    "title": "Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It? (2026)",
+    "date": "2026-06-14",
+    "excerpt": "Moonshot AI dropped Kimi K2.7-Code on June 12, 2026 — a 1T-parameter open-weight coding model that costs $0.95/$4.00 per million tokens, roughly 5-7x cheaper than Claude Opus 4.8 and GPT-5.5. Here is the developer read: the real benchmark numbers (and why they are all first-party), a verified cost-per-task comparison the hype guides skip, how to run it via API or locally, and when you should still reach for Claude or GPT.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "kimi k2.7 code",
+      "kimi k2.7 code vs claude opus",
+      "kimi k2.7 code review",
+      "kimi k2.7 code api pricing",
+      "kimi k2.7 code benchmarks",
+      "open source coding model 2026",
+      "kimi k2.7 code vs gpt 5.5"
+    ],
+    "coverImage": {
+      "src": "/images/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026-cover.jpg",
+      "alt": "Glowing faceted core radiating energy filaments illustrating Kimi K2.7-Code vs Claude and GPT coding models"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "ai-agent-payments-x402-vs-ap2-2026",
     "title": "AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay",
     "date": "2026-06-13",

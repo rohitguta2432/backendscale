@@ -89,6 +89,7 @@ import { diffusionGemmaTextDiffusionLlmGuide2026 } from './diffusiongemma-text-d
 import { runDiffusionGemmaLocallyVllm2026 } from './run-diffusiongemma-locally-vllm-rtx5090-2026';
 import { opencodeVsClaudeCodeCursor2026 } from './opencode-vs-claude-code-cursor-2026';
 import { aiAgentPaymentsX402VsAp22026 } from './ai-agent-payments-x402-vs-ap2-2026';
+import { kimiK27CodeVsClaudeOpusGpt2026 } from './kimi-k2-7-code-vs-claude-opus-gpt-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -179,6 +180,7 @@ const allPosts: BlogPost[] = [
   runDiffusionGemmaLocallyVllm2026,
   opencodeVsClaudeCodeCursor2026,
   aiAgentPaymentsX402VsAp22026,
+  kimiK27CodeVsClaudeOpusGpt2026,
 ];
 
 // Validate all posts at module load time
