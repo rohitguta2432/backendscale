@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-agent-memory-vs-context-window-2026",
+    "title": "AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory (2026)",
+    "date": "2026-06-15",
+    "excerpt": "A 1M-token context window is not memory — it is RAM that gets wiped when the session ends. On the LoCoMo benchmark a two-layer memory setup hit 91.6% accuracy at ~6,956 tokens vs 72.9% at ~26,000 tokens for full context. Here is the builder read: why context windows behave like RAM, the two-layer architecture every production agent needs, a minimal pgvector memory layer in code, and when a bigger window is still the right call.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "ai agent memory vs context window",
+      "context window is not memory",
+      "ai agent memory architecture 2026",
+      "long context vs memory llm",
+      "two layer memory agent",
+      "do ai agents need a memory layer",
+      "agent memory layer pgvector"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-agent-memory-vs-context-window-2026-cover.jpg",
+      "alt": "A crystalline memory core beside a dissolving particle cloud illustrating AI agent memory vs context window"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "kimi-k2-7-code-vs-claude-opus-gpt-2026",
     "title": "Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It? (2026)",
     "date": "2026-06-14",
