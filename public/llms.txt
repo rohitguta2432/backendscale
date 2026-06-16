@@ -18,10 +18,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (90 posts)
+## All Engineering Notes (91 posts)
 
 ### AI Systems & LLM Integration
 
+- [This Week in AI Dev: A Frontier Model Gets Pulled While Open Weights Keep Shipping (Week 25 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-25)
 - [AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory (2026)](https://rohitraj.tech/en/notes/ai-agent-memory-vs-context-window-2026)
 - [Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It? (2026)](https://rohitraj.tech/en/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026)
 - [AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay](https://rohitraj.tech/en/notes/ai-agent-payments-x402-vs-ap2-2026)

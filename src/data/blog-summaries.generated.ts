@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-25",
+    "title": "This Week in AI Dev: A Frontier Model Gets Pulled While Open Weights Keep Shipping (Week 25 of 2026)",
+    "date": "2026-06-16",
+    "excerpt": "Week 25 of 2026 in AI dev tools: the US government forces Anthropic to suspend Claude Fable 5 and Mythos 5 three days after launch, Moonshot ships Kimi K2.7-Code open weights, Google open-sources the text-diffusion model DiffusionGemma, the Claude Agent SDK flips to metered billing on June 15, OpenCode crosses 160K GitHub stars, and agentic payments via x402 + AP2 quietly become real.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "claude fable 5 suspended",
+      "kimi k2.7 code",
+      "diffusiongemma",
+      "anthropic agent sdk billing",
+      "ai dev week 25 2026",
+      "open weight models june 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-25-cover.jpg",
+      "alt": "Glowing orange and indigo particle ring illustrating AI dev tools weekly roundup week 25 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "ai-agent-memory-vs-context-window-2026",
     "title": "AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory (2026)",
     "date": "2026-06-15",
