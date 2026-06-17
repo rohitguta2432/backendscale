@@ -92,6 +92,7 @@ import { aiAgentPaymentsX402VsAp22026 } from './ai-agent-payments-x402-vs-ap2-20
 import { kimiK27CodeVsClaudeOpusGpt2026 } from './kimi-k2-7-code-vs-claude-opus-gpt-2026';
 import { aiAgentMemoryVsContextWindow2026 } from './ai-agent-memory-vs-context-window-2026';
 import { aiDevWeek2026W25 } from './ai-dev-week-2026-25';
+import { bestLocalLlmForCodingReplaceCloud2026 } from './best-local-llm-for-coding-replace-cloud-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -185,6 +186,7 @@ const allPosts: BlogPost[] = [
   kimiK27CodeVsClaudeOpusGpt2026,
   aiAgentMemoryVsContextWindow2026,
   aiDevWeek2026W25,
+  bestLocalLlmForCodingReplaceCloud2026,
 ];
 
 // Validate all posts at module load time

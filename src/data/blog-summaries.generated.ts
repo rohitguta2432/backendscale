@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "best-local-llm-for-coding-replace-cloud-2026",
+    "title": "Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT",
+    "date": "2026-06-17",
+    "excerpt": "Two Hacker News front-page threads this week — one at 1,245 points — are asking the same thing: can a local model finally replace Claude or GPT for daily coding? The honest 2026 answer is \"for ~80% of your sessions, yes.\" Here is the builder read: which local coding models actually crossed the SWE-bench line, how to set one up with Ollama in ten minutes, exactly how much VRAM you need, and the hybrid routing pattern that keeps the hard 20% on the cloud.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "best local llm for coding 2026",
+      "replace claude code with local model",
+      "local llm vs claude for coding",
+      "self hosted coding assistant 2026",
+      "local coding model 24gb gpu",
+      "is local llm good enough for coding",
+      "best open source coding model ollama"
+    ],
+    "coverImage": {
+      "src": "/images/notes/best-local-llm-for-coding-replace-cloud-2026-cover.jpg",
+      "alt": "A luminous silicon processor radiating neural filaments illustrating the best local LLM for coding in 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "ai-dev-week-2026-25",
     "title": "This Week in AI Dev: A Frontier Model Gets Pulled While Open Weights Keep Shipping (Week 25 of 2026)",
     "date": "2026-06-16",
