@@ -18,10 +18,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (92 posts)
+## All Engineering Notes (93 posts)
 
 ### AI Systems & LLM Integration
 
+- [WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents](https://rohitraj.tech/en/notes/webmcp-guide-browser-agent-tools-2026)
 - [Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT](https://rohitraj.tech/en/notes/best-local-llm-for-coding-replace-cloud-2026)
 - [This Week in AI Dev: A Frontier Model Gets Pulled While Open Weights Keep Shipping (Week 25 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-25)
 - [AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory (2026)](https://rohitraj.tech/en/notes/ai-agent-memory-vs-context-window-2026)

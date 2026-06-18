@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "webmcp-guide-browser-agent-tools-2026",
+    "title": "WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents",
+    "date": "2026-06-18",
+    "excerpt": "Google's WebMCP hit a public Chrome 149 origin trial this month, and it quietly changes how AI agents use your site: instead of scraping the DOM, your page hands the agent a typed list of things it can do. Here is the builder read — what WebMCP actually is, the exact document.modelContext API with copy-paste code, how it differs from MCP, the prompt-injection failure mode the tutorials skip, and whether you should ship it today (honest answer: register the API, gate the writes, wait on the trial).",
+    "readingTime": "11 min read",
+    "keywords": [
+      "what is webmcp",
+      "webmcp guide 2026",
+      "webmcp vs mcp",
+      "document.modelContext api",
+      "make website ai agent ready",
+      "webmcp chrome 149 origin trial",
+      "browser ai agent tools"
+    ],
+    "coverImage": {
+      "src": "/images/notes/webmcp-guide-browser-agent-tools-2026-cover.jpg",
+      "alt": "A constellation of luminous nodes bridging two glowing orbs illustrating WebMCP browser agent tools in 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "best-local-llm-for-coding-replace-cloud-2026",
     "title": "Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT",
     "date": "2026-06-17",
