@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "mcp-server-authentication-oauth-guide-2026",
+    "title": "MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship",
+    "date": "2026-06-19",
+    "excerpt": "The Model Context Protocol just shipped Enterprise-Managed Authorization — \"zero-touch OAuth\" — on June 18, 2026, and it changes how you secure a remote MCP server. This is the builder read: what the spec actually mandates (OAuth 2.1, Protected Resource Metadata, token-audience binding), why Dynamic Client Registration is now deprecated in favour of Client ID Metadata Documents, how the new ID-JAG enterprise grant lets an IdP grant every approved server at login, a 3-way comparison of API keys vs OAuth 2.1 vs enterprise auth, and exactly how I would wire this in production without opening a confused-deputy hole.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "mcp server authentication",
+      "mcp oauth 2.1 guide",
+      "secure mcp server",
+      "mcp enterprise managed authorization",
+      "id-jag mcp auth",
+      "mcp authorization spec 2026",
+      "add oauth to mcp server"
+    ],
+    "coverImage": {
+      "src": "/images/notes/mcp-server-authentication-oauth-guide-2026-cover.jpg",
+      "alt": "A glowing fortified portal of interlocking metal rings guarding a core illustrating MCP server authentication and OAuth in 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "webmcp-guide-browser-agent-tools-2026",
     "title": "WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents",
     "date": "2026-06-18",

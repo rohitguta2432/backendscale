@@ -94,6 +94,7 @@ import { aiAgentMemoryVsContextWindow2026 } from './ai-agent-memory-vs-context-w
 import { aiDevWeek2026W25 } from './ai-dev-week-2026-25';
 import { bestLocalLlmForCodingReplaceCloud2026 } from './best-local-llm-for-coding-replace-cloud-2026';
 import { webmcpGuideBrowserAgentTools2026 } from './webmcp-guide-browser-agent-tools-2026';
+import { mcpServerAuthenticationOauthGuide2026 } from './mcp-server-authentication-oauth-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -189,6 +190,7 @@ const allPosts: BlogPost[] = [
   aiDevWeek2026W25,
   bestLocalLlmForCodingReplaceCloud2026,
   webmcpGuideBrowserAgentTools2026,
+  mcpServerAuthenticationOauthGuide2026,
 ];
 
 // Validate all posts at module load time
