@@ -55,6 +55,26 @@ export const agents: AgentShowcase[] = [
         ],
     },
     {
+        slug: "loopr",
+        name: "Loopr — Self-Improving Prompt-Optimization Loop",
+        market: "LLM evaluation & prompt optimization (LLMOps)",
+        marketSize: "Fastest-growing dev-tool category of 2026 · GEPA-style reflective evolution beats RL by 20% with 35x fewer rollouts",
+        problem:
+            "Every LLM team tunes prompts by hand — change a word, eyeball a few outputs, repeat. There is no cheap, local way to answer \"which prompt actually works best for this task?\", and the eval incumbents (MLflow, Confident AI, Opik, LangWatch) are heavyweight hosted platforms you have to adopt.",
+        solution:
+            "A drop-in loop that takes a task prompt plus a handful of eval cases and evolves the prompt on its own: it runs the prompt, scores every output, reflects on the failures in plain language, rewrites the prompt, and repeats until it converges on the best-performing version — emitting a transparent trace of every iteration.",
+        autonomy:
+            "A run → score → reflect → rewrite loop (GEPA-lite reflective evolution). Scoring and the stop decision are deterministic and eval-gated — the LLM only runs the task and phrases the reflection — so a run is reproducible and a bad rewrite can never corrupt state. It stops on converged, plateau, or budget. Five scorers (exact, contains, regex, json_field, llm_judge); local-first on Ollama (qwen2.5) with OpenAI/Anthropic fallback at zero per-token cost. Proven 0% → 100% on a JSON-extraction task in one iteration; a 28-case pytest suite gates the deterministic core.",
+        techStack: ["Python", "Ollama + cloud-API fallback", "GEPA-lite reflective loop", "Deterministic scorers", "pytest eval-gated", "stdlib-only HTTP"],
+        status: "live",
+        repoUrl: "https://github.com/rohitguta2432/loopr",
+        metrics: [
+            { label: "Prompt lift (demo)", value: "0% → 100%" },
+            { label: "Tests passing", value: "28 / 28" },
+            { label: "Cost / run", value: "$0 local" },
+        ],
+    },
+    {
         slug: "dispatchr",
         name: "Dispatchr — Autonomous Home-Services Dispatcher",
         market: "AI front desk for home services",
