@@ -8,6 +8,7 @@ import FinScopeDemo from "@/components/FinScopeDemo";
 import MCPGuardDemo from "@/components/MCPGuardDemo";
 import CadenceDemo from "@/components/CadenceDemo";
 import ProspectrDemo from "@/components/ProspectrDemo";
+import LooproDemo from "@/components/LooproDemo";
 
 interface Bullet {
     name: string;
@@ -51,6 +52,29 @@ const AGENTS: LabAgent[] = [
             { label: "LLM backend", value: "Ollama + API" },
         ],
         hint: "Run “Hacked account” or “Legal threat” — Resolvr refuses to auto-answer and escalates. Run “Password reset” and the reply is written live by Ollama.",
+    },
+    {
+        id: "loopr",
+        label: "Loopr",
+        title: "Loopr — self-improving prompt-optimization loop",
+        description:
+            "Pick a task and watch Loopr evolve the prompt on its own: it runs the prompt, scores every eval case, reflects on the failures, rewrites the prompt, and repeats until it converges. This panel replays runs captured live on a local Ollama model — the scoring and the stop decision are deterministic, so the same task always converges the same way. Run the loop live yourself with `loopr serve`.",
+        Component: LooproDemo,
+        panelTitle: "How the loop works",
+        bullets: [
+            { name: "run", desc: "execute the candidate prompt on every eval case", mono: true },
+            { name: "score", desc: "a deterministic scorer grades each output 0–1", mono: true },
+            { name: "reflect", desc: "diagnose the failures, propose a better prompt (GEPA-lite)", mono: true },
+            { name: "rewrite", desc: "loop until converged, plateau, or budget", mono: true },
+        ],
+        evalTitle: "Quality gate",
+        evals: [
+            { label: "Demo lift (seed→best)", value: "0% → 100%" },
+            { label: "Scoring", value: "deterministic" },
+            { label: "Core test suite", value: "28 / 28" },
+            { label: "Cost / run", value: "$0 local" },
+        ],
+        hint: "Run “Intent routing” — the loose seed scores 0%, then Loopr rewrites it to pin the label set and the one-word format, and it jumps to 100%.",
     },
     {
         id: "dispatchr",
@@ -200,9 +224,9 @@ export default function AgentLab() {
                 <div className="section-header">
                     <h2 className="section-title">Agent Lab — try them live</h2>
                     <p className="section-description">
-                        Seven working agents, running right here on this site. Resolvr drafts real replies on a local
-                        Ollama model, with a cloud-API and offline fallback; the other six are deterministic and run with
-                        no API key. Every one is gated by its own eval suite. Pick one and put it to work.
+                        Eight working agents, running right here on this site. Resolvr drafts real replies on a local
+                        Ollama model, with a cloud-API and offline fallback; the other seven are deterministic and run
+                        with no API key. Every one is gated by its own eval suite. Pick one and put it to work.
                     </p>
                 </div>
 

@@ -19,7 +19,7 @@ export interface AgentShowcase {
     status: "live" | "development" | "production" | "active";
     repoUrl?: string;
     liveUrl?: string;
-    demo?: "resolvr" | "dispatchr" | "mcpguard" | "clauseguard" | "finscope" | "cadence" | "prospectr";
+    demo?: "resolvr" | "dispatchr" | "mcpguard" | "clauseguard" | "finscope" | "cadence" | "prospectr" | "loopr";
     /** Optional screenshot of the standalone product, served from /public. */
     screenshot?: string;
     /** Optional dedicated landing page (without locale prefix), e.g. /agents/resolvr. */
@@ -68,6 +68,7 @@ export const agents: AgentShowcase[] = [
         techStack: ["Python", "Ollama + cloud-API fallback", "GEPA-lite reflective loop", "Deterministic scorers", "pytest eval-gated", "stdlib-only HTTP"],
         status: "live",
         repoUrl: "https://github.com/rohitguta2432/loopr",
+        demo: "loopr",
         metrics: [
             { label: "Prompt lift (demo)", value: "0% → 100%" },
             { label: "Tests passing", value: "28 / 28" },
