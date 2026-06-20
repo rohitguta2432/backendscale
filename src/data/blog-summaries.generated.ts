@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "deepseek-v4-vision-cheapest-multimodal-api-2026",
+    "title": "DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)",
+    "date": "2026-06-20",
+    "excerpt": "DeepSeek turned on vision for V4 this week — image understanding inside chat.deepseek.com and the API, hitting the Hacker News front page on June 18, 2026. The hook for builders: it encodes an ~800×800 image into roughly 90 KV-cache entries versus ~870 for Claude and ~1,100 for Gemini, which is where the \"10x cheaper multimodal\" headline comes from. This is the builder read — what actually shipped, the OpenAI-SDK call you paste today, where DeepSeek vision wins (OCR, documents, charts, UI screenshots), where it still loses to GPT and Gemini, an honest cost-and-capability comparison table, and how I would wire it in production with a fallback so a single cheap model never becomes a single point of failure.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "deepseek v4 vision",
+      "deepseek vision api",
+      "cheapest multimodal api 2026",
+      "deepseek vision model",
+      "deepseek v4 vision pricing",
+      "deepseek vision vs gpt claude gemini",
+      "how to use deepseek vision api"
+    ],
+    "coverImage": {
+      "src": "/images/notes/deepseek-v4-vision-cheapest-multimodal-api-2026-cover.jpg",
+      "alt": "A glowing multi-faceted crystal lens refracting a spectrum of light illustrating DeepSeek V4 Vision cheap multimodal AI"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "mcp-server-authentication-oauth-guide-2026",
     "title": "MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship",
     "date": "2026-06-19",

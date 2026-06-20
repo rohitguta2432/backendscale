@@ -18,10 +18,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (94 posts)
+## All Engineering Notes (95 posts)
 
 ### AI Systems & LLM Integration
 
+- [DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)](https://rohitraj.tech/en/notes/deepseek-v4-vision-cheapest-multimodal-api-2026)
 - [MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship](https://rohitraj.tech/en/notes/mcp-server-authentication-oauth-guide-2026)
 - [WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents](https://rohitraj.tech/en/notes/webmcp-guide-browser-agent-tools-2026)
 - [Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT](https://rohitraj.tech/en/notes/best-local-llm-for-coding-replace-cloud-2026)
