@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "vibethinker-3b-tiny-reasoning-model-guide-2026",
+    "title": "VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)",
+    "date": "2026-06-21",
+    "excerpt": "Sina Weibo dropped VibeThinker-3B this week — a 3-billion-parameter, MIT-licensed reasoning model that matches DeepSeek V3.2 (671B) on AIME 2026 (94.3 vs 94.2) and runs from a ~6 GB file on a laptop. The catch the headlines skip: it ties on AIME but trails on harder math (HMMT 89.3 vs 90.2, IMO-AnswerBench 76.4 vs 78.3), which is exactly why the AI world is arguing about benchmarks again. This is the builder read — what actually shipped, the Spectrum-to-Signal training trick behind it, the vLLM and Ollama commands to run it (including the temperature setting that breaks it if you get it wrong), an honest comparison table, where a tiny verifiable-reasoning model is worth wiring into an agent, and where it absolutely is not.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "vibethinker-3b",
+      "vibethinker 3b reasoning model",
+      "run vibethinker 3b locally",
+      "small reasoning model 2026",
+      "3b model beats 671b",
+      "vibethinker vs deepseek",
+      "tiny reasoning model ollama"
+    ],
+    "coverImage": {
+      "src": "/images/notes/vibethinker-3b-tiny-reasoning-model-guide-2026-cover.jpg",
+      "alt": "A tiny radiant crystalline core emitting an enormous particle constellation illustrating VibeThinker-3B small reasoning model"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "deepseek-v4-vision-cheapest-multimodal-api-2026",
     "title": "DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)",
     "date": "2026-06-20",

@@ -96,6 +96,7 @@ import { bestLocalLlmForCodingReplaceCloud2026 } from './best-local-llm-for-codi
 import { webmcpGuideBrowserAgentTools2026 } from './webmcp-guide-browser-agent-tools-2026';
 import { mcpServerAuthenticationOauthGuide2026 } from './mcp-server-authentication-oauth-guide-2026';
 import { deepseekV4VisionCheapestMultimodalApi2026 } from './deepseek-v4-vision-cheapest-multimodal-api-2026';
+import { vibethinker3bTinyReasoningModelGuide2026 } from './vibethinker-3b-tiny-reasoning-model-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -193,6 +194,7 @@ const allPosts: BlogPost[] = [
   webmcpGuideBrowserAgentTools2026,
   mcpServerAuthenticationOauthGuide2026,
   deepseekV4VisionCheapestMultimodalApi2026,
+  vibethinker3bTinyReasoningModelGuide2026,
 ];
 
 // Validate all posts at module load time
