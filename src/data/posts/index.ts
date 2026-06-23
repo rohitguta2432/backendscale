@@ -98,6 +98,7 @@ import { mcpServerAuthenticationOauthGuide2026 } from './mcp-server-authenticati
 import { deepseekV4VisionCheapestMultimodalApi2026 } from './deepseek-v4-vision-cheapest-multimodal-api-2026';
 import { vibethinker3bTinyReasoningModelGuide2026 } from './vibethinker-3b-tiny-reasoning-model-guide-2026';
 import { aiDevWeek2026W26 } from './ai-dev-week-2026-26';
+import { sakanaFuguOrchestrationModelGuide2026 } from './sakana-fugu-orchestration-model-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -197,6 +198,7 @@ const allPosts: BlogPost[] = [
   deepseekV4VisionCheapestMultimodalApi2026,
   vibethinker3bTinyReasoningModelGuide2026,
   aiDevWeek2026W26,
+  sakanaFuguOrchestrationModelGuide2026,
 ];
 
 // Validate all posts at module load time

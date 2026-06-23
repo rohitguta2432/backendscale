@@ -24,6 +24,27 @@ export const blogSummaries: BlogPostSummary[] = [
     "relatedProject": "resolvr"
   },
   {
+    "slug": "sakana-fugu-orchestration-model-guide-2026",
+    "title": "Sakana Fugu: The Orchestration Model That Commands Other LLMs (2026)",
+    "date": "2026-06-23",
+    "excerpt": "Sakana AI shipped Sakana Fugu on June 22, 2026 — an orchestration model that routes each request across a swappable pool of frontier LLMs behind one OpenAI-compatible API, in two tiers (fugu and fugu-ultra-20260615), with benchmarks showing Fugu Ultra leading 10 of 11 tests. This is the builder read: what actually shipped, the API call you paste today, the benchmark table against Opus 4.8 / Gemini 3.1 Pro / GPT-5.5, where an orchestration model earns its keep, when its black-box routing disqualifies it, and how I would wrap it in production so a fallback-as-a-service still has a fallback.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "sakana fugu",
+      "sakana fugu api",
+      "sakana ai fugu orchestration model",
+      "fugu ultra benchmarks",
+      "multi-llm orchestration model 2026",
+      "sakana fugu vs frontier models",
+      "what is sakana fugu"
+    ],
+    "coverImage": {
+      "src": "/images/notes/sakana-fugu-orchestration-model-guide-2026-cover.jpg",
+      "alt": "A luminous central orb conducting light streams to orbiting nodes illustrating Sakana Fugu multi-LLM orchestration model"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "vibethinker-3b-tiny-reasoning-model-guide-2026",
     "title": "VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)",
     "date": "2026-06-21",
