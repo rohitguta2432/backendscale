@@ -97,6 +97,7 @@ import { webmcpGuideBrowserAgentTools2026 } from './webmcp-guide-browser-agent-t
 import { mcpServerAuthenticationOauthGuide2026 } from './mcp-server-authentication-oauth-guide-2026';
 import { deepseekV4VisionCheapestMultimodalApi2026 } from './deepseek-v4-vision-cheapest-multimodal-api-2026';
 import { vibethinker3bTinyReasoningModelGuide2026 } from './vibethinker-3b-tiny-reasoning-model-guide-2026';
+import { aiDevWeek2026W26 } from './ai-dev-week-2026-26';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -195,6 +196,7 @@ const allPosts: BlogPost[] = [
   mcpServerAuthenticationOauthGuide2026,
   deepseekV4VisionCheapestMultimodalApi2026,
   vibethinker3bTinyReasoningModelGuide2026,
+  aiDevWeek2026W26,
 ];
 
 // Validate all posts at module load time

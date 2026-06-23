@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-26",
+    "title": "This Week in AI Dev: Open Weights Catch the Frontier While the Agent Stack Grows Plumbing (Week 26 of 2026)",
+    "date": "2026-06-23",
+    "excerpt": "Week 26 of 2026 in AI dev tools: Z.ai's GLM-5.2 open weights match Claude Opus 4.8 and beat GPT-5.5 on coding at a sixth of the cost, MiniMax-M3 ships open multimodal weights with a 1M-token context, CircleCI adds an MCP server as MCP crosses 200 implementations, and indie devs ship agent-native version control (Oak), local memory for Claude Code (Recall), and proof a 0.6B model fine-tunes on a laptop.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "glm-5.2 open weights",
+      "minimax-m3",
+      "circleci mcp server",
+      "ai dev week 26 2026",
+      "open weight models june 2026",
+      "fine-tune local llm"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-26-cover.jpg",
+      "alt": "Glowing amber and crimson constellation of connected nodes illustrating AI dev tools weekly roundup week 26 of 2026"
+    },
+    "relatedProject": "resolvr"
+  },
+  {
     "slug": "vibethinker-3b-tiny-reasoning-model-guide-2026",
     "title": "VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)",
     "date": "2026-06-21",
