@@ -99,6 +99,7 @@ import { deepseekV4VisionCheapestMultimodalApi2026 } from './deepseek-v4-vision-
 import { vibethinker3bTinyReasoningModelGuide2026 } from './vibethinker-3b-tiny-reasoning-model-guide-2026';
 import { aiDevWeek2026W26 } from './ai-dev-week-2026-26';
 import { sakanaFuguOrchestrationModelGuide2026 } from './sakana-fugu-orchestration-model-guide-2026';
+import { mistralOcr4VsTextractGoogleDocumentAi2026 } from './mistral-ocr-4-vs-textract-google-document-ai-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -199,6 +200,7 @@ const allPosts: BlogPost[] = [
   vibethinker3bTinyReasoningModelGuide2026,
   aiDevWeek2026W26,
   sakanaFuguOrchestrationModelGuide2026,
+  mistralOcr4VsTextractGoogleDocumentAi2026,
 ];
 
 // Validate all posts at module load time

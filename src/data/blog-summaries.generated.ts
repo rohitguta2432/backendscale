@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "mistral-ocr-4-vs-textract-google-document-ai-2026",
+    "title": "Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)",
+    "date": "2026-06-24",
+    "excerpt": "Mistral shipped OCR 4 on June 23, 2026 — model `mistral-ocr-latest` — and it tops OlmOCRBench at 85.20, handles 170 languages, and costs $4 per 1,000 pages ($2 batch) against AWS Textract's $65 per 1,000 for forms-and-tables. Every comparison guide currently ranking still covers OCR 3 or ignores Mistral entirely. This is the builder's read: what actually changed in OCR 4, the API call with the new confidence-score gating, an honest accuracy-and-price table against Textract, Google Document AI, and Azure, where each one genuinely wins, when you should NOT pick Mistral, and exactly how I'd wire it into a RAG ingestion pipeline in production.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "mistral ocr 4",
+      "mistral ocr 4 vs textract",
+      "best document ocr api 2026",
+      "mistral ocr vs google document ai",
+      "cheapest ocr api",
+      "document ocr api for rag",
+      "mistral-ocr-latest"
+    ],
+    "coverImage": {
+      "src": "/images/notes/mistral-ocr-4-vs-textract-google-document-ai-2026-cover.jpg",
+      "alt": "A radiant prism refracting a particle swarm into ordered streams illustrating Mistral OCR 4 document extraction vs Textract"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "ai-dev-week-2026-26",
     "title": "This Week in AI Dev: Open Weights Catch the Frontier While the Agent Stack Grows Plumbing (Week 26 of 2026)",
     "date": "2026-06-23",

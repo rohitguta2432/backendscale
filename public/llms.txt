@@ -18,10 +18,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (98 posts)
+## All Engineering Notes (99 posts)
 
 ### AI Systems & LLM Integration
 
+- [Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)](https://rohitraj.tech/en/notes/mistral-ocr-4-vs-textract-google-document-ai-2026)
 - [Sakana Fugu: The Orchestration Model That Commands Other LLMs (2026)](https://rohitraj.tech/en/notes/sakana-fugu-orchestration-model-guide-2026)
 - [This Week in AI Dev: Open Weights Catch the Frontier While the Agent Stack Grows Plumbing (Week 26 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-26)
 - [VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)](https://rohitraj.tech/en/notes/vibethinker-3b-tiny-reasoning-model-guide-2026)
