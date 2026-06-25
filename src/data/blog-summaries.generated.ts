@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "gemini-interactions-api-migration-guide-2026",
+    "title": "Gemini Interactions API: The Migration Guide from generateContent (2026)",
+    "date": "2026-06-25",
+    "excerpt": "Google made the Gemini Interactions API generally available in 2026 and quietly made it the default interface for Gemini models and agents. The core method is `interactions.create`, and it keeps conversation state server-side via `previous_interaction_id` instead of resending the full history every turn like `generateContent`. This is the builder's migration read: the actual code diff from `generate_content` to `interactions.create`, the interaction-scoped-tools footgun the docs bury, a side-by-side against generateContent and OpenAI's Responses API, an honest \"when to stay on generateContent,\" and exactly how I'd wire it into production with a fallback and a `store=false` privacy path.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "gemini interactions api",
+      "gemini interactions api migration",
+      "migrate from generatecontent to interactions api",
+      "interactions.create gemini",
+      "previous_interaction_id",
+      "gemini interactions api vs generatecontent",
+      "gemini interactions api tutorial"
+    ],
+    "coverImage": {
+      "src": "/images/notes/gemini-interactions-api-migration-guide-2026-cover.jpg",
+      "alt": "A continuous luminous thread weaving through stateful nodes illustrating the Gemini Interactions API carrying conversation state server-side"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "mistral-ocr-4-vs-textract-google-document-ai-2026",
     "title": "Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)",
     "date": "2026-06-24",
