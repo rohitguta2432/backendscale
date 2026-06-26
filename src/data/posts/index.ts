@@ -101,6 +101,7 @@ import { aiDevWeek2026W26 } from './ai-dev-week-2026-26';
 import { sakanaFuguOrchestrationModelGuide2026 } from './sakana-fugu-orchestration-model-guide-2026';
 import { mistralOcr4VsTextractGoogleDocumentAi2026 } from './mistral-ocr-4-vs-textract-google-document-ai-2026';
 import { geminiInteractionsApiMigrationGuide2026 } from './gemini-interactions-api-migration-guide-2026';
+import { glm52VsClaudeOpusCodingAgent2026 } from './glm-5-2-vs-claude-opus-coding-agent-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -203,6 +204,7 @@ const allPosts: BlogPost[] = [
   sakanaFuguOrchestrationModelGuide2026,
   mistralOcr4VsTextractGoogleDocumentAi2026,
   geminiInteractionsApiMigrationGuide2026,
+  glm52VsClaudeOpusCodingAgent2026,
 ];
 
 // Validate all posts at module load time

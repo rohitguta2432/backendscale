@@ -3,6 +3,28 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "glm-5-2-vs-claude-opus-coding-agent-2026",
+    "title": "GLM-5.2 vs Claude Opus 4.8: Should You Switch Your Coding Agent? (2026)",
+    "date": "2026-06-26",
+    "excerpt": "Z.ai shipped GLM-5.2 as open weights (MIT) in June 2026, and it matches Claude Opus 4.8 on real coding-agent tasks at a fraction of the per-token price. This is the builder's read: what actually shipped, the real code to call it and drop it into Claude Code, an honest cost breakdown (the per-token gap is huge but GLM burns ~3.3x more tokens), a side-by-side table, when to stay on Opus, and the hybrid routing setup I'd actually ship — Opus for the 20% of tasks where the gap bites, GLM-5.2 for the other 80%.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "glm-5.2 vs claude opus",
+      "glm-5.2 vs claude opus 4.8",
+      "glm-5.2 coding agent",
+      "glm-5.2 open weights",
+      "open source claude opus alternative",
+      "glm-5.2 api pricing",
+      "glm-5.2 claude code",
+      "cheapest coding agent model 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/glm-5-2-vs-claude-opus-coding-agent-2026-cover.jpg",
+      "alt": "Two luminous crystalline cores of unequal size linked by glowing filaments illustrating GLM-5.2 vs Claude Opus coding agent comparison"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "gemini-interactions-api-migration-guide-2026",
     "title": "Gemini Interactions API: The Migration Guide from generateContent (2026)",
     "date": "2026-06-25",
