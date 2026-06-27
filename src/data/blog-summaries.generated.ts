@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "gemini-computer-use-vs-claude-openai-2026",
+    "title": "Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026",
+    "date": "2026-06-27",
+    "excerpt": "Google baked computer use into Gemini 3.5 Flash on June 24, 2026 — a vision-based agent that clicks, types, and scrolls across browser, mobile, and desktop. This is the builder's read: what actually shipped, the real interactions.create agent-loop code, honest OSWorld numbers (Gemini 78.4 vs GPT-5.5 78.7 vs Claude Opus 4.8 83.4), a side-by-side against Claude computer use and OpenAI, when to skip it, and exactly how I'd wire one into production without it draining a credit card or running a prompt injection.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "gemini computer use",
+      "gemini computer use vs claude",
+      "gemini 3.5 flash computer use",
+      "computer use agents 2026",
+      "best browser agent 2026",
+      "gemini computer use api",
+      "claude computer use vs gemini vs openai"
+    ],
+    "coverImage": {
+      "src": "/images/notes/gemini-computer-use-vs-claude-openai-2026-cover.jpg",
+      "alt": "A liquid-metal robotic hand reaching toward glowing orbital nodes illustrating Gemini computer use controlling a browser"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "glm-5-2-vs-claude-opus-coding-agent-2026",
     "title": "GLM-5.2 vs Claude Opus 4.8: Should You Switch Your Coding Agent? (2026)",
     "date": "2026-06-26",
