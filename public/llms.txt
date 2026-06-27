@@ -18,9 +18,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (101 posts)
+## All Engineering Notes (102 posts)
 
 ### AI Systems & LLM Integration
+
+- [Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026](https://rohitraj.tech/en/notes/gemini-computer-use-vs-claude-openai-2026)
 
 - [GLM-5.2 vs Claude Opus 4.8: Should You Switch Your Coding Agent? (2026)](https://rohitraj.tech/en/notes/glm-5-2-vs-claude-opus-coding-agent-2026)
 - [Gemini Interactions API: The Migration Guide from generateContent (2026)](https://rohitraj.tech/en/notes/gemini-interactions-api-migration-guide-2026)
