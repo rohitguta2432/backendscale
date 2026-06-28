@@ -3,6 +3,28 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "microsoft-agent-framework-vs-langgraph-crewai-2026",
+    "title": "Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)",
+    "date": "2026-06-28",
+    "excerpt": "AutoGen is in maintenance mode — Microsoft folded it and Semantic Kernel into the new Microsoft Agent Framework, which hit 1.0 GA in 2026. So the old \"LangGraph vs CrewAI vs AutoGen\" advice is stale. This is the builder's read: the same agent written in all three frameworks, where each one actually wins, an honest comparison table, how to migrate an AutoGen AssistantAgent to a ChatAgent, when to skip the Microsoft stack entirely, and the setup I'd ship to production.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "microsoft agent framework vs langgraph",
+      "microsoft agent framework vs crewai",
+      "is autogen deprecated",
+      "autogen vs microsoft agent framework",
+      "best ai agent framework 2026",
+      "microsoft agent framework tutorial",
+      "langgraph vs crewai 2026",
+      "agent framework migration autogen"
+    ],
+    "coverImage": {
+      "src": "/images/notes/microsoft-agent-framework-vs-langgraph-crewai-2026-cover.jpg",
+      "alt": "Three glowing geometric cores of different shapes linked by light filaments illustrating Microsoft Agent Framework vs LangGraph vs CrewAI comparison"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "gemini-computer-use-vs-claude-openai-2026",
     "title": "Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026",
     "date": "2026-06-27",
