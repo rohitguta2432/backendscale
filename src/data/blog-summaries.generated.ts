@@ -3,6 +3,28 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "best-open-source-deep-research-agent-self-host-2026",
+    "title": "Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)",
+    "date": "2026-06-29",
+    "excerpt": "An open-source deep research agent now sits at #1 on DeepResearch Bench — ahead of OpenAI, Gemini, and Perplexity. So you no longer have to rent deep research from a frontier lab. This is the builder's read on the four worth self-hosting in 2026 — Onyx, DeerFlow 2.0, Perplexica/Vane, and Khoj — with live star counts, a runnable Docker self-host, an honest comparison table, when to skip self-hosting entirely, and the production wiring the READMEs leave out.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "best open source deep research agent",
+      "self-host deep research agent 2026",
+      "open source perplexity alternative",
+      "onyx deep research",
+      "deerflow 2.0 self-host",
+      "perplexica self-host",
+      "open source deep research tool",
+      "self-hosted ai research assistant"
+    ],
+    "coverImage": {
+      "src": "/images/notes/best-open-source-deep-research-agent-self-host-2026-cover.jpg",
+      "alt": "Glowing pink particle swarm converging into a luminous core illustrating self-hosted open-source deep research agents in 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "microsoft-agent-framework-vs-langgraph-crewai-2026",
     "title": "Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)",
     "date": "2026-06-28",

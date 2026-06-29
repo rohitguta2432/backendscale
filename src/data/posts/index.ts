@@ -104,6 +104,7 @@ import { geminiInteractionsApiMigrationGuide2026 } from './gemini-interactions-a
 import { glm52VsClaudeOpusCodingAgent2026 } from './glm-5-2-vs-claude-opus-coding-agent-2026';
 import { geminiComputerUseVsClaudeOpenai2026 } from './gemini-computer-use-vs-claude-openai-2026';
 import { microsoftAgentFrameworkVsLangGraphCrewai2026 } from './microsoft-agent-framework-vs-langgraph-crewai-2026';
+import { bestOpenSourceDeepResearchAgentSelfHost2026 } from './best-open-source-deep-research-agent-self-host-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -209,6 +210,7 @@ const allPosts: BlogPost[] = [
   glm52VsClaudeOpusCodingAgent2026,
   geminiComputerUseVsClaudeOpenai2026,
   microsoftAgentFrameworkVsLangGraphCrewai2026,
+  bestOpenSourceDeepResearchAgentSelfHost2026,
 ];
 
 // Validate all posts at module load time

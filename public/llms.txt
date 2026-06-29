@@ -18,10 +18,11 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (103 posts)
+## All Engineering Notes (104 posts)
 
 ### AI Systems & LLM Integration
 
+- [Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)](https://rohitraj.tech/en/notes/best-open-source-deep-research-agent-self-host-2026)
 - [Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)](https://rohitraj.tech/en/notes/microsoft-agent-framework-vs-langgraph-crewai-2026)
 - [Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026](https://rohitraj.tech/en/notes/gemini-computer-use-vs-claude-openai-2026)
 
