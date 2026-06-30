@@ -105,6 +105,7 @@ import { glm52VsClaudeOpusCodingAgent2026 } from './glm-5-2-vs-claude-opus-codin
 import { geminiComputerUseVsClaudeOpenai2026 } from './gemini-computer-use-vs-claude-openai-2026';
 import { microsoftAgentFrameworkVsLangGraphCrewai2026 } from './microsoft-agent-framework-vs-langgraph-crewai-2026';
 import { bestOpenSourceDeepResearchAgentSelfHost2026 } from './best-open-source-deep-research-agent-self-host-2026';
+import { aiDevWeek2026W27 } from './ai-dev-week-2026-27';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -211,6 +212,7 @@ const allPosts: BlogPost[] = [
   geminiComputerUseVsClaudeOpenai2026,
   microsoftAgentFrameworkVsLangGraphCrewai2026,
   bestOpenSourceDeepResearchAgentSelfHost2026,
+  aiDevWeek2026W27,
 ];
 
 // Validate all posts at module load time
