@@ -3,6 +3,49 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ornith-1-self-improving-coding-model-guide-2026",
+    "title": "Ornith-1.0: The Self-Improving Open-Source Coding Model, Tested (2026)",
+    "date": "2026-07-01",
+    "excerpt": "DeepReinforce shipped Ornith-1.0 on June 25, 2026 — an MIT-licensed family of coding models that learn to write their own agentic scaffold during RL instead of using a human-designed harness. The 397B flagship hits 82.4 on SWE-bench Verified (DeepReinforce reports it edges past Claude Opus 4.7); the 9B runs on a single 24GB card. This is the builder's read: what self-scaffolding actually is, real vLLM and Ollama run commands, an honest comparison table, when to skip it, and the chat-template gotcha that will send your local copy into a runaway loop.",
+    "readingTime": "10 min read",
+    "keywords": [
+      "ornith-1.0",
+      "ornith coding model",
+      "self-improving coding model",
+      "open source agentic coding model",
+      "self-scaffolding llm",
+      "run ornith-1.0 locally",
+      "ornith vs claude opus",
+      "open source coding model 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ornith-1-self-improving-coding-model-guide-2026-cover.jpg",
+      "alt": "Luminous 3D lattice scaffold assembling itself from glowing particles illustrating the Ornith-1.0 self-improving open-source coding model in 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "ai-dev-week-2026-27",
+    "title": "This Week in AI Dev: The Local-Agent Stack Went Production-Real (Week 27 of 2026)",
+    "date": "2026-06-30",
+    "excerpt": "Week 27 of 2026 in AI dev tools: DeepReinforce's Ornith-1.0 ships MIT-licensed self-scaffolding coding models from 9B to 397B, Qwen 3.6 27B becomes the local-dev sweet spot at 28GB, vLLM turns one API call into a bounded multi-model collaboration, Herdr multiplexes 15+ coding agents in your terminal, Wayfinder routes deterministically between local and hosted LLMs, and Anthropic ships Claude Tag for async Slack delegation.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "ornith-1.0 open weights",
+      "qwen 3.6 27b local",
+      "vllm micro-agent",
+      "ai dev week 27 2026",
+      "local llm agent stack june 2026",
+      "llm routing local hosted"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-27-cover.jpg",
+      "alt": "Glowing particle swarm converging into a bright core illustrating AI dev tools weekly roundup week 27 of 2026"
+    },
+    "relatedProject": "resolvr"
+  },
+  {
     "slug": "best-open-source-deep-research-agent-self-host-2026",
     "title": "Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)",
     "date": "2026-06-29",

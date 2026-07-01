@@ -106,6 +106,7 @@ import { geminiComputerUseVsClaudeOpenai2026 } from './gemini-computer-use-vs-cl
 import { microsoftAgentFrameworkVsLangGraphCrewai2026 } from './microsoft-agent-framework-vs-langgraph-crewai-2026';
 import { bestOpenSourceDeepResearchAgentSelfHost2026 } from './best-open-source-deep-research-agent-self-host-2026';
 import { aiDevWeek2026W27 } from './ai-dev-week-2026-27';
+import { ornith1SelfImprovingCodingModelGuide2026 } from './ornith-1-self-improving-coding-model-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -213,6 +214,7 @@ const allPosts: BlogPost[] = [
   microsoftAgentFrameworkVsLangGraphCrewai2026,
   bestOpenSourceDeepResearchAgentSelfHost2026,
   aiDevWeek2026W27,
+  ornith1SelfImprovingCodingModelGuide2026,
 ];
 
 // Validate all posts at module load time
