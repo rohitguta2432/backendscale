@@ -3,6 +3,48 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "strix-ai-penetration-testing-agent-guide-2026",
+    "title": "Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)",
+    "date": "2026-07-03",
+    "excerpt": "Strix (usestrix/strix) hit #1 on GitHub Trending on July 3, 2026 with +2,137 stars in a day — 32.8k total, Apache 2.0. It runs autonomous AI agents that act like real hackers: they exploit your app, validate each finding with a working proof-of-concept, and file only bugs they actually broke. On the XBEN benchmark it solved 100/104 web challenges (96%) at ~$3.37 each. This is the builder's read — what it is, how to install and run it, whether it hallucinates, how it stacks up against XBOW and PentAGI, when to skip it, and exactly how I'd wire it into a real MVP's CI pipeline without it torching your API budget.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "strix ai penetration testing",
+      "strix ai pentest agent",
+      "open source ai pentest tool 2026",
+      "autonomous penetration testing agent",
+      "strix vs xbow vs pentagi",
+      "ai security testing ci cd",
+      "best ai pentesting tool 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/strix-ai-penetration-testing-agent-guide-2026-cover.jpg",
+      "alt": "Glowing owl-form constellation of nodes probing a dark fractured monolith illustrating Strix AI penetration testing"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "baidu-unlimited-ocr-open-model-guide-2026",
+    "title": "Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)",
+    "date": "2026-07-02",
+    "excerpt": "Baidu open-sourced Unlimited-OCR on June 22, 2026 (MIT) — a 3B mixture-of-experts model with 500M active params that parses 40+ page documents in a single forward pass. Its new Reference Sliding Window Attention (R-SWA) keeps the KV cache flat, so memory and latency stay constant as output grows. It scores 93.23 on OmniDocBench v1.5 — beating DeepSeek-OCR by 6.22 points — at 12.7% higher throughput. This is the builder's read: what R-SWA actually does, how to run it locally with Transformers and vLLM, where it beats a cloud OCR API, when to skip it, and exactly how I'd wire it into a production RAG ingestion pipeline.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "baidu unlimited ocr",
+      "open source ocr model 2026",
+      "unlimited ocr vs deepseek ocr",
+      "self host document ocr",
+      "long document ocr model",
+      "r-swa attention",
+      "best open source ocr 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/baidu-unlimited-ocr-open-model-guide-2026-cover.jpg",
+      "alt": "A luminous ribbon threading a stack of translucent glass sheets illustrating Baidu Unlimited-OCR long-document parsing"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "ornith-1-self-improving-coding-model-guide-2026",
     "title": "Ornith-1.0: The Self-Improving Open-Source Coding Model, Tested (2026)",
     "date": "2026-07-01",

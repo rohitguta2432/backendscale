@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (107 posts)
+## All Engineering Notes (108 posts)
 
+- [Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)](https://rohitraj.tech/en/notes/strix-ai-penetration-testing-agent-guide-2026)
 - [Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)](https://rohitraj.tech/en/notes/baidu-unlimited-ocr-open-model-guide-2026)
 - [This Week in AI Dev: The Local-Agent Stack Went Production-Real (Week 27 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-27)
 

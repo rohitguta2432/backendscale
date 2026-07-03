@@ -108,6 +108,7 @@ import { bestOpenSourceDeepResearchAgentSelfHost2026 } from './best-open-source-
 import { aiDevWeek2026W27 } from './ai-dev-week-2026-27';
 import { ornith1SelfImprovingCodingModelGuide2026 } from './ornith-1-self-improving-coding-model-guide-2026';
 import { baiduUnlimitedOcrOpenModelGuide2026 } from './baidu-unlimited-ocr-open-model-guide-2026';
+import { strixAiPenetrationTestingAgentGuide2026 } from './strix-ai-penetration-testing-agent-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -217,6 +218,7 @@ const allPosts: BlogPost[] = [
   aiDevWeek2026W27,
   ornith1SelfImprovingCodingModelGuide2026,
   baiduUnlimitedOcrOpenModelGuide2026,
+  strixAiPenetrationTestingAgentGuide2026,
 ];
 
 // Validate all posts at module load time
