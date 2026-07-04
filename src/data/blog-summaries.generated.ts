@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "safari-mcp-server-web-debugging-guide-2026",
+    "title": "Safari MCP Server: Apple's Official Debugger vs the Community Tools (2026 Guide)",
+    "date": "2026-07-04",
+    "excerpt": "Apple shipped an official Safari MCP server in Safari Technology Preview 247 on July 1, 2026 — 16 built-in tools that let AI coding agents see your rendered page, read the console, and evaluate JS directly instead of you describing screenshots. There's also a separate, older community safari-mcp npm ecosystem with 80+ tools that works on production Safari. Here's what's actually new, how to install either one, when Apple's version is the right pick, and how I'd wire it into a real dev workflow without waiting for a CI runner that supports Safari headless.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "safari mcp server for web developers",
+      "apple safari technology preview mcp",
+      "safari mcp vs chrome devtools mcp",
+      "ai agent browser debugging macos",
+      "mcp server web developer tools",
+      "safari technology preview 247",
+      "model context protocol browser automation"
+    ],
+    "coverImage": {
+      "src": "/images/notes/safari-mcp-server-web-debugging-guide-2026-cover.jpg",
+      "alt": "Glowing compass rose over a fractured glass pane illustrating Safari MCP server browser debugging"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "strix-ai-penetration-testing-agent-guide-2026",
     "title": "Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)",
     "date": "2026-07-03",

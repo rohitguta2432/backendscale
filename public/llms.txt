@@ -9,7 +9,7 @@
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [AI Agents](https://rohitraj.tech/en/agents): Live, autonomous AI agents you can try in the browser
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 78 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 79 technical case-study posts
 
 ## Featured Projects
 
@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (108 posts)
+## All Engineering Notes (109 posts)
 
+- [Safari MCP Server: Apple's Official Debugger vs the Community Tools (2026 Guide)](https://rohitraj.tech/en/notes/safari-mcp-server-web-debugging-guide-2026)
 - [Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)](https://rohitraj.tech/en/notes/strix-ai-penetration-testing-agent-guide-2026)
 - [Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)](https://rohitraj.tech/en/notes/baidu-unlimited-ocr-open-model-guide-2026)
 - [This Week in AI Dev: The Local-Agent Stack Went Production-Real (Week 27 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-27)
