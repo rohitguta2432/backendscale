@@ -40,7 +40,7 @@ def read_post_meta(slug: str) -> dict:
 
     def grab(field):
         m = re.search(rf"{field}:\s*['\"](.+?)['\"]\s*,", text)
-        return m.group(1) if m else None
+        return m.group(1).replace("\\'", "'").replace('\\"', '"') if m else None
 
     title = grab("title")
     excerpt = grab("excerpt")
