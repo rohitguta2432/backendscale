@@ -110,6 +110,7 @@ import { ornith1SelfImprovingCodingModelGuide2026 } from './ornith-1-self-improv
 import { baiduUnlimitedOcrOpenModelGuide2026 } from './baidu-unlimited-ocr-open-model-guide-2026';
 import { strixAiPenetrationTestingAgentGuide2026 } from './strix-ai-penetration-testing-agent-guide-2026';
 import { safariMcpServerWebDebuggingGuide2026 } from './safari-mcp-server-web-debugging-guide-2026';
+import { nvidiaLocateAnything3bVisualGroundingGuide2026 } from './nvidia-locateanything-3b-visual-grounding-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -221,6 +222,7 @@ const allPosts: BlogPost[] = [
   baiduUnlimitedOcrOpenModelGuide2026,
   strixAiPenetrationTestingAgentGuide2026,
   safariMcpServerWebDebuggingGuide2026,
+  nvidiaLocateAnything3bVisualGroundingGuide2026,
 ];
 
 // Validate all posts at module load time

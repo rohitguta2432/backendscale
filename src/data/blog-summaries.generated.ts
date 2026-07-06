@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "nvidia-locateanything-3b-visual-grounding-guide-2026",
+    "title": "NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)",
+    "date": "2026-07-06",
+    "excerpt": "NVIDIA quietly shipped LocateAnything-3B on May 26, 2026 — a 3B open-weights vision-language model that turns a plain-English phrase like \"the submit button\" into exact pixel boxes, no fixed class list, no retraining. It grounds objects, GUI elements, and text with up to 2.5x higher throughput than older box-by-box decoders. By early July it had crossed 1.2M Hugging Face downloads. Here is what actually changed, runnable code to try it, how it stacks up against YOLO / Grounding DINO / Florence-2 / Qwen2.5-VL, and the license catch that will stop you shipping it to production if you are not careful.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "nvidia locateanything-3b",
+      "visual grounding model 2026",
+      "locateanything vs yolo",
+      "open vocabulary object detection",
+      "gui grounding vision language model",
+      "parallel box decoding",
+      "self host visual grounding model"
+    ],
+    "coverImage": {
+      "src": "/images/notes/nvidia-locateanything-3b-visual-grounding-guide-2026-cover.jpg",
+      "alt": "Luminous particles converging to a focal point illustrating NVIDIA LocateAnything-3B visual grounding"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "safari-mcp-server-web-debugging-guide-2026",
     "title": "Safari MCP Server: Apple's Official Debugger vs the Community Tools (2026 Guide)",
     "date": "2026-07-04",
