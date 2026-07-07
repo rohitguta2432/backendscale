@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (110 posts)
+## All Engineering Notes (111 posts)
 
+- [This Week in AI Dev: The Week Agents Got Cheaper to Run (Week 28 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-28)
 - [NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)](https://rohitraj.tech/en/notes/nvidia-locateanything-3b-visual-grounding-guide-2026)
 - [Safari MCP Server: Apple's Official Debugger vs the Community Tools (2026 Guide)](https://rohitraj.tech/en/notes/safari-mcp-server-web-debugging-guide-2026)
 - [Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)](https://rohitraj.tech/en/notes/strix-ai-penetration-testing-agent-guide-2026)

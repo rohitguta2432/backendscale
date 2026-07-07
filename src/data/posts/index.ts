@@ -111,6 +111,7 @@ import { baiduUnlimitedOcrOpenModelGuide2026 } from './baidu-unlimited-ocr-open-
 import { strixAiPenetrationTestingAgentGuide2026 } from './strix-ai-penetration-testing-agent-guide-2026';
 import { safariMcpServerWebDebuggingGuide2026 } from './safari-mcp-server-web-debugging-guide-2026';
 import { nvidiaLocateAnything3bVisualGroundingGuide2026 } from './nvidia-locateanything-3b-visual-grounding-guide-2026';
+import { aiDevWeek2026W28 } from './ai-dev-week-2026-28';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -223,6 +224,7 @@ const allPosts: BlogPost[] = [
   strixAiPenetrationTestingAgentGuide2026,
   safariMcpServerWebDebuggingGuide2026,
   nvidiaLocateAnything3bVisualGroundingGuide2026,
+  aiDevWeek2026W28,
 ];
 
 // Validate all posts at module load time
