@@ -3,6 +3,49 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "officecli-ai-agents-office-files-guide-2026",
+    "title": "OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint (2026 Guide)",
+    "date": "2026-07-08",
+    "excerpt": "OfficeCLI is the open-source tool developers are using to let an AI agent actually build Word, Excel and PowerPoint files — not describe them, build them, with formulas that compute. It crossed 10,576 GitHub stars and shipped v1.0.131 on 2026-07-08. Here is the builder read: what it is, the render-look-fix loop that gives your agent eyes, the one-line MCP install for Claude Code and Cursor, a worked example where an agent assembles a real Excel financial model, an honest 4-way comparison against Microsoft 365 Copilot Agents, python-docx and Aspose, and the prompt-injection failure mode you must gate before you ship it.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "officecli",
+      "let ai agent edit excel files",
+      "ai agent edit word documents",
+      "officecli vs microsoft copilot",
+      "open source office ai agent",
+      "officecli mcp server",
+      "python-docx alternative",
+      "ai edit powerpoint files"
+    ],
+    "coverImage": {
+      "src": "/images/notes/officecli-ai-agents-office-files-guide-2026-cover.jpg",
+      "alt": "A luminous robotic hand arranging floating translucent glass document panels, illustrating an AI agent editing Office files with OfficeCLI in 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "ai-dev-week-2026-28",
+    "title": "This Week in AI Dev: The Week Agents Got Cheaper to Run (Week 28 of 2026)",
+    "date": "2026-07-07",
+    "excerpt": "Week 28 of 2026 in AI dev tools: Claude Sonnet 5 does Opus-tier agentic work at $2/M input, Alibaba's page-agent controls any web app from one line of JavaScript, OmniRoute routes 231+ providers and cuts 15-95% of tokens, Ternlight ships a 7MB semantic-search model that runs in the browser, Google's TabFM predicts tabular data zero-shot, and Nvidia squeezes Qwen3.6-27B onto a single consumer GPU with NVFP4.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "claude sonnet 5 pricing",
+      "alibaba page-agent",
+      "omniroute ai gateway",
+      "ternlight browser embeddings",
+      "qwen3.6 nvfp4 quantization",
+      "ai dev week 28 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-28-cover.jpg",
+      "alt": "A large glowing form condensing into a compact chip illustrating AI dev tools weekly roundup week 28 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "nvidia-locateanything-3b-visual-grounding-guide-2026",
     "title": "NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)",
     "date": "2026-07-06",

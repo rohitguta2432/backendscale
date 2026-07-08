@@ -112,6 +112,7 @@ import { strixAiPenetrationTestingAgentGuide2026 } from './strix-ai-penetration-
 import { safariMcpServerWebDebuggingGuide2026 } from './safari-mcp-server-web-debugging-guide-2026';
 import { nvidiaLocateAnything3bVisualGroundingGuide2026 } from './nvidia-locateanything-3b-visual-grounding-guide-2026';
 import { aiDevWeek2026W28 } from './ai-dev-week-2026-28';
+import { officecliAiAgentsOfficeFilesGuide2026 } from './officecli-ai-agents-office-files-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -225,6 +226,7 @@ const allPosts: BlogPost[] = [
   safariMcpServerWebDebuggingGuide2026,
   nvidiaLocateAnything3bVisualGroundingGuide2026,
   aiDevWeek2026W28,
+  officecliAiAgentsOfficeFilesGuide2026,
 ];
 
 // Validate all posts at module load time
