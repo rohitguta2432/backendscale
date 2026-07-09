@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (112 posts)
+## All Engineering Notes (113 posts)
 
+- [I Built a Job-Search Agent on Claude Code: The Runtime Pattern Teardown (2026)](https://rohitraj.tech/en/notes/ai-job-search-agent-claude-code-guide-2026)
 - [OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint (2026 Guide)](https://rohitraj.tech/en/notes/officecli-ai-agents-office-files-guide-2026)
 - [This Week in AI Dev: The Week Agents Got Cheaper to Run (Week 28 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-28)
 - [NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)](https://rohitraj.tech/en/notes/nvidia-locateanything-3b-visual-grounding-guide-2026)

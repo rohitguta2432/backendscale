@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-job-search-agent-claude-code-guide-2026",
+    "title": "AI Job-Search Agent on Claude Code: Inside the 15k-Star ai-job-search Framework (2026)",
+    "date": "2026-07-09",
+    "excerpt": "ai-job-search crossed 15,000 GitHub stars — 5,000+ in one day — as one of 2026's fastest-growing Claude Code workflows. It's not an app; it's a fork-and-fill framework that turns the Claude Code CLI into a job-hunting agent. Here's the architecture, the drafter-reviewer loop that makes it work, and the honest failure modes of auto-apply from someone who runs an outreach agent daily.",
+    "readingTime": "9 min read",
+    "keywords": [
+      "ai job search agent claude code",
+      "ai-job-search github",
+      "build an agent on claude code",
+      "claude code job application framework",
+      "drafter reviewer agent pattern",
+      "ai cover letter cv tailoring open source",
+      "claude code as agent runtime 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-job-search-agent-claude-code-guide-2026-cover.jpg",
+      "alt": "A branching tree of light converging to one node illustrating an AI job-search agent built on Claude Code"
+    }
+  },
+  {
     "slug": "officecli-ai-agents-office-files-guide-2026",
     "title": "OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint (2026 Guide)",
     "date": "2026-07-08",
