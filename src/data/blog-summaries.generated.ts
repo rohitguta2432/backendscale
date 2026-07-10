@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "gitlost-ai-agent-prompt-injection-defense-2026",
+    "title": "GitLost: The Prompt-Injection Class Every AI Coding Agent Inherits — and How to Defend Yours (2026)",
+    "date": "2026-07-10",
+    "excerpt": "On July 7, 2026, researchers tricked GitHub's AI agent into copying a private repo and posting it as a public comment — no code, no credentials, one word. GitLost is not a GitHub bug you wait for a patch on; it's the prompt-injection class every coding agent inherits the moment you give it real permissions. Here's how the attack works, why it can't be fully patched, and the least-privilege playbook I use to keep my own agents from leaking data.",
+    "readingTime": "10 min read",
+    "keywords": [
+      "ai coding agent prompt injection defense",
+      "gitlost github ai agent leak",
+      "prevent prompt injection agentic workflows",
+      "secure ai agents 2026",
+      "owasp llm01 prompt injection",
+      "least privilege ai agent token",
+      "lethal trifecta ai agent security"
+    ],
+    "coverImage": {
+      "src": "/images/notes/gitlost-ai-agent-prompt-injection-defense-2026-cover.jpg",
+      "alt": "A locked vault with one glowing thread escaping through a public seam illustrating GitLost AI agent prompt injection data leak"
+    }
+  },
+  {
     "slug": "ai-job-search-agent-claude-code-guide-2026",
     "title": "AI Job-Search Agent on Claude Code: Inside the 15k-Star ai-job-search Framework (2026)",
     "date": "2026-07-09",

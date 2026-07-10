@@ -9,7 +9,7 @@
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [AI Agents](https://rohitraj.tech/en/agents): Live, autonomous AI agents you can try in the browser
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 79 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 80 technical case-study posts
 
 ## Featured Projects
 
@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (113 posts)
+## All Engineering Notes (114 posts)
 
+- [GitLost: How a GitHub AI Agent Leaked Private Repos — and How to Defend Your Own Agentic Workflow (2026)](https://rohitraj.tech/en/notes/gitlost-ai-agent-prompt-injection-defense-2026)
 - [I Built a Job-Search Agent on Claude Code: The Runtime Pattern Teardown (2026)](https://rohitraj.tech/en/notes/ai-job-search-agent-claude-code-guide-2026)
 - [OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint (2026 Guide)](https://rohitraj.tech/en/notes/officecli-ai-agents-office-files-guide-2026)
 - [This Week in AI Dev: The Week Agents Got Cheaper to Run (Week 28 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-28)
