@@ -23,6 +23,26 @@ export const blogSummaries: BlogPostSummary[] = [
     }
   },
   {
+    "slug": "gpt-5-6-sol-terra-luna-api-guide-2026",
+    "title": "GPT-5.6 Sol vs Terra vs Luna: A Developer's Guide to Picking the Right Tier (2026)",
+    "date": "2026-07-10",
+    "excerpt": "On July 9, 2026, OpenAI split GPT-5.6 into three tiers — Sol, Terra, and Luna — and the model string you pick now swings your bill by up to 5x. Sol is the flagship, Terra is near-flagship at roughly half the cost of GPT-5.5, and Luna is the cheap, fast one. Most teams reach for Sol and overpay. Here's the tier-selection framework I use, the benchmarks that justify each choice, and the exact migration code to switch.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "gpt-5.6 sol vs terra vs luna",
+      "gpt-5.6 for developers",
+      "gpt-5.6 vs gpt-5.5",
+      "gpt-5.6 api pricing",
+      "should i migrate to gpt-5.6",
+      "gpt-5.6 codex",
+      "gpt-5.6 sol terra luna"
+    ],
+    "coverImage": {
+      "src": "/images/notes/gpt-5-6-sol-terra-luna-api-guide-2026-cover.jpg",
+      "alt": "Three glowing orbs of different sizes — Sol, Terra, and Luna — representing the GPT-5.6 model tiers connected by energy filaments"
+    }
+  },
+  {
     "slug": "ai-job-search-agent-claude-code-guide-2026",
     "title": "AI Job-Search Agent on Claude Code: Inside the 15k-Star ai-job-search Framework (2026)",
     "date": "2026-07-09",
