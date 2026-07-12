@@ -116,6 +116,7 @@ import { officecliAiAgentsOfficeFilesGuide2026 } from './officecli-ai-agents-off
 import { aiJobSearchAgentClaudeCodeGuide2026 } from './ai-job-search-agent-claude-code-guide-2026';
 import { gitlostAiAgentPromptInjectionDefense2026 } from './gitlost-ai-agent-prompt-injection-defense-2026';
 import { gpt56SolTerraLunaApiGuide2026 } from './gpt-5-6-sol-terra-luna-api-guide-2026';
+import { aiAgentCommandGuardrails2026 } from './ai-agent-command-guardrails-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -233,6 +234,7 @@ const allPosts: BlogPost[] = [
   aiJobSearchAgentClaudeCodeGuide2026,
   gitlostAiAgentPromptInjectionDefense2026,
   gpt56SolTerraLunaApiGuide2026,
+  aiAgentCommandGuardrails2026,
 ];
 
 // Validate all posts at module load time
