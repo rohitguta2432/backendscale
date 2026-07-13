@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (116 posts)
+## All Engineering Notes (117 posts)
 
+- [DeepSeek V4 API Migration Guide: What Breaks on July 24, 2026 (and the 10-Minute Fix)](https://rohitraj.tech/en/notes/deepseek-v4-api-migration-guide-2026)
 - [Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)](https://rohitraj.tech/en/notes/ai-agent-command-guardrails-2026)
 - [GPT-5.6 Sol vs Terra vs Luna: A Developer's Guide to Picking the Right Tier (2026)](https://rohitraj.tech/en/notes/gpt-5-6-sol-terra-luna-api-guide-2026)
 - [GitLost: How a GitHub AI Agent Leaked Private Repos — and How to Defend Your Own Agentic Workflow (2026)](https://rohitraj.tech/en/notes/gitlost-ai-agent-prompt-injection-defense-2026)

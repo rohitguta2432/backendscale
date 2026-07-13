@@ -117,6 +117,7 @@ import { aiJobSearchAgentClaudeCodeGuide2026 } from './ai-job-search-agent-claud
 import { gitlostAiAgentPromptInjectionDefense2026 } from './gitlost-ai-agent-prompt-injection-defense-2026';
 import { gpt56SolTerraLunaApiGuide2026 } from './gpt-5-6-sol-terra-luna-api-guide-2026';
 import { aiAgentCommandGuardrails2026 } from './ai-agent-command-guardrails-2026';
+import { deepseekV4ApiMigrationGuide2026 } from './deepseek-v4-api-migration-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -235,6 +236,7 @@ const allPosts: BlogPost[] = [
   gitlostAiAgentPromptInjectionDefense2026,
   gpt56SolTerraLunaApiGuide2026,
   aiAgentCommandGuardrails2026,
+  deepseekV4ApiMigrationGuide2026,
 ];
 
 // Validate all posts at module load time
