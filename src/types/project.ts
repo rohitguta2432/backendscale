@@ -15,6 +15,7 @@ export const projectSchema = z.object({
     src: z.string(),
     caption: z.string(),
   })).optional(),
+  videoUrl: z.string().optional(),
   details: z.object({
     businessImpact: z.string(),
     approach: z.array(z.string()),

@@ -62,6 +62,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     __html: JSON.stringify(generateSoftwareApplicationSchema(project, locale)),
                 }}
             />
+            {project.videoUrl && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "VideoObject",
+                            name: `${project.name} — product demo`,
+                            description: project.solves,
+                            thumbnailUrl: project.image ? `${SITE_CONFIG.url}${project.image}` : undefined,
+                            contentUrl: `${SITE_CONFIG.url}${project.videoUrl}`,
+                            uploadDate: "2026-07-14",
+                        }),
+                    }}
+                />
+            )}
             <Header locale={locale as Locale} dict={dict.common} />
             <main id="main">
                 <section>
@@ -106,8 +122,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             </div>
                         </header>
 
-                        {/* Image Carousel for multiple images */}
-                        {project.images && project.images.length > 0 ? (
+                        {/* Demo video takes priority over screenshots when present */}
+                        {project.videoUrl ? (
+                            <div className="project-hero-image">
+                                <div className="project-image-wrapper">
+                                    <video
+                                        controls
+                                        preload="metadata"
+                                        poster={project.image}
+                                        className="project-screenshot"
+                                        style={{ width: "100%", height: "auto", display: "block" }}
+                                    >
+                                        <source src={project.videoUrl} type="video/mp4" />
+                                    </video>
+                                    <div className="project-image-caption">
+                                        <span className="caption-icon">▶</span>
+                                        <span>15-second product demo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : project.images && project.images.length > 0 ? (
                             <ImageCarousel
                                 images={project.images}
                                 projectName={project.name}

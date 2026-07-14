@@ -542,6 +542,120 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "agent-autopsy",
+        name: "Agent Autopsy — Forensic Debugger for Failed AI Agent Runs",
+        problem: "Most AI agent failures are silent — the run completes, the status code is green, and the result is still wrong. Observability platforms show you the trace, but never the cause of death.",
+        solves: "Paste a dead agent's transcript (JSON, JSONL, or raw logs) and get an instant forensic report that names the failure signature — death loop, error blindness, ghost tool, flatline, or context bloat — plus a local-LLM pathologist's note for deeper root cause. 100% local; nothing leaves your machine.",
+        techStack: ["Next.js 16", "TypeScript", "App Router", "Ollama (qwen3:14b)", "Vitest"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/agent-autopsy",
+        aiApproach: "Deterministic heuristics fire in under a second to classify five failure signatures — DEATH_LOOP, ERROR_BLINDNESS, GHOST_TOOL, FLATLINE, CONTEXT_BLOAT. When a local Ollama model is running, qwen3:14b adds a pathologist's note with a deeper root-cause read — fully local, no trace ever leaves the machine.",
+        image: "/images/projects/agent-autopsy-poster.jpg",
+        videoUrl: "/videos/agent-autopsy.mp4",
+        details: {
+            businessImpact: "Teams ship agents that fail silently and only hear about it from angry users. Agent Autopsy turns an opaque transcript into a one-line cause of death, so engineers stop guessing and start fixing — without shipping private traces to a third-party SaaS.",
+            approach: [
+                "Next.js 16 App Router app with the forensic engine in lib/autopsy.ts",
+                "scan + diagnose API routes: heuristic classifier first, optional LLM pass second",
+                "Five explicit failure signatures detected from transcript structure, not vibes",
+                "Optional local Ollama (qwen3:14b) pathologist's note for root cause",
+                "6 Vitest tests covering the signature classifier"
+            ],
+            decisions: [
+                "Heuristics-first for an instant verdict — the LLM is an optional deepening, not the critical path",
+                "Local LLM over cloud — agent traces are sensitive and stay on the machine",
+                "Five named signatures over a black-box score — engineers want a cause they can act on",
+                "Zero runtime dependencies in the engine — rebuilt from a v1 single-file prototype with no shortcuts"
+            ],
+            currentStatus: "Public and open source (MIT) at github.com/rohitguta2432/agent-autopsy. Heuristic verdicts plus optional local qwen3:14b diagnosis working; 6 Vitest tests passing. The 15-second demo diagnoses the app's own sample corpse on camera.",
+            roadmap: [
+                "Add more failure signatures (silent truncation, tool-arg drift)",
+                "Framework adapters to import LangChain / CrewAI transcripts directly",
+                "Shareable report links for team triage"
+            ],
+            improvements: [
+                "A hosted demo with a bundled small model so no local setup is needed",
+                "Batch autopsy mode to run inside CI on every failed agent run"
+            ]
+        }
+    },
+    {
+        slug: "tinyvoice",
+        name: "tinyvoice — Fine-Tune a Model in Your Own Voice in an Afternoon",
+        problem: "Training your own language model sounds like a PhD job that needs a GPU cluster, so most developers never try. The tooling looks intimidating from the outside.",
+        solves: "A 0.5B-parameter model fine-tuned to write in my voice — trained in about three minutes on a laptop, on 28 of my own posts, with no GPU and no cloud. A side-by-side web UI streams the stock model against the tuned one so you can see exactly what fine-tuning changes.",
+        techStack: ["MLX", "Qwen2.5-0.5B (4-bit LoRA)", "Python", "FastAPI", "Server-Sent Events"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/tinyvoice",
+        aiApproach: "MLX LoRA fine-tune of Qwen2.5-0.5B-Instruct-4bit on 26 train / 2 valid chat pairs built from my own published posts — 400 steps, roughly three minutes on Apple silicon. FastAPI serves both the stock and tuned models over SSE. The honest lesson baked into the demo: the model learns style, not facts — voice transfers in an afternoon, truth does not.",
+        image: "/images/projects/tinyvoice-poster.jpg",
+        videoUrl: "/videos/tinyvoice.mp4",
+        details: {
+            businessImpact: "Fine-tuning is treated as inaccessible, so teams default to prompt-stuffing forever. tinyvoice is a working proof that small-model LoRA on-device is minutes and a laptop — a replicable recipe for anyone who wants a model in their own style.",
+            approach: [
+                "Dataset script pairs each published post's one-line brief with its final copy (26 train / 2 valid)",
+                "MLX LoRA on Qwen2.5-0.5B-Instruct-4bit, 400 steps, ~3 minutes on Apple silicon",
+                "FastAPI streams stock and tuned models side by side over Server-Sent Events",
+                "Single-HTML compare UI — same topic in, two voices out",
+                "Fixed an MLX streaming bug: inference state is thread-local, so all MLX work runs on one thread"
+            ],
+            decisions: [
+                "0.5B 4-bit over a large model — the whole point is that it runs on a laptop",
+                "LoRA over full fine-tune — minutes, not hours, and a tiny adapter to ship",
+                "On-device MLX over cloud training — no keys, no bill, no data leaving the Mac",
+                "Side-by-side UI over a metrics table — the difference should be visible, not described"
+            ],
+            currentStatus: "Public and open source (MIT) at github.com/rohitguta2432/tinyvoice. The trained adapter is committed so the repo runs as-is; the stock-vs-tuned duel is verified live in the browser in the demo.",
+            roadmap: [
+                "Swap in a larger base model to test whether knowledge (not just style) transfers",
+                "Feed the full post corpus as it grows",
+                "One-command train-and-serve script"
+            ],
+            improvements: [
+                "Dataset de-duplication and augmentation for a cleaner signal",
+                "A quantitative voice-match score to measure the tuning objectively"
+            ]
+        }
+    },
+    {
+        slug: "snap3d",
+        name: "snap3d — One Photo In, an Editable 3D Model Out",
+        problem: "A photo shows you one side of an object; the other five sides are a guess. Turning a single 2D image into a usable 3D model normally needs a photogrammetry rig or hours of manual modeling.",
+        solves: "Drop one photo and Claude Fable 5 infers depth and hidden geometry, then rebuilds the object as a parametric scene of named parts rendered live in Three.js. Because every part is named, you keep editing in plain English — 'make the wheels huge', 'paint it neon green' — and export to .obj for Blender or Unity.",
+        techStack: ["Claude Fable 5", "Three.js", "Node.js (zero-dep stdlib)", "JavaScript"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/snap3d",
+        aiApproach: "Claude Fable 5 is treated as a data engine: from a single photo it emits a strict-JSON scene of ~25 named primitives. Three.js draws them; plain-English remix requests go back to Fable 5, which re-edits only the named parts you mention. A ~100-line zero-dependency Node stdlib server bridges to the API or a local claude CLI.",
+        image: "/images/projects/snap3d-poster.jpg",
+        videoUrl: "/videos/snap3d.mp4",
+        details: {
+            businessImpact: "Photo-to-3D tools stop at a static mesh. snap3d's semantic, named-part scene lets non-experts edit 3D with words instead of a modeling suite — lowering the skill floor for prototyping, product mockups, and asset creation.",
+            approach: [
+                "Single photo → Claude Fable 5 → strict-JSON scene of named primitives",
+                "Three.js viewer with per-part scale and color sliders",
+                "Plain-English remix re-edits only the named parts you reference",
+                "One-click .obj export for Blender, Unity, or any render engine",
+                "~100-line zero-dependency Node stdlib server; API key or local claude CLI"
+            ],
+            decisions: [
+                "Treat model output as data — a strict JSON contract makes 3D just another API response",
+                "Semantic named parts over an opaque mesh — that is what makes word-based editing possible",
+                "Zero npm dependencies — the server is Node stdlib only",
+                "Three.js for live in-browser rendering over a heavy engine"
+            ],
+            currentStatus: "Public and open source (MIT) at github.com/rohitguta2432/snap3d. Verified real run: sample photo → 25 named parts; remix 'bigger wheels + neon green' applied live and re-rendered in the demo.",
+            roadmap: [
+                "Texture inference alongside geometry",
+                "More primitive types for organic shapes",
+                "glTF export and batch photo → scene"
+            ],
+            improvements: [
+                "Cache Fable 5 scenes to make remix instant",
+                "Confidence hints on inferred hidden geometry so users know what is guessed"
+            ]
+        }
+    },
 ];
 
 export const repos = [
@@ -598,6 +712,24 @@ export const repos = [
         description: "RetailOS — Multi-tenant retail SaaS with 12-module Spring Boot monorepo",
         modules: ["retailos-auth", "retailos-tenant", "retailos-inventory", "retailos-billing", "retailos-invoice", "retailos-khata"],
         url: "https://github.com/rohitguta2432/retailos"
+    },
+    {
+        name: "agent-autopsy",
+        description: "Agent Autopsy — forensic debugger for failed AI agent runs. Next.js 16 + local Ollama (qwen3:14b), five failure signatures, 100% local",
+        modules: ["lib", "app/api/scan", "app/api/diagnose", "tests"],
+        url: "https://github.com/rohitguta2432/agent-autopsy"
+    },
+    {
+        name: "tinyvoice",
+        description: "tinyvoice — fine-tune a 0.5B model in your own voice in an afternoon. MLX LoRA on Qwen2.5-0.5B + FastAPI side-by-side compare UI",
+        modules: ["data", "adapters", "server"],
+        url: "https://github.com/rohitguta2432/tinyvoice"
+    },
+    {
+        name: "snap3d",
+        description: "snap3d — one photo to an editable 3D model via Claude Fable 5 + Three.js. Named parts, plain-English remix, zero-dep Node server",
+        modules: ["server.js", "public"],
+        url: "https://github.com/rohitguta2432/snap3d"
     }
 ];
 
