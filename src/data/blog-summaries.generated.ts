@@ -3,6 +3,68 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-29",
+    "title": "This Week in AI Dev: The Agent Fleet Grows Up (Week 29 of 2026)",
+    "date": "2026-07-14",
+    "excerpt": "Week 29 of 2026 in AI dev tools: OpenAI ships an official plugin that runs Codex from inside Claude Code, a viral teardown shows Claude Code burning 33k tokens before it reads your prompt, Stably's orca gives you a control room for a fleet of parallel agents, Microsoft's Flint lets agents draw charts instead of dumping tables, Z.ai's GLM-5.2 tops Hugging Face trending, and Tencent open-sources CubeSandbox so your agents stop running rm -rf on the host.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "codex plugin claude code",
+      "claude code token overhead",
+      "glm-5.2 open weights",
+      "orca parallel agent fleet",
+      "cubesandbox ai agent sandbox",
+      "ai dev week 29 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-29-cover.jpg",
+      "alt": "A luminous swarm of coordinated particles converging illustrating AI dev tools weekly roundup week 29 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "deepseek-v4-api-migration-guide-2026",
+    "title": "DeepSeek V4 API Migration Guide: What Breaks on July 24, 2026 (and the 10-Minute Fix)",
+    "date": "2026-07-13",
+    "excerpt": "On July 24, 2026 at 15:59 UTC, DeepSeek fully retires the deepseek-chat and deepseek-reasoner model names — every API call still using them starts returning errors. The replacement names (deepseek-v4-flash, deepseek-v4-pro) take ten minutes to wire in, but two silent gotchas can wreck your bill or your latency: thinking mode moved from a model name to a request parameter, and the naive migration path can turn your cheapest endpoint into a reasoning-token furnace. Here is the exact before/after code, the Flash vs Pro decision table, the Anthropic-SDK routing trick, and how I would stage the cutover in production.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "deepseek v4 api migration guide",
+      "deepseek-chat deprecated july 24",
+      "deepseek v4 flash vs pro",
+      "deepseek v4 thinking mode parameter",
+      "deepseek anthropic api endpoint",
+      "deepseek v4 pricing 2026",
+      "deepseek-reasoner replacement"
+    ],
+    "coverImage": {
+      "src": "/images/notes/deepseek-v4-api-migration-guide-2026-cover.jpg",
+      "alt": "Amber particle stream merging through a dark canyon illustrating DeepSeek V4 API migration deadline"
+    }
+  },
+  {
+    "slug": "ai-agent-command-guardrails-2026",
+    "title": "Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)",
+    "date": "2026-07-12",
+    "excerpt": "Destructive Command Guard (dcg) trended on GitHub in July 2026 (Rust, MIT, 2.3k stars) as a sub-millisecond PreToolUse hook that blocks your AI coding agent from running rm -rf, git reset --hard, force pushes and DROP TABLE before they execute. It wires into Claude Code, Cursor, Codex and Copilot in one install. But Adversa AI's GuardFall research bypassed the command guards in 10 of 11 popular agents. This is the builder's read: how dcg works, how to install it, whether these guards actually hold, how dcg stacks up against agent-guardrails, Shellfirm and SigmaShake, and exactly how I'd wire real agent safety into a production workflow — guard plus sandbox, not guard alone.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "ai coding agent command guardrails",
+      "block dangerous shell commands ai agent",
+      "destructive command guard dcg",
+      "stop ai agent rm -rf",
+      "claude code pretooluse hook guardrails",
+      "dcg vs agent-guardrails vs shellfirm",
+      "ai agent safety 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-agent-command-guardrails-2026-cover.jpg",
+      "alt": "Glowing hexagonal shield deflecting sharp crimson shards illustrating AI coding agent command guardrails"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "gitlost-ai-agent-prompt-injection-defense-2026",
     "title": "GitLost: The Prompt-Injection Class Every AI Coding Agent Inherits — and How to Defend Yours (2026)",
     "date": "2026-07-10",
