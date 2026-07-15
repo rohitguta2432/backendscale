@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (118 posts)
+## All Engineering Notes (119 posts)
 
+- [Bonsai 27B: A 27B Model on Your Phone — and the One Benchmark That Collapses (2026)](https://rohitraj.tech/en/notes/bonsai-27b-ternary-quantization-guide-2026)
 - [This Week in AI Dev: The Agent Fleet Grows Up (Week 29 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-29)
 - [DeepSeek V4 API Migration Guide: What Breaks on July 24, 2026 (and the 10-Minute Fix)](https://rohitraj.tech/en/notes/deepseek-v4-api-migration-guide-2026)
 - [Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)](https://rohitraj.tech/en/notes/ai-agent-command-guardrails-2026)

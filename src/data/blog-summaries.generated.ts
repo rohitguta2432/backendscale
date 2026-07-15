@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "bonsai-27b-ternary-quantization-guide-2026",
+    "title": "Bonsai 27B: A 27B Model on Your Phone — and the One Benchmark That Collapses (2026)",
+    "date": "2026-07-15",
+    "excerpt": "PrismML shipped 1-bit and ternary builds of Qwen3.6-27B on July 14, 2026 — 5.9 GB for ternary, 3.9 GB for 1-bit, running at 163 tok/s on an RTX 5090 and 11 tok/s on an iPhone 17 Pro. Every writeup leads with \"retains 95% of baseline.\" Nobody breaks out the row that matters: tool-calling drops 80.0 to 66.0 at 1-bit — degrading 4.6x worse than math. For a model sold on laptop-local agents, that is the whole story. Here is the variant decision table, the runnable commands, the KV-cache trap that makes 5.9 GB of weights need 13.7 GB of RAM, and how I would ship this in production.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "bonsai 27b ternary quantization guide",
+      "bonsai 27b run locally",
+      "ternary quantization llm tool calling",
+      "run 27b model on phone",
+      "1-bit llm local inference",
+      "ternary bonsai llama.cpp mlx",
+      "qwen3.6-27b quantized",
+      "on-device llm agent 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/bonsai-27b-ternary-quantization-guide-2026-cover.jpg",
+      "alt": "Glowing miniature bonsai grown from a crystalline chip illustrating Bonsai 27B ternary quantization on-device"
+    }
+  },
+  {
     "slug": "ai-dev-week-2026-29",
     "title": "This Week in AI Dev: The Agent Fleet Grows Up (Week 29 of 2026)",
     "date": "2026-07-14",
