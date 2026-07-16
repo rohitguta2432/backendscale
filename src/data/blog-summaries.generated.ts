@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "inkling-975b-run-locally-vram-guide-2026",
+    "title": "Inkling 975B: The Open-Weights Model Almost Nobody Should Self-Host (2026)",
+    "date": "2026-07-16",
+    "excerpt": "Thinking Machines released Inkling on July 15, 2026 — 975B params, 41B active, Apache 2.0, 1M context, weights on Hugging Face. Every writeup tells you how to run it. None tells you whether to. The BF16 checkpoint needs 2 TB of VRAM; NVFP4 needs 600 GB. The 8x H200 box they name is an AWS p5en.48xlarge at $63.296/hr — $46,206/month always-on. Against the $4.68/M output API, self-hosting breaks even at 9.87 billion output tokens a month. Here is the VRAM ladder, the real cost math, the July 17 price hike everyone missed, and the quant trap that will eat your agent.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "inkling 975b run locally",
+      "inkling 975b vram requirements",
+      "inkling hardware requirements",
+      "thinking machines inkling guide",
+      "inkling 975b api pricing",
+      "self host vs api llm cost",
+      "inkling nvfp4 quantization",
+      "open weights model cost 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/inkling-975b-run-locally-vram-guide-2026-cover.jpg",
+      "alt": "Sparse glowing neural lattice with few active pathways illustrating Inkling 975B mixture-of-experts local hardware requirements"
+    }
+  },
+  {
     "slug": "bonsai-27b-ternary-quantization-guide-2026",
     "title": "Bonsai 27B: A 27B Model on Your Phone — and the One Benchmark That Collapses (2026)",
     "date": "2026-07-15",
