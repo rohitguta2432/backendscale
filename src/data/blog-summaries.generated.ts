@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "apple-speechanalyzer-vs-whisper-on-device-stt-2026",
+    "title": "Apple SpeechAnalyzer vs Whisper: On-Device Speech-to-Text in 2026",
+    "date": "2026-07-17",
+    "excerpt": "Apple shipped SpeechAnalyzer in iOS 26 and macOS 26 with zero published accuracy numbers. The first rigorous benchmark just landed: 2.12% word error rate on clean English, beating every on-device Whisper model and running ~3x faster than Whisper Small on an M2 Pro. Here is the full Apple vs Whisper vs Parakeet vs Qwen3 breakdown, the Swift to wire it up, the speaker-diarization gap nobody mentions, and exactly when you should still reach for Whisper.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "apple speechanalyzer vs whisper",
+      "on-device speech to text 2026",
+      "speechanalyzer wer benchmark",
+      "whisper alternative mac",
+      "ios 26 speech transcription api",
+      "best on-device speech recognition",
+      "speechtranscriber swift",
+      "whisperkit vs speechanalyzer"
+    ],
+    "coverImage": {
+      "src": "/images/notes/apple-speechanalyzer-vs-whisper-on-device-stt-2026-cover.jpg",
+      "alt": "Glowing concentric sound waves in dark mist illustrating Apple SpeechAnalyzer vs Whisper on-device speech-to-text 2026"
+    }
+  },
+  {
     "slug": "inkling-975b-run-locally-vram-guide-2026",
     "title": "Inkling 975B: The Open-Weights Model Almost Nobody Should Self-Host (2026)",
     "date": "2026-07-16",

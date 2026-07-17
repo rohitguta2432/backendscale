@@ -121,6 +121,7 @@ import { deepseekV4ApiMigrationGuide2026 } from './deepseek-v4-api-migration-gui
 import { aiDevWeek2026W29 } from './ai-dev-week-2026-29';
 import { bonsai27bTernaryQuantizationGuide2026 } from './bonsai-27b-ternary-quantization-guide-2026';
 import { inkling975bRunLocallyVramGuide2026 } from './inkling-975b-run-locally-vram-guide-2026';
+import { appleSpeechAnalyzerVsWhisperOnDeviceStt2026 } from './apple-speechanalyzer-vs-whisper-on-device-stt-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -243,6 +244,7 @@ const allPosts: BlogPost[] = [
   aiDevWeek2026W29,
   bonsai27bTernaryQuantizationGuide2026,
   inkling975bRunLocallyVramGuide2026,
+  appleSpeechAnalyzerVsWhisperOnDeviceStt2026,
 ];
 
 // Validate all posts at module load time
