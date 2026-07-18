@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "anti-ai-slop-design-skill-hallmark-guide-2026",
+    "title": "The Anti-AI-Slop Design Skill: How Hallmark Fixes Generic AI UI in 2026",
+    "date": "2026-07-18",
+    "excerpt": "Every site your AI coding agent builds looks the same: Inter font, a purple gradient, six identical cards, a bounce on every hover. Hallmark — a design skill for Claude Code, Cursor, and Codex that hit 12.4k stars this week — runs 57 \"slop-test gates\" to refuse those defaults before the code is emitted. Here is what AI slop actually is, exactly how Hallmark works, the four verbs with real commands, how it stacks up against frontend-design, Impeccable, and Stitch, and when a skill still will not save you from a bad design.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "anti ai slop design skill",
+      "fix ai generated ui slop",
+      "hallmark design skill",
+      "claude code design skill",
+      "why ai generated ui looks generic",
+      "ai slop design fix 2026",
+      "cursor codex design skill",
+      "ai ui design anti-patterns"
+    ],
+    "coverImage": {
+      "src": "/images/notes/anti-ai-slop-design-skill-hallmark-guide-2026-cover.jpg",
+      "alt": "A prism shattering a flat grey monolith into vivid distinct facets illustrating an anti-AI-slop design skill for AI-generated UI in 2026"
+    }
+  },
+  {
     "slug": "apple-speechanalyzer-vs-whisper-on-device-stt-2026",
     "title": "Apple SpeechAnalyzer vs Whisper: On-Device Speech-to-Text in 2026",
     "date": "2026-07-17",
