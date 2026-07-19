@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "mcp-stateless-spec-migration-guide-2026",
+    "title": "MCP Goes Stateless: Migrate Your Server Before the 2026-07-28 Spec",
+    "date": "2026-07-19",
+    "excerpt": "The MCP 2026-07-28 specification goes final on July 28, 2026, and it rewrites the protocol to be stateless: no more initialize handshake (SEP-2575), no Mcp-Session-Id header (SEP-2567), with protocol version and client info moving into a _meta field on every request. That one change lets MCP servers deploy like any stateless service — serverless and Kubernetes autoscaling finally work without sticky sessions — but it breaks every server that assumed a session. Here is the full before/after migration in TypeScript: the stateless transport config, per-request _meta, the new Tasks extension lifecycle, the -32602 error change, the six auth-hardening SEPs, and exactly which servers should wait.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "mcp stateless migration",
+      "mcp 2026-07-28 spec",
+      "migrate mcp server stateless",
+      "mcp session id removed",
+      "model context protocol stateless",
+      "mcp spec release candidate 2026",
+      "mcp streamable http stateless",
+      "mcp server migration guide"
+    ],
+    "coverImage": {
+      "src": "/images/notes/mcp-stateless-spec-migration-guide-2026-cover.jpg",
+      "alt": "Constellation of glowing server nodes passing light packets freely on a dark grid illustrating MCP stateless spec migration 2026"
+    }
+  },
+  {
     "slug": "anti-ai-slop-design-skill-hallmark-guide-2026",
     "title": "The Anti-AI-Slop Design Skill: How Hallmark Fixes Generic AI UI in 2026",
     "date": "2026-07-18",
