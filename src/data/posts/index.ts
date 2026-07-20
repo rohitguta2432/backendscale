@@ -124,6 +124,7 @@ import { inkling975bRunLocallyVramGuide2026 } from './inkling-975b-run-locally-v
 import { appleSpeechAnalyzerVsWhisperOnDeviceStt2026 } from './apple-speechanalyzer-vs-whisper-on-device-stt-2026';
 import { antiAiSlopDesignSkillHallmarkGuide2026 } from './anti-ai-slop-design-skill-hallmark-guide-2026';
 import { mcpStatelessSpecMigrationGuide2026 } from './mcp-stateless-spec-migration-guide-2026';
+import { omnirouteAiGatewayReview2026 } from './omniroute-ai-gateway-review-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -249,6 +250,7 @@ const allPosts: BlogPost[] = [
   appleSpeechAnalyzerVsWhisperOnDeviceStt2026,
   antiAiSlopDesignSkillHallmarkGuide2026,
   mcpStatelessSpecMigrationGuide2026,
+  omnirouteAiGatewayReview2026,
 ];
 
 // Validate all posts at module load time

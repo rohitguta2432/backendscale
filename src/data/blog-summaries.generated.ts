@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "omniroute-ai-gateway-review-2026",
+    "title": "OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?",
+    "date": "2026-07-20",
+    "excerpt": "OmniRoute is the AI gateway that shot past 20,000 GitHub stars in days: one local, MIT-licensed, OpenAI-compatible endpoint that fans out to 268 providers and 500+ models, with an 18-strategy fallback engine and 15-95% token compression. The best part is real — it runs 100% on your machine with your own keys and never phones home. But the \"1.4 billion free tokens\" headline, the TLS-fingerprint stealth, and the Cursor-intercepting MITM proxy are exactly the features a careful engineer should treat with suspicion. This is the honest review: what OmniRoute genuinely does well, where it beats OpenRouter, LiteLLM, and Portkey, the failure modes the promo posts skip, and precisely when I would — and would not — put it in a workflow.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "omniroute review",
+      "omniroute ai gateway",
+      "omniroute vs openrouter",
+      "open source ai gateway 2026",
+      "self-hosted llm gateway",
+      "omniroute litellm portkey",
+      "llm router 2026",
+      "omniroute free tokens"
+    ],
+    "coverImage": {
+      "src": "/images/notes/omniroute-ai-gateway-review-2026-cover.jpg",
+      "alt": "A luminous hub radiating glowing fiber strands to distant nodes illustrating the OmniRoute open-source AI gateway routing to many providers"
+    }
+  },
+  {
     "slug": "mcp-stateless-spec-migration-guide-2026",
     "title": "MCP Goes Stateless: Migrate Your Server Before the 2026-07-28 Spec",
     "date": "2026-07-19",
