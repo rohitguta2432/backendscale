@@ -125,6 +125,7 @@ import { appleSpeechAnalyzerVsWhisperOnDeviceStt2026 } from './apple-speechanaly
 import { antiAiSlopDesignSkillHallmarkGuide2026 } from './anti-ai-slop-design-skill-hallmark-guide-2026';
 import { mcpStatelessSpecMigrationGuide2026 } from './mcp-stateless-spec-migration-guide-2026';
 import { omnirouteAiGatewayReview2026 } from './omniroute-ai-gateway-review-2026';
+import { aiDevWeek2026W30 } from './ai-dev-week-2026-30';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -251,6 +252,7 @@ const allPosts: BlogPost[] = [
   antiAiSlopDesignSkillHallmarkGuide2026,
   mcpStatelessSpecMigrationGuide2026,
   omnirouteAiGatewayReview2026,
+  aiDevWeek2026W30,
 ];
 
 // Validate all posts at module load time
