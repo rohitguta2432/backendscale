@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-30",
+    "title": "This Week in AI Dev: Kimi K3 Lands and Cursor Springs a 0-Day (Week 30 of 2026)",
+    "date": "2026-07-21",
+    "excerpt": "Week 30 of 2026 split in two: China's labs shipped trillion-parameter frontier models while the tools that run agents got a hard security look. Moonshot's Kimi K3 (2.8T params, open weights by July 27) landed at #2 behind Claude Fable 5, Alibaba previewed a 2.4T Qwen 3.8, and xAI's grok-build hit 20,982 stars in under two weeks. Meanwhile an unpatched Cursor 0-day went public after seven months, Codex started encrypting sub-agent prompts, and Claude Code quietly moved to Bun-in-Rust.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "kimi k3 open weights",
+      "qwen 3.8 alibaba",
+      "grok-build xai coding agent",
+      "cursor 0day vulnerability",
+      "claude code bun rust",
+      "ai dev week 30 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-30-cover.jpg",
+      "alt": "Two glowing currents crossing over a dark grid illustrating AI dev tools weekly roundup week 30 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "omniroute-ai-gateway-review-2026",
     "title": "OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?",
     "date": "2026-07-20",
