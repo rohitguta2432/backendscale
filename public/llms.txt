@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (126 posts)
+## All Engineering Notes (127 posts)
 
+- [Block's Buzz (2026 Guide): Self-Host the Workspace Where AI Agents Are Teammates, Not Bots](https://rohitraj.tech/en/notes/block-buzz-agent-collaboration-platform-guide-2026)
 - [Gemini 3.6 Flash vs 3.5 Flash-Lite: Which One to Ship — and the Price Hike Nobody Leads With (2026)](https://rohitraj.tech/en/notes/gemini-3-6-flash-vs-3-5-flash-lite-guide-2026)
 - [Bonsai 27B: A 27B Model on Your Phone — and the One Benchmark That Collapses (2026)](https://rohitraj.tech/en/notes/bonsai-27b-ternary-quantization-guide-2026)
 - [This Week in AI Dev: The Agent Fleet Grows Up (Week 29 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-29)
